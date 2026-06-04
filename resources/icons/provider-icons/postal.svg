@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 159">
+  <title>Postal mark</title>
+  <defs>
+    <linearGradient id="postal-gradient-primary" x1="0%" y1="50.003%" x2="100%" y2="50.003%">
+      <stop offset="0%" stop-color="#FFDE00" />
+      <stop offset="100%" stop-color="#FF9900" />
+    </linearGradient>
+    <linearGradient id="postal-gradient-secondary" x1="2.855%" y1="76.539%" x2="84.043%" y2="-1.612%">
+      <stop offset="0%" stop-color="#FFDE00" />
+      <stop offset="100%" stop-color="#FF9900" />
+    </linearGradient>
+  </defs>
+  <polygon fill="url(#postal-gradient-primary)" points="0 20.987 14.275 92.748 0 158.263 46.284 158.263 46.284 20.987" />
+  <path fill="url(#postal-gradient-secondary)" d="M92.703 0H26.982v137.276h46.285V92.748h19.436c25.612 0 46.374-20.762 46.374-46.374S118.315 0 92.703 0Z" />
+  <polygon fill="#BF6D00" points="46.284 158.263 26.982 137.276 46.284 137.276" />
+</svg>

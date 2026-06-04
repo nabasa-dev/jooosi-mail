@@ -1,0 +1,50 @@
+<?php
+
+declare(strict_types=1);
+
+namespace OmniMail\Infrastructure\WordPress;
+
+use OmniMail\Settings\Config;
+
+/**
+ * Small wrapper around centralized Omni Mail config paths.
+ *
+ * @since 0.1.0
+ */
+final readonly class OptionStore
+{
+    public function __construct(
+        private Config $config,
+    ) {
+    }
+
+    /**
+     * Read a nested config or state value.
+     *
+     * @since 0.1.0
+     */
+    public function get(string $path, mixed $default = null): mixed
+    {
+        return $this->config->get($path, $default);
+    }
+
+    /**
+     * Persist a nested config or state value.
+     *
+     * @since 0.1.0
+     */
+    public function set(string $path, mixed $value): bool
+    {
+        return $this->config->set($path, $value);
+    }
+
+    /**
+     * Delete a nested config or state value.
+     *
+     * @since 0.1.0
+     */
+    public function delete(string $path): bool
+    {
+        return $this->config->delete($path);
+    }
+}

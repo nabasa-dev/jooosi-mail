@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 589 447">
+  <title>SMTP.com mark</title>
+  <rect width="589" height="447" fill="#231F20" />
+  <rect x="18" y="24" width="553" height="399" fill="#FFFFFF" />
+  <path fill="#20BDA6" d="M35 24h519L296 211Z" />
+  <path fill="none" stroke="#231F20" stroke-linejoin="miter" stroke-width="18" d="M18 24 296 224 571 24" />
+  <path fill="none" stroke="#231F20" stroke-linecap="square" stroke-width="18" d="M18 423 296 224" />
+  <path fill="none" stroke="#231F20" stroke-linecap="square" stroke-width="18" d="M264 423 426 303" />
+</svg>

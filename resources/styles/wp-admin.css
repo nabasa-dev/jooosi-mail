@@ -1,0 +1,47 @@
+html {
+  --wp-admin--sidebar-width: 160px;
+}
+
+html:has(.folded) {
+  --wp-admin--sidebar-width: 36px;
+}
+
+.wp-admin.toplevel_page_omni-mail {
+  #wpcontent {
+    padding-left: 0 !important;
+
+    #wpbody {
+      /* background-color: var(--background); */
+      /* color: var(--foreground); */
+      /* position: fixed !important; */
+      /* height: 100%; */
+      /* width: calc(100% - var(--wp-admin--sidebar-width)); */
+
+      #wpbody-content {
+        padding-bottom: 0;
+
+        /* hide the notice nag if it doesn't have .omni-mail-notice */
+        .notice:not(.omni-mail-notice) {
+          display: none;
+        }
+
+        #omni-mail-app {
+          isolation: isolate;
+        }
+      }
+    }
+  }
+
+  #wpfooter {
+    display: none;
+  }
+
+  /* Hide the update nag */
+  .update-nag {
+    display: none;
+  }
+
+  #adminmenumain #adminmenu li img {
+    display: inline;
+  }
+}

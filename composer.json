@@ -1,0 +1,77 @@
+{
+    "name": "omni/mail",
+    "description": "A modern, robust email sending solution for WordPress sites with advanced features including multiple provider support, queue-based processing, and comprehensive monitoring.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": ">=8.5",
+        "doctrine/dbal": "^4.3",
+        "kucrut/vite-for-wp": "^0.12.0",
+        "nabasa/vp-wp": "^0.3.0",
+        "symfony/aha-send-mailer": "^8.0",
+        "symfony/amazon-mailer": "^8.0",
+        "symfony/azure-mailer": "^8.0",
+        "symfony/brevo-mailer": "^8.0",
+        "symfony/cache": "^7.3",
+        "symfony/dependency-injection": "^8.0",
+        "symfony/http-client": "^8.0",
+        "symfony/infobip-mailer": "^8.0",
+        "symfony/mail-pace-mailer": "^8.0",
+        "symfony/mailchimp-mailer": "^8.0",
+        "symfony/mailer": "^8.0",
+        "symfony/mailer-send-mailer": "^8.0",
+        "symfony/mailgun-mailer": "^8.0",
+        "symfony/mailjet-mailer": "^8.0",
+        "symfony/mailomat-mailer": "^8.0",
+        "symfony/mailtrap-mailer": "^8.0",
+        "symfony/messenger": "^8.0",
+        "symfony/microsoft-graph-mailer": "^8.0",
+        "symfony/mime": "^8.0",
+        "symfony/postal-mailer": "^8.0",
+        "symfony/postmark-mailer": "^8.0",
+        "symfony/property-access": "^8.0",
+        "symfony/resend-mailer": "^8.0",
+        "symfony/scaleway-mailer": "^8.0",
+        "symfony/sendgrid-mailer": "^8.0",
+        "symfony/string": "^8.0",
+        "symfony/sweego-mailer": "^8.0",
+        "tempest/discovery": "^3.4",
+        "woocommerce/action-scheduler": "^3.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "OmniMail\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OmniMail\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "extra": {
+        "wordpress-plugin": {
+            "name": "Omni Mail",
+            "version": "0.1.0",
+            "requires-wp": "6.8",
+            "tested-wp": "6.8",
+            "requires-php": "8.5"
+        }
+    },
+    "minimum-stability": "stable",
+    "require-dev": {
+        "phpunit/phpunit": "^9.6",
+        "php-stubs/wordpress-tests-stubs": "^6.8",
+        "php-stubs/wordpress-stubs": "^6.8",
+        "php-stubs/wp-cli-stubs": "^2.12",
+        "wp-cli/wp-cli-bundle": "^2.12",
+        "wp-phpunit/wp-phpunit": "^6.8",
+        "yoast/phpunit-polyfills": "^4.0"
+    },
+    "scripts": {
+        "test:php": "vendor/bin/phpunit -c phpunit.xml.dist"
+    }
+}
