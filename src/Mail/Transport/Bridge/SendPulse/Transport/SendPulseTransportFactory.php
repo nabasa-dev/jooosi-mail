@@ -26,8 +26,8 @@ final class SendPulseTransportFactory extends AbstractTransportFactory
         return match ($scheme) {
             'sendpulse+api' => (new SendPulseApiTransport($user, $password, $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
             'sendpulse+smtp', 'sendpulse+smtps' => new SendPulseSmtpTransport($user, $password, $port, $this->dispatcher, $this->logger),
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => 
-                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new UnsupportedSchemeException($dsn, 'sendpulse', $this->getSupportedSchemes()),
         };
     }

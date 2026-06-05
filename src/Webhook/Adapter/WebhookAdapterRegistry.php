@@ -33,11 +33,11 @@ final class WebhookAdapterRegistry
      */
     public function resolve(Connection $connection): WebhookAdapterInterface
     {
+        // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
         return array_find(
             $this->all(),
             static fn (WebhookAdapterInterface $adapter): bool => $adapter->supports($connection),
         )
-            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             ?? throw new RuntimeException(sprintf('No webhook adapter matched connection profile "%s".', $connection->profileKey));
     }
 

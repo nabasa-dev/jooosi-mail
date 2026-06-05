@@ -50,8 +50,8 @@ final class ZohoMailTransportFactory extends AbstractTransportFactory
                 $this->dispatcher,
                 $this->logger,
             ),
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => 
-                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new UnsupportedSchemeException($dsn, 'zohomail', $this->getSupportedSchemes()),
         };
     }

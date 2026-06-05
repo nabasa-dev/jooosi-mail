@@ -25,8 +25,8 @@ final class SendLayerTransportFactory extends AbstractTransportFactory
         return match ($scheme) {
             'sendlayer+api' => (new SendLayerApiTransport($user, $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
             'sendlayer+smtp', 'sendlayer+smtps' => new SendLayerSmtpTransport($this->getUser($dsn), $this->getPassword($dsn), $this->dispatcher, $this->logger),
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => 
-                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new UnsupportedSchemeException($dsn, 'sendlayer', $this->getSupportedSchemes()),
         };
     }

@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Resolved WordPress Plugin Check reports across the codebase.
+
 ## [1.0.1] - 2026-06-05
 
 ### Fixed

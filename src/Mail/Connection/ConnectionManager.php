@@ -74,8 +74,8 @@ final readonly class ConnectionManager
      */
     public function update(int $connectionId, array $input): Connection
     {
+        // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
         $existingConnection = $this->connectionRepository->find($connectionId)
-            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             ?? throw new ConnectionConfigurationException(sprintf('Connection %d was not found.', $connectionId));
 
         $profileKey = $input['profile'] ?? $existingConnection->profileKey;
@@ -83,8 +83,8 @@ final readonly class ConnectionManager
         $connection = $this->resolveConnection($existingConnection, $profile, $input);
         $this->persist($connection);
 
+        // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
         return $this->connectionRepository->find($connectionId)
-            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             ?? throw new ConnectionConfigurationException(sprintf('Connection %d could not be reloaded.', $connectionId));
     }
 
@@ -93,8 +93,8 @@ final readonly class ConnectionManager
      */
     public function setDefault(int $connectionId): Connection
     {
+        // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
         $connection = $this->connectionRepository->find($connectionId)
-            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             ?? throw new ConnectionConfigurationException(sprintf('Connection %d was not found.', $connectionId));
 
         $updatedConnection = new Connection(
@@ -113,8 +113,8 @@ final readonly class ConnectionManager
 
         $this->persist($updatedConnection);
 
+        // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
         return $this->connectionRepository->find($connectionId)
-            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             ?? throw new ConnectionConfigurationException(sprintf('Connection %d could not be reloaded.', $connectionId));
     }
 
@@ -123,8 +123,8 @@ final readonly class ConnectionManager
      */
     public function setEnabled(int $connectionId, bool $enabled): Connection
     {
+        // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
         $connection = $this->connectionRepository->find($connectionId)
-            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             ?? throw new ConnectionConfigurationException(sprintf('Connection %d was not found.', $connectionId));
 
         $updatedConnection = new Connection(
@@ -143,8 +143,8 @@ final readonly class ConnectionManager
 
         $this->persist($updatedConnection);
 
+        // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
         return $this->connectionRepository->find($connectionId)
-            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             ?? throw new ConnectionConfigurationException(sprintf('Connection %d could not be reloaded.', $connectionId));
     }
 
@@ -153,8 +153,8 @@ final readonly class ConnectionManager
      */
     public function delete(int $connectionId): void
     {
+        // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
         $connection = $this->connectionRepository->find($connectionId)
-            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             ?? throw new ConnectionConfigurationException(sprintf('Connection %d was not found.', $connectionId));
 
         $this->connectionRepository->delete($connectionId);

@@ -26,8 +26,8 @@ final class SparkPostTransportFactory extends AbstractTransportFactory
         return match ($scheme) {
             'sparkpost+api' => (new SparkPostApiTransport($apiKey, $region, $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
             'sparkpost+smtp', 'sparkpost+smtps' => new SparkPostSmtpTransport($apiKey, $region, $port, $this->dispatcher, $this->logger),
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => 
-                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new UnsupportedSchemeException($dsn, 'sparkpost', $this->getSupportedSchemes()),
         };
     }

@@ -71,8 +71,10 @@ final class GmailApiTransport extends AbstractApiTransport
                 $result = $response->toArray(false);
                 $message = (string) ($result['error']['message'] ?? $result['error_description'] ?? $result['message'] ?? 'Unknown error');
 
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new HttpTransportException('Unable to send email via Gmail API: ' . esc_html($message) . sprintf(' (code %d).', $statusCode), $response);
             } catch (DecodingExceptionInterface $exception) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new HttpTransportException('Unable to send email via Gmail API: ' . esc_html($response->getContent(false)) . sprintf(' (code %d).', $statusCode), $response, 0, $exception);
             }
         }

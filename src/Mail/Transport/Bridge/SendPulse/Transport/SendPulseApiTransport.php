@@ -68,13 +68,16 @@ final class SendPulseApiTransport extends AbstractApiTransport
             $result = $response->toArray(false);
 
             if (isset($result['message'])) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new HttpTransportException('Unable to send an email: ' . esc_html($result['message']) . sprintf(' (code %d).', $statusCode), $response);
             }
 
             if (isset($result['error_description'])) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new HttpTransportException('Unable to send an email: ' . esc_html($result['error_description']) . sprintf(' (code %d).', $statusCode), $response);
             }
 
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new HttpTransportException('Unable to send an email: ' . esc_html($response->getContent(false)) . sprintf(' (code %d).', $statusCode), $response);
         }
 

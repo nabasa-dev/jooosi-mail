@@ -25,8 +25,8 @@ final class EmailitTransportFactory extends AbstractTransportFactory
         return match ($scheme) {
             'emailit+api' => (new EmailitApiTransport($apiKey, $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
             'emailit+smtp', 'emailit+smtps' => new EmailitSmtpTransport($this->getPassword($dsn), $this->dispatcher, $this->logger),
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => 
-                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new UnsupportedSchemeException($dsn, 'emailit', $this->getSupportedSchemes()),
         };
     }

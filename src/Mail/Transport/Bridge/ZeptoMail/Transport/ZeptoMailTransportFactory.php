@@ -55,8 +55,8 @@ final class ZeptoMailTransportFactory extends AbstractTransportFactory
                 $this->dispatcher,
                 $this->logger,
             ),
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => 
-                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new UnsupportedSchemeException($dsn, 'zeptomail', $this->getSupportedSchemes()),
         };
     }

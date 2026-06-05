@@ -59,6 +59,7 @@ final class GmailTokenManager
         }
 
         if ($statusCode !== 200) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new HttpTransportException('Unable to authenticate with Google: ' . esc_html($response->getContent(false)) . sprintf(' (code %d).', $statusCode), $response);
         }
 

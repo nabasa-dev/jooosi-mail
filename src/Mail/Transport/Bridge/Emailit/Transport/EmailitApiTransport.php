@@ -72,8 +72,10 @@ final class EmailitApiTransport extends AbstractApiTransport
                     $message = implode('; ', array_map('strval', $result['errors']));
                 }
 
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new HttpTransportException('Unable to send an email: ' . esc_html($message) . sprintf(' (code %d).', $statusCode), $response);
             } catch (DecodingExceptionInterface $exception) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new HttpTransportException('Unable to send an email: ' . esc_html($response->getContent(false)) . sprintf(' (code %d).', $statusCode), $response, 0, $exception);
             }
         }

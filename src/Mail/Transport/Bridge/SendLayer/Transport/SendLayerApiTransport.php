@@ -63,9 +63,11 @@ final class SendLayerApiTransport extends AbstractApiTransport
             $result = $response->toArray(false);
 
             if (isset($result['message'])) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new HttpTransportException('Unable to send an email: ' . esc_html($result['message']) . sprintf(' (code %d).', $statusCode), $response);
             }
 
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new HttpTransportException('Unable to send an email: ' . esc_html($response->getContent(false)) . sprintf(' (code %d).', $statusCode), $response);
         }
 
