@@ -55,9 +55,9 @@
     "extra": {
         "wordpress-plugin": {
             "name": "Omni Mail",
-            "version": "0.1.0",
+            "version": "1.0.0",
             "requires-wp": "6.8",
-            "tested-wp": "6.8",
+            "tested-wp": "7.0",
             "requires-php": "8.5"
         }
     },

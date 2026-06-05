@@ -59,7 +59,7 @@ final class AdminMenu
 
         assets( $this->paths->rootDir . '/assets/dist' )
             ->enqueue(
-                'resources/app.tsx',
+                'resources/App.tsx',
                 [
                     'handle' => self::ASSET_HANDLE,
                     'in_footer' => true,

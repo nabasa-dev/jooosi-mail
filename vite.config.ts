@@ -18,7 +18,7 @@ export default defineConfig({
     tailwindcss(),
     wordpress({
       entry: {
-        app: "resources/app.tsx",
+        app: "resources/App.tsx",
       },
       outDir: "assets/dist",
       sourcemap: false,
