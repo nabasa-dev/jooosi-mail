@@ -1,0 +1,164 @@
+# Builds and deploys the plugin
+name: Deploy the Plugin
+
+on:
+  push:
+    tags:
+      - '*'
+
+env:
+  # see https://github.com/composer/composer/issues/9368#issuecomment-718112361
+  COMPOSER_ROOT_VERSION: "dev-main"
+
+jobs:
+  build_scoped_omni_mail:
+    # Don't run on forks.
+    if: github.repository == 'nabasa-dev/omni-mail'
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: pnpm/action-setup@v4
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install JavaScript dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build frontend assets
+        run: pnpm run build
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.5
+          coverage: none
+        env:
+          COMPOSER_TOKEN: ${{ secrets.ORG_DEV_PAT }}
+
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: Extract changelog for version
+        id: changelog
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/}
+          VERSION_NO_V=${VERSION#v}
+          if [ -f "CHANGELOG.md" ]; then
+            CHANGELOG_CONTENT=$(node deploy/extract-changelog.js "$VERSION_NO_V")
+            echo "content<<EOF" >> $GITHUB_OUTPUT
+            echo "$CHANGELOG_CONTENT" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          else
+            echo "content=Release $VERSION_NO_V" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update readme.txt changelog
+        run: deno run --allow-read --allow-write deploy/update-readme-changelog.ts
+
+      - name: Install production PHP dependencies
+        run: composer install --no-dev --classmap-authoritative --no-interaction --prefer-dist --ansi
+
+      - name: Copy files for scoping
+        run: |
+          mkdir -p omni-mail-deploy
+          rsync -av --exclude omni-mail-deploy --exclude .git ./ omni-mail-deploy/ --quiet
+
+      - name: Scope vendor namespaces
+        run: sh deploy/deploy-scoped.sh omni-mail-deploy omni-mail-prefixed
+
+      - name: Apply .distignore filter
+        run: |
+          mkdir -p omni-mail-final
+          rsync -av --exclude-from=".distignore" omni-mail-prefixed/ omni-mail-final/ --quiet
+          rm -rf omni-mail-prefixed
+          mv omni-mail-final omni-mail-prefixed
+
+      - name: Checkout or create dist branch
+        run: |
+          git clone https://x-access-token:${{ secrets.ORG_DEV_PAT }}@github.com/${{ github.repository }}.git dist-branch
+          cd dist-branch
+          git fetch origin dist || true
+          git checkout dist 2>/dev/null || git checkout --orphan dist
+          git rm -rf . 2>/dev/null || true
+          git clean -fxd
+
+      - name: Copy scoped plugin to dist branch
+        run: cp -a omni-mail-prefixed/. dist-branch
+
+      - name: Configure git author
+        working-directory: dist-branch
+        run: |
+          git config user.name "Joshua Gugun Siagian"
+          git config user.email suabahasa@gmail.com
+
+      - name: Get Git log
+        id: git-log
+        run: |
+          echo "log<<EOF" >> $GITHUB_OUTPUT
+          echo "$(git log ${{ github.event.before }}..${{ github.event.after }} --reverse --pretty='https://github.com/nabasa-dev/omni-mail/commit/%H %s')" >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
+
+      - name: Commit prefixed build
+        working-directory: dist-branch
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          INPUT_LOG: ${{ steps.git-log.outputs.log }}
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/}
+          VERSION_NO_V=${VERSION#v}
+          git add --all
+          git commit -m "Omni Mail $VERSION_NO_V" -m "$INPUT_LOG"
+          git push --quiet origin dist
+
+      # - name: WordPress Plugin Deploy
+      #   uses: 10up/action-wordpress-plugin-deploy@stable
+      #   env:
+      #     SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+      #     SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+      #     SLUG: omni-mail
+      #     BUILD_DIR: omni-mail-prefixed
+      #     VERSION: ${{ github.ref_name }}
+      #     ASSETS_DIR: .wordpress-org
+
+      - name: Create plugin zip file
+        run: |
+          mkdir -p omni-mail-zip/omni-mail
+          cp -r omni-mail-prefixed/* omni-mail-zip/omni-mail/
+          cd omni-mail-zip
+          zip -r "../omni-mail-${{ github.ref_name }}.zip" . -x "*.git*" "*.DS_Store*"
+          cd ..
+          ls -la omni-mail-*.zip
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          name: "${{ github.ref_name }}"
+          body: ${{ steps.changelog.outputs.content }}
+          files: |
+            omni-mail-${{ github.ref_name }}.zip
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.ORG_DEV_PAT }}
