@@ -18,6 +18,7 @@ final readonly class WordPressEventPublisher implements EventPublisherInterface
      */
     public function doAction(string $hookName, mixed ...$arguments): void
     {
+        // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound -- Intentional by design; all hook names are well-prefixed with `a!omni-mail/` or `f!omni-mail/`.
         do_action($hookName, ...$arguments);
     }
     /**
@@ -25,6 +26,7 @@ final readonly class WordPressEventPublisher implements EventPublisherInterface
      */
     public function applyFilters(string $hookName, mixed $value, mixed ...$arguments): mixed
     {
+        // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound -- Intentional by design; all hook names are well-prefixed with `a!omni-mail/` or `f!omni-mail/`.
         return apply_filters($hookName, $value, ...$arguments);
     }
 }

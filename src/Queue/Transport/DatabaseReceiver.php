@@ -9,6 +9,7 @@ use OmniMail\Infrastructure\Database\TableNameResolver;
 use OmniMail\Queue\Stamp\DatabaseMessageStamp;
 use Override;
 use OmniMailDeps\Symfony\Component\Messenger\Envelope;
+use OmniMailDeps\Symfony\Component\Messenger\Exception\MessageDecodingFailedException;
 use OmniMailDeps\Symfony\Component\Messenger\Stamp\TransportMessageIdStamp;
 use OmniMailDeps\Symfony\Component\Messenger\Transport\Receiver\ReceiverInterface;
 use OmniMailDeps\Symfony\Component\Messenger\Transport\Serialization\SerializerInterface;
@@ -52,7 +53,13 @@ final readonly class DatabaseReceiver implements ReceiverInterface
             }
             $encodedEnvelope = ['body' => (string) $row['body'], 'headers' => json_decode((string) ($row['headers_json'] ?? '{}'), \true) ?: []];
             try {
-                $envelopes[] = $this->serializer->decode($encodedEnvelope)->with(new TransportMessageIdStamp((string) $row['id']))->with(new DatabaseMessageStamp(messageId: (int) $row['id'], attemptCount: (int) $row['attempt_count'], maxAttempts: (int) ($row['max_attempts'] ?? 3), queueName: (string) ($row['queue_name'] ?? \OmniMail\Queue\Transport\DatabaseTransport::NAME), claimedBy: $claimedBy));
+                $envelope = $this->serializer->decode($encodedEnvelope)->with(new TransportMessageIdStamp((string) $row['id']))->with(new DatabaseMessageStamp(messageId: (int) $row['id'], attemptCount: (int) $row['attempt_count'], maxAttempts: (int) ($row['max_attempts'] ?? 3), queueName: (string) ($row['queue_name'] ?? \OmniMail\Queue\Transport\DatabaseTransport::NAME), claimedBy: $claimedBy));
+                $message = $envelope->getMessage();
+                if ($message instanceof MessageDecodingFailedException) {
+                    $this->connection->update($this->tableNameResolver->resolve('queue_messages'), ['status' => 'failed', 'last_error' => $message->getMessage(), 'processed_at' => gmdate('Y-m-d H:i:s'), 'updated_at' => gmdate('Y-m-d H:i:s')], ['id' => (int) $row['id'], 'status' => 'processing', 'claimed_by' => $claimedBy]);
+                    continue;
+                }
+                $envelopes[] = $envelope;
             } catch (Throwable $throwable) {
                 $this->connection->update($this->tableNameResolver->resolve('queue_messages'), ['status' => 'failed', 'last_error' => $throwable->getMessage(), 'processed_at' => gmdate('Y-m-d H:i:s'), 'updated_at' => gmdate('Y-m-d H:i:s')], ['id' => (int) $row['id'], 'status' => 'processing', 'claimed_by' => $claimedBy]);
             }

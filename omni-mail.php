@@ -6,8 +6,8 @@
  * Plugin URI:          https://github.com/nabasa-dev/omni-mail
  * Description:         A modern, robust email sending solution for WordPress sites with advanced features including multiple provider support, queue-based processing, and comprehensive monitoring.
  * Text Domain:         omni-mail
- * Version:             1.0.0
- * Requires at least:   6.8
+ * Version:             1.0.1
+ * Requires at least:   7.0
  * Requires PHP:        8.5
  * Author:              Omni Mail
  * Author URI:          https://github.com/nabasa-dev

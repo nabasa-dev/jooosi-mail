@@ -102,9 +102,11 @@ final class ZeptoMailProfile extends AbstractMailProfile
         $username = $this->extractScalarString($defaults, 'username') ?? 'emailapikey';
         $password = $this->extractSmtpPassword($defaults);
         if ($username === '') {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new ConnectionConfigurationException(sprintf('Configuration field "username" is required for profile "%s" when using scheme "%s".', $this->profileKey(), $scheme));
         }
         if ($password === null || $password === '') {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new ConnectionConfigurationException(sprintf('Configuration field "password" is required for profile "%s" when using scheme "%s".', $this->profileKey(), $scheme));
         }
     }

@@ -118,7 +118,7 @@ final readonly class MigrationManager
             try {
                 $executed[] = $this->runSingle($definition, $dryRun);
             } catch (Throwable $throwable) {
-                return ['executed' => $executed, 'failed' => ['version' => $definition->version, 'class_name' => $definition->className, 'description' => $definition->description, 'status' => 'failed', 'error' => $throwable->getMessage()], 'message' => sprintf('Migration %s failed: %s', $definition->version, $throwable->getMessage())];
+                return ['executed' => $executed, 'failed' => ['version' => $definition->version, 'class_name' => $definition->className, 'description' => $definition->description, 'status' => 'failed', 'error' => $throwable->getMessage()], 'message' => sprintf('Migration %s failed: %s', $definition->version, esc_html($throwable->getMessage()))];
             }
         }
         return ['executed' => $executed, 'message' => $dryRun ? sprintf('%d migration(s) would be executed.', count($executed)) : sprintf('%d migration(s) executed successfully.', count($executed))];
@@ -139,7 +139,7 @@ final readonly class MigrationManager
             try {
                 $rolledBack[] = $this->rollbackSingle($definition, $dryRun);
             } catch (Throwable $throwable) {
-                return ['rolled_back' => $rolledBack, 'failed' => ['version' => $definition->version, 'class_name' => $definition->className, 'description' => $definition->description, 'status' => 'failed', 'error' => $throwable->getMessage()], 'message' => sprintf('Rollback for migration %s failed: %s', $definition->version, $throwable->getMessage())];
+                return ['rolled_back' => $rolledBack, 'failed' => ['version' => $definition->version, 'class_name' => $definition->className, 'description' => $definition->description, 'status' => 'failed', 'error' => $throwable->getMessage()], 'message' => sprintf('Rollback for migration %s failed: %s', $definition->version, esc_html($throwable->getMessage()))];
             }
         }
         return ['rolled_back' => $rolledBack, 'message' => $dryRun ? sprintf('%d migration(s) would be rolled back.', count($rolledBack)) : sprintf('%d migration(s) rolled back successfully.', count($rolledBack))];
@@ -170,9 +170,11 @@ final readonly class MigrationManager
         foreach ($versions as $version) {
             $definition = $this->migrationRegistry->find($version);
             if (!$definition instanceof \OmniMail\Database\Migration\MigrationDefinition) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new RuntimeException(sprintf('The Omni Mail migration "%s" could not be found.', $version));
             }
             if (in_array($definition->version, $executedVersions, \true)) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new RuntimeException(sprintf('The Omni Mail migration "%s" has already been executed.', $definition->version));
             }
             if (isset($knownVersions[$definition->version])) {
@@ -231,6 +233,7 @@ final readonly class MigrationManager
             return [];
         }
         if ($toVersion !== null && $toVersion !== '' && $toVersion !== '0' && !isset($executionMap[$this->executionKey($toVersion)]) && !$this->migrationRegistry->find($toVersion) instanceof \OmniMail\Database\Migration\MigrationDefinition) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new RuntimeException(sprintf('The Omni Mail migration "%s" could not be found.', $toVersion));
         }
         rsort($executedVersions, \SORT_STRING);
@@ -241,6 +244,7 @@ final readonly class MigrationManager
             }
             $definition = $this->migrationRegistry->find($version);
             if (!$definition instanceof \OmniMail\Database\Migration\MigrationDefinition) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new RuntimeException(sprintf('The executed migration "%s" is not available for rollback.', $version));
             }
             $definitions[] = $definition;

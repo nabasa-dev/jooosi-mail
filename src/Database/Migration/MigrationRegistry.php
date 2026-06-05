@@ -31,9 +31,11 @@ final readonly class MigrationRegistry
             $migration = $this->newInstance($className);
             $version = $migration->getVersion();
             if ($version === '') {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new RuntimeException(sprintf('The Omni Mail migration class "%s" returned an empty version.', $className));
             }
             if (isset($knownVersions[$version])) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new RuntimeException(sprintf('The Omni Mail migration version "%s" is registered more than once.', $version));
             }
             $knownVersions[$version] = \true;
@@ -93,6 +95,7 @@ final readonly class MigrationRegistry
         }
         $definition = $this->find($migration);
         if (!$definition instanceof \OmniMail\Database\Migration\MigrationDefinition) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new RuntimeException(sprintf('The Omni Mail migration "%s" could not be found.', $migration));
         }
         return $this->newInstance($definition->className);
@@ -126,10 +129,12 @@ final readonly class MigrationRegistry
     private function newInstance(string $className): \OmniMail\Database\Migration\MigrationInterface
     {
         if (!class_exists($className)) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new RuntimeException(sprintf('The Omni Mail migration class "%s" could not be autoloaded.', $className));
         }
         $migration = new $className();
         if (!$migration instanceof \OmniMail\Database\Migration\MigrationInterface) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new RuntimeException(sprintf('The Omni Mail migration class "%s" must implement %s.', $className, \OmniMail\Database\Migration\MigrationInterface::class));
         }
         return $migration;

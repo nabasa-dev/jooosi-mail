@@ -32,8 +32,8 @@ final class PostmarkWebhookAdapter extends \OmniMail\Webhook\Adapter\AbstractWeb
     #[Override]
     public function verify(WP_REST_Request $request, Connection $connection): bool
     {
-        $remoteAddress = $_SERVER['REMOTE_ADDR'] ?? null;
-        return is_string($remoteAddress) && in_array(trim($remoteAddress), self::ALLOWED_IPS, \true);
+        $remoteAddress = sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'] ?? ''));
+        return $remoteAddress !== '' && in_array(trim($remoteAddress), self::ALLOWED_IPS, \true);
     }
     #[Override]
     public function describeVerification(Connection $connection): string

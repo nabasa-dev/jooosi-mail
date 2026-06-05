@@ -110,12 +110,14 @@ final readonly class ContainerCache
             throw new RuntimeException('The Omni Mail container metadata is missing the container class name.');
         }
         if (!$this->cacheFileContainsClass($cacheFile, $className)) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new RuntimeException(sprintf('The Omni Mail container cache file does not contain the expected container class "%s".', $className));
         }
         if (!class_exists($className, \false)) {
             require $cacheFile;
         }
         if (!class_exists($className, \false)) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new RuntimeException(sprintf('The Omni Mail container class "%s" was not found in the cache file.', $className));
         }
         return new $className();
@@ -132,7 +134,11 @@ final readonly class ContainerCache
         $dumper = new PhpDumper($builder);
         $php = $dumper->dump(['class' => $signature['container_class']]);
         $this->writePhpFile($this->getCacheFile(), $php);
-        $this->writePhpFile($this->getMetadataFile(), sprintf("<?php\n\ndeclare(strict_types=1);\n\nreturn %s;\n", var_export(['generated_at' => gmdate('Y-m-d H:i:s'), 'environment' => $this->environment->name, 'debug' => $this->environment->debug, 'source_hash' => $signature['source_hash'], 'container_class' => $signature['container_class'], 'tracked_file_count' => $signature['tracked_file_count']], \true)));
+        $this->writePhpFile($this->getMetadataFile(), sprintf(
+            "<?php\n\ndeclare(strict_types=1);\n\nreturn %s;\n",
+            // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_var_export -- Intentional: generates a PHP cache file consumed via require.
+            var_export(['generated_at' => gmdate('Y-m-d H:i:s'), 'environment' => $this->environment->name, 'debug' => $this->environment->debug, 'source_hash' => $signature['source_hash'], 'container_class' => $signature['container_class'], 'tracked_file_count' => $signature['tracked_file_count']], \true)
+        ));
     }
     /**
      * @since 0.1.0
@@ -163,6 +169,7 @@ final readonly class ContainerCache
             hash_update($context, str_replace($this->paths->rootDir . '/', '', $file));
             hash_update($context, "\x00");
             if (!is_readable($file)) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new RuntimeException(sprintf('The Omni Mail container source file "%s" is not readable.', $file));
             }
             hash_update_file($context, $file);
@@ -262,6 +269,7 @@ final readonly class ContainerCache
             wp_mkdir_p($this->paths->cacheDir);
         }
         if (!is_dir($this->paths->cacheDir)) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new RuntimeException(sprintf('The Omni Mail cache directory "%s" could not be created.', $this->paths->cacheDir));
         }
     }
@@ -272,14 +280,22 @@ final readonly class ContainerCache
     {
         $temporaryFile = tempnam($this->paths->cacheDir, 'omni-mail-');
         if (!is_string($temporaryFile) || $temporaryFile === '') {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new RuntimeException(sprintf('Unable to allocate a temporary file for "%s".', $path));
         }
         if (file_put_contents($temporaryFile, $contents, \LOCK_EX) === \false) {
             $this->deleteFile($temporaryFile);
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new RuntimeException(sprintf('Unable to write the Omni Mail cache file "%s".', $path));
         }
-        if (!@rename($temporaryFile, $path)) {
+        global $wp_filesystem;
+        if ($wp_filesystem === null) {
+            require_once \ABSPATH . 'wp-admin/includes/file.php';
+            \WP_Filesystem();
+        }
+        if (!$wp_filesystem->move($temporaryFile, $path, \true)) {
             $this->deleteFile($temporaryFile);
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new RuntimeException(sprintf('Unable to move the Omni Mail cache file into place at "%s".', $path));
         }
         $this->invalidateOpcodeCache($path);
@@ -293,11 +309,7 @@ final readonly class ContainerCache
             return;
         }
         $this->invalidateOpcodeCache($path);
-        if (function_exists('wp_delete_file')) {
-            wp_delete_file($path);
-            return;
-        }
-        @unlink($path);
+        wp_delete_file($path);
     }
     /**
      * @since 0.1.0

@@ -46,15 +46,16 @@ final class ElasticEmailApiTransport extends AbstractApiTransport
         try {
             $statusCode = $response->getStatusCode();
         } catch (TransportExceptionInterface $transportException) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new HttpTransportException('Could not reach the remote Elastic Email server.', $response, 0, $transportException);
         }
         if (!in_array($statusCode, [200, 201], \true)) {
             try {
                 $result = $response->toArray(\false);
                 $message = (string) ($result['Error'] ?? 'Unknown error');
-                throw new HttpTransportException('Unable to send an email: ' . $message . sprintf(' (code %d).', $statusCode), $response);
+                throw new HttpTransportException('Unable to send an email: ' . esc_html($message) . sprintf(' (code %d).', $statusCode), $response);
             } catch (DecodingExceptionInterface $exception) {
-                throw new HttpTransportException('Unable to send an email: ' . $response->getContent(\false) . sprintf(' (code %d).', $statusCode), $response, 0, $exception);
+                throw new HttpTransportException('Unable to send an email: ' . esc_html($response->getContent(\false)) . sprintf(' (code %d).', $statusCode), $response, 0, $exception);
             }
         }
         try {

@@ -50,15 +50,16 @@ final class ToSendApiTransport extends AbstractApiTransport
         try {
             $statusCode = $response->getStatusCode();
         } catch (TransportExceptionInterface $transportException) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new HttpTransportException('Could not reach the remote toSend server.', $response, 0, $transportException);
         }
         try {
             $result = $response->toArray(\false);
         } catch (DecodingExceptionInterface $exception) {
-            throw new HttpTransportException('Unable to send email via toSend: ' . $response->getContent(\false) . sprintf(' (code %d).', $statusCode), $response, 0, $exception);
+            throw new HttpTransportException('Unable to send email via toSend: ' . esc_html($response->getContent(\false)) . sprintf(' (code %d).', $statusCode), $response, 0, $exception);
         }
         if ($statusCode >= 400) {
-            throw new HttpTransportException('Unable to send email via toSend: ' . $this->formatErrorMessage($result) . sprintf(' (code %d).', $statusCode), $response);
+            throw new HttpTransportException('Unable to send email via toSend: ' . esc_html($this->formatErrorMessage($result)) . sprintf(' (code %d).', $statusCode), $response);
         }
         if (is_string($result['message_id'] ?? null) && $result['message_id'] !== '') {
             $sentMessage->setMessageId($result['message_id']);

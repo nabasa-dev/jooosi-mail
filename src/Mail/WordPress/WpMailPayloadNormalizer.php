@@ -34,6 +34,7 @@ final class WpMailPayloadNormalizer
             $defaultFromApplied = \true;
         }
         $mailRequest = new MailRequest(from: $from, to: $this->parseAddresses($args['to'] ?? []), cc: $this->extractHeaderAddresses($this->getHeader($headers, 'Cc')), bcc: $this->extractHeaderAddresses($this->getHeader($headers, 'Bcc')), replyTo: $this->extractHeaderAddresses($this->getHeader($headers, 'Reply-To')), subject: (string) ($args['subject'] ?? ''), textBody: $bodies['textBody'], htmlBody: $bodies['htmlBody'], attachments: $this->normalizeAttachments($args['attachments'] ?? []), headers: $headers, source: 'wp_mail', metadata: ['raw' => $args, 'omni_mail_default_from_applied' => $defaultFromApplied]);
+        // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Intentional by design; hook name is well-prefixed with `f!omni-mail/`.
         $filteredMailRequest = apply_filters('f!omni-mail/mail:normalize.request', $mailRequest, $args, $headers);
         return $filteredMailRequest instanceof MailRequest ? $filteredMailRequest : $mailRequest;
     }

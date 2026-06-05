@@ -104,7 +104,13 @@ final class ActionSchedulerTrigger
         if (!$this->shouldWakeActionSchedulerAsyncRunner()) {
             return;
         }
-        wp_remote_post(add_query_arg(['action' => self::ASYNC_RUNNER_ACTION, 'nonce' => wp_create_nonce(self::ASYNC_RUNNER_ACTION)], admin_url('admin-ajax.php')), ['timeout' => 0.01, 'blocking' => \false, 'cookies' => $_COOKIE, 'sslverify' => apply_filters('https_local_ssl_verify', \false)]);
+        wp_remote_post(add_query_arg(['action' => self::ASYNC_RUNNER_ACTION, 'nonce' => wp_create_nonce(self::ASYNC_RUNNER_ACTION)], admin_url('admin-ajax.php')), [
+            'timeout' => 0.01,
+            'blocking' => \false,
+            'cookies' => $_COOKIE,
+            // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WordPress core filter, not a custom hook.
+            'sslverify' => apply_filters('https_local_ssl_verify', \false),
+        ]);
     }
     /**
      * @since 0.1.0

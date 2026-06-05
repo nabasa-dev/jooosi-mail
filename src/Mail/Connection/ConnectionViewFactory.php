@@ -97,6 +97,7 @@ final readonly class ConnectionViewFactory
     {
         $profile = $this->profileRegistry->get($connection->profileKey);
         if (!$profile instanceof MailProfileInterface) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Profile "%s" is not registered.', $connection->profileKey));
         }
         return $profile;

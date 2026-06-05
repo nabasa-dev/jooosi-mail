@@ -30,9 +30,9 @@ final readonly class SendEmailHandler
         $result = $this->deliveryService->deliver($message->mailLogId, finalizeFailures: \false);
         if (!$result->successful) {
             if ($result->temporaryFailure) {
-                throw new RetryAfterException($result->error ?? 'Queued mail delivery is temporarily unavailable.', $result->retryAfterSeconds);
+                throw new RetryAfterException(esc_html($result->error) ?? 'Queued mail delivery is temporarily unavailable.', $result->retryAfterSeconds);
             }
-            throw new RuntimeException($result->error ?? 'Queued mail delivery failed.');
+            throw new RuntimeException(esc_html($result->error) ?? 'Queued mail delivery failed.');
         }
     }
 }

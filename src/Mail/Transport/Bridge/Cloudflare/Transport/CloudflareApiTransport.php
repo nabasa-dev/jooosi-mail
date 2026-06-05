@@ -44,15 +44,16 @@ final class CloudflareApiTransport extends AbstractApiTransport
         try {
             $statusCode = $response->getStatusCode();
         } catch (TransportExceptionInterface $transportException) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new HttpTransportException('Could not reach the Cloudflare Email Service API.', $response, 0, $transportException);
         }
         try {
             $result = $response->toArray(\false);
         } catch (DecodingExceptionInterface $exception) {
-            throw new HttpTransportException('Unable to send email via Cloudflare Email Service: ' . $response->getContent(\false) . sprintf(' (code %d).', $statusCode), $response, 0, $exception);
+            throw new HttpTransportException('Unable to send email via Cloudflare Email Service: ' . esc_html($response->getContent(\false)) . sprintf(' (code %d).', $statusCode), $response, 0, $exception);
         }
         if ($statusCode >= 400 || ($result['success'] ?? \false) !== \true) {
-            throw new HttpTransportException('Unable to send email via Cloudflare Email Service: ' . $this->formatErrorMessage($result) . sprintf(' (code %d).', $statusCode), $response);
+            throw new HttpTransportException('Unable to send email via Cloudflare Email Service: ' . esc_html($this->formatErrorMessage($result)) . sprintf(' (code %d).', $statusCode), $response);
         }
         return $response;
     }

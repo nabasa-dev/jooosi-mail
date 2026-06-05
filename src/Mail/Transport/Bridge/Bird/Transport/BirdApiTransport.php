@@ -54,6 +54,7 @@ final class BirdApiTransport extends AbstractApiTransport
         try {
             $statusCode = $response->getStatusCode();
         } catch (TransportExceptionInterface $transportException) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new HttpTransportException('Could not reach the remote Bird server.', $response, 0, $transportException);
         }
         if (!in_array($statusCode, [200, 201], \true)) {
@@ -66,9 +67,9 @@ final class BirdApiTransport extends AbstractApiTransport
                 } elseif (isset($result['message'])) {
                     $message = (string) $result['message'];
                 }
-                throw new HttpTransportException('Unable to send an email: ' . $message . sprintf(' (code %d).', $statusCode), $response);
+                throw new HttpTransportException('Unable to send an email: ' . esc_html($message) . sprintf(' (code %d).', $statusCode), $response);
             } catch (DecodingExceptionInterface $exception) {
-                throw new HttpTransportException('Unable to send an email: ' . $response->getContent(\false) . sprintf(' (code %d).', $statusCode), $response, 0, $exception);
+                throw new HttpTransportException('Unable to send an email: ' . esc_html($response->getContent(\false)) . sprintf(' (code %d).', $statusCode), $response, 0, $exception);
             }
         }
         try {

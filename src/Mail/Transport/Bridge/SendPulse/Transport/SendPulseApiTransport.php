@@ -41,17 +41,18 @@ final class SendPulseApiTransport extends AbstractApiTransport
         try {
             $statusCode = $response->getStatusCode();
         } catch (Throwable $throwable) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new HttpTransportException('Could not reach the remote SendPulse server.', $response, 0, $throwable);
         }
         if ($statusCode !== 200) {
             $result = $response->toArray(\false);
             if (isset($result['message'])) {
-                throw new HttpTransportException('Unable to send an email: ' . $result['message'] . sprintf(' (code %d).', $statusCode), $response);
+                throw new HttpTransportException('Unable to send an email: ' . esc_html($result['message']) . sprintf(' (code %d).', $statusCode), $response);
             }
             if (isset($result['error_description'])) {
-                throw new HttpTransportException('Unable to send an email: ' . $result['error_description'] . sprintf(' (code %d).', $statusCode), $response);
+                throw new HttpTransportException('Unable to send an email: ' . esc_html($result['error_description']) . sprintf(' (code %d).', $statusCode), $response);
             }
-            throw new HttpTransportException('Unable to send an email: ' . $response->getContent(\false) . sprintf(' (code %d).', $statusCode), $response);
+            throw new HttpTransportException('Unable to send an email: ' . esc_html($response->getContent(\false)) . sprintf(' (code %d).', $statusCode), $response);
         }
         $result = $response->toArray(\false);
         $messageId = $result['result']['id'] ?? $result['id'] ?? 'sendpulse-' . uniqid('', \true);
@@ -112,6 +113,7 @@ final class SendPulseApiTransport extends AbstractApiTransport
         }
         $response = $this->client->request('POST', 'https://' . $this->getEndpoint() . '/oauth/access_token', ['json' => ['grant_type' => 'client_credentials', 'client_id' => $this->clientId, 'client_secret' => $this->clientSecret]]);
         if ($response->getStatusCode() !== 200) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new HttpTransportException('Unable to authenticate with SendPulse API.', $response);
         }
         $result = $response->toArray(\false);

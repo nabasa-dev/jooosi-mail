@@ -118,6 +118,7 @@ abstract class AbstractMailProfile implements \OmniMail\Mail\Profile\MailProfile
             if ($this->hasConfigurationValue($value)) {
                 continue;
             }
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new ConnectionConfigurationException(sprintf('Configuration field "%s" is required for profile "%s" when using scheme "%s".', $fieldName, $profileKey, $scheme));
         }
     }

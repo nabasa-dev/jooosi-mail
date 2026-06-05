@@ -90,6 +90,7 @@ final readonly class MigrationRepository
         try {
             $this->connection->insert($this->tableName(), ['version' => $definition->version, 'class_name' => $definition->className, 'description' => $definition->description, 'executed_at' => $this->timestamp(), 'execution_time_ms' => $executionTimeMs]);
         } catch (Throwable $throwable) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new RuntimeException(sprintf('Unable to record Omni Mail migration "%s".', $definition->version), 0, $throwable);
         }
     }

@@ -25,6 +25,7 @@ final readonly class ConnectionDsnResolver
     {
         $profile = $this->profileRegistry->get($connection->profileKey);
         if (!$profile instanceof MailProfileInterface) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Profile "%s" is not registered.', $connection->profileKey));
         }
         $dsn = $connection->dsn;
@@ -32,6 +33,7 @@ final readonly class ConnectionDsnResolver
             $dsn = $profile->buildDsn($connection);
         }
         if ($dsn === null || $dsn === '') {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Connection "%s" could not resolve a DSN.', $connection->name));
         }
         $scheme = $this->extractDsnScheme($dsn);
@@ -39,6 +41,7 @@ final readonly class ConnectionDsnResolver
             throw new \OmniMail\Mail\Connection\ConnectionConfigurationException('The DSN scheme could not be detected.');
         }
         if (!in_array($scheme, $profile->getSupportedSchemes(), \true)) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Profile "%s" does not support DSN scheme "%s".', $this->profileMetadataResolver->getKey($profile), $scheme));
         }
         return $dsn;

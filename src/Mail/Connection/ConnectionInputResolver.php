@@ -39,6 +39,7 @@ final readonly class ConnectionInputResolver
             throw new \OmniMail\Mail\Connection\ConnectionConfigurationException('Connection name is required.');
         }
         if ($webhookEnabled && $profile->supportsWebhooks() === \false) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Profile "%s" does not support webhooks.', $profileKey));
         }
         return new \OmniMail\Mail\Connection\Connection(id: $existingConnection?->id, profileKey: $profileKey, name: $name, dsn: $dsn, settings: $settings, secrets: $secrets, enabled: $enabled, default: $default, priority: $priority, weight: $weight, webhookEnabled: $webhookEnabled);
@@ -190,6 +191,7 @@ final readonly class ConnectionInputResolver
         }
         $mode = strtolower(trim((string) $value));
         if (!in_array($mode, $allowedModes, \true)) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('%s mode is not supported.', $label));
         }
         return $mode;
@@ -344,6 +346,7 @@ final readonly class ConnectionInputResolver
         }
         $decoded = json_decode($value, \true);
         if (!is_array($decoded)) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Option "%s" must be valid JSON object data.', $key));
         }
         return $decoded;

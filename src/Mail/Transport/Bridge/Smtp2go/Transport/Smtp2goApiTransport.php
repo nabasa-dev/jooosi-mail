@@ -39,17 +39,18 @@ final class Smtp2goApiTransport extends AbstractApiTransport
         try {
             $statusCode = $response->getStatusCode();
         } catch (Throwable $throwable) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new HttpTransportException('Could not reach the remote SMTP2GO server.', $response, 0, $throwable);
         }
         if ($statusCode !== 200) {
             $result = $response->toArray(\false);
             if (isset($result['data']['error'])) {
-                throw new HttpTransportException('Unable to send an email: ' . $result['data']['error'] . sprintf(' (code %d).', $statusCode), $response);
+                throw new HttpTransportException('Unable to send an email: ' . esc_html($result['data']['error']) . sprintf(' (code %d).', $statusCode), $response);
             }
             if (isset($result['data']['errors']) && is_array($result['data']['errors'])) {
-                throw new HttpTransportException('Unable to send an email: ' . implode('; ', $result['data']['errors']) . sprintf(' (code %d).', $statusCode), $response);
+                throw new HttpTransportException('Unable to send an email: ' . implode('; ', array_map('esc_html', $result['data']['errors'])) . sprintf(' (code %d).', $statusCode), $response);
             }
-            throw new HttpTransportException('Unable to send an email: ' . $response->getContent(\false) . sprintf(' (code %d).', $statusCode), $response);
+            throw new HttpTransportException('Unable to send an email: ' . esc_html($response->getContent(\false)) . sprintf(' (code %d).', $statusCode), $response);
         }
         $result = $response->toArray(\false);
         $messageId = $result['data']['email_id'] ?? $result['data']['id'] ?? 'smtp2go-' . uniqid('', \true);

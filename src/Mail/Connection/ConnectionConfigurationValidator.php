@@ -33,10 +33,12 @@ final readonly class ConnectionConfigurationValidator
             }
             $value = $defaults[$fieldName] ?? null;
             if ($this->isFieldRequired($field, $defaults) && !$this->hasConfigurationValue($value)) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new \OmniMail\Mail\Connection\ConnectionConfigurationException($this->buildRequiredFieldMessage($fieldName, $field, $profile, $defaults));
             }
             $choices = is_array($field['choices'] ?? null) ? $field['choices'] : [];
             if ($choices !== [] && $this->hasConfigurationValue($value) && !in_array((string) $value, array_map('strval', $choices), \true)) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Configuration field "%s" must be one of: %s.', $fieldName, implode(', ', array_map('strval', $choices))));
             }
         }
@@ -52,6 +54,7 @@ final readonly class ConnectionConfigurationValidator
             throw new \OmniMail\Mail\Connection\ConnectionConfigurationException('The DSN scheme could not be detected.');
         }
         if (!in_array($scheme, $profile->getSupportedSchemes(), \true)) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Profile "%s" does not support DSN scheme "%s".', $this->profileMetadataResolver->getKey($profile), $scheme));
         }
     }

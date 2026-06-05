@@ -149,11 +149,10 @@ abstract class AbstractWebhookAdapter implements \OmniMail\Webhook\Adapter\Webho
      */
     protected function requestMatchesIpRanges(array $ranges): bool
     {
-        $remoteAddress = $_SERVER['REMOTE_ADDR'] ?? null;
-        if (!is_string($remoteAddress) || trim($remoteAddress) === '') {
+        $remoteAddress = sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'] ?? ''));
+        if ($remoteAddress === '') {
             return \false;
         }
-        $remoteAddress = trim($remoteAddress);
         foreach ($ranges as $range) {
             if ($this->ipMatchesRange($remoteAddress, $range)) {
                 return \true;
