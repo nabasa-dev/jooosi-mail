@@ -31,6 +31,7 @@
 /ROADMAP.md
 /CHANGELOG.md
 /AGENTS.md
+/skills-lock.json
 
 # Vendor development files
 /vendor/bin
