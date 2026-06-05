@@ -25,7 +25,9 @@ final class SmtpComTransportFactory extends AbstractTransportFactory
         return match ($scheme) {
             'smtpcom+api' => (new SmtpComApiTransport($apiKey, $dsn->getOption('channel'), $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
             'smtpcom+smtp', 'smtpcom+smtps' => new SmtpComSmtpTransport($this->getUser($dsn), $this->getPassword($dsn), $port, $this->dispatcher, $this->logger),
-            default => throw new UnsupportedSchemeException($dsn, 'smtpcom', $this->getSupportedSchemes()),
+            default => 
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
+                throw new UnsupportedSchemeException($dsn, 'smtpcom', $this->getSupportedSchemes()),
         };
     }
 

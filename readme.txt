@@ -2,14 +2,14 @@
 Contributors: suabahasa
 Donate link: https://ko-fi.com/Q5Q75XSF7
 Tags: email, smtp, mailer, transactional email, logs
-Requires at least: 6.8
+Requires at least: 7.0
 Tested up to: 7.0
 Stable tag: 1.0.0
 Requires PHP: 8.5
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-A modern WordPress mail delivery plugin that routes wp_mail() through Symfony Mailer, durable queues, provider failover, webhooks, and operational observability.
+A modern WordPress mail delivery plugin routing wp_mail() through Symfony Mailer, with queues, failover, webhooks, and observability.
 
 == Description ==
 

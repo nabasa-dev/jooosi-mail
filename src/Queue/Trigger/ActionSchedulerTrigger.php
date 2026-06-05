@@ -138,6 +138,7 @@ final class ActionSchedulerTrigger
             'timeout' => 0.01,
             'blocking' => false,
             'cookies' => $_COOKIE,
+            // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WordPress core filter, not a custom hook.
             'sslverify' => apply_filters('https_local_ssl_verify', false),
         ]);
     }

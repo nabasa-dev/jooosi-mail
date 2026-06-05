@@ -21,7 +21,7 @@
   </a>
   <a href="https://wordpress.org/">
     <picture>
-      <img src="https://img.shields.io/badge/WordPress-6.8%2B-21759B?logo=wordpress&logoColor=white" alt="WordPress 6.8+" />
+      <img src="https://img.shields.io/badge/WordPress-7.0%2B-21759B?logo=wordpress&logoColor=white" alt="WordPress 7.0+" />
     </picture>
   </a>
   <a href="https://github.com/nabasa-dev/omni-mail">

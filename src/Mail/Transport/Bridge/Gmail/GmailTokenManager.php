@@ -54,11 +54,12 @@ final class GmailTokenManager
         try {
             $statusCode = $response->getStatusCode();
         } catch (TransportExceptionInterface $transportException) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new HttpTransportException('Could not reach the Google OAuth2 server.', $response, 0, $transportException);
         }
 
         if ($statusCode !== 200) {
-            throw new HttpTransportException('Unable to authenticate with Google: ' . $response->getContent(false) . sprintf(' (code %d).', $statusCode), $response);
+            throw new HttpTransportException('Unable to authenticate with Google: ' . esc_html($response->getContent(false)) . sprintf(' (code %d).', $statusCode), $response);
         }
 
         $tokenData = $response->toArray(false);
@@ -66,6 +67,7 @@ final class GmailTokenManager
         $expiresIn = max(0, (int) ($tokenData['expires_in'] ?? 3600));
 
         if ($accessToken === null || $accessToken === '') {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new HttpTransportException('Unable to authenticate with Google: missing access token in response.', $response);
         }
 

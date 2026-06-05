@@ -37,9 +37,9 @@ final class PostmarkWebhookAdapter extends AbstractWebhookAdapter
     #[Override]
     public function verify(WP_REST_Request $request, Connection $connection): bool
     {
-        $remoteAddress = $_SERVER['REMOTE_ADDR'] ?? null;
+        $remoteAddress = sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'] ?? ''));
 
-        return is_string($remoteAddress) && in_array(trim($remoteAddress), self::ALLOWED_IPS, true);
+        return $remoteAddress !== '' && in_array(trim($remoteAddress), self::ALLOWED_IPS, true);
     }
 
     #[Override]

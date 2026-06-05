@@ -55,6 +55,7 @@ final class SendLayerApiTransport extends AbstractApiTransport
         try {
             $statusCode = $response->getStatusCode();
         } catch (Throwable $throwable) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new HttpTransportException('Could not reach the remote SendLayer server.', $response, 0, $throwable);
         }
 
@@ -62,10 +63,10 @@ final class SendLayerApiTransport extends AbstractApiTransport
             $result = $response->toArray(false);
 
             if (isset($result['message'])) {
-                throw new HttpTransportException('Unable to send an email: ' . $result['message'] . sprintf(' (code %d).', $statusCode), $response);
+                throw new HttpTransportException('Unable to send an email: ' . esc_html($result['message']) . sprintf(' (code %d).', $statusCode), $response);
             }
 
-            throw new HttpTransportException('Unable to send an email: ' . $response->getContent(false) . sprintf(' (code %d).', $statusCode), $response);
+            throw new HttpTransportException('Unable to send an email: ' . esc_html($response->getContent(false)) . sprintf(' (code %d).', $statusCode), $response);
         }
 
         $result = $response->toArray(false);

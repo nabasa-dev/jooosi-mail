@@ -29,7 +29,9 @@ final class ToSendTransportFactory extends AbstractTransportFactory
             'tosend+api' => (new ToSendApiTransport($this->getUser($dsn), $this->client, $this->dispatcher, $this->logger))
                 ->setHost($host)
                 ->setPort($port),
-            default => throw new UnsupportedSchemeException($dsn, 'tosend', $this->getSupportedSchemes()),
+            default => 
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
+                throw new UnsupportedSchemeException($dsn, 'tosend', $this->getSupportedSchemes()),
         };
     }
 

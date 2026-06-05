@@ -45,6 +45,7 @@ final readonly class ConnectionInputResolver
         }
 
         if ($webhookEnabled && $profile->supportsWebhooks() === false) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new ConnectionConfigurationException(sprintf('Profile "%s" does not support webhooks.', $profileKey));
         }
 
@@ -268,6 +269,7 @@ final readonly class ConnectionInputResolver
         $mode = strtolower(trim((string) $value));
 
         if (! in_array($mode, $allowedModes, true)) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new ConnectionConfigurationException(sprintf('%s mode is not supported.', $label));
         }
 
@@ -460,6 +462,7 @@ final readonly class ConnectionInputResolver
         $decoded = json_decode($value, true);
 
         if (! is_array($decoded)) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new ConnectionConfigurationException(sprintf('Option "%s" must be valid JSON object data.', $key));
         }
 

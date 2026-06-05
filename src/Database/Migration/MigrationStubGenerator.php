@@ -42,11 +42,13 @@ final readonly class MigrationStubGenerator
         $this->ensureDirectoryExists($directory);
 
         if (file_exists($path)) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new RuntimeException(sprintf('The Omni Mail migration file "%s" already exists.', $path));
         }
 
         $stub = $this->buildStub($className, $version, $description);
         if (file_put_contents($path, $stub, LOCK_EX) === false) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new RuntimeException(sprintf('Unable to write the Omni Mail migration file "%s".', $path));
         }
 
@@ -67,8 +69,9 @@ final readonly class MigrationStubGenerator
             return;
         }
 
-        $created = function_exists('wp_mkdir_p') ? wp_mkdir_p($directory) : mkdir($directory, 0777, true);
+        $created = wp_mkdir_p($directory);
         if (! $created && ! is_dir($directory)) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new RuntimeException(sprintf('The Omni Mail migrations directory "%s" could not be created.', $directory));
         }
     }

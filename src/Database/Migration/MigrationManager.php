@@ -193,7 +193,7 @@ final readonly class MigrationManager
                         'status' => 'failed',
                         'error' => $throwable->getMessage(),
                     ],
-                    'message' => sprintf('Migration %s failed: %s', $definition->version, $throwable->getMessage()),
+                    'message' => sprintf('Migration %s failed: %s', $definition->version, esc_html($throwable->getMessage())),
                 ];
             }
         }
@@ -237,7 +237,7 @@ final readonly class MigrationManager
                         'status' => 'failed',
                         'error' => $throwable->getMessage(),
                     ],
-                    'message' => sprintf('Rollback for migration %s failed: %s', $definition->version, $throwable->getMessage()),
+                    'message' => sprintf('Rollback for migration %s failed: %s', $definition->version, esc_html($throwable->getMessage())),
                 ];
             }
         }
@@ -283,10 +283,12 @@ final readonly class MigrationManager
         foreach ($versions as $version) {
             $definition = $this->migrationRegistry->find($version);
             if (! $definition instanceof MigrationDefinition) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new RuntimeException(sprintf('The Omni Mail migration "%s" could not be found.', $version));
             }
 
             if (in_array($definition->version, $executedVersions, true)) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new RuntimeException(sprintf('The Omni Mail migration "%s" has already been executed.', $definition->version));
             }
 
@@ -393,6 +395,7 @@ final readonly class MigrationManager
             && ! isset($executionMap[$this->executionKey($toVersion)])
             && ! ($this->migrationRegistry->find($toVersion) instanceof MigrationDefinition)
         ) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new RuntimeException(sprintf('The Omni Mail migration "%s" could not be found.', $toVersion));
         }
 
@@ -406,6 +409,7 @@ final readonly class MigrationManager
 
             $definition = $this->migrationRegistry->find($version);
             if (! $definition instanceof MigrationDefinition) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new RuntimeException(sprintf('The executed migration "%s" is not available for rollback.', $version));
             }
 

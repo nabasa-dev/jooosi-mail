@@ -62,6 +62,7 @@ final class GmailApiTransport extends AbstractApiTransport
         try {
             $statusCode = $response->getStatusCode();
         } catch (TransportExceptionInterface $transportException) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new HttpTransportException('Could not reach the Gmail API server.', $response, 0, $transportException);
         }
 
@@ -70,9 +71,9 @@ final class GmailApiTransport extends AbstractApiTransport
                 $result = $response->toArray(false);
                 $message = (string) ($result['error']['message'] ?? $result['error_description'] ?? $result['message'] ?? 'Unknown error');
 
-                throw new HttpTransportException('Unable to send email via Gmail API: ' . $message . sprintf(' (code %d).', $statusCode), $response);
+                throw new HttpTransportException('Unable to send email via Gmail API: ' . esc_html($message) . sprintf(' (code %d).', $statusCode), $response);
             } catch (DecodingExceptionInterface $exception) {
-                throw new HttpTransportException('Unable to send email via Gmail API: ' . $response->getContent(false) . sprintf(' (code %d).', $statusCode), $response, 0, $exception);
+                throw new HttpTransportException('Unable to send email via Gmail API: ' . esc_html($response->getContent(false)) . sprintf(' (code %d).', $statusCode), $response, 0, $exception);
             }
         }
 

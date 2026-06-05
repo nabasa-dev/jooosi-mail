@@ -36,7 +36,9 @@ final class WebhookAdapterRegistry
         return array_find(
             $this->all(),
             static fn (WebhookAdapterInterface $adapter): bool => $adapter->supports($connection),
-        ) ?? throw new RuntimeException(sprintf('No webhook adapter matched connection profile "%s".', $connection->profileKey));
+        )
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
+            ?? throw new RuntimeException(sprintf('No webhook adapter matched connection profile "%s".', $connection->profileKey));
     }
 
     /**

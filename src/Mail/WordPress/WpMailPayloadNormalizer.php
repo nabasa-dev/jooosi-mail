@@ -55,6 +55,7 @@ final class WpMailPayloadNormalizer
             ],
         );
 
+        // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Intentional by design; hook name is well-prefixed with `f!omni-mail/`.
         $filteredMailRequest = apply_filters('f!omni-mail/mail:normalize.request', $mailRequest, $args, $headers);
 
         return $filteredMailRequest instanceof MailRequest ? $filteredMailRequest : $mailRequest;

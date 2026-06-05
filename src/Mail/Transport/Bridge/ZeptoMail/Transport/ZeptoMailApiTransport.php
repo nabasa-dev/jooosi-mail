@@ -66,6 +66,7 @@ final class ZeptoMailApiTransport extends AbstractApiTransport
         try {
             $statusCode = $response->getStatusCode();
         } catch (TransportExceptionInterface $transportException) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new HttpTransportException('Could not reach the remote ZeptoMail server.', $response, 0, $transportException);
         }
 
@@ -79,9 +80,9 @@ final class ZeptoMailApiTransport extends AbstractApiTransport
                     $message .= ': ' . implode('; ', array_map('strval', $details));
                 }
 
-                throw new HttpTransportException('Unable to send an email: ' . $message . sprintf(' (code %d).', $statusCode), $response);
+                throw new HttpTransportException('Unable to send an email: ' . esc_html($message) . sprintf(' (code %d).', $statusCode), $response);
             } catch (DecodingExceptionInterface $exception) {
-                throw new HttpTransportException('Unable to send an email: ' . $response->getContent(false) . sprintf(' (code %d).', $statusCode), $response, 0, $exception);
+                throw new HttpTransportException('Unable to send an email: ' . esc_html($response->getContent(false)) . sprintf(' (code %d).', $statusCode), $response, 0, $exception);
             }
         }
 

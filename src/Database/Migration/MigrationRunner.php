@@ -28,7 +28,8 @@ final readonly class MigrationRunner
         $result = $this->migrationManager->run();
 
         if (isset($result['failed'])) {
-            throw new RuntimeException($result['message']);
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
+            throw new RuntimeException(esc_html($result['message']));
         }
     }
 }

@@ -29,7 +29,9 @@ final class CloudflareTransportFactory extends AbstractTransportFactory
             'cloudflare+api' => (new CloudflareApiTransport($this->getUser($dsn), $this->getPassword($dsn), $this->client, $this->dispatcher, $this->logger))
                 ->setHost($host)
                 ->setPort($port),
-            default => throw new UnsupportedSchemeException($dsn, 'cloudflare', $this->getSupportedSchemes()),
+            default => 
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
+                throw new UnsupportedSchemeException($dsn, 'cloudflare', $this->getSupportedSchemes()),
         };
     }
 

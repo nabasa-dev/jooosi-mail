@@ -25,7 +25,9 @@ final class Smtp2goTransportFactory extends AbstractTransportFactory
         return match ($scheme) {
             'smtp2go+api' => new Smtp2goApiTransport($user, $region, $this->client, $this->dispatcher, $this->logger),
             'smtp2go+smtp', 'smtp2go+smtps' => new Smtp2goSmtpTransport($user, $this->getPassword($dsn), $region, $port, $this->dispatcher, $this->logger),
-            default => throw new UnsupportedSchemeException($dsn, 'smtp2go', $this->getSupportedSchemes()),
+            default => 
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
+                throw new UnsupportedSchemeException($dsn, 'smtp2go', $this->getSupportedSchemes()),
         };
     }
 

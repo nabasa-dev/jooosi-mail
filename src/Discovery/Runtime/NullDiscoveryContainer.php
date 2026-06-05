@@ -24,12 +24,14 @@ final class NullDiscoveryContainer implements ContainerInterface
     public function get(string $id): object
     {
         if (! $this->has($id)) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new RuntimeException(sprintf('Discovery container cannot resolve "%s".', $id));
         }
 
         $reflectionClass = new ReflectionClass($id);
 
         if (! $reflectionClass->isInstantiable()) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new RuntimeException(sprintf('Discovery container cannot instantiate "%s".', $id));
         }
 
@@ -50,6 +52,7 @@ final class NullDiscoveryContainer implements ContainerInterface
                     continue;
                 }
 
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new RuntimeException(sprintf(
                     'Discovery container cannot resolve parameter "$%s" for "%s".',
                     $parameter->getName(),

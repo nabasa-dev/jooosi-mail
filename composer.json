@@ -56,7 +56,7 @@
         "wordpress-plugin": {
             "name": "Omni Mail",
             "version": "1.0.0",
-            "requires-wp": "6.8",
+            "requires-wp": "7.0",
             "tested-wp": "7.0",
             "requires-php": "8.5"
         }
@@ -64,11 +64,11 @@
     "minimum-stability": "stable",
     "require-dev": {
         "phpunit/phpunit": "^9.6",
-        "php-stubs/wordpress-tests-stubs": "^6.8",
-        "php-stubs/wordpress-stubs": "^6.8",
-        "php-stubs/wp-cli-stubs": "^2.12",
+        "php-stubs/wordpress-tests-stubs": "^7.0",
+        "php-stubs/wordpress-stubs": "^7.0",
+        "php-stubs/wp-cli-stubs": "dev-master",
         "wp-cli/wp-cli-bundle": "^2.12",
-        "wp-phpunit/wp-phpunit": "^6.8",
+        "wp-phpunit/wp-phpunit": "^7.0",
         "yoast/phpunit-polyfills": "^4.0"
     },
     "scripts": {

@@ -203,13 +203,11 @@ abstract class AbstractWebhookAdapter implements WebhookAdapterInterface
      */
     protected function requestMatchesIpRanges(array $ranges): bool
     {
-        $remoteAddress = $_SERVER['REMOTE_ADDR'] ?? null;
+        $remoteAddress = sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'] ?? ''));
 
-        if (! is_string($remoteAddress) || trim($remoteAddress) === '') {
+        if ($remoteAddress === '') {
             return false;
         }
-
-        $remoteAddress = trim($remoteAddress);
 
         foreach ($ranges as $range) {
             if ($this->ipMatchesRange($remoteAddress, $range)) {

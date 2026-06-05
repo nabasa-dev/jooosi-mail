@@ -38,10 +38,12 @@ final readonly class MigrationRegistry
             $version = $migration->getVersion();
 
             if ($version === '') {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new RuntimeException(sprintf('The Omni Mail migration class "%s" returned an empty version.', $className));
             }
 
             if (isset($knownVersions[$version])) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new RuntimeException(sprintf('The Omni Mail migration version "%s" is registered more than once.', $version));
             }
 
@@ -124,7 +126,8 @@ final readonly class MigrationRegistry
 
         $definition = $this->find($migration);
         if (! $definition instanceof MigrationDefinition) {
-            throw new RuntimeException(sprintf('The Omni Mail migration "%s" could not be found.', $migration));
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
+                throw new RuntimeException(sprintf('The Omni Mail migration "%s" could not be found.', $migration));
         }
 
         return $this->newInstance($definition->className);
@@ -166,12 +169,14 @@ final readonly class MigrationRegistry
     private function newInstance(string $className): MigrationInterface
     {
         if (! class_exists($className)) {
-            throw new RuntimeException(sprintf('The Omni Mail migration class "%s" could not be autoloaded.', $className));
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
+                throw new RuntimeException(sprintf('The Omni Mail migration class "%s" could not be autoloaded.', $className));
         }
 
         $migration = new $className();
         if (! $migration instanceof MigrationInterface) {
-            throw new RuntimeException(sprintf('The Omni Mail migration class "%s" must implement %s.', $className, MigrationInterface::class));
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
+                throw new RuntimeException(sprintf('The Omni Mail migration class "%s" must implement %s.', $className, MigrationInterface::class));
         }
 
         return $migration;

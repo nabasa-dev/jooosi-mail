@@ -31,6 +31,7 @@ final readonly class ConnectionDsnResolver
         $profile = $this->profileRegistry->get($connection->profileKey);
 
         if (! $profile instanceof MailProfileInterface) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new ConnectionConfigurationException(sprintf('Profile "%s" is not registered.', $connection->profileKey));
         }
 
@@ -41,6 +42,7 @@ final readonly class ConnectionDsnResolver
         }
 
         if ($dsn === null || $dsn === '') {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new ConnectionConfigurationException(sprintf('Connection "%s" could not resolve a DSN.', $connection->name));
         }
 
@@ -51,6 +53,7 @@ final readonly class ConnectionDsnResolver
         }
 
         if (! in_array($scheme, $profile->getSupportedSchemes(), true)) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new ConnectionConfigurationException(sprintf('Profile "%s" does not support DSN scheme "%s".', $this->profileMetadataResolver->getKey($profile), $scheme));
         }
 
