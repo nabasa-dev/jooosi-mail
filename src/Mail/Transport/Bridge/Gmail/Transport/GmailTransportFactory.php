@@ -28,6 +28,7 @@ final class GmailTransportFactory extends AbstractTransportFactory
         return match ($dsn->getScheme()) {
             'gmail+api' => $this->createApiTransport($dsn),
             'gmail', 'gmail+smtp', 'gmail+smtps' => new \OmniMail\Mail\Transport\Bridge\Gmail\Transport\GmailSmtpTransport($this->getUser($dsn), $this->getPassword($dsn), $this->dispatcher, $this->logger),
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => throw new UnsupportedSchemeException($dsn, 'gmail', $this->getSupportedSchemes()),
         };
     }

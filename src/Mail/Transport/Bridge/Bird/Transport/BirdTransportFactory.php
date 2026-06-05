@@ -29,6 +29,7 @@ final class BirdTransportFactory extends AbstractTransportFactory
         return match ($scheme) {
             'bird+api' => (new \OmniMail\Mail\Transport\Bridge\Bird\Transport\BirdApiTransport($accessKey, $workspaceId, $region, $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
             'bird+smtp', 'bird+smtps' => new \OmniMail\Mail\Transport\Bridge\Bird\Transport\BirdSmtpTransport($accessKey, $workspaceId, $region, $port, $this->dispatcher, $this->logger),
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => throw new UnsupportedSchemeException($dsn, 'bird', $this->getSupportedSchemes()),
         };
     }

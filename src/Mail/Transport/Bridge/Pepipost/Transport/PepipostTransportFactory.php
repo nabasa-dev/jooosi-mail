@@ -23,6 +23,7 @@ final class PepipostTransportFactory extends AbstractTransportFactory
         return match ($scheme) {
             'pepipost+api' => (new \OmniMail\Mail\Transport\Bridge\Pepipost\Transport\PepipostApiTransport($user, $region, $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
             'pepipost+smtp', 'pepipost+smtps' => new \OmniMail\Mail\Transport\Bridge\Pepipost\Transport\PepipostSmtpTransport($user, $this->getPassword($dsn), $port, $this->dispatcher, $this->logger),
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => throw new UnsupportedSchemeException($dsn, 'pepipost', $this->getSupportedSchemes()),
         };
     }

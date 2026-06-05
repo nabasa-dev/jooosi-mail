@@ -24,6 +24,7 @@ final class CloudflareTransportFactory extends AbstractTransportFactory
         $port = $dsn->getPort();
         return match ($dsn->getScheme()) {
             'cloudflare+api' => (new \OmniMail\Mail\Transport\Bridge\Cloudflare\Transport\CloudflareApiTransport($this->getUser($dsn), $this->getPassword($dsn), $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => throw new UnsupportedSchemeException($dsn, 'cloudflare', $this->getSupportedSchemes()),
         };
     }

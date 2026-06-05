@@ -22,6 +22,7 @@ final class ElasticEmailTransportFactory extends AbstractTransportFactory
         return match ($scheme) {
             'elasticemail+api' => (new \OmniMail\Mail\Transport\Bridge\ElasticEmail\Transport\ElasticEmailApiTransport($user, $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
             'elasticemail+smtp', 'elasticemail+smtps' => new \OmniMail\Mail\Transport\Bridge\ElasticEmail\Transport\ElasticEmailSmtpTransport($user, $this->getPassword($dsn), $port, $this->dispatcher, $this->logger),
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => throw new UnsupportedSchemeException($dsn, 'elasticemail', $this->getSupportedSchemes()),
         };
     }

@@ -35,6 +35,7 @@ final class ZeptoMailTransportFactory extends AbstractTransportFactory
             'zeptomail+api' => (new \OmniMail\Mail\Transport\Bridge\ZeptoMail\Transport\ZeptoMailApiTransport($user, $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
             'zeptomail', 'zeptomail+smtp' => new \OmniMail\Mail\Transport\Bridge\ZeptoMail\Transport\ZeptoMailSmtpTransport($password === null ? 'emailapikey' : $user, $password ?? $user, $port, $this->dispatcher, $this->logger),
             'zeptomail+smtps' => new \OmniMail\Mail\Transport\Bridge\ZeptoMail\Transport\ZeptoMailSmtpTransport($password === null ? 'emailapikey' : $user, $password ?? $user, $port ?? 465, $this->dispatcher, $this->logger),
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => throw new UnsupportedSchemeException($dsn, 'zeptomail', $this->getSupportedSchemes()),
         };
     }

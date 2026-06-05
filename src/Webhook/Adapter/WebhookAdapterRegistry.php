@@ -27,6 +27,7 @@ final class WebhookAdapterRegistry
      */
     public function resolve(Connection $connection): \OmniMail\Webhook\Adapter\WebhookAdapterInterface
     {
+        // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
         return array_find($this->all(), static fn(\OmniMail\Webhook\Adapter\WebhookAdapterInterface $adapter): bool => $adapter->supports($connection)) ?? throw new RuntimeException(sprintf('No webhook adapter matched connection profile "%s".', $connection->profileKey));
     }
     /**

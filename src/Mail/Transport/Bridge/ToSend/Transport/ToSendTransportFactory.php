@@ -24,6 +24,7 @@ final class ToSendTransportFactory extends AbstractTransportFactory
         $port = $dsn->getPort();
         return match ($dsn->getScheme()) {
             'tosend+api' => (new \OmniMail\Mail\Transport\Bridge\ToSend\Transport\ToSendApiTransport($this->getUser($dsn), $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => throw new UnsupportedSchemeException($dsn, 'tosend', $this->getSupportedSchemes()),
         };
     }

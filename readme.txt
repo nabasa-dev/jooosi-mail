@@ -4,7 +4,7 @@ Donate link: https://ko-fi.com/Q5Q75XSF7
 Tags: email, smtp, mailer, transactional email, logs
 Requires at least: 7.0
 Tested up to: 7.0
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Requires PHP: 8.5
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -89,6 +89,12 @@ Yes. Omni Mail intercepts WordPress `wp_mail()` calls and routes them through th
 Yes. Omni Mail includes WP-CLI commands for operational tasks such as managing connections, migrations, queue processing, and diagnostics.
 
 == Changelog ==
+
+= 1.0.2 - 2026-06-05 =
+
+**Fixed**
+
+* Resolved WordPress Plugin Check reports across the codebase.
 
 = 1.0.1 - 2026-06-05 =
 

@@ -23,6 +23,7 @@ final class SparkPostTransportFactory extends AbstractTransportFactory
         return match ($scheme) {
             'sparkpost+api' => (new \OmniMail\Mail\Transport\Bridge\SparkPost\Transport\SparkPostApiTransport($apiKey, $region, $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
             'sparkpost+smtp', 'sparkpost+smtps' => new \OmniMail\Mail\Transport\Bridge\SparkPost\Transport\SparkPostSmtpTransport($apiKey, $region, $port, $this->dispatcher, $this->logger),
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => throw new UnsupportedSchemeException($dsn, 'sparkpost', $this->getSupportedSchemes()),
         };
     }

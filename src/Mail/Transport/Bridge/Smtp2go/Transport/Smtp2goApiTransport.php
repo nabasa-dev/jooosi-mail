@@ -45,11 +45,14 @@ final class Smtp2goApiTransport extends AbstractApiTransport
         if ($statusCode !== 200) {
             $result = $response->toArray(\false);
             if (isset($result['data']['error'])) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new HttpTransportException('Unable to send an email: ' . esc_html($result['data']['error']) . sprintf(' (code %d).', $statusCode), $response);
             }
             if (isset($result['data']['errors']) && is_array($result['data']['errors'])) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new HttpTransportException('Unable to send an email: ' . implode('; ', array_map('esc_html', $result['data']['errors'])) . sprintf(' (code %d).', $statusCode), $response);
             }
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new HttpTransportException('Unable to send an email: ' . esc_html($response->getContent(\false)) . sprintf(' (code %d).', $statusCode), $response);
         }
         $result = $response->toArray(\false);

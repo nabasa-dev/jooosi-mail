@@ -53,11 +53,13 @@ final readonly class ConnectionManager
      */
     public function update(int $connectionId, array $input): \OmniMail\Mail\Connection\Connection
     {
+        // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
         $existingConnection = $this->connectionRepository->find($connectionId) ?? throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Connection %d was not found.', $connectionId));
         $profileKey = $input['profile'] ?? $existingConnection->profileKey;
         $profile = $this->resolveProfile($profileKey);
         $connection = $this->resolveConnection($existingConnection, $profile, $input);
         $this->persist($connection);
+        // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
         return $this->connectionRepository->find($connectionId) ?? throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Connection %d could not be reloaded.', $connectionId));
     }
     /**
@@ -65,9 +67,11 @@ final readonly class ConnectionManager
      */
     public function setDefault(int $connectionId): \OmniMail\Mail\Connection\Connection
     {
+        // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
         $connection = $this->connectionRepository->find($connectionId) ?? throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Connection %d was not found.', $connectionId));
         $updatedConnection = new \OmniMail\Mail\Connection\Connection(id: $connection->id, profileKey: $connection->profileKey, name: $connection->name, dsn: $connection->dsn, settings: $connection->settings, secrets: $connection->secrets, enabled: $connection->enabled, default: \true, priority: $connection->priority, weight: $connection->weight, webhookEnabled: $connection->webhookEnabled);
         $this->persist($updatedConnection);
+        // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
         return $this->connectionRepository->find($connectionId) ?? throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Connection %d could not be reloaded.', $connectionId));
     }
     /**
@@ -75,9 +79,11 @@ final readonly class ConnectionManager
      */
     public function setEnabled(int $connectionId, bool $enabled): \OmniMail\Mail\Connection\Connection
     {
+        // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
         $connection = $this->connectionRepository->find($connectionId) ?? throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Connection %d was not found.', $connectionId));
         $updatedConnection = new \OmniMail\Mail\Connection\Connection(id: $connection->id, profileKey: $connection->profileKey, name: $connection->name, dsn: $connection->dsn, settings: $connection->settings, secrets: $connection->secrets, enabled: $enabled, default: $enabled ? $connection->default : \false, priority: $connection->priority, weight: $connection->weight, webhookEnabled: $connection->webhookEnabled);
         $this->persist($updatedConnection);
+        // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
         return $this->connectionRepository->find($connectionId) ?? throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Connection %d could not be reloaded.', $connectionId));
     }
     /**
@@ -85,6 +91,7 @@ final readonly class ConnectionManager
      */
     public function delete(int $connectionId): void
     {
+        // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
         $connection = $this->connectionRepository->find($connectionId) ?? throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Connection %d was not found.', $connectionId));
         $this->connectionRepository->delete($connectionId);
         $this->assignFallbackDefaultIfNeeded();

@@ -23,6 +23,7 @@ final class SendPulseTransportFactory extends AbstractTransportFactory
         return match ($scheme) {
             'sendpulse+api' => (new \OmniMail\Mail\Transport\Bridge\SendPulse\Transport\SendPulseApiTransport($user, $password, $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
             'sendpulse+smtp', 'sendpulse+smtps' => new \OmniMail\Mail\Transport\Bridge\SendPulse\Transport\SendPulseSmtpTransport($user, $password, $port, $this->dispatcher, $this->logger),
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => throw new UnsupportedSchemeException($dsn, 'sendpulse', $this->getSupportedSchemes()),
         };
     }

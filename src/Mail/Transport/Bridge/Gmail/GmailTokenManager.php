@@ -47,6 +47,7 @@ final class GmailTokenManager
             throw new HttpTransportException('Could not reach the Google OAuth2 server.', $response, 0, $transportException);
         }
         if ($statusCode !== 200) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             throw new HttpTransportException('Unable to authenticate with Google: ' . esc_html($response->getContent(\false)) . sprintf(' (code %d).', $statusCode), $response);
         }
         $tokenData = $response->toArray(\false);

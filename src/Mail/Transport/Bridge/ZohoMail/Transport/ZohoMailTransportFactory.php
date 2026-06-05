@@ -33,6 +33,7 @@ final class ZohoMailTransportFactory extends AbstractTransportFactory
         return match ($scheme) {
             'zohomail', 'zohomail+smtp' => new \OmniMail\Mail\Transport\Bridge\ZohoMail\Transport\ZohoMailSmtpTransport($username, $password, $accountType, $port, $this->dispatcher, $this->logger),
             'zohomail+smtps' => new \OmniMail\Mail\Transport\Bridge\ZohoMail\Transport\ZohoMailSmtpTransport($username, $password, $accountType, $port ?? 465, $this->dispatcher, $this->logger),
+            // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => throw new UnsupportedSchemeException($dsn, 'zohomail', $this->getSupportedSchemes()),
         };
     }

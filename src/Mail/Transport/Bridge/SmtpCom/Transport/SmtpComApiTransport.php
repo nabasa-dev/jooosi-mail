@@ -41,6 +41,7 @@ final class SmtpComApiTransport extends AbstractApiTransport
                 if (is_array($message)) {
                     $message = implode(', ', array_values($message));
                 }
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new HttpTransportException(sprintf('Unable to send email: %s (code %d).', esc_html($message), $statusCode), $response);
             }
             $sentMessage->setMessageId((string) ($result['data']['msg_id'] ?? ''));

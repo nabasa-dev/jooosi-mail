@@ -60,8 +60,10 @@ final class PepipostApiTransport extends AbstractApiTransport
                 } elseif (isset($result['error_info']['error_message'])) {
                     $message = (string) $result['error_info']['error_message'];
                 }
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new HttpTransportException('Unable to send an email: ' . esc_html($message) . sprintf(' (code %d).', $statusCode), $response);
             } catch (DecodingExceptionInterface $exception) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new HttpTransportException('Unable to send an email: ' . esc_html($response->getContent(\false)) . sprintf(' (code %d).', $statusCode), $response, 0, $exception);
             }
         }
