@@ -1,0 +1,17 @@
+<?php
+
+declare (strict_types=1);
+namespace OmniMail\Queue\Stamp;
+
+use OmniMailDeps\Symfony\Component\Messenger\Stamp\StampInterface;
+/**
+ * Carries queue priority into the database transport.
+ *
+ * @since 0.1.0
+ */
+final readonly class QueuePriorityStamp implements StampInterface
+{
+    public function __construct(public int $priority)
+    {
+    }
+}

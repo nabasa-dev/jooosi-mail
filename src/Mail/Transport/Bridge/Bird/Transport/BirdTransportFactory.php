@@ -1,0 +1,39 @@
+<?php
+
+declare (strict_types=1);
+namespace OmniMail\Mail\Transport\Bridge\Bird\Transport;
+
+use OmniMail\Discovery\Attribute\Service;
+use OmniMail\Discovery\Attribute\TransportFactory;
+use OmniMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
+use OmniMailDeps\Symfony\Component\Mailer\Transport\AbstractTransportFactory;
+use OmniMailDeps\Symfony\Component\Mailer\Transport\Dsn;
+use OmniMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
+/**
+ * Bird custom transport factory.
+ *
+ * @since 0.1.0
+ */
+#[Service]
+#[TransportFactory]
+final class BirdTransportFactory extends AbstractTransportFactory
+{
+    public function create(Dsn $dsn): TransportInterface
+    {
+        $scheme = $dsn->getScheme();
+        $accessKey = $this->getUser($dsn) ?? $this->getPassword($dsn);
+        $workspaceId = $dsn->getOption('workspace_id') ?? '';
+        $host = $dsn->getHost() === 'default' ? null : $dsn->getHost();
+        $port = $dsn->getPort();
+        $region = $dsn->getOption('region');
+        return match ($scheme) {
+            'bird+api' => (new \OmniMail\Mail\Transport\Bridge\Bird\Transport\BirdApiTransport($accessKey, $workspaceId, $region, $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
+            'bird+smtp', 'bird+smtps' => new \OmniMail\Mail\Transport\Bridge\Bird\Transport\BirdSmtpTransport($accessKey, $workspaceId, $region, $port, $this->dispatcher, $this->logger),
+            default => throw new UnsupportedSchemeException($dsn, 'bird', $this->getSupportedSchemes()),
+        };
+    }
+    protected function getSupportedSchemes(): array
+    {
+        return ['bird+api', 'bird+smtp', 'bird+smtps'];
+    }
+}

@@ -1,0 +1,11 @@
+<?php
+
+namespace OmniMailDeps\AsyncAws\Ses\Exception;
+
+use OmniMailDeps\AsyncAws\Core\Exception\Http\ClientException;
+/**
+ * The resource you attempted to access doesn't exist.
+ */
+final class NotFoundException extends ClientException
+{
+}

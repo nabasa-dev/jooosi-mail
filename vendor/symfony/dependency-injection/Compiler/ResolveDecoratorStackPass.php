@@ -1,0 +1,143 @@
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+namespace OmniMailDeps\Symfony\Component\DependencyInjection\Compiler;
+
+use OmniMailDeps\Symfony\Component\DependencyInjection\Alias;
+use OmniMailDeps\Symfony\Component\DependencyInjection\ChildDefinition;
+use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
+use OmniMailDeps\Symfony\Component\DependencyInjection\Definition;
+use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
+use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException;
+use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
+use OmniMailDeps\Symfony\Component\DependencyInjection\Reference;
+use OmniMailDeps\Symfony\Component\VarExporter\DeepCloner;
+/**
+ * @author Nicolas Grekas <p@tchwork.com>
+ */
+class ResolveDecoratorStackPass implements CompilerPassInterface
+{
+    public function process(ContainerBuilder $container): void
+    {
+        $stacks = [];
+        foreach ($container->getDefinitions() as $id => $definition) {
+            if (!$definition->hasTag('container.stack')) {
+                continue;
+            }
+            if (!$definition instanceof ChildDefinition) {
+                throw new InvalidArgumentException(\sprintf('Invalid service "%s": only definitions with a "parent" can have the "container.stack" tag.', $id));
+            }
+            if (!$stack = $definition->getArguments()) {
+                throw new InvalidArgumentException(\sprintf('Invalid service "%s": the stack of decorators is empty.', $id));
+            }
+            $stacks[$id] = $stack;
+            $definitionCloner = null;
+            $stackCloner = null;
+            $hasTagDecorator = \false;
+            foreach ($definition->getTag('container.tag_decorator') as $tag) {
+                if (!$decoratesTag = $tag['decorates_tag'] ?? null) {
+                    continue;
+                }
+                if ($definition->getDecoratedService()) {
+                    throw new InvalidArgumentException(\sprintf('Service stack "%s" cannot have both "decorates" and "decorates_tag".', $id));
+                }
+                $priority = $tag['priority'] ?? 0;
+                $invalidBehavior = $tag['on_invalid'] ?? ContainerInterface::EXCEPTION_ON_INVALID_REFERENCE;
+                if (!$taggedServices = $container->findTaggedServiceIds($decoratesTag)) {
+                    if (ContainerInterface::IGNORE_ON_INVALID_REFERENCE === $invalidBehavior) {
+                        continue;
+                    }
+                    if (ContainerInterface::EXCEPTION_ON_INVALID_REFERENCE === $invalidBehavior) {
+                        throw new ServiceNotFoundException($decoratesTag, $id);
+                    }
+                }
+                $definitionCloner ??= new DeepCloner($definition);
+                $stackCloner ??= new DeepCloner($stack);
+                $hasTagDecorator = \true;
+                foreach ($taggedServices as $taggedServiceId => $_) {
+                    $cloneId = '.stack.' . $taggedServiceId . '.' . $id;
+                    $container->setDefinition($cloneId, $definitionCloner->clone())->clearTag('container.tag_decorator')->clearTag('container.excluded')->setDecoratedService($taggedServiceId, null, $priority, $invalidBehavior);
+                    $stacks[$cloneId] = $stackCloner->clone();
+                }
+            }
+            if ($hasTagDecorator) {
+                $container->removeDefinition($id);
+                unset($stacks[$id]);
+            }
+        }
+        if (!$stacks) {
+            return;
+        }
+        $resolvedDefinitions = [];
+        foreach ($container->getDefinitions() as $id => $definition) {
+            if (!isset($stacks[$id])) {
+                $resolvedDefinitions[$id] = $definition;
+                continue;
+            }
+            $resolved = $this->resolveStack($stacks, [$id]);
+            if ($decoratedService = $definition->getDecoratedService()) {
+                // Propagate decoration to the innermost definition in the stack,
+                // so that DecoratorServicePass can wire it to the original service.
+                end($resolved);
+                $resolved[key($resolved)]->setDecoratedService($decoratedService[0], $decoratedService[1], $decoratedService[2], $decoratedService[3] ?? ContainerInterface::EXCEPTION_ON_INVALID_REFERENCE);
+            }
+            foreach (array_reverse($resolved, \true) as $k => $v) {
+                $resolvedDefinitions[$k] = $v;
+            }
+            $alias = $container->setAlias($id, $k);
+            if ($definition->getChanges()['public'] ?? \false) {
+                $alias->setPublic($definition->isPublic());
+            }
+            if ($definition->isDeprecated()) {
+                $alias->setDeprecated(...array_values($definition->getDeprecation('%alias_id%')));
+            }
+        }
+        $container->setDefinitions($resolvedDefinitions);
+    }
+    private function resolveStack(array $stacks, array $path): array
+    {
+        $definitions = [];
+        $id = end($path);
+        $prefix = '.' . $id . '.';
+        if (!isset($stacks[$id])) {
+            return [$id => new ChildDefinition($id)];
+        }
+        if (key($path) !== $searchKey = array_search($id, $path)) {
+            throw new ServiceCircularReferenceException($id, \array_slice($path, $searchKey));
+        }
+        foreach ($stacks[$id] as $k => $definition) {
+            if ($definition instanceof ChildDefinition && isset($stacks[$definition->getParent()])) {
+                $path[] = $definition->getParent();
+                $definition = DeepCloner::deepClone($definition);
+            } elseif ($definition instanceof Definition) {
+                $definitions[$decoratedId = $prefix . $k] = $definition;
+                continue;
+            } elseif ($definition instanceof Reference || $definition instanceof Alias) {
+                $path[] = (string) $definition;
+            } else {
+                throw new InvalidArgumentException(\sprintf('Invalid service "%s": unexpected value of type "%s" found in the stack of decorators.', $id, get_debug_type($definition)));
+            }
+            $p = $prefix . $k;
+            foreach ($this->resolveStack($stacks, $path) as $k => $v) {
+                $definitions[$decoratedId = $p . $k] = $definition instanceof ChildDefinition ? $definition->setParent($k) : new ChildDefinition($k);
+                $definition = null;
+            }
+            array_pop($path);
+        }
+        if (1 === \count($path)) {
+            foreach ($definitions as $k => $definition) {
+                $definition->setPublic(\false)->setTags([])->setDecoratedService($decoratedId);
+            }
+            $definition->setDecoratedService(null);
+        }
+        return $definitions;
+    }
+}

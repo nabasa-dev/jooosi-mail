@@ -1,0 +1,51 @@
+{
+  "node_modules/.pnpm/@shikijs+core@4.2.0/node_modules/@shikijs/core/dist/index.mjs": {
+    "file": "assets/dist-DojtL_4D.js",
+    "name": "dist",
+    "src": "node_modules/.pnpm/@shikijs+core@4.2.0/node_modules/@shikijs/core/dist/index.mjs",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/App.tsx"
+    ]
+  },
+  "node_modules/.pnpm/@shikijs+engine-javascript@4.2.0/node_modules/@shikijs/engine-javascript/dist/index.mjs": {
+    "file": "assets/dist-FQvzRocB.js",
+    "name": "dist",
+    "src": "node_modules/.pnpm/@shikijs+engine-javascript@4.2.0/node_modules/@shikijs/engine-javascript/dist/index.mjs",
+    "isDynamicEntry": true
+  },
+  "node_modules/.pnpm/@shikijs+langs@4.2.0/node_modules/@shikijs/langs/dist/html.mjs": {
+    "file": "assets/html-BCZ6Aylz.js",
+    "name": "html",
+    "src": "node_modules/.pnpm/@shikijs+langs@4.2.0/node_modules/@shikijs/langs/dist/html.mjs",
+    "isDynamicEntry": true
+  },
+  "node_modules/.pnpm/@shikijs+langs@4.2.0/node_modules/@shikijs/langs/dist/json.mjs": {
+    "file": "assets/json-qhed-kSA.js",
+    "name": "json",
+    "src": "node_modules/.pnpm/@shikijs+langs@4.2.0/node_modules/@shikijs/langs/dist/json.mjs",
+    "isDynamicEntry": true
+  },
+  "node_modules/.pnpm/@shikijs+themes@4.2.0/node_modules/@shikijs/themes/dist/github-light.mjs": {
+    "file": "assets/github-light-EUqPIrTm.js",
+    "name": "github-light",
+    "src": "node_modules/.pnpm/@shikijs+themes@4.2.0/node_modules/@shikijs/themes/dist/github-light.mjs",
+    "isDynamicEntry": true
+  },
+  "resources/App.tsx": {
+    "file": "assets/app-6JVA_2zO.js",
+    "name": "app",
+    "src": "resources/App.tsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "node_modules/.pnpm/@shikijs+core@4.2.0/node_modules/@shikijs/core/dist/index.mjs",
+      "node_modules/.pnpm/@shikijs+engine-javascript@4.2.0/node_modules/@shikijs/engine-javascript/dist/index.mjs",
+      "node_modules/.pnpm/@shikijs+langs@4.2.0/node_modules/@shikijs/langs/dist/html.mjs",
+      "node_modules/.pnpm/@shikijs+langs@4.2.0/node_modules/@shikijs/langs/dist/json.mjs",
+      "node_modules/.pnpm/@shikijs+themes@4.2.0/node_modules/@shikijs/themes/dist/github-light.mjs"
+    ],
+    "css": [
+      "assets/app-DjdNEj-c.css"
+    ]
+  }
+}

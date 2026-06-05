@@ -1,0 +1,37 @@
+{
+    "name": "async-aws\/ses",
+    "description": "SES client, part of the AWS SDK provided by AsyncAws.",
+    "license": "MIT",
+    "type": "library",
+    "keywords": [
+        "aws",
+        "amazon",
+        "sdk",
+        "async-aws",
+        "ses"
+    ],
+    "require": {
+        "php": "^8.2",
+        "async-aws\/core": "^1.9"
+    },
+    "require-dev": {
+        "phpunit\/phpunit": "^11.5.42",
+        "symfony\/error-handler": "^7.3.2 || ^8.0",
+        "symfony\/phpunit-bridge": "^7.3.2 || ^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "OmniMailDeps\\AsyncAws\\Ses\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OmniMailDeps\\AsyncAws\\Ses\\Tests\\": "tests\/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.15-dev"
+        }
+    }
+}
