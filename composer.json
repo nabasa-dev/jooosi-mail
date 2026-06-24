@@ -12,7 +12,7 @@
         "symfony/amazon-mailer": "^8.0",
         "symfony/azure-mailer": "^8.0",
         "symfony/brevo-mailer": "^8.0",
-        "symfony/cache": "^7.3",
+        "symfony/cache": "^7.4",
         "symfony/dependency-injection": "^8.0",
         "symfony/http-client": "^8.0",
         "symfony/infobip-mailer": "^8.0",
@@ -55,7 +55,7 @@
     "extra": {
         "wordpress-plugin": {
             "name": "Omni Mail",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "requires-wp": "7.0",
             "tested-wp": "7.0",
             "requires-php": "8.5"
