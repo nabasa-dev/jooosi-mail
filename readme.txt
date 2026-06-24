@@ -4,7 +4,7 @@ Donate link: https://ko-fi.com/Q5Q75XSF7
 Tags: email, smtp, mailer, transactional email, logs
 Requires at least: 7.0
 Tested up to: 7.0
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 Requires PHP: 8.5
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -68,6 +68,23 @@ Omni Mail works with SMTP and many popular email providers. Available sending me
 
 Visit [the GitHub repository](https://github.com/nabasa-dev/omni-mail) for documentation, development notes, and issue tracking.
 
+### External services
+
+Omni Mail routes WordPress emails through third-party email service providers. No data is sent to any external service unless the site administrator explicitly configures a connection to that provider.
+
+When Omni Mail sends an email, the following data is transmitted to the configured provider:
+
+- Email content (subject, body, headers)
+- Recipient address(es)
+- Sender address (From, Reply-To)
+- Attachments (if any)
+
+This data is sent only when WordPress processes queued or immediate emails (via `wp_mail()` or Action Scheduler). Omni Mail does not collect or transmit any data independently.
+
+If webhooks are enabled for a supported provider, that provider may send delivery, bounce, complaint, open, and click data back to your WordPress site.
+
+See the [Supported Providers](#description) list for links to each provider's website. Each provider has its own terms of service and privacy policy — please review the terms of your chosen provider.
+
 == Installation ==
 
 1. Upload the plugin files to `/wp-content/plugins/omni-mail`, or install the plugin through the WordPress plugins screen.
@@ -89,6 +106,12 @@ Yes. Omni Mail intercepts WordPress `wp_mail()` calls and routes them through th
 Yes. Omni Mail includes WP-CLI commands for operational tasks such as managing connections, migrations, queue processing, and diagnostics.
 
 == Changelog ==
+
+= 1.0.3 - 2026-06-24 =
+
+**Changed**
+
+* Update to address the WordPress.org submission review feedback.
 
 = 1.0.2 - 2026-06-05 =
 

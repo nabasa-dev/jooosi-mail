@@ -7,6 +7,7 @@ use ArgumentCountError;
 use AssertionError;
 use Closure;
 use OmniMailDeps\Pest\Exceptions\InvalidPestCommand;
+use OmniMailDeps\Pest\Exceptions\TestAlreadyExist;
 use OmniMailDeps\Psr\Container\ContainerInterface;
 use OmniMailDeps\Psr\Container\NotFoundExceptionInterface;
 use OmniMailDeps\Tempest\Discovery\Exceptions\DiscoveryClassCouldNotBeResolved;
@@ -156,8 +157,8 @@ final class BootDiscovery
                 } elseif (class_exists($className)) {
                     $input = new ClassReflector($className);
                 }
-            } catch (AssertionError|InvalidPestCommand) {
-                // @phpstan-ignore class.notFound
+                // @phpstan-ignore-next-line
+            } catch (AssertionError|InvalidPestCommand|TestAlreadyExist) {
                 // Workaround for Pest test files autoloading.
                 // @mago-expect lint:no-empty-catch-clause
             }

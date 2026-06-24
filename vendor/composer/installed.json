@@ -493,23 +493,23 @@
         },
         {
             "name": "nabasa\/vp-wp",
-            "version": "v0.3.1",
-            "version_normalized": "0.3.1.0",
+            "version": "v0.3.2",
+            "version_normalized": "0.3.2.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/nabasa-dev\/vp-wp.git",
-                "reference": "6b8e91b8265260fb5337b7a0e5d0192b8ea6e0f3"
+                "reference": "6bac3a284c43206075c0c833e35f35d2aeda3e92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/nabasa-dev\/vp-wp\/zipball\/6b8e91b8265260fb5337b7a0e5d0192b8ea6e0f3",
-                "reference": "6b8e91b8265260fb5337b7a0e5d0192b8ea6e0f3",
+                "url": "https:\/\/api.github.com\/repos\/nabasa-dev\/vp-wp\/zipball\/6bac3a284c43206075c0c833e35f35d2aeda3e92",
+                "reference": "6bac3a284c43206075c0c833e35f35d2aeda3e92",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.4"
             },
-            "time": "2026-03-25T13:19:31+00:00",
+            "time": "2026-06-05T16:36:35+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -2920,17 +2920,17 @@
         },
         {
             "name": "symfony\/polyfill-deepclone",
-            "version": "v1.37.0",
-            "version_normalized": "1.37.0.0",
+            "version": "v1.40.0",
+            "version_normalized": "1.40.0.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/symfony\/polyfill-deepclone.git",
-                "reference": "2ca9e9e75ead5174f2b44613a646bdc9338b8eb4"
+                "reference": "dca4ccba5f360070b574414dce4c1e7a559844fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/symfony\/polyfill-deepclone\/zipball\/2ca9e9e75ead5174f2b44613a646bdc9338b8eb4",
-                "reference": "2ca9e9e75ead5174f2b44613a646bdc9338b8eb4",
+                "url": "https:\/\/api.github.com\/repos\/symfony\/polyfill-deepclone\/zipball\/dca4ccba5f360070b574414dce4c1e7a559844fa",
+                "reference": "dca4ccba5f360070b574414dce4c1e7a559844fa",
                 "shasum": ""
             },
             "require": {
@@ -2942,7 +2942,7 @@
             "suggest": {
                 "ext-deepclone": "For best performance"
             },
-            "time": "2026-04-26T13:03:27+00:00",
+            "time": "2026-06-12T07:27:17+00:00",
             "type": "library",
             "extra": {
                 "thanks": {
@@ -2986,7 +2986,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https:\/\/github.com\/symfony\/polyfill-deepclone\/tree\/v1.37.0"
+                "source": "https:\/\/github.com\/symfony\/polyfill-deepclone\/tree\/v1.40.0"
             },
             "funding": [
                 {
@@ -3273,17 +3273,17 @@
         },
         {
             "name": "symfony\/polyfill-mbstring",
-            "version": "v1.38.1",
-            "version_normalized": "1.38.1.0",
+            "version": "v1.38.2",
+            "version_normalized": "1.38.2.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/symfony\/polyfill-mbstring.git",
-                "reference": "14c5439eec4ccff081ac14eca2dc57feb2a66d92"
+                "reference": "d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/symfony\/polyfill-mbstring\/zipball\/14c5439eec4ccff081ac14eca2dc57feb2a66d92",
-                "reference": "14c5439eec4ccff081ac14eca2dc57feb2a66d92",
+                "url": "https:\/\/api.github.com\/repos\/symfony\/polyfill-mbstring\/zipball\/d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6",
+                "reference": "d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6",
                 "shasum": ""
             },
             "require": {
@@ -3296,7 +3296,7 @@
             "suggest": {
                 "ext-mbstring": "For best performance"
             },
-            "time": "2026-05-26T12:51:13+00:00",
+            "time": "2026-05-27T06:59:30+00:00",
             "type": "library",
             "extra": {
                 "thanks": {
@@ -3337,7 +3337,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https:\/\/github.com\/symfony\/polyfill-mbstring\/tree\/v1.38.1"
+                "source": "https:\/\/github.com\/symfony\/polyfill-mbstring\/tree\/v1.38.2"
             },
             "funding": [
                 {
@@ -4503,31 +4503,31 @@
         },
         {
             "name": "tempest\/discovery",
-            "version": "v3.11.5",
-            "version_normalized": "3.11.5.0",
+            "version": "v3.12.3",
+            "version_normalized": "3.12.3.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/tempestphp\/tempest-discovery.git",
-                "reference": "3c393bb85132d710ed70ed868c5ae989738d533b"
+                "reference": "9a5986867d3262452abe782ce2c4b2099e35b067"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/tempestphp\/tempest-discovery\/zipball\/3c393bb85132d710ed70ed868c5ae989738d533b",
-                "reference": "3c393bb85132d710ed70ed868c5ae989738d533b",
+                "url": "https:\/\/api.github.com\/repos\/tempestphp\/tempest-discovery\/zipball\/9a5986867d3262452abe782ce2c4b2099e35b067",
+                "reference": "9a5986867d3262452abe782ce2c4b2099e35b067",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.5",
                 "psr\/container": "^2.0",
                 "symfony\/cache": "^7.3",
-                "tempest\/reflection": "3.11.5",
-                "tempest\/support": "3.11.5"
+                "tempest\/reflection": "3.12.3",
+                "tempest\/support": "3.12.3"
             },
             "require-dev": {
                 "php-di\/php-di": "^7.0",
-                "tempest\/container": "3.11.5"
+                "tempest\/container": "3.12.3"
             },
-            "time": "2026-06-05T06:23:00+00:00",
+            "time": "2026-06-24T07:26:15+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -4541,14 +4541,14 @@
             ],
             "description": "Discover PHP classes and files",
             "support": {
-                "source": "https:\/\/github.com\/tempestphp\/tempest-discovery\/tree\/v3.11.5"
+                "source": "https:\/\/github.com\/tempestphp\/tempest-discovery\/tree\/v3.12.3"
             },
             "install-path": "..\/tempest\/discovery"
         },
         {
             "name": "tempest\/reflection",
-            "version": "v3.11.5",
-            "version_normalized": "3.11.5.0",
+            "version": "v3.12.3",
+            "version_normalized": "3.12.3.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/tempestphp\/tempest-reflection.git",
@@ -4580,23 +4580,23 @@
             ],
             "description": "A component for reflection.",
             "support": {
-                "source": "https:\/\/github.com\/tempestphp\/tempest-reflection\/tree\/v3.11.5"
+                "source": "https:\/\/github.com\/tempestphp\/tempest-reflection\/tree\/v3.12.3"
             },
             "install-path": "..\/tempest\/reflection"
         },
         {
             "name": "tempest\/support",
-            "version": "v3.11.5",
-            "version_normalized": "3.11.5.0",
+            "version": "v3.12.3",
+            "version_normalized": "3.12.3.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/tempestphp\/tempest-support.git",
-                "reference": "a6c770a3647ba094f059247efd15202c298b47de"
+                "reference": "cd59864d9843cb6ef5c13147c589de9a9f5e3702"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/tempestphp\/tempest-support\/zipball\/a6c770a3647ba094f059247efd15202c298b47de",
-                "reference": "a6c770a3647ba094f059247efd15202c298b47de",
+                "url": "https:\/\/api.github.com\/repos\/tempestphp\/tempest-support\/zipball\/cd59864d9843cb6ef5c13147c589de9a9f5e3702",
+                "reference": "cd59864d9843cb6ef5c13147c589de9a9f5e3702",
                 "shasum": ""
             },
             "require": {
@@ -4604,7 +4604,7 @@
                 "symfony\/uid": "^7.1",
                 "voku\/portable-ascii": "^2.0.3"
             },
-            "time": "2026-06-02T16:52:57+00:00",
+            "time": "2026-06-24T06:46:52+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -4635,7 +4635,7 @@
             ],
             "description": "A component for general support helper functions.",
             "support": {
-                "source": "https:\/\/github.com\/tempestphp\/tempest-support\/tree\/v3.11.5"
+                "source": "https:\/\/github.com\/tempestphp\/tempest-support\/tree\/v3.12.3"
             },
             "install-path": "..\/tempest\/support"
         },

@@ -71,7 +71,7 @@ function get_all_matches(Stringable|string $subject, Stringable|string $pattern,
  *       )
  * )
  */
-function get_match(Stringable|string $subject, Stringable|string $pattern, null|array|Stringable|int|string $match = null, mixed $default = null, int $flags = 0, int $offset = 0): mixed
+function get_match(Stringable|string $subject, Stringable|string $pattern, array|Stringable|int|string|null $match = null, mixed $default = null, int $flags = 0, int $offset = 0): mixed
 {
     $result = get_matches($subject, $pattern, \false, $flags, $offset);
     if ($match === null) {

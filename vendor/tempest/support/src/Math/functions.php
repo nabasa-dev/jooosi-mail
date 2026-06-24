@@ -307,7 +307,7 @@ function max_by(iterable $numbers, Closure $numericFunction): mixed
  *
  * @return ($numbers is non-empty-list<T> ? T : null)
  */
-function max(array $numbers): null|int|float
+function max(array $numbers): int|float|null
 {
     $max = null;
     foreach ($numbers as $number) {
@@ -421,7 +421,7 @@ function min_by(iterable $numbers, Closure $numericFunction): mixed
  *
  * @return ($numbers is non-empty-list<T> ? T : null)
  */
-function min(array $numbers): null|float|int
+function min(array $numbers): float|int|null
 {
     $min = null;
     foreach ($numbers as $number) {

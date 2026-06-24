@@ -17,7 +17,7 @@ use OmniMailDeps\Tempest\Support\Str\ImmutableString;
  * to_fqcn('app/Auth/User'); // App\Auth\User
  * ```
  */
-function to_fqcn(Stringable|string $path, null|Stringable|string $root = null): string
+function to_fqcn(Stringable|string $path, Stringable|string|null $root = null): string
 {
     $namespace = prepare_namespace($path, $root)->stripEnd('\\')->explode('\\')->map(fn(string $segment) => Str\to_pascal_case($segment))->implode('\\')->toString();
     if (!Str\ends_with($path, '.php')) {
@@ -34,7 +34,7 @@ function to_fqcn(Stringable|string $path, null|Stringable|string $root = null): 
  * to_namespace('app/Auth/User'); // App\Auth\User
  * ```
  */
-function to_namespace(Stringable|string $path, null|Stringable|string $root = null): string
+function to_namespace(Stringable|string $path, Stringable|string|null $root = null): string
 {
     return prepare_namespace($path, $root)->stripEnd('\\')->explode('\\')->map(fn(string $segment) => Str\to_pascal_case($segment))->implode('\\')->toString();
 }
@@ -51,7 +51,7 @@ function to_namespace(Stringable|string $path, null|Stringable|string $root = nu
  * to_psr4_namespace(new Psr4Namespace('App', 'app/'), 'app/Auth/User'); // App\Auth\User
  * ```
  */
-function to_psr4_namespace(Psr4Namespace|array $namespaces, Stringable|string $path, null|Stringable|string $root = null): string
+function to_psr4_namespace(Psr4Namespace|array $namespaces, Stringable|string $path, Stringable|string|null $root = null): string
 {
     $relativePath = prepare_namespace($path, $root)->stripEnd('\\')->replace('\\', '/')->finish('/');
     foreach (Arr\wrap($namespaces) as $namespace) {
@@ -73,7 +73,7 @@ function to_base_class_name(string $path): string
  * This function is used internally by other namespace-related functions. It is not meant for userland usage.
  * @internal
  */
-function prepare_namespace(Stringable|string $path, null|Stringable|string $root = null): ImmutableString
+function prepare_namespace(Stringable|string $path, Stringable|string|null $root = null): ImmutableString
 {
     $normalized = (new ImmutableString($path))->stripStart($root ?? '')->stripStart('/')->replace(['/', '//'], '\\');
     // If the path is a to a PHP file, we exclude the file name. Otherwise,
