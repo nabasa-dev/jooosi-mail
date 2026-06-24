@@ -68,6 +68,23 @@ Omni Mail works with SMTP and many popular email providers. Available sending me
 
 Visit [the GitHub repository](https://github.com/nabasa-dev/omni-mail) for documentation, development notes, and issue tracking.
 
+### External services
+
+Omni Mail routes WordPress emails through third-party email service providers. No data is sent to any external service unless the site administrator explicitly configures a connection to that provider.
+
+When Omni Mail sends an email, the following data is transmitted to the configured provider:
+
+- Email content (subject, body, headers)
+- Recipient address(es)
+- Sender address (From, Reply-To)
+- Attachments (if any)
+
+This data is sent only when WordPress processes queued or immediate emails (via `wp_mail()` or Action Scheduler). Omni Mail does not collect or transmit any data independently.
+
+If webhooks are enabled for a supported provider, that provider may send delivery, bounce, complaint, open, and click data back to your WordPress site.
+
+See the [Supported Providers](#description) list for links to each provider's website. Each provider has its own terms of service and privacy policy — please review the terms of your chosen provider.
+
 == Installation ==
 
 1. Upload the plugin files to `/wp-content/plugins/omni-mail`, or install the plugin through the WordPress plugins screen.
