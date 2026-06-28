@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Routing\State;
+namespace JooosiMail\Mail\Routing\State;
 
 use Doctrine\DBAL\Connection as DbalConnection;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
 use RuntimeException;
 use Throwable;
 

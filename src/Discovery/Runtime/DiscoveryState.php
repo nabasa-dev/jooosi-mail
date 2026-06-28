@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Discovery\Runtime;
+namespace JooosiMail\Discovery\Runtime;
 
 /**
  * Temporary in-memory state used while Tempest discovery runs.

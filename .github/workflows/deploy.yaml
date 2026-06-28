@@ -11,9 +11,9 @@ env:
   COMPOSER_ROOT_VERSION: "dev-main"
 
 jobs:
-  build_scoped_omni_mail:
+  build_scoped_jooosi_mail:
     # Don't run on forks.
-    if: github.repository == 'nabasa-dev/omni-mail'
+    if: github.repository == 'nabasa-dev/jooosi-mail'
 
     runs-on: ubuntu-latest
     timeout-minutes: 45
@@ -81,18 +81,18 @@ jobs:
 
       - name: Copy files for scoping
         run: |
-          mkdir -p omni-mail-deploy
-          rsync -av --exclude omni-mail-deploy --exclude .git ./ omni-mail-deploy/ --quiet
+          mkdir -p jooosi-mail-deploy
+          rsync -av --exclude jooosi-mail-deploy --exclude .git ./ jooosi-mail-deploy/ --quiet
 
       - name: Scope vendor namespaces
-        run: sh deploy/deploy-scoped.sh omni-mail-deploy omni-mail-prefixed
+        run: sh deploy/deploy-scoped.sh jooosi-mail-deploy jooosi-mail-prefixed
 
       - name: Apply .distignore filter
         run: |
-          mkdir -p omni-mail-final
-          rsync -av --exclude-from=".distignore" omni-mail-prefixed/ omni-mail-final/ --quiet
-          rm -rf omni-mail-prefixed
-          mv omni-mail-final omni-mail-prefixed
+          mkdir -p jooosi-mail-final
+          rsync -av --exclude-from=".distignore" jooosi-mail-prefixed/ jooosi-mail-final/ --quiet
+          rm -rf jooosi-mail-prefixed
+          mv jooosi-mail-final jooosi-mail-prefixed
 
       - name: Checkout or create dist branch
         run: |
@@ -104,7 +104,7 @@ jobs:
           git clean -fxd
 
       - name: Copy scoped plugin to dist branch
-        run: cp -a omni-mail-prefixed/. dist-branch
+        run: cp -a jooosi-mail-prefixed/. dist-branch
 
       - name: Configure git author
         working-directory: dist-branch
@@ -116,7 +116,7 @@ jobs:
         id: git-log
         run: |
           echo "log<<EOF" >> $GITHUB_OUTPUT
-          echo "$(git log ${{ github.event.before }}..${{ github.event.after }} --reverse --pretty='https://github.com/nabasa-dev/omni-mail/commit/%H %s')" >> $GITHUB_OUTPUT
+          echo "$(git log ${{ github.event.before }}..${{ github.event.after }} --reverse --pretty='https://github.com/nabasa-dev/jooosi-mail/commit/%H %s')" >> $GITHUB_OUTPUT
           echo 'EOF' >> $GITHUB_OUTPUT
 
       - name: Commit prefixed build
@@ -128,7 +128,7 @@ jobs:
           VERSION=${GITHUB_REF#refs/tags/}
           VERSION_NO_V=${VERSION#v}
           git add --all
-          git commit -m "Omni Mail $VERSION_NO_V" -m "$INPUT_LOG"
+          git commit -m "Jooosi Mail $VERSION_NO_V" -m "$INPUT_LOG"
           git push --quiet origin dist
 
       # - name: WordPress Plugin Deploy
@@ -136,19 +136,19 @@ jobs:
       #   env:
       #     SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
       #     SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
-      #     SLUG: omni-mail
-      #     BUILD_DIR: omni-mail-prefixed
+      #     SLUG: jooosi-mail
+      #     BUILD_DIR: jooosi-mail-prefixed
       #     VERSION: ${{ github.ref_name }}
       #     ASSETS_DIR: .wordpress-org
 
       - name: Create plugin zip file
         run: |
-          mkdir -p omni-mail-zip/omni-mail
-          cp -r omni-mail-prefixed/* omni-mail-zip/omni-mail/
-          cd omni-mail-zip
-          zip -r "../omni-mail-${{ github.ref_name }}.zip" . -x "*.git*" "*.DS_Store*"
+          mkdir -p jooosi-mail-zip/jooosi-mail
+          cp -r jooosi-mail-prefixed/* jooosi-mail-zip/jooosi-mail/
+          cd jooosi-mail-zip
+          zip -r "../jooosi-mail-${{ github.ref_name }}.zip" . -x "*.git*" "*.DS_Store*"
           cd ..
-          ls -la omni-mail-*.zip
+          ls -la jooosi-mail-*.zip
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
@@ -157,7 +157,7 @@ jobs:
           name: "${{ github.ref_name }}"
           body: ${{ steps.changelog.outputs.content }}
           files: |
-            omni-mail-${{ github.ref_name }}.zip
+            jooosi-mail-${{ github.ref_name }}.zip
           draft: false
           prerelease: false
         env:

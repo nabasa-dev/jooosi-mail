@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Admin\Mail;
+namespace JooosiMail\Admin\Mail;
 
-use OmniMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\Service;
 
 /**
- * Renders the generated Omni Mail test message in text and HTML formats.
+ * Renders the generated Jooosi Mail test message in text and HTML formats.
  *
  * @since 0.1.0
  */
@@ -32,14 +32,14 @@ final readonly class TestEmailTemplateRenderer
         $siteUrl = (string) home_url('/');
         $sentAt = wp_date((string) get_option('date_format') . ' ' . (string) get_option('time_format'));
         $details = [
-            ['key' => 'connection', 'label' => __('Connection used', 'omni-mail'), 'value' => $connectionLabel],
-            ['key' => 'profile', 'label' => __('Profile', 'omni-mail'), 'value' => $connectionProfile],
-            ['key' => 'mode', 'label' => __('Delivery mode', 'omni-mail'), 'value' => $deliveryMode],
-            ['key' => 'strategy', 'label' => __('Routing strategy', 'omni-mail'), 'value' => $routingStrategy],
-            ['key' => 'recipient', 'label' => __('Recipient', 'omni-mail'), 'value' => $recipientSummary],
-            ['key' => 'mail_log', 'label' => __('Mail log', 'omni-mail'), 'value' => $mailLogLabel],
-            ['key' => 'site', 'label' => __('Site', 'omni-mail'), 'value' => $siteName],
-            ['key' => 'sent_at', 'label' => __('Sent at', 'omni-mail'), 'value' => $sentAt],
+            ['key' => 'connection', 'label' => __('Connection used', 'jooosi-mail'), 'value' => $connectionLabel],
+            ['key' => 'profile', 'label' => __('Profile', 'jooosi-mail'), 'value' => $connectionProfile],
+            ['key' => 'mode', 'label' => __('Delivery mode', 'jooosi-mail'), 'value' => $deliveryMode],
+            ['key' => 'strategy', 'label' => __('Routing strategy', 'jooosi-mail'), 'value' => $routingStrategy],
+            ['key' => 'recipient', 'label' => __('Recipient', 'jooosi-mail'), 'value' => $recipientSummary],
+            ['key' => 'mail_log', 'label' => __('Mail log', 'jooosi-mail'), 'value' => $mailLogLabel],
+            ['key' => 'site', 'label' => __('Site', 'jooosi-mail'), 'value' => $siteName],
+            ['key' => 'sent_at', 'label' => __('Sent at', 'jooosi-mail'), 'value' => $sentAt],
         ];
 
         return [
@@ -56,12 +56,12 @@ final readonly class TestEmailTemplateRenderer
     private function renderTextBody(array $details): string
     {
         $lines = [
-            __('Omni Mail test email', 'omni-mail'),
+            __('Jooosi Mail test email', 'jooosi-mail'),
             '',
-            __('Delivery diagnostic: passed', 'omni-mail'),
-            __('This generated message confirms that Omni Mail rendered both HTML and plain-text alternatives and routed the delivery through your configured connection.', 'omni-mail'),
+            __('Delivery diagnostic: passed', 'jooosi-mail'),
+            __('This generated message confirms that Jooosi Mail rendered both HTML and plain-text alternatives and routed the delivery through your configured connection.', 'jooosi-mail'),
             '',
-            __('Delivery details', 'omni-mail'),
+            __('Delivery details', 'jooosi-mail'),
         ];
 
         foreach ($details as $detail) {
@@ -69,7 +69,7 @@ final readonly class TestEmailTemplateRenderer
         }
 
         $lines[] = '';
-        $lines[] = __('You can review this delivery from the Omni Mail Email Logs page.', 'omni-mail');
+        $lines[] = __('You can review this delivery from the Jooosi Mail Email Logs page.', 'jooosi-mail');
 
         return implode("\n", $lines);
     }
@@ -129,22 +129,22 @@ final readonly class TestEmailTemplateRenderer
 
         return sprintf(
             $template,
-            esc_html__('Omni Mail test email', 'omni-mail'),
-            esc_html__('Delivery diagnostic passed.', 'omni-mail'),
-            esc_html__('Delivery diagnostic', 'omni-mail'),
-            esc_html__('Test email delivered', 'omni-mail'),
-            esc_html__('Omni Mail rendered both HTML and plain-text alternatives, selected a delivery route, and recorded the diagnostic details below.', 'omni-mail'),
-            esc_html__('Connection used', 'omni-mail'),
+            esc_html__('Jooosi Mail test email', 'jooosi-mail'),
+            esc_html__('Delivery diagnostic passed.', 'jooosi-mail'),
+            esc_html__('Delivery diagnostic', 'jooosi-mail'),
+            esc_html__('Test email delivered', 'jooosi-mail'),
+            esc_html__('Jooosi Mail rendered both HTML and plain-text alternatives, selected a delivery route, and recorded the diagnostic details below.', 'jooosi-mail'),
+            esc_html__('Connection used', 'jooosi-mail'),
             esc_html($this->getDetailValue($details, 'connection')),
-            $this->renderHtmlPill(__('Profile', 'omni-mail'), $this->getDetailValue($details, 'profile')),
-            $this->renderHtmlPill(__('Mode', 'omni-mail'), $this->getDetailValue($details, 'mode')),
-            $this->renderHtmlPill(__('Strategy', 'omni-mail'), $this->getDetailValue($details, 'strategy')),
-            esc_html__('Diagnostic details', 'omni-mail'),
+            $this->renderHtmlPill(__('Profile', 'jooosi-mail'), $this->getDetailValue($details, 'profile')),
+            $this->renderHtmlPill(__('Mode', 'jooosi-mail'), $this->getDetailValue($details, 'mode')),
+            $this->renderHtmlPill(__('Strategy', 'jooosi-mail'), $this->getDetailValue($details, 'strategy')),
+            esc_html__('Diagnostic details', 'jooosi-mail'),
             $this->renderHtmlDetails($details),
-            esc_html__('Open the mail log to inspect the stored HTML, text alternative, delivery attempt, and transport response.', 'omni-mail'),
+            esc_html__('Open the mail log to inspect the stored HTML, text alternative, delivery attempt, and transport response.', 'jooosi-mail'),
             esc_url($mailLogUrl !== '' ? $mailLogUrl : $siteUrl),
-            esc_html__('View email log', 'omni-mail'),
-            esc_html__('Sent by Omni Mail for WordPress.', 'omni-mail'),
+            esc_html__('View email log', 'jooosi-mail'),
+            esc_html__('Sent by Jooosi Mail for WordPress.', 'jooosi-mail'),
         );
     }
 

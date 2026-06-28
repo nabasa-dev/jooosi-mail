@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Connection;
+namespace JooosiMail\Mail\Connection;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Profile\MailProfileInterface;
-use OmniMail\Mail\Profile\ProfileMetadataResolver;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Profile\MailProfileInterface;
+use JooosiMail\Mail\Profile\ProfileMetadataResolver;
 
 /**
  * Validates resolved connection configuration against profile metadata.

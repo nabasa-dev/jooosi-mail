@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Database\Migration;
+namespace JooosiMail\Database\Migration;
 
 use Doctrine\DBAL\Connection;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
 use RuntimeException;
 use Throwable;
 
@@ -130,7 +130,7 @@ final readonly class MigrationRepository
             ]);
         } catch (Throwable $throwable) {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new RuntimeException(sprintf('Unable to record Omni Mail migration "%s".', $definition->version), 0, $throwable);
+            throw new RuntimeException(sprintf('Unable to record Jooosi Mail migration "%s".', $definition->version), 0, $throwable);
         }
     }
 

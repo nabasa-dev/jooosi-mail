@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Queue\Maintenance;
+namespace JooosiMail\Queue\Maintenance;
 
 use Doctrine\DBAL\Connection as DbalConnection;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
 
 /**
  * Performs operational queue maintenance outside the transport receiver.

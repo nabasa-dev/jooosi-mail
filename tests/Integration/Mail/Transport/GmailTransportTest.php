@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Mail\Transport;
+namespace JooosiMail\Tests\Integration\Mail\Transport;
 
-use OmniMail\Mail\Transport\Bridge\Gmail\GmailTokenManager;
-use OmniMail\Mail\Transport\Bridge\Gmail\Transport\GmailApiTransport;
+use JooosiMail\Mail\Transport\Bridge\Gmail\GmailTokenManager;
+use JooosiMail\Mail\Transport\Bridge\Gmail\Transport\GmailApiTransport;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Component\HttpClient\Response\JsonMockResponse;

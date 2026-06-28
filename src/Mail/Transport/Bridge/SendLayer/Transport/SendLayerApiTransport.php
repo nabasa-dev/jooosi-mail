@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Transport\Bridge\SendLayer\Transport;
+namespace JooosiMail\Mail\Transport\Bridge\SendLayer\Transport;
 
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;

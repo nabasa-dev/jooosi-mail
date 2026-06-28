@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Admin\Connection;
+namespace JooosiMail\Admin\Connection;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Mail\Connection\ConnectionViewFactory;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Mail\Connection\ConnectionViewFactory;
 use Throwable;
 
 /**

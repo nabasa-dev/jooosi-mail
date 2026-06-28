@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Profile;
+namespace JooosiMail\Mail\Profile;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Discovery\Runtime\DiscoveryManifest;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Runtime\DiscoveryManifest;
 use Psr\Container\ContainerInterface;
 
 /**

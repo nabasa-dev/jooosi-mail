@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Bootstrap;
+namespace JooosiMail\Tests\Integration\Bootstrap;
 
 use WP_Hook;
 use WP_UnitTestCase;

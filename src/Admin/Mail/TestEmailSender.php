@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Admin\Mail;
+namespace JooosiMail\Admin\Mail;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\ValueObject\MailRequest;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\ValueObject\MailRequest;
 
 /**
- * Sends generated Omni Mail diagnostic test messages.
+ * Sends generated Jooosi Mail diagnostic test messages.
  *
  * @since 0.1.0
  */
@@ -33,17 +33,17 @@ final readonly class TestEmailSender
         $subject = sanitize_text_field((string) ($subject ?? ''));
 
         if ($subject === '') {
-            $subject = __('Omni Mail test', 'omni-mail');
+            $subject = __('Jooosi Mail test', 'jooosi-mail');
         }
 
         $bodies = $this->templateRenderer->render(
             recipientSummary: $to,
-            connectionLabel: __('Not routed by Omni Mail', 'omni-mail'),
-            connectionProfile: __('WordPress native wp_mail()', 'omni-mail'),
-            deliveryMode: __('Native wp_mail', 'omni-mail'),
-            routingStrategy: __('None', 'omni-mail'),
-            mailLogLabel: __('Not logged by Omni Mail', 'omni-mail'),
-            mailLogUrl: admin_url('admin.php?page=omni-mail#/logs/mail'),
+            connectionLabel: __('Not routed by Jooosi Mail', 'jooosi-mail'),
+            connectionProfile: __('WordPress native wp_mail()', 'jooosi-mail'),
+            deliveryMode: __('Native wp_mail', 'jooosi-mail'),
+            routingStrategy: __('None', 'jooosi-mail'),
+            mailLogLabel: __('Not logged by Jooosi Mail', 'jooosi-mail'),
+            mailLogUrl: admin_url('admin.php?page=jooosi-mail#/logs/mail'),
         );
         $markTestMailRequest = static fn (MailRequest $mailRequest): MailRequest => new MailRequest(
             from: $mailRequest->from,
@@ -66,7 +66,7 @@ final readonly class TestEmailSender
             }
         };
 
-        add_filter('f!omni-mail/mail:normalize.request', $markTestMailRequest, 10, 1);
+        add_filter('f!jooosi-mail/mail:normalize.request', $markTestMailRequest, 10, 1);
         add_action('phpmailer_init', $setAltBody);
 
         try {
@@ -74,12 +74,12 @@ final readonly class TestEmailSender
             $connectionId = max(0, (int) ($connectionId ?? 0));
 
             if ($connectionId > 0) {
-                $headers[] = sprintf('X-Omni-Mail-Connection-Id: %d', $connectionId);
+                $headers[] = sprintf('X-Jooosi-Mail-Connection-Id: %d', $connectionId);
             }
 
             return wp_mail($to, $subject, $bodies['htmlBody'], $headers);
         } finally {
-            remove_filter('f!omni-mail/mail:normalize.request', $markTestMailRequest, 10);
+            remove_filter('f!jooosi-mail/mail:normalize.request', $markTestMailRequest, 10);
             remove_action('phpmailer_init', $setAltBody);
         }
     }

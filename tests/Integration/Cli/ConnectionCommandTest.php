@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Cli;
+namespace JooosiMail\Tests\Integration\Cli;
 
-use OmniMail\Tests\Integration\Support\OmniMailIntegrationTestCase;
+use JooosiMail\Tests\Integration\Support\JooosiMailIntegrationTestCase;
 use RuntimeException;
 
 /**
@@ -12,7 +12,7 @@ use RuntimeException;
  *
  * @since 0.1.0
  */
-final class ConnectionCommandTest extends OmniMailIntegrationTestCase
+final class ConnectionCommandTest extends JooosiMailIntegrationTestCase
 {
     /**
      * @since 0.1.0

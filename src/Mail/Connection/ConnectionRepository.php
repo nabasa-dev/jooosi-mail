@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Connection;
+namespace JooosiMail\Mail\Connection;
 
 use Doctrine\DBAL\Connection as DbalConnection;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Database\TableNameResolver;
-use OmniMail\Infrastructure\Security\SecretCipher;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Infrastructure\Security\SecretCipher;
 
 /**
  * Repository for persisted mail connections.

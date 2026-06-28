@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Transport\Bridge\Bird\Transport;
+namespace JooosiMail\Mail\Transport\Bridge\Bird\Transport;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Discovery\Attribute\TransportFactory;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\TransportFactory;
 use Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
 use Symfony\Component\Mailer\Transport\AbstractTransportFactory;
 use Symfony\Component\Mailer\Transport\Dsn;

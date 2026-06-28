@@ -6,7 +6,7 @@ html:has(.folded) {
   --wp-admin--sidebar-width: 36px;
 }
 
-.wp-admin.toplevel_page_omni-mail {
+.wp-admin.toplevel_page_jooosi-mail {
   #wpcontent {
     padding-left: 0 !important;
 
@@ -20,12 +20,12 @@ html:has(.folded) {
       #wpbody-content {
         padding-bottom: 0;
 
-        /* hide the notice nag if it doesn't have .omni-mail-notice */
-        .notice:not(.omni-mail-notice) {
+        /* hide the notice nag if it doesn't have .jooosi-mail-notice */
+        .notice:not(.jooosi-mail-notice) {
           display: none;
         }
 
-        #omni-mail-app {
+        #jooosi-mail-app {
           isolation: isolate;
         }
       }

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Database\Migration;
+namespace JooosiMail\Database\Migration;
 
 use Doctrine\DBAL\Connection;
-use OmniMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
 
 /**
- * Contract for Omni Mail schema migrations.
+ * Contract for Jooosi Mail schema migrations.
  *
  * @since 0.1.0
  */

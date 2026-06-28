@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Queue\Stamp;
+namespace JooosiMail\Queue\Stamp;
 
 use Symfony\Component\Messenger\Stamp\StampInterface;
 

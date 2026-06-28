@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Logging;
+namespace JooosiMail\Mail\Logging;
 
-use OmniMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\Service;
 
 /**
  * Applies email log deletion after terminal delivery and retention windows.

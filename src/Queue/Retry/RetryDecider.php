@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Queue\Retry;
+namespace JooosiMail\Queue\Retry;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Queue\Stamp\DatabaseMessageStamp;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Queue\Stamp\DatabaseMessageStamp;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\Exception\UnrecoverableMessageHandlingException;
 use Throwable;

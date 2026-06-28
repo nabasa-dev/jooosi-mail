@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Webhook\Adapter;
+namespace JooosiMail\Webhook\Adapter;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Connection\Connection;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Connection\Connection;
 use Override;
 use WP_REST_Request;
 
@@ -106,8 +106,8 @@ final class ToSendWebhookAdapter extends AbstractWebhookAdapter
         $customHeaders = is_array($mail['custom_headers'] ?? null) ? $mail['custom_headers'] : [];
 
         return $this->extractFirstInt($customHeaders, [
-            'X-Omni-Mail-Mail-Log-Id',
-            'x-omni-mail-mail-log-id',
+            'X-Jooosi-Mail-Mail-Log-Id',
+            'x-jooosi-mail-mail-log-id',
             'X-Mail-Log-Id',
             'x-mail-log-id',
         ]);

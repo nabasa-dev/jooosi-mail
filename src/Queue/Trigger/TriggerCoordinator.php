@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Queue\Trigger;
+namespace JooosiMail\Queue\Trigger;
 
-use OmniMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\Service;
 
 /**
  * Coordinates Action Scheduler queue wakeups.

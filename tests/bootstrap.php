@@ -25,9 +25,7 @@ if (! file_exists($testsDirectory . '/includes/bootstrap.php')) {
     exit(1);
 }
 
-if (! defined('WP_TESTS_CONFIG_FILE_PATH')) {
-    define('WP_TESTS_CONFIG_FILE_PATH', $projectRoot . '/tests/wp-config.php');
-}
+
 
 if (! defined('WP_TESTS_PHPUNIT_POLYFILLS_PATH')) {
     define('WP_TESTS_PHPUNIT_POLYFILLS_PATH', $projectRoot . '/vendor/yoast/phpunit-polyfills');
@@ -36,7 +34,7 @@ if (! defined('WP_TESTS_PHPUNIT_POLYFILLS_PATH')) {
 require_once $testsDirectory . '/includes/functions.php';
 
 tests_add_filter('muplugins_loaded', static function () use ($projectRoot): void {
-    require $projectRoot . '/omni-mail.php';
+    require $projectRoot . '/jooosi-mail.php';
 });
 
 require_once $testsDirectory . '/includes/bootstrap.php';

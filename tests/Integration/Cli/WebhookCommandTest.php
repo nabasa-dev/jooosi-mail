@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Cli;
+namespace JooosiMail\Tests\Integration\Cli;
 
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Tests\Integration\Support\OmniMailIntegrationTestCase;
-use OmniMail\Webhook\Event\WebhookEvent;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Tests\Integration\Support\JooosiMailIntegrationTestCase;
+use JooosiMail\Webhook\Event\WebhookEvent;
 
 /**
  * Covers webhook WP-CLI command behavior.
  *
  * @since 0.1.0
  */
-final class WebhookCommandTest extends OmniMailIntegrationTestCase
+final class WebhookCommandTest extends JooosiMailIntegrationTestCase
 {
     /**
      * @since 0.1.0

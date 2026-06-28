@@ -1,13 +1,13 @@
 import type { SVGProps } from "react"
 
 import { cn } from "@/lib/utils"
-import OmniMailIcon from "~/omni-mail.svg?react"
+import JooosiMailIcon from "~/jooosi-mail.svg?react"
 
-type OmniMailLogoProps = SVGProps<SVGSVGElement>
+type JooosiMailLogoProps = SVGProps<SVGSVGElement>
 
-export function OmniMailLogo({ className, style, ...props }: OmniMailLogoProps) {
+export function JooosiMailLogo({ className, style, ...props }: JooosiMailLogoProps) {
   return (
-    <OmniMailIcon
+    <JooosiMailIcon
       {...props}
       aria-hidden="true"
       focusable="false"

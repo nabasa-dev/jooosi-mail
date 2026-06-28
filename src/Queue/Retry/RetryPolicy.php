@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Queue\Retry;
+namespace JooosiMail\Queue\Retry;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\WordPress\OptionStore;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\WordPress\OptionStore;
 
 /**
  * Configurable retry policy for queue workers.

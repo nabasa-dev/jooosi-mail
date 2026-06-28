@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Infrastructure\WordPress;
+namespace JooosiMail\Infrastructure\WordPress;
 
-use OmniMail\Discovery\Attribute\Controller;
-use OmniMail\Discovery\Attribute\Route;
-use OmniMail\Discovery\Runtime\DiscoveryManifest;
+use JooosiMail\Discovery\Attribute\Controller;
+use JooosiMail\Discovery\Attribute\Route;
+use JooosiMail\Discovery\Runtime\DiscoveryManifest;
 use Psr\Container\ContainerInterface;
 use ReflectionException;
 use ReflectionClass;

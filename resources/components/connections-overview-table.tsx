@@ -666,7 +666,7 @@ export function ConnectionsOverviewTable({
         <div className="mx-auto max-w-md space-y-3">
           <h3 className="font-medium">No connections yet</h3>
           <p className="text-sm text-muted-foreground">
-            Create your first provider route to start routing mail through Omni Mail.
+            Create your first provider route to start routing mail through Jooosi Mail.
           </p>
           <div>
             <Button onClick={onCreateConnection}>New connection</Button>

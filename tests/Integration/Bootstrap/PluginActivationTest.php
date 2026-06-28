@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Bootstrap;
+namespace JooosiMail\Tests\Integration\Bootstrap;
 
 use Doctrine\DBAL\Connection;
-use OmniMail\Bootstrap\Environment;
-use OmniMail\Bootstrap\Paths;
-use OmniMail\Bootstrap\Plugin;
-use OmniMail\Database\Migration\MigrationManager;
-use OmniMail\Infrastructure\Container\ContainerFactory;
-use OmniMail\Infrastructure\Database\TableNameResolver;
-use OmniMail\Queue\Trigger\ActionSchedulerTrigger;
-use OmniMail\Queue\Worker\WorkerRunner;
+use JooosiMail\Bootstrap\Environment;
+use JooosiMail\Bootstrap\Paths;
+use JooosiMail\Bootstrap\Plugin;
+use JooosiMail\Database\Migration\MigrationManager;
+use JooosiMail\Infrastructure\Container\ContainerFactory;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Queue\Trigger\ActionSchedulerTrigger;
+use JooosiMail\Queue\Worker\WorkerRunner;
 use Psr\Container\ContainerInterface;
 use WP_UnitTestCase;
 
@@ -66,7 +66,7 @@ final class PluginActivationTest extends WP_UnitTestCase
         self::assertSame($before['total'], $before['pending']);
         self::assertSame('0', $before['current_version']);
 
-        Plugin::boot(OMNI_MAIL_PLUGIN_FILE)->activate();
+        Plugin::boot(JOOOSI_MAIL_PLUGIN_FILE)->activate();
 
         $after = $this->migrationManager()->status();
 
@@ -86,12 +86,12 @@ final class PluginActivationTest extends WP_UnitTestCase
      */
     public function testActivateIsIdempotentAfterMigrationsHaveRun(): void
     {
-        Plugin::boot(OMNI_MAIL_PLUGIN_FILE)->activate();
+        Plugin::boot(JOOOSI_MAIL_PLUGIN_FILE)->activate();
 
         $afterFirstActivation = $this->migrationManager()->status();
         $executionsAfterFirstActivation = $this->migrationExecutionCount();
 
-        Plugin::boot(OMNI_MAIL_PLUGIN_FILE)->activate();
+        Plugin::boot(JOOOSI_MAIL_PLUGIN_FILE)->activate();
 
         $afterSecondActivation = $this->migrationManager()->status();
 
@@ -106,7 +106,7 @@ final class PluginActivationTest extends WP_UnitTestCase
      */
     public function testActivateSchedulesTheRecurringQueueRunner(): void
     {
-        Plugin::boot(OMNI_MAIL_PLUGIN_FILE)->activate();
+        Plugin::boot(JOOOSI_MAIL_PLUGIN_FILE)->activate();
 
         self::assertNotFalse(as_next_scheduled_action(ActionSchedulerTrigger::RECURRING_HOOK, [], ActionSchedulerTrigger::GROUP));
     }
@@ -206,7 +206,7 @@ final class PluginActivationTest extends WP_UnitTestCase
     private function container(): ContainerInterface
     {
         return (new ContainerFactory(
-            Paths::fromPluginFile(OMNI_MAIL_PLUGIN_FILE),
+            Paths::fromPluginFile(JOOOSI_MAIL_PLUGIN_FILE),
             Environment::fromWordPress(),
         ))->build();
     }

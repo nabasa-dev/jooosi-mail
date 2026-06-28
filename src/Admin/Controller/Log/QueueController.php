@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Admin\Controller\Log;
+namespace JooosiMail\Admin\Controller\Log;
 
 use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection as DbalConnection;
 use Doctrine\DBAL\Query\QueryBuilder;
-use OmniMail\Admin\Controller\AdminRouteAuthorization;
-use OmniMail\Discovery\Attribute\Controller;
-use OmniMail\Discovery\Attribute\Route;
-use OmniMail\Infrastructure\Database\TableNameResolver;
-use OmniMail\Queue\Message\SendEmailMessage;
+use JooosiMail\Admin\Controller\AdminRouteAuthorization;
+use JooosiMail\Discovery\Attribute\Controller;
+use JooosiMail\Discovery\Attribute\Route;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Queue\Message\SendEmailMessage;
 use Symfony\Component\Messenger\Transport\Serialization\SerializerInterface;
 use Throwable;
 use WP_REST_Request;
@@ -24,7 +24,7 @@ use function Symfony\Component\String\u;
  *
  * @since 0.1.0
  */
-#[Controller(namespace: 'omni-mail/v1', prefix: 'admin/logs/queue')]
+#[Controller(namespace: 'jooosi-mail/v1', prefix: 'admin/logs/queue')]
 final readonly class QueueController
 {
     /**

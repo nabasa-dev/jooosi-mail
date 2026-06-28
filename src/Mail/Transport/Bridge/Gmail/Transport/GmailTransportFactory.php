@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Transport\Bridge\Gmail\Transport;
+namespace JooosiMail\Mail\Transport\Bridge\Gmail\Transport;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Discovery\Attribute\TransportFactory;
-use OmniMail\Mail\Transport\Bridge\Gmail\GmailTokenManager;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\TransportFactory;
+use JooosiMail\Mail\Transport\Bridge\Gmail\GmailTokenManager;
 use Symfony\Component\Mailer\Exception\IncompleteDsnException;
 use Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
 use Symfony\Component\Mailer\Transport\AbstractTransportFactory;

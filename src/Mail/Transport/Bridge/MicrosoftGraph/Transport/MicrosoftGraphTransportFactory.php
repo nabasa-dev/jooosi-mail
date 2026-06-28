@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Transport\Bridge\MicrosoftGraph\Transport;
+namespace JooosiMail\Mail\Transport\Bridge\MicrosoftGraph\Transport;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Discovery\Attribute\TransportFactory;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\TransportFactory;
 use Symfony\Component\Mailer\Bridge\MicrosoftGraph\Transport\MicrosoftGraphTransportFactory as SymfonyMicrosoftGraphTransportFactory;
 
 /**
- * Registers the Microsoft Graph bridge with Omni Mail's transport discovery.
+ * Registers the Microsoft Graph bridge with Jooosi Mail's transport discovery.
  *
  * @since 0.1.0
  */

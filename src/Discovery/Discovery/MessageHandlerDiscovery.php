@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Discovery\Discovery;
+namespace JooosiMail\Discovery\Discovery;
 
-use OmniMail\Discovery\Attribute\MessageHandler;
-use OmniMail\Discovery\Runtime\DiscoveryState;
+use JooosiMail\Discovery\Attribute\MessageHandler;
+use JooosiMail\Discovery\Runtime\DiscoveryState;
 use Override;
 use Tempest\Discovery\Discovery;
 use Tempest\Discovery\DiscoveryLocation;

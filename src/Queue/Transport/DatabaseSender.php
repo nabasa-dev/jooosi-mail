@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Queue\Transport;
+namespace JooosiMail\Queue\Transport;
 
 use Doctrine\DBAL\Connection as DbalConnection;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Database\TableNameResolver;
-use OmniMail\Infrastructure\WordPress\OptionStore;
-use OmniMail\Queue\Stamp\QueuePriorityStamp;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Infrastructure\WordPress\OptionStore;
+use JooosiMail\Queue\Stamp\QueuePriorityStamp;
 use Override;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\Stamp\DelayStamp;
@@ -17,7 +17,7 @@ use Symfony\Component\Messenger\Transport\Sender\SenderInterface;
 use Symfony\Component\Messenger\Transport\Serialization\SerializerInterface;
 
 /**
- * Persists queued envelopes into the Omni Mail queue table.
+ * Persists queued envelopes into the Jooosi Mail queue table.
  *
  * @since 0.1.0
  */

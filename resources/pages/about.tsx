@@ -1,6 +1,6 @@
 import type { ComponentType, ReactNode } from "react"
 
-import { OmniMailLogo } from "@/components/omni-mail-logo"
+import { JooosiMailLogo } from "@/components/jooosi-mail-logo"
 import { buttonVariants } from "@/components/ui/button"
 import {
   Card,
@@ -143,10 +143,10 @@ export default function AboutPage() {
           <CardHeader className="px-8 py-12">
             <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
               <div className="flex size-20 items-center justify-center rounded-[20px] bg-gradient-to-br from-primary to-primary/70 text-primary-foreground shadow-[0_8px_32px_color-mix(in_srgb,var(--primary)_30%,transparent)]">
-                <OmniMailLogo className="size-13" />
+                <JooosiMailLogo className="size-13" />
               </div>
               <div className="flex flex-col gap-2">
-                <CardTitle className="text-4xl font-bold tracking-tight">Omni Mail</CardTitle>
+                <CardTitle className="text-4xl font-bold tracking-tight">Jooosi Mail</CardTitle>
                 <p className="text-lg font-semibold text-primary">Enterprise-grade email delivery for WordPress</p>
                 <CardDescription className="mx-auto max-w-2xl text-[15px] leading-7">
                   A modern WordPress mail delivery plugin that routes <code>wp_mail()</code> through Symfony Mailer, durable queues, provider failover, webhooks, and operational observability.
@@ -185,11 +185,11 @@ export default function AboutPage() {
               <AboutMetaCard title="GitHub Repository" icon={GithubIcon}>
                 <a
                   className="font-medium text-primary underline-offset-4 hover:underline"
-                  href="https://github.com/nabasa-dev/omni-mail"
+                  href="https://github.com/nabasa-dev/jooosi-mail"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  nabasa-dev/omni-mail
+                  nabasa-dev/jooosi-mail
                 </a>
               </AboutMetaCard>
               <AboutMetaCard title="Current Version" icon={CircleCheckBigIcon}>
@@ -230,8 +230,8 @@ export default function AboutPage() {
               <div className="flex flex-col gap-2">
                 <CardTitle className="text-2xl">Love This Plugin?</CardTitle>
                 <CardDescription className="text-base">
-                  Omni Mail is 100% free and open source, crafted with passion for the WordPress community. Your
-                  sponsorship helps maintain and improve all our free WordPress plugins, not just Omni Mail.
+                  Jooosi Mail is 100% free and open source, crafted with passion for the WordPress community. Your
+                  sponsorship helps maintain and improve all our free WordPress plugins, not just Jooosi Mail.
                   Supporting one plugin means supporting all our open-source efforts.
                 </CardDescription>
               </div>

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Admin\Controller;
+namespace JooosiMail\Admin\Controller;
 
 use WP_Error;
 use WP_REST_Request;
@@ -24,8 +24,8 @@ final class AdminRouteAuthorization
         }
 
         return new WP_Error(
-            'omni_mail_admin_forbidden',
-            'You are not allowed to manage Omni Mail.',
+            'jooosi_mail_admin_forbidden',
+            'You are not allowed to manage Jooosi Mail.',
             ['status' => 403],
         );
     }

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Admin\Controller;
+namespace JooosiMail\Tests\Integration\Admin\Controller;
 
-use OmniMail\Tests\Integration\Support\OmniMailIntegrationTestCase;
+use JooosiMail\Tests\Integration\Support\JooosiMailIntegrationTestCase;
 use WP_REST_Request;
 
 /**
@@ -12,7 +12,7 @@ use WP_REST_Request;
  *
  * @since 0.1.0
  */
-final class LogControllerArrayQueryTest extends OmniMailIntegrationTestCase
+final class LogControllerArrayQueryTest extends JooosiMailIntegrationTestCase
 {
     /**
      * @since 0.1.0
@@ -43,7 +43,7 @@ final class LogControllerArrayQueryTest extends OmniMailIntegrationTestCase
             'updated_at' => '2026-04-08 11:00:00',
         ]);
 
-        $request = new WP_REST_Request('GET', '/omni-mail/v1/admin/logs/mail');
+        $request = new WP_REST_Request('GET', '/jooosi-mail/v1/admin/logs/mail');
         $request->set_query_params([
             'statuses' => ['failed'],
         ]);
@@ -86,7 +86,7 @@ final class LogControllerArrayQueryTest extends OmniMailIntegrationTestCase
 
         $mailLogId = (int) $this->db()->lastInsertId();
 
-        $request = new WP_REST_Request('GET', sprintf('/omni-mail/v1/admin/logs/mail/%d', $mailLogId));
+        $request = new WP_REST_Request('GET', sprintf('/jooosi-mail/v1/admin/logs/mail/%d', $mailLogId));
         $response = rest_do_request($request);
         $data = $response->get_data();
 
@@ -126,7 +126,7 @@ final class LogControllerArrayQueryTest extends OmniMailIntegrationTestCase
             'updated_at' => '2026-04-08 11:00:00',
         ]);
 
-        $request = new WP_REST_Request('GET', '/omni-mail/v1/admin/logs/queue');
+        $request = new WP_REST_Request('GET', '/jooosi-mail/v1/admin/logs/queue');
         $request->set_query_params([
             'statuses' => ['failed'],
         ]);
@@ -158,7 +158,7 @@ final class LogControllerArrayQueryTest extends OmniMailIntegrationTestCase
             'created_at' => '2026-04-08 11:00:00',
         ]);
 
-        $request = new WP_REST_Request('GET', '/omni-mail/v1/admin/logs/webhooks');
+        $request = new WP_REST_Request('GET', '/jooosi-mail/v1/admin/logs/webhooks');
         $request->set_query_params([
             'eventTypes' => ['bounced'],
         ]);

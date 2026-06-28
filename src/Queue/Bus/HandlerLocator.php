@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Queue\Bus;
+namespace JooosiMail\Queue\Bus;
 
-use OmniMail\Discovery\Attribute\MessageHandler;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Discovery\Runtime\DiscoveryManifest;
+use JooosiMail\Discovery\Attribute\MessageHandler;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Runtime\DiscoveryManifest;
 use Override;
 use Psr\Container\ContainerInterface;
 use ReflectionClass;

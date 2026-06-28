@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Mail\WordPress;
+namespace JooosiMail\Tests\Integration\Mail\WordPress;
 
-use OmniMail\Mail\WordPress\WpMailPayloadNormalizer;
+use JooosiMail\Mail\WordPress\WpMailPayloadNormalizer;
 use WP_UnitTestCase;
 
 /**
@@ -23,7 +23,7 @@ final class WpMailPayloadNormalizerTest extends WP_UnitTestCase
         $previousBlogName = get_option('blogname');
 
         update_option('admin_email', 'admin@example.test');
-        update_option('blogname', 'Omni Mail Tests');
+        update_option('blogname', 'Jooosi Mail Tests');
 
         try {
             $normalizer = new WpMailPayloadNormalizer();
@@ -35,7 +35,7 @@ final class WpMailPayloadNormalizerTest extends WP_UnitTestCase
 
             self::assertCount(1, $request->from);
             self::assertSame('admin@example.test', $request->from[0]->address);
-            self::assertSame('Omni Mail Tests', $request->from[0]->name);
+            self::assertSame('Jooosi Mail Tests', $request->from[0]->name);
             self::assertCount(1, $request->to);
             self::assertSame('recipient@example.test', $request->to[0]->address);
             self::assertSame('Plain text body', $request->textBody);
@@ -68,7 +68,7 @@ final class WpMailPayloadNormalizerTest extends WP_UnitTestCase
                 'Bcc: hidden@example.test',
                 'Reply-To: reply@example.test',
                 'Content-Type: text/html',
-                'X-Omni-Mail: enabled',
+                'X-Jooosi-Mail: enabled',
             ],
             'attachments' => [
                 '/tmp/report.pdf',
@@ -99,7 +99,7 @@ final class WpMailPayloadNormalizerTest extends WP_UnitTestCase
         self::assertSame('/tmp/report.pdf', $request->attachments[0]->path);
         self::assertSame('/tmp/archive.zip', $request->attachments[1]->path);
         self::assertSame('text/html', $request->headers['Content-Type']);
-        self::assertSame('enabled', $request->headers['X-Omni-Mail']);
+        self::assertSame('enabled', $request->headers['X-Jooosi-Mail']);
     }
 
     /**

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Routing;
+namespace JooosiMail\Mail\Routing;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Event\EventPublisherInterface;
-use OmniMail\Mail\Connection\Connection;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Event\EventPublisherInterface;
+use JooosiMail\Mail\Connection\Connection;
 
 /**
  * Filters connections that are temporarily unavailable for routing.
@@ -44,7 +44,7 @@ final readonly class ConnectionAvailabilityDecider
     {
         $status = $this->getStatus($connection);
 
-        return (bool) $this->eventPublisher->applyFilters('f!omni-mail/routing:connection.available', $status['available'], $connection, $status);
+        return (bool) $this->eventPublisher->applyFilters('f!jooosi-mail/routing:connection.available', $status['available'], $connection, $status);
     }
 
     /**

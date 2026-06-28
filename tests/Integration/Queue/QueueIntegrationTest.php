@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Queue;
+namespace JooosiMail\Tests\Integration\Queue;
 
-use OmniMail\Queue\Trigger\ActionSchedulerTrigger;
-use OmniMail\Queue\Worker\WorkerRunner;
-use OmniMail\Tests\Integration\Support\OmniMailIntegrationTestCase;
+use JooosiMail\Queue\Trigger\ActionSchedulerTrigger;
+use JooosiMail\Queue\Worker\WorkerRunner;
+use JooosiMail\Tests\Integration\Support\JooosiMailIntegrationTestCase;
 
 /**
  * Covers queue processing, retry, and stale-claim recovery.
  *
  * @since 0.1.0
  */
-final class QueueIntegrationTest extends OmniMailIntegrationTestCase
+final class QueueIntegrationTest extends JooosiMailIntegrationTestCase
 {
     /**
      * @since 0.1.0

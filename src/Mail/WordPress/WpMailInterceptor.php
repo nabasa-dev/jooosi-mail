@@ -2,28 +2,28 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\WordPress;
+namespace JooosiMail\Mail\WordPress;
 
 use Doctrine\DBAL\Connection as DbalConnection;
-use OmniMail\Discovery\Attribute\Hook;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Event\EventPublisherInterface;
-use OmniMail\Infrastructure\WordPress\OptionStore;
-use OmniMail\Mail\Delivery\DeliveryService;
-use OmniMail\Mail\Logging\MailLifecycleLogger;
-use OmniMail\Mail\Routing\DeliveryMode;
-use OmniMail\Mail\Routing\RoutingPolicyResolver;
-use OmniMail\Queue\Message\SendEmailMessage;
-use OmniMail\Queue\Stamp\QueuePriorityStamp;
-use OmniMail\Queue\Transport\DatabaseTransport;
-use OmniMail\Queue\Trigger\TriggerCoordinator;
+use JooosiMail\Discovery\Attribute\Hook;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Event\EventPublisherInterface;
+use JooosiMail\Infrastructure\WordPress\OptionStore;
+use JooosiMail\Mail\Delivery\DeliveryService;
+use JooosiMail\Mail\Logging\MailLifecycleLogger;
+use JooosiMail\Mail\Routing\DeliveryMode;
+use JooosiMail\Mail\Routing\RoutingPolicyResolver;
+use JooosiMail\Queue\Message\SendEmailMessage;
+use JooosiMail\Queue\Stamp\QueuePriorityStamp;
+use JooosiMail\Queue\Transport\DatabaseTransport;
+use JooosiMail\Queue\Trigger\TriggerCoordinator;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Messenger\Stamp\DelayStamp;
 use Symfony\Component\Messenger\Stamp\TransportNamesStamp;
 use Throwable;
 
 /**
- * Intercepts `wp_mail()` and hands off to Omni Mail.
+ * Intercepts `wp_mail()` and hands off to Jooosi Mail.
  *
  * @since 0.1.0
  */
@@ -46,7 +46,7 @@ final class WpMailInterceptor
     }
 
     /**
-     * Replace native sending with Omni Mail.
+     * Replace native sending with Jooosi Mail.
      *
      * @param array<string, mixed> $args
      *
@@ -96,14 +96,14 @@ final class WpMailInterceptor
             try {
                 $this->triggerCoordinator->trigger();
             } catch (Throwable $throwable) {
-                $this->eventPublisher->doAction('a!omni-mail/queue:trigger.failed', $throwable, $mailLogId);
+                $this->eventPublisher->doAction('a!jooosi-mail/queue:trigger.failed', $throwable, $mailLogId);
             }
 
-            $this->eventPublisher->doAction('a!omni-mail/mail:queued', $mailLogId, DatabaseTransport::NAME);
+            $this->eventPublisher->doAction('a!jooosi-mail/mail:queued', $mailLogId, DatabaseTransport::NAME);
 
             return true;
         } catch (Throwable $throwable) {
-            $this->eventPublisher->doAction('a!omni-mail/mail:intercept.failed', $throwable, $args);
+            $this->eventPublisher->doAction('a!jooosi-mail/mail:intercept.failed', $throwable, $args);
 
             return false;
         } finally {
@@ -118,6 +118,6 @@ final class WpMailInterceptor
     {
         $enabled = (bool) $this->optionStore->get('settings.mail.intercept.enabled', true);
 
-        return (bool) $this->eventPublisher->applyFilters('f!omni-mail/mail:intercept.enabled', $enabled);
+        return (bool) $this->eventPublisher->applyFilters('f!jooosi-mail/mail:intercept.enabled', $enabled);
     }
 }

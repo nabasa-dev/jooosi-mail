@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Queue\Message;
+namespace JooosiMail\Queue\Message;
 
 /**
  * Queue message pointing to a persisted mail log.

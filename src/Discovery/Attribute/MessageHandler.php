@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Discovery\Attribute;
+namespace JooosiMail\Discovery\Attribute;
 
 use Attribute;
 

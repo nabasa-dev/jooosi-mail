@@ -942,7 +942,7 @@ export default function ConnectionsPage() {
           <CardHeader>
             <CardTitle>No connection profiles available</CardTitle>
             <CardDescription>
-              Omni Mail could not find any registered transport profiles to configure.
+              Jooosi Mail could not find any registered transport profiles to configure.
             </CardDescription>
           </CardHeader>
         </Card>
@@ -979,7 +979,7 @@ export default function ConnectionsPage() {
           )}
           <p className="text-sm text-muted-foreground">
             {showOverview
-              ? "Set up and manage the email services Omni Mail can use to send messages from your site."
+              ? "Set up and manage the email services Jooosi Mail can use to send messages from your site."
               : "Review and update the selected connection settings."}
           </p>
         </div>

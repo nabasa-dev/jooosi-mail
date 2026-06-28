@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Admin\Controller;
+namespace JooosiMail\Admin\Controller;
 
-use OmniMail\Admin\Connection\AdminConnectionPayloadFactory;
-use OmniMail\Discovery\Attribute\Controller;
-use OmniMail\Discovery\Attribute\Route;
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Mail\Connection\ConnectionConfigurationException;
-use OmniMail\Mail\Connection\ConnectionManager;
-use OmniMail\Mail\Connection\ConnectionRepository;
-use OmniMail\Mail\Routing\ConnectionStatusReporter;
+use JooosiMail\Admin\Connection\AdminConnectionPayloadFactory;
+use JooosiMail\Discovery\Attribute\Controller;
+use JooosiMail\Discovery\Attribute\Route;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Mail\Connection\ConnectionConfigurationException;
+use JooosiMail\Mail\Connection\ConnectionManager;
+use JooosiMail\Mail\Connection\ConnectionRepository;
+use JooosiMail\Mail\Routing\ConnectionStatusReporter;
 use WP_Error;
 use WP_REST_Request;
 use WP_REST_Response;
@@ -21,7 +21,7 @@ use WP_REST_Response;
  *
  * @since 0.1.0
  */
-#[Controller(namespace: 'omni-mail/v1', prefix: 'admin/connections')]
+#[Controller(namespace: 'jooosi-mail/v1', prefix: 'admin/connections')]
 final readonly class ConnectionController
 {
     /**
@@ -63,7 +63,7 @@ final readonly class ConnectionController
         try {
             $connection = $this->connectionManager->create($this->normalizeConnectionInput($request));
         } catch (ConnectionConfigurationException $exception) {
-            return new WP_Error('omni_mail_invalid_connection', $exception->getMessage(), ['status' => 400]);
+            return new WP_Error('jooosi_mail_invalid_connection', $exception->getMessage(), ['status' => 400]);
         }
 
         return new WP_REST_Response([
@@ -106,7 +106,7 @@ final readonly class ConnectionController
                 $this->normalizeConnectionInput($request),
             );
         } catch (ConnectionConfigurationException $exception) {
-            return new WP_Error('omni_mail_invalid_connection', $exception->getMessage(), ['status' => 400]);
+            return new WP_Error('jooosi_mail_invalid_connection', $exception->getMessage(), ['status' => 400]);
         }
 
         return new WP_REST_Response([
@@ -168,19 +168,19 @@ final readonly class ConnectionController
         $input = is_array($body) ? $body : $request->get_params();
 
         if (! array_key_exists('enabled', $input)) {
-            return new WP_Error('omni_mail_missing_enabled', 'The enabled field is required.', ['status' => 400]);
+            return new WP_Error('jooosi_mail_missing_enabled', 'The enabled field is required.', ['status' => 400]);
         }
 
         $enabled = filter_var($input['enabled'], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE);
 
         if ($enabled === null) {
-            return new WP_Error('omni_mail_invalid_enabled', 'The enabled field must be a boolean.', ['status' => 400]);
+            return new WP_Error('jooosi_mail_invalid_enabled', 'The enabled field must be a boolean.', ['status' => 400]);
         }
 
         try {
             $updatedConnection = $this->connectionManager->setEnabled((int) $connection->id, $enabled);
         } catch (ConnectionConfigurationException $exception) {
-            return new WP_Error('omni_mail_invalid_connection', $exception->getMessage(), ['status' => 400]);
+            return new WP_Error('jooosi_mail_invalid_connection', $exception->getMessage(), ['status' => 400]);
         }
 
         return new WP_REST_Response([
@@ -331,7 +331,7 @@ final readonly class ConnectionController
         $payload['available'] = (bool) ($availability['available'] ?? $connection->enabled);
         $payload['unavailableReasons'] = array_values(array_map('strval', is_array($availability['unavailable_reasons'] ?? null) ? $availability['unavailable_reasons'] : []));
         $payload['nextAvailableAt'] = $this->normalizeDateTime($availability['next_available_at'] ?? null);
-        $payload['webhookUrl'] = $connection->id !== null ? rest_url('omni-mail/v1/webhook/' . $connection->id) : null;
+        $payload['webhookUrl'] = $connection->id !== null ? rest_url('jooosi-mail/v1/webhook/' . $connection->id) : null;
         $payload['rateLimitStatus'] = [
             'blocked' => (bool) ($rateLimit['blocked'] ?? false),
             'windows' => is_array($rateLimit['windows'] ?? null) ? $rateLimit['windows'] : [],
@@ -462,13 +462,13 @@ final readonly class ConnectionController
         $connectionId = (int) $request->get_param('connection_id');
 
         if ($connectionId <= 0) {
-            return new WP_Error('omni_mail_invalid_connection_id', 'A valid connection id is required.', ['status' => 400]);
+            return new WP_Error('jooosi_mail_invalid_connection_id', 'A valid connection id is required.', ['status' => 400]);
         }
 
         $connection = $this->connectionRepository->find($connectionId);
 
         if (! $connection instanceof Connection) {
-            return new WP_Error('omni_mail_connection_not_found', 'Connection not found.', ['status' => 404]);
+            return new WP_Error('jooosi_mail_connection_not_found', 'Connection not found.', ['status' => 404]);
         }
 
         return $connection;

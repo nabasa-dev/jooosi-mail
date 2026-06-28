@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Mail\Connection;
+namespace JooosiMail\Tests\Integration\Mail\Connection;
 
-use OmniMail\Mail\Connection\ConnectionDsnResolver;
-use OmniMail\Mail\Transport\TransportRegistry;
-use OmniMail\Tests\Integration\Support\OmniMailIntegrationTestCase;
+use JooosiMail\Mail\Connection\ConnectionDsnResolver;
+use JooosiMail\Mail\Transport\TransportRegistry;
+use JooosiMail\Tests\Integration\Support\JooosiMailIntegrationTestCase;
 use Symfony\Component\Mailer\Transport\NullTransport;
 use Symfony\Component\Mailer\Transport\SendmailTransport;
 use Symfony\Component\Mailer\Transport\Smtp\EsmtpTransport;
@@ -17,7 +17,7 @@ use Symfony\Component\Mailer\Transport\TransportInterface;
  *
  * @since 0.1.0
  */
-final class BuiltinProfileTest extends OmniMailIntegrationTestCase
+final class BuiltinProfileTest extends JooosiMailIntegrationTestCase
 {
     /**
      * @since 0.1.0

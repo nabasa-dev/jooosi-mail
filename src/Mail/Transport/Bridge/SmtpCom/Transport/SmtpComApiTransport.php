@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Transport\Bridge\SmtpCom\Transport;
+namespace JooosiMail\Mail\Transport\Bridge\SmtpCom\Transport;
 
 use JsonException;
 use Psr\EventDispatcher\EventDispatcherInterface;

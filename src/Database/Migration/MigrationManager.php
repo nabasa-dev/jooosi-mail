@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Database\Migration;
+namespace JooosiMail\Database\Migration;
 
 use Doctrine\DBAL\Connection;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
 use RuntimeException;
 use Throwable;
 
@@ -284,12 +284,12 @@ final readonly class MigrationManager
             $definition = $this->migrationRegistry->find($version);
             if (! $definition instanceof MigrationDefinition) {
                 // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-                throw new RuntimeException(sprintf('The Omni Mail migration "%s" could not be found.', $version));
+                throw new RuntimeException(sprintf('The Jooosi Mail migration "%s" could not be found.', $version));
             }
 
             if (in_array($definition->version, $executedVersions, true)) {
                 // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-                throw new RuntimeException(sprintf('The Omni Mail migration "%s" has already been executed.', $definition->version));
+                throw new RuntimeException(sprintf('The Jooosi Mail migration "%s" has already been executed.', $definition->version));
             }
 
             if (isset($knownVersions[$definition->version])) {
@@ -396,7 +396,7 @@ final readonly class MigrationManager
             && ! ($this->migrationRegistry->find($toVersion) instanceof MigrationDefinition)
         ) {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new RuntimeException(sprintf('The Omni Mail migration "%s" could not be found.', $toVersion));
+            throw new RuntimeException(sprintf('The Jooosi Mail migration "%s" could not be found.', $toVersion));
         }
 
         rsort($executedVersions, SORT_STRING);

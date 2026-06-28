@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Cli;
+namespace JooosiMail\Tests\Integration\Cli;
 
-use OmniMail\Admin\Mail\TestEmailDeliveryTemplateListener;
-use OmniMail\Tests\Integration\Support\OmniMailIntegrationTestCase;
+use JooosiMail\Admin\Mail\TestEmailDeliveryTemplateListener;
+use JooosiMail\Tests\Integration\Support\JooosiMailIntegrationTestCase;
 
 /**
  * Covers mail WP-CLI command behavior.
  *
  * @since 0.1.0
  */
-final class MailCommandTest extends OmniMailIntegrationTestCase
+final class MailCommandTest extends JooosiMailIntegrationTestCase
 {
     /**
      * @since 0.1.0
@@ -52,9 +52,9 @@ final class MailCommandTest extends OmniMailIntegrationTestCase
         self::assertSame('admin_test_email', $payload['source']);
         self::assertSame(true, $payload['metadata'][TestEmailDeliveryTemplateListener::METADATA_KEY] ?? null);
         self::assertStringContainsString('Delivery diagnostic: passed', (string) ($payload['textBody'] ?? ''));
-        self::assertStringContainsString('Omni Mail rendered both HTML', (string) ($payload['htmlBody'] ?? ''));
+        self::assertStringContainsString('Jooosi Mail rendered both HTML', (string) ($payload['htmlBody'] ?? ''));
         self::assertSame('text/html; charset=UTF-8', $payload['headers']['Content-Type'] ?? null);
-        self::assertSame((string) $targetConnection->id, $payload['headers']['X-Omni-Mail-Connection-Id'] ?? null);
+        self::assertSame((string) $targetConnection->id, $payload['headers']['X-Jooosi-Mail-Connection-Id'] ?? null);
         self::assertSame($targetConnection->id, (int) ($plan['preferredConnectionId'] ?? 0));
         self::assertIsArray($attempt);
         self::assertSame('sent', $attempt['status']);

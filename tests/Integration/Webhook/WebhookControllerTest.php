@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Webhook;
+namespace JooosiMail\Tests\Integration\Webhook;
 
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Tests\Integration\Support\OmniMailIntegrationTestCase;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Tests\Integration\Support\JooosiMailIntegrationTestCase;
 use WP_REST_Request;
 
 /**
@@ -13,7 +13,7 @@ use WP_REST_Request;
  *
  * @since 0.1.0
  */
-final class WebhookControllerTest extends OmniMailIntegrationTestCase
+final class WebhookControllerTest extends JooosiMailIntegrationTestCase
 {
     /**
      * @since 0.1.0
@@ -23,7 +23,7 @@ final class WebhookControllerTest extends OmniMailIntegrationTestCase
         $response = $this->dispatchWebhookRequest(999999, []);
 
         self::assertSame(404, $response->get_status());
-        self::assertSame('omni_mail_webhook_connection_not_found', $response->get_data()['code'] ?? null);
+        self::assertSame('jooosi_mail_webhook_connection_not_found', $response->get_data()['code'] ?? null);
     }
 
     /**
@@ -42,7 +42,7 @@ final class WebhookControllerTest extends OmniMailIntegrationTestCase
         $response = $this->dispatchWebhookRequest($connection->id, []);
 
         self::assertSame(404, $response->get_status());
-        self::assertSame('omni_mail_webhook_disabled', $response->get_data()['code'] ?? null);
+        self::assertSame('jooosi_mail_webhook_disabled', $response->get_data()['code'] ?? null);
     }
 
     /**
@@ -61,7 +61,7 @@ final class WebhookControllerTest extends OmniMailIntegrationTestCase
         $response = $this->dispatchWebhookRequest($connection->id, []);
 
         self::assertSame(403, $response->get_status());
-        self::assertSame('omni_mail_webhook_verification_unsupported', $response->get_data()['code'] ?? null);
+        self::assertSame('jooosi_mail_webhook_verification_unsupported', $response->get_data()['code'] ?? null);
     }
 
     /**
@@ -96,7 +96,7 @@ final class WebhookControllerTest extends OmniMailIntegrationTestCase
         $response = $this->dispatchWebhookRequest($connection->id, $payload);
 
         self::assertSame(401, $response->get_status());
-        self::assertSame('omni_mail_invalid_webhook_signature', $response->get_data()['code'] ?? null);
+        self::assertSame('jooosi_mail_invalid_webhook_signature', $response->get_data()['code'] ?? null);
         self::assertSame(0, $this->countRows('webhook_events'));
     }
 
@@ -127,7 +127,7 @@ final class WebhookControllerTest extends OmniMailIntegrationTestCase
         $response = $this->dispatchWebhookRequest($connection->id, $payload);
 
         self::assertSame(401, $response->get_status());
-        self::assertSame('omni_mail_invalid_webhook_signature', $response->get_data()['code'] ?? null);
+        self::assertSame('jooosi_mail_invalid_webhook_signature', $response->get_data()['code'] ?? null);
         self::assertSame(0, $this->countRows('webhook_events'));
     }
 
@@ -195,7 +195,7 @@ final class WebhookControllerTest extends OmniMailIntegrationTestCase
         $blockedResponse = $this->dispatchWebhookRequest($connection->id, $payload, remoteAddr: '203.0.113.10');
 
         self::assertSame(401, $blockedResponse->get_status());
-        self::assertSame('omni_mail_invalid_webhook_signature', $blockedResponse->get_data()['code'] ?? null);
+        self::assertSame('jooosi_mail_invalid_webhook_signature', $blockedResponse->get_data()['code'] ?? null);
     }
 
     /**
@@ -229,7 +229,7 @@ final class WebhookControllerTest extends OmniMailIntegrationTestCase
         $blockedResponse = $this->dispatchWebhookRequest($connection->id, $payload, remoteAddr: '203.0.113.10');
 
         self::assertSame(401, $blockedResponse->get_status());
-        self::assertSame('omni_mail_invalid_webhook_signature', $blockedResponse->get_data()['code'] ?? null);
+        self::assertSame('jooosi_mail_invalid_webhook_signature', $blockedResponse->get_data()['code'] ?? null);
     }
 
     /**
@@ -512,7 +512,7 @@ final class WebhookControllerTest extends OmniMailIntegrationTestCase
             'event' => 'reject',
             'time' => 1700001200,
             'email_id' => 'smtp2go-provider-1',
-            'x_omni_mail_mail_log_id' => 890,
+            'x_jooosi_mail_mail_log_id' => 890,
         ];
 
         $response = $this->dispatchWebhookRequest($connection->id, $payload);
@@ -754,7 +754,7 @@ final class WebhookControllerTest extends OmniMailIntegrationTestCase
     {
         rest_get_server();
 
-        $request = new WP_REST_Request('POST', '/omni-mail/v1/webhook/' . (int) $connectionId);
+        $request = new WP_REST_Request('POST', '/jooosi-mail/v1/webhook/' . (int) $connectionId);
         $request->set_header('content-type', 'application/json');
 
         foreach ($headers as $name => $value) {

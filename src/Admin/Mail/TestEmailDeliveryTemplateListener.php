@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Admin\Mail;
+namespace JooosiMail\Admin\Mail;
 
-use OmniMail\Discovery\Attribute\Hook;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Mail\Routing\DeliveryPlan;
-use OmniMail\Mail\ValueObject\MailAddress;
-use OmniMail\Mail\ValueObject\MailRequest;
+use JooosiMail\Discovery\Attribute\Hook;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Mail\Routing\DeliveryPlan;
+use JooosiMail\Mail\ValueObject\MailAddress;
+use JooosiMail\Mail\ValueObject\MailRequest;
 
 /**
  * Applies generated test email content when a test message is delivered.
@@ -19,7 +19,7 @@ use OmniMail\Mail\ValueObject\MailRequest;
 #[Service]
 final readonly class TestEmailDeliveryTemplateListener
 {
-    public const string METADATA_KEY = 'omni_mail_test_email';
+    public const string METADATA_KEY = 'jooosi_mail_test_email';
 
     /**
      * @since 0.1.0
@@ -32,7 +32,7 @@ final readonly class TestEmailDeliveryTemplateListener
     /**
      * @since 0.1.0
      */
-    #[Hook(name: 'f!omni-mail/mail:delivery.request', kind: 'filter', acceptedArgs: 4)]
+    #[Hook(name: 'f!jooosi-mail/mail:delivery.request', kind: 'filter', acceptedArgs: 4)]
     public function applyTemplate(
         MailRequest $mailRequest,
         int $mailLogId,
@@ -50,7 +50,7 @@ final readonly class TestEmailDeliveryTemplateListener
             deliveryMode: $this->formatMachineLabel($deliveryPlan->mode->value),
             routingStrategy: $this->formatMachineLabel($deliveryPlan->strategy->value),
             mailLogLabel: sprintf('#%d', $mailLogId),
-            mailLogUrl: admin_url(sprintf('admin.php?page=omni-mail#/logs/mail?id=%d', $mailLogId)),
+            mailLogUrl: admin_url(sprintf('admin.php?page=jooosi-mail#/logs/mail?id=%d', $mailLogId)),
         );
 
         return new MailRequest(
@@ -67,9 +67,9 @@ final readonly class TestEmailDeliveryTemplateListener
             envelopeSender: $mailRequest->envelopeSender,
             source: $mailRequest->source,
             metadata: array_merge($mailRequest->metadata, [
-                'omni_mail_test_connection_id' => $connection->id,
-                'omni_mail_test_connection_name' => $connection->name,
-                'omni_mail_test_connection_profile' => $connection->profileKey,
+                'jooosi_mail_test_connection_id' => $connection->id,
+                'jooosi_mail_test_connection_name' => $connection->name,
+                'jooosi_mail_test_connection_profile' => $connection->profileKey,
             ]),
         );
     }

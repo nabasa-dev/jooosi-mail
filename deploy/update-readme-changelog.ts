@@ -98,7 +98,7 @@ function updateReadmeWithChangelog(readmeContent: string, changelogText: string)
 
   const changelogStart = changelogStartMatch.index!;
   const beforeChangelog = readmeContent.substring(0, changelogStart);
-  const changelogSection = `== Changelog ==\n\n${changelogText}\n\n[See changelog for all versions.](https://github.com/nabasa-dev/omni-mail/blob/main/CHANGELOG.md)`;
+  const changelogSection = `== Changelog ==\n\n${changelogText}\n\n[See changelog for all versions.](https://github.com/nabasa-dev/jooosi-mail/blob/main/CHANGELOG.md)`;
 
   return beforeChangelog + changelogSection;
 }

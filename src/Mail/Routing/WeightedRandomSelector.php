@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Routing;
+namespace JooosiMail\Mail\Routing;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Connection\Connection;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Connection\Connection;
 
 /**
  * Selects the next primary connection using weighted random sampling.

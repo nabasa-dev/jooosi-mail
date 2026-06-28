@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Webhook\Adapter;
+namespace JooosiMail\Webhook\Adapter;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Connection\Connection;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Connection\Connection;
 use Override;
 use WP_REST_Request;
 
@@ -77,7 +77,7 @@ final class SweegoWebhookAdapter extends AbstractWebhookAdapter
         $mailLogId = $this->extractMailLogId($payload);
 
         if ($mailLogId === null && $headers !== []) {
-            $mailLogId = $this->extractFirstInt($headers, ['mail_log_id', 'omni_mail_mail_log_id', 'x-mail-log-id', 'x-omni-mail-mail-log-id']);
+            $mailLogId = $this->extractFirstInt($headers, ['mail_log_id', 'jooosi_mail_mail_log_id', 'x-mail-log-id', 'x-jooosi-mail-mail-log-id']);
         }
 
         return [[

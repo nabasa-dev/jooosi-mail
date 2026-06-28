@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Transport\Bridge\Emailit\Transport;
+namespace JooosiMail\Mail\Transport\Bridge\Emailit\Transport;
 
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;

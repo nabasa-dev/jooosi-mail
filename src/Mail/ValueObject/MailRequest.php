@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\ValueObject;
+namespace JooosiMail\Mail\ValueObject;
 
 /**
  * Stable normalized email payload used across sync and async flows.

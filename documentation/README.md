@@ -1,6 +1,6 @@
-# Omni Mail Documentation
+# Jooosi Mail Documentation
 
-This directory contains the living documentation for Omni Mail. The root README is intentionally a concise product overview, while these documents keep the deeper setup, runtime, architecture, development, and current-limit details.
+This directory contains the living documentation for Jooosi Mail. The root README is intentionally a concise product overview, while these documents keep the deeper setup, runtime, architecture, development, and current-limit details.
 
 ## Start Here
 
@@ -23,8 +23,8 @@ This directory contains the living documentation for Omni Mail. The root README 
 
 ## Live Source Of Truth
 
-- Use the WordPress admin page at `wp-admin/admin.php?page=omni-mail` for the current dashboard, connection, settings, mail log, queue log, webhook log, and test-email workflows.
-- Use `wp omni-mail connection:profiles` to inspect the currently shipped profile catalog, supported schemes, configuration fields, and webhook support.
-- Use `wp omni-mail webhook:status --all=true` to inspect the webhook adapter and verification posture for real configured connections.
+- Use the WordPress admin page at `wp-admin/admin.php?page=jooosi-mail` for the current dashboard, connection, settings, mail log, queue log, webhook log, and test-email workflows.
+- Use `wp jooosi-mail connection:profiles` to inspect the currently shipped profile catalog, supported schemes, configuration fields, and webhook support.
+- Use `wp jooosi-mail webhook:status --all=true` to inspect the webhook adapter and verification posture for real configured connections.
 
 When behavior changes, update the relevant documentation in the same change set so the docs remain trustworthy.

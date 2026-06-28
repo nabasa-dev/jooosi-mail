@@ -4,7 +4,7 @@ import * as React from "react"
 
 import { DEFAULT_ADMIN_PATH, getAdminNavItems, toAdminHashHref } from "@/admin/routes"
 import { NavMain } from "@/components/nav-main"
-import { OmniMailLogo } from "@/components/omni-mail-logo"
+import { JooosiMailLogo } from "@/components/jooosi-mail-logo"
 import {
   Sidebar,
   SidebarContent,
@@ -31,10 +31,10 @@ export function AppSidebar({ currentPath, ...props }: AppSidebarProps) {
               render={<a href={toAdminHashHref(DEFAULT_ADMIN_PATH)} />}
             >
               <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                <OmniMailLogo className="size-4" />
+                <JooosiMailLogo className="size-4" />
               </div>
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-medium">Omni Mail</span>
+                <span className="truncate font-medium">Jooosi Mail</span>
                 <span className="truncate text-xs">Email Delivery</span>
               </div>
             </SidebarMenuButton>

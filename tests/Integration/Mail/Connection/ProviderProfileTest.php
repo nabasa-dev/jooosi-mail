@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Mail\Connection;
+namespace JooosiMail\Tests\Integration\Mail\Connection;
 
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Mail\Connection\ConnectionDsnResolver;
-use OmniMail\Mail\Transport\TransportRegistry;
-use OmniMail\Tests\Integration\Support\OmniMailIntegrationTestCase;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Mail\Connection\ConnectionDsnResolver;
+use JooosiMail\Mail\Transport\TransportRegistry;
+use JooosiMail\Tests\Integration\Support\JooosiMailIntegrationTestCase;
 
 /**
  * Covers third-party provider mail profiles.
  *
  * @since 0.1.0
  */
-final class ProviderProfileTest extends OmniMailIntegrationTestCase
+final class ProviderProfileTest extends JooosiMailIntegrationTestCase
 {
     /**
      * @since 0.1.0
@@ -208,7 +208,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'scheme' => 'cloudflare+api',
             'account_id' => 'cloudflare-account-id',
             'api_token' => 'cloudflare-api-token',
-        ], 'cloudflare+api://cloudflare-account-id:cloudflare-api-token@default', 'OmniMail\\Mail\\Transport\\Bridge\\Cloudflare\\Transport\\CloudflareApiTransport');
+        ], 'cloudflare+api://cloudflare-account-id:cloudflare-api-token@default', 'JooosiMail\\Mail\\Transport\\Bridge\\Cloudflare\\Transport\\CloudflareApiTransport');
     }
 
     /**
@@ -220,11 +220,11 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'profile' => 'azure',
             'name' => 'Azure API',
             'scheme' => 'azure+api',
-            'resource_name' => 'omnimail-resource',
+            'resource_name' => 'jooosimail-resource',
             'api_key' => 'azure-api-key',
             'api_version' => '2024-07-01-preview',
             'disable_tracking' => 'true',
-        ], 'azure+api://omnimail-resource:azure-api-key@default?api_version=2024-07-01-preview&disable_tracking=true', 'Symfony\\Component\\Mailer\\Bridge\\Azure\\Transport\\AzureApiTransport');
+        ], 'azure+api://jooosimail-resource:azure-api-key@default?api_version=2024-07-01-preview&disable_tracking=true', 'Symfony\\Component\\Mailer\\Bridge\\Azure\\Transport\\AzureApiTransport');
     }
 
     /**
@@ -239,7 +239,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'access_key' => 'bird-api-key',
             'workspace_id' => 'workspace-api',
             'region' => 'us',
-        ], 'bird+api://bird-api-key@default?workspace_id=workspace-api&region=us', 'OmniMail\\Mail\\Transport\\Bridge\\Bird\\Transport\\BirdApiTransport');
+        ], 'bird+api://bird-api-key@default?workspace_id=workspace-api&region=us', 'JooosiMail\\Mail\\Transport\\Bridge\\Bird\\Transport\\BirdApiTransport');
 
         $this->assertResolvedTransport([
             'profile' => 'bird',
@@ -248,7 +248,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'access_key' => 'bird-smtp-key',
             'workspace_id' => 'workspace-smtp',
             'region' => 'eu',
-        ], 'bird+smtp://bird-smtp-key@default?workspace_id=workspace-smtp&region=eu', 'OmniMail\\Mail\\Transport\\Bridge\\Bird\\Transport\\BirdSmtpTransport');
+        ], 'bird+smtp://bird-smtp-key@default?workspace_id=workspace-smtp&region=eu', 'JooosiMail\\Mail\\Transport\\Bridge\\Bird\\Transport\\BirdSmtpTransport');
     }
 
     /**
@@ -261,7 +261,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'name' => 'Elastic Email API',
             'scheme' => 'elasticemail+api',
             'api_key' => 'elastic-api-key',
-        ], 'elasticemail+api://elastic-api-key@default', 'OmniMail\\Mail\\Transport\\Bridge\\ElasticEmail\\Transport\\ElasticEmailApiTransport');
+        ], 'elasticemail+api://elastic-api-key@default', 'JooosiMail\\Mail\\Transport\\Bridge\\ElasticEmail\\Transport\\ElasticEmailApiTransport');
 
         $this->assertResolvedTransport([
             'profile' => 'elasticemail',
@@ -269,7 +269,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'scheme' => 'elasticemail+smtps',
             'username' => 'elastic-user',
             'password' => 'elastic-pass',
-        ], 'elasticemail+smtps://elastic-user:elastic-pass@default', 'OmniMail\\Mail\\Transport\\Bridge\\ElasticEmail\\Transport\\ElasticEmailSmtpTransport');
+        ], 'elasticemail+smtps://elastic-user:elastic-pass@default', 'JooosiMail\\Mail\\Transport\\Bridge\\ElasticEmail\\Transport\\ElasticEmailSmtpTransport');
     }
 
     /**
@@ -282,14 +282,14 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'name' => 'Emailit API',
             'scheme' => 'emailit+api',
             'api_key' => 'emailit-api-key',
-        ], 'emailit+api://emailit-api-key@default', 'OmniMail\\Mail\\Transport\\Bridge\\Emailit\\Transport\\EmailitApiTransport');
+        ], 'emailit+api://emailit-api-key@default', 'JooosiMail\\Mail\\Transport\\Bridge\\Emailit\\Transport\\EmailitApiTransport');
 
         $this->assertResolvedTransport([
             'profile' => 'emailit',
             'name' => 'Emailit SMTP',
             'scheme' => 'emailit+smtp',
             'smtp_credential' => 'emailit-smtp-credential',
-        ], 'emailit+smtp://emailit:emailit-smtp-credential@default', 'OmniMail\\Mail\\Transport\\Bridge\\Emailit\\Transport\\EmailitSmtpTransport');
+        ], 'emailit+smtp://emailit:emailit-smtp-credential@default', 'JooosiMail\\Mail\\Transport\\Bridge\\Emailit\\Transport\\EmailitSmtpTransport');
     }
 
     /**
@@ -306,7 +306,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'service_account_email' => 'service@example.iam.gserviceaccount.com',
             'private_key' => $privateKey,
             'user_email' => 'sender@example.com',
-        ], 'gmail+api://service%40example.iam.gserviceaccount.com:' . rawurlencode(base64_encode($privateKey)) . '@default?user=sender%40example.com', 'OmniMail\\Mail\\Transport\\Bridge\\Gmail\\Transport\\GmailApiTransport');
+        ], 'gmail+api://service%40example.iam.gserviceaccount.com:' . rawurlencode(base64_encode($privateKey)) . '@default?user=sender%40example.com', 'JooosiMail\\Mail\\Transport\\Bridge\\Gmail\\Transport\\GmailApiTransport');
 
         $this->assertResolvedTransport([
             'profile' => 'gmail',
@@ -314,7 +314,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'scheme' => 'gmail+smtp',
             'username' => 'mailer@gmail.com',
             'password' => 'gmail-app-password',
-        ], 'gmail+smtp://mailer%40gmail.com:gmail-app-password@default', 'OmniMail\\Mail\\Transport\\Bridge\\Gmail\\Transport\\GmailSmtpTransport');
+        ], 'gmail+smtp://mailer%40gmail.com:gmail-app-password@default', 'JooosiMail\\Mail\\Transport\\Bridge\\Gmail\\Transport\\GmailSmtpTransport');
     }
 
     /**
@@ -328,7 +328,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'scheme' => 'pepipost+api',
             'api_key' => 'pepipost-api-key',
             'region' => 'eu',
-        ], 'pepipost+api://pepipost-api-key@default?region=eu', 'OmniMail\\Mail\\Transport\\Bridge\\Pepipost\\Transport\\PepipostApiTransport');
+        ], 'pepipost+api://pepipost-api-key@default?region=eu', 'JooosiMail\\Mail\\Transport\\Bridge\\Pepipost\\Transport\\PepipostApiTransport');
 
         $this->assertResolvedTransport([
             'profile' => 'pepipost',
@@ -336,7 +336,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'scheme' => 'pepipost+smtps',
             'username' => 'pepipost-user',
             'password' => 'pepipost-pass',
-        ], 'pepipost+smtps://pepipost-user:pepipost-pass@default', 'OmniMail\\Mail\\Transport\\Bridge\\Pepipost\\Transport\\PepipostSmtpTransport');
+        ], 'pepipost+smtps://pepipost-user:pepipost-pass@default', 'JooosiMail\\Mail\\Transport\\Bridge\\Pepipost\\Transport\\PepipostSmtpTransport');
     }
 
     /**
@@ -350,7 +350,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'scheme' => 'zeptomail+api',
             'api_token' => 'zeptomail-api-token',
             'webhook_enabled' => true,
-        ], 'zeptomail+api://zeptomail-api-token@default', 'OmniMail\\Mail\\Transport\\Bridge\\ZeptoMail\\Transport\\ZeptoMailApiTransport');
+        ], 'zeptomail+api://zeptomail-api-token@default', 'JooosiMail\\Mail\\Transport\\Bridge\\ZeptoMail\\Transport\\ZeptoMailApiTransport');
 
         $this->assertResolvedTransport([
             'profile' => 'zeptomail',
@@ -358,14 +358,14 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'scheme' => 'zeptomail+smtps',
             'username' => 'emailapikey',
             'password' => 'zeptomail-smtp-password',
-        ], 'zeptomail+smtps://emailapikey:zeptomail-smtp-password@default', 'OmniMail\\Mail\\Transport\\Bridge\\ZeptoMail\\Transport\\ZeptoMailSmtpTransport');
+        ], 'zeptomail+smtps://emailapikey:zeptomail-smtp-password@default', 'JooosiMail\\Mail\\Transport\\Bridge\\ZeptoMail\\Transport\\ZeptoMailSmtpTransport');
 
         $this->assertResolvedTransport([
             'profile' => 'zeptomail',
             'name' => 'ZeptoMail Legacy SMTPS',
             'scheme' => 'zeptomail+smtps',
             'api_token' => 'zeptomail-smtp-token',
-        ], 'zeptomail+smtps://emailapikey:zeptomail-smtp-token@default', 'OmniMail\\Mail\\Transport\\Bridge\\ZeptoMail\\Transport\\ZeptoMailSmtpTransport');
+        ], 'zeptomail+smtps://emailapikey:zeptomail-smtp-token@default', 'JooosiMail\\Mail\\Transport\\Bridge\\ZeptoMail\\Transport\\ZeptoMailSmtpTransport');
     }
 
     /**
@@ -644,7 +644,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'name' => 'SendLayer API',
             'scheme' => 'sendlayer+api',
             'api_key' => 'sendlayer-api-key',
-        ], 'sendlayer+api://sendlayer-api-key@default', 'OmniMail\\Mail\\Transport\\Bridge\\SendLayer\\Transport\\SendLayerApiTransport');
+        ], 'sendlayer+api://sendlayer-api-key@default', 'JooosiMail\\Mail\\Transport\\Bridge\\SendLayer\\Transport\\SendLayerApiTransport');
 
         $this->assertResolvedTransport([
             'profile' => 'sendlayer',
@@ -652,7 +652,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'scheme' => 'sendlayer+smtp',
             'username' => 'sendlayer-user',
             'password' => 'sendlayer-pass',
-        ], 'sendlayer+smtp://sendlayer-user:sendlayer-pass@default', 'OmniMail\\Mail\\Transport\\Bridge\\SendLayer\\Transport\\SendLayerSmtpTransport');
+        ], 'sendlayer+smtp://sendlayer-user:sendlayer-pass@default', 'JooosiMail\\Mail\\Transport\\Bridge\\SendLayer\\Transport\\SendLayerSmtpTransport');
     }
 
     /**
@@ -666,7 +666,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'scheme' => 'sendpulse+api',
             'client_id' => 'sendpulse-client-id',
             'client_secret' => 'sendpulse-client-secret',
-        ], 'sendpulse+api://sendpulse-client-id:sendpulse-client-secret@default', 'OmniMail\\Mail\\Transport\\Bridge\\SendPulse\\Transport\\SendPulseApiTransport');
+        ], 'sendpulse+api://sendpulse-client-id:sendpulse-client-secret@default', 'JooosiMail\\Mail\\Transport\\Bridge\\SendPulse\\Transport\\SendPulseApiTransport');
 
         $this->assertResolvedTransport([
             'profile' => 'sendpulse',
@@ -674,7 +674,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'scheme' => 'sendpulse+smtps',
             'username' => 'sendpulse-user',
             'password' => 'sendpulse-pass',
-        ], 'sendpulse+smtps://sendpulse-user:sendpulse-pass@default', 'OmniMail\\Mail\\Transport\\Bridge\\SendPulse\\Transport\\SendPulseSmtpTransport');
+        ], 'sendpulse+smtps://sendpulse-user:sendpulse-pass@default', 'JooosiMail\\Mail\\Transport\\Bridge\\SendPulse\\Transport\\SendPulseSmtpTransport');
     }
 
     /**
@@ -688,7 +688,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'scheme' => 'smtp2go+api',
             'api_key' => 'smtp2go-api-key',
             'region' => 'eu',
-        ], 'smtp2go+api://smtp2go-api-key@default?region=eu', 'OmniMail\\Mail\\Transport\\Bridge\\Smtp2go\\Transport\\Smtp2goApiTransport');
+        ], 'smtp2go+api://smtp2go-api-key@default?region=eu', 'JooosiMail\\Mail\\Transport\\Bridge\\Smtp2go\\Transport\\Smtp2goApiTransport');
 
         $this->assertResolvedTransport([
             'profile' => 'smtp2go',
@@ -697,7 +697,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'username' => 'smtp2go-user',
             'password' => 'smtp2go-pass',
             'region' => 'au',
-        ], 'smtp2go+smtps://smtp2go-user:smtp2go-pass@default?region=au', 'OmniMail\\Mail\\Transport\\Bridge\\Smtp2go\\Transport\\Smtp2goSmtpTransport');
+        ], 'smtp2go+smtps://smtp2go-user:smtp2go-pass@default?region=au', 'JooosiMail\\Mail\\Transport\\Bridge\\Smtp2go\\Transport\\Smtp2goSmtpTransport');
     }
 
     /**
@@ -711,7 +711,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'scheme' => 'smtpcom+api',
             'api_key' => 'smtpcom-api-key',
             'channel' => 'transactional',
-        ], 'smtpcom+api://smtpcom-api-key@default?channel=transactional', 'OmniMail\\Mail\\Transport\\Bridge\\SmtpCom\\Transport\\SmtpComApiTransport');
+        ], 'smtpcom+api://smtpcom-api-key@default?channel=transactional', 'JooosiMail\\Mail\\Transport\\Bridge\\SmtpCom\\Transport\\SmtpComApiTransport');
 
         $this->assertResolvedTransport([
             'profile' => 'smtpcom',
@@ -719,7 +719,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'scheme' => 'smtpcom+smtp',
             'username' => 'smtpcom-user',
             'password' => 'smtpcom-pass',
-        ], 'smtpcom+smtp://smtpcom-user:smtpcom-pass@default', 'OmniMail\\Mail\\Transport\\Bridge\\SmtpCom\\Transport\\SmtpComSmtpTransport');
+        ], 'smtpcom+smtp://smtpcom-user:smtpcom-pass@default', 'JooosiMail\\Mail\\Transport\\Bridge\\SmtpCom\\Transport\\SmtpComSmtpTransport');
     }
 
     /**
@@ -733,7 +733,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'scheme' => 'sparkpost+api',
             'api_key' => 'sparkpost-api-key',
             'region' => 'eu',
-        ], 'sparkpost+api://sparkpost-api-key@default?region=eu', 'OmniMail\\Mail\\Transport\\Bridge\\SparkPost\\Transport\\SparkPostApiTransport');
+        ], 'sparkpost+api://sparkpost-api-key@default?region=eu', 'JooosiMail\\Mail\\Transport\\Bridge\\SparkPost\\Transport\\SparkPostApiTransport');
 
         $this->assertResolvedTransport([
             'profile' => 'sparkpost',
@@ -741,7 +741,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'scheme' => 'sparkpost+smtp',
             'api_key' => 'sparkpost-smtp-key',
             'region' => 'eu',
-        ], 'sparkpost+smtp://sparkpost-smtp-key@default?region=eu', 'OmniMail\\Mail\\Transport\\Bridge\\SparkPost\\Transport\\SparkPostSmtpTransport');
+        ], 'sparkpost+smtp://sparkpost-smtp-key@default?region=eu', 'JooosiMail\\Mail\\Transport\\Bridge\\SparkPost\\Transport\\SparkPostSmtpTransport');
     }
 
     /**
@@ -862,7 +862,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'api_key' => 'tosend-api-key',
             'webhook_enabled' => true,
             'webhook_secret' => 'tosend-webhook-secret',
-        ], 'tosend+api://tosend-api-key@default', 'OmniMail\\Mail\\Transport\\Bridge\\ToSend\\Transport\\ToSendApiTransport');
+        ], 'tosend+api://tosend-api-key@default', 'JooosiMail\\Mail\\Transport\\Bridge\\ToSend\\Transport\\ToSendApiTransport');
 
         self::assertTrue($apiConnection->webhookEnabled);
         self::assertSame('tosend-webhook-secret', $apiConnection->getWebhookSecret());
@@ -880,7 +880,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'username' => 'mailer@example.com',
             'password' => 'zoho-password',
             'account_type' => 'business',
-        ], 'zohomail+smtp://mailer%40example.com:zoho-password@default?account_type=business', 'OmniMail\\Mail\\Transport\\Bridge\\ZohoMail\\Transport\\ZohoMailSmtpTransport');
+        ], 'zohomail+smtp://mailer%40example.com:zoho-password@default?account_type=business', 'JooosiMail\\Mail\\Transport\\Bridge\\ZohoMail\\Transport\\ZohoMailSmtpTransport');
 
         $this->assertResolvedTransport([
             'profile' => 'zohomail',
@@ -888,7 +888,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
             'scheme' => 'zohomail+smtps',
             'username' => 'mailer@example.com',
             'password' => 'zoho-password',
-        ], 'zohomail+smtps://mailer%40example.com:zoho-password@default', 'OmniMail\\Mail\\Transport\\Bridge\\ZohoMail\\Transport\\ZohoMailSmtpTransport');
+        ], 'zohomail+smtps://mailer%40example.com:zoho-password@default', 'JooosiMail\\Mail\\Transport\\Bridge\\ZohoMail\\Transport\\ZohoMailSmtpTransport');
     }
 
     /**
@@ -1113,7 +1113,7 @@ final class ProviderProfileTest extends OmniMailIntegrationTestCase
         $this->connectionManager()->create([
             'profile' => 'azure',
             'name' => 'Azure Webhooks',
-            'resource_name' => 'omnimail-resource',
+            'resource_name' => 'jooosimail-resource',
             'api_key' => 'azure-api-key',
             'webhook_enabled' => true,
         ]);

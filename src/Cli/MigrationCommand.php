@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Cli;
+namespace JooosiMail\Cli;
 
 use InvalidArgumentException;
-use OmniMail\Database\Migration\MigrationManager;
-use OmniMail\Database\Migration\MigrationStubGenerator;
-use OmniMail\Discovery\Attribute\Command;
-use OmniMail\Discovery\Attribute\Service;
+use JooosiMail\Database\Migration\MigrationManager;
+use JooosiMail\Database\Migration\MigrationStubGenerator;
+use JooosiMail\Discovery\Attribute\Command;
+use JooosiMail\Discovery\Attribute\Service;
 use RuntimeException;
 use WP_CLI;
 
 use function WP_CLI\Utils\format_items;
 
 /**
- * Manage Omni Mail schema migrations from WP-CLI.
+ * Manage Jooosi Mail schema migrations from WP-CLI.
  *
  * @since 0.1.0
  */
@@ -32,7 +32,7 @@ final readonly class MigrationCommand
     }
 
     /**
-     * Generate an Omni Mail migration stub.
+     * Generate a Jooosi Mail migration stub.
      *
      * ## OPTIONS
      *
@@ -41,8 +41,8 @@ final readonly class MigrationCommand
      *
      * ## EXAMPLES
      *
-     *     $ wp omni-mail migration:make create_delivery_reports_table
-     *     Success: Created migration OmniMail\Database\Migration\Versions\Version202603230001CreateDeliveryReportsTable at /path/to/wp-content/plugins/omni-mail/src/Database/Migration/Versions/Version202603230001CreateDeliveryReportsTable.php.
+     *     $ wp jooosi-mail migration:make create_delivery_reports_table
+     *     Success: Created migration JooosiMail\Database\Migration\Versions\Version202603230001CreateDeliveryReportsTable at /path/to/wp-content/plugins/jooosi-mail/src/Database/Migration/Versions/Version202603230001CreateDeliveryReportsTable.php.
      *
      * @param array<int, string> $args
      * @param array<string, mixed> $assocArgs
@@ -50,9 +50,9 @@ final readonly class MigrationCommand
      * @since 0.1.0
      */
     #[Command(
-        name: 'omni-mail migration:make',
-        description: 'Generate an Omni Mail migration stub.',
-        aliases: ['omni-mail migration:create'],
+        name: 'jooosi-mail migration:make',
+        description: 'Generate a Jooosi Mail migration stub.',
+        aliases: ['jooosi-mail migration:create'],
     )]
     public function make(array $args, array $assocArgs): void
     {
@@ -90,15 +90,15 @@ final readonly class MigrationCommand
      *
      * ## EXAMPLES
      *
-     *     $ wp omni-mail migration:status
-     *     $ wp omni-mail migration:status --format=json
+     *     $ wp jooosi-mail migration:status
+     *     $ wp jooosi-mail migration:status --format=json
      *
      * @param array<int, string> $args
      * @param array<string, mixed> $assocArgs
      *
      * @since 0.1.0
      */
-    #[Command(name: 'omni-mail migration:status', description: 'Show Omni Mail migration status.')]
+    #[Command(name: 'jooosi-mail migration:status', description: 'Show Jooosi Mail migration status.')]
     public function status(array $args, array $assocArgs): void
     {
         $format = $this->resolveFormat($assocArgs);
@@ -168,15 +168,15 @@ final readonly class MigrationCommand
      *
      * ## EXAMPLES
      *
-     *     $ wp omni-mail migration:list
-     *     $ wp omni-mail migration:list --status=pending
+     *     $ wp jooosi-mail migration:list
+     *     $ wp jooosi-mail migration:list --status=pending
      *
      * @param array<int, string> $args
      * @param array<string, mixed> $assocArgs
      *
      * @since 0.1.0
      */
-    #[Command(name: 'omni-mail migration:list', description: 'List Omni Mail migrations.')]
+    #[Command(name: 'jooosi-mail migration:list', description: 'List Jooosi Mail migrations.')]
     public function listing(array $args, array $assocArgs): void
     {
         $format = $this->resolveFormat($assocArgs);
@@ -251,16 +251,16 @@ final readonly class MigrationCommand
      *
      * ## EXAMPLES
      *
-     *     $ wp omni-mail migration:run
-     *     $ wp omni-mail migration:run --dry-run
-     *     $ wp omni-mail migration:run 202603230001
+     *     $ wp jooosi-mail migration:run
+     *     $ wp jooosi-mail migration:run --dry-run
+     *     $ wp jooosi-mail migration:run 202603230001
      *
      * @param array<int, string> $args
      * @param array<string, mixed> $assocArgs
      *
      * @since 0.1.0
      */
-    #[Command(name: 'omni-mail migration:run', description: 'Run Omni Mail migrations.')]
+    #[Command(name: 'jooosi-mail migration:run', description: 'Run Jooosi Mail migrations.')]
     public function run(array $args, array $assocArgs): void
     {
         $format = $this->resolveFormat($assocArgs);
@@ -360,17 +360,17 @@ final readonly class MigrationCommand
      *
      * ## EXAMPLES
      *
-     *     $ wp omni-mail migration:rollback
-     *     $ wp omni-mail migration:rollback --steps=2
-     *     $ wp omni-mail migration:rollback --to=202603230001
-     *     $ wp omni-mail migration:rollback --reset --yes
+     *     $ wp jooosi-mail migration:rollback
+     *     $ wp jooosi-mail migration:rollback --steps=2
+     *     $ wp jooosi-mail migration:rollback --to=202603230001
+     *     $ wp jooosi-mail migration:rollback --reset --yes
      *
      * @param array<int, string> $args
      * @param array<string, mixed> $assocArgs
      *
      * @since 0.1.0
      */
-    #[Command(name: 'omni-mail migration:rollback', description: 'Rollback Omni Mail migrations.')]
+    #[Command(name: 'jooosi-mail migration:rollback', description: 'Rollback Jooosi Mail migrations.')]
     public function rollback(array $args, array $assocArgs): void
     {
         $format = $this->resolveFormat($assocArgs);
@@ -530,6 +530,6 @@ final readonly class MigrationCommand
         WP_CLI::line('');
         WP_CLI::line('Next steps:');
         WP_CLI::line('  1. Edit the migration file to implement up() and down().');
-        WP_CLI::line("  2. Run 'wp omni-mail migration:run' when the migration is ready.");
+        WP_CLI::line("  2. Run 'wp jooosi-mail migration:run' when the migration is ready.");
     }
 }

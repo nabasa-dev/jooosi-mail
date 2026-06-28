@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Database\Migration;
+namespace JooosiMail\Database\Migration;
 
 /**
  * Execution history row for a migration.

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Mail\Transport;
+namespace JooosiMail\Tests\Integration\Mail\Transport;
 
-use OmniMail\Mail\Transport\Bridge\Cloudflare\Transport\CloudflareApiTransport;
+use JooosiMail\Mail\Transport\Bridge\Cloudflare\Transport\CloudflareApiTransport;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Component\HttpClient\Response\JsonMockResponse;

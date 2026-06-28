@@ -408,7 +408,7 @@ export default function SettingsPage() {
                 <FieldContent className="gap-1">
                   <FieldLabel htmlFor="mail-intercept-enabled">Enable wp_mail interception</FieldLabel>
                   <FieldDescription>
-                    When enabled, Omni Mail takes over delivery instead of letting WordPress send mail directly.
+                    When enabled, Jooosi Mail takes over delivery instead of letting WordPress send mail directly.
                   </FieldDescription>
                 </FieldContent>
                 <Switch
@@ -519,7 +519,7 @@ export default function SettingsPage() {
                   <FieldContent className="gap-1">
                     <FieldLabel htmlFor="email-logging-enabled">Keep email logs</FieldLabel>
                     <FieldDescription>
-                      When disabled, Omni Mail keeps the internal delivery record only until the email is sent or permanently failed.
+                      When disabled, Jooosi Mail keeps the internal delivery record only until the email is sent or permanently failed.
                     </FieldDescription>
                   </FieldContent>
                   <Switch

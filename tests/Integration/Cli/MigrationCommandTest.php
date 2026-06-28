@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Cli;
+namespace JooosiMail\Tests\Integration\Cli;
 
-use OmniMail\Tests\Integration\Support\OmniMailIntegrationTestCase;
+use JooosiMail\Tests\Integration\Support\JooosiMailIntegrationTestCase;
 
 /**
  * Covers migration WP-CLI command behavior.
  *
  * @since 0.1.0
  */
-final class MigrationCommandTest extends OmniMailIntegrationTestCase
+final class MigrationCommandTest extends JooosiMailIntegrationTestCase
 {
     /**
      * @since 0.1.0

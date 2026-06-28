@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Admin\Controller;
+namespace JooosiMail\Tests\Integration\Admin\Controller;
 
-use OmniMail\Tests\Integration\Support\OmniMailIntegrationTestCase;
+use JooosiMail\Tests\Integration\Support\JooosiMailIntegrationTestCase;
 
 /**
  * Verifies admin log routes remain registered after controller splitting.
  *
  * @since 0.1.0
  */
-final class LogControllerRoutesTest extends OmniMailIntegrationTestCase
+final class LogControllerRoutesTest extends JooosiMailIntegrationTestCase
 {
     /**
      * @since 0.1.0
@@ -27,11 +27,11 @@ final class LogControllerRoutesTest extends OmniMailIntegrationTestCase
 
         $routes = $server->get_routes();
 
-        self::assertArrayHasKey('/omni-mail/v1/admin/logs', $routes);
-        self::assertArrayHasKey('/omni-mail/v1/admin/logs/mail', $routes);
-        self::assertArrayHasKey('/omni-mail/v1/admin/logs/mail/(?P<mail_log_id>\d+)', $routes);
-        self::assertArrayHasKey('/omni-mail/v1/admin/logs/mail/test', $routes);
-        self::assertArrayHasKey('/omni-mail/v1/admin/logs/queue', $routes);
-        self::assertArrayHasKey('/omni-mail/v1/admin/logs/webhooks', $routes);
+        self::assertArrayHasKey('/jooosi-mail/v1/admin/logs', $routes);
+        self::assertArrayHasKey('/jooosi-mail/v1/admin/logs/mail', $routes);
+        self::assertArrayHasKey('/jooosi-mail/v1/admin/logs/mail/(?P<mail_log_id>\d+)', $routes);
+        self::assertArrayHasKey('/jooosi-mail/v1/admin/logs/mail/test', $routes);
+        self::assertArrayHasKey('/jooosi-mail/v1/admin/logs/queue', $routes);
+        self::assertArrayHasKey('/jooosi-mail/v1/admin/logs/webhooks', $routes);
     }
 }

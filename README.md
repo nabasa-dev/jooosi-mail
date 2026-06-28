@@ -1,17 +1,17 @@
 <p align="center">
-  <img src="./omni-mail.svg" alt="Omni Mail Logo" width="100" />
+  <img src="./jooosi-mail.svg" alt="Jooosi Mail Logo" width="100" />
 </p>
 
-<h1 align="center">Omni Mail</h1>
+<h1 align="center">Jooosi Mail</h1>
 
 <p align="center">
   <i>A modern WordPress mail delivery plugin that routes <code>wp_mail()</code> through Symfony Mailer, durable queues, provider failover, webhooks, and operational observability.</i>
 </p>
 
 <p align="center">
-  <a href="https://github.com/nabasa-dev/omni-mail/releases">
+  <a href="https://github.com/nabasa-dev/jooosi-mail/releases">
     <picture>
-      <img src="https://img.shields.io/github/v/release/nabasa-dev/omni-mail.svg?logo=github" alt="GitHub release" />
+      <img src="https://img.shields.io/github/v/release/nabasa-dev/jooosi-mail.svg?logo=github" alt="GitHub release" />
     </picture>
   </a>
   <a href="https://www.php.net/releases/8.5/">
@@ -24,7 +24,7 @@
       <img src="https://img.shields.io/badge/WordPress-7.0%2B-21759B?logo=wordpress&logoColor=white" alt="WordPress 7.0+" />
     </picture>
   </a>
-  <a href="https://github.com/nabasa-dev/omni-mail">
+  <a href="https://github.com/nabasa-dev/jooosi-mail">
     <picture>
       <img src="https://img.shields.io/badge/license-GPL--3.0--or--later-blue.svg" alt="GPL-3.0-or-later license" />
     </picture>
@@ -49,7 +49,7 @@
 
 > [!NOTE]
 >
-> Omni Mail is an open-source WordPress plugin by [Nabasa](https://nabasa.dev). Consider sponsoring us to support continued development.
+> Jooosi Mail is an open-source WordPress plugin by [Nabasa](https://nabasa.dev). Consider sponsoring us to support continued development.
 
 ## Intro
 
@@ -64,11 +64,11 @@ Send WordPress email through the provider you choose, and watch it work with you
 - 📊 **Email logs**: See sent, queued, and failed emails in one place.
 - 🚦 **Connection health**: Keep an eye on provider availability and delivery issues.
 - 📥 **Webhook feedback**: Supported providers can report deliveries, bounces, complaints, opens, and clicks back to WordPress.
-- 🛠️ **Admin and CLI workflows**: Manage Omni Mail from the WordPress dashboard or with WP-CLI.
+- 🛠️ **Admin and CLI workflows**: Manage Jooosi Mail from the WordPress dashboard or with WP-CLI.
 
 ### Email Providers
 
-Omni Mail works with SMTP and many popular email providers. The table below shows the available sending methods and whether delivery updates can be sent back to WordPress.
+Jooosi Mail works with SMTP and many popular email providers. The table below shows the available sending methods and whether delivery updates can be sent back to WordPress.
 
 | Profile | Key | Transports | Webhooks |
 | --- | --- | --- | --- |
@@ -124,7 +124,7 @@ Want to contribute or customize the plugin? Check out the following documentatio
 ## Sponsors
 
 
-If you like this project, please consider supporting us by becoming a sponsor. Your sponsorship helps us maintain and improve **all our free WordPress plugins**, not just Omni Mail.
+If you like this project, please consider supporting us by becoming a sponsor. Your sponsorship helps us maintain and improve **all our free WordPress plugins**, not just Jooosi Mail.
 
 ### Sponsorship Benefits
 

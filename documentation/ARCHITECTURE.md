@@ -1,6 +1,6 @@
-# Omni Mail Architecture
+# Jooosi Mail Architecture
 
-Omni Mail replaces direct WordPress email delivery with a layered runtime built around a compiled Symfony container, attribute-driven discovery, Symfony Mailer, Symfony Messenger, a broad built-in provider catalog, and an initial React admin app.
+Jooosi Mail replaces direct WordPress email delivery with a layered runtime built around a compiled Symfony container, attribute-driven discovery, Symfony Mailer, Symfony Messenger, a broad built-in provider catalog, and an initial React admin app.
 
 The architecture is designed to keep WordPress integration thin while making delivery, routing, queueing, and webhook handling explicit domain concerns.
 
@@ -16,7 +16,7 @@ The architecture is designed to keep WordPress integration thin while making del
 
 ### Bootstrap Layer
 
-- `omni-mail.php` is the plugin entry point.
+- `jooosi-mail.php` is the plugin entry point.
 - `src/Bootstrap/Plugin.php` owns the singleton boot path.
 - `src/Bootstrap/Kernel.php` builds and boots the runtime container.
 - `src/Bootstrap/LifecycleManager.php` runs activation tasks and registers WordPress bridges.
@@ -38,7 +38,7 @@ The architecture is designed to keep WordPress integration thin while making del
 
 ### Queue Layer
 
-- `src/Queue/Bus` wires Symfony Messenger for Omni Mail.
+- `src/Queue/Bus` wires Symfony Messenger for Jooosi Mail.
 - `src/Queue/Transport` persists queued envelopes in plugin tables.
 - `src/Queue/Worker` processes queued messages inside WordPress-friendly time and batch limits.
 - `src/Queue/Retry` centralizes retry decisions and retry delays.
@@ -61,7 +61,7 @@ The architecture is designed to keep WordPress integration thin while making del
 
 ### Boot Flow
 
-1. WordPress loads `omni-mail.php`.
+1. WordPress loads `jooosi-mail.php`.
 2. `Plugin` boots the `Kernel`.
 3. The container cache metadata is checked against the current source hash.
 4. If the cached class is stale, missing, or invalid, discovery reruns and a new compiled container is written.
@@ -74,7 +74,7 @@ The architecture is designed to keep WordPress integration thin while making del
 2. `WpMailPayloadNormalizer` builds a `MailRequest`.
 3. `RoutingPolicyResolver` produces a `DeliveryPlan`.
 4. `MailLifecycleLogger` creates a mail-log row used for both observability and queued delivery payload storage.
-5. Omni Mail either calls `DeliveryService` immediately or dispatches `SendEmailMessage` to the async transport.
+5. Jooosi Mail either calls `DeliveryService` immediately or dispatches `SendEmailMessage` to the async transport.
 6. When delivery becomes terminal, log retention cleanup may delete the mail-log and attempt rows according to settings.
 
 ### Queue Flow
@@ -88,17 +88,17 @@ The architecture is designed to keep WordPress integration thin while making del
 
 ### Webhook Flow
 
-1. Provider callbacks hit `/wp-json/omni-mail/v1/webhook/{connection_id}`.
+1. Provider callbacks hit `/wp-json/jooosi-mail/v1/webhook/{connection_id}`.
 2. `WebhookAdapterRegistry` resolves the best adapter for the connection.
 3. The adapter verifies and parses the request.
-4. Omni Mail persists normalized webhook events.
+4. Jooosi Mail persists normalized webhook events.
 5. Event projection and listeners feed delivery feedback back into routing health.
 
 Operational visibility for dashboard metrics, recent delivery attempts, queue work, and webhook events is exposed through both the admin UI and WP-CLI commands backed by the same persisted records.
 
 ## Persistence Model
 
-Omni Mail stores runtime state in plugin tables for durability and observability.
+Jooosi Mail stores runtime state in plugin tables for durability and observability.
 
 Connection records persist structured profile settings and secrets.
 

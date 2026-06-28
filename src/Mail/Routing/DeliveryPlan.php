@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Routing;
+namespace JooosiMail\Mail\Routing;
 
 /**
  * Normalized delivery routing decision.

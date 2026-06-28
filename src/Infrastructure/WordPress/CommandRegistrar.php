@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Infrastructure\WordPress;
+namespace JooosiMail\Infrastructure\WordPress;
 
-use OmniMail\Discovery\Attribute\Command;
-use OmniMail\Discovery\Runtime\DiscoveryManifest;
+use JooosiMail\Discovery\Attribute\Command;
+use JooosiMail\Discovery\Runtime\DiscoveryManifest;
 use Psr\Container\ContainerInterface;
 use ReflectionAttribute;
 use ReflectionClass;
@@ -19,7 +19,7 @@ use WP_CLI;
  */
 final readonly class CommandRegistrar
 {
-    private const string COMMAND_PREFIX = 'omni-mail';
+    private const string COMMAND_PREFIX = 'jooosi-mail';
 
     public function __construct(
         private ContainerInterface $container,

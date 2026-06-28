@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Infrastructure\Container;
+namespace JooosiMail\Tests\Integration\Infrastructure\Container;
 
-use OmniMail\Bootstrap\Environment;
-use OmniMail\Bootstrap\Paths;
-use OmniMail\Infrastructure\Container\ContainerCache;
+use JooosiMail\Bootstrap\Environment;
+use JooosiMail\Bootstrap\Paths;
+use JooosiMail\Infrastructure\Container\ContainerCache;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use RuntimeException;
@@ -47,14 +47,14 @@ final class ContainerCacheTest extends WP_UnitTestCase
     {
         $cache = $this->createCache();
         $builder = new ContainerBuilder();
-        $builder->register('omni_mail.cache_test_service', stdClass::class)->setPublic(true);
+        $builder->register('jooosi_mail.cache_test_service', stdClass::class)->setPublic(true);
         $builder->compile();
 
         $cache->dump($builder);
 
         self::assertTrue($cache->inspect()['usable']);
 
-        $staleClassName = 'OmniMailCachedContainerStale_' . str_replace('.', '_', uniqid('', true));
+        $staleClassName = 'JooosiMailCachedContainerStale_' . str_replace('.', '_', uniqid('', true));
         $this->writeFile($this->rootDir . '/var/cache/container.php', sprintf("<?php\n\nclass %s\n{\n}\n", $staleClassName));
 
         $inspection = $cache->inspect();
@@ -77,17 +77,17 @@ final class ContainerCacheTest extends WP_UnitTestCase
      */
     private function createCache(): ContainerCache
     {
-        $this->rootDir = sys_get_temp_dir() . '/omni-mail-container-cache-' . str_replace('.', '', uniqid('', true));
+        $this->rootDir = sys_get_temp_dir() . '/jooosi-mail-container-cache-' . str_replace('.', '', uniqid('', true));
 
         $this->createDirectory($this->rootDir . '/src');
         $this->createDirectory($this->rootDir . '/var/cache');
         $this->writeFile($this->rootDir . '/composer.json', "{}\n");
-        $this->writeFile($this->rootDir . '/omni-mail.php', "<?php\n");
-        $this->writeFile($this->rootDir . '/src/Tracked.php', "<?php\n\ndeclare(strict_types=1);\n\nnamespace OmniMail\\Tests\\Fixture;\n\nfinal class ContainerCacheTracked\n{\n}\n");
+        $this->writeFile($this->rootDir . '/jooosi-mail.php', "<?php\n");
+        $this->writeFile($this->rootDir . '/src/Tracked.php', "<?php\n\ndeclare(strict_types=1);\n\nnamespace JooosiMail\\Tests\\Fixture;\n\nfinal class ContainerCacheTracked\n{\n}\n");
 
         return new ContainerCache(
             new Paths(
-                pluginFile: $this->rootDir . '/omni-mail.php',
+                pluginFile: $this->rootDir . '/jooosi-mail.php',
                 rootDir: $this->rootDir,
                 srcDir: $this->rootDir . '/src',
                 cacheDir: $this->rootDir . '/var/cache',

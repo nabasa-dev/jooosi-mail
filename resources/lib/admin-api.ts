@@ -424,7 +424,7 @@ export type ConnectionSavePayload = {
   secretConfiguration: Record<string, { action: ConnectionSecretAction; value: string }>
 }
 
-export type OmniMailAdminRuntime = {
+export type JooosiMailAdminRuntime = {
   apiRoot: string
   nonce: string
   pluginVersion: string
@@ -432,7 +432,7 @@ export type OmniMailAdminRuntime = {
 
 declare global {
   interface Window {
-    omniMailAdmin?: OmniMailAdminRuntime
+    jooosiMailAdmin?: JooosiMailAdminRuntime
   }
 }
 
@@ -449,17 +449,17 @@ export class AdminApiError extends Error {
   }
 }
 
-function getRuntime(): OmniMailAdminRuntime {
-  const runtime = window.omniMailAdmin
+function getRuntime(): JooosiMailAdminRuntime {
+  const runtime = window.jooosiMailAdmin
 
   if (!runtime) {
-    throw new Error("Omni Mail admin runtime is not available.")
+    throw new Error("Jooosi Mail admin runtime is not available.")
   }
 
   return runtime
 }
 
-export function getAdminRuntime(): OmniMailAdminRuntime {
+export function getAdminRuntime(): JooosiMailAdminRuntime {
   return getRuntime()
 }
 

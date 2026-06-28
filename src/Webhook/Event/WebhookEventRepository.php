@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Webhook\Event;
+namespace JooosiMail\Webhook\Event;
 
 use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection as DbalConnection;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
 
 /**
  * Repository for persisted webhook events.

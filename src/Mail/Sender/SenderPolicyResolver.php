@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Sender;
+namespace JooosiMail\Mail\Sender;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\WordPress\OptionStore;
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Mail\ValueObject\MailAddress;
-use OmniMail\Mail\ValueObject\MailRequest;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\WordPress\OptionStore;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Mail\ValueObject\MailAddress;
+use JooosiMail\Mail\ValueObject\MailRequest;
 
 /**
  * Resolves the effective sender identity for a selected delivery connection.
@@ -23,7 +23,7 @@ final readonly class SenderPolicyResolver
     public const string RETURN_PATH_MODE_MATCH_FROM = 'match_from';
     public const string RETURN_PATH_MODE_CUSTOM = 'custom';
 
-    private const string DEFAULT_FROM_APPLIED_METADATA_KEY = 'omni_mail_default_from_applied';
+    private const string DEFAULT_FROM_APPLIED_METADATA_KEY = 'jooosi_mail_default_from_applied';
 
     public function __construct(
         private OptionStore $optionStore,

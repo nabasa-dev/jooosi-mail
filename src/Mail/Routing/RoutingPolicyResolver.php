@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Routing;
+namespace JooosiMail\Mail\Routing;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\WordPress\OptionStore;
-use OmniMail\Mail\ValueObject\MailRequest;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\WordPress\OptionStore;
+use JooosiMail\Mail\ValueObject\MailRequest;
 
 /**
  * Resolves sync/async, priority, and strategy defaults.
@@ -45,7 +45,7 @@ final readonly class RoutingPolicyResolver
     private function resolvePreferredConnectionId(MailRequest $mailRequest): ?int
     {
         $preferredConnectionId = $mailRequest->metadata['preferred_connection_id']
-            ?? $mailRequest->headers['X-Omni-Mail-Connection-Id']
+            ?? $mailRequest->headers['X-Jooosi-Mail-Connection-Id']
             ?? null;
 
         if (! is_scalar($preferredConnectionId)) {

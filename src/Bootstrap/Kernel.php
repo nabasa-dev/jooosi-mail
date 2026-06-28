@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Bootstrap;
+namespace JooosiMail\Bootstrap;
 
-use OmniMail\Infrastructure\Container\ContainerFactory;
+use JooosiMail\Infrastructure\Container\ContainerFactory;
 use Psr\Container\ContainerInterface;
 
 /**
@@ -23,7 +23,7 @@ final class Kernel
     }
 
     /**
-     * Boot Omni Mail for the current request.
+     * Boot Jooosi Mail for the current request.
      *
      * @since 0.1.0
      */

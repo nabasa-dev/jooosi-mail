@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Database\Migration;
+namespace JooosiMail\Database\Migration;
 
-use OmniMail\Bootstrap\Paths;
-use OmniMail\Discovery\Attribute\Service;
+use JooosiMail\Bootstrap\Paths;
+use JooosiMail\Discovery\Attribute\Service;
 use RuntimeException;
 
 /**
@@ -39,12 +39,12 @@ final readonly class MigrationRegistry
 
             if ($version === '') {
                 // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-                throw new RuntimeException(sprintf('The Omni Mail migration class "%s" returned an empty version.', $className));
+                throw new RuntimeException(sprintf('The Jooosi Mail migration class "%s" returned an empty version.', $className));
             }
 
             if (isset($knownVersions[$version])) {
                 // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-                throw new RuntimeException(sprintf('The Omni Mail migration version "%s" is registered more than once.', $version));
+                throw new RuntimeException(sprintf('The Jooosi Mail migration version "%s" is registered more than once.', $version));
             }
 
             $knownVersions[$version] = true;
@@ -127,7 +127,7 @@ final readonly class MigrationRegistry
         $definition = $this->find($migration);
         if (! $definition instanceof MigrationDefinition) {
                 // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-                throw new RuntimeException(sprintf('The Omni Mail migration "%s" could not be found.', $migration));
+                throw new RuntimeException(sprintf('The Jooosi Mail migration "%s" could not be found.', $migration));
         }
 
         return $this->newInstance($definition->className);
@@ -170,13 +170,13 @@ final readonly class MigrationRegistry
     {
         if (! class_exists($className)) {
                 // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-                throw new RuntimeException(sprintf('The Omni Mail migration class "%s" could not be autoloaded.', $className));
+                throw new RuntimeException(sprintf('The Jooosi Mail migration class "%s" could not be autoloaded.', $className));
         }
 
         $migration = new $className();
         if (! $migration instanceof MigrationInterface) {
                 // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-                throw new RuntimeException(sprintf('The Omni Mail migration class "%s" must implement %s.', $className, MigrationInterface::class));
+                throw new RuntimeException(sprintf('The Jooosi Mail migration class "%s" must implement %s.', $className, MigrationInterface::class));
         }
 
         return $migration;

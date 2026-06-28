@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Webhook\Event;
+namespace JooosiMail\Webhook\Event;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Routing\ConnectionHealthPenaltyProviderInterface;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Routing\ConnectionHealthPenaltyProviderInterface;
 
 /**
  * Converts webhook delivery feedback into routing health penalties.

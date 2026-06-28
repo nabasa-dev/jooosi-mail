@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Logging;
+namespace JooosiMail\Mail\Logging;
 
 use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection as DbalConnection;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Database\TableNameResolver;
-use OmniMail\Mail\Routing\DeliveryMode;
-use OmniMail\Mail\Routing\DeliveryPlan;
-use OmniMail\Mail\ValueObject\MailRequest;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Mail\Routing\DeliveryMode;
+use JooosiMail\Mail\Routing\DeliveryPlan;
+use JooosiMail\Mail\ValueObject\MailRequest;
 use Throwable;
 
 /**

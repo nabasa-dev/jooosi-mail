@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Database\Migration;
+namespace JooosiMail\Database\Migration;
 
-use OmniMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\Service;
 use RuntimeException;
 
 /**
- * Runs Omni Mail database migrations during activation.
+ * Runs Jooosi Mail database migrations during activation.
  *
  * @since 0.1.0
  */

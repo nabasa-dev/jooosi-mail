@@ -2,25 +2,25 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Admin\Menu;
+namespace JooosiMail\Admin\Menu;
 
-use OmniMail\Bootstrap\Paths;
-use OmniMail\Discovery\Attribute\Hook;
-use OmniMail\Discovery\Attribute\Service;
+use JooosiMail\Bootstrap\Paths;
+use JooosiMail\Discovery\Attribute\Hook;
+use JooosiMail\Discovery\Attribute\Service;
 
 use function Nabasa\VitePlus\assets;
 
 /**
- * Registers the Omni Mail admin menu and admin app shell.
+ * Registers the Jooosi Mail admin menu and admin app shell.
  *
  * @since 0.1.0
  */
 #[Service]
 final class AdminMenu
 {
-    private const string PAGE_SLUG = 'omni-mail';
+    private const string PAGE_SLUG = 'jooosi-mail';
 
-    private const string ASSET_HANDLE = 'omni-mail-admin';
+    private const string ASSET_HANDLE = 'jooosi-mail-admin';
 
     /**
      * @since 0.1.0
@@ -37,12 +37,12 @@ final class AdminMenu
     public function register(): void
     {
         add_menu_page(
-            __('Omni Mail', 'omni-mail'),
-            __('Omni Mail', 'omni-mail'),
+            __('Jooosi Mail', 'jooosi-mail'),
+            __('Jooosi Mail', 'jooosi-mail'),
             'manage_options',
             self::PAGE_SLUG,
             [$this, 'render'],
-            'data:image/svg+xml;base64,' . base64_encode(file_get_contents($this->paths->rootDir . '/omni-mail.svg')),
+            'data:image/svg+xml;base64,' . base64_encode(file_get_contents($this->paths->rootDir . '/jooosi-mail.svg')),
             100,
         );
     }
@@ -68,10 +68,10 @@ final class AdminMenu
 
         wp_add_inline_script(
             self::ASSET_HANDLE,
-            'window.omniMailAdmin = ' . wp_json_encode([
-                'apiRoot' => trailingslashit((string) rest_url('omni-mail/v1/admin')),
+            'window.jooosiMailAdmin = ' . wp_json_encode([
+                'apiRoot' => trailingslashit((string) rest_url('jooosi-mail/v1/admin')),
                 'nonce' => wp_create_nonce('wp_rest'),
-                'pluginVersion' => OMNI_MAIL_VERSION,
+                'pluginVersion' => JOOOSI_MAIL_VERSION,
             ]) . ';',
             'before',
         );
@@ -82,6 +82,6 @@ final class AdminMenu
      */
     public function render(): void
     {
-        echo '<div id="omni-mail-app"></div>';
+        echo '<div id="jooosi-mail-app"></div>';
     }
 }

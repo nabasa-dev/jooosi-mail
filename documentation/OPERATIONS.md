@@ -1,21 +1,21 @@
-# Omni Mail Operations
+# Jooosi Mail Operations
 
-This guide covers how Omni Mail is configured and operated today. The project is still in its initial phase, so admin workflows, provider setup guidance, and operator playbooks are still being hardened.
+This guide covers how Jooosi Mail is configured and operated today. The project is still in its initial phase, so admin workflows, provider setup guidance, and operator playbooks are still being hardened.
 
 ## Operating Model
 
-Omni Mail is currently administered through both the WordPress admin UI and WP-CLI. The plugin intercepts `wp_mail()`, stores normalized mail records and delivery-attempt history according to the configured email log retention policy, then delivers synchronously or through its database-backed queue.
+Jooosi Mail is currently administered through both the WordPress admin UI and WP-CLI. The plugin intercepts `wp_mail()`, stores normalized mail records and delivery-attempt history according to the configured email log retention policy, then delivers synchronously or through its database-backed queue.
 
 The built-in profile catalog currently includes core transports (`smtp`, `sendmail`, `native`, `null`) plus provider profiles for `ahasend`, `azure`, `bird`, `brevo`, `cloudflare`, `elasticemail`, `emailit`, `gmail`, `infobip`, `mailersend`, `mailgun`, `mailjet`, `mailomat`, `mailpace`, `mailtrap`, `mandrill`, `microsoftgraph`, `pepipost`, `postal`, `postmark`, `resend`, `scaleway`, `sendgrid`, `sendlayer`, `sendpulse`, `ses`, `smtp2go`, `smtpcom`, `sparkpost`, `sweego`, `tosend`, `zeptomail`, and `zohomail`.
 
-Use `wp omni-mail connection:profiles` as the authoritative source for supported schemes, field names, and webhook support.
+Use `wp jooosi-mail connection:profiles` as the authoritative source for supported schemes, field names, and webhook support.
 
 ## Admin UI
 
-Open the Omni Mail admin app from the WordPress dashboard or directly at:
+Open the Jooosi Mail admin app from the WordPress dashboard or directly at:
 
 ```text
-wp-admin/admin.php?page=omni-mail
+wp-admin/admin.php?page=jooosi-mail
 ```
 
 Current admin screens include:
@@ -31,38 +31,38 @@ The UI is functional but still early. Keep WP-CLI available for incident respons
 
 ## Activation and Runtime
 
-On activation, Omni Mail:
+On activation, Jooosi Mail:
 
 - runs database migrations,
 - creates the core mail and queue tables,
 - creates routing-state tables for circuit breakers and rate limits,
 - schedules recurring Action Scheduler queue processing.
 
-At runtime, Omni Mail:
+At runtime, Jooosi Mail:
 
 - boots a compiled Symfony container,
 - validates the compiled container against cache metadata and a source hash,
 - discovers services, commands, hooks, controllers, profiles, and handlers,
 - registers WordPress hooks, REST routes, and WP-CLI commands,
-- intercepts `wp_mail()` when Omni Mail is enabled.
+- intercepts `wp_mail()` when Jooosi Mail is enabled.
 
 ### Container Cache
 
 Use WP-CLI to inspect or clear the compiled container cache:
 
 ```bash
-wp omni-mail container:status
-wp omni-mail container:clear
+wp jooosi-mail container:status
+wp jooosi-mail container:clear
 ```
 
-In production, Omni Mail only reuses the compiled container when both the cache file and metadata file are present and their source hash matches the current plugin sources. If the cache becomes stale or corrupted, Omni Mail reruns discovery and rebuilds the container automatically.
+In production, Jooosi Mail only reuses the compiled container when both the cache file and metadata file are present and their source hash matches the current plugin sources. If the cache becomes stale or corrupted, Jooosi Mail reruns discovery and rebuilds the container automatically.
 
 ## Connection Management
 
 ### Inspect Profiles
 
 ```bash
-wp omni-mail connection:profiles
+wp jooosi-mail connection:profiles
 ```
 
 Use this to see the registered profile keys, supported schemes, webhook support, and expected fields.
@@ -70,26 +70,26 @@ Use this to see the registered profile keys, supported schemes, webhook support,
 ### Create a Connection
 
 ```bash
-wp omni-mail connection:create --profile=smtp --name="Primary SMTP" --host=smtp.example.com --port=587 --username=user --password=secret
+wp jooosi-mail connection:create --profile=smtp --name="Primary SMTP" --host=smtp.example.com --port=587 --username=user --password=secret
 ```
 
-Omni Mail stores canonical profile fields and builds the transport configuration lazily when delivery starts.
+Jooosi Mail stores canonical profile fields and builds the transport configuration lazily when delivery starts.
 
 ### Inspect and Update Connections
 
 ```bash
-wp omni-mail connection:list
-wp omni-mail connection:update 3 --weight=5 --priority=10 --rate-limit-hour=500
-wp omni-mail connection:status
+wp jooosi-mail connection:list
+wp jooosi-mail connection:update 3 --weight=5 --priority=10 --rate-limit-hour=500
+wp jooosi-mail connection:status
 ```
 
 ### Set the Default Route or Change Availability
 
 ```bash
-wp omni-mail connection:set-default 3
-wp omni-mail connection:enable 3
-wp omni-mail connection:disable 3
-wp omni-mail connection:delete 3
+wp jooosi-mail connection:set-default 3
+wp jooosi-mail connection:enable 3
+wp jooosi-mail connection:disable 3
+wp jooosi-mail connection:delete 3
 ```
 
 `connection:delete` asks for confirmation before removing the connection.
@@ -97,9 +97,9 @@ wp omni-mail connection:delete 3
 ### Focused CLI Checks
 
 ```bash
-wp omni-mail migration:status
-wp omni-mail queue:status
-wp omni-mail queue:work --limit=10
+wp jooosi-mail migration:status
+wp jooosi-mail queue:status
+wp jooosi-mail queue:work --limit=10
 ```
 
 Use these focused commands to verify schema state and queue processing without relying on a single broad smoke command.
@@ -107,14 +107,14 @@ Use these focused commands to verify schema state and queue processing without r
 Useful migration commands:
 
 ```bash
-wp omni-mail migration:list
-wp omni-mail migration:run --dry-run
-wp omni-mail migration:rollback --dry-run
+wp jooosi-mail migration:list
+wp jooosi-mail migration:run --dry-run
+wp jooosi-mail migration:rollback --dry-run
 ```
 
 ## Admin Settings
 
-The Settings screen stores plugin-wide defaults in the `omni_mail_config` option.
+The Settings screen stores plugin-wide defaults in the `jooosi_mail_config` option.
 
 Current settings include:
 
@@ -130,7 +130,7 @@ Current settings include:
 
 ## Routing Model
 
-Omni Mail separates routing into four concerns:
+Jooosi Mail separates routing into four concerns:
 
 - delivery mode: sync or async,
 - strategy: `single`, `weighted_random`, `round_robin`, or `failover`,
@@ -139,9 +139,9 @@ Omni Mail separates routing into four concerns:
 
 ### Preferred and Default Connections
 
-- A request can prefer a connection through `MailRequest` metadata or the `X-Omni-Mail-Connection-Id` header.
+- A request can prefer a connection through `MailRequest` metadata or the `X-Jooosi-Mail-Connection-Id` header.
 - A default connection remains a preference, not a hard lock.
-- If the preferred or default route is unavailable, Omni Mail can still fail over to other active connections.
+- If the preferred or default route is unavailable, Jooosi Mail can still fail over to other active connections.
 
 ### Health, Circuit Breaker, and Rate Limits
 
@@ -154,7 +154,7 @@ Omni Mail separates routing into four concerns:
 
 - `weighted_random` is the default routing strategy.
 - `round_robin` uses smooth weighted round robin primary selection.
-- Smooth weighted round robin persists its shared state in a dedicated Omni Mail table.
+- Smooth weighted round robin persists its shared state in a dedicated Jooosi Mail table.
 - Only reasonably healthy connections are eligible as weighted-random or round-robin primaries.
 - Remaining candidates are still ordered for failover.
 
@@ -162,7 +162,7 @@ Queued messages re-read the current routing defaults when they are actually deli
 
 ## Queue Operations
 
-Async mail is stored in the Omni Mail queue table and processed by a small WordPress-friendly worker.
+Async mail is stored in the Jooosi Mail queue table and processed by a small WordPress-friendly worker.
 
 Queue entry points:
 
@@ -176,16 +176,16 @@ Immediate queue wakeups can also nudge Action Scheduler's internal async runner 
 ### Inspect and Work the Queue
 
 ```bash
-wp omni-mail queue:status
-wp omni-mail queue:work --limit=25 --time-limit=20
-wp omni-mail queue:processing --limit=20
-wp omni-mail queue:release-stale --older-than=300
-wp omni-mail queue:failed --limit=20
-wp omni-mail queue:retry
-wp omni-mail queue:retry --id=42
+wp jooosi-mail queue:status
+wp jooosi-mail queue:work --limit=25 --time-limit=20
+wp jooosi-mail queue:processing --limit=20
+wp jooosi-mail queue:release-stale --older-than=300
+wp jooosi-mail queue:failed --limit=20
+wp jooosi-mail queue:retry
+wp jooosi-mail queue:retry --id=42
 ```
 
-Retry timing is configurable through Omni Mail options. Temporary routing exhaustion can return a retry-after value so the worker reschedules the job at a better time instead of only using exponential backoff.
+Retry timing is configurable through Jooosi Mail options. Temporary routing exhaustion can return a retry-after value so the worker reschedules the job at a better time instead of only using exponential backoff.
 
 `queue:status` now separates ready pending, deferred pending, active processing, stale processing claims, and failed messages. `queue:work` automatically releases stale claims older than five minutes before it claims more work.
 
@@ -196,7 +196,7 @@ Webhook ingestion is available through the REST API.
 Endpoint shape:
 
 ```text
-/wp-json/omni-mail/v1/webhook/{connection_id}
+/wp-json/jooosi-mail/v1/webhook/{connection_id}
 ```
 
 Current webhook adapters:
@@ -221,7 +221,7 @@ Current webhook adapters:
 - ZeptoMail
 - Generic fallback parser
 
-Verification posture depends on the adapter and whether a connection has the required secret material configured. Omni Mail currently uses a mix of:
+Verification posture depends on the adapter and whether a connection has the required secret material configured. Jooosi Mail currently uses a mix of:
 
 - shared-secret or HMAC validation,
 - provider public-key validation,
@@ -232,10 +232,10 @@ Verification posture depends on the adapter and whether a connection has the req
 Useful webhook commands:
 
 ```bash
-wp omni-mail webhook:status
-wp omni-mail webhook:status --all=true
-wp omni-mail webhook:events --limit=20
-wp omni-mail webhook:events --connection-id=3
+wp jooosi-mail webhook:status
+wp jooosi-mail webhook:status --all=true
+wp jooosi-mail webhook:events --limit=20
+wp jooosi-mail webhook:events --connection-id=3
 ```
 
 Webhook requests now return `404` when the target connection exists but webhook ingestion is disabled for that connection. Use `webhook:status` to confirm whether a connection is currently accepting callbacks and whether the active adapter is protected by a shared secret or currently unsupported.
@@ -247,9 +247,9 @@ Webhook events are persisted and projected back into WordPress hooks so they can
 Use WP-CLI to inspect recent delivery attempts:
 
 ```bash
-wp omni-mail mail:attempts --limit=20
-wp omni-mail mail:attempts --mail-log-id=42
-wp omni-mail mail:attempts --connection-id=3 --status=failed
+wp jooosi-mail mail:attempts --limit=20
+wp jooosi-mail mail:attempts --mail-log-id=42
+wp jooosi-mail mail:attempts --connection-id=3 --status=failed
 ```
 
 This gives operators a direct view into per-connection outcomes, provider message ids, and the latest error text without querying the database manually.
@@ -258,7 +258,7 @@ This gives operators a direct view into per-connection outcomes, provider messag
 
 Email logging is enabled by default and terminal logs are kept forever by default.
 
-Administrators can disable retained email logs or set a retention duration from the plugin settings screen. Omni Mail still keeps the internal mail-log row while a message is `pending`, `queued`, or `processing`, because async delivery reconstructs the message from that durable payload. When logging is disabled, terminal `sent` and `failed` mail logs and their delivery-attempt rows are deleted after delivery completes.
+Administrators can disable retained email logs or set a retention duration from the plugin settings screen. Jooosi Mail still keeps the internal mail-log row while a message is `pending`, `queued`, or `processing`, because async delivery reconstructs the message from that durable payload. When logging is disabled, terminal `sent` and `failed` mail logs and their delivery-attempt rows are deleted after delivery completes.
 
 Retention cleanup runs through Action Scheduler and only deletes terminal mail logs. Queue records and webhook events remain as operational records; webhook events are detached from deleted mail-log ids.
 
@@ -277,19 +277,19 @@ Admin visibility includes:
 
 Useful commands:
 
-- `wp omni-mail connection:status`
-- `wp omni-mail connection:list`
-- `wp omni-mail container:status`
-- `wp omni-mail mail:attempts --limit=20`
-- `wp omni-mail queue:status`
-- `wp omni-mail queue:processing`
-- `wp omni-mail queue:release-stale`
-- `wp omni-mail queue:failed`
-- `wp omni-mail container:clear`
-- `wp omni-mail webhook:status`
-- `wp omni-mail webhook:events --limit=20`
-- `wp omni-mail mail:test --to=you@example.com`
-- `wp omni-mail mail:test --to=you@example.com --connection-id=3`
+- `wp jooosi-mail connection:status`
+- `wp jooosi-mail connection:list`
+- `wp jooosi-mail container:status`
+- `wp jooosi-mail mail:attempts --limit=20`
+- `wp jooosi-mail queue:status`
+- `wp jooosi-mail queue:processing`
+- `wp jooosi-mail queue:release-stale`
+- `wp jooosi-mail queue:failed`
+- `wp jooosi-mail container:clear`
+- `wp jooosi-mail webhook:status`
+- `wp jooosi-mail webhook:events --limit=20`
+- `wp jooosi-mail mail:test --to=you@example.com`
+- `wp jooosi-mail mail:test --to=you@example.com --connection-id=3`
 
 Persisted records include:
 

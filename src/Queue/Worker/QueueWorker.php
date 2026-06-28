@@ -2,24 +2,24 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Queue\Worker;
+namespace JooosiMail\Queue\Worker;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Event\EventPublisherInterface;
-use OmniMail\Mail\Logging\MailLogRepository;
-use OmniMail\Mail\Logging\MailLogRetentionService;
-use OmniMail\Queue\Maintenance\QueueMaintenanceService;
-use OmniMail\Queue\Message\SendEmailMessage;
-use OmniMail\Queue\Retry\RetryDecider;
-use OmniMail\Queue\Transport\DatabaseReceiver;
-use OmniMail\Queue\Transport\DatabaseTransport;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Event\EventPublisherInterface;
+use JooosiMail\Mail\Logging\MailLogRepository;
+use JooosiMail\Mail\Logging\MailLogRetentionService;
+use JooosiMail\Queue\Maintenance\QueueMaintenanceService;
+use JooosiMail\Queue\Message\SendEmailMessage;
+use JooosiMail\Queue\Retry\RetryDecider;
+use JooosiMail\Queue\Transport\DatabaseReceiver;
+use JooosiMail\Queue\Transport\DatabaseTransport;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Messenger\Stamp\ReceivedStamp;
 use Throwable;
 
 /**
- * Small WordPress-friendly worker for the Omni Mail queue.
+ * Small WordPress-friendly worker for the Jooosi Mail queue.
  *
  * @since 0.1.0
  */
@@ -47,7 +47,7 @@ final readonly class QueueWorker
         $releasedStaleClaims = $this->queueMaintenanceService->releaseStaleClaims();
 
         if ($releasedStaleClaims > 0) {
-            $this->eventPublisher->doAction('a!omni-mail/queue:stale-claims.released', $releasedStaleClaims);
+            $this->eventPublisher->doAction('a!jooosi-mail/queue:stale-claims.released', $releasedStaleClaims);
         }
 
         while ((time() - $startedAt) < $timeLimit) {
@@ -67,7 +67,7 @@ final readonly class QueueWorker
                 $attemptEnvelope = $this->databaseReceiver->beginAttempt($envelope);
 
                 if (! $attemptEnvelope instanceof Envelope) {
-                    $this->eventPublisher->doAction('a!omni-mail/queue:message.claim-lost', $envelope);
+                    $this->eventPublisher->doAction('a!jooosi-mail/queue:message.claim-lost', $envelope);
 
                     continue;
                 }
@@ -108,24 +108,24 @@ final readonly class QueueWorker
             $delaySeconds = $this->retryDecider->getDelaySeconds($envelope, $throwable);
 
             if (! $this->databaseReceiver->reschedule($envelope, $throwable->getMessage(), $delaySeconds)) {
-                $this->eventPublisher->doAction('a!omni-mail/queue:message.claim-lost', $envelope, $throwable);
+                $this->eventPublisher->doAction('a!jooosi-mail/queue:message.claim-lost', $envelope, $throwable);
 
                 return;
             }
 
-            $this->eventPublisher->doAction('a!omni-mail/queue:message.retrying', $envelope, $throwable, $delaySeconds);
+            $this->eventPublisher->doAction('a!jooosi-mail/queue:message.retrying', $envelope, $throwable, $delaySeconds);
 
             return;
         }
 
         if (! $this->databaseReceiver->rejectClaimed($envelope)) {
-            $this->eventPublisher->doAction('a!omni-mail/queue:message.claim-lost', $envelope, $throwable);
+            $this->eventPublisher->doAction('a!jooosi-mail/queue:message.claim-lost', $envelope, $throwable);
 
             return;
         }
 
         $this->markMailFailed($envelope, $throwable);
-        $this->eventPublisher->doAction('a!omni-mail/queue:message.failed', $envelope, $throwable);
+        $this->eventPublisher->doAction('a!jooosi-mail/queue:message.failed', $envelope, $throwable);
     }
 
     /**
@@ -141,10 +141,10 @@ final readonly class QueueWorker
 
         try {
             $this->mailLogRepository->markFailed($message->mailLogId, $throwable->getMessage());
-            $this->eventPublisher->doAction('a!omni-mail/mail:failed', $message->mailLogId, $throwable->getMessage());
+            $this->eventPublisher->doAction('a!jooosi-mail/mail:failed', $message->mailLogId, $throwable->getMessage());
             $this->cleanupTerminalLog($message->mailLogId);
         } catch (Throwable $failureThrowable) {
-            $this->eventPublisher->doAction('a!omni-mail/mail:failed-log.failed', $message->mailLogId, $throwable, $failureThrowable);
+            $this->eventPublisher->doAction('a!jooosi-mail/mail:failed-log.failed', $message->mailLogId, $throwable, $failureThrowable);
         }
     }
 
@@ -156,7 +156,7 @@ final readonly class QueueWorker
         try {
             $this->mailLogRetentionService->cleanupTerminalLog($mailLogId);
         } catch (Throwable $throwable) {
-            $this->eventPublisher->doAction('a!omni-mail/mail:retention-cleanup.failed', $mailLogId, $throwable);
+            $this->eventPublisher->doAction('a!jooosi-mail/mail:retention-cleanup.failed', $mailLogId, $throwable);
         }
     }
 }

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Queue\Failure;
+namespace JooosiMail\Queue\Failure;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Queue\Query\QueueMessageQuery;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Queue\Query\QueueMessageQuery;
 
 /**
  * Read model for failed queue messages.

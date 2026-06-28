@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Routing;
+namespace JooosiMail\Mail\Routing;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Event\EventPublisherInterface;
-use OmniMail\Infrastructure\WordPress\OptionStore;
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Mail\Routing\State\RateLimitStateRepository;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Event\EventPublisherInterface;
+use JooosiMail\Infrastructure\WordPress\OptionStore;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Mail\Routing\State\RateLimitStateRepository;
 
 /**
  * Applies per-connection rate limits using persisted rolling windows.
@@ -40,7 +40,7 @@ final readonly class ConnectionRateLimiter
         $availability = $this->getAvailability($connection);
 
         return (bool) $this->eventPublisher->applyFilters(
-            'f!omni-mail/routing:connection.rate-limit.can-send',
+            'f!jooosi-mail/routing:connection.rate-limit.can-send',
             ! $availability['blocked'],
             $connection,
             $availability,
@@ -100,7 +100,7 @@ final readonly class ConnectionRateLimiter
             $this->rateLimitStateRepository->increment($connection->id, $period, self::WINDOWS[$period]);
         }
 
-        $this->eventPublisher->doAction('a!omni-mail/routing/rate-limit:recorded', $connection);
+        $this->eventPublisher->doAction('a!jooosi-mail/routing/rate-limit:recorded', $connection);
     }
 
     /**
@@ -121,7 +121,7 @@ final readonly class ConnectionRateLimiter
         $reserved = $this->rateLimitStateRepository->reserve($connection->id, $this->resolveLimits($connection), self::WINDOWS);
 
         if ($reserved) {
-            $this->eventPublisher->doAction('a!omni-mail/routing/rate-limit:reserved', $connection);
+            $this->eventPublisher->doAction('a!jooosi-mail/routing/rate-limit:reserved', $connection);
         }
 
         return $reserved;
@@ -160,7 +160,7 @@ final readonly class ConnectionRateLimiter
 
         $limit = (int) $settingValue;
 
-        return (int) $this->eventPublisher->applyFilters('f!omni-mail/routing:connection.rate-limit.' . $period, $limit, $connection);
+        return (int) $this->eventPublisher->applyFilters('f!jooosi-mail/routing:connection.rate-limit.' . $period, $limit, $connection);
     }
 
     /**

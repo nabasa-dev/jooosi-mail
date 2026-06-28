@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Profile;
+namespace JooosiMail\Mail\Profile;
 
-use OmniMail\Discovery\Attribute\MailProfile;
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Mail\Connection\ConnectionConfigurationException;
+use JooosiMail\Discovery\Attribute\MailProfile;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Mail\Connection\ConnectionConfigurationException;
 use Override;
 use ReflectionClass;
 use RuntimeException;

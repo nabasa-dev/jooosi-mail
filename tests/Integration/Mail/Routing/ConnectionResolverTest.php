@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Mail\Routing;
+namespace JooosiMail\Tests\Integration\Mail\Routing;
 
-use OmniMail\Mail\Routing\DeliveryMode;
-use OmniMail\Mail\Routing\DeliveryPlan;
-use OmniMail\Mail\Routing\RoutingStrategy;
-use OmniMail\Tests\Integration\Support\OmniMailIntegrationTestCase;
+use JooosiMail\Mail\Routing\DeliveryMode;
+use JooosiMail\Mail\Routing\DeliveryPlan;
+use JooosiMail\Mail\Routing\RoutingStrategy;
+use JooosiMail\Tests\Integration\Support\JooosiMailIntegrationTestCase;
 use RuntimeException;
 
 /**
@@ -15,7 +15,7 @@ use RuntimeException;
  *
  * @since 0.1.0
  */
-final class ConnectionResolverTest extends OmniMailIntegrationTestCase
+final class ConnectionResolverTest extends JooosiMailIntegrationTestCase
 {
     /**
      * @since 0.1.0

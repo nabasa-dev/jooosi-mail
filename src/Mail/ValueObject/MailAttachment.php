@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\ValueObject;
+namespace JooosiMail\Mail\ValueObject;
 
 /**
  * Immutable attachment metadata.

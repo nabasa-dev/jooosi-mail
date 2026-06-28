@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Mail\Logging;
+namespace JooosiMail\Tests\Integration\Mail\Logging;
 
-use OmniMail\Mail\Logging\MailLogRetentionPolicy;
-use OmniMail\Mail\Logging\MailLogRetentionService;
-use OmniMail\Tests\Integration\Support\OmniMailIntegrationTestCase;
+use JooosiMail\Mail\Logging\MailLogRetentionPolicy;
+use JooosiMail\Mail\Logging\MailLogRetentionService;
+use JooosiMail\Tests\Integration\Support\JooosiMailIntegrationTestCase;
 
 /**
  * Covers email log retention and disabled logging cleanup.
  *
  * @since 0.1.0
  */
-final class MailLogRetentionServiceTest extends OmniMailIntegrationTestCase
+final class MailLogRetentionServiceTest extends JooosiMailIntegrationTestCase
 {
     /**
      * @since 0.1.0

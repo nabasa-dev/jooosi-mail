@@ -34,7 +34,7 @@ rm -f "php-scoper-wordpress-excludes-master.zip"
 
 if [ -d "$ACTION_SCHEDULER_DIRECTORY" ]; then
     note "Temporarily excluding Action Scheduler from scoping"
-    ACTION_SCHEDULER_STAGING_DIRECTORY=$(mktemp -d "${TMPDIR:-/tmp}/omni-mail-action-scheduler.XXXXXX")
+    ACTION_SCHEDULER_STAGING_DIRECTORY=$(mktemp -d "${TMPDIR:-/tmp}/jooosi-mail-action-scheduler.XXXXXX")
     mv "$ACTION_SCHEDULER_DIRECTORY" "$ACTION_SCHEDULER_STAGING_DIRECTORY/action-scheduler"
 fi
 

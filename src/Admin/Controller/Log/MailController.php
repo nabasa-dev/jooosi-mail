@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Admin\Controller\Log;
+namespace JooosiMail\Admin\Controller\Log;
 
 use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection as DbalConnection;
 use Doctrine\DBAL\Query\QueryBuilder;
-use OmniMail\Admin\Controller\AdminRouteAuthorization;
-use OmniMail\Admin\Mail\TestEmailSender;
-use OmniMail\Discovery\Attribute\Controller;
-use OmniMail\Discovery\Attribute\Route;
-use OmniMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Admin\Controller\AdminRouteAuthorization;
+use JooosiMail\Admin\Mail\TestEmailSender;
+use JooosiMail\Discovery\Attribute\Controller;
+use JooosiMail\Discovery\Attribute\Route;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
 use WP_Error;
 use WP_REST_Request;
 use WP_REST_Response;
@@ -23,7 +23,7 @@ use function Symfony\Component\String\u;
  *
  * @since 0.1.0
  */
-#[Controller(namespace: 'omni-mail/v1', prefix: 'admin/logs/mail')]
+#[Controller(namespace: 'jooosi-mail/v1', prefix: 'admin/logs/mail')]
 final readonly class MailController
 {
     /**
@@ -88,8 +88,8 @@ final readonly class MailController
 
         if ($to === '' || ! is_email($to)) {
             return new WP_Error(
-                'omni_mail_invalid_test_email',
-                __('Enter a valid recipient email address.', 'omni-mail'),
+                'jooosi_mail_invalid_test_email',
+                __('Enter a valid recipient email address.', 'jooosi-mail'),
                 ['status' => 400],
             );
         }
@@ -100,15 +100,15 @@ final readonly class MailController
 
         if (! $sent) {
             return new WP_Error(
-                'omni_mail_test_email_failed',
-                __('The test email failed.', 'omni-mail'),
+                'jooosi_mail_test_email_failed',
+                __('The test email failed.', 'jooosi-mail'),
                 ['status' => 500],
             );
         }
 
         return new WP_REST_Response([
             'sent' => true,
-            'message' => __('The test email was queued or sent successfully.', 'omni-mail'),
+            'message' => __('The test email was queued or sent successfully.', 'jooosi-mail'),
         ]);
     }
 

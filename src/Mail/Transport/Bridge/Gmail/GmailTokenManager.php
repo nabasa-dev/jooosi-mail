@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Transport\Bridge\Gmail;
+namespace JooosiMail\Mail\Transport\Bridge\Gmail;
 
 use SensitiveParameter;
 use Symfony\Component\Mailer\Exception\HttpTransportException;

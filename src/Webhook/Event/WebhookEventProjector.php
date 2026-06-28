@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Webhook\Event;
+namespace JooosiMail\Webhook\Event;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Event\EventPublisherInterface;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Event\EventPublisherInterface;
 
 /**
  * Projects normalized webhook events into WordPress hooks.
@@ -25,7 +25,7 @@ final readonly class WebhookEventProjector
      */
     public function project(WebhookEvent $event): void
     {
-        $this->eventPublisher->doAction('a!omni-mail/webhook:event', $event);
-        $this->eventPublisher->doAction('a!omni-mail/webhook:event.' . $event->eventType, $event);
+        $this->eventPublisher->doAction('a!jooosi-mail/webhook:event', $event);
+        $this->eventPublisher->doAction('a!jooosi-mail/webhook:event.' . $event->eventType, $event);
     }
 }

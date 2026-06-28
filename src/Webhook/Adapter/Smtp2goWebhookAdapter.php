@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Webhook\Adapter;
+namespace JooosiMail\Webhook\Adapter;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Connection\Connection;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Connection\Connection;
 use Override;
 use WP_REST_Request;
 
@@ -52,7 +52,7 @@ final class Smtp2goWebhookAdapter extends AbstractWebhookAdapter
             return parent::parse($request, $connection);
         }
 
-        $mailLogId = $this->extractMailLogId($payload) ?? $this->extractFirstInt($payload, ['x_omni_mail_mail_log_id', 'x_mail_log_id']);
+        $mailLogId = $this->extractMailLogId($payload) ?? $this->extractFirstInt($payload, ['x_jooosi_mail_mail_log_id', 'x_mail_log_id']);
 
         return [[
             'mail_log_id' => $mailLogId,

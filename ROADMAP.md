@@ -1,6 +1,6 @@
 # Roadmap
 
-This roadmap tracks the current direction of the project. Omni Mail is still in its initial phase, so priorities can move as backend contracts, admin workflows, provider coverage, and operational documentation mature.
+This roadmap tracks the current direction of the project. Jooosi Mail is still in its initial phase, so priorities can move as backend contracts, admin workflows, provider coverage, and operational documentation mature.
 
 ## Recently Landed
 

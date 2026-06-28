@@ -1,5 +1,5 @@
 {
-  "name": "omni-mail",
+  "name": "jooosi-mail",
   "private": true,
   "version": "1.0.3",
   "packageManager": "pnpm@10.30.3",
@@ -15,7 +15,7 @@
     "wp-env:test:status": "wp-env status --config=.wp-env.test.json",
     "wp-env:destroy": "wp-env destroy --force",
     "wp-env:test:destroy": "wp-env destroy --config=.wp-env.test.json --force",
-    "test:php:docker": "wp-env start --config=.wp-env.test.json && wp-env run --config=.wp-env.test.json cli --env-cwd=wp-content/plugins/omni-mail bash -lc 'composer install --no-interaction --prefer-dist && composer test:php'"
+    "test:php:docker": "wp-env start --config=.wp-env.test.json && wp-env run --config=.wp-env.test.json cli --env-cwd=wp-content/plugins/jooosi-mail bash -lc 'composer install --no-interaction --prefer-dist && composer test:php'"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",

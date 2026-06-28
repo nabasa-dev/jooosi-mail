@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Delivery;
+namespace JooosiMail\Mail\Delivery;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Mail\Connection\ConnectionDsnResolver;
-use OmniMail\Mail\Transport\TransportRegistry;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Mail\Connection\ConnectionDsnResolver;
+use JooosiMail\Mail\Transport\TransportRegistry;
 use Symfony\Component\Mailer\Mailer;
 
 /**

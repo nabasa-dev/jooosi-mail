@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Queue\Retry;
+namespace JooosiMail\Queue\Retry;
 
 use Override;
 use RuntimeException;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Infrastructure\Database;
+namespace JooosiMail\Infrastructure\Database;
 
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DriverManager;

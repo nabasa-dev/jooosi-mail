@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Mail\Connection;
+namespace JooosiMail\Tests\Integration\Mail\Connection;
 
-use OmniMail\Mail\Connection\ConnectionViewFactory;
-use OmniMail\Tests\Integration\Support\OmniMailIntegrationTestCase;
+use JooosiMail\Mail\Connection\ConnectionViewFactory;
+use JooosiMail\Tests\Integration\Support\JooosiMailIntegrationTestCase;
 
 /**
  * Covers admin-safe connection payload rendering.
  *
  * @since 0.1.0
  */
-final class ConnectionViewFactoryTest extends OmniMailIntegrationTestCase
+final class ConnectionViewFactoryTest extends JooosiMailIntegrationTestCase
 {
     /**
      * @since 0.1.0

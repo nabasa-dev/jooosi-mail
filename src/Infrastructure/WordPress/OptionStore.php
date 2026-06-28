@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Infrastructure\WordPress;
+namespace JooosiMail\Infrastructure\WordPress;
 
-use OmniMail\Settings\Config;
+use JooosiMail\Settings\Config;
 
 /**
- * Small wrapper around centralized Omni Mail config paths.
+ * Small wrapper around centralized Jooosi Mail config paths.
  *
  * @since 0.1.0
  */

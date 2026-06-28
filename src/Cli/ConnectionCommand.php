@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Cli;
+namespace JooosiMail\Cli;
 
-use OmniMail\Discovery\Attribute\Command;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Mail\Connection\ConnectionConfigurationException;
-use OmniMail\Mail\Connection\ConnectionManager;
-use OmniMail\Mail\Connection\ConnectionRepository;
-use OmniMail\Mail\Routing\ConnectionStatusReporter;
+use JooosiMail\Discovery\Attribute\Command;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Mail\Connection\ConnectionConfigurationException;
+use JooosiMail\Mail\Connection\ConnectionManager;
+use JooosiMail\Mail\Connection\ConnectionRepository;
+use JooosiMail\Mail\Routing\ConnectionStatusReporter;
 use WP_CLI;
 
 use function WP_CLI\Utils\format_items;
@@ -21,11 +21,11 @@ use function WP_CLI\Utils\format_items;
  * ## EXAMPLES
  *
  *     # Create an SMTP connection.
- *     $ wp omni-mail connection:create --profile=smtp --name="Primary SMTP" --host=smtp.example.com --port=587 --username=user --password=secret
+ *     $ wp jooosi-mail connection:create --profile=smtp --name="Primary SMTP" --host=smtp.example.com --port=587 --username=user --password=secret
  *     Success: Created connection #1 (Primary SMTP).
  *
  *     # Inspect configured connections.
- *     $ wp omni-mail connection:list
+ *     $ wp jooosi-mail connection:list
  *     id  name          profile  enabled  default  priority  weight  webhooks
  *     1   Primary SMTP  smtp     yes      yes      10        1       no
  *
@@ -42,7 +42,7 @@ final readonly class ConnectionCommand
     }
 
     /**
-     * Create an Omni Mail connection.
+     * Create a Jooosi Mail connection.
      *
      * ## OPTIONS
      *
@@ -130,7 +130,7 @@ final readonly class ConnectionCommand
      * ## EXAMPLES
      *
      *     # Create an SMTP connection from discrete fields.
-     *     $ wp omni-mail connection:create --profile=smtp --name="Primary SMTP" --host=smtp.example.com --port=587 --username=user --password=secret
+     *     $ wp jooosi-mail connection:create --profile=smtp --name="Primary SMTP" --host=smtp.example.com --port=587 --username=user --password=secret
      *     Success: Created connection #1 (Primary SMTP).
      *
      * @param array<int, string> $args
@@ -138,7 +138,7 @@ final readonly class ConnectionCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'Create an Omni Mail connection.')]
+    #[Command(description: 'Create a Jooosi Mail connection.')]
     public function create(array $args, array $assocArgs): void
     {
         try {
@@ -151,7 +151,7 @@ final readonly class ConnectionCommand
     }
 
     /**
-     * Update an Omni Mail connection.
+     * Update a Jooosi Mail connection.
      *
      * ## OPTIONS
      *
@@ -176,11 +176,11 @@ final readonly class ConnectionCommand
      * ## EXAMPLES
      *
      *     # Raise the weight and hourly rate limit for a connection.
-     *     $ wp omni-mail connection:update 3 --weight=5 --priority=10 --rate-limit-hour=500
+     *     $ wp jooosi-mail connection:update 3 --weight=5 --priority=10 --rate-limit-hour=500
      *     Success: Updated connection #3 (Primary SMTP).
      *
      *     # Rotate SMTP credentials and the webhook secret.
-     *     $ wp omni-mail connection:update 3 --username=mailer --password=new-secret --webhook-secret=shared-secret
+     *     $ wp jooosi-mail connection:update 3 --username=mailer --password=new-secret --webhook-secret=shared-secret
      *     Success: Updated connection #3 (Primary SMTP).
      *
      * @param array<int, string> $args
@@ -188,7 +188,7 @@ final readonly class ConnectionCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'Update an Omni Mail connection.')]
+    #[Command(description: 'Update a Jooosi Mail connection.')]
     public function update(array $args, array $assocArgs): void
     {
         $connectionId = $this->resolveConnectionId($args);
@@ -208,7 +208,7 @@ final readonly class ConnectionCommand
     }
 
     /**
-     * Enable an Omni Mail connection.
+     * Enable a Jooosi Mail connection.
      *
      * ## OPTIONS
      *
@@ -218,11 +218,11 @@ final readonly class ConnectionCommand
      * ## EXAMPLES
      *
      *     # Enable a connection.
-     *     $ wp omni-mail connection:enable 3
+     *     $ wp jooosi-mail connection:enable 3
      *     Success: Enabled connection #3 (Backup SMTP).
      *
      *     # Re-enable a previously disabled route.
-     *     $ wp omni-mail connection:enable 7
+     *     $ wp jooosi-mail connection:enable 7
      *     Success: Enabled connection #7 (Transactional SMTP).
      *
      * @param array<int, string> $args
@@ -230,7 +230,7 @@ final readonly class ConnectionCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'Enable an Omni Mail connection.')]
+    #[Command(description: 'Enable a Jooosi Mail connection.')]
     public function enable(array $args, array $assocArgs): void
     {
         $connectionId = $this->resolveConnectionId($args);
@@ -245,7 +245,7 @@ final readonly class ConnectionCommand
     }
 
     /**
-     * Disable an Omni Mail connection.
+     * Disable a Jooosi Mail connection.
      *
      * ## OPTIONS
      *
@@ -255,11 +255,11 @@ final readonly class ConnectionCommand
      * ## EXAMPLES
      *
      *     # Disable a connection.
-     *     $ wp omni-mail connection:disable 3
+     *     $ wp jooosi-mail connection:disable 3
      *     Success: Disabled connection #3 (Backup SMTP).
      *
      *     # Take a connection out of rotation.
-     *     $ wp omni-mail connection:disable 7
+     *     $ wp jooosi-mail connection:disable 7
      *     Success: Disabled connection #7 (Transactional SMTP).
      *
      * @param array<int, string> $args
@@ -267,7 +267,7 @@ final readonly class ConnectionCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'Disable an Omni Mail connection.')]
+    #[Command(description: 'Disable a Jooosi Mail connection.')]
     public function disable(array $args, array $assocArgs): void
     {
         $connectionId = $this->resolveConnectionId($args);
@@ -282,7 +282,7 @@ final readonly class ConnectionCommand
     }
 
     /**
-     * Delete an Omni Mail connection.
+     * Delete a Jooosi Mail connection.
      *
      * ## OPTIONS
      *
@@ -295,12 +295,12 @@ final readonly class ConnectionCommand
      * ## EXAMPLES
      *
      *     # Delete a connection interactively.
-     *     $ wp omni-mail connection:delete 3
+     *     $ wp jooosi-mail connection:delete 3
      *     Delete connection 3? [y/n] y
      *     Success: Deleted connection #3.
      *
      *     # Skip the confirmation prompt.
-     *     $ wp omni-mail connection:delete 3 --yes
+     *     $ wp jooosi-mail connection:delete 3 --yes
      *     Success: Deleted connection #3.
      *
      * @param array<int, string> $args
@@ -308,7 +308,7 @@ final readonly class ConnectionCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'Delete an Omni Mail connection.')]
+    #[Command(description: 'Delete a Jooosi Mail connection.')]
     public function delete(array $args, array $assocArgs): void
     {
         $connectionId = $this->resolveConnectionId($args);
@@ -325,17 +325,17 @@ final readonly class ConnectionCommand
     }
 
     /**
-     * List configured Omni Mail connections.
+     * List configured Jooosi Mail connections.
      *
      * ## EXAMPLES
      *
      *     # List configured connections.
-     *     $ wp omni-mail connection:list
+     *     $ wp jooosi-mail connection:list
      *     id  name          profile  enabled  default  priority  weight  webhooks
      *     1   Primary SMTP  smtp     yes      yes      10        1       no
      *
      *     # Show that no connections are configured yet.
-     *     $ wp omni-mail connection:list
+     *     $ wp jooosi-mail connection:list
      *     No connections configured.
      *
      * @param array<int, string> $args
@@ -343,7 +343,7 @@ final readonly class ConnectionCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'List configured Omni Mail connections.')]
+    #[Command(description: 'List configured Jooosi Mail connections.')]
     public function list(array $args, array $assocArgs): void
     {
         $items = array_map(static fn ($connection): array => [
@@ -367,19 +367,19 @@ final readonly class ConnectionCommand
     }
 
     /**
-     * List available Omni Mail connection profiles.
+     * List available Jooosi Mail connection profiles.
      *
      * ## EXAMPLES
      *
      *     # Show built-in connection profiles.
-     *     $ wp omni-mail connection:profiles
+     *     $ wp jooosi-mail connection:profiles
      *     key       label     schemes     webhooks  fields
      *     smtp      SMTP      smtp,smtps  no        scheme,host,port,username,password
      *     sendmail  Sendmail  sendmail    no        command
      *     ...
      *
      *     # Review profile field names before creating a connection.
-     *     $ wp omni-mail connection:profiles
+     *     $ wp jooosi-mail connection:profiles
      *     key    label  schemes     webhooks  fields
      *     smtp   SMTP   smtp,smtps  no        scheme,host,port,username,password
      *     ...
@@ -389,7 +389,7 @@ final readonly class ConnectionCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'List available Omni Mail connection profiles.')]
+    #[Command(description: 'List available Jooosi Mail connection profiles.')]
     public function profiles(array $args, array $assocArgs): void
     {
         $items = array_map(static fn (array $profile): array => [
@@ -404,7 +404,7 @@ final readonly class ConnectionCommand
     }
 
     /**
-     * Set an Omni Mail connection as default.
+     * Set a Jooosi Mail connection as default.
      *
      * ## OPTIONS
      *
@@ -414,11 +414,11 @@ final readonly class ConnectionCommand
      * ## EXAMPLES
      *
      *     # Mark a connection as the default route.
-     *     $ wp omni-mail connection:set-default 3
+     *     $ wp jooosi-mail connection:set-default 3
      *     Success: Connection #3 (Primary SMTP) is now the default.
      *
      *     # Promote a backup route after maintenance.
-     *     $ wp omni-mail connection:set-default 7
+     *     $ wp jooosi-mail connection:set-default 7
      *     Success: Connection #7 (Backup SMTP) is now the default.
      *
      * @param array<int, string> $args
@@ -426,7 +426,7 @@ final readonly class ConnectionCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'Set an Omni Mail connection as default.')]
+    #[Command(description: 'Set a Jooosi Mail connection as default.')]
     public function setDefault(array $args, array $assocArgs): void
     {
         $connectionId = $this->resolveConnectionId($args);
@@ -441,7 +441,7 @@ final readonly class ConnectionCommand
     }
 
     /**
-     * Show Omni Mail connection routing status.
+     * Show Jooosi Mail connection routing status.
      *
      * ## OPTIONS
      *
@@ -451,7 +451,7 @@ final readonly class ConnectionCommand
      * ## EXAMPLES
      *
      *     # Show routing health for active connections.
-     *     $ wp omni-mail connection:status
+     *     $ wp jooosi-mail connection:status
      *     id  name          profile  enabled  default  health  available  reasons  blacklisted_until  next_available_at  rate_limits
      *     1   Primary SMTP  smtp     yes      yes      95      yes        -        -                  -                  hour:500/500
      *     Active: 1
@@ -459,7 +459,7 @@ final readonly class ConnectionCommand
      *     Temporarily unavailable: 0
      *
      *     # Include disabled connections in the report.
-     *     $ wp omni-mail connection:status --all
+     *     $ wp jooosi-mail connection:status --all
      *     id  name          profile  enabled  default  health  available  reasons   blacklisted_until  next_available_at  rate_limits
      *     2   Backup SMTP   smtp     no       no       0       no         disabled  -                  -                  -
      *     Active: 1
@@ -471,7 +471,7 @@ final readonly class ConnectionCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'Show Omni Mail connection routing status.')]
+    #[Command(description: 'Show Jooosi Mail connection routing status.')]
     public function status(array $args, array $assocArgs): void
     {
         $includeDisabled = isset($assocArgs['all']) && (bool) $assocArgs['all'];

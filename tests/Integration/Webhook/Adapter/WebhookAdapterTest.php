@@ -2,29 +2,29 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Webhook\Adapter;
+namespace JooosiMail\Tests\Integration\Webhook\Adapter;
 
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Tests\Integration\Support\OmniMailIntegrationTestCase;
-use OmniMail\Webhook\Adapter\AhaSendWebhookAdapter;
-use OmniMail\Webhook\Adapter\BirdWebhookAdapter;
-use OmniMail\Webhook\Adapter\BrevoWebhookAdapter;
-use OmniMail\Webhook\Adapter\GenericWebhookAdapter;
-use OmniMail\Webhook\Adapter\MailerSendWebhookAdapter;
-use OmniMail\Webhook\Adapter\MailgunWebhookAdapter;
-use OmniMail\Webhook\Adapter\MailjetWebhookAdapter;
-use OmniMail\Webhook\Adapter\MailomatWebhookAdapter;
-use OmniMail\Webhook\Adapter\MailtrapWebhookAdapter;
-use OmniMail\Webhook\Adapter\MandrillWebhookAdapter;
-use OmniMail\Webhook\Adapter\PostmarkWebhookAdapter;
-use OmniMail\Webhook\Adapter\ResendWebhookAdapter;
-use OmniMail\Webhook\Adapter\SendGridWebhookAdapter;
-use OmniMail\Webhook\Adapter\SendLayerWebhookAdapter;
-use OmniMail\Webhook\Adapter\Smtp2goWebhookAdapter;
-use OmniMail\Webhook\Adapter\SparkPostWebhookAdapter;
-use OmniMail\Webhook\Adapter\SweegoWebhookAdapter;
-use OmniMail\Webhook\Adapter\ToSendWebhookAdapter;
-use OmniMail\Webhook\Adapter\ZeptoMailWebhookAdapter;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Tests\Integration\Support\JooosiMailIntegrationTestCase;
+use JooosiMail\Webhook\Adapter\AhaSendWebhookAdapter;
+use JooosiMail\Webhook\Adapter\BirdWebhookAdapter;
+use JooosiMail\Webhook\Adapter\BrevoWebhookAdapter;
+use JooosiMail\Webhook\Adapter\GenericWebhookAdapter;
+use JooosiMail\Webhook\Adapter\MailerSendWebhookAdapter;
+use JooosiMail\Webhook\Adapter\MailgunWebhookAdapter;
+use JooosiMail\Webhook\Adapter\MailjetWebhookAdapter;
+use JooosiMail\Webhook\Adapter\MailomatWebhookAdapter;
+use JooosiMail\Webhook\Adapter\MailtrapWebhookAdapter;
+use JooosiMail\Webhook\Adapter\MandrillWebhookAdapter;
+use JooosiMail\Webhook\Adapter\PostmarkWebhookAdapter;
+use JooosiMail\Webhook\Adapter\ResendWebhookAdapter;
+use JooosiMail\Webhook\Adapter\SendGridWebhookAdapter;
+use JooosiMail\Webhook\Adapter\SendLayerWebhookAdapter;
+use JooosiMail\Webhook\Adapter\Smtp2goWebhookAdapter;
+use JooosiMail\Webhook\Adapter\SparkPostWebhookAdapter;
+use JooosiMail\Webhook\Adapter\SweegoWebhookAdapter;
+use JooosiMail\Webhook\Adapter\ToSendWebhookAdapter;
+use JooosiMail\Webhook\Adapter\ZeptoMailWebhookAdapter;
 use WP_REST_Request;
 
 /**
@@ -32,7 +32,7 @@ use WP_REST_Request;
  *
  * @since 0.1.0
  */
-final class WebhookAdapterTest extends OmniMailIntegrationTestCase
+final class WebhookAdapterTest extends JooosiMailIntegrationTestCase
 {
     /**
      * @since 0.1.0
@@ -56,7 +56,7 @@ final class WebhookAdapterTest extends OmniMailIntegrationTestCase
                 'email' => 'second@example.com',
                 'smtp-id' => 'smtp-message-2',
                 'sg_event_id' => 'sg-event-2',
-                'metadata' => ['omni_mail_mail_log_id' => 42],
+                'metadata' => ['jooosi_mail_mail_log_id' => 42],
                 'timestamp' => 1700000100,
             ],
         ]);
@@ -420,7 +420,7 @@ final class WebhookAdapterTest extends OmniMailIntegrationTestCase
             'event' => 'spam',
             'time' => 1700000900,
             'email_id' => 'smtp2go-message-1',
-            'x_omni_mail_mail_log_id' => 161,
+            'x_jooosi_mail_mail_log_id' => 161,
         ]));
 
         $connection = new Connection(
@@ -531,7 +531,7 @@ final class WebhookAdapterTest extends OmniMailIntegrationTestCase
                     'message_id' => 'mailtrap-message-2',
                     'email' => 'second@example.com',
                     'timestamp' => 1700000400,
-                    'custom_variables' => ['omni_mail_mail_log_id' => 100],
+                    'custom_variables' => ['jooosi_mail_mail_log_id' => 100],
                 ],
             ],
         ]));
@@ -690,7 +690,7 @@ final class WebhookAdapterTest extends OmniMailIntegrationTestCase
     {
         $adapter = $this->container()->get(MandrillWebhookAdapter::class);
         $secret = 'mandrill-secret';
-        $request = new WP_REST_Request('POST', '/omni-mail/v1/webhook/1');
+        $request = new WP_REST_Request('POST', '/jooosi-mail/v1/webhook/1');
         $eventsPayload = wp_json_encode([
             [
                 'event' => 'delivered',
@@ -832,7 +832,7 @@ final class WebhookAdapterTest extends OmniMailIntegrationTestCase
     {
         $adapter = $this->container()->get(GenericWebhookAdapter::class);
         $request = new WP_REST_Request('POST', '/generic');
-        $request->set_header('x-omni-mail-source', 'generic');
+        $request->set_header('x-jooosi-mail-source', 'generic');
         $request->set_body('{"raw":true}');
         $request->set_param('event', 'provider callback');
         $request->set_param('message_id', 'generic-message-1');
@@ -847,7 +847,7 @@ final class WebhookAdapterTest extends OmniMailIntegrationTestCase
         self::assertSame('provider callback', $events[0]['event_type']);
         self::assertSame('generic-message-1', $events[0]['transport_message_id']);
         self::assertSame('{"raw":true}', $events[0]['payload']['body']);
-        self::assertSame('generic', $events[0]['payload']['headers']['x_omni_mail_source'][0] ?? null);
+        self::assertSame('generic', $events[0]['payload']['headers']['x_jooosi_mail_source'][0] ?? null);
     }
 
     /**

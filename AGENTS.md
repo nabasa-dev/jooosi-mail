@@ -1,9 +1,9 @@
-# Agent Guidelines for OmniMail
+# Agent Guidelines for JooosiMail
 
 ## Code Style
 - Use PHP 8.5+ features, strict types (`declare(strict_types=1);`)
 - WordPress 6.8+ compatibility
-- **WordPress Hooks**: Use WordPress hooks (actions/filters) for extensibility. Hook names should be formatted as `{prefix:a!|f!}omnimail/{module}[/submodule...]:action[.subaction...]`. (e.g., `a!omni-mail/core:send-email`, `f!omni-mail/connections/smtp:send.from`, `a!omni-mail/profiles:register`, `a!omni-mail/webhook:handle.callback`, etc). Where `a!` is for actions and `f!` is for filters.
+- **WordPress Hooks**: Use WordPress hooks (actions/filters) for extensibility. Hook names should be formatted as `{prefix:a!|f!}jooosimail/{module}[/submodule...]:action[.subaction...]`. (e.g., `a!jooosi-mail/core:send-email`, `f!jooosi-mail/connections/smtp:send.from`, `a!jooosi-mail/profiles:register`, `a!jooosi-mail/webhook:handle.callback`, etc). Where `a!` is for actions and `f!` is for filters.
 - **Attributes**: Use PHP 8 attributes for discovery (#[Service], #[Controller], #[Route], #[Hook], #[Command], etc.)
 - **Naming**: camelCase for methods, snake_case for WordPress hooks, SCREAMING_SNAKE_CASE for constants
 - **Symfony Compat**:Follow the Symfony coding standards as closely as possible while maintaining WordPress compatibility:

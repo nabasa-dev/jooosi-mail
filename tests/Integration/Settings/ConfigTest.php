@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Settings;
+namespace JooosiMail\Tests\Integration\Settings;
 
-use OmniMail\Settings\Config;
+use JooosiMail\Settings\Config;
 use WP_UnitTestCase;
 
 /**
@@ -19,7 +19,7 @@ final class ConfigTest extends WP_UnitTestCase
      */
     public function testSetGetAndDeletePersistNestedConfigPaths(): void
     {
-        delete_option('omni_mail_config');
+        delete_option('jooosi_mail_config');
 
         $config = new Config();
 
@@ -35,11 +35,11 @@ final class ConfigTest extends WP_UnitTestCase
                     ],
                 ],
             ],
-            get_option('omni_mail_config'),
+            get_option('jooosi_mail_config'),
         );
 
         self::assertTrue($config->delete('settings.mail.intercept.enabled'));
-        self::assertFalse(get_option('omni_mail_config', false));
+        self::assertFalse(get_option('jooosi_mail_config', false));
     }
 
     /**
@@ -47,7 +47,7 @@ final class ConfigTest extends WP_UnitTestCase
      */
     public function testAllReturnsTheSharedConfigPayload(): void
     {
-        delete_option('omni_mail_config');
+        delete_option('jooosi_mail_config');
 
         $config = new Config();
         $payload = [

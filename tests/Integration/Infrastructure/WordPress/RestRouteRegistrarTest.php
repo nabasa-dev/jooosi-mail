@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Infrastructure\WordPress;
+namespace JooosiMail\Tests\Integration\Infrastructure\WordPress;
 
-use OmniMail\Discovery\Attribute\Controller;
-use OmniMail\Discovery\Attribute\Route;
-use OmniMail\Discovery\Runtime\DiscoveryManifest;
-use OmniMail\Infrastructure\WordPress\RestRouteRegistrar;
-use OmniMail\Tests\Integration\Support\OmniMailIntegrationTestCase;
+use JooosiMail\Discovery\Attribute\Controller;
+use JooosiMail\Discovery\Attribute\Route;
+use JooosiMail\Discovery\Runtime\DiscoveryManifest;
+use JooosiMail\Infrastructure\WordPress\RestRouteRegistrar;
+use JooosiMail\Tests\Integration\Support\JooosiMailIntegrationTestCase;
 use Psr\Container\ContainerInterface;
 use RuntimeException;
 use WP_REST_Request;
@@ -19,7 +19,7 @@ use WP_REST_Response;
  *
  * @since 0.1.0
  */
-final class RestRouteRegistrarTest extends OmniMailIntegrationTestCase
+final class RestRouteRegistrarTest extends JooosiMailIntegrationTestCase
 {
     /**
      * @since 0.1.0
@@ -31,7 +31,7 @@ final class RestRouteRegistrarTest extends OmniMailIntegrationTestCase
 
         $this->registerTestRoutes($controller, $permissionService);
 
-        $response = rest_do_request(new WP_REST_Request('GET', '/omni-mail/v1/testing-permissions/controller'));
+        $response = rest_do_request(new WP_REST_Request('GET', '/jooosi-mail/v1/testing-permissions/controller'));
 
         self::assertSame(200, $response->get_status());
         self::assertSame(1, $controller->controllerPermissionCalls);
@@ -47,7 +47,7 @@ final class RestRouteRegistrarTest extends OmniMailIntegrationTestCase
 
         $this->registerTestRoutes($controller, $permissionService);
 
-        $response = rest_do_request(new WP_REST_Request('GET', '/omni-mail/v1/testing-permissions/service-array'));
+        $response = rest_do_request(new WP_REST_Request('GET', '/jooosi-mail/v1/testing-permissions/service-array'));
 
         self::assertSame(200, $response->get_status());
         self::assertSame(1, $permissionService->servicePermissionCalls);
@@ -63,7 +63,7 @@ final class RestRouteRegistrarTest extends OmniMailIntegrationTestCase
 
         $this->registerTestRoutes($controller, $permissionService);
 
-        $response = rest_do_request(new WP_REST_Request('GET', '/omni-mail/v1/testing-permissions/service-string'));
+        $response = rest_do_request(new WP_REST_Request('GET', '/jooosi-mail/v1/testing-permissions/service-string'));
 
         self::assertSame(200, $response->get_status());
         self::assertSame(1, $permissionService->servicePermissionCalls);
@@ -80,7 +80,7 @@ final class RestRouteRegistrarTest extends OmniMailIntegrationTestCase
         RoutePermissionStaticCallbacks::$staticPermissionCalls = 0;
         $this->registerTestRoutes($controller, $permissionService);
 
-        $response = rest_do_request(new WP_REST_Request('GET', '/omni-mail/v1/testing-permissions/static-array'));
+        $response = rest_do_request(new WP_REST_Request('GET', '/jooosi-mail/v1/testing-permissions/static-array'));
 
         self::assertSame(200, $response->get_status());
         self::assertSame(1, RoutePermissionStaticCallbacks::$staticPermissionCalls);
@@ -153,7 +153,7 @@ final readonly class RoutePermissionTestContainer implements ContainerInterface
  *
  * @since 0.1.0
  */
-#[Controller(namespace: 'omni-mail/v1', prefix: 'testing-permissions')]
+#[Controller(namespace: 'jooosi-mail/v1', prefix: 'testing-permissions')]
 final class RoutePermissionTestController
 {
     /**

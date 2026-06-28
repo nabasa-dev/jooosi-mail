@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Admin\Controller;
+namespace JooosiMail\Admin\Controller;
 
 use DateInterval;
 use DatePeriod;
 use DateTimeImmutable;
 use Doctrine\DBAL\Connection as DbalConnection;
-use OmniMail\Admin\Connection\AdminConnectionPayloadFactory;
-use OmniMail\Discovery\Attribute\Controller;
-use OmniMail\Discovery\Attribute\Route;
-use OmniMail\Infrastructure\Database\TableNameResolver;
-use OmniMail\Infrastructure\WordPress\OptionStore;
-use OmniMail\Mail\Routing\ConnectionStatusReporter;
-use OmniMail\Mail\Logging\MailAttemptRepository;
-use OmniMail\Queue\Query\QueueMessageQuery;
-use OmniMail\Webhook\Event\WebhookEventRepository;
+use JooosiMail\Admin\Connection\AdminConnectionPayloadFactory;
+use JooosiMail\Discovery\Attribute\Controller;
+use JooosiMail\Discovery\Attribute\Route;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Infrastructure\WordPress\OptionStore;
+use JooosiMail\Mail\Routing\ConnectionStatusReporter;
+use JooosiMail\Mail\Logging\MailAttemptRepository;
+use JooosiMail\Queue\Query\QueueMessageQuery;
+use JooosiMail\Webhook\Event\WebhookEventRepository;
 use WP_REST_Request;
 use WP_REST_Response;
 
@@ -25,7 +25,7 @@ use WP_REST_Response;
  *
  * @since 0.1.0
  */
-#[Controller(namespace: 'omni-mail/v1', prefix: 'admin/dashboard')]
+#[Controller(namespace: 'jooosi-mail/v1', prefix: 'admin/dashboard')]
 final readonly class DashboardController
 {
     /**
@@ -255,7 +255,7 @@ final readonly class DashboardController
             $payload['nextAvailableAt'] = $this->normalizeDateTime($availability['next_available_at'] ?? null);
             $payload['rateLimit'] = $this->normalizeRateLimit(is_array($availability['rate_limit'] ?? null) ? $availability['rate_limit'] : []);
             $payload['circuitBreaker'] = $this->normalizeCircuitBreaker(is_array($availability['circuit_breaker'] ?? null) ? $availability['circuit_breaker'] : []);
-            $payload['webhookUrl'] = $connection->id !== null ? rest_url('omni-mail/v1/webhook/' . $connection->id) : null;
+            $payload['webhookUrl'] = $connection->id !== null ? rest_url('jooosi-mail/v1/webhook/' . $connection->id) : null;
             $payloads[] = $payload;
         }
 

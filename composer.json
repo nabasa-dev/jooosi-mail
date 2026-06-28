@@ -1,5 +1,5 @@
 {
-    "name": "omni/mail",
+    "name": "jooosi/mail",
     "description": "A modern, robust email sending solution for WordPress sites with advanced features including multiple provider support, queue-based processing, and comprehensive monitoring.",
     "type": "wordpress-plugin",
     "license": "GPL-2.0-or-later",
@@ -40,12 +40,12 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMail\\": "src/"
+            "JooosiMail\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "OmniMail\\Tests\\": "tests/"
+            "JooosiMail\\Tests\\": "tests/"
         }
     },
     "config": {
@@ -54,7 +54,7 @@
     },
     "extra": {
         "wordpress-plugin": {
-            "name": "Omni Mail",
+            "name": "Jooosi Mail",
             "version": "1.0.3",
             "requires-wp": "7.0",
             "tested-wp": "7.0",

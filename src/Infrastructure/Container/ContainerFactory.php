@@ -2,33 +2,33 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Infrastructure\Container;
+namespace JooosiMail\Infrastructure\Container;
 
 use Doctrine\DBAL\Connection;
-use OmniMail\Bootstrap\Environment;
-use OmniMail\Bootstrap\LifecycleManager;
-use OmniMail\Bootstrap\Paths;
-use OmniMail\Discovery\Discovery\CommandDiscovery;
-use OmniMail\Discovery\Discovery\ControllerDiscovery;
-use OmniMail\Discovery\Discovery\MailProfileDiscovery;
-use OmniMail\Discovery\Discovery\MessageHandlerDiscovery;
-use OmniMail\Discovery\Discovery\ServiceDiscovery;
-use OmniMail\Discovery\Discovery\TransportFactoryDiscovery;
-use OmniMail\Discovery\Runtime\DiscoveryManifest;
-use OmniMail\Discovery\Runtime\DiscoveryState;
-use OmniMail\Discovery\Runtime\NullDiscoveryContainer;
-use OmniMail\Infrastructure\Database\DatabaseConnectionFactory;
-use OmniMail\Infrastructure\Database\TableNameResolver;
-use OmniMail\Infrastructure\Event\EventPublisherInterface;
-use OmniMail\Infrastructure\Security\SecretCipher;
-use OmniMail\Infrastructure\WordPress\CommandRegistrar;
-use OmniMail\Infrastructure\WordPress\HookRegistrar;
-use OmniMail\Infrastructure\WordPress\OptionStore;
-use OmniMail\Infrastructure\WordPress\RestRouteRegistrar;
-use OmniMail\Infrastructure\WordPress\WordPressEventPublisher;
-use OmniMail\Mail\Routing\ConnectionHealthPenaltyProviderInterface;
-use OmniMail\Queue\Bus\MessageBusFactory;
-use OmniMail\Webhook\Event\WebhookHealthPenaltyProvider;
+use JooosiMail\Bootstrap\Environment;
+use JooosiMail\Bootstrap\LifecycleManager;
+use JooosiMail\Bootstrap\Paths;
+use JooosiMail\Discovery\Discovery\CommandDiscovery;
+use JooosiMail\Discovery\Discovery\ControllerDiscovery;
+use JooosiMail\Discovery\Discovery\MailProfileDiscovery;
+use JooosiMail\Discovery\Discovery\MessageHandlerDiscovery;
+use JooosiMail\Discovery\Discovery\ServiceDiscovery;
+use JooosiMail\Discovery\Discovery\TransportFactoryDiscovery;
+use JooosiMail\Discovery\Runtime\DiscoveryManifest;
+use JooosiMail\Discovery\Runtime\DiscoveryState;
+use JooosiMail\Discovery\Runtime\NullDiscoveryContainer;
+use JooosiMail\Infrastructure\Database\DatabaseConnectionFactory;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Infrastructure\Event\EventPublisherInterface;
+use JooosiMail\Infrastructure\Security\SecretCipher;
+use JooosiMail\Infrastructure\WordPress\CommandRegistrar;
+use JooosiMail\Infrastructure\WordPress\HookRegistrar;
+use JooosiMail\Infrastructure\WordPress\OptionStore;
+use JooosiMail\Infrastructure\WordPress\RestRouteRegistrar;
+use JooosiMail\Infrastructure\WordPress\WordPressEventPublisher;
+use JooosiMail\Mail\Routing\ConnectionHealthPenaltyProviderInterface;
+use JooosiMail\Queue\Bus\MessageBusFactory;
+use JooosiMail\Webhook\Event\WebhookHealthPenaltyProvider;
 use Psr\Container\ContainerInterface;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
@@ -51,7 +51,7 @@ use Tempest\Discovery\DiscoveryConfig;
 use Tempest\Discovery\DiscoveryLocation;
 
 /**
- * Builds the Omni Mail Symfony container.
+ * Builds the Jooosi Mail Symfony container.
  *
  * @since 0.1.0
  */
@@ -108,7 +108,7 @@ final readonly class ContainerFactory
         DiscoveryState::reset();
 
         $config = new DiscoveryConfig([
-            new DiscoveryLocation('OmniMail', $this->paths->srcDir),
+            new DiscoveryLocation('JooosiMail', $this->paths->srcDir),
         ]);
         $config->classes = [
             ServiceDiscovery::class,
@@ -155,16 +155,16 @@ final readonly class ContainerFactory
         $builder->register(NullLogger::class, NullLogger::class)->setPublic(true);
         $builder->setAlias(LoggerInterface::class, NullLogger::class)->setPublic(true);
 
-        $builder->register('omni_mail.http_client', HttpClientInterface::class)
+        $builder->register('jooosi_mail.http_client', HttpClientInterface::class)
             ->setPublic(true)
             ->setFactory([HttpClient::class, 'create']);
-        $builder->setAlias(HttpClientInterface::class, 'omni_mail.http_client')->setPublic(true);
+        $builder->setAlias(HttpClientInterface::class, 'jooosi_mail.http_client')->setPublic(true);
 
         $builder->register(DatabaseConnectionFactory::class, DatabaseConnectionFactory::class)->setPublic(true);
-        $builder->register('omni_mail.database_connection', Connection::class)
+        $builder->register('jooosi_mail.database_connection', Connection::class)
             ->setPublic(true)
             ->setFactory([new Reference(DatabaseConnectionFactory::class), 'create']);
-        $builder->setAlias(Connection::class, 'omni_mail.database_connection')->setPublic(true);
+        $builder->setAlias(Connection::class, 'jooosi_mail.database_connection')->setPublic(true);
 
         $builder->register(TableNameResolver::class, TableNameResolver::class)->setPublic(true);
         $builder->register(ContainerCache::class, ContainerCache::class)->setPublic(true)->setAutowired(true);
@@ -177,10 +177,10 @@ final readonly class ContainerFactory
         $builder->register(PhpSerializer::class, PhpSerializer::class)->setPublic(true);
         $builder->setAlias(SerializerInterface::class, PhpSerializer::class)->setPublic(true);
 
-        $builder->register('omni_mail.message_bus', MessageBusInterface::class)
+        $builder->register('jooosi_mail.message_bus', MessageBusInterface::class)
             ->setPublic(true)
             ->setFactory([new Reference(MessageBusFactory::class), 'create']);
-        $builder->setAlias(MessageBusInterface::class, 'omni_mail.message_bus')->setPublic(true);
+        $builder->setAlias(MessageBusInterface::class, 'jooosi_mail.message_bus')->setPublic(true);
 
         $builder->register(HookRegistrar::class, HookRegistrar::class)->setPublic(true)->setAutowired(true);
         $builder->register(RestRouteRegistrar::class, RestRouteRegistrar::class)->setPublic(true)->setAutowired(true);

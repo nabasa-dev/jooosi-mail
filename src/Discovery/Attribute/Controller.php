@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Discovery\Attribute;
+namespace JooosiMail\Discovery\Attribute;
 
 use Attribute;
 
@@ -15,7 +15,7 @@ use Attribute;
 final readonly class Controller
 {
     public function __construct(
-        public string $namespace = 'omni-mail/v1',
+        public string $namespace = 'jooosi-mail/v1',
         public string $prefix = '',
     ) {
     }

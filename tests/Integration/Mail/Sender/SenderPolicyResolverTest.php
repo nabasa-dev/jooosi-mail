@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Mail\Sender;
+namespace JooosiMail\Tests\Integration\Mail\Sender;
 
-use OmniMail\Mail\Delivery\EmailFactory;
-use OmniMail\Mail\Sender\SenderPolicyResolver;
-use OmniMail\Mail\ValueObject\MailAddress;
-use OmniMail\Mail\ValueObject\MailRequest;
-use OmniMail\Tests\Integration\Support\OmniMailIntegrationTestCase;
+use JooosiMail\Mail\Delivery\EmailFactory;
+use JooosiMail\Mail\Sender\SenderPolicyResolver;
+use JooosiMail\Mail\ValueObject\MailAddress;
+use JooosiMail\Mail\ValueObject\MailRequest;
+use JooosiMail\Tests\Integration\Support\JooosiMailIntegrationTestCase;
 
 /**
  * Covers delivery-time sender policy resolution.
  *
  * @since 0.1.0
  */
-final class SenderPolicyResolverTest extends OmniMailIntegrationTestCase
+final class SenderPolicyResolverTest extends JooosiMailIntegrationTestCase
 {
     /**
      * @since 0.1.0
@@ -32,7 +32,7 @@ final class SenderPolicyResolverTest extends OmniMailIntegrationTestCase
             ],
         ]);
         $mailRequest = $this->createPolicyMailRequest([
-            'omni_mail_default_from_applied' => true,
+            'jooosi_mail_default_from_applied' => true,
         ]);
 
         $resolved = $this->senderPolicyResolver()->apply($mailRequest, $connection);

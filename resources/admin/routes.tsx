@@ -73,7 +73,7 @@ export const adminRoutes: AdminRoute[] = [
   {
     path: "/logs/webhooks",
     title: "Webhook Event Logs",
-    description: "Inspect normalized provider callbacks recorded by Omni Mail.",
+    description: "Inspect normalized provider callbacks recorded by Jooosi Mail.",
     icon: <File01Icon />,
     component: WebhookLogsPage,
   },
@@ -87,7 +87,7 @@ export const adminRoutes: AdminRoute[] = [
   {
     path: "/about",
     title: "About",
-    description: "Review Omni Mail version details, capabilities, and support links.",
+    description: "Review Jooosi Mail version details, capabilities, and support links.",
     icon: <InformationCircleIcon />,
     component: AboutPage,
   },

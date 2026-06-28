@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Webhook\Controller;
+namespace JooosiMail\Webhook\Controller;
 
-use OmniMail\Discovery\Attribute\Controller;
-use OmniMail\Discovery\Attribute\Route;
-use OmniMail\Infrastructure\Event\EventPublisherInterface;
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Mail\Connection\ConnectionRepository;
-use OmniMail\Mail\Logging\MailAttemptRepository;
-use OmniMail\Mail\Logging\MailLogRepository;
-use OmniMail\Webhook\Adapter\WebhookAdapterRegistry;
-use OmniMail\Webhook\Event\WebhookEvent;
-use OmniMail\Webhook\Event\WebhookEventProjector;
-use OmniMail\Webhook\Event\WebhookEventRepository;
+use JooosiMail\Discovery\Attribute\Controller;
+use JooosiMail\Discovery\Attribute\Route;
+use JooosiMail\Infrastructure\Event\EventPublisherInterface;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Mail\Connection\ConnectionRepository;
+use JooosiMail\Mail\Logging\MailAttemptRepository;
+use JooosiMail\Mail\Logging\MailLogRepository;
+use JooosiMail\Webhook\Adapter\WebhookAdapterRegistry;
+use JooosiMail\Webhook\Event\WebhookEvent;
+use JooosiMail\Webhook\Event\WebhookEventProjector;
+use JooosiMail\Webhook\Event\WebhookEventRepository;
 use RuntimeException;
 use WP_Error;
 use WP_REST_Request;
@@ -25,7 +25,7 @@ use WP_REST_Response;
  *
  * @since 0.1.0
  */
-#[Controller(namespace: 'omni-mail/v1', prefix: 'webhook')]
+#[Controller(namespace: 'jooosi-mail/v1', prefix: 'webhook')]
 final readonly class WebhookController
 {
     public function __construct(
@@ -94,30 +94,30 @@ final readonly class WebhookController
         $connection = $this->resolveWebhookConnection($request);
 
         if (! $connection instanceof Connection) {
-            return new WP_Error('omni_mail_webhook_connection_not_found', 'Connection not found.', ['status' => 404]);
+            return new WP_Error('jooosi_mail_webhook_connection_not_found', 'Connection not found.', ['status' => 404]);
         }
 
         if (! $connection->webhookEnabled) {
-            return new WP_Error('omni_mail_webhook_disabled', 'Webhook not enabled for this connection.', ['status' => 404]);
+            return new WP_Error('jooosi_mail_webhook_disabled', 'Webhook not enabled for this connection.', ['status' => 404]);
         }
 
         try {
             $webhookAdapter = $this->webhookAdapterRegistry->resolve($connection);
         } catch (RuntimeException $exception) {
-            return new WP_Error('omni_mail_webhook_adapter_missing', $exception->getMessage(), ['status' => 400]);
+            return new WP_Error('jooosi_mail_webhook_adapter_missing', $exception->getMessage(), ['status' => 400]);
         }
 
         if ($webhookAdapter->describeVerification($connection) === 'unsupported') {
-            return new WP_Error('omni_mail_webhook_verification_unsupported', 'Webhook verification is not supported for this connection.', ['status' => 403]);
+            return new WP_Error('jooosi_mail_webhook_verification_unsupported', 'Webhook verification is not supported for this connection.', ['status' => 403]);
         }
 
         if ($webhookAdapter->verify($request, $connection)) {
             return true;
         }
 
-        $this->eventPublisher->doAction('a!omni-mail/webhook:verification.failed', $connection, $request);
+        $this->eventPublisher->doAction('a!jooosi-mail/webhook:verification.failed', $connection, $request);
 
-        return new WP_Error('omni_mail_invalid_webhook_signature', 'Invalid webhook signature.', ['status' => 401]);
+        return new WP_Error('jooosi_mail_invalid_webhook_signature', 'Invalid webhook signature.', ['status' => 401]);
     }
 
     /**

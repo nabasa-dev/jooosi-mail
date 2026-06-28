@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Queue\Bus;
+namespace JooosiMail\Queue\Bus;
 
-use OmniMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\Service;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Messenger\MessageBus;
 use Symfony\Component\Messenger\MessageBusInterface;
@@ -12,7 +12,7 @@ use Symfony\Component\Messenger\Middleware\HandleMessageMiddleware;
 use Symfony\Component\Messenger\Middleware\SendMessageMiddleware;
 
 /**
- * Builds the Omni Mail Messenger bus.
+ * Builds the Jooosi Mail Messenger bus.
  *
  * @since 0.1.0
  */

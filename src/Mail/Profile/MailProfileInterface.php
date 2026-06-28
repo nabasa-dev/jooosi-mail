@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Profile;
+namespace JooosiMail\Mail\Profile;
 
-use OmniMail\Mail\Connection\Connection;
+use JooosiMail\Mail\Connection\Connection;
 
 /**
  * Contract for built-in and third-party mail profiles.

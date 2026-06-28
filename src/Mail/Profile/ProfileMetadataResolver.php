@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Profile;
+namespace JooosiMail\Mail\Profile;
 
-use OmniMail\Discovery\Attribute\MailProfile;
-use OmniMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\MailProfile;
+use JooosiMail\Discovery\Attribute\Service;
 use ReflectionClass;
 use RuntimeException;
 

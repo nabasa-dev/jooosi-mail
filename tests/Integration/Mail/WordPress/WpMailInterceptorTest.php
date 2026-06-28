@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Mail\WordPress;
+namespace JooosiMail\Tests\Integration\Mail\WordPress;
 
-use OmniMail\Mail\Delivery\DeliveryService;
-use OmniMail\Infrastructure\Event\EventPublisherInterface;
-use OmniMail\Mail\Logging\MailLifecycleLogger;
-use OmniMail\Mail\Routing\RoutingPolicyResolver;
-use OmniMail\Mail\WordPress\WpMailInterceptor;
-use OmniMail\Mail\WordPress\WpMailPayloadNormalizer;
-use OmniMail\Queue\Transport\DatabaseTransport;
-use OmniMail\Queue\Trigger\ActionSchedulerTrigger;
-use OmniMail\Queue\Trigger\TriggerCoordinator;
-use OmniMail\Tests\Integration\Support\OmniMailIntegrationTestCase;
+use JooosiMail\Mail\Delivery\DeliveryService;
+use JooosiMail\Infrastructure\Event\EventPublisherInterface;
+use JooosiMail\Mail\Logging\MailLifecycleLogger;
+use JooosiMail\Mail\Routing\RoutingPolicyResolver;
+use JooosiMail\Mail\WordPress\WpMailInterceptor;
+use JooosiMail\Mail\WordPress\WpMailPayloadNormalizer;
+use JooosiMail\Queue\Transport\DatabaseTransport;
+use JooosiMail\Queue\Trigger\ActionSchedulerTrigger;
+use JooosiMail\Queue\Trigger\TriggerCoordinator;
+use JooosiMail\Tests\Integration\Support\JooosiMailIntegrationTestCase;
 use RuntimeException;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\MessageBusInterface;
@@ -23,7 +23,7 @@ use Symfony\Component\Messenger\MessageBusInterface;
  *
  * @since 0.1.0
  */
-final class WpMailInterceptorTest extends OmniMailIntegrationTestCase
+final class WpMailInterceptorTest extends JooosiMailIntegrationTestCase
 {
     /**
      * @since 0.1.0

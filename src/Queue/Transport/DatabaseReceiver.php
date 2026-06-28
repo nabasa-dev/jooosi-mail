@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Queue\Transport;
+namespace JooosiMail\Queue\Transport;
 
 use Doctrine\DBAL\Connection as DbalConnection;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Database\TableNameResolver;
-use OmniMail\Queue\Stamp\DatabaseMessageStamp;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Queue\Stamp\DatabaseMessageStamp;
 use Override;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\Exception\MessageDecodingFailedException;

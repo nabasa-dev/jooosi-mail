@@ -2,42 +2,42 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Support;
+namespace JooosiMail\Tests\Integration\Support;
 
 use Doctrine\DBAL\Connection as DbalConnection;
-use OmniMail\Bootstrap\Environment;
-use OmniMail\Bootstrap\Paths;
-use OmniMail\Bootstrap\Plugin;
-use OmniMail\Cli\ConnectionCommand;
-use OmniMail\Cli\MailCommand;
-use OmniMail\Cli\MigrationCommand;
-use OmniMail\Cli\QueueCommand;
-use OmniMail\Cli\WebhookCommand;
-use OmniMail\Database\Migration\MigrationManager;
-use OmniMail\Infrastructure\Container\ContainerFactory;
-use OmniMail\Infrastructure\Database\TableNameResolver;
-use OmniMail\Infrastructure\WordPress\OptionStore;
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Mail\Connection\ConnectionManager;
-use OmniMail\Mail\Connection\ConnectionRepository;
-use OmniMail\Mail\Logging\MailAttemptRepository;
-use OmniMail\Mail\Logging\MailLogRepository;
-use OmniMail\Mail\Logging\MailLogRetentionScheduler;
-use OmniMail\Mail\Routing\ConnectionCircuitBreaker;
-use OmniMail\Mail\Routing\ConnectionRateLimiter;
-use OmniMail\Mail\Routing\ConnectionResolver;
-use OmniMail\Mail\Routing\DeliveryMode;
-use OmniMail\Mail\Routing\DeliveryPlan;
-use OmniMail\Mail\Routing\RoutingStrategy;
-use OmniMail\Mail\ValueObject\MailAddress;
-use OmniMail\Mail\ValueObject\MailRequest;
-use OmniMail\Queue\Maintenance\QueueMaintenanceService;
-use OmniMail\Queue\Query\QueueMessageQuery;
-use OmniMail\Queue\Transport\DatabaseReceiver;
-use OmniMail\Queue\Trigger\ActionSchedulerTrigger;
-use OmniMail\Queue\Worker\QueueWorker;
-use OmniMail\Queue\Worker\WorkerRunner;
-use OmniMail\Webhook\Event\WebhookEventRepository;
+use JooosiMail\Bootstrap\Environment;
+use JooosiMail\Bootstrap\Paths;
+use JooosiMail\Bootstrap\Plugin;
+use JooosiMail\Cli\ConnectionCommand;
+use JooosiMail\Cli\MailCommand;
+use JooosiMail\Cli\MigrationCommand;
+use JooosiMail\Cli\QueueCommand;
+use JooosiMail\Cli\WebhookCommand;
+use JooosiMail\Database\Migration\MigrationManager;
+use JooosiMail\Infrastructure\Container\ContainerFactory;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Infrastructure\WordPress\OptionStore;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Mail\Connection\ConnectionManager;
+use JooosiMail\Mail\Connection\ConnectionRepository;
+use JooosiMail\Mail\Logging\MailAttemptRepository;
+use JooosiMail\Mail\Logging\MailLogRepository;
+use JooosiMail\Mail\Logging\MailLogRetentionScheduler;
+use JooosiMail\Mail\Routing\ConnectionCircuitBreaker;
+use JooosiMail\Mail\Routing\ConnectionRateLimiter;
+use JooosiMail\Mail\Routing\ConnectionResolver;
+use JooosiMail\Mail\Routing\DeliveryMode;
+use JooosiMail\Mail\Routing\DeliveryPlan;
+use JooosiMail\Mail\Routing\RoutingStrategy;
+use JooosiMail\Mail\ValueObject\MailAddress;
+use JooosiMail\Mail\ValueObject\MailRequest;
+use JooosiMail\Queue\Maintenance\QueueMaintenanceService;
+use JooosiMail\Queue\Query\QueueMessageQuery;
+use JooosiMail\Queue\Transport\DatabaseReceiver;
+use JooosiMail\Queue\Trigger\ActionSchedulerTrigger;
+use JooosiMail\Queue\Worker\QueueWorker;
+use JooosiMail\Queue\Worker\WorkerRunner;
+use JooosiMail\Webhook\Event\WebhookEventRepository;
 use Psr\Container\ContainerInterface;
 use RuntimeException;
 use WP_CLI;
@@ -45,11 +45,11 @@ use WP_CLI\Loggers\Execution;
 use WP_UnitTestCase;
 
 /**
- * Shared WordPress-backed integration test utilities for Omni Mail.
+ * Shared WordPress-backed integration test utilities for Jooosi Mail.
  *
  * @since 0.1.0
  */
-abstract class OmniMailIntegrationTestCase extends WP_UnitTestCase
+abstract class JooosiMailIntegrationTestCase extends WP_UnitTestCase
 {
     private ?ContainerInterface $container = null;
 
@@ -68,11 +68,11 @@ abstract class OmniMailIntegrationTestCase extends WP_UnitTestCase
         $this->container = null;
         $this->capturedActionSchedulerWakeups = [];
         $this->stubActionSchedulerAsyncRunnerHttp();
-        delete_option('omni_mail_config');
+        delete_option('jooosi_mail_config');
         $this->resetMigrationState();
         $this->activatePlugin();
         $this->resetQueueActions();
-        delete_option('omni_mail_config');
+        delete_option('jooosi_mail_config');
     }
 
     /**
@@ -80,7 +80,7 @@ abstract class OmniMailIntegrationTestCase extends WP_UnitTestCase
      */
     public function tear_down(): void
     {
-        delete_option('omni_mail_config');
+        delete_option('jooosi_mail_config');
         $this->unstubActionSchedulerAsyncRunnerHttp();
         $this->resetQueueActions();
         $this->resetMigrationState();
@@ -94,7 +94,7 @@ abstract class OmniMailIntegrationTestCase extends WP_UnitTestCase
      */
     protected function activatePlugin(): void
     {
-        Plugin::boot(OMNI_MAIL_PLUGIN_FILE)->activate();
+        Plugin::boot(JOOOSI_MAIL_PLUGIN_FILE)->activate();
     }
 
     /**
@@ -103,7 +103,7 @@ abstract class OmniMailIntegrationTestCase extends WP_UnitTestCase
     protected function container(): ContainerInterface
     {
         return $this->container ??= (new ContainerFactory(
-            Paths::fromPluginFile(OMNI_MAIL_PLUGIN_FILE),
+            Paths::fromPluginFile(JOOOSI_MAIL_PLUGIN_FILE),
             Environment::fromWordPress(),
         ))->build();
     }
@@ -368,8 +368,8 @@ abstract class OmniMailIntegrationTestCase extends WP_UnitTestCase
     protected function createMailRequest(string $subject = 'Integration test mail'): MailRequest
     {
         return new MailRequest(
-            from: [new MailAddress('sender@omni-mail.test', 'Omni Mail Test Sender')],
-            to: [new MailAddress('recipient@omni-mail.test', 'Omni Mail Test Recipient')],
+            from: [new MailAddress('sender@jooosi-mail.test', 'Jooosi Mail Test Sender')],
+            to: [new MailAddress('recipient@jooosi-mail.test', 'Jooosi Mail Test Recipient')],
             cc: [],
             bcc: [],
             replyTo: [],
@@ -406,7 +406,7 @@ abstract class OmniMailIntegrationTestCase extends WP_UnitTestCase
      */
     protected function captureCli(callable $callback): array
     {
-        require_once dirname(OMNI_MAIL_PLUGIN_FILE) . '/vendor/wp-cli/wp-cli/php/utils.php';
+        require_once dirname(JOOOSI_MAIL_PLUGIN_FILE) . '/vendor/wp-cli/wp-cli/php/utils.php';
 
         $previousLogger = WP_CLI::get_logger();
         $logger = new Execution(false);
@@ -435,7 +435,7 @@ abstract class OmniMailIntegrationTestCase extends WP_UnitTestCase
         $result = $this->migrationManager()->reset();
 
         if (isset($result['failed'])) {
-            throw new RuntimeException((string) ($result['message'] ?? 'Unable to reset Omni Mail migration state.'));
+            throw new RuntimeException((string) ($result['message'] ?? 'Unable to reset Jooosi Mail migration state.'));
         }
     }
 

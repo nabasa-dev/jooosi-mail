@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Mail\Delivery;
+namespace JooosiMail\Mail\Delivery;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\ValueObject\MailAddress;
-use OmniMail\Mail\ValueObject\MailAttachment;
-use OmniMail\Mail\ValueObject\MailRequest;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\ValueObject\MailAddress;
+use JooosiMail\Mail\ValueObject\MailAttachment;
+use JooosiMail\Mail\ValueObject\MailRequest;
 use Symfony\Component\Mailer\Envelope;
 use Symfony\Component\Mime\Email;
 

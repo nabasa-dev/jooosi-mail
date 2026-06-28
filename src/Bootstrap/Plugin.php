@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Bootstrap;
+namespace JooosiMail\Bootstrap;
 
 /**
  * Main plugin entrypoint.

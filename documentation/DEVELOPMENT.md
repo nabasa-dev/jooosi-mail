@@ -1,6 +1,6 @@
-# Omni Mail Development
+# Jooosi Mail Development
 
-This guide is for contributors working on the Omni Mail codebase.
+This guide is for contributors working on the Jooosi Mail codebase.
 
 ## Local Setup
 
@@ -16,52 +16,27 @@ Typical setup:
 
 ```bash
 composer install
+pnpm install
 ```
 
-After dependencies are installed, activate the plugin in a WordPress environment. Open `wp-admin/admin.php?page=omni-mail` and use WP-CLI for smoke testing.
+After dependencies are installed, use `wp-env` for development and testing. Open `wp-admin/admin.php?page=jooosi-mail` and use WP-CLI for smoke testing.
 
 Useful commands:
 
 ```bash
-wp omni-mail connection:profiles
-wp omni-mail connection:status --all
-wp omni-mail webhook:status --all=true
-wp omni-mail queue:status
-wp omni-mail queue:failed
-wp omni-mail mail:test --to=you@example.com
-wp omni-mail mail:test --to=you@example.com --connection-id=3
-composer test:php
+wp jooosi-mail connection:profiles
+wp jooosi-mail connection:status --all
+wp jooosi-mail webhook:status --all=true
+wp jooosi-mail queue:status
+wp jooosi-mail queue:failed
+wp jooosi-mail mail:test --to=you@example.com
+wp jooosi-mail mail:test --to=you@example.com --connection-id=3
 pnpm dev
 pnpm build
 pnpm wp-env:start
 pnpm wp-env:test:start
 pnpm test:php:docker
 ```
-
-## PHP Test Setup
-
-Omni Mail now uses a WordPress-backed PHPUnit harness.
-
-Run the suite locally with:
-
-```bash
-composer test:php
-```
-
-The local runner assumes the standard plugin-in-WordPress layout and defaults the WordPress root to four directories above the plugin root.
-
-Useful environment variables:
-
-- `WP_TESTS_WORDPRESS_DIR` - override the WordPress root used for the test bootstrap
-- `WP_DB_NAME` - test database name, defaults to `wordpress`
-- `WP_DB_USER` - test database user, defaults to `root`
-- `WP_DB_PASS` - test database password, defaults to an empty string
-- `WP_DB_HOST` - test database host, defaults to `localhost`
-- `WP_PHPUNIT__TABLE_PREFIX` - test table prefix, defaults to `omni_tests_`
-
-The test runner resets tables for the configured test prefix. Use a dedicated prefix and avoid pointing the suite at a production database.
-
-The suite currently covers plugin boot, activation-driven migrations, connection/migration/queue/webhook/mail CLI behavior, `wp_mail()` interception, queue processing, webhook authorization and ingestion, routing decisions, config persistence, and mail payload normalization.
 
 ## Docker Test Workflow
 
@@ -109,7 +84,7 @@ Notes:
 - Keep provider-specific behavior in profiles and webhook adapters.
 - Use Doctrine DBAL-backed repositories for persistence.
 - Treat mail requests, delivery plans, and queue messages as stable internal contracts.
-- Use `wp omni-mail connection:profiles` and `wp omni-mail webhook:status` as the fastest way to confirm the live feature surface before changing docs.
+- Use `wp jooosi-mail connection:profiles` and `wp jooosi-mail webhook:status` as the fastest way to confirm the live feature surface before changing docs.
 
 ## Extension Points
 

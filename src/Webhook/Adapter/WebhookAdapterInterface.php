@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Webhook\Adapter;
+namespace JooosiMail\Webhook\Adapter;
 
-use OmniMail\Mail\Connection\Connection;
+use JooosiMail\Mail\Connection\Connection;
 use WP_REST_Request;
 
 /**

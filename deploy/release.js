@@ -45,7 +45,7 @@ function updateChangelog(version) {
 
   content = content.replace(/## \[Unreleased\]/g, `## [Unreleased]\n\n## [${version}] - ${currentDate}`);
 
-  const unreleasedLinkPattern = /\[unreleased\]: https:\/\/github\.com\/nabasa-dev\/omni-mail\/compare\/(.+?)\.\.\.HEAD/;
+  const unreleasedLinkPattern = /\[unreleased\]: https:\/\/github\.com\/nabasa-dev\/jooosi-mail\/compare\/(.+?)\.\.\.HEAD/;
   const match = content.match(unreleasedLinkPattern);
 
   if (match) {
@@ -53,7 +53,7 @@ function updateChangelog(version) {
 
     content = content.replace(
       unreleasedLinkPattern,
-      `[unreleased]: https://github.com/nabasa-dev/omni-mail/compare/${version}...HEAD`,
+      `[unreleased]: https://github.com/nabasa-dev/jooosi-mail/compare/${version}...HEAD`,
     );
 
     const linksSection = content.match(/(\[unreleased\]: .+)$/m);
@@ -61,7 +61,7 @@ function updateChangelog(version) {
 
     if (linksSection && !versionLinkPattern.test(content)) {
       const insertPosition = content.indexOf(linksSection[0]) + linksSection[0].length;
-      const newVersionLink = `\n[${version}]: https://github.com/nabasa-dev/omni-mail/compare/${previousRef}...${version}`;
+      const newVersionLink = `\n[${version}]: https://github.com/nabasa-dev/jooosi-mail/compare/${previousRef}...${version}`;
       content = content.slice(0, insertPosition) + newVersionLink + content.slice(insertPosition);
     }
   }
@@ -102,12 +102,12 @@ function release() {
 
     updateVersionInFile(join(rootDir, 'constant.php'), version, [
       {
-        search: "define\\('OMNI_MAIL_VERSION', '[0-9]+\\.[0-9]+\\.[0-9]+'\\);",
-        replace: `define('OMNI_MAIL_VERSION', '${version}');`,
+        search: "define\\('JOOOSI_MAIL_VERSION', '[0-9]+\\.[0-9]+\\.[0-9]+'\\);",
+        replace: `define('JOOOSI_MAIL_VERSION', '${version}');`,
       },
     ]);
 
-    updateVersionInFile(join(rootDir, 'omni-mail.php'), version, [
+    updateVersionInFile(join(rootDir, 'jooosi-mail.php'), version, [
       {
         search: ' \\* Version:\\s+[0-9]+\\.[0-9]+\\.[0-9]+',
         replace: ` * Version:             ${version}`,

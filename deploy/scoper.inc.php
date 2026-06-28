@@ -61,7 +61,7 @@ $actionSchedulerFiles = collectFiles(
 );
 
 return [
-    'prefix' => 'OmniMailDeps',
+    'prefix' => 'JooosiMailDeps',
 
     'exclude-files' => [
         ...$polyfillBootstraps,
@@ -110,7 +110,7 @@ return [
     ],
 
     'exclude-namespaces' => [
-        'OmniMail',
+        'JooosiMail',
         'WP_CLI',
         'Symfony\Polyfill',
     ],
@@ -136,7 +136,7 @@ return [
     'exclude-constants' => array_merge(
         $wpConstants,
         [
-            '/^OMNI_MAIL_[\p{L}\d_]+$/',
+            '/^JOOOSI_MAIL_[\p{L}\d_]+$/',
             '/^ACTION_SCHEDULER_[\p{L}\d_]+$/',
             '/^SYMFONY_[\p{L}\d_]+$/',
             'WP_CONTENT_DIR',
@@ -164,6 +164,6 @@ return [
     'expose-classes' => [],
     'expose-functions' => [],
     'expose-constants' => [
-        '/^OMNI_MAIL_[\p{L}\d_]+$/',
+        '/^JOOOSI_MAIL_[\p{L}\d_]+$/',
     ],
 ];

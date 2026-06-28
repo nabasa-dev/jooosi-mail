@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Queue\Transport;
+namespace JooosiMail\Queue\Transport;
 
-use OmniMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\Service;
 use Override;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\Transport\TransportInterface;
 
 /**
- * Messenger transport backed by the Omni Mail queue table.
+ * Messenger transport backed by the Jooosi Mail queue table.
  *
  * @since 0.1.0
  */

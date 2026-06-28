@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Cli;
+namespace JooosiMail\Tests\Integration\Cli;
 
 use Doctrine\DBAL\ArrayParameterType;
-use OmniMail\Cli\SeedCommand;
-use OmniMail\Queue\Message\SendEmailMessage;
-use OmniMail\Tests\Integration\Support\OmniMailIntegrationTestCase;
+use JooosiMail\Cli\SeedCommand;
+use JooosiMail\Queue\Message\SendEmailMessage;
+use JooosiMail\Tests\Integration\Support\JooosiMailIntegrationTestCase;
 
 /**
  * Covers seed WP-CLI command behavior.
  *
  * @since 0.1.0
  */
-final class SeedCommandTest extends OmniMailIntegrationTestCase
+final class SeedCommandTest extends JooosiMailIntegrationTestCase
 {
     /**
      * @since 0.1.0

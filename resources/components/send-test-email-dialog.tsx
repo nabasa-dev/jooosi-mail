@@ -32,7 +32,7 @@ import { getConnections, sendTestEmail, type AdminConnectionSummary } from "@/li
 import Loader2Icon from "~icons/tabler/loader-2"
 import MailIcon from "~icons/tabler/mail"
 
-const DEFAULT_SUBJECT = "Omni Mail test"
+const DEFAULT_SUBJECT = "Jooosi Mail test"
 const DEFAULT_CONNECTION_VALUE = "default"
 
 type SendTestEmailDialogProps = {

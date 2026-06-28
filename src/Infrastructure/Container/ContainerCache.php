@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Infrastructure\Container;
+namespace JooosiMail\Infrastructure\Container;
 
-use OmniMail\Bootstrap\Environment;
-use OmniMail\Bootstrap\Paths;
+use JooosiMail\Bootstrap\Environment;
+use JooosiMail\Bootstrap\Paths;
 use Psr\Container\ContainerInterface;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
@@ -133,22 +133,22 @@ final readonly class ContainerCache
         $metadata = $this->readMetadata();
 
         if (! is_file($cacheFile)) {
-            throw new RuntimeException('The Omni Mail container cache file does not exist.');
+            throw new RuntimeException('The Jooosi Mail container cache file does not exist.');
         }
 
         if (! is_array($metadata)) {
-            throw new RuntimeException('The Omni Mail container metadata file does not exist or is invalid.');
+            throw new RuntimeException('The Jooosi Mail container metadata file does not exist or is invalid.');
         }
 
         $className = is_string($metadata['container_class'] ?? null) ? $metadata['container_class'] : null;
 
         if ($className === null || $className === '') {
-            throw new RuntimeException('The Omni Mail container metadata is missing the container class name.');
+            throw new RuntimeException('The Jooosi Mail container metadata is missing the container class name.');
         }
 
         if (! $this->cacheFileContainsClass($cacheFile, $className)) {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new RuntimeException(sprintf('The Omni Mail container cache file does not contain the expected container class "%s".', $className));
+            throw new RuntimeException(sprintf('The Jooosi Mail container cache file does not contain the expected container class "%s".', $className));
         }
 
         if (! class_exists($className, false)) {
@@ -157,7 +157,7 @@ final readonly class ContainerCache
 
         if (! class_exists($className, false)) {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new RuntimeException(sprintf('The Omni Mail container class "%s" was not found in the cache file.', $className));
+            throw new RuntimeException(sprintf('The Jooosi Mail container class "%s" was not found in the cache file.', $className));
         }
 
         return new $className();
@@ -228,7 +228,7 @@ final readonly class ContainerCache
 
             if (! is_readable($file)) {
                 // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-                throw new RuntimeException(sprintf('The Omni Mail container source file "%s" is not readable.', $file));
+                throw new RuntimeException(sprintf('The Jooosi Mail container source file "%s" is not readable.', $file));
             }
 
             hash_update_file($context, $file);
@@ -253,7 +253,7 @@ final readonly class ContainerCache
     {
         $files = [];
 
-        foreach (['src', 'composer.json', 'composer.lock', 'constant.php', 'omni-mail.php'] as $path) {
+        foreach (['src', 'composer.json', 'composer.lock', 'constant.php', 'jooosi-mail.php'] as $path) {
             $absolutePath = $this->paths->rootDir . '/' . $path;
 
             if (is_dir($absolutePath)) {
@@ -322,7 +322,7 @@ final readonly class ContainerCache
      */
     private function buildContainerClass(string $sourceHash): string
     {
-        return 'OmniMailCachedContainer_' . substr($sourceHash, 0, 12);
+        return 'JooosiMailCachedContainer_' . substr($sourceHash, 0, 12);
     }
 
     /**
@@ -358,7 +358,7 @@ final readonly class ContainerCache
 
         if (! is_dir($this->paths->cacheDir)) {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new RuntimeException(sprintf('The Omni Mail cache directory "%s" could not be created.', $this->paths->cacheDir));
+            throw new RuntimeException(sprintf('The Jooosi Mail cache directory "%s" could not be created.', $this->paths->cacheDir));
         }
     }
 
@@ -367,7 +367,7 @@ final readonly class ContainerCache
      */
     private function writePhpFile(string $path, string $contents): void
     {
-        $temporaryFile = tempnam($this->paths->cacheDir, 'omni-mail-');
+        $temporaryFile = tempnam($this->paths->cacheDir, 'jooosi-mail-');
 
         if (! is_string($temporaryFile) || $temporaryFile === '') {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
@@ -378,7 +378,7 @@ final readonly class ContainerCache
             $this->deleteFile($temporaryFile);
 
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new RuntimeException(sprintf('Unable to write the Omni Mail cache file "%s".', $path));
+            throw new RuntimeException(sprintf('Unable to write the Jooosi Mail cache file "%s".', $path));
         }
 
         global $wp_filesystem;
@@ -391,7 +391,7 @@ final readonly class ContainerCache
             $this->deleteFile($temporaryFile);
 
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new RuntimeException(sprintf('Unable to move the Omni Mail cache file into place at "%s".', $path));
+            throw new RuntimeException(sprintf('Unable to move the Jooosi Mail cache file into place at "%s".', $path));
         }
 
         $this->invalidateOpcodeCache($path);

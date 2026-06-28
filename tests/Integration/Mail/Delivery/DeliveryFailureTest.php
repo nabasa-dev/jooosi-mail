@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OmniMail\Tests\Integration\Mail\Delivery;
+namespace JooosiMail\Tests\Integration\Mail\Delivery;
 
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Tests\Integration\Support\OmniMailIntegrationTestCase;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Tests\Integration\Support\JooosiMailIntegrationTestCase;
 use Throwable;
 
 /**
@@ -13,7 +13,7 @@ use Throwable;
  *
  * @since 0.1.0
  */
-final class DeliveryFailureTest extends OmniMailIntegrationTestCase
+final class DeliveryFailureTest extends JooosiMailIntegrationTestCase
 {
     /**
      * @since 0.1.0
@@ -40,8 +40,8 @@ final class DeliveryFailureTest extends OmniMailIntegrationTestCase
             ];
         };
 
-        add_action('a!omni-mail/mail:failed.connection', $connectionFailureListener, 10, 3);
-        add_action('a!omni-mail/mail:failed', $mailFailureListener, 10, 2);
+        add_action('a!jooosi-mail/mail:failed.connection', $connectionFailureListener, 10, 3);
+        add_action('a!jooosi-mail/mail:failed', $mailFailureListener, 10, 2);
 
         try {
             $this->optionStore()->set('settings.delivery.mode', 'sync');
@@ -49,8 +49,8 @@ final class DeliveryFailureTest extends OmniMailIntegrationTestCase
 
             $result = wp_mail('recipient@example.test', 'Sync failure subject', 'Sync failure body');
         } finally {
-            remove_action('a!omni-mail/mail:failed.connection', $connectionFailureListener, 10);
-            remove_action('a!omni-mail/mail:failed', $mailFailureListener, 10);
+            remove_action('a!jooosi-mail/mail:failed.connection', $connectionFailureListener, 10);
+            remove_action('a!jooosi-mail/mail:failed', $mailFailureListener, 10);
         }
 
         $mailLog = $this->latestRow('mail_logs');
@@ -134,8 +134,8 @@ final class DeliveryFailureTest extends OmniMailIntegrationTestCase
             $failedEvents[] = $throwable->getMessage();
         };
 
-        add_action('a!omni-mail/queue:message.retrying', $retryListener, 10, 3);
-        add_action('a!omni-mail/queue:message.failed', $failedListener, 10, 2);
+        add_action('a!jooosi-mail/queue:message.retrying', $retryListener, 10, 3);
+        add_action('a!jooosi-mail/queue:message.failed', $failedListener, 10, 2);
 
         try {
             $this->optionStore()->set('settings.delivery.mode', 'async');
@@ -155,8 +155,8 @@ final class DeliveryFailureTest extends OmniMailIntegrationTestCase
             $afterSecondRun = $this->latestRow('queue_messages');
             $secondRunAttempts = $this->mailAttemptRepository()->listRecent(limit: 10, mailLogId: (int) ($mailLog['id'] ?? 0));
         } finally {
-            remove_action('a!omni-mail/queue:message.retrying', $retryListener, 10);
-            remove_action('a!omni-mail/queue:message.failed', $failedListener, 10);
+            remove_action('a!jooosi-mail/queue:message.retrying', $retryListener, 10);
+            remove_action('a!jooosi-mail/queue:message.failed', $failedListener, 10);
         }
 
         self::assertSame(0, $firstRunProcessed);
