@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Types;
+namespace JooosiMailDeps\Doctrine\DBAL\Types;
 
 /**
  * Default built-in types provided by Doctrine DBAL.

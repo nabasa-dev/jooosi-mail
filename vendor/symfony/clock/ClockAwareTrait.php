@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Clock;
+namespace JooosiMailDeps\Symfony\Component\Clock;
 
-use OmniMailDeps\Psr\Clock\ClockInterface;
-use OmniMailDeps\Symfony\Contracts\Service\Attribute\Required;
+use JooosiMailDeps\Psr\Clock\ClockInterface;
+use JooosiMailDeps\Symfony\Contracts\Service\Attribute\Required;
 /**
  * A trait to help write time-sensitive classes.
  *

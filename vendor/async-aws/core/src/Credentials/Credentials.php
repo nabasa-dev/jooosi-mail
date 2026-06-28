@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\AsyncAws\Core\Credentials;
+namespace JooosiMailDeps\AsyncAws\Core\Credentials;
 
-use OmniMailDeps\AsyncAws\Core\Configuration;
+use JooosiMailDeps\AsyncAws\Core\Configuration;
 /**
  * Immutable store for Credentials parameters.
  *

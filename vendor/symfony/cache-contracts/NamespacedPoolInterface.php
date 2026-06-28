@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Contracts\Cache;
+namespace JooosiMailDeps\Symfony\Contracts\Cache;
 
-use OmniMailDeps\Psr\Cache\InvalidArgumentException;
+use JooosiMailDeps\Psr\Cache\InvalidArgumentException;
 /**
  * Enables namespace-based invalidation by prefixing keys with backend-native namespace separators.
  *

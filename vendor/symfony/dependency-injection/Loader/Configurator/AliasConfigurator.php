@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Alias;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Alias;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  */

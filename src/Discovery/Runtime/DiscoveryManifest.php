@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Discovery\Runtime;
+namespace JooosiMail\Discovery\Runtime;
 
 /**
  * Immutable discovery output used by the container and registrars.

@@ -1,17 +1,17 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support;
+namespace JooosiMailDeps\Tempest\Support;
 
 use ArrayIterator;
 use BackedEnum;
 use InvalidArgumentException;
 use Iterator;
 use IteratorAggregate;
-use OmniMailDeps\Tempest\Support\Arr\ImmutableArray;
+use JooosiMailDeps\Tempest\Support\Arr\ImmutableArray;
 use UnitEnum;
 use ValueError;
-use function OmniMailDeps\Tempest\Support\Arr\to_array;
+use function JooosiMailDeps\Tempest\Support\Arr\to_array;
 /**
  * This trait provides a bunch of helper methods to work with enums
  *

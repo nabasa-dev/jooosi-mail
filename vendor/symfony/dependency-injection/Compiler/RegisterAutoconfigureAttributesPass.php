@@ -8,14 +8,14 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Compiler;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Attribute\Autoconfigure;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Attribute\Lazy;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Definition;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\AutoconfigureFailedException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute\Autoconfigure;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute\Lazy;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Definition;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\AutoconfigureFailedException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 /**
  * Reads #[Autoconfigure] attributes on definitions that are autoconfigured
  * and don't have the "container.ignore_attributes" tag.

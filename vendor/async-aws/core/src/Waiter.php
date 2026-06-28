@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\AsyncAws\Core;
+namespace JooosiMailDeps\AsyncAws\Core;
 
-use OmniMailDeps\AsyncAws\Core\Exception\Http\HttpException;
-use OmniMailDeps\AsyncAws\Core\Exception\Http\NetworkException;
-use OmniMailDeps\AsyncAws\Core\Exception\LogicException;
+use JooosiMailDeps\AsyncAws\Core\Exception\Http\HttpException;
+use JooosiMailDeps\AsyncAws\Core\Exception\Http\NetworkException;
+use JooosiMailDeps\AsyncAws\Core\Exception\LogicException;
 /**
  * The waiter promise is always returned from every API call to a waiter.
  */

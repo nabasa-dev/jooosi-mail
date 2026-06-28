@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema;
 
 /**
  * Contains platform-specific parameters used for creating and managing objects scoped to a {@see Table}.

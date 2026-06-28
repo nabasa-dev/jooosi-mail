@@ -8,18 +8,18 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient;
+namespace JooosiMailDeps\Symfony\Component\HttpClient;
 
-use OmniMailDeps\Symfony\Component\HttpClient\Chunk\DataChunk;
-use OmniMailDeps\Symfony\Component\HttpClient\Chunk\ServerSentEvent;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\EventSourceException;
-use OmniMailDeps\Symfony\Component\HttpClient\Response\AsyncContext;
-use OmniMailDeps\Symfony\Component\HttpClient\Response\AsyncResponse;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ChunkInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
-use OmniMailDeps\Symfony\Contracts\Service\ResetInterface;
+use JooosiMailDeps\Symfony\Component\HttpClient\Chunk\DataChunk;
+use JooosiMailDeps\Symfony\Component\HttpClient\Chunk\ServerSentEvent;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\EventSourceException;
+use JooosiMailDeps\Symfony\Component\HttpClient\Response\AsyncContext;
+use JooosiMailDeps\Symfony\Component\HttpClient\Response\AsyncResponse;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ChunkInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
+use JooosiMailDeps\Symfony\Contracts\Service\ResetInterface;
 /**
  * @author Antoine Bluchet <soyuka@gmail.com>
  * @author Nicolas Grekas <p@tchwork.com>

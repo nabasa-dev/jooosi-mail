@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\AsyncAws\Core\Stream;
+namespace JooosiMailDeps\AsyncAws\Core\Stream;
 
-use OmniMailDeps\AsyncAws\Core\Exception\RuntimeException;
+use JooosiMailDeps\AsyncAws\Core\Exception\RuntimeException;
 /**
  * Provides a ResultStream from a resource filled by an HTTP response body.
  *

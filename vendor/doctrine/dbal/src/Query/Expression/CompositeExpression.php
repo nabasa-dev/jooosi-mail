@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Query\Expression;
+namespace JooosiMailDeps\Doctrine\DBAL\Query\Expression;
 
 use Countable;
 use function array_merge;

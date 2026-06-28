@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Result;
+namespace JooosiMailDeps\Egulias\EmailValidator\Result;
 
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\EmptyReason;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\Reason;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\EmptyReason;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\Reason;
 /**
  * @psalm-suppress PropertyNotSetInConstructor
  */

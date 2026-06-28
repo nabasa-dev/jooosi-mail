@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Introspection\MetadataProcessor;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Introspection\MetadataProcessor;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Metadata\ViewMetadataRow;
-use OmniMailDeps\Doctrine\DBAL\Schema\View;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Metadata\ViewMetadataRow;
+use JooosiMailDeps\Doctrine\DBAL\Schema\View;
 /**
  * Converts {@see ViewMetadataRow} into a {@see View}.
  *

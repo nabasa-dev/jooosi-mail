@@ -8,24 +8,24 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient;
+namespace JooosiMailDeps\Symfony\Component\HttpClient;
 
-use OmniMailDeps\Psr\Log\LoggerAwareInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\HttpClient\Caching\Freshness;
-use OmniMailDeps\Symfony\Component\HttpClient\Chunk\ErrorChunk;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\ChunkCacheItemNotFoundException;
-use OmniMailDeps\Symfony\Component\HttpClient\Response\AsyncContext;
-use OmniMailDeps\Symfony\Component\HttpClient\Response\AsyncResponse;
-use OmniMailDeps\Symfony\Component\HttpClient\Response\MockResponse;
-use OmniMailDeps\Symfony\Component\HttpClient\Response\ResponseStream;
-use OmniMailDeps\Symfony\Contracts\Cache\ItemInterface;
-use OmniMailDeps\Symfony\Contracts\Cache\TagAwareCacheInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ChunkInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseStreamInterface;
-use OmniMailDeps\Symfony\Contracts\Service\ResetInterface;
+use JooosiMailDeps\Psr\Log\LoggerAwareInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\HttpClient\Caching\Freshness;
+use JooosiMailDeps\Symfony\Component\HttpClient\Chunk\ErrorChunk;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\ChunkCacheItemNotFoundException;
+use JooosiMailDeps\Symfony\Component\HttpClient\Response\AsyncContext;
+use JooosiMailDeps\Symfony\Component\HttpClient\Response\AsyncResponse;
+use JooosiMailDeps\Symfony\Component\HttpClient\Response\MockResponse;
+use JooosiMailDeps\Symfony\Component\HttpClient\Response\ResponseStream;
+use JooosiMailDeps\Symfony\Contracts\Cache\ItemInterface;
+use JooosiMailDeps\Symfony\Contracts\Cache\TagAwareCacheInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ChunkInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseStreamInterface;
+use JooosiMailDeps\Symfony\Contracts\Service\ResetInterface;
 /**
  * Adds caching on top of an HTTP client (per RFC 9111).
  *

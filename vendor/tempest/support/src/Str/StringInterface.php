@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Str;
+namespace JooosiMailDeps\Tempest\Support\Str;
 
 use JsonSerializable;
 use Stringable;

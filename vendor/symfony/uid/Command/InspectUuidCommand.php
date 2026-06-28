@@ -8,20 +8,20 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Uid\Command;
+namespace JooosiMailDeps\Symfony\Component\Uid\Command;
 
-use OmniMailDeps\Symfony\Component\Console\Attribute\AsCommand;
-use OmniMailDeps\Symfony\Component\Console\Command\Command;
-use OmniMailDeps\Symfony\Component\Console\Helper\TableSeparator;
-use OmniMailDeps\Symfony\Component\Console\Input\InputArgument;
-use OmniMailDeps\Symfony\Component\Console\Input\InputInterface;
-use OmniMailDeps\Symfony\Component\Console\Output\ConsoleOutputInterface;
-use OmniMailDeps\Symfony\Component\Console\Output\OutputInterface;
-use OmniMailDeps\Symfony\Component\Console\Style\SymfonyStyle;
-use OmniMailDeps\Symfony\Component\Uid\MaxUuid;
-use OmniMailDeps\Symfony\Component\Uid\NilUuid;
-use OmniMailDeps\Symfony\Component\Uid\TimeBasedUidInterface;
-use OmniMailDeps\Symfony\Component\Uid\Uuid;
+use JooosiMailDeps\Symfony\Component\Console\Attribute\AsCommand;
+use JooosiMailDeps\Symfony\Component\Console\Command\Command;
+use JooosiMailDeps\Symfony\Component\Console\Helper\TableSeparator;
+use JooosiMailDeps\Symfony\Component\Console\Input\InputArgument;
+use JooosiMailDeps\Symfony\Component\Console\Input\InputInterface;
+use JooosiMailDeps\Symfony\Component\Console\Output\ConsoleOutputInterface;
+use JooosiMailDeps\Symfony\Component\Console\Output\OutputInterface;
+use JooosiMailDeps\Symfony\Component\Console\Style\SymfonyStyle;
+use JooosiMailDeps\Symfony\Component\Uid\MaxUuid;
+use JooosiMailDeps\Symfony\Component\Uid\NilUuid;
+use JooosiMailDeps\Symfony\Component\Uid\TimeBasedUidInterface;
+use JooosiMailDeps\Symfony\Component\Uid\Uuid;
 #[AsCommand(name: 'uuid:inspect', description: 'Inspect a UUID')]
 class InspectUuidCommand extends Command
 {

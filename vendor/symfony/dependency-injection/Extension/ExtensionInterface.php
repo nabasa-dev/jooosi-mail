@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Extension;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Extension;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
 /**
  * ExtensionInterface is the interface implemented by container extension classes.
  *

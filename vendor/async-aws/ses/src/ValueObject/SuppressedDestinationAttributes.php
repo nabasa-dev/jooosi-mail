@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Ses\ValueObject;
+namespace JooosiMailDeps\AsyncAws\Ses\ValueObject;
 
 /**
  * An object that contains additional attributes that are related an email address that is on the suppression list for

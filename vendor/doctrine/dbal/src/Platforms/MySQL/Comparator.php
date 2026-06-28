@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Platforms\MySQL;
+namespace JooosiMailDeps\Doctrine\DBAL\Platforms\MySQL;
 
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractMySQLPlatform;
-use OmniMailDeps\Doctrine\DBAL\Schema\Column;
-use OmniMailDeps\Doctrine\DBAL\Schema\Comparator as BaseComparator;
-use OmniMailDeps\Doctrine\DBAL\Schema\ComparatorConfig;
-use OmniMailDeps\Doctrine\DBAL\Schema\Table;
-use OmniMailDeps\Doctrine\DBAL\Schema\TableDiff;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractMySQLPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Column;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Comparator as BaseComparator;
+use JooosiMailDeps\Doctrine\DBAL\Schema\ComparatorConfig;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Table;
+use JooosiMailDeps\Doctrine\DBAL\Schema\TableDiff;
 use function array_diff_assoc;
 /**
  * Compares schemas in the context of MySQL platform.

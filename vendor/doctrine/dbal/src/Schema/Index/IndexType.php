@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Index;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Index;
 
 enum IndexType
 {

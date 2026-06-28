@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Types;
+namespace JooosiMailDeps\Doctrine\DBAL\Types;
 
 use DateTime;
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
-use OmniMailDeps\Doctrine\DBAL\Types\Exception\ValueNotConvertible;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Types\Exception\ValueNotConvertible;
 use Exception;
 /**
  * Variable DateTime Type using DateTime::__construct() instead of DateTime::createFromFormat().

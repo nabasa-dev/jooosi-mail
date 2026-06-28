@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Clock;
+namespace JooosiMailDeps\Symfony\Component\Clock;
 
-use OmniMailDeps\Psr\Clock\ClockInterface as PsrClockInterface;
+use JooosiMailDeps\Psr\Clock\ClockInterface as PsrClockInterface;
 /**
  * A global clock.
  *

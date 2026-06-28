@@ -8,7 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\PropertyInfo;
+namespace JooosiMailDeps\Symfony\Component\PropertyInfo;
 
 /**
  * The write mutator defines how a property can be written.

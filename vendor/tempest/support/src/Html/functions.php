@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Html;
+namespace JooosiMailDeps\Tempest\Support\Html;
 
 use Stringable;
-use function OmniMailDeps\Tempest\Support\arr;
+use function JooosiMailDeps\Tempest\Support\arr;
 /**
  * Determines whether the specified HTML tag is a void tag.
  * @see https://developer.mozilla.org/en-US/docs/Glossary/Void_element

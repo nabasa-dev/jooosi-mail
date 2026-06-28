@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema;
 
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
 /**
  * Represents a database object name.
  */

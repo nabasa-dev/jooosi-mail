@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL;
+namespace JooosiMailDeps\Doctrine\DBAL;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Middleware;
-use OmniMailDeps\Doctrine\DBAL\Exception\InvalidArgumentException;
-use OmniMailDeps\Doctrine\DBAL\Schema\SchemaManagerFactory;
-use OmniMailDeps\Psr\Cache\CacheItemPoolInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Middleware;
+use JooosiMailDeps\Doctrine\DBAL\Exception\InvalidArgumentException;
+use JooosiMailDeps\Doctrine\DBAL\Schema\SchemaManagerFactory;
+use JooosiMailDeps\Psr\Cache\CacheItemPoolInterface;
 /**
  * Configuration container for the Doctrine DBAL.
  */

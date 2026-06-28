@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Contracts\HttpClient\Test;
+namespace JooosiMailDeps\Symfony\Contracts\HttpClient\Test;
 
-use OmniMailDeps\Symfony\Component\Process\PhpExecutableFinder;
-use OmniMailDeps\Symfony\Component\Process\Process;
+use JooosiMailDeps\Symfony\Component\Process\PhpExecutableFinder;
+use JooosiMailDeps\Symfony\Component\Process\Process;
 class TestHttpServer
 {
     private static array $process = [];

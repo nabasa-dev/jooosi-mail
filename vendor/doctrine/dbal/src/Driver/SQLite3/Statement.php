@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\SQLite3;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\SQLite3;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Statement as StatementInterface;
-use OmniMailDeps\Doctrine\DBAL\ParameterType;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Statement as StatementInterface;
+use JooosiMailDeps\Doctrine\DBAL\ParameterType;
 use SQLite3;
 use SQLite3Stmt;
 use function assert;

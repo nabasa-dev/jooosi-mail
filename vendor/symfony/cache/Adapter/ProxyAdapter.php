@@ -8,17 +8,17 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\Adapter;
+namespace JooosiMailDeps\Symfony\Component\Cache\Adapter;
 
-use OmniMailDeps\Psr\Cache\CacheItemInterface;
-use OmniMailDeps\Psr\Cache\CacheItemPoolInterface;
-use OmniMailDeps\Symfony\Component\Cache\CacheItem;
-use OmniMailDeps\Symfony\Component\Cache\PruneableInterface;
-use OmniMailDeps\Symfony\Component\Cache\ResettableInterface;
-use OmniMailDeps\Symfony\Component\Cache\Traits\ContractsTrait;
-use OmniMailDeps\Symfony\Component\Cache\Traits\ProxyTrait;
-use OmniMailDeps\Symfony\Contracts\Cache\CacheInterface;
-use OmniMailDeps\Symfony\Contracts\Cache\NamespacedPoolInterface;
+use JooosiMailDeps\Psr\Cache\CacheItemInterface;
+use JooosiMailDeps\Psr\Cache\CacheItemPoolInterface;
+use JooosiMailDeps\Symfony\Component\Cache\CacheItem;
+use JooosiMailDeps\Symfony\Component\Cache\PruneableInterface;
+use JooosiMailDeps\Symfony\Component\Cache\ResettableInterface;
+use JooosiMailDeps\Symfony\Component\Cache\Traits\ContractsTrait;
+use JooosiMailDeps\Symfony\Component\Cache\Traits\ProxyTrait;
+use JooosiMailDeps\Symfony\Contracts\Cache\CacheInterface;
+use JooosiMailDeps\Symfony\Contracts\Cache\NamespacedPoolInterface;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  */

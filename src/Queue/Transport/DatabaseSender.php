@@ -1,21 +1,21 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Queue\Transport;
+namespace JooosiMail\Queue\Transport;
 
-use OmniMailDeps\Doctrine\DBAL\Connection as DbalConnection;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Database\TableNameResolver;
-use OmniMail\Infrastructure\WordPress\OptionStore;
-use OmniMail\Queue\Stamp\QueuePriorityStamp;
+use JooosiMailDeps\Doctrine\DBAL\Connection as DbalConnection;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Infrastructure\WordPress\OptionStore;
+use JooosiMail\Queue\Stamp\QueuePriorityStamp;
 use Override;
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\DelayStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\TransportMessageIdStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Sender\SenderInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Serialization\SerializerInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\DelayStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\TransportMessageIdStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Sender\SenderInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Serialization\SerializerInterface;
 /**
- * Persists queued envelopes into the Omni Mail queue table.
+ * Persists queued envelopes into the Jooosi Mail queue table.
  *
  * @since 0.1.0
  */
@@ -37,7 +37,7 @@ final readonly class DatabaseSender implements SenderInterface
         $delaySeconds = (int) ceil(($delayStamp?->getDelay() ?? 0) / 1000);
         $availableAt = gmdate('Y-m-d H:i:s', time() + $delaySeconds);
         $now = gmdate('Y-m-d H:i:s');
-        $this->connection->insert($this->tableNameResolver->resolve('queue_messages'), ['body' => $encodedEnvelope['body'], 'headers_json' => wp_json_encode($encodedEnvelope['headers'] ?? []), 'queue_name' => \OmniMail\Queue\Transport\DatabaseTransport::NAME, 'status' => 'pending', 'priority' => $priorityStamp?->priority ?? 10, 'available_at' => $availableAt, 'attempt_count' => 0, 'max_attempts' => $this->resolveMaxAttempts(), 'created_at' => $now, 'updated_at' => $now]);
+        $this->connection->insert($this->tableNameResolver->resolve('queue_messages'), ['body' => $encodedEnvelope['body'], 'headers_json' => wp_json_encode($encodedEnvelope['headers'] ?? []), 'queue_name' => \JooosiMail\Queue\Transport\DatabaseTransport::NAME, 'status' => 'pending', 'priority' => $priorityStamp?->priority ?? 10, 'available_at' => $availableAt, 'attempt_count' => 0, 'max_attempts' => $this->resolveMaxAttempts(), 'created_at' => $now, 'updated_at' => $now]);
         return $envelope->with(new TransportMessageIdStamp((string) $this->connection->lastInsertId()));
     }
     /**

@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\EventListener;
+namespace JooosiMailDeps\Symfony\Component\Mailer\EventListener;
 
-use OmniMailDeps\Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Event\MessageEvent;
-use OmniMailDeps\Symfony\Component\Mailer\Event\MessageEvents;
-use OmniMailDeps\Symfony\Contracts\Service\ResetInterface;
+use JooosiMailDeps\Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Event\MessageEvent;
+use JooosiMailDeps\Symfony\Component\Mailer\Event\MessageEvents;
+use JooosiMailDeps\Symfony\Contracts\Service\ResetInterface;
 /**
  * Logs Messages.
  *

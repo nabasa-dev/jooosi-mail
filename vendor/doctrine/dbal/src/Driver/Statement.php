@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver;
 
-use OmniMailDeps\Doctrine\DBAL\ParameterType;
+use JooosiMailDeps\Doctrine\DBAL\ParameterType;
 /**
  * Driver-level statement
  */

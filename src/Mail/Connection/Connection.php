@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Connection;
+namespace JooosiMail\Mail\Connection;
 
 /**
  * Persisted mail connection settings.

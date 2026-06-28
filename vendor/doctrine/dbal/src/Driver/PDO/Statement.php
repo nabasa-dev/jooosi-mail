@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\PDO;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\PDO;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Exception as ExceptionInterface;
-use OmniMailDeps\Doctrine\DBAL\Driver\Statement as StatementInterface;
-use OmniMailDeps\Doctrine\DBAL\ParameterType;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Exception as ExceptionInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Statement as StatementInterface;
+use JooosiMailDeps\Doctrine\DBAL\ParameterType;
 use PDO;
 use PDOException;
 use PDOStatement;

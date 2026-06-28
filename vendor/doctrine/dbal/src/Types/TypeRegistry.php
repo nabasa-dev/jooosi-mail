@@ -1,15 +1,15 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Types;
+namespace JooosiMailDeps\Doctrine\DBAL\Types;
 
-use OmniMailDeps\Doctrine\DBAL\Exception;
-use OmniMailDeps\Doctrine\DBAL\Types\Exception\TypeAlreadyRegistered;
-use OmniMailDeps\Doctrine\DBAL\Types\Exception\TypeNotFound;
-use OmniMailDeps\Doctrine\DBAL\Types\Exception\TypeNotRegistered;
-use OmniMailDeps\Doctrine\DBAL\Types\Exception\TypesAlreadyExists;
-use OmniMailDeps\Doctrine\DBAL\Types\Exception\TypesException;
-use OmniMailDeps\Doctrine\DBAL\Types\Exception\UnknownColumnType;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Types\Exception\TypeAlreadyRegistered;
+use JooosiMailDeps\Doctrine\DBAL\Types\Exception\TypeNotFound;
+use JooosiMailDeps\Doctrine\DBAL\Types\Exception\TypeNotRegistered;
+use JooosiMailDeps\Doctrine\DBAL\Types\Exception\TypesAlreadyExists;
+use JooosiMailDeps\Doctrine\DBAL\Types\Exception\TypesException;
+use JooosiMailDeps\Doctrine\DBAL\Types\Exception\UnknownColumnType;
 use function spl_object_id;
 /**
  * The type registry is responsible for holding a map of all known DBAL types.

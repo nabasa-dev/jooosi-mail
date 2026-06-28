@@ -8,13 +8,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\Traits;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\Traits;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\ChildDefinition;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\FromCallableConfigurator;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\ReferenceConfigurator;
-use OmniMailDeps\Symfony\Component\ExpressionLanguage\Expression;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ChildDefinition;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\FromCallableConfigurator;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\ReferenceConfigurator;
+use JooosiMailDeps\Symfony\Component\ExpressionLanguage\Expression;
 trait FromCallableTrait
 {
     final public function fromCallable(string|array|\Closure|ReferenceConfigurator|Expression $callable): FromCallableConfigurator

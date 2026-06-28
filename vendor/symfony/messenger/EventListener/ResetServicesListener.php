@@ -8,14 +8,14 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\EventListener;
+namespace JooosiMailDeps\Symfony\Component\Messenger\EventListener;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Attribute\Autowire;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ServicesResetterInterface;
-use OmniMailDeps\Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Event\WorkerRunningEvent;
-use OmniMailDeps\Symfony\Component\Messenger\Event\WorkerStoppedEvent;
-use OmniMailDeps\Symfony\Contracts\Service\ResetInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute\Autowire;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ServicesResetterInterface;
+use JooosiMailDeps\Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Event\WorkerRunningEvent;
+use JooosiMailDeps\Symfony\Component\Messenger\Event\WorkerStoppedEvent;
+use JooosiMailDeps\Symfony\Contracts\Service\ResetInterface;
 /**
  * @author Grégoire Pineau <lyrixx@lyrixx.info>
  */

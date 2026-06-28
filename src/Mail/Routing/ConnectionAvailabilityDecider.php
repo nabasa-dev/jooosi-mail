@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Routing;
+namespace JooosiMail\Mail\Routing;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Event\EventPublisherInterface;
-use OmniMail\Mail\Connection\Connection;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Event\EventPublisherInterface;
+use JooosiMail\Mail\Connection\Connection;
 /**
  * Filters connections that are temporarily unavailable for routing.
  *
@@ -14,7 +14,7 @@ use OmniMail\Mail\Connection\Connection;
 #[Service]
 final readonly class ConnectionAvailabilityDecider
 {
-    public function __construct(private \OmniMail\Mail\Routing\ConnectionCircuitBreaker $connectionCircuitBreaker, private \OmniMail\Mail\Routing\ConnectionRateLimiter $connectionRateLimiter, private EventPublisherInterface $eventPublisher)
+    public function __construct(private \JooosiMail\Mail\Routing\ConnectionCircuitBreaker $connectionCircuitBreaker, private \JooosiMail\Mail\Routing\ConnectionRateLimiter $connectionRateLimiter, private EventPublisherInterface $eventPublisher)
     {
     }
     /**
@@ -33,7 +33,7 @@ final readonly class ConnectionAvailabilityDecider
     public function isAvailable(Connection $connection): bool
     {
         $status = $this->getStatus($connection);
-        return (bool) $this->eventPublisher->applyFilters('f!omni-mail/routing:connection.available', $status['available'], $connection, $status);
+        return (bool) $this->eventPublisher->applyFilters('f!jooosi-mail/routing:connection.available', $status['available'], $connection, $status);
     }
     /**
      * @return array<string, mixed>

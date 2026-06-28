@@ -8,25 +8,25 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Transport\Serialization;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Transport\Serialization;
 
-use OmniMailDeps\Symfony\Component\Lock\Serializer\LockKeyNormalizer;
-use OmniMailDeps\Symfony\Component\Messenger\Attribute\AsMessage;
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\MessageDecodingFailedException;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\NonSendableStampInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\SerializedMessageStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\SerializerStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\StampInterface;
-use OmniMailDeps\Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
-use OmniMailDeps\Symfony\Component\Serializer\Encoder\JsonEncoder;
-use OmniMailDeps\Symfony\Component\Serializer\Encoder\XmlEncoder;
-use OmniMailDeps\Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
-use OmniMailDeps\Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
-use OmniMailDeps\Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
-use OmniMailDeps\Symfony\Component\Serializer\Serializer as SymfonySerializer;
-use OmniMailDeps\Symfony\Component\Serializer\SerializerInterface as SymfonySerializerInterface;
+use JooosiMailDeps\Symfony\Component\Lock\Serializer\LockKeyNormalizer;
+use JooosiMailDeps\Symfony\Component\Messenger\Attribute\AsMessage;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\MessageDecodingFailedException;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\NonSendableStampInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\SerializedMessageStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\SerializerStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\StampInterface;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
+use JooosiMailDeps\Symfony\Component\Serializer\Encoder\JsonEncoder;
+use JooosiMailDeps\Symfony\Component\Serializer\Encoder\XmlEncoder;
+use JooosiMailDeps\Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
+use JooosiMailDeps\Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
+use JooosiMailDeps\Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use JooosiMailDeps\Symfony\Component\Serializer\Serializer as SymfonySerializer;
+use JooosiMailDeps\Symfony\Component\Serializer\SerializerInterface as SymfonySerializerInterface;
 /**
  * @author Samuel Roze <samuel.roze@gmail.com>
  */

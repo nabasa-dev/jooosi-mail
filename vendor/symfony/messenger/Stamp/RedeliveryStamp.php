@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Stamp;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Stamp;
 
-use OmniMailDeps\Symfony\Component\Clock\Clock;
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Clock\Clock;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
 /**
  * Stamp applied when a messages needs to be redelivered.
  */

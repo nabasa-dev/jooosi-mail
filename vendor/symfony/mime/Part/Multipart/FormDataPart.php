@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mime\Part\Multipart;
+namespace JooosiMailDeps\Symfony\Component\Mime\Part\Multipart;
 
-use OmniMailDeps\Symfony\Component\Mime\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Mime\Part\AbstractMultipartPart;
-use OmniMailDeps\Symfony\Component\Mime\Part\TextPart;
+use JooosiMailDeps\Symfony\Component\Mime\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Mime\Part\AbstractMultipartPart;
+use JooosiMailDeps\Symfony\Component\Mime\Part\TextPart;
 /**
  * Implements RFC 7578.
  *

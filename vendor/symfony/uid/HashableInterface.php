@@ -8,13 +8,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Uid;
+namespace JooosiMailDeps\Symfony\Component\Uid;
 
-if (interface_exists(\OmniMailDeps\Ds\Key::class)) {
+if (interface_exists(\JooosiMailDeps\Ds\Key::class)) {
     /**
      * @internal
      */
-    interface HashableInterface extends \OmniMailDeps\Ds\Key
+    interface HashableInterface extends \JooosiMailDeps\Ds\Key
     {
         public function equals(mixed $other): bool;
         public function hash(): string;

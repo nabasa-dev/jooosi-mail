@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Test\Constraint;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Test\Constraint;
 
-use OmniMailDeps\PHPUnit\Framework\Constraint\Constraint;
-use OmniMailDeps\Symfony\Component\Mailer\Event\MessageEvents;
+use JooosiMailDeps\PHPUnit\Framework\Constraint\Constraint;
+use JooosiMailDeps\Symfony\Component\Mailer\Event\MessageEvents;
 final class EmailCount extends Constraint
 {
     public function __construct(private int $expectedValue, private ?string $transport = null, private bool $queued = \false)

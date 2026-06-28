@@ -8,7 +8,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Tempest\\Reflection\\": "src"
+            "JooosiMailDeps\\Tempest\\Reflection\\": "src"
         },
         "files": [
             "src\/functions.php"
@@ -16,7 +16,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "OmniMailDeps\\Tempest\\Reflection\\Tests\\": "tests"
+            "JooosiMailDeps\\Tempest\\Reflection\\Tests\\": "tests"
         }
     }
 }

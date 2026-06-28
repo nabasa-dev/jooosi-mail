@@ -8,25 +8,25 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\PropertyAccess;
+namespace JooosiMailDeps\Symfony\Component\PropertyAccess;
 
-use OmniMailDeps\Psr\Cache\CacheItemPoolInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Psr\Log\NullLogger;
-use OmniMailDeps\Symfony\Component\Cache\Adapter\AdapterInterface;
-use OmniMailDeps\Symfony\Component\Cache\Adapter\ApcuAdapter;
-use OmniMailDeps\Symfony\Component\Cache\Adapter\NullAdapter;
-use OmniMailDeps\Symfony\Component\PropertyAccess\Exception\AccessException;
-use OmniMailDeps\Symfony\Component\PropertyAccess\Exception\InvalidTypeException;
-use OmniMailDeps\Symfony\Component\PropertyAccess\Exception\NoSuchIndexException;
-use OmniMailDeps\Symfony\Component\PropertyAccess\Exception\NoSuchPropertyException;
-use OmniMailDeps\Symfony\Component\PropertyAccess\Exception\UnexpectedTypeException;
-use OmniMailDeps\Symfony\Component\PropertyAccess\Exception\UninitializedPropertyException;
-use OmniMailDeps\Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
-use OmniMailDeps\Symfony\Component\PropertyInfo\PropertyReadInfo;
-use OmniMailDeps\Symfony\Component\PropertyInfo\PropertyReadInfoExtractorInterface;
-use OmniMailDeps\Symfony\Component\PropertyInfo\PropertyWriteInfo;
-use OmniMailDeps\Symfony\Component\PropertyInfo\PropertyWriteInfoExtractorInterface;
+use JooosiMailDeps\Psr\Cache\CacheItemPoolInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Psr\Log\NullLogger;
+use JooosiMailDeps\Symfony\Component\Cache\Adapter\AdapterInterface;
+use JooosiMailDeps\Symfony\Component\Cache\Adapter\ApcuAdapter;
+use JooosiMailDeps\Symfony\Component\Cache\Adapter\NullAdapter;
+use JooosiMailDeps\Symfony\Component\PropertyAccess\Exception\AccessException;
+use JooosiMailDeps\Symfony\Component\PropertyAccess\Exception\InvalidTypeException;
+use JooosiMailDeps\Symfony\Component\PropertyAccess\Exception\NoSuchIndexException;
+use JooosiMailDeps\Symfony\Component\PropertyAccess\Exception\NoSuchPropertyException;
+use JooosiMailDeps\Symfony\Component\PropertyAccess\Exception\UnexpectedTypeException;
+use JooosiMailDeps\Symfony\Component\PropertyAccess\Exception\UninitializedPropertyException;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\PropertyReadInfo;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\PropertyReadInfoExtractorInterface;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\PropertyWriteInfo;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\PropertyWriteInfoExtractorInterface;
 /**
  * Default implementation of {@link PropertyAccessorInterface}.
  *

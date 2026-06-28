@@ -8,14 +8,14 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Transport\Sync;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Transport\Sync;
 
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Messenger\MessageBusInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\ReceivedStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\SentStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\TransportInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Messenger\MessageBusInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\ReceivedStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\SentStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\TransportInterface;
 /**
  * Transport that immediately marks messages as received and dispatches for handling.
  *

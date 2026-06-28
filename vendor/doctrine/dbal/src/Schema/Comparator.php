@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema;
 
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
-use OmniMailDeps\Doctrine\Deprecations\Deprecation;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
+use JooosiMailDeps\Doctrine\Deprecations\Deprecation;
 use function array_map;
 use function assert;
 use function count;

@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Connection;
+namespace JooosiMailDeps\Doctrine\DBAL\Connection;
 
-use OmniMailDeps\Doctrine\DBAL\ServerVersionProvider;
+use JooosiMailDeps\Doctrine\DBAL\ServerVersionProvider;
 /** @final */
 class StaticServerVersionProvider implements ServerVersionProvider
 {

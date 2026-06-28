@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Collections;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Collections;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Collections\Exception\ObjectAlreadyExists;
-use OmniMailDeps\Doctrine\DBAL\Schema\Collections\Exception\ObjectDoesNotExist;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
-use OmniMailDeps\Doctrine\DBAL\Schema\NamedObject;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Collections\Exception\ObjectAlreadyExists;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Collections\Exception\ObjectDoesNotExist;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\NamedObject;
 use Traversable;
 use function array_combine;
 use function array_keys;

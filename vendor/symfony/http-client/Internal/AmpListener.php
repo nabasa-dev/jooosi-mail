@@ -8,19 +8,19 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient\Internal;
+namespace JooosiMailDeps\Symfony\Component\HttpClient\Internal;
 
-use OmniMailDeps\Amp\DeferredCancellation;
-use OmniMailDeps\Amp\Http\Client\ApplicationInterceptor;
-use OmniMailDeps\Amp\Http\Client\Connection\Connection;
-use OmniMailDeps\Amp\Http\Client\Connection\Stream;
-use OmniMailDeps\Amp\Http\Client\EventListener;
-use OmniMailDeps\Amp\Http\Client\NetworkInterceptor;
-use OmniMailDeps\Amp\Http\Client\Request;
-use OmniMailDeps\Amp\Http\Client\Response;
-use OmniMailDeps\Amp\Socket\InternetAddress;
-use OmniMailDeps\Revolt\EventLoop;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
+use JooosiMailDeps\Amp\DeferredCancellation;
+use JooosiMailDeps\Amp\Http\Client\ApplicationInterceptor;
+use JooosiMailDeps\Amp\Http\Client\Connection\Connection;
+use JooosiMailDeps\Amp\Http\Client\Connection\Stream;
+use JooosiMailDeps\Amp\Http\Client\EventListener;
+use JooosiMailDeps\Amp\Http\Client\NetworkInterceptor;
+use JooosiMailDeps\Amp\Http\Client\Request;
+use JooosiMailDeps\Amp\Http\Client\Response;
+use JooosiMailDeps\Amp\Socket\InternetAddress;
+use JooosiMailDeps\Revolt\EventLoop;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  *

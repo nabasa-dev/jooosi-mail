@@ -1,15 +1,15 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Discovery\Discovery;
+namespace JooosiMail\Discovery\Discovery;
 
-use OmniMail\Discovery\Attribute\Command;
-use OmniMail\Discovery\Runtime\DiscoveryState;
+use JooosiMail\Discovery\Attribute\Command;
+use JooosiMail\Discovery\Runtime\DiscoveryState;
 use Override;
-use OmniMailDeps\Tempest\Discovery\Discovery;
-use OmniMailDeps\Tempest\Discovery\DiscoveryLocation;
-use OmniMailDeps\Tempest\Discovery\IsDiscovery;
-use OmniMailDeps\Tempest\Reflection\ClassReflector;
+use JooosiMailDeps\Tempest\Discovery\Discovery;
+use JooosiMailDeps\Tempest\Discovery\DiscoveryLocation;
+use JooosiMailDeps\Tempest\Discovery\IsDiscovery;
+use JooosiMailDeps\Tempest\Reflection\ClassReflector;
 /**
  * Discovers WP-CLI commands.
  *

@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Stream;
+namespace JooosiMailDeps\AsyncAws\Core\Stream;
 
-use OmniMailDeps\AsyncAws\Core\Exception\InvalidArgument;
-use OmniMailDeps\AsyncAws\Core\Exception\RuntimeException;
+use JooosiMailDeps\AsyncAws\Core\Exception\InvalidArgument;
+use JooosiMailDeps\AsyncAws\Core\Exception\RuntimeException;
 /**
  * Convert a resource into a Stream.
  *

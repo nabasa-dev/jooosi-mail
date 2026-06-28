@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Sts\Result;
+namespace JooosiMailDeps\AsyncAws\Core\Sts\Result;
 
-use OmniMailDeps\AsyncAws\Core\Response;
-use OmniMailDeps\AsyncAws\Core\Result;
-use OmniMailDeps\AsyncAws\Core\Sts\ValueObject\AssumedRoleUser;
-use OmniMailDeps\AsyncAws\Core\Sts\ValueObject\Credentials;
+use JooosiMailDeps\AsyncAws\Core\Response;
+use JooosiMailDeps\AsyncAws\Core\Result;
+use JooosiMailDeps\AsyncAws\Core\Sts\ValueObject\AssumedRoleUser;
+use JooosiMailDeps\AsyncAws\Core\Sts\ValueObject\Credentials;
 /**
  * Contains the response to a successful AssumeRole request, including temporary Amazon Web Services credentials that
  * can be used to make Amazon Web Services requests.

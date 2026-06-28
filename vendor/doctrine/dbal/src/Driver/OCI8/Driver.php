@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\OCI8;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\OCI8;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\AbstractOracleDriver;
-use OmniMailDeps\Doctrine\DBAL\Driver\OCI8\Exception\ConnectionFailed;
-use OmniMailDeps\Doctrine\DBAL\Driver\OCI8\Exception\InvalidConfiguration;
+use JooosiMailDeps\Doctrine\DBAL\Driver\AbstractOracleDriver;
+use JooosiMailDeps\Doctrine\DBAL\Driver\OCI8\Exception\ConnectionFailed;
+use JooosiMailDeps\Doctrine\DBAL\Driver\OCI8\Exception\InvalidConfiguration;
 use SensitiveParameter;
 use function oci_connect;
 use function oci_new_connect;

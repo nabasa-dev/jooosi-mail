@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Exception\InvalidColumnType;
+namespace JooosiMailDeps\Doctrine\DBAL\Exception\InvalidColumnType;
 
-use OmniMailDeps\Doctrine\DBAL\Exception\InvalidColumnType;
+use JooosiMailDeps\Doctrine\DBAL\Exception\InvalidColumnType;
 /** @internal */
 final class ColumnPrecisionRequired extends InvalidColumnType
 {

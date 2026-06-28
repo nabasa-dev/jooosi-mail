@@ -8,15 +8,15 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient\Internal;
+namespace JooosiMailDeps\Symfony\Component\HttpClient\Internal;
 
-use OmniMailDeps\Amp\ByteStream\ReadableBuffer;
-use OmniMailDeps\Amp\ByteStream\ReadableIterableStream;
-use OmniMailDeps\Amp\ByteStream\ReadableResourceStream;
-use OmniMailDeps\Amp\ByteStream\ReadableStream;
-use OmniMailDeps\Amp\Cancellation;
-use OmniMailDeps\Amp\Http\Client\HttpContent;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
+use JooosiMailDeps\Amp\ByteStream\ReadableBuffer;
+use JooosiMailDeps\Amp\ByteStream\ReadableIterableStream;
+use JooosiMailDeps\Amp\ByteStream\ReadableResourceStream;
+use JooosiMailDeps\Amp\ByteStream\ReadableStream;
+use JooosiMailDeps\Amp\Cancellation;
+use JooosiMailDeps\Amp\Http\Client\HttpContent;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  *

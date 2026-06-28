@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Platforms\MySQL\CollationMetadataProvider;
+namespace JooosiMailDeps\Doctrine\DBAL\Platforms\MySQL\CollationMetadataProvider;
 
-use OmniMailDeps\Doctrine\DBAL\Connection;
-use OmniMailDeps\Doctrine\DBAL\Exception;
-use OmniMailDeps\Doctrine\DBAL\Platforms\MySQL\CollationMetadataProvider;
+use JooosiMailDeps\Doctrine\DBAL\Connection;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\MySQL\CollationMetadataProvider;
 /** @internal */
 final class ConnectionCollationMetadataProvider implements CollationMetadataProvider
 {

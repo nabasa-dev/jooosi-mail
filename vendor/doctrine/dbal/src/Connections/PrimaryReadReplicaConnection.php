@@ -1,16 +1,16 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Connections;
+namespace JooosiMailDeps\Doctrine\DBAL\Connections;
 
-use OmniMailDeps\Doctrine\DBAL\Configuration;
-use OmniMailDeps\Doctrine\DBAL\Connection;
-use OmniMailDeps\Doctrine\DBAL\Driver;
-use OmniMailDeps\Doctrine\DBAL\Driver\Connection as DriverConnection;
-use OmniMailDeps\Doctrine\DBAL\Driver\Exception as DriverException;
-use OmniMailDeps\Doctrine\DBAL\DriverManager;
-use OmniMailDeps\Doctrine\DBAL\Exception;
-use OmniMailDeps\Doctrine\DBAL\Statement;
+use JooosiMailDeps\Doctrine\DBAL\Configuration;
+use JooosiMailDeps\Doctrine\DBAL\Connection;
+use JooosiMailDeps\Doctrine\DBAL\Driver;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Connection as DriverConnection;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Exception as DriverException;
+use JooosiMailDeps\Doctrine\DBAL\DriverManager;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Statement;
 use InvalidArgumentException;
 use SensitiveParameter;
 use function array_rand;

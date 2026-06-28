@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Parser;
+namespace JooosiMailDeps\Egulias\EmailValidator\Parser;
 
-use OmniMailDeps\Egulias\EmailValidator\Result\Result;
-use OmniMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\CommentsInIDRight;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Result;
+use JooosiMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\CommentsInIDRight;
 class IDLeftPart extends LocalPart
 {
     protected function parseComments(): Result

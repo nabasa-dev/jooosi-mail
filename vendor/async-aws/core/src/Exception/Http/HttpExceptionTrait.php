@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Exception\Http;
+namespace JooosiMailDeps\AsyncAws\Core\Exception\Http;
 
-use OmniMailDeps\AsyncAws\Core\AwsError\AwsError;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
+use JooosiMailDeps\AsyncAws\Core\AwsError\AwsError;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>

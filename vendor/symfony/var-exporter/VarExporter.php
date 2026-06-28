@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\VarExporter;
+namespace JooosiMailDeps\Symfony\Component\VarExporter;
 
-use OmniMailDeps\Symfony\Component\VarExporter\Exception\ExceptionInterface;
-use OmniMailDeps\Symfony\Component\VarExporter\Exception\NotInstantiableTypeException;
-use OmniMailDeps\Symfony\Component\VarExporter\Internal\Exporter;
+use JooosiMailDeps\Symfony\Component\VarExporter\Exception\ExceptionInterface;
+use JooosiMailDeps\Symfony\Component\VarExporter\Exception\NotInstantiableTypeException;
+use JooosiMailDeps\Symfony\Component\VarExporter\Internal\Exporter;
 /**
  * Exports serializable PHP values to PHP code.
  *
@@ -44,7 +44,7 @@ final class VarExporter
         }
         try {
             $data = deepclone_to_array($value);
-        } catch (\OmniMailDeps\DeepClone\NotInstantiableException $e) {
+        } catch (\JooosiMailDeps\DeepClone\NotInstantiableException $e) {
             throw new NotInstantiableTypeException($e);
         }
         if (\array_key_exists('value', $data)) {

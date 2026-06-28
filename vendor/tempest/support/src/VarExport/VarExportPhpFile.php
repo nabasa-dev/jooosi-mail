@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\VarExport;
+namespace JooosiMailDeps\Tempest\Support\VarExport;
 
-use OmniMailDeps\Symfony\Component\VarExporter\VarExporter;
-use OmniMailDeps\Tempest\Support\Filesystem;
+use JooosiMailDeps\Symfony\Component\VarExporter\VarExporter;
+use JooosiMailDeps\Tempest\Support\Filesystem;
 /**
  * A wrapper around a PHP file to export variables to. This enables us to take advantage of OPcache file cache.
  *

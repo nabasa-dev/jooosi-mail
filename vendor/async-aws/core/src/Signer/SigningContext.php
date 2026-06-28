@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Signer;
+namespace JooosiMailDeps\AsyncAws\Core\Signer;
 
-use OmniMailDeps\AsyncAws\Core\Request;
+use JooosiMailDeps\AsyncAws\Core\Request;
 /**
  * @author Jérémy Derussé <jeremy@derusse.com>
  */

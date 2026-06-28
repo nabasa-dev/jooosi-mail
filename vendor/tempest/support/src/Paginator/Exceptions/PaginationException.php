@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Tempest\Support\Paginator\Exceptions;
+namespace JooosiMailDeps\Tempest\Support\Paginator\Exceptions;
 
 interface PaginationException
 {

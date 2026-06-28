@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\Mysqli\Initializer;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\Mysqli\Initializer;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Mysqli\Initializer;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Mysqli\Initializer;
 use mysqli;
 use SensitiveParameter;
 final class Secure implements Initializer

@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Event;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Event;
 
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Sender\SenderInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Sender\SenderInterface;
 /**
  * Event is dispatched after a message is sent to the transport.
  *

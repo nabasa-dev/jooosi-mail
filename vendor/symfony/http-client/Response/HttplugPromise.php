@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient\Response;
+namespace JooosiMailDeps\Symfony\Component\HttpClient\Response;
 
-use OmniMailDeps\GuzzleHttp\Promise\Create;
-use OmniMailDeps\GuzzleHttp\Promise\PromiseInterface as GuzzlePromiseInterface;
-use OmniMailDeps\Http\Promise\Promise as HttplugPromiseInterface;
-use OmniMailDeps\Psr\Http\Message\ResponseInterface as Psr7ResponseInterface;
+use JooosiMailDeps\GuzzleHttp\Promise\Create;
+use JooosiMailDeps\GuzzleHttp\Promise\PromiseInterface as GuzzlePromiseInterface;
+use JooosiMailDeps\Http\Promise\Promise as HttplugPromiseInterface;
+use JooosiMailDeps\Psr\Http\Message\ResponseInterface as Psr7ResponseInterface;
 /**
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  *

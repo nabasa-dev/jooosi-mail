@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\PDO\MySQL;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\PDO\MySQL;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\AbstractMySQLDriver;
-use OmniMailDeps\Doctrine\DBAL\Driver\PDO\Connection;
-use OmniMailDeps\Doctrine\DBAL\Driver\PDO\Exception;
-use OmniMailDeps\Doctrine\DBAL\Driver\PDO\Exception\InvalidConfiguration;
-use OmniMailDeps\Doctrine\DBAL\Driver\PDO\PDOConnect;
+use JooosiMailDeps\Doctrine\DBAL\Driver\AbstractMySQLDriver;
+use JooosiMailDeps\Doctrine\DBAL\Driver\PDO\Connection;
+use JooosiMailDeps\Doctrine\DBAL\Driver\PDO\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Driver\PDO\Exception\InvalidConfiguration;
+use JooosiMailDeps\Doctrine\DBAL\Driver\PDO\PDOConnect;
 use PDO;
 use PDOException;
 use SensitiveParameter;

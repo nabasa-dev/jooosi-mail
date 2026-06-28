@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\API;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\API;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Exception;
-use OmniMailDeps\Doctrine\DBAL\Exception\DriverException;
-use OmniMailDeps\Doctrine\DBAL\Query;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Exception\DriverException;
+use JooosiMailDeps\Doctrine\DBAL\Query;
 interface ExceptionConverter
 {
     /**

@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer;
+namespace JooosiMailDeps\Symfony\Component\Mailer;
 
-use OmniMailDeps\Symfony\Component\Mailer\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\Mime\Address;
-use OmniMailDeps\Symfony\Component\Mime\RawMessage;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\Mime\Address;
+use JooosiMailDeps\Symfony\Component\Mime\RawMessage;
 /**
  * @author Fabien Potencier <fabien@symfony.com>
  */

@@ -8,22 +8,22 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Middleware;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Middleware;
 
-use OmniMailDeps\Psr\Clock\ClockInterface;
-use OmniMailDeps\Psr\Log\LoggerAwareTrait;
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\HandlerFailedException;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\NoHandlerForMessageException;
-use OmniMailDeps\Symfony\Component\Messenger\Handler\Acknowledger;
-use OmniMailDeps\Symfony\Component\Messenger\Handler\HandlerDescriptor;
-use OmniMailDeps\Symfony\Component\Messenger\Handler\HandlersLocatorInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\AckStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\FlushBatchHandlersStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\HandledStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\HandlerArgumentsStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\NoAutoAckStamp;
+use JooosiMailDeps\Psr\Clock\ClockInterface;
+use JooosiMailDeps\Psr\Log\LoggerAwareTrait;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\HandlerFailedException;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\NoHandlerForMessageException;
+use JooosiMailDeps\Symfony\Component\Messenger\Handler\Acknowledger;
+use JooosiMailDeps\Symfony\Component\Messenger\Handler\HandlerDescriptor;
+use JooosiMailDeps\Symfony\Component\Messenger\Handler\HandlersLocatorInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\AckStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\FlushBatchHandlersStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\HandledStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\HandlerArgumentsStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\NoAutoAckStamp;
 /**
  * @author Samuel Roze <samuel.roze@gmail.com>
  */

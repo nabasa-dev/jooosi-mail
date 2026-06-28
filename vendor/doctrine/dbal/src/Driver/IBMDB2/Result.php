@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\IBMDB2;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\IBMDB2;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\FetchUtils;
-use OmniMailDeps\Doctrine\DBAL\Driver\IBMDB2\Exception\StatementError;
-use OmniMailDeps\Doctrine\DBAL\Driver\Result as ResultInterface;
-use OmniMailDeps\Doctrine\DBAL\Exception\InvalidColumnIndex;
+use JooosiMailDeps\Doctrine\DBAL\Driver\FetchUtils;
+use JooosiMailDeps\Doctrine\DBAL\Driver\IBMDB2\Exception\StatementError;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Result as ResultInterface;
+use JooosiMailDeps\Doctrine\DBAL\Exception\InvalidColumnIndex;
 use function db2_fetch_array;
 use function db2_fetch_assoc;
 use function db2_field_name;

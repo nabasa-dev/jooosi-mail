@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\PgSQL\Exception;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\PgSQL\Exception;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\AbstractException;
+use JooosiMailDeps\Doctrine\DBAL\Driver\AbstractException;
 use function sprintf;
 final class UnknownParameter extends AbstractException
 {

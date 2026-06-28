@@ -1,19 +1,19 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Regex;
+namespace JooosiMailDeps\Tempest\Support\Regex;
 
 use Closure;
 use RuntimeException;
 use Stringable;
-use function OmniMailDeps\Tempest\Support\arr;
-use function OmniMailDeps\Tempest\Support\Arr\filter;
-use function OmniMailDeps\Tempest\Support\Arr\first;
-use function OmniMailDeps\Tempest\Support\Arr\get_by_key;
-use function OmniMailDeps\Tempest\Support\Arr\wrap;
-use function OmniMailDeps\Tempest\Support\Str\starts_with;
-use function OmniMailDeps\Tempest\Support\Str\strip_end;
-use function OmniMailDeps\Tempest\Support\Str\strip_start;
+use function JooosiMailDeps\Tempest\Support\arr;
+use function JooosiMailDeps\Tempest\Support\Arr\filter;
+use function JooosiMailDeps\Tempest\Support\Arr\first;
+use function JooosiMailDeps\Tempest\Support\Arr\get_by_key;
+use function JooosiMailDeps\Tempest\Support\Arr\wrap;
+use function JooosiMailDeps\Tempest\Support\Str\starts_with;
+use function JooosiMailDeps\Tempest\Support\Str\strip_end;
+use function JooosiMailDeps\Tempest\Support\Str\strip_start;
 /**
  * Returns portions of the `$subject` that match the given `$pattern`. If `$global` is set to `true`, returns all matches. Otherwise, only returns the first one.
  *

@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL;
+namespace JooosiMailDeps\Doctrine\DBAL;
 
-use OmniMailDeps\Doctrine\DBAL\ArrayParameters\Exception\MissingNamedParameter;
-use OmniMailDeps\Doctrine\DBAL\ArrayParameters\Exception\MissingPositionalParameter;
-use OmniMailDeps\Doctrine\DBAL\SQL\Parser\Visitor;
-use OmniMailDeps\Doctrine\DBAL\Types\Type;
+use JooosiMailDeps\Doctrine\DBAL\ArrayParameters\Exception\MissingNamedParameter;
+use JooosiMailDeps\Doctrine\DBAL\ArrayParameters\Exception\MissingPositionalParameter;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Parser\Visitor;
+use JooosiMailDeps\Doctrine\DBAL\Types\Type;
 use function array_fill;
 use function array_key_exists;
 use function count;

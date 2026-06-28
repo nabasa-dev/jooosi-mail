@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Queue\Retry;
+namespace JooosiMail\Queue\Retry;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Queue\Stamp\DatabaseMessageStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\UnrecoverableMessageHandlingException;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Queue\Stamp\DatabaseMessageStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\UnrecoverableMessageHandlingException;
 use Throwable;
 /**
  * Applies retry rules to failed queue messages.
@@ -16,7 +16,7 @@ use Throwable;
 #[Service]
 final readonly class RetryDecider
 {
-    public function __construct(private \OmniMail\Queue\Retry\RetryPolicy $retryPolicy)
+    public function __construct(private \JooosiMail\Queue\Retry\RetryPolicy $retryPolicy)
     {
     }
     /**
@@ -38,7 +38,7 @@ final readonly class RetryDecider
      */
     public function getDelaySeconds(Envelope $envelope, ?Throwable $throwable = null): int
     {
-        if ($throwable instanceof \OmniMail\Queue\Retry\RetryDelayAwareExceptionInterface) {
+        if ($throwable instanceof \JooosiMail\Queue\Retry\RetryDelayAwareExceptionInterface) {
             $retryAfterSeconds = $throwable->getRetryAfterSeconds();
             if ($retryAfterSeconds !== null && $retryAfterSeconds > 0) {
                 return $retryAfterSeconds;

@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Psr\Log;
+namespace JooosiMailDeps\Psr\Log;
 
 class InvalidArgumentException extends \InvalidArgumentException
 {

@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient;
+namespace JooosiMailDeps\Symfony\Component\HttpClient;
 
-use OmniMailDeps\Amp\Http\Client\Request as AmpRequest;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\Amp\Http\Client\Request as AmpRequest;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
 /**
  * A factory to instantiate the best possible HTTP client for the runtime.
  *

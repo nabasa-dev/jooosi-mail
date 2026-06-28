@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\AsyncAws\Core\Exception\Http;
+namespace JooosiMailDeps\AsyncAws\Core\Exception\Http;
 
-use OmniMailDeps\AsyncAws\Core\Exception\Exception;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
+use JooosiMailDeps\AsyncAws\Core\Exception\Exception;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
 interface HttpException extends Exception
 {
     public function getResponse(): ResponseInterface;

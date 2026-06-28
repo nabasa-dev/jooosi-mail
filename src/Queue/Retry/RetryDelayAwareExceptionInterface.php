@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Queue\Retry;
+namespace JooosiMail\Queue\Retry;
 
 /**
  * Exposes a preferred retry delay for queued failures.

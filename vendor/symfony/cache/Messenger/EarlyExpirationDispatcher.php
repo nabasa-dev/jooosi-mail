@@ -8,14 +8,14 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\Messenger;
+namespace JooosiMailDeps\Symfony\Component\Cache\Messenger;
 
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\Cache\Adapter\AdapterInterface;
-use OmniMailDeps\Symfony\Component\Cache\CacheItem;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ReverseContainer;
-use OmniMailDeps\Symfony\Component\Messenger\MessageBusInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\HandledStamp;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\Cache\Adapter\AdapterInterface;
+use JooosiMailDeps\Symfony\Component\Cache\CacheItem;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ReverseContainer;
+use JooosiMailDeps\Symfony\Component\Messenger\MessageBusInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\HandledStamp;
 /**
  * Sends the computation of cached values to a message bus.
  */

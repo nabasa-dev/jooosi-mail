@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Psr\\Cache\\": "src\/"
+            "JooosiMailDeps\\Psr\\Cache\\": "src\/"
         }
     },
     "extra": {

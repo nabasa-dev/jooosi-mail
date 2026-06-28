@@ -1,15 +1,15 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Ses\Input;
+namespace JooosiMailDeps\AsyncAws\Ses\Input;
 
-use OmniMailDeps\AsyncAws\Core\Exception\InvalidArgument;
-use OmniMailDeps\AsyncAws\Core\Input;
-use OmniMailDeps\AsyncAws\Core\Request;
-use OmniMailDeps\AsyncAws\Core\Stream\StreamFactory;
-use OmniMailDeps\AsyncAws\Ses\ValueObject\Destination;
-use OmniMailDeps\AsyncAws\Ses\ValueObject\EmailContent;
-use OmniMailDeps\AsyncAws\Ses\ValueObject\ListManagementOptions;
-use OmniMailDeps\AsyncAws\Ses\ValueObject\MessageTag;
+use JooosiMailDeps\AsyncAws\Core\Exception\InvalidArgument;
+use JooosiMailDeps\AsyncAws\Core\Input;
+use JooosiMailDeps\AsyncAws\Core\Request;
+use JooosiMailDeps\AsyncAws\Core\Stream\StreamFactory;
+use JooosiMailDeps\AsyncAws\Ses\ValueObject\Destination;
+use JooosiMailDeps\AsyncAws\Ses\ValueObject\EmailContent;
+use JooosiMailDeps\AsyncAws\Ses\ValueObject\ListManagementOptions;
+use JooosiMailDeps\AsyncAws\Ses\ValueObject\MessageTag;
 /**
  * Represents a request to send a single formatted email using Amazon SES. For more information, see the Amazon SES
  * Developer Guide [^1].

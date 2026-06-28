@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Webhook\Event;
+namespace JooosiMail\Webhook\Event;
 
-use OmniMailDeps\Doctrine\DBAL\ArrayParameterType;
-use OmniMailDeps\Doctrine\DBAL\Connection as DbalConnection;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Database\TableNameResolver;
+use JooosiMailDeps\Doctrine\DBAL\ArrayParameterType;
+use JooosiMailDeps\Doctrine\DBAL\Connection as DbalConnection;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
 /**
  * Repository for persisted webhook events.
  *
@@ -21,7 +21,7 @@ final readonly class WebhookEventRepository
     /**
      * @since 0.1.0
      */
-    public function save(\OmniMail\Webhook\Event\WebhookEvent $event): int
+    public function save(\JooosiMail\Webhook\Event\WebhookEvent $event): int
     {
         $this->connection->insert($this->tableNameResolver->resolve('webhook_events'), ['connection_id' => $event->connectionId, 'mail_log_id' => $event->mailLogId, 'event_type' => $event->eventType, 'transport_message_id' => $event->transportMessageId, 'provider_event_id' => $event->providerEventId, 'payload_json' => wp_json_encode($event->payload), 'occurred_at' => $event->occurredAt, 'created_at' => gmdate('Y-m-d H:i:s')]);
         return (int) $this->connection->lastInsertId();

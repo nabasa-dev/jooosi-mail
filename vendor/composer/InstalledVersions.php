@@ -9,10 +9,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Composer;
+namespace JooosiMailDeps\Composer;
 
-use OmniMailDeps\Composer\Autoload\ClassLoader;
-use OmniMailDeps\Composer\Semver\VersionParser;
+use JooosiMailDeps\Composer\Autoload\ClassLoader;
+use JooosiMailDeps\Composer\Semver\VersionParser;
 /**
  * This class is copied in every Composer installed project and available to all
  *
@@ -301,7 +301,7 @@ class InstalledVersions
     private static function getInstalled()
     {
         if (null === self::$canGetVendors) {
-            self::$canGetVendors = method_exists('OmniMailDeps\Composer\Autoload\ClassLoader', 'getRegisteredLoaders');
+            self::$canGetVendors = method_exists('JooosiMailDeps\Composer\Autoload\ClassLoader', 'getRegisteredLoaders');
         }
         $installed = array();
         $copiedLocalDir = \false;

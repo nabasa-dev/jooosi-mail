@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Transport\Sync;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Transport\Sync;
 
-use OmniMailDeps\Symfony\Component\Messenger\MessageBusInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Serialization\SerializerInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\TransportFactoryInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\TransportInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\MessageBusInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Serialization\SerializerInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\TransportFactoryInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\TransportInterface;
 /**
  * @author Ryan Weaver <ryan@symfonycasts.com>
  *

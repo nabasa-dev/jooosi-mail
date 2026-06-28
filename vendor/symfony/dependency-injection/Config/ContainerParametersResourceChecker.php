@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Config;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Config;
 
-use OmniMailDeps\Symfony\Component\Config\Resource\ResourceInterface;
-use OmniMailDeps\Symfony\Component\Config\ResourceCheckerInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
+use JooosiMailDeps\Symfony\Component\Config\Resource\ResourceInterface;
+use JooosiMailDeps\Symfony\Component\Config\ResourceCheckerInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * @author Maxime Steinhausser <maxime.steinhausser@gmail.com>
  */

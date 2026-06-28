@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Query\Expression;
+namespace JooosiMailDeps\Doctrine\DBAL\Query\Expression;
 
-use OmniMailDeps\Doctrine\DBAL\Connection;
-use OmniMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Connection;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
 use function implode;
 use function sprintf;
 /**

@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger;
+namespace JooosiMailDeps\Symfony\Component\Messenger;
 
-use OmniMailDeps\Symfony\Component\Messenger\Exception\ExceptionInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\StampInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\ExceptionInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\StampInterface;
 /**
  * @author Samuel Roze <samuel.roze@gmail.com>
  */

@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Transport\Bridge\ElasticEmail\Transport;
+namespace JooosiMail\Mail\Transport\Bridge\ElasticEmail\Transport;
 
-use OmniMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
 use SensitiveParameter;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Smtp\EsmtpTransport;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Smtp\EsmtpTransport;
 /**
  * Elastic Email SMTP transport.
  *

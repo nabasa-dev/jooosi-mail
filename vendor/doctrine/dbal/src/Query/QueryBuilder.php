@@ -1,21 +1,21 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Query;
+namespace JooosiMailDeps\Doctrine\DBAL\Query;
 
-use OmniMailDeps\Doctrine\DBAL\ArrayParameterType;
-use OmniMailDeps\Doctrine\DBAL\Cache\QueryCacheProfile;
-use OmniMailDeps\Doctrine\DBAL\Connection;
-use OmniMailDeps\Doctrine\DBAL\Exception;
-use OmniMailDeps\Doctrine\DBAL\ParameterType;
-use OmniMailDeps\Doctrine\DBAL\Query\Exception\NonUniqueAlias;
-use OmniMailDeps\Doctrine\DBAL\Query\Exception\UnknownAlias;
-use OmniMailDeps\Doctrine\DBAL\Query\Expression\CompositeExpression;
-use OmniMailDeps\Doctrine\DBAL\Query\Expression\ExpressionBuilder;
-use OmniMailDeps\Doctrine\DBAL\Query\ForUpdate\ConflictResolutionMode;
-use OmniMailDeps\Doctrine\DBAL\Result;
-use OmniMailDeps\Doctrine\DBAL\Statement;
-use OmniMailDeps\Doctrine\DBAL\Types\Type;
+use JooosiMailDeps\Doctrine\DBAL\ArrayParameterType;
+use JooosiMailDeps\Doctrine\DBAL\Cache\QueryCacheProfile;
+use JooosiMailDeps\Doctrine\DBAL\Connection;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\ParameterType;
+use JooosiMailDeps\Doctrine\DBAL\Query\Exception\NonUniqueAlias;
+use JooosiMailDeps\Doctrine\DBAL\Query\Exception\UnknownAlias;
+use JooosiMailDeps\Doctrine\DBAL\Query\Expression\CompositeExpression;
+use JooosiMailDeps\Doctrine\DBAL\Query\Expression\ExpressionBuilder;
+use JooosiMailDeps\Doctrine\DBAL\Query\ForUpdate\ConflictResolutionMode;
+use JooosiMailDeps\Doctrine\DBAL\Result;
+use JooosiMailDeps\Doctrine\DBAL\Statement;
+use JooosiMailDeps\Doctrine\DBAL\Types\Type;
 use function array_filter;
 use function array_intersect;
 use function array_key_exists;

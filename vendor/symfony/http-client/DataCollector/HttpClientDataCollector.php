@@ -8,17 +8,17 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient\DataCollector;
+namespace JooosiMailDeps\Symfony\Component\HttpClient\DataCollector;
 
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
-use OmniMailDeps\Symfony\Component\HttpClient\HttpClientTrait;
-use OmniMailDeps\Symfony\Component\HttpClient\TraceableHttpClient;
-use OmniMailDeps\Symfony\Component\HttpFoundation\Request;
-use OmniMailDeps\Symfony\Component\HttpFoundation\Response;
-use OmniMailDeps\Symfony\Component\HttpKernel\DataCollector\DataCollector;
-use OmniMailDeps\Symfony\Component\HttpKernel\DataCollector\LateDataCollectorInterface;
-use OmniMailDeps\Symfony\Component\Process\Process;
-use OmniMailDeps\Symfony\Component\VarDumper\Caster\ImgStub;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
+use JooosiMailDeps\Symfony\Component\HttpClient\HttpClientTrait;
+use JooosiMailDeps\Symfony\Component\HttpClient\TraceableHttpClient;
+use JooosiMailDeps\Symfony\Component\HttpFoundation\Request;
+use JooosiMailDeps\Symfony\Component\HttpFoundation\Response;
+use JooosiMailDeps\Symfony\Component\HttpKernel\DataCollector\DataCollector;
+use JooosiMailDeps\Symfony\Component\HttpKernel\DataCollector\LateDataCollectorInterface;
+use JooosiMailDeps\Symfony\Component\Process\Process;
+use JooosiMailDeps\Symfony\Component\VarDumper\Caster\ImgStub;
 /**
  * @author Jérémy Romey <jeremy@free-agent.fr>
  */

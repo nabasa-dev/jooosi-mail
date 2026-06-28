@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\PgSQL;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\PgSQL;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Connection as ConnectionInterface;
-use OmniMailDeps\Doctrine\DBAL\Driver\Exception\NoIdentityValue;
-use OmniMailDeps\Doctrine\DBAL\SQL\Parser;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Connection as ConnectionInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Exception\NoIdentityValue;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Parser;
 use PgSql\Connection as PgSqlConnection;
 use function assert;
 use function pg_close;

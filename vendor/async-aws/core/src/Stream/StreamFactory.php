@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Stream;
+namespace JooosiMailDeps\AsyncAws\Core\Stream;
 
-use OmniMailDeps\AsyncAws\Core\Exception\InvalidArgument;
+use JooosiMailDeps\AsyncAws\Core\Exception\InvalidArgument;
 /**
  * Create Streams.
  *

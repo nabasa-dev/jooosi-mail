@@ -8,13 +8,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Argument;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Argument;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\RuntimeException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Reference;
-use OmniMailDeps\Symfony\Component\VarExporter\ProxyHelper;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Reference;
+use JooosiMailDeps\Symfony\Component\VarExporter\ProxyHelper;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  *

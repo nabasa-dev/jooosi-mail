@@ -8,16 +8,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection;
 
-use OmniMailDeps\Psr\Container\ContainerExceptionInterface;
-use OmniMailDeps\Psr\Container\NotFoundExceptionInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\RuntimeException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
-use OmniMailDeps\Symfony\Contracts\Service\ServiceCollectionInterface;
-use OmniMailDeps\Symfony\Contracts\Service\ServiceLocatorTrait;
-use OmniMailDeps\Symfony\Contracts\Service\ServiceSubscriberInterface;
+use JooosiMailDeps\Psr\Container\ContainerExceptionInterface;
+use JooosiMailDeps\Psr\Container\NotFoundExceptionInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
+use JooosiMailDeps\Symfony\Contracts\Service\ServiceCollectionInterface;
+use JooosiMailDeps\Symfony\Contracts\Service\ServiceLocatorTrait;
+use JooosiMailDeps\Symfony\Contracts\Service\ServiceSubscriberInterface;
 /**
  * @author Robin Chalas <robin.chalas@gmail.com>
  * @author Nicolas Grekas <p@tchwork.com>

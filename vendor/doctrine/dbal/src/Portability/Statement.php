@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Portability;
+namespace JooosiMailDeps\Doctrine\DBAL\Portability;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Middleware\AbstractStatementMiddleware;
-use OmniMailDeps\Doctrine\DBAL\Driver\Result as ResultInterface;
-use OmniMailDeps\Doctrine\DBAL\Driver\Statement as DriverStatement;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Middleware\AbstractStatementMiddleware;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Result as ResultInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Statement as DriverStatement;
 /**
  * Portability wrapper for a Statement.
  */

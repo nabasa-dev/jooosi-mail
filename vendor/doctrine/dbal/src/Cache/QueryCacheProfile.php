@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Cache;
+namespace JooosiMailDeps\Doctrine\DBAL\Cache;
 
-use OmniMailDeps\Doctrine\DBAL\Cache\Exception\NoCacheKey;
-use OmniMailDeps\Doctrine\DBAL\Connection;
-use OmniMailDeps\Psr\Cache\CacheItemPoolInterface;
+use JooosiMailDeps\Doctrine\DBAL\Cache\Exception\NoCacheKey;
+use JooosiMailDeps\Doctrine\DBAL\Connection;
+use JooosiMailDeps\Psr\Cache\CacheItemPoolInterface;
 use function hash;
 use function serialize;
 use function sha1;

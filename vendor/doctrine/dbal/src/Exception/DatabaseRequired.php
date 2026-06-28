@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Exception;
+namespace JooosiMailDeps\Doctrine\DBAL\Exception;
 
-use OmniMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
 use function sprintf;
 class DatabaseRequired extends \Exception implements Exception
 {

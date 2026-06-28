@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\IBMDB2;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\IBMDB2;
 
 use SensitiveParameter;
 use function implode;

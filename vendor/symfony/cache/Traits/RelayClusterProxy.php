@@ -8,16 +8,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\Traits;
+namespace JooosiMailDeps\Symfony\Component\Cache\Traits;
 
-use OmniMailDeps\Symfony\Component\Cache\Traits\Relay\RelayCluster20Trait;
-use OmniMailDeps\Symfony\Component\Cache\Traits\Relay\RelayCluster21Trait;
-use OmniMailDeps\Symfony\Component\VarExporter\LazyObjectInterface;
-use OmniMailDeps\Symfony\Contracts\Service\ResetInterface;
+use JooosiMailDeps\Symfony\Component\Cache\Traits\Relay\RelayCluster20Trait;
+use JooosiMailDeps\Symfony\Component\Cache\Traits\Relay\RelayCluster21Trait;
+use JooosiMailDeps\Symfony\Component\VarExporter\LazyObjectInterface;
+use JooosiMailDeps\Symfony\Contracts\Service\ResetInterface;
 // Help opcache.preload discover always-needed symbols
-class_exists(\OmniMailDeps\Symfony\Component\VarExporter\Internal\Hydrator::class);
-class_exists(\OmniMailDeps\Symfony\Component\VarExporter\Internal\LazyObjectRegistry::class);
-class_exists(\OmniMailDeps\Symfony\Component\VarExporter\Internal\LazyObjectState::class);
+class_exists(\JooosiMailDeps\Symfony\Component\VarExporter\Internal\Hydrator::class);
+class_exists(\JooosiMailDeps\Symfony\Component\VarExporter\Internal\LazyObjectRegistry::class);
+class_exists(\JooosiMailDeps\Symfony\Component\VarExporter\Internal\LazyObjectState::class);
 /**
  * @internal
  */

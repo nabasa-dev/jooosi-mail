@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Psr\EventDispatcher;
+namespace JooosiMailDeps\Psr\EventDispatcher;
 
 /**
  * An Event whose processing may be interrupted when the event has been handled.

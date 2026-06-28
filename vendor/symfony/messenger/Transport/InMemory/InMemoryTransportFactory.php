@@ -8,13 +8,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Transport\InMemory;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Transport\InMemory;
 
-use OmniMailDeps\Psr\Clock\ClockInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Serialization\SerializerInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\TransportFactoryInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\TransportInterface;
-use OmniMailDeps\Symfony\Contracts\Service\ResetInterface;
+use JooosiMailDeps\Psr\Clock\ClockInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Serialization\SerializerInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\TransportFactoryInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\TransportInterface;
+use JooosiMailDeps\Symfony\Contracts\Service\ResetInterface;
 /**
  * @author Gary PEGEOT <garypegeot@gmail.com>
  *

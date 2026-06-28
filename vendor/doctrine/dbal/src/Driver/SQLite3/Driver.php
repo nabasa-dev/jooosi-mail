@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\SQLite3;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\SQLite3;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\AbstractSQLiteDriver;
+use JooosiMailDeps\Doctrine\DBAL\Driver\AbstractSQLiteDriver;
 use SensitiveParameter;
 use SQLite3;
 final class Driver extends AbstractSQLiteDriver

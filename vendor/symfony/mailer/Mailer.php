@@ -8,16 +8,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer;
+namespace JooosiMailDeps\Symfony\Component\Mailer;
 
-use OmniMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Event\MessageEvent;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\TransportExceptionInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Messenger\SendEmailMessage;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\HandlerFailedException;
-use OmniMailDeps\Symfony\Component\Messenger\MessageBusInterface;
-use OmniMailDeps\Symfony\Component\Mime\RawMessage;
+use JooosiMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Event\MessageEvent;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\TransportExceptionInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Messenger\SendEmailMessage;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\HandlerFailedException;
+use JooosiMailDeps\Symfony\Component\Messenger\MessageBusInterface;
+use JooosiMailDeps\Symfony\Component\Mime\RawMessage;
 /**
  * @author Fabien Potencier <fabien@symfony.com>
  */

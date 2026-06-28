@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Queue\Trigger;
+namespace JooosiMail\Queue\Trigger;
 
-use OmniMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\Service;
 /**
  * Coordinates Action Scheduler queue wakeups.
  *
@@ -12,7 +12,7 @@ use OmniMail\Discovery\Attribute\Service;
 #[Service]
 final readonly class TriggerCoordinator
 {
-    public function __construct(private \OmniMail\Queue\Trigger\ActionSchedulerTrigger $actionSchedulerTrigger)
+    public function __construct(private \JooosiMail\Queue\Trigger\ActionSchedulerTrigger $actionSchedulerTrigger)
     {
     }
     /**

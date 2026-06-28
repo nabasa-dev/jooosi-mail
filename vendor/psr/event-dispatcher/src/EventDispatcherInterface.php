@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Psr\EventDispatcher;
+namespace JooosiMailDeps\Psr\EventDispatcher;
 
 /**
  * Defines a dispatcher for events.

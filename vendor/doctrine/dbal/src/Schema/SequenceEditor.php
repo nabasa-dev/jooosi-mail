@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\InvalidSequenceDefinition;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\InvalidSequenceDefinition;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
 final class SequenceEditor
 {
     private ?OptionallyQualifiedName $name = null;

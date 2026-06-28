@@ -8,14 +8,14 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\DataCollector;
+namespace JooosiMailDeps\Symfony\Component\Cache\DataCollector;
 
-use OmniMailDeps\Symfony\Component\Cache\Adapter\TraceableAdapter;
-use OmniMailDeps\Symfony\Component\Cache\Adapter\TraceableAdapterEvent;
-use OmniMailDeps\Symfony\Component\HttpFoundation\Request;
-use OmniMailDeps\Symfony\Component\HttpFoundation\Response;
-use OmniMailDeps\Symfony\Component\HttpKernel\DataCollector\DataCollector;
-use OmniMailDeps\Symfony\Component\HttpKernel\DataCollector\LateDataCollectorInterface;
+use JooosiMailDeps\Symfony\Component\Cache\Adapter\TraceableAdapter;
+use JooosiMailDeps\Symfony\Component\Cache\Adapter\TraceableAdapterEvent;
+use JooosiMailDeps\Symfony\Component\HttpFoundation\Request;
+use JooosiMailDeps\Symfony\Component\HttpFoundation\Response;
+use JooosiMailDeps\Symfony\Component\HttpKernel\DataCollector\DataCollector;
+use JooosiMailDeps\Symfony\Component\HttpKernel\DataCollector\LateDataCollectorInterface;
 /**
  * @author Aaron Scherer <aequasi@gmail.com>
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>

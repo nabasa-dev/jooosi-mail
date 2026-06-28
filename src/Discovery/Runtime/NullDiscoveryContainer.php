@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Discovery\Runtime;
+namespace JooosiMail\Discovery\Runtime;
 
 use Override;
-use OmniMailDeps\Psr\Container\ContainerInterface;
+use JooosiMailDeps\Psr\Container\ContainerInterface;
 use ReflectionClass;
 use ReflectionNamedType;
 use RuntimeException;

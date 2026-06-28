@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Middleware;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Middleware;
 
-use OmniMailDeps\Symfony\Component\Lock\LockFactory;
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\DeduplicateStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\ReceivedStamp;
+use JooosiMailDeps\Symfony\Component\Lock\LockFactory;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\DeduplicateStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\ReceivedStamp;
 final class DeduplicateMiddleware implements MiddlewareInterface
 {
     public function __construct(private LockFactory $lockFactory)

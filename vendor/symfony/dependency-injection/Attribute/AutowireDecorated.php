@@ -8,7 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Attribute;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute;
 
 /**
  * Autowires the inner object of decorating services.

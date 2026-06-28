@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Platforms\Keywords;
+namespace JooosiMailDeps\Doctrine\DBAL\Platforms\Keywords;
 
-use OmniMailDeps\Doctrine\Deprecations\Deprecation;
+use JooosiMailDeps\Doctrine\Deprecations\Deprecation;
 use function array_flip;
 use function array_map;
 use function strtoupper;

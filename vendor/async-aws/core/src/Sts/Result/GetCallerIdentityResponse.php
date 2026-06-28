@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Sts\Result;
+namespace JooosiMailDeps\AsyncAws\Core\Sts\Result;
 
-use OmniMailDeps\AsyncAws\Core\Response;
-use OmniMailDeps\AsyncAws\Core\Result;
+use JooosiMailDeps\AsyncAws\Core\Response;
+use JooosiMailDeps\AsyncAws\Core\Result;
 /**
  * Contains the response to a successful GetCallerIdentity request, including information about the entity making the
  * request.

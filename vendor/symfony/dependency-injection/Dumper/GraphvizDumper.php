@@ -8,15 +8,15 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Dumper;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Dumper;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\ArgumentInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Definition;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Parameter;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Reference;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\ArgumentInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Definition;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Parameter;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Reference;
 /**
  * GraphvizDumper dumps a service container as a graphviz file.
  *

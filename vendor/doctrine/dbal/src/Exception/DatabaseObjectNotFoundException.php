@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Exception;
+namespace JooosiMailDeps\Doctrine\DBAL\Exception;
 
 /**
  * Base class for all unknown database object related errors detected in the driver.

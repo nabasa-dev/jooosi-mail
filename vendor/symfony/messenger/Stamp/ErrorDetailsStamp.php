@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Stamp;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Stamp;
 
-use OmniMailDeps\Symfony\Component\ErrorHandler\Exception\FlattenException;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\HandlerFailedException;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\RecoverableExceptionInterface;
+use JooosiMailDeps\Symfony\Component\ErrorHandler\Exception\FlattenException;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\HandlerFailedException;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\RecoverableExceptionInterface;
 /**
  * Stamp applied when a messages fails due to an exception in the handler.
  */

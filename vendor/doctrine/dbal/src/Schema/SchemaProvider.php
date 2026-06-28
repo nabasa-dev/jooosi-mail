@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema;
 
-use OmniMailDeps\Doctrine\DBAL\Exception;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
 /**
  * Provides access to the database schema.
  *

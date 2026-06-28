@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver;
 
-use OmniMailDeps\Doctrine\DBAL\Driver;
-use OmniMailDeps\Doctrine\DBAL\Driver\API\ExceptionConverter as ExceptionConverterInterface;
-use OmniMailDeps\Doctrine\DBAL\Driver\API\IBMDB2\ExceptionConverter;
-use OmniMailDeps\Doctrine\DBAL\Platforms\DB2Platform;
-use OmniMailDeps\Doctrine\DBAL\ServerVersionProvider;
+use JooosiMailDeps\Doctrine\DBAL\Driver;
+use JooosiMailDeps\Doctrine\DBAL\Driver\API\ExceptionConverter as ExceptionConverterInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\API\IBMDB2\ExceptionConverter;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\DB2Platform;
+use JooosiMailDeps\Doctrine\DBAL\ServerVersionProvider;
 /**
  * Abstract base implementation of the {@see Driver} interface for Db2 based drivers.
  */

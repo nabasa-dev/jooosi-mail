@@ -1,25 +1,25 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\ColumnAlreadyExists;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\ColumnDoesNotExist;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\ForeignKeyDoesNotExist;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\IndexAlreadyExists;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\IndexDoesNotExist;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\IndexNameInvalid;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\InvalidState;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\InvalidTableName;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\PrimaryKeyAlreadyExists;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\UniqueConstraintDoesNotExist;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parser\OptionallyQualifiedNameParser;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parsers;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
-use OmniMailDeps\Doctrine\DBAL\Types\Exception\TypesException;
-use OmniMailDeps\Doctrine\DBAL\Types\Type;
-use OmniMailDeps\Doctrine\Deprecations\Deprecation;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\ColumnAlreadyExists;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\ColumnDoesNotExist;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\ForeignKeyDoesNotExist;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\IndexAlreadyExists;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\IndexDoesNotExist;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\IndexNameInvalid;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\InvalidState;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\InvalidTableName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\PrimaryKeyAlreadyExists;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\UniqueConstraintDoesNotExist;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parser\OptionallyQualifiedNameParser;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parsers;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Types\Exception\TypesException;
+use JooosiMailDeps\Doctrine\DBAL\Types\Type;
+use JooosiMailDeps\Doctrine\Deprecations\Deprecation;
 use LogicException;
 use function array_diff_key;
 use function array_map;

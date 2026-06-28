@@ -1,17 +1,17 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Transport;
+namespace JooosiMail\Mail\Transport;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Discovery\Runtime\DiscoveryManifest;
-use OmniMailDeps\Psr\Container\ContainerInterface;
-use OmniMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Transport;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\TransportFactoryInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Runtime\DiscoveryManifest;
+use JooosiMailDeps\Psr\Container\ContainerInterface;
+use JooosiMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\TransportFactoryInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
 /**
  * Builds Symfony mail transports, including discovered custom factories.
  *

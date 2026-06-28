@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Compiler;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Alias;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Definition;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Alias;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Definition;
 /**
  * Represents a node in your service graph.
  *

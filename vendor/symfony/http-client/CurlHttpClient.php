@@ -8,20 +8,20 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient;
+namespace JooosiMailDeps\Symfony\Component\HttpClient;
 
-use OmniMailDeps\Psr\Log\LoggerAwareInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
-use OmniMailDeps\Symfony\Component\HttpClient\Internal\CurlClientState;
-use OmniMailDeps\Symfony\Component\HttpClient\Internal\PushedResponse;
-use OmniMailDeps\Symfony\Component\HttpClient\Response\CurlResponse;
-use OmniMailDeps\Symfony\Component\HttpClient\Response\ResponseStream;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseStreamInterface;
-use OmniMailDeps\Symfony\Contracts\Service\ResetInterface;
+use JooosiMailDeps\Psr\Log\LoggerAwareInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
+use JooosiMailDeps\Symfony\Component\HttpClient\Internal\CurlClientState;
+use JooosiMailDeps\Symfony\Component\HttpClient\Internal\PushedResponse;
+use JooosiMailDeps\Symfony\Component\HttpClient\Response\CurlResponse;
+use JooosiMailDeps\Symfony\Component\HttpClient\Response\ResponseStream;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseStreamInterface;
+use JooosiMailDeps\Symfony\Contracts\Service\ResetInterface;
 /**
  * A performant implementation of the HttpClientInterface contracts based on the curl extension.
  *

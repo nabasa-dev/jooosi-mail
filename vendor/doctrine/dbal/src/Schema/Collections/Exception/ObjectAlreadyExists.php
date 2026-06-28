@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Collections\Exception;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Collections\Exception;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Collections\Exception;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Collections\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
 use LogicException;
 use function sprintf;
 /** @internal */

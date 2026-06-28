@@ -8,14 +8,14 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Uid\Factory;
+namespace JooosiMailDeps\Symfony\Component\Uid\Factory;
 
-use OmniMailDeps\Symfony\Component\Uid\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\Uid\Uuid;
-use OmniMailDeps\Symfony\Component\Uid\UuidV1;
-use OmniMailDeps\Symfony\Component\Uid\UuidV4;
-use OmniMailDeps\Symfony\Component\Uid\UuidV5;
-use OmniMailDeps\Symfony\Component\Uid\UuidV7;
+use JooosiMailDeps\Symfony\Component\Uid\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\Uid\Uuid;
+use JooosiMailDeps\Symfony\Component\Uid\UuidV1;
+use JooosiMailDeps\Symfony\Component\Uid\UuidV4;
+use JooosiMailDeps\Symfony\Component\Uid\UuidV5;
+use JooosiMailDeps\Symfony\Component\Uid\UuidV7;
 class UuidFactory
 {
     private string $defaultClass;

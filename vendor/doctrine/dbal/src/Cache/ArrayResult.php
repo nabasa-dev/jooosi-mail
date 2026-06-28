@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Cache;
+namespace JooosiMailDeps\Doctrine\DBAL\Cache;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\FetchUtils;
-use OmniMailDeps\Doctrine\DBAL\Driver\Result;
-use OmniMailDeps\Doctrine\DBAL\Exception\InvalidColumnIndex;
+use JooosiMailDeps\Doctrine\DBAL\Driver\FetchUtils;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Result;
+use JooosiMailDeps\Doctrine\DBAL\Exception\InvalidColumnIndex;
 use function array_combine;
 use function array_keys;
 use function array_map;

@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Transport\Bridge\ToSend\Transport;
+namespace JooosiMail\Mail\Transport\Bridge\ToSend\Transport;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Discovery\Attribute\TransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\AbstractTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Dsn;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\TransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\AbstractTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Dsn;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
 /**
  * toSend custom transport factory.
  *
@@ -23,7 +23,7 @@ final class ToSendTransportFactory extends AbstractTransportFactory
         $host = $dsn->getHost() === 'default' ? null : $dsn->getHost();
         $port = $dsn->getPort();
         return match ($dsn->getScheme()) {
-            'tosend+api' => (new \OmniMail\Mail\Transport\Bridge\ToSend\Transport\ToSendApiTransport($this->getUser($dsn), $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
+            'tosend+api' => (new \JooosiMail\Mail\Transport\Bridge\ToSend\Transport\ToSendApiTransport($this->getUser($dsn), $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => throw new UnsupportedSchemeException($dsn, 'tosend', $this->getSupportedSchemes()),
         };

@@ -8,15 +8,15 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Clock\Test;
+namespace JooosiMailDeps\Symfony\Component\Clock\Test;
 
-use OmniMailDeps\PHPUnit\Framework\Attributes\After;
-use OmniMailDeps\PHPUnit\Framework\Attributes\Before;
-use OmniMailDeps\PHPUnit\Framework\Attributes\BeforeClass;
-use OmniMailDeps\Symfony\Component\Clock\Clock;
-use OmniMailDeps\Symfony\Component\Clock\ClockInterface;
-use OmniMailDeps\Symfony\Component\Clock\MockClock;
-use function OmniMailDeps\Symfony\Component\Clock\now;
+use JooosiMailDeps\PHPUnit\Framework\Attributes\After;
+use JooosiMailDeps\PHPUnit\Framework\Attributes\Before;
+use JooosiMailDeps\PHPUnit\Framework\Attributes\BeforeClass;
+use JooosiMailDeps\Symfony\Component\Clock\Clock;
+use JooosiMailDeps\Symfony\Component\Clock\ClockInterface;
+use JooosiMailDeps\Symfony\Component\Clock\MockClock;
+use function JooosiMailDeps\Symfony\Component\Clock\now;
 /**
  * Helps with mocking the time in your test cases.
  *

@@ -1,16 +1,16 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver;
 
-use OmniMailDeps\Doctrine\DBAL\Driver;
-use OmniMailDeps\Doctrine\DBAL\Driver\API\ExceptionConverter as ExceptionConverterInterface;
-use OmniMailDeps\Doctrine\DBAL\Driver\API\PostgreSQL\ExceptionConverter;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Exception\InvalidPlatformVersion;
-use OmniMailDeps\Doctrine\DBAL\Platforms\PostgreSQL120Platform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\PostgreSQLPlatform;
-use OmniMailDeps\Doctrine\DBAL\ServerVersionProvider;
-use OmniMailDeps\Doctrine\Deprecations\Deprecation;
+use JooosiMailDeps\Doctrine\DBAL\Driver;
+use JooosiMailDeps\Doctrine\DBAL\Driver\API\ExceptionConverter as ExceptionConverterInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\API\PostgreSQL\ExceptionConverter;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Exception\InvalidPlatformVersion;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\PostgreSQL120Platform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\PostgreSQLPlatform;
+use JooosiMailDeps\Doctrine\DBAL\ServerVersionProvider;
+use JooosiMailDeps\Doctrine\Deprecations\Deprecation;
 use function preg_match;
 use function version_compare;
 /**

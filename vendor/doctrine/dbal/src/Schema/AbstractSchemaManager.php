@@ -1,21 +1,21 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema;
 
-use OmniMailDeps\Doctrine\DBAL\Connection;
-use OmniMailDeps\Doctrine\DBAL\Exception;
-use OmniMailDeps\Doctrine\DBAL\Exception\DatabaseRequired;
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Exception\NotSupported;
-use OmniMailDeps\Doctrine\DBAL\Result;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\TableDoesNotExist;
-use OmniMailDeps\Doctrine\DBAL\Schema\Introspection\IntrospectingSchemaProvider;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parsers;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
-use OmniMailDeps\Doctrine\DBAL\Types\Exception\TypesException;
-use OmniMailDeps\Doctrine\Deprecations\Deprecation;
+use JooosiMailDeps\Doctrine\DBAL\Connection;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Exception\DatabaseRequired;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Exception\NotSupported;
+use JooosiMailDeps\Doctrine\DBAL\Result;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\TableDoesNotExist;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Introspection\IntrospectingSchemaProvider;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parsers;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Types\Exception\TypesException;
+use JooosiMailDeps\Doctrine\Deprecations\Deprecation;
 use Throwable;
 use function array_filter;
 use function array_intersect;

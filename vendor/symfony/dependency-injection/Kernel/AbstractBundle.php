@@ -8,15 +8,15 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Kernel;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Kernel;
 
-use OmniMailDeps\Symfony\Component\Config\Definition\Configurator\DefinitionConfigurator;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Container;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Extension\ConfigurableExtensionInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use JooosiMailDeps\Symfony\Component\Config\Definition\Configurator\DefinitionConfigurator;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Container;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Extension\ConfigurableExtensionInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 /**
  * A base class for DI-powered bundles with built-in configuration hooks.
  *

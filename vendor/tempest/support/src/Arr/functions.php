@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Arr;
+namespace JooosiMailDeps\Tempest\Support\Arr;
 
 use ArrayAccess;
 use Closure;
@@ -10,8 +10,8 @@ use Generator;
 use InvalidArgumentException;
 use LogicException;
 use Random\Randomizer;
-use OmniMailDeps\Tempest\Mapper;
-use OmniMailDeps\Tempest\Support\Str\ImmutableString;
+use JooosiMailDeps\Tempest\Mapper;
+use JooosiMailDeps\Tempest\Support\Str\ImmutableString;
 use Traversable;
 use function sort as php_sort;
 /**

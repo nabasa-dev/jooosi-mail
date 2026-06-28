@@ -1,13 +1,13 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Parser;
+namespace JooosiMailDeps\Egulias\EmailValidator\Parser;
 
-use OmniMailDeps\Egulias\EmailValidator\EmailLexer;
-use OmniMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\ConsecutiveDot;
-use OmniMailDeps\Egulias\EmailValidator\Result\Result;
-use OmniMailDeps\Egulias\EmailValidator\Result\ValidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Warning\Warning;
+use JooosiMailDeps\Egulias\EmailValidator\EmailLexer;
+use JooosiMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\ConsecutiveDot;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Result;
+use JooosiMailDeps\Egulias\EmailValidator\Result\ValidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\Warning;
 abstract class PartParser
 {
     /**

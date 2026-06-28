@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\ValueObject;
+namespace JooosiMail\Mail\ValueObject;
 
-use OmniMailDeps\Symfony\Component\Mime\Address;
+use JooosiMailDeps\Symfony\Component\Mime\Address;
 /**
  * Immutable mail address value object.
  *

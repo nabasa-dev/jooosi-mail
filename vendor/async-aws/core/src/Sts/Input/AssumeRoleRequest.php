@@ -1,14 +1,14 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Sts\Input;
+namespace JooosiMailDeps\AsyncAws\Core\Sts\Input;
 
-use OmniMailDeps\AsyncAws\Core\Exception\InvalidArgument;
-use OmniMailDeps\AsyncAws\Core\Input;
-use OmniMailDeps\AsyncAws\Core\Request;
-use OmniMailDeps\AsyncAws\Core\Stream\StreamFactory;
-use OmniMailDeps\AsyncAws\Core\Sts\ValueObject\PolicyDescriptorType;
-use OmniMailDeps\AsyncAws\Core\Sts\ValueObject\ProvidedContext;
-use OmniMailDeps\AsyncAws\Core\Sts\ValueObject\Tag;
+use JooosiMailDeps\AsyncAws\Core\Exception\InvalidArgument;
+use JooosiMailDeps\AsyncAws\Core\Input;
+use JooosiMailDeps\AsyncAws\Core\Request;
+use JooosiMailDeps\AsyncAws\Core\Stream\StreamFactory;
+use JooosiMailDeps\AsyncAws\Core\Sts\ValueObject\PolicyDescriptorType;
+use JooosiMailDeps\AsyncAws\Core\Sts\ValueObject\ProvidedContext;
+use JooosiMailDeps\AsyncAws\Core\Sts\ValueObject\Tag;
 final class AssumeRoleRequest extends Input
 {
     /**

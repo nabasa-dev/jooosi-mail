@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\PropertyAccess\Exception;
+namespace JooosiMailDeps\Symfony\Component\PropertyAccess\Exception;
 
-use OmniMailDeps\Symfony\Component\PropertyAccess\PropertyPathInterface;
+use JooosiMailDeps\Symfony\Component\PropertyAccess\PropertyPathInterface;
 /**
  * Thrown when a value does not match an expected type.
  *

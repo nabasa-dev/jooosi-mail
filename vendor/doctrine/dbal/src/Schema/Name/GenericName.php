@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Name;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Name;
 
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name;
 use function array_map;
 use function array_merge;
 use function array_values;

@@ -1,23 +1,23 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver;
 
-use OmniMailDeps\Doctrine\DBAL\Driver;
-use OmniMailDeps\Doctrine\DBAL\Driver\API\ExceptionConverter as ExceptionConverterInterface;
-use OmniMailDeps\Doctrine\DBAL\Driver\API\MySQL\ExceptionConverter;
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractMySQLPlatform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Exception\InvalidPlatformVersion;
-use OmniMailDeps\Doctrine\DBAL\Platforms\MariaDB1010Platform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\MariaDB1052Platform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\MariaDB1060Platform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\MariaDB110700Platform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\MariaDBPlatform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\MySQL80Platform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\MySQL84Platform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\MySQLPlatform;
-use OmniMailDeps\Doctrine\DBAL\ServerVersionProvider;
-use OmniMailDeps\Doctrine\Deprecations\Deprecation;
+use JooosiMailDeps\Doctrine\DBAL\Driver;
+use JooosiMailDeps\Doctrine\DBAL\Driver\API\ExceptionConverter as ExceptionConverterInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\API\MySQL\ExceptionConverter;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractMySQLPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Exception\InvalidPlatformVersion;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\MariaDB1010Platform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\MariaDB1052Platform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\MariaDB1060Platform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\MariaDB110700Platform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\MariaDBPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\MySQL80Platform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\MySQL84Platform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\MySQLPlatform;
+use JooosiMailDeps\Doctrine\DBAL\ServerVersionProvider;
+use JooosiMailDeps\Doctrine\Deprecations\Deprecation;
 use function preg_match;
 use function stripos;
 use function version_compare;

@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\PgSQL;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\PgSQL;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\AbstractException;
+use JooosiMailDeps\Doctrine\DBAL\Driver\AbstractException;
 use PgSql\Result as PgSqlResult;
 use function pg_result_error_field;
 use const PGSQL_DIAG_MESSAGE_PRIMARY;

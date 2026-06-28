@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Contracts\Cache;
+namespace JooosiMailDeps\Symfony\Contracts\Cache;
 
-use OmniMailDeps\Psr\Cache\CacheItemInterface;
-use OmniMailDeps\Psr\Cache\InvalidArgumentException;
+use JooosiMailDeps\Psr\Cache\CacheItemInterface;
+use JooosiMailDeps\Psr\Cache\InvalidArgumentException;
 /**
  * Covers most simple to advanced caching needs.
  *

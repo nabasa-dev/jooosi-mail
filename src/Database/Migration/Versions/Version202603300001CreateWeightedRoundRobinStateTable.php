@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Database\Migration\Versions;
+namespace JooosiMail\Database\Migration\Versions;
 
-use OmniMailDeps\Doctrine\DBAL\Connection;
-use OmniMail\Database\Migration\MigrationInterface;
-use OmniMail\Infrastructure\Database\TableNameResolver;
+use JooosiMailDeps\Doctrine\DBAL\Connection;
+use JooosiMail\Database\Migration\MigrationInterface;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
 /**
  * Creates persisted smooth weighted round robin routing state.
  *

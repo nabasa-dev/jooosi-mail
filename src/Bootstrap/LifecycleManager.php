@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Bootstrap;
+namespace JooosiMail\Bootstrap;
 
-use OmniMail\Database\Migration\MigrationRunner;
-use OmniMail\Infrastructure\WordPress\CommandRegistrar;
-use OmniMail\Infrastructure\WordPress\HookRegistrar;
-use OmniMail\Infrastructure\WordPress\RestRouteRegistrar;
-use OmniMail\Mail\Logging\MailLogRetentionScheduler;
-use OmniMail\Queue\Trigger\ActionSchedulerTrigger;
+use JooosiMail\Database\Migration\MigrationRunner;
+use JooosiMail\Infrastructure\WordPress\CommandRegistrar;
+use JooosiMail\Infrastructure\WordPress\HookRegistrar;
+use JooosiMail\Infrastructure\WordPress\RestRouteRegistrar;
+use JooosiMail\Mail\Logging\MailLogRetentionScheduler;
+use JooosiMail\Queue\Trigger\ActionSchedulerTrigger;
 /**
  * Registers runtime integrations with WordPress.
  *

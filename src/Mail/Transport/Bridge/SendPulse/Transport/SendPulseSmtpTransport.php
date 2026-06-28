@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Transport\Bridge\SendPulse\Transport;
+namespace JooosiMail\Mail\Transport\Bridge\SendPulse\Transport;
 
-use OmniMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
 use SensitiveParameter;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Smtp\EsmtpTransport;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Smtp\EsmtpTransport;
 final class SendPulseSmtpTransport extends EsmtpTransport
 {
     public function __construct(

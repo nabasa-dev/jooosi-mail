@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL;
+namespace JooosiMailDeps\Doctrine\DBAL;
 
 /**
  * Contains portable column case conversions.

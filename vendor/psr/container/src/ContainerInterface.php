@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Psr\Container;
+namespace JooosiMailDeps\Psr\Container;
 
 /**
  * Describes the interface of a container that exposes methods to read its entries.

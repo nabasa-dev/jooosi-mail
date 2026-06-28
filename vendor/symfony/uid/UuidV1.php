@@ -8,7 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Uid;
+namespace JooosiMailDeps\Symfony\Component\Uid;
 
 /**
  * A v1 UUID contains a 60-bit timestamp and 62 extra unique bits.

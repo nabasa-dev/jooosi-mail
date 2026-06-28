@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Credentials;
+namespace JooosiMailDeps\AsyncAws\Core\Credentials;
 
-use OmniMailDeps\AsyncAws\Core\Result;
+use JooosiMailDeps\AsyncAws\Core\Result;
 /**
  * @internal
  */

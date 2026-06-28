@@ -8,19 +8,19 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient\Internal;
+namespace JooosiMailDeps\Symfony\Component\HttpClient\Internal;
 
-use OmniMailDeps\Http\Client\Exception\NetworkException;
-use OmniMailDeps\Http\Promise\Promise;
-use OmniMailDeps\Psr\Http\Message\RequestInterface as Psr7RequestInterface;
-use OmniMailDeps\Psr\Http\Message\ResponseFactoryInterface;
-use OmniMailDeps\Psr\Http\Message\ResponseInterface as Psr7ResponseInterface;
-use OmniMailDeps\Psr\Http\Message\StreamFactoryInterface;
-use OmniMailDeps\Symfony\Component\HttpClient\Response\StreamableInterface;
-use OmniMailDeps\Symfony\Component\HttpClient\Response\StreamWrapper;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
+use JooosiMailDeps\Http\Client\Exception\NetworkException;
+use JooosiMailDeps\Http\Promise\Promise;
+use JooosiMailDeps\Psr\Http\Message\RequestInterface as Psr7RequestInterface;
+use JooosiMailDeps\Psr\Http\Message\ResponseFactoryInterface;
+use JooosiMailDeps\Psr\Http\Message\ResponseInterface as Psr7ResponseInterface;
+use JooosiMailDeps\Psr\Http\Message\StreamFactoryInterface;
+use JooosiMailDeps\Symfony\Component\HttpClient\Response\StreamableInterface;
+use JooosiMailDeps\Symfony\Component\HttpClient\Response\StreamWrapper;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  *
@@ -39,7 +39,7 @@ final class HttplugWaitLoop
         if (!$this->promisePool) {
             return 0;
         }
-        $guzzleQueue = \OmniMailDeps\GuzzleHttp\Promise\Utils::queue();
+        $guzzleQueue = \JooosiMailDeps\GuzzleHttp\Promise\Utils::queue();
         if (0.0 === $remainingDuration = $maxDuration) {
             $idleTimeout = 0.0;
         } elseif (null !== $maxDuration) {

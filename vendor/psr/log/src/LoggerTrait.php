@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Psr\Log;
+namespace JooosiMailDeps\Psr\Log;
 
 /**
  * This is a simple Logger trait that classes unable to extend AbstractLogger

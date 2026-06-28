@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core;
+namespace JooosiMailDeps\AsyncAws\Core;
 
 /**
  * Representation of a AWS Request.

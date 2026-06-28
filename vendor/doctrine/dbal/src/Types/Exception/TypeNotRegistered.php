@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Types\Exception;
+namespace JooosiMailDeps\Doctrine\DBAL\Types\Exception;
 
-use OmniMailDeps\Doctrine\DBAL\Types\Type;
+use JooosiMailDeps\Doctrine\DBAL\Types\Type;
 use Exception;
 use function get_debug_type;
 use function spl_object_hash;

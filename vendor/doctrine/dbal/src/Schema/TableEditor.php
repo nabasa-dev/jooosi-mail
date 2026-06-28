@@ -1,16 +1,16 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Collections\Exception\ObjectAlreadyExists;
-use OmniMailDeps\Doctrine\DBAL\Schema\Collections\Exception\ObjectDoesNotExist;
-use OmniMailDeps\Doctrine\DBAL\Schema\Collections\OptionallyUnqualifiedNamedObjectSet;
-use OmniMailDeps\Doctrine\DBAL\Schema\Collections\UnqualifiedNamedObjectSet;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\InvalidTableDefinition;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\InvalidTableModification;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Collections\Exception\ObjectAlreadyExists;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Collections\Exception\ObjectDoesNotExist;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Collections\OptionallyUnqualifiedNamedObjectSet;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Collections\UnqualifiedNamedObjectSet;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\InvalidTableDefinition;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\InvalidTableModification;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
 use function strcasecmp;
 final class TableEditor
 {

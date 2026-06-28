@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Psr\Cache;
+namespace JooosiMailDeps\Psr\Cache;
 
 /**
  * CacheItemPoolInterface generates CacheItemInterface objects.

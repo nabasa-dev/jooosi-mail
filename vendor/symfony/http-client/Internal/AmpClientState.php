@@ -8,31 +8,31 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient\Internal;
+namespace JooosiMailDeps\Symfony\Component\HttpClient\Internal;
 
-use OmniMailDeps\Amp\ByteStream\ResourceStream;
-use OmniMailDeps\Amp\Cancellation;
-use OmniMailDeps\Amp\DeferredCancellation;
-use OmniMailDeps\Amp\DeferredFuture;
-use OmniMailDeps\Amp\Future;
-use OmniMailDeps\Amp\Http\Client\Connection\ConnectionLimitingPool;
-use OmniMailDeps\Amp\Http\Client\Connection\DefaultConnectionFactory;
-use OmniMailDeps\Amp\Http\Client\InterceptedHttpClient;
-use OmniMailDeps\Amp\Http\Client\Interceptor\RetryRequests;
-use OmniMailDeps\Amp\Http\Client\PooledHttpClient;
-use OmniMailDeps\Amp\Http\Client\Request;
-use OmniMailDeps\Amp\Http\Client\Response;
-use OmniMailDeps\Amp\Http\Tunnel\Http1TunnelConnector;
-use OmniMailDeps\Amp\Http\Tunnel\Https1TunnelConnector;
-use OmniMailDeps\Amp\Socket\Certificate;
-use OmniMailDeps\Amp\Socket\ClientTlsContext;
-use OmniMailDeps\Amp\Socket\ConnectContext;
-use OmniMailDeps\Amp\Socket\DnsSocketConnector;
-use OmniMailDeps\Amp\Socket\InternetAddress;
-use OmniMailDeps\Amp\Socket\Socket;
-use OmniMailDeps\Amp\Socket\SocketAddress;
-use OmniMailDeps\Amp\Socket\SocketConnector;
-use OmniMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Amp\ByteStream\ResourceStream;
+use JooosiMailDeps\Amp\Cancellation;
+use JooosiMailDeps\Amp\DeferredCancellation;
+use JooosiMailDeps\Amp\DeferredFuture;
+use JooosiMailDeps\Amp\Future;
+use JooosiMailDeps\Amp\Http\Client\Connection\ConnectionLimitingPool;
+use JooosiMailDeps\Amp\Http\Client\Connection\DefaultConnectionFactory;
+use JooosiMailDeps\Amp\Http\Client\InterceptedHttpClient;
+use JooosiMailDeps\Amp\Http\Client\Interceptor\RetryRequests;
+use JooosiMailDeps\Amp\Http\Client\PooledHttpClient;
+use JooosiMailDeps\Amp\Http\Client\Request;
+use JooosiMailDeps\Amp\Http\Client\Response;
+use JooosiMailDeps\Amp\Http\Tunnel\Http1TunnelConnector;
+use JooosiMailDeps\Amp\Http\Tunnel\Https1TunnelConnector;
+use JooosiMailDeps\Amp\Socket\Certificate;
+use JooosiMailDeps\Amp\Socket\ClientTlsContext;
+use JooosiMailDeps\Amp\Socket\ConnectContext;
+use JooosiMailDeps\Amp\Socket\DnsSocketConnector;
+use JooosiMailDeps\Amp\Socket\InternetAddress;
+use JooosiMailDeps\Amp\Socket\Socket;
+use JooosiMailDeps\Amp\Socket\SocketAddress;
+use JooosiMailDeps\Amp\Socket\SocketConnector;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
 /**
  * Internal representation of the Amp client's state.
  *

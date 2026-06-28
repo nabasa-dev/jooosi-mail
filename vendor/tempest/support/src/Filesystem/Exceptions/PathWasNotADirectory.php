@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Tempest\Support\Filesystem\Exceptions;
+namespace JooosiMailDeps\Tempest\Support\Filesystem\Exceptions;
 
 use Exception;
 final class PathWasNotADirectory extends Exception implements FilesystemException

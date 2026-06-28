@@ -1,25 +1,25 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Delivery;
+namespace JooosiMail\Mail\Delivery;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Event\EventPublisherInterface;
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Mail\Connection\ConnectionDsnResolver;
-use OmniMail\Mail\Logging\MailAttemptRepository;
-use OmniMail\Mail\Logging\MailLogRepository;
-use OmniMail\Mail\Logging\MailLogRetentionService;
-use OmniMail\Mail\Routing\ConnectionCircuitBreaker;
-use OmniMail\Mail\Routing\ConnectionRateLimiter;
-use OmniMail\Mail\Routing\ConnectionResolver;
-use OmniMail\Mail\Routing\ConnectionStatusReporter;
-use OmniMail\Mail\Routing\DeliveryPlan;
-use OmniMail\Mail\Routing\RoutingPolicyResolver;
-use OmniMail\Mail\Sender\SenderPolicyResolver;
-use OmniMail\Mail\Transport\TransportRegistry;
-use OmniMail\Mail\ValueObject\DeliveryResult;
-use OmniMail\Mail\ValueObject\MailRequest;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Event\EventPublisherInterface;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Mail\Connection\ConnectionDsnResolver;
+use JooosiMail\Mail\Logging\MailAttemptRepository;
+use JooosiMail\Mail\Logging\MailLogRepository;
+use JooosiMail\Mail\Logging\MailLogRetentionService;
+use JooosiMail\Mail\Routing\ConnectionCircuitBreaker;
+use JooosiMail\Mail\Routing\ConnectionRateLimiter;
+use JooosiMail\Mail\Routing\ConnectionResolver;
+use JooosiMail\Mail\Routing\ConnectionStatusReporter;
+use JooosiMail\Mail\Routing\DeliveryPlan;
+use JooosiMail\Mail\Routing\RoutingPolicyResolver;
+use JooosiMail\Mail\Sender\SenderPolicyResolver;
+use JooosiMail\Mail\Transport\TransportRegistry;
+use JooosiMail\Mail\ValueObject\DeliveryResult;
+use JooosiMail\Mail\ValueObject\MailRequest;
 use Throwable;
 /**
  * Executes delivery attempts for a logged email.
@@ -29,7 +29,7 @@ use Throwable;
 #[Service]
 final readonly class DeliveryService
 {
-    public function __construct(private MailLogRepository $mailLogRepository, private MailAttemptRepository $mailAttemptRepository, private ConnectionResolver $connectionResolver, private ConnectionStatusReporter $connectionStatusReporter, private ConnectionRateLimiter $connectionRateLimiter, private ConnectionCircuitBreaker $connectionCircuitBreaker, private RoutingPolicyResolver $routingPolicyResolver, private ConnectionDsnResolver $connectionDsnResolver, private TransportRegistry $transportRegistry, private \OmniMail\Mail\Delivery\EmailFactory $emailFactory, private SenderPolicyResolver $senderPolicyResolver, private EventPublisherInterface $eventPublisher, private MailLogRetentionService $mailLogRetentionService)
+    public function __construct(private MailLogRepository $mailLogRepository, private MailAttemptRepository $mailAttemptRepository, private ConnectionResolver $connectionResolver, private ConnectionStatusReporter $connectionStatusReporter, private ConnectionRateLimiter $connectionRateLimiter, private ConnectionCircuitBreaker $connectionCircuitBreaker, private RoutingPolicyResolver $routingPolicyResolver, private ConnectionDsnResolver $connectionDsnResolver, private TransportRegistry $transportRegistry, private \JooosiMail\Mail\Delivery\EmailFactory $emailFactory, private SenderPolicyResolver $senderPolicyResolver, private EventPublisherInterface $eventPublisher, private MailLogRetentionService $mailLogRetentionService)
     {
     }
     /**
@@ -90,7 +90,7 @@ final readonly class DeliveryService
         $error = 'No connection could deliver this message.';
         if ($finalizeFailures) {
             $this->mailLogRepository->markFailed($mailLogId, $error);
-            $this->eventPublisher->doAction('a!omni-mail/mail:failed', $mailLogId, $error);
+            $this->eventPublisher->doAction('a!jooosi-mail/mail:failed', $mailLogId, $error);
             $this->cleanupTerminalLog($mailLogId);
         } else {
             $this->mailLogRepository->markDeferred($mailLogId, $error);
@@ -102,7 +102,7 @@ final readonly class DeliveryService
      */
     private function filterDeliveryMailRequest(MailRequest $mailRequest, int $mailLogId, Connection $connection, DeliveryPlan $deliveryPlan): MailRequest
     {
-        $filteredMailRequest = $this->eventPublisher->applyFilters('f!omni-mail/mail:delivery.request', $mailRequest, $mailLogId, $connection, $deliveryPlan);
+        $filteredMailRequest = $this->eventPublisher->applyFilters('f!jooosi-mail/mail:delivery.request', $mailRequest, $mailLogId, $connection, $deliveryPlan);
         return $filteredMailRequest instanceof MailRequest ? $filteredMailRequest : $mailRequest;
     }
     /**
@@ -115,7 +115,7 @@ final readonly class DeliveryService
             $error = 'No active connections are configured.';
             if ($finalizeFailures) {
                 $this->mailLogRepository->markFailed($mailLogId, $error);
-                $this->eventPublisher->doAction('a!omni-mail/mail:failed', $mailLogId, $error);
+                $this->eventPublisher->doAction('a!jooosi-mail/mail:failed', $mailLogId, $error);
                 $this->cleanupTerminalLog($mailLogId);
             } else {
                 $this->mailLogRepository->markDeferred($mailLogId, $error);
@@ -126,13 +126,13 @@ final readonly class DeliveryService
         if ($retryAfterSeconds !== null && $retryAfterSeconds > 0) {
             $error = sprintf('All active connections are temporarily unavailable. Retry in %d second(s).', $retryAfterSeconds);
             $this->mailLogRepository->markDeferred($mailLogId, $error);
-            $this->eventPublisher->doAction('a!omni-mail/mail:deferred', $mailLogId, $retryAfterSeconds);
+            $this->eventPublisher->doAction('a!jooosi-mail/mail:deferred', $mailLogId, $retryAfterSeconds);
             return new DeliveryResult(successful: \false, error: $error, temporaryFailure: \true, retryAfterSeconds: $retryAfterSeconds);
         }
         $error = 'No available connections passed routing checks.';
         if ($finalizeFailures) {
             $this->mailLogRepository->markFailed($mailLogId, $error);
-            $this->eventPublisher->doAction('a!omni-mail/mail:failed', $mailLogId, $error);
+            $this->eventPublisher->doAction('a!jooosi-mail/mail:failed', $mailLogId, $error);
             $this->cleanupTerminalLog($mailLogId);
         } else {
             $this->mailLogRepository->markDeferred($mailLogId, $error);
@@ -151,7 +151,7 @@ final readonly class DeliveryService
                 $this->mailLogRepository->markSent($mailLogId, $connectionId, $transportMessageId);
                 $this->cleanupTerminalLog($mailLogId);
             } catch (Throwable $throwable) {
-                $this->eventPublisher->doAction('a!omni-mail/mail:sent.reconcile-failed', $mailLogId, $connectionId, $throwable);
+                $this->eventPublisher->doAction('a!jooosi-mail/mail:sent.reconcile-failed', $mailLogId, $connectionId, $throwable);
             }
         }
         return new DeliveryResult(successful: \true, connectionId: $connectionId > 0 ? $connectionId : null, transportMessageId: $transportMessageId);
@@ -177,7 +177,7 @@ final readonly class DeliveryService
             $persistenceErrors[] = $throwable;
         }
         if (!$recordedAttempt && !$markedSent) {
-            $this->eventPublisher->doAction('a!omni-mail/mail:sent.persistence-failed', $mailLogId, $connectionId, $transportMessageId, $persistenceErrors);
+            $this->eventPublisher->doAction('a!jooosi-mail/mail:sent.persistence-failed', $mailLogId, $connectionId, $transportMessageId, $persistenceErrors);
         }
     }
     /**
@@ -188,7 +188,7 @@ final readonly class DeliveryService
         try {
             $this->connectionCircuitBreaker->recordSuccess($connection);
         } catch (Throwable $throwable) {
-            $this->eventPublisher->doAction('a!omni-mail/routing:success-record.failed', $connection, $throwable);
+            $this->eventPublisher->doAction('a!jooosi-mail/routing:success-record.failed', $connection, $throwable);
         }
     }
     /**
@@ -197,7 +197,7 @@ final readonly class DeliveryService
     private function dispatchMailSentAction(int $mailLogId, int $connectionId, ?string $transportMessageId): void
     {
         try {
-            $this->eventPublisher->doAction('a!omni-mail/mail:sent', $mailLogId, $connectionId, $transportMessageId);
+            $this->eventPublisher->doAction('a!jooosi-mail/mail:sent', $mailLogId, $connectionId, $transportMessageId);
         } catch (Throwable) {
         }
     }
@@ -209,7 +209,7 @@ final readonly class DeliveryService
         try {
             $this->mailLogRetentionService->cleanupTerminalLog($mailLogId);
         } catch (Throwable $throwable) {
-            $this->eventPublisher->doAction('a!omni-mail/mail:retention-cleanup.failed', $mailLogId, $throwable);
+            $this->eventPublisher->doAction('a!jooosi-mail/mail:retention-cleanup.failed', $mailLogId, $throwable);
         }
     }
     /**
@@ -220,13 +220,13 @@ final readonly class DeliveryService
         try {
             $this->mailAttemptRepository->record(mailLogId: $mailLogId, connectionId: $connectionId, status: 'failed', error: $throwable->getMessage(), debug: method_exists($throwable, 'getDebug') ? (string) call_user_func([$throwable, 'getDebug']) : null);
         } catch (Throwable $loggingThrowable) {
-            $this->eventPublisher->doAction('a!omni-mail/mail:failed.connection-log-failed', $mailLogId, $connectionId, $throwable, $loggingThrowable);
+            $this->eventPublisher->doAction('a!jooosi-mail/mail:failed.connection-log-failed', $mailLogId, $connectionId, $throwable, $loggingThrowable);
         }
         try {
             $this->connectionCircuitBreaker->recordFailure($connection, $throwable);
         } catch (Throwable $circuitBreakerThrowable) {
-            $this->eventPublisher->doAction('a!omni-mail/routing:failure-record.failed', $connection, $throwable, $circuitBreakerThrowable);
+            $this->eventPublisher->doAction('a!jooosi-mail/routing:failure-record.failed', $connection, $throwable, $circuitBreakerThrowable);
         }
-        $this->eventPublisher->doAction('a!omni-mail/mail:failed.connection', $mailLogId, $connectionId, $throwable);
+        $this->eventPublisher->doAction('a!jooosi-mail/mail:failed.connection', $mailLogId, $connectionId, $throwable);
     }
 }

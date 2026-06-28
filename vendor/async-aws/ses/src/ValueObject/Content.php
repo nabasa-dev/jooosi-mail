@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Ses\ValueObject;
+namespace JooosiMailDeps\AsyncAws\Ses\ValueObject;
 
-use OmniMailDeps\AsyncAws\Core\Exception\InvalidArgument;
+use JooosiMailDeps\AsyncAws\Core\Exception\InvalidArgument;
 /**
  * An object that represents the content of the email, and optionally a character set specification.
  */

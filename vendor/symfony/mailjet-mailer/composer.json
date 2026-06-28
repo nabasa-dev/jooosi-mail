@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Mailjet\\": ""
+            "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Mailjet\\": ""
         },
         "exclude-from-classmap": [
             "\/Tests\/"

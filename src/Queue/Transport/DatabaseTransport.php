@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Queue\Transport;
+namespace JooosiMail\Queue\Transport;
 
-use OmniMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\Service;
 use Override;
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\TransportInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\TransportInterface;
 /**
- * Messenger transport backed by the Omni Mail queue table.
+ * Messenger transport backed by the Jooosi Mail queue table.
  *
  * @since 0.1.0
  */
@@ -16,7 +16,7 @@ use OmniMailDeps\Symfony\Component\Messenger\Transport\TransportInterface;
 final readonly class DatabaseTransport implements TransportInterface
 {
     public const string NAME = 'async';
-    public function __construct(private \OmniMail\Queue\Transport\DatabaseSender $sender, private \OmniMail\Queue\Transport\DatabaseReceiver $receiver)
+    public function __construct(private \JooosiMail\Queue\Transport\DatabaseSender $sender, private \JooosiMail\Queue\Transport\DatabaseReceiver $receiver)
     {
     }
     /**

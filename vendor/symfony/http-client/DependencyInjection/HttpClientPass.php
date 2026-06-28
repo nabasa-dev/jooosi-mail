@@ -8,13 +8,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient\DependencyInjection;
+namespace JooosiMailDeps\Symfony\Component\HttpClient\DependencyInjection;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Reference;
-use OmniMailDeps\Symfony\Component\HttpClient\TraceableHttpClient;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Reference;
+use JooosiMailDeps\Symfony\Component\HttpClient\TraceableHttpClient;
 final class HttpClientPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container): void

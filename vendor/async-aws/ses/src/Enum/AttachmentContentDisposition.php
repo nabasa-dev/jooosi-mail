@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Ses\Enum;
+namespace JooosiMailDeps\AsyncAws\Ses\Enum;
 
 final class AttachmentContentDisposition
 {

@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Webhook\Adapter;
+namespace JooosiMail\Webhook\Adapter;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Discovery\Runtime\DiscoveryManifest;
-use OmniMail\Mail\Connection\Connection;
-use OmniMailDeps\Psr\Container\ContainerInterface;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Runtime\DiscoveryManifest;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMailDeps\Psr\Container\ContainerInterface;
 use ReflectionClass;
 use RuntimeException;
 /**
@@ -25,10 +25,10 @@ final class WebhookAdapterRegistry
     /**
      * @since 0.1.0
      */
-    public function resolve(Connection $connection): \OmniMail\Webhook\Adapter\WebhookAdapterInterface
+    public function resolve(Connection $connection): \JooosiMail\Webhook\Adapter\WebhookAdapterInterface
     {
         // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-        return array_find($this->all(), static fn(\OmniMail\Webhook\Adapter\WebhookAdapterInterface $adapter): bool => $adapter->supports($connection)) ?? throw new RuntimeException(sprintf('No webhook adapter matched connection profile "%s".', $connection->profileKey));
+        return array_find($this->all(), static fn(\JooosiMail\Webhook\Adapter\WebhookAdapterInterface $adapter): bool => $adapter->supports($connection)) ?? throw new RuntimeException(sprintf('No webhook adapter matched connection profile "%s".', $connection->profileKey));
     }
     /**
      * @return list<WebhookAdapterInterface>
@@ -42,7 +42,7 @@ final class WebhookAdapterRegistry
         }
         $adapters = [];
         foreach ($this->manifest->services as $className) {
-            if (!is_subclass_of($className, \OmniMail\Webhook\Adapter\WebhookAdapterInterface::class)) {
+            if (!is_subclass_of($className, \JooosiMail\Webhook\Adapter\WebhookAdapterInterface::class)) {
                 continue;
             }
             $reflectionClass = new ReflectionClass($className);
@@ -50,11 +50,11 @@ final class WebhookAdapterRegistry
                 continue;
             }
             $service = $this->container->get($className);
-            if ($service instanceof \OmniMail\Webhook\Adapter\WebhookAdapterInterface) {
+            if ($service instanceof \JooosiMail\Webhook\Adapter\WebhookAdapterInterface) {
                 $adapters[] = $service;
             }
         }
-        usort($adapters, static fn(\OmniMail\Webhook\Adapter\WebhookAdapterInterface $left, \OmniMail\Webhook\Adapter\WebhookAdapterInterface $right): int => $right->getPriority() <=> $left->getPriority());
+        usort($adapters, static fn(\JooosiMail\Webhook\Adapter\WebhookAdapterInterface $left, \JooosiMail\Webhook\Adapter\WebhookAdapterInterface $right): int => $right->getPriority() <=> $left->getPriority());
         $this->adapters = $adapters;
         return $this->adapters;
     }

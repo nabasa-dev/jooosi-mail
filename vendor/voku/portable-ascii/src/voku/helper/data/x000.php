@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps;
+namespace JooosiMailDeps;
 
 return [
     '',

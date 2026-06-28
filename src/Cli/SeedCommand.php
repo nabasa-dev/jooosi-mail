@@ -1,25 +1,25 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Cli;
+namespace JooosiMail\Cli;
 
-use OmniMailDeps\Doctrine\DBAL\ArrayParameterType;
-use OmniMailDeps\Doctrine\DBAL\Connection as DbalConnection;
-use OmniMail\Discovery\Attribute\Command;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Database\TableNameResolver;
-use OmniMail\Queue\Message\SendEmailMessage;
-use OmniMail\Queue\Transport\DatabaseTransport;
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Serialization\SerializerInterface;
+use JooosiMailDeps\Doctrine\DBAL\ArrayParameterType;
+use JooosiMailDeps\Doctrine\DBAL\Connection as DbalConnection;
+use JooosiMail\Discovery\Attribute\Command;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Queue\Message\SendEmailMessage;
+use JooosiMail\Queue\Transport\DatabaseTransport;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Serialization\SerializerInterface;
 use WP_CLI;
 /**
- * Seed Omni Mail demo data for local development.
+ * Seed Jooosi Mail demo data for local development.
  *
  * ## EXAMPLES
  *
  *     # Seed 3 dedicated demo connections plus 100 mail logs, webhook events, and queue rows.
- *     $ wp omni-mail seed:demo --count=100
+ *     $ wp jooosi-mail seed:demo --count=100
  *     Success: Seeded 100 mail logs, 100 webhook events, and 100 queue messages using 3 seed connection(s); created 3 connection row(s).
  *
  * @since 0.1.0
@@ -37,7 +37,7 @@ final readonly class SeedCommand
     {
     }
     /**
-     * Seed demo data into Omni Mail tables.
+     * Seed demo data into Jooosi Mail tables.
      *
      * ## OPTIONS
      *
@@ -52,7 +52,7 @@ final readonly class SeedCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'Seed Omni Mail demo data for local development.')]
+    #[Command(description: 'Seed Jooosi Mail demo data for local development.')]
     public function demo(array $args, array $assocArgs): void
     {
         $count = max(1, (int) ($assocArgs['count'] ?? 100));

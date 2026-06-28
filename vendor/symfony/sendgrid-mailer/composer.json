@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Sendgrid\\": ""
+            "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Sendgrid\\": ""
         },
         "exclude-from-classmap": [
             "\/Tests\/"

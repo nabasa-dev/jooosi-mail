@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Discovery\Runtime;
+namespace JooosiMail\Discovery\Runtime;
 
 /**
  * Temporary in-memory state used while Tempest discovery runs.
@@ -95,8 +95,8 @@ final class DiscoveryState
      *
      * @since 0.1.0
      */
-    public static function export(): \OmniMail\Discovery\Runtime\DiscoveryManifest
+    public static function export(): \JooosiMail\Discovery\Runtime\DiscoveryManifest
     {
-        return new \OmniMail\Discovery\Runtime\DiscoveryManifest(services: array_values(self::$services), controllers: array_values(self::$controllers), commands: array_values(self::$commands), profiles: array_values(self::$profiles), messageHandlers: array_values(self::$messageHandlers), transportFactories: array_values(self::$transportFactories));
+        return new \JooosiMail\Discovery\Runtime\DiscoveryManifest(services: array_values(self::$services), controllers: array_values(self::$controllers), commands: array_values(self::$commands), profiles: array_values(self::$profiles), messageHandlers: array_values(self::$messageHandlers), transportFactories: array_values(self::$transportFactories));
     }
 }

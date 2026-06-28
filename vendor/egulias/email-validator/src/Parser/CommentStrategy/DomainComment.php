@@ -1,12 +1,12 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Parser\CommentStrategy;
+namespace JooosiMailDeps\Egulias\EmailValidator\Parser\CommentStrategy;
 
-use OmniMailDeps\Egulias\EmailValidator\EmailLexer;
-use OmniMailDeps\Egulias\EmailValidator\Result\Result;
-use OmniMailDeps\Egulias\EmailValidator\Result\ValidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\ExpectingATEXT;
+use JooosiMailDeps\Egulias\EmailValidator\EmailLexer;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Result;
+use JooosiMailDeps\Egulias\EmailValidator\Result\ValidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\ExpectingATEXT;
 class DomainComment implements CommentStrategy
 {
     public function exitCondition(EmailLexer $lexer, int $openedParenthesis): bool

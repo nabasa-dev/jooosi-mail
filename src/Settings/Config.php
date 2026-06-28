@@ -1,20 +1,20 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Settings;
+namespace JooosiMail\Settings;
 
-use OmniMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\Service;
 /**
  * Stores plugin settings and cold state in a single option payload.
  *
- * Dot notation paths are resolved inside the shared `omni_mail_config` option.
+ * Dot notation paths are resolved inside the shared `jooosi_mail_config` option.
  *
  * @since 0.1.0
  */
 #[Service]
 final class Config
 {
-    private const string OPTION_KEY = 'omni_mail_config';
+    private const string OPTION_KEY = 'jooosi_mail_config';
     /**
      * @return array<string, mixed>
      *

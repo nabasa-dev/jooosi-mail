@@ -8,21 +8,21 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient;
+namespace JooosiMailDeps\Symfony\Component\HttpClient;
 
-use OmniMailDeps\GuzzleHttp\Exception\ConnectException;
-use OmniMailDeps\GuzzleHttp\Exception\RequestException;
-use OmniMailDeps\GuzzleHttp\Promise\Promise;
-use OmniMailDeps\GuzzleHttp\Promise\PromiseInterface;
-use OmniMailDeps\GuzzleHttp\Promise\Utils as PromiseUtils;
-use OmniMailDeps\GuzzleHttp\Psr7\Response as GuzzleResponse;
-use OmniMailDeps\GuzzleHttp\Psr7\Utils as Psr7Utils;
-use OmniMailDeps\GuzzleHttp\TransferStats;
-use OmniMailDeps\Psr\Http\Message\RequestInterface;
-use OmniMailDeps\Psr\Http\Message\ResponseInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseInterface as SymfonyResponseInterface;
+use JooosiMailDeps\GuzzleHttp\Exception\ConnectException;
+use JooosiMailDeps\GuzzleHttp\Exception\RequestException;
+use JooosiMailDeps\GuzzleHttp\Promise\Promise;
+use JooosiMailDeps\GuzzleHttp\Promise\PromiseInterface;
+use JooosiMailDeps\GuzzleHttp\Promise\Utils as PromiseUtils;
+use JooosiMailDeps\GuzzleHttp\Psr7\Response as GuzzleResponse;
+use JooosiMailDeps\GuzzleHttp\Psr7\Utils as Psr7Utils;
+use JooosiMailDeps\GuzzleHttp\TransferStats;
+use JooosiMailDeps\Psr\Http\Message\RequestInterface;
+use JooosiMailDeps\Psr\Http\Message\ResponseInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseInterface as SymfonyResponseInterface;
 /**
  * A Guzzle handler that uses Symfony's HttpClientInterface as its transport.
  *

@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Routing;
+namespace JooosiMail\Mail\Routing;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Mail\Routing\State\WeightedRoundRobinStateRepository;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Mail\Routing\State\WeightedRoundRobinStateRepository;
 /**
  * Selects the next primary connection using smooth weighted round robin.
  *

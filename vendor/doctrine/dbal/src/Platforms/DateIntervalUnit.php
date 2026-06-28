@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Platforms;
+namespace JooosiMailDeps\Doctrine\DBAL\Platforms;
 
 enum DateIntervalUnit : string
 {

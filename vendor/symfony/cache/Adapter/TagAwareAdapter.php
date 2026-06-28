@@ -8,19 +8,19 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\Adapter;
+namespace JooosiMailDeps\Symfony\Component\Cache\Adapter;
 
-use OmniMailDeps\Psr\Cache\CacheItemInterface;
-use OmniMailDeps\Psr\Cache\InvalidArgumentException;
-use OmniMailDeps\Psr\Log\LoggerAwareInterface;
-use OmniMailDeps\Psr\Log\LoggerAwareTrait;
-use OmniMailDeps\Symfony\Component\Cache\CacheItem;
-use OmniMailDeps\Symfony\Component\Cache\Exception\BadMethodCallException;
-use OmniMailDeps\Symfony\Component\Cache\PruneableInterface;
-use OmniMailDeps\Symfony\Component\Cache\ResettableInterface;
-use OmniMailDeps\Symfony\Component\Cache\Traits\ContractsTrait;
-use OmniMailDeps\Symfony\Contracts\Cache\NamespacedPoolInterface;
-use OmniMailDeps\Symfony\Contracts\Cache\TagAwareCacheInterface;
+use JooosiMailDeps\Psr\Cache\CacheItemInterface;
+use JooosiMailDeps\Psr\Cache\InvalidArgumentException;
+use JooosiMailDeps\Psr\Log\LoggerAwareInterface;
+use JooosiMailDeps\Psr\Log\LoggerAwareTrait;
+use JooosiMailDeps\Symfony\Component\Cache\CacheItem;
+use JooosiMailDeps\Symfony\Component\Cache\Exception\BadMethodCallException;
+use JooosiMailDeps\Symfony\Component\Cache\PruneableInterface;
+use JooosiMailDeps\Symfony\Component\Cache\ResettableInterface;
+use JooosiMailDeps\Symfony\Component\Cache\Traits\ContractsTrait;
+use JooosiMailDeps\Symfony\Contracts\Cache\NamespacedPoolInterface;
+use JooosiMailDeps\Symfony\Contracts\Cache\TagAwareCacheInterface;
 /**
  * Implements simple and robust tag-based invalidation suitable for use with volatile caches.
  *

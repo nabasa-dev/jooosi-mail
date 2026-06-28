@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Metadata;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Metadata;
 
-use OmniMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
 /**
  * Provides low-level metadata that describes the underlying database schema.
  *

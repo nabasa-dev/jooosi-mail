@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Introspection\MetadataProcessor;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Introspection\MetadataProcessor;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint;
-use OmniMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint\Deferrability;
-use OmniMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraintEditor;
-use OmniMailDeps\Doctrine\DBAL\Schema\Metadata\ForeignKeyConstraintColumnMetadataRow;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint;
+use JooosiMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint\Deferrability;
+use JooosiMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraintEditor;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Metadata\ForeignKeyConstraintColumnMetadataRow;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
 /**
  * Combines multiple {@see ForeignKeyConstraintColumnMetadataRow}s into a {@see ForeignKeyConstraint}.
  *

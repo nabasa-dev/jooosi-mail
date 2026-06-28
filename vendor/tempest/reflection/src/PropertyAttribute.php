@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Tempest\Reflection;
+namespace JooosiMailDeps\Tempest\Reflection;
 
 interface PropertyAttribute
 {

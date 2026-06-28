@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient\Chunk;
+namespace JooosiMailDeps\Symfony\Component\HttpClient\Chunk;
 
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\JsonException;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ChunkInterface;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\JsonException;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ChunkInterface;
 /**
  * @author Antoine Bluchet <soyuka@gmail.com>
  * @author Nicolas Grekas <p@tchwork.com>

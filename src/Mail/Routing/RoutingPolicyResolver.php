@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Routing;
+namespace JooosiMail\Mail\Routing;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\WordPress\OptionStore;
-use OmniMail\Mail\ValueObject\MailRequest;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\WordPress\OptionStore;
+use JooosiMail\Mail\ValueObject\MailRequest;
 /**
  * Resolves sync/async, priority, and strategy defaults.
  *
@@ -20,19 +20,19 @@ final readonly class RoutingPolicyResolver
     /**
      * @since 0.1.0
      */
-    public function resolve(MailRequest $mailRequest): \OmniMail\Mail\Routing\DeliveryPlan
+    public function resolve(MailRequest $mailRequest): \JooosiMail\Mail\Routing\DeliveryPlan
     {
         $priority = $this->resolvePriority($mailRequest);
         $delaySeconds = $this->resolveDelay($mailRequest);
         $preferredConnectionId = $this->resolvePreferredConnectionId($mailRequest);
-        return new \OmniMail\Mail\Routing\DeliveryPlan(mode: \OmniMail\Mail\Routing\DeliveryMode::fromMixed($this->optionStore->get('settings.delivery.mode', \OmniMail\Mail\Routing\DeliveryMode::Async->value)), strategy: \OmniMail\Mail\Routing\RoutingStrategy::fromMixed($this->optionStore->get('settings.delivery.strategy', \OmniMail\Mail\Routing\RoutingStrategy::WeightedRandom->value)), priority: $priority, delaySeconds: $delaySeconds, preferredConnectionId: $preferredConnectionId);
+        return new \JooosiMail\Mail\Routing\DeliveryPlan(mode: \JooosiMail\Mail\Routing\DeliveryMode::fromMixed($this->optionStore->get('settings.delivery.mode', \JooosiMail\Mail\Routing\DeliveryMode::Async->value)), strategy: \JooosiMail\Mail\Routing\RoutingStrategy::fromMixed($this->optionStore->get('settings.delivery.strategy', \JooosiMail\Mail\Routing\RoutingStrategy::WeightedRandom->value)), priority: $priority, delaySeconds: $delaySeconds, preferredConnectionId: $preferredConnectionId);
     }
     /**
      * @since 0.1.0
      */
     private function resolvePreferredConnectionId(MailRequest $mailRequest): ?int
     {
-        $preferredConnectionId = $mailRequest->metadata['preferred_connection_id'] ?? $mailRequest->headers['X-Omni-Mail-Connection-Id'] ?? null;
+        $preferredConnectionId = $mailRequest->metadata['preferred_connection_id'] ?? $mailRequest->headers['X-Jooosi-Mail-Connection-Id'] ?? null;
         if (!is_scalar($preferredConnectionId)) {
             return null;
         }

@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Types;
+namespace JooosiMailDeps\Doctrine\DBAL\Types;
 
 use ArgumentCountError;
-use OmniMailDeps\Doctrine\DBAL\Exception;
-use OmniMailDeps\Doctrine\DBAL\ParameterType;
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
-use OmniMailDeps\Doctrine\DBAL\Types\Exception\TypeArgumentCountError;
-use OmniMailDeps\Doctrine\DBAL\Types\Exception\TypesException;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\ParameterType;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Types\Exception\TypeArgumentCountError;
+use JooosiMailDeps\Doctrine\DBAL\Types\Exception\TypesException;
 use function array_map;
 use function is_string;
 /**

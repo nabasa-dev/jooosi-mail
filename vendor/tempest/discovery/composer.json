@@ -16,12 +16,12 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Tempest\\Discovery\\": "src"
+            "JooosiMailDeps\\Tempest\\Discovery\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "OmniMailDeps\\Tempest\\Discovery\\Tests\\": "tests"
+            "JooosiMailDeps\\Tempest\\Discovery\\Tests\\": "tests"
         }
     }
 }

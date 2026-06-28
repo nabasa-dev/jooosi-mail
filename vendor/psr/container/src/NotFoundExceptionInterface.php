@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Psr\Container;
+namespace JooosiMailDeps\Psr\Container;
 
 /**
  * No entry was found in the container.

@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Queue\Handler;
+namespace JooosiMail\Queue\Handler;
 
-use OmniMail\Discovery\Attribute\MessageHandler;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Delivery\DeliveryService;
-use OmniMail\Queue\Message\SendEmailMessage;
-use OmniMail\Queue\Retry\RetryAfterException;
-use OmniMail\Queue\Transport\DatabaseTransport;
+use JooosiMail\Discovery\Attribute\MessageHandler;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Delivery\DeliveryService;
+use JooosiMail\Queue\Message\SendEmailMessage;
+use JooosiMail\Queue\Retry\RetryAfterException;
+use JooosiMail\Queue\Transport\DatabaseTransport;
 use RuntimeException;
 /**
  * Delivers queued email logs.

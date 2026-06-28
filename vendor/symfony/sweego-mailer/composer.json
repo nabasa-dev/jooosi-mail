@@ -29,7 +29,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Sweego\\": ""
+            "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Sweego\\": ""
         },
         "exclude-from-classmap": [
             "\/Tests\/"

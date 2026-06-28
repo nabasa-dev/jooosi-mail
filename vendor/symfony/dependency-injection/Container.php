@@ -8,22 +8,22 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\ServiceLocator as ArgumentServiceLocator;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\EnvNotFoundException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\ParameterCircularReferenceException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\RuntimeException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ParameterBag\EnvPlaceholderParameterBag;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ParameterBag\FrozenParameterBag;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
-use OmniMailDeps\Symfony\Contracts\Service\ResetInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\ServiceLocator as ArgumentServiceLocator;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\EnvNotFoundException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\ParameterCircularReferenceException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ParameterBag\EnvPlaceholderParameterBag;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ParameterBag\FrozenParameterBag;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
+use JooosiMailDeps\Symfony\Contracts\Service\ResetInterface;
 // Help opcache.preload discover always-needed symbols
 class_exists(RewindableGenerator::class);
 class_exists(ArgumentServiceLocator::class);

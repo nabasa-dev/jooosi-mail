@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Tempest\Support\Filesystem\Exceptions;
+namespace JooosiMailDeps\Tempest\Support\Filesystem\Exceptions;
 
 use InvalidArgumentException;
 final class NameWasInvalid extends InvalidArgumentException implements FilesystemException

@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Portability;
+namespace JooosiMailDeps\Doctrine\DBAL\Portability;
 
-use OmniMailDeps\Doctrine\DBAL\ColumnCase;
-use OmniMailDeps\Doctrine\DBAL\Driver as DriverInterface;
-use OmniMailDeps\Doctrine\DBAL\Driver\Connection as ConnectionInterface;
-use OmniMailDeps\Doctrine\DBAL\Driver\Exception;
-use OmniMailDeps\Doctrine\DBAL\Driver\Middleware\AbstractDriverMiddleware;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Exception\PlatformException;
+use JooosiMailDeps\Doctrine\DBAL\ColumnCase;
+use JooosiMailDeps\Doctrine\DBAL\Driver as DriverInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Connection as ConnectionInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Middleware\AbstractDriverMiddleware;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Exception\PlatformException;
 use PDO;
 use SensitiveParameter;
 use const CASE_LOWER;

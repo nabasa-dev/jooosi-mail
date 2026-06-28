@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\VarExporter\Internal;
+namespace JooosiMailDeps\Symfony\Component\VarExporter\Internal;
 
-use OmniMailDeps\Symfony\Component\Serializer\Attribute\Ignore;
-use OmniMailDeps\Symfony\Component\VarExporter\Internal\LazyObjectRegistry as Registry;
+use JooosiMailDeps\Symfony\Component\Serializer\Attribute\Ignore;
+use JooosiMailDeps\Symfony\Component\VarExporter\Internal\LazyObjectRegistry as Registry;
 /**
  * @internal
  */

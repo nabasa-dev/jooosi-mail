@@ -37,12 +37,12 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Doctrine\\Common\\Lexer\\": "src"
+            "JooosiMailDeps\\Doctrine\\Common\\Lexer\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "OmniMailDeps\\Doctrine\\Tests\\Common\\Lexer\\": "tests"
+            "JooosiMailDeps\\Doctrine\\Tests\\Common\\Lexer\\": "tests"
         }
     },
     "config": {

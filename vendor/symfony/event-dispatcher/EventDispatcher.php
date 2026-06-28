@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\EventDispatcher;
+namespace JooosiMailDeps\Symfony\Component\EventDispatcher;
 
-use OmniMailDeps\Psr\EventDispatcher\StoppableEventInterface;
-use OmniMailDeps\Symfony\Component\EventDispatcher\Debug\WrappedListener;
+use JooosiMailDeps\Psr\EventDispatcher\StoppableEventInterface;
+use JooosiMailDeps\Symfony\Component\EventDispatcher\Debug\WrappedListener;
 /**
  * The EventDispatcherInterface is the central point of Symfony's event listener system.
  *

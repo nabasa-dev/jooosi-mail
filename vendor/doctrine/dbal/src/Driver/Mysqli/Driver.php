@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\Mysqli;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\Mysqli;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\AbstractMySQLDriver;
-use OmniMailDeps\Doctrine\DBAL\Driver\Mysqli\Exception\ConnectionFailed;
-use OmniMailDeps\Doctrine\DBAL\Driver\Mysqli\Exception\HostRequired;
-use OmniMailDeps\Doctrine\DBAL\Driver\Mysqli\Initializer\Charset;
-use OmniMailDeps\Doctrine\DBAL\Driver\Mysqli\Initializer\Options;
-use OmniMailDeps\Doctrine\DBAL\Driver\Mysqli\Initializer\Secure;
+use JooosiMailDeps\Doctrine\DBAL\Driver\AbstractMySQLDriver;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Mysqli\Exception\ConnectionFailed;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Mysqli\Exception\HostRequired;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Mysqli\Initializer\Charset;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Mysqli\Initializer\Options;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Mysqli\Initializer\Secure;
 use Generator;
 use mysqli;
 use mysqli_sql_exception;

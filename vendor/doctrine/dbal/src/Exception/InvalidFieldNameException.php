@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Exception;
+namespace JooosiMailDeps\Doctrine\DBAL\Exception;
 
 /**
  * Exception for an invalid specified field name in a statement detected in the driver.

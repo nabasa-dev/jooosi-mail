@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient\Internal;
+namespace JooosiMailDeps\Symfony\Component\HttpClient\Internal;
 
-use OmniMailDeps\Amp\Cancellation;
-use OmniMailDeps\Amp\Dns;
-use OmniMailDeps\Amp\Dns\DnsRecord;
-use OmniMailDeps\Amp\Dns\DnsResolver;
+use JooosiMailDeps\Amp\Cancellation;
+use JooosiMailDeps\Amp\Dns;
+use JooosiMailDeps\Amp\Dns\DnsRecord;
+use JooosiMailDeps\Amp\Dns\DnsResolver;
 /**
  * Handles local overrides for the DNS resolver.
  *

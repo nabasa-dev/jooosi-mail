@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Connection;
+namespace JooosiMail\Mail\Connection;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Profile\MailProfileInterface;
-use OmniMail\Mail\Profile\ProfileMetadataResolver;
-use OmniMail\Mail\Sender\SenderPolicyResolver;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Profile\MailProfileInterface;
+use JooosiMail\Mail\Profile\ProfileMetadataResolver;
+use JooosiMail\Mail\Sender\SenderPolicyResolver;
 /**
  * Resolves raw connection input into a connection value object.
  *
@@ -23,7 +23,7 @@ final readonly class ConnectionInputResolver
      *
      * @since 0.1.0
      */
-    public function resolve(?\OmniMail\Mail\Connection\Connection $existingConnection, MailProfileInterface $profile, array $input): \OmniMail\Mail\Connection\Connection
+    public function resolve(?\JooosiMail\Mail\Connection\Connection $existingConnection, MailProfileInterface $profile, array $input): \JooosiMail\Mail\Connection\Connection
     {
         $profileKey = $this->profileMetadataResolver->getKey($profile);
         $name = $this->resolveName($input, $existingConnection);
@@ -36,20 +36,20 @@ final readonly class ConnectionInputResolver
         $weight = $this->resolveInt($input, 'weight', $existingConnection?->weight ?? 1, 1);
         $webhookEnabled = $this->resolveBoolean($input, 'webhook_enabled', $existingConnection?->webhookEnabled ?? \false);
         if ($name === '') {
-            throw new \OmniMail\Mail\Connection\ConnectionConfigurationException('Connection name is required.');
+            throw new \JooosiMail\Mail\Connection\ConnectionConfigurationException('Connection name is required.');
         }
         if ($webhookEnabled && $profile->supportsWebhooks() === \false) {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Profile "%s" does not support webhooks.', $profileKey));
+            throw new \JooosiMail\Mail\Connection\ConnectionConfigurationException(sprintf('Profile "%s" does not support webhooks.', $profileKey));
         }
-        return new \OmniMail\Mail\Connection\Connection(id: $existingConnection?->id, profileKey: $profileKey, name: $name, dsn: $dsn, settings: $settings, secrets: $secrets, enabled: $enabled, default: $default, priority: $priority, weight: $weight, webhookEnabled: $webhookEnabled);
+        return new \JooosiMail\Mail\Connection\Connection(id: $existingConnection?->id, profileKey: $profileKey, name: $name, dsn: $dsn, settings: $settings, secrets: $secrets, enabled: $enabled, default: $default, priority: $priority, weight: $weight, webhookEnabled: $webhookEnabled);
     }
     /**
      * @param array<string, mixed> $input
      *
      * @since 0.1.0
      */
-    private function resolveName(array $input, ?\OmniMail\Mail\Connection\Connection $existingConnection): string
+    private function resolveName(array $input, ?\JooosiMail\Mail\Connection\Connection $existingConnection): string
     {
         $name = $input['name'] ?? $existingConnection?->name ?? '';
         return is_scalar($name) ? trim((string) $name) : '';
@@ -59,10 +59,10 @@ final readonly class ConnectionInputResolver
      *
      * @since 0.1.0
      */
-    private function resolveDsnOverride(MailProfileInterface $profile, array $input, ?\OmniMail\Mail\Connection\Connection $existingConnection): ?string
+    private function resolveDsnOverride(MailProfileInterface $profile, array $input, ?\JooosiMail\Mail\Connection\Connection $existingConnection): ?string
     {
         if (!array_key_exists('dsn', $input)) {
-            if ($existingConnection instanceof \OmniMail\Mail\Connection\Connection && $existingConnection->profileKey !== $this->profileMetadataResolver->getKey($profile)) {
+            if ($existingConnection instanceof \JooosiMail\Mail\Connection\Connection && $existingConnection->profileKey !== $this->profileMetadataResolver->getKey($profile)) {
                 return null;
             }
             return $existingConnection?->dsn;
@@ -76,10 +76,10 @@ final readonly class ConnectionInputResolver
      *
      * @since 0.1.0
      */
-    private function resolveSettings(MailProfileInterface $profile, array $input, ?\OmniMail\Mail\Connection\Connection $existingConnection): array
+    private function resolveSettings(MailProfileInterface $profile, array $input, ?\JooosiMail\Mail\Connection\Connection $existingConnection): array
     {
         $settings = $existingConnection?->settings ?? [];
-        if ($existingConnection instanceof \OmniMail\Mail\Connection\Connection && $existingConnection->profileKey !== $this->profileMetadataResolver->getKey($profile)) {
+        if ($existingConnection instanceof \JooosiMail\Mail\Connection\Connection && $existingConnection->profileKey !== $this->profileMetadataResolver->getKey($profile)) {
             unset($settings['profile']);
         }
         $jsonSettings = $this->decodeJsonArray($input, 'settings_json');
@@ -147,7 +147,7 @@ final readonly class ConnectionInputResolver
         $returnPathMode = $this->normalizeSenderMode($sender['return_path_mode'] ?? SenderPolicyResolver::RETURN_PATH_MODE_INHERIT, [SenderPolicyResolver::RETURN_PATH_MODE_INHERIT, SenderPolicyResolver::RETURN_PATH_MODE_PROVIDER_DEFAULT, SenderPolicyResolver::RETURN_PATH_MODE_MATCH_FROM, SenderPolicyResolver::RETURN_PATH_MODE_CUSTOM], SenderPolicyResolver::RETURN_PATH_MODE_INHERIT, 'Return-Path');
         if ($email !== null && $email !== '') {
             if (!is_email($email)) {
-                throw new \OmniMail\Mail\Connection\ConnectionConfigurationException('Sender email must be a valid email address.');
+                throw new \JooosiMail\Mail\Connection\ConnectionConfigurationException('Sender email must be a valid email address.');
             }
             $senderSettings['email'] = $email;
         }
@@ -165,12 +165,12 @@ final readonly class ConnectionInputResolver
         }
         if ($returnPathEmail !== null && $returnPathEmail !== '') {
             if (!is_email($returnPathEmail)) {
-                throw new \OmniMail\Mail\Connection\ConnectionConfigurationException('Return-Path email must be a valid email address.');
+                throw new \JooosiMail\Mail\Connection\ConnectionConfigurationException('Return-Path email must be a valid email address.');
             }
             $senderSettings['return_path_email'] = $returnPathEmail;
         }
         if ($returnPathMode === SenderPolicyResolver::RETURN_PATH_MODE_CUSTOM && !isset($senderSettings['return_path_email'])) {
-            throw new \OmniMail\Mail\Connection\ConnectionConfigurationException('A custom Return-Path email address is required.');
+            throw new \JooosiMail\Mail\Connection\ConnectionConfigurationException('A custom Return-Path email address is required.');
         }
         if ($senderSettings === []) {
             unset($settings['sender']);
@@ -192,7 +192,7 @@ final readonly class ConnectionInputResolver
         $mode = strtolower(trim((string) $value));
         if (!in_array($mode, $allowedModes, \true)) {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('%s mode is not supported.', $label));
+            throw new \JooosiMail\Mail\Connection\ConnectionConfigurationException(sprintf('%s mode is not supported.', $label));
         }
         return $mode;
     }
@@ -202,10 +202,10 @@ final readonly class ConnectionInputResolver
      *
      * @since 0.1.0
      */
-    private function resolveSecrets(MailProfileInterface $profile, array $input, ?\OmniMail\Mail\Connection\Connection $existingConnection): array
+    private function resolveSecrets(MailProfileInterface $profile, array $input, ?\JooosiMail\Mail\Connection\Connection $existingConnection): array
     {
         $secrets = $existingConnection?->secrets ?? [];
-        if ($existingConnection instanceof \OmniMail\Mail\Connection\Connection && $existingConnection->profileKey !== $this->profileMetadataResolver->getKey($profile)) {
+        if ($existingConnection instanceof \JooosiMail\Mail\Connection\Connection && $existingConnection->profileKey !== $this->profileMetadataResolver->getKey($profile)) {
             unset($secrets['profile']);
         }
         $jsonSecrets = $this->decodeJsonArray($input, 'secrets_json');
@@ -347,7 +347,7 @@ final readonly class ConnectionInputResolver
         $decoded = json_decode($value, \true);
         if (!is_array($decoded)) {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Option "%s" must be valid JSON object data.', $key));
+            throw new \JooosiMail\Mail\Connection\ConnectionConfigurationException(sprintf('Option "%s" must be valid JSON object data.', $key));
         }
         return $decoded;
     }

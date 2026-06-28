@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Validation;
+namespace JooosiMailDeps\Egulias\EmailValidator\Validation;
 
-use OmniMailDeps\Egulias\EmailValidator\EmailLexer;
-use OmniMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\RFCWarnings;
+use JooosiMailDeps\Egulias\EmailValidator\EmailLexer;
+use JooosiMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\RFCWarnings;
 class NoRFCWarningsValidation extends RFCValidation
 {
     /**

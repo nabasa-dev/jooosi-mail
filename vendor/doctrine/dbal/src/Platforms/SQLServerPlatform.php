@@ -1,27 +1,27 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Platforms;
+namespace JooosiMailDeps\Doctrine\DBAL\Platforms;
 
-use OmniMailDeps\Doctrine\DBAL\Connection;
-use OmniMailDeps\Doctrine\DBAL\Exception\InvalidColumnType\ColumnLengthRequired;
-use OmniMailDeps\Doctrine\DBAL\LockMode;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Keywords\KeywordList;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Keywords\SQLServerKeywords;
-use OmniMailDeps\Doctrine\DBAL\Platforms\SQLServer\SQL\Builder\SQLServerSelectSQLBuilder;
-use OmniMailDeps\Doctrine\DBAL\Platforms\SQLServer\SQLServerMetadataProvider;
-use OmniMailDeps\Doctrine\DBAL\Schema\Column;
-use OmniMailDeps\Doctrine\DBAL\Schema\ColumnDiff;
-use OmniMailDeps\Doctrine\DBAL\Schema\Identifier;
-use OmniMailDeps\Doctrine\DBAL\Schema\Index;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnquotedIdentifierFolding;
-use OmniMailDeps\Doctrine\DBAL\Schema\Sequence;
-use OmniMailDeps\Doctrine\DBAL\Schema\SQLServerSchemaManager;
-use OmniMailDeps\Doctrine\DBAL\Schema\TableDiff;
-use OmniMailDeps\Doctrine\DBAL\SQL\Builder\SelectSQLBuilder;
-use OmniMailDeps\Doctrine\DBAL\TransactionIsolationLevel;
-use OmniMailDeps\Doctrine\DBAL\Types\Types;
-use OmniMailDeps\Doctrine\Deprecations\Deprecation;
+use JooosiMailDeps\Doctrine\DBAL\Connection;
+use JooosiMailDeps\Doctrine\DBAL\Exception\InvalidColumnType\ColumnLengthRequired;
+use JooosiMailDeps\Doctrine\DBAL\LockMode;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Keywords\KeywordList;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Keywords\SQLServerKeywords;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\SQLServer\SQL\Builder\SQLServerSelectSQLBuilder;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\SQLServer\SQLServerMetadataProvider;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Column;
+use JooosiMailDeps\Doctrine\DBAL\Schema\ColumnDiff;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Identifier;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Index;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnquotedIdentifierFolding;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Sequence;
+use JooosiMailDeps\Doctrine\DBAL\Schema\SQLServerSchemaManager;
+use JooosiMailDeps\Doctrine\DBAL\Schema\TableDiff;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Builder\SelectSQLBuilder;
+use JooosiMailDeps\Doctrine\DBAL\TransactionIsolationLevel;
+use JooosiMailDeps\Doctrine\DBAL\Types\Types;
+use JooosiMailDeps\Doctrine\Deprecations\Deprecation;
 use InvalidArgumentException;
 use function array_map;
 use function array_merge;

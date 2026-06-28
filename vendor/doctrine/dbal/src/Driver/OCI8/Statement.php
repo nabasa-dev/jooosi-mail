@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\OCI8;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\OCI8;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\OCI8\Exception\Error;
-use OmniMailDeps\Doctrine\DBAL\Driver\OCI8\Exception\UnknownParameterIndex;
-use OmniMailDeps\Doctrine\DBAL\Driver\Statement as StatementInterface;
-use OmniMailDeps\Doctrine\DBAL\ParameterType;
+use JooosiMailDeps\Doctrine\DBAL\Driver\OCI8\Exception\Error;
+use JooosiMailDeps\Doctrine\DBAL\Driver\OCI8\Exception\UnknownParameterIndex;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Statement as StatementInterface;
+use JooosiMailDeps\Doctrine\DBAL\ParameterType;
 use function is_int;
 use function oci_bind_by_name;
 use function oci_execute;

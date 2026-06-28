@@ -8,14 +8,14 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Loader;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Loader;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\RuntimeException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
-use OmniMailDeps\Symfony\Component\Yaml\Exception\ParseException;
-use OmniMailDeps\Symfony\Component\Yaml\Parser as YamlParser;
-use OmniMailDeps\Symfony\Component\Yaml\Yaml;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
+use JooosiMailDeps\Symfony\Component\Yaml\Exception\ParseException;
+use JooosiMailDeps\Symfony\Component\Yaml\Parser as YamlParser;
+use JooosiMailDeps\Symfony\Component\Yaml\Yaml;
 /**
  * YamlFileLoader loads YAML files service definitions.
  *

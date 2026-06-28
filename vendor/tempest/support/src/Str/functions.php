@@ -1,17 +1,17 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Str;
+namespace JooosiMailDeps\Tempest\Support\Str;
 
 use BackedEnum;
 use Stringable;
-use OmniMailDeps\Tempest\Support\Arr;
+use JooosiMailDeps\Tempest\Support\Arr;
 use UnitEnum;
-use OmniMailDeps\voku\helper\ASCII;
+use JooosiMailDeps\voku\helper\ASCII;
 use function levenshtein as php_levenshtein;
 use function metaphone as php_metaphone;
 use function strip_tags as php_strip_tags;
-use function OmniMailDeps\Tempest\Support\arr;
+use function JooosiMailDeps\Tempest\Support\arr;
 /**
  * Converts the given string to title case.
  */

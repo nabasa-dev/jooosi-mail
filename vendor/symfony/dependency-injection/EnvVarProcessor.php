@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\EnvNotFoundException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\ParameterCircularReferenceException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\RuntimeException;
-use OmniMailDeps\Symfony\Contracts\Service\ResetInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\EnvNotFoundException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\ParameterCircularReferenceException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Contracts\Service\ResetInterface;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  */

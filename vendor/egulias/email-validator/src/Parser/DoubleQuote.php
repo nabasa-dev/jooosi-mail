@@ -1,15 +1,15 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Parser;
+namespace JooosiMailDeps\Egulias\EmailValidator\Parser;
 
-use OmniMailDeps\Egulias\EmailValidator\EmailLexer;
-use OmniMailDeps\Egulias\EmailValidator\Result\ValidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Warning\CFWSWithFWS;
-use OmniMailDeps\Egulias\EmailValidator\Warning\QuotedString;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\ExpectingATEXT;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\UnclosedQuotedString;
-use OmniMailDeps\Egulias\EmailValidator\Result\Result;
+use JooosiMailDeps\Egulias\EmailValidator\EmailLexer;
+use JooosiMailDeps\Egulias\EmailValidator\Result\ValidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\CFWSWithFWS;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\QuotedString;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\ExpectingATEXT;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\UnclosedQuotedString;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Result;
 class DoubleQuote extends PartParser
 {
     public function parse(): Result

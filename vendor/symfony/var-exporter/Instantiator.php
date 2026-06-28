@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\VarExporter;
+namespace JooosiMailDeps\Symfony\Component\VarExporter;
 
-use OmniMailDeps\Symfony\Component\VarExporter\Exception\ClassNotFoundException;
-use OmniMailDeps\Symfony\Component\VarExporter\Exception\ExceptionInterface;
-use OmniMailDeps\Symfony\Component\VarExporter\Exception\NotInstantiableTypeException;
+use JooosiMailDeps\Symfony\Component\VarExporter\Exception\ClassNotFoundException;
+use JooosiMailDeps\Symfony\Component\VarExporter\Exception\ExceptionInterface;
+use JooosiMailDeps\Symfony\Component\VarExporter\Exception\NotInstantiableTypeException;
 trigger_deprecation('symfony/var-exporter', '8.1', 'The "%s" class is deprecated, use "deepclone_hydrate()" from the deepclone extension instead.', Instantiator::class);
 /**
  * A utility class to create objects without calling their constructor.
@@ -54,10 +54,10 @@ final class Instantiator
             unset($mangledVars["\x00"]);
         }
         try {
-            $instance = deepclone_hydrate($class, $mangledVars, \OmniMailDeps\DEEPCLONE_HYDRATE_PRESERVE_REFS);
-        } catch (\OmniMailDeps\DeepClone\ClassNotFoundException $e) {
+            $instance = deepclone_hydrate($class, $mangledVars, \JooosiMailDeps\DEEPCLONE_HYDRATE_PRESERVE_REFS);
+        } catch (\JooosiMailDeps\DeepClone\ClassNotFoundException $e) {
             throw new ClassNotFoundException($e);
-        } catch (\OmniMailDeps\DeepClone\NotInstantiableException $e) {
+        } catch (\JooosiMailDeps\DeepClone\NotInstantiableException $e) {
             throw new NotInstantiableTypeException($e);
         }
         if (!\is_array($splState)) {

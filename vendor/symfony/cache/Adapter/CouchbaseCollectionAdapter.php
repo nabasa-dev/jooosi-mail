@@ -8,7 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\Adapter;
+namespace JooosiMailDeps\Symfony\Component\Cache\Adapter;
 
 use Couchbase\Bucket;
 use Couchbase\Cluster;
@@ -16,10 +16,10 @@ use Couchbase\ClusterOptions;
 use Couchbase\Collection;
 use Couchbase\DocumentNotFoundException;
 use Couchbase\UpsertOptions;
-use OmniMailDeps\Symfony\Component\Cache\Exception\CacheException;
-use OmniMailDeps\Symfony\Component\Cache\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Cache\Marshaller\DefaultMarshaller;
-use OmniMailDeps\Symfony\Component\Cache\Marshaller\MarshallerInterface;
+use JooosiMailDeps\Symfony\Component\Cache\Exception\CacheException;
+use JooosiMailDeps\Symfony\Component\Cache\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Cache\Marshaller\DefaultMarshaller;
+use JooosiMailDeps\Symfony\Component\Cache\Marshaller\MarshallerInterface;
 /**
  * @author Antonio Jose Cerezo Aranda <aj.cerezo@gmail.com>
  */

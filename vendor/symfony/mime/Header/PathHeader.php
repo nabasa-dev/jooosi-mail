@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mime\Header;
+namespace JooosiMailDeps\Symfony\Component\Mime\Header;
 
-use OmniMailDeps\Symfony\Component\Mime\Address;
-use OmniMailDeps\Symfony\Component\Mime\Exception\RfcComplianceException;
+use JooosiMailDeps\Symfony\Component\Mime\Address;
+use JooosiMailDeps\Symfony\Component\Mime\Exception\RfcComplianceException;
 /**
  * A Path Header, such a Return-Path (one address).
  *

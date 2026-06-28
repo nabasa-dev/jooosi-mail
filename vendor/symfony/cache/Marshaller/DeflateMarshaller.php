@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\Marshaller;
+namespace JooosiMailDeps\Symfony\Component\Cache\Marshaller;
 
-use OmniMailDeps\Symfony\Component\Cache\Exception\CacheException;
+use JooosiMailDeps\Symfony\Component\Cache\Exception\CacheException;
 /**
  * Compresses values using gzdeflate().
  *
@@ -20,7 +20,7 @@ class DeflateMarshaller implements MarshallerInterface
 {
     public function __construct(private MarshallerInterface $marshaller)
     {
-        if (!\function_exists('gzdeflate') && !\function_exists('OmniMailDeps\gzdeflate')) {
+        if (!\function_exists('gzdeflate') && !\function_exists('JooosiMailDeps\gzdeflate')) {
             throw new CacheException('The "zlib" PHP extension is not loaded.');
         }
     }

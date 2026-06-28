@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Tempest\Support\Comparison;
+namespace JooosiMailDeps\Tempest\Support\Comparison;
 
 /**
  * @template T

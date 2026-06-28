@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Uri;
+namespace JooosiMailDeps\Tempest\Support\Uri;
 
 use Stringable;
-use OmniMailDeps\Tempest\Support\Str;
-use OmniMailDeps\Tempest\Support\Str\ImmutableString;
-use OmniMailDeps\Tempest\Support\Str\MutableString;
+use JooosiMailDeps\Tempest\Support\Str;
+use JooosiMailDeps\Tempest\Support\Str\ImmutableString;
+use JooosiMailDeps\Tempest\Support\Str\MutableString;
 use function parse_url;
 final class Uri implements Stringable
 {

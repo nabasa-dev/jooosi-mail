@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\AsyncAws\Core\Test\Http;
+namespace JooosiMailDeps\AsyncAws\Core\Test\Http;
 
-use OmniMailDeps\AsyncAws\Core\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\HttpClient\Response\MockResponse;
+use JooosiMailDeps\AsyncAws\Core\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\HttpClient\Response\MockResponse;
 /**
  * @final
  */

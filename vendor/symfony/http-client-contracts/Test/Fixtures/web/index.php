@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps;
+namespace JooosiMailDeps;
 
 if ('cli-server' !== \PHP_SAPI) {
     // safe guard against unwanted execution

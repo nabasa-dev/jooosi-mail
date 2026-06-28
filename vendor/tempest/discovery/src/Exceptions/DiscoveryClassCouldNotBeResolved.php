@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Tempest\Discovery\Exceptions;
+namespace JooosiMailDeps\Tempest\Discovery\Exceptions;
 
 use Exception;
 final class DiscoveryClassCouldNotBeResolved extends Exception implements DiscoveryException

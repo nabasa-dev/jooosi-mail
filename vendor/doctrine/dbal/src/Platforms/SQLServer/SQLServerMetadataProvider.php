@@ -1,27 +1,27 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Platforms\SQLServer;
+namespace JooosiMailDeps\Doctrine\DBAL\Platforms\SQLServer;
 
-use OmniMailDeps\Doctrine\DBAL\Connection;
-use OmniMailDeps\Doctrine\DBAL\Exception;
-use OmniMailDeps\Doctrine\DBAL\Platforms\SQLServerPlatform;
-use OmniMailDeps\Doctrine\DBAL\Schema\Column;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\UnsupportedName;
-use OmniMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint\MatchType;
-use OmniMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint\ReferentialAction;
-use OmniMailDeps\Doctrine\DBAL\Schema\Index\IndexType;
-use OmniMailDeps\Doctrine\DBAL\Schema\Metadata\DatabaseMetadataRow;
-use OmniMailDeps\Doctrine\DBAL\Schema\Metadata\ForeignKeyConstraintColumnMetadataRow;
-use OmniMailDeps\Doctrine\DBAL\Schema\Metadata\IndexColumnMetadataRow;
-use OmniMailDeps\Doctrine\DBAL\Schema\Metadata\MetadataProvider;
-use OmniMailDeps\Doctrine\DBAL\Schema\Metadata\PrimaryKeyConstraintColumnRow;
-use OmniMailDeps\Doctrine\DBAL\Schema\Metadata\SchemaMetadataRow;
-use OmniMailDeps\Doctrine\DBAL\Schema\Metadata\SequenceMetadataRow;
-use OmniMailDeps\Doctrine\DBAL\Schema\Metadata\TableColumnMetadataRow;
-use OmniMailDeps\Doctrine\DBAL\Schema\Metadata\TableMetadataRow;
-use OmniMailDeps\Doctrine\DBAL\Schema\Metadata\ViewMetadataRow;
-use OmniMailDeps\Doctrine\DBAL\Types\Exception\TypesException;
+use JooosiMailDeps\Doctrine\DBAL\Connection;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\SQLServerPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Column;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\UnsupportedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint\MatchType;
+use JooosiMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint\ReferentialAction;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Index\IndexType;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Metadata\DatabaseMetadataRow;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Metadata\ForeignKeyConstraintColumnMetadataRow;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Metadata\IndexColumnMetadataRow;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Metadata\MetadataProvider;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Metadata\PrimaryKeyConstraintColumnRow;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Metadata\SchemaMetadataRow;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Metadata\SequenceMetadataRow;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Metadata\TableColumnMetadataRow;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Metadata\TableMetadataRow;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Metadata\ViewMetadataRow;
+use JooosiMailDeps\Doctrine\DBAL\Types\Exception\TypesException;
 use function assert;
 use function implode;
 use function preg_match;

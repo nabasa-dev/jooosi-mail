@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger;
+namespace JooosiMailDeps\Symfony\Component\Messenger;
 
-use OmniMailDeps\Psr\Container\ContainerInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\BusNameStamp;
+use JooosiMailDeps\Psr\Container\ContainerInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\BusNameStamp;
 /**
  * Bus of buses that is routable using a BusNameStamp.
  *

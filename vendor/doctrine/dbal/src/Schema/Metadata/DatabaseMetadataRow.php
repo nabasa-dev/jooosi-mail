@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Metadata;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Metadata;
 
 /**
  * A row of metadata describing a database.

@@ -1,29 +1,29 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\AsyncAws\Core;
+namespace JooosiMailDeps\AsyncAws\Core;
 
-use OmniMailDeps\AsyncAws\Core\AwsError\AwsErrorFactoryInterface;
-use OmniMailDeps\AsyncAws\Core\AwsError\ChainAwsErrorFactory;
-use OmniMailDeps\AsyncAws\Core\EndpointDiscovery\EndpointCache;
-use OmniMailDeps\AsyncAws\Core\Exception\Exception;
-use OmniMailDeps\AsyncAws\Core\Exception\Http\ClientException;
-use OmniMailDeps\AsyncAws\Core\Exception\Http\HttpException;
-use OmniMailDeps\AsyncAws\Core\Exception\Http\NetworkException;
-use OmniMailDeps\AsyncAws\Core\Exception\Http\RedirectionException;
-use OmniMailDeps\AsyncAws\Core\Exception\Http\ServerException;
-use OmniMailDeps\AsyncAws\Core\Exception\InvalidArgument;
-use OmniMailDeps\AsyncAws\Core\Exception\LogicException;
-use OmniMailDeps\AsyncAws\Core\Exception\RuntimeException;
-use OmniMailDeps\AsyncAws\Core\Exception\UnparsableResponse;
-use OmniMailDeps\AsyncAws\Core\Stream\ResponseBodyStream;
-use OmniMailDeps\AsyncAws\Core\Stream\ResultStream;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Psr\Log\LogLevel;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
+use JooosiMailDeps\AsyncAws\Core\AwsError\AwsErrorFactoryInterface;
+use JooosiMailDeps\AsyncAws\Core\AwsError\ChainAwsErrorFactory;
+use JooosiMailDeps\AsyncAws\Core\EndpointDiscovery\EndpointCache;
+use JooosiMailDeps\AsyncAws\Core\Exception\Exception;
+use JooosiMailDeps\AsyncAws\Core\Exception\Http\ClientException;
+use JooosiMailDeps\AsyncAws\Core\Exception\Http\HttpException;
+use JooosiMailDeps\AsyncAws\Core\Exception\Http\NetworkException;
+use JooosiMailDeps\AsyncAws\Core\Exception\Http\RedirectionException;
+use JooosiMailDeps\AsyncAws\Core\Exception\Http\ServerException;
+use JooosiMailDeps\AsyncAws\Core\Exception\InvalidArgument;
+use JooosiMailDeps\AsyncAws\Core\Exception\LogicException;
+use JooosiMailDeps\AsyncAws\Core\Exception\RuntimeException;
+use JooosiMailDeps\AsyncAws\Core\Exception\UnparsableResponse;
+use JooosiMailDeps\AsyncAws\Core\Stream\ResponseBodyStream;
+use JooosiMailDeps\AsyncAws\Core\Stream\ResultStream;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Psr\Log\LogLevel;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
 /**
  * The response provides a facade to manipulate HttpResponses.
  *

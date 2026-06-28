@@ -8,29 +8,29 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient\Response;
+namespace JooosiMailDeps\Symfony\Component\HttpClient\Response;
 
-use OmniMailDeps\Amp\ByteStream\StreamException;
-use OmniMailDeps\Amp\DeferredCancellation;
-use OmniMailDeps\Amp\DeferredFuture;
-use OmniMailDeps\Amp\Future;
-use OmniMailDeps\Amp\Http\Client\HttpException;
-use OmniMailDeps\Amp\Http\Client\Request;
-use OmniMailDeps\Amp\Http\Client\Response;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Revolt\EventLoop;
-use OmniMailDeps\Symfony\Component\HttpClient\Chunk\FirstChunk;
-use OmniMailDeps\Symfony\Component\HttpClient\Chunk\InformationalChunk;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
-use OmniMailDeps\Symfony\Component\HttpClient\HttpClientTrait;
-use OmniMailDeps\Symfony\Component\HttpClient\Internal\AmpBody;
-use OmniMailDeps\Symfony\Component\HttpClient\Internal\AmpClientState;
-use OmniMailDeps\Symfony\Component\HttpClient\Internal\Canary;
-use OmniMailDeps\Symfony\Component\HttpClient\Internal\ClientState;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
-use function OmniMailDeps\Amp\delay;
-use function OmniMailDeps\Amp\Future\awaitFirst;
+use JooosiMailDeps\Amp\ByteStream\StreamException;
+use JooosiMailDeps\Amp\DeferredCancellation;
+use JooosiMailDeps\Amp\DeferredFuture;
+use JooosiMailDeps\Amp\Future;
+use JooosiMailDeps\Amp\Http\Client\HttpException;
+use JooosiMailDeps\Amp\Http\Client\Request;
+use JooosiMailDeps\Amp\Http\Client\Response;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Revolt\EventLoop;
+use JooosiMailDeps\Symfony\Component\HttpClient\Chunk\FirstChunk;
+use JooosiMailDeps\Symfony\Component\HttpClient\Chunk\InformationalChunk;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
+use JooosiMailDeps\Symfony\Component\HttpClient\HttpClientTrait;
+use JooosiMailDeps\Symfony\Component\HttpClient\Internal\AmpBody;
+use JooosiMailDeps\Symfony\Component\HttpClient\Internal\AmpClientState;
+use JooosiMailDeps\Symfony\Component\HttpClient\Internal\Canary;
+use JooosiMailDeps\Symfony\Component\HttpClient\Internal\ClientState;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
+use function JooosiMailDeps\Amp\delay;
+use function JooosiMailDeps\Amp\Future\awaitFirst;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  *

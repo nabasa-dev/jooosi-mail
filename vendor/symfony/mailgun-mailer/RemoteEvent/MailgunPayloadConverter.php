@@ -8,13 +8,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Bridge\Mailgun\RemoteEvent;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Bridge\Mailgun\RemoteEvent;
 
-use OmniMailDeps\Symfony\Component\RemoteEvent\Event\Mailer\AbstractMailerEvent;
-use OmniMailDeps\Symfony\Component\RemoteEvent\Event\Mailer\MailerDeliveryEvent;
-use OmniMailDeps\Symfony\Component\RemoteEvent\Event\Mailer\MailerEngagementEvent;
-use OmniMailDeps\Symfony\Component\RemoteEvent\Exception\ParseException;
-use OmniMailDeps\Symfony\Component\RemoteEvent\PayloadConverterInterface;
+use JooosiMailDeps\Symfony\Component\RemoteEvent\Event\Mailer\AbstractMailerEvent;
+use JooosiMailDeps\Symfony\Component\RemoteEvent\Event\Mailer\MailerDeliveryEvent;
+use JooosiMailDeps\Symfony\Component\RemoteEvent\Event\Mailer\MailerEngagementEvent;
+use JooosiMailDeps\Symfony\Component\RemoteEvent\Exception\ParseException;
+use JooosiMailDeps\Symfony\Component\RemoteEvent\PayloadConverterInterface;
 final class MailgunPayloadConverter implements PayloadConverterInterface
 {
     private const MAILGUN_SPECIFIC_DROPPED_CODES = [

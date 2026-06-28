@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Queue\Failure;
+namespace JooosiMail\Queue\Failure;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Queue\Maintenance\QueueMaintenanceService;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Queue\Maintenance\QueueMaintenanceService;
 /**
  * Retry orchestration for failed queue rows.
  *

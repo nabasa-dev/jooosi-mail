@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Metadata;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Metadata;
 
-use OmniMailDeps\Doctrine\DBAL\Exception\InvalidArgumentException;
-use OmniMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint\MatchType;
-use OmniMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint\ReferentialAction;
+use JooosiMailDeps\Doctrine\DBAL\Exception\InvalidArgumentException;
+use JooosiMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint\MatchType;
+use JooosiMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint\ReferentialAction;
 /**
  * A row of metadata describing a foreign key constraint column.
  */

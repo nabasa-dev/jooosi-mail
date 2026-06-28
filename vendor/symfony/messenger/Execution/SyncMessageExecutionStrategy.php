@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Execution;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Execution;
 
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
-use OmniMailDeps\Symfony\Component\Messenger\MessageBusInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\AckStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Messenger\MessageBusInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\AckStamp;
 final class SyncMessageExecutionStrategy implements MessageExecutionStrategyInterface
 {
     public function __construct(private readonly MessageBusInterface $bus, private readonly \Closure $onAcknowledge)

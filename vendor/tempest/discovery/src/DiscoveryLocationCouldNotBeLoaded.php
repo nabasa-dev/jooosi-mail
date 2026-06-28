@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Discovery;
+namespace JooosiMailDeps\Tempest\Discovery;
 
 use Exception;
 final class DiscoveryLocationCouldNotBeLoaded extends Exception

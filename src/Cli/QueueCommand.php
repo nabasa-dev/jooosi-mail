@@ -1,16 +1,16 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Cli;
+namespace JooosiMail\Cli;
 
-use OmniMail\Discovery\Attribute\Command;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Queue\Failure\FailedMessageRepository;
-use OmniMail\Queue\Failure\FailedMessageService;
-use OmniMail\Queue\Maintenance\QueueMaintenanceService;
-use OmniMail\Queue\Query\QueueMessageQuery;
-use OmniMail\Queue\Transport\DatabaseTransport;
-use OmniMail\Queue\Worker\QueueWorker;
+use JooosiMail\Discovery\Attribute\Command;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Queue\Failure\FailedMessageRepository;
+use JooosiMail\Queue\Failure\FailedMessageService;
+use JooosiMail\Queue\Maintenance\QueueMaintenanceService;
+use JooosiMail\Queue\Query\QueueMessageQuery;
+use JooosiMail\Queue\Transport\DatabaseTransport;
+use JooosiMail\Queue\Worker\QueueWorker;
 use WP_CLI;
 use function WP_CLI\Utils\format_items;
 /**
@@ -19,7 +19,7 @@ use function WP_CLI\Utils\format_items;
  * ## EXAMPLES
  *
  *     # Inspect queue counts.
- *     $ wp omni-mail queue:status
+ *     $ wp jooosi-mail queue:status
  *     Ready Pending: 12
  *     Deferred Pending: 3
  *     Processing: 2
@@ -27,7 +27,7 @@ use function WP_CLI\Utils\format_items;
  *     Failed: 2
  *
  *     # Process a small batch of queued messages.
- *     $ wp omni-mail queue:work --limit=10
+ *     $ wp jooosi-mail queue:work --limit=10
  *     Success: Processed 10 queue message(s).
  *
  * @since 0.1.0
@@ -39,12 +39,12 @@ final readonly class QueueCommand
     {
     }
     /**
-     * Show Omni Mail queue status.
+     * Show Jooosi Mail queue status.
      *
      * ## EXAMPLES
      *
      *     # Inspect queue counts, including stale claims.
-     *     $ wp omni-mail queue:status
+     *     $ wp jooosi-mail queue:status
      *     Ready Pending: 12
      *     Deferred Pending: 3
      *     Processing: 2
@@ -52,7 +52,7 @@ final readonly class QueueCommand
      *     Failed: 2
      *
      *     # Use a shorter stale threshold while investigating worker recovery.
-     *     $ wp omni-mail queue:status --stale-after=120
+     *     $ wp jooosi-mail queue:status --stale-after=120
      *     Ready Pending: 4
      *     Deferred Pending: 0
      *     Processing: 1
@@ -72,7 +72,7 @@ final readonly class QueueCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'Show Omni Mail queue status.')]
+    #[Command(description: 'Show Jooosi Mail queue status.')]
     public function status(array $args, array $assocArgs): void
     {
         $staleAfter = max(1, (int) ($assocArgs['stale-after'] ?? 300));
@@ -84,7 +84,7 @@ final readonly class QueueCommand
         WP_CLI::line(sprintf('Failed: %d', $snapshot['failed']));
     }
     /**
-     * Process queued Omni Mail messages.
+     * Process queued Jooosi Mail messages.
      *
      * ## OPTIONS
      *
@@ -103,11 +103,11 @@ final readonly class QueueCommand
      * ## EXAMPLES
      *
      *     # Process the default batch size.
-     *     $ wp omni-mail queue:work
+     *     $ wp jooosi-mail queue:work
      *     Success: Processed 25 queue message(s).
      *
      *     # Process a smaller batch with a shorter runtime.
-     *     $ wp omni-mail queue:work --limit=10 --time-limit=15
+     *     $ wp jooosi-mail queue:work --limit=10 --time-limit=15
      *     Success: Processed 10 queue message(s).
      *
      * @param array<int, string> $args
@@ -115,14 +115,14 @@ final readonly class QueueCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'Process queued Omni Mail messages.')]
+    #[Command(description: 'Process queued Jooosi Mail messages.')]
     public function work(array $args, array $assocArgs): void
     {
         $processed = $this->queueWorker->run(limit: max(1, (int) ($assocArgs['limit'] ?? 25)), timeLimit: max(5, (int) ($assocArgs['time-limit'] ?? 20)));
         WP_CLI::success(sprintf('Processed %d queue message(s).', $processed));
     }
     /**
-     * List failed Omni Mail queue messages.
+     * List failed Jooosi Mail queue messages.
      *
      * ## OPTIONS
      *
@@ -135,13 +135,13 @@ final readonly class QueueCommand
      * ## EXAMPLES
      *
      *     # List the most recent failed messages.
-     *     $ wp omni-mail queue:failed
+     *     $ wp jooosi-mail queue:failed
      *     id  queue  attempts  processed_at          error
      *     42  async  3         2026-03-23 09:15:00   Temporary connection failure
      *     41  async  5         2026-03-23 09:10:00   Provider rejected the message
      *
      *     # Limit the output to a single failed row.
-     *     $ wp omni-mail queue:failed --limit=1
+     *     $ wp jooosi-mail queue:failed --limit=1
      *     id  queue  attempts  processed_at          error
      *     42  async  3         2026-03-23 09:15:00   Temporary connection failure
      *
@@ -150,7 +150,7 @@ final readonly class QueueCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'List failed Omni Mail queue messages.')]
+    #[Command(description: 'List failed Jooosi Mail queue messages.')]
     public function failed(array $args, array $assocArgs): void
     {
         $limit = max(1, (int) ($assocArgs['limit'] ?? 20));
@@ -163,7 +163,7 @@ final readonly class QueueCommand
         format_items('table', $items, ['id', 'queue', 'attempts', 'processed_at', 'error']);
     }
     /**
-     * List processing Omni Mail queue messages.
+     * List processing Jooosi Mail queue messages.
      *
      * ## OPTIONS
      *
@@ -193,12 +193,12 @@ final readonly class QueueCommand
      * ## EXAMPLES
      *
      *     # Inspect processing rows and their claim age.
-     *     $ wp omni-mail queue:processing
+     *     $ wp jooosi-mail queue:processing
      *     id  queue  attempts  claimed_at            claim_age  stale  error
      *     87  async  2         2026-03-23 09:10:00   180s       no     
      *
      *     # Show only stale claims older than 2 minutes.
-     *     $ wp omni-mail queue:processing --stale-after=120 --stale-only=true
+     *     $ wp jooosi-mail queue:processing --stale-after=120 --stale-only=true
      *     id  queue  attempts  claimed_at            claim_age  stale  error
      *     81  async  1         2026-03-23 09:00:00   780s       yes    Connection timed out
      *
@@ -207,7 +207,7 @@ final readonly class QueueCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'List processing Omni Mail queue messages.')]
+    #[Command(description: 'List processing Jooosi Mail queue messages.')]
     public function processing(array $args, array $assocArgs): void
     {
         $limit = max(1, (int) ($assocArgs['limit'] ?? 20));
@@ -224,7 +224,7 @@ final readonly class QueueCommand
         format_items('table', $rows, ['id', 'queue', 'attempts', 'claimed_at', 'claim_age', 'stale', 'error']);
     }
     /**
-     * Release stale Omni Mail queue claims.
+     * Release stale Jooosi Mail queue claims.
      *
      * ## OPTIONS
      *
@@ -237,11 +237,11 @@ final readonly class QueueCommand
      * ## EXAMPLES
      *
      *     # Release claims older than 5 minutes.
-     *     $ wp omni-mail queue:release-stale
+     *     $ wp jooosi-mail queue:release-stale
      *     Success: Released 2 stale queue claim(s).
      *
      *     # Use a shorter stale threshold during incident response.
-     *     $ wp omni-mail queue:release-stale --older-than=120
+     *     $ wp jooosi-mail queue:release-stale --older-than=120
      *     Success: Released 1 stale queue claim(s).
      *
      * @param array<int, string> $args
@@ -249,7 +249,7 @@ final readonly class QueueCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'Release stale Omni Mail queue claims.')]
+    #[Command(description: 'Release stale Jooosi Mail queue claims.')]
     public function releaseStale(array $args, array $assocArgs): void
     {
         $olderThan = max(1, (int) ($assocArgs['older-than'] ?? 300));
@@ -293,7 +293,7 @@ final readonly class QueueCommand
         return is_bool($resolved) ? $resolved : $default;
     }
     /**
-     * Retry failed Omni Mail queue messages.
+     * Retry failed Jooosi Mail queue messages.
      *
      * ## OPTIONS
      *
@@ -303,11 +303,11 @@ final readonly class QueueCommand
      * ## EXAMPLES
      *
      *     # Retry every failed message.
-     *     $ wp omni-mail queue:retry
+     *     $ wp jooosi-mail queue:retry
      *     Success: Retried 3 failed message(s).
      *
      *     # Retry a single failed message.
-     *     $ wp omni-mail queue:retry --id=42
+     *     $ wp jooosi-mail queue:retry --id=42
      *     Success: Retried 1 failed message(s).
      *
      * @param array<int, string> $args
@@ -315,7 +315,7 @@ final readonly class QueueCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'Retry failed Omni Mail queue messages.')]
+    #[Command(description: 'Retry failed Jooosi Mail queue messages.')]
     public function retry(array $args, array $assocArgs): void
     {
         $messageId = isset($assocArgs['id']) ? (int) $assocArgs['id'] : null;

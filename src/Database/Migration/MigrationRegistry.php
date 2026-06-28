@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Database\Migration;
+namespace JooosiMail\Database\Migration;
 
-use OmniMail\Bootstrap\Paths;
-use OmniMail\Discovery\Attribute\Service;
+use JooosiMail\Bootstrap\Paths;
+use JooosiMail\Discovery\Attribute\Service;
 use RuntimeException;
 /**
  * Discovers versioned schema migrations from the dedicated migrations directory.
@@ -32,16 +32,16 @@ final readonly class MigrationRegistry
             $version = $migration->getVersion();
             if ($version === '') {
                 // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-                throw new RuntimeException(sprintf('The Omni Mail migration class "%s" returned an empty version.', $className));
+                throw new RuntimeException(sprintf('The Jooosi Mail migration class "%s" returned an empty version.', $className));
             }
             if (isset($knownVersions[$version])) {
                 // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-                throw new RuntimeException(sprintf('The Omni Mail migration version "%s" is registered more than once.', $version));
+                throw new RuntimeException(sprintf('The Jooosi Mail migration version "%s" is registered more than once.', $version));
             }
             $knownVersions[$version] = \true;
-            $definitions[] = new \OmniMail\Database\Migration\MigrationDefinition(version: $version, className: $className, description: $migration->getDescription());
+            $definitions[] = new \JooosiMail\Database\Migration\MigrationDefinition(version: $version, className: $className, description: $migration->getDescription());
         }
-        usort($definitions, static fn(\OmniMail\Database\Migration\MigrationDefinition $left, \OmniMail\Database\Migration\MigrationDefinition $right): int => strcmp($left->version, $right->version));
+        usort($definitions, static fn(\JooosiMail\Database\Migration\MigrationDefinition $left, \JooosiMail\Database\Migration\MigrationDefinition $right): int => strcmp($left->version, $right->version));
         return $definitions;
     }
     /**
@@ -60,7 +60,7 @@ final readonly class MigrationRegistry
      */
     public function pending(array $executedVersions): array
     {
-        return array_values(array_filter($this->all(), static fn(\OmniMail\Database\Migration\MigrationDefinition $definition): bool => !in_array($definition->version, $executedVersions, \true)));
+        return array_values(array_filter($this->all(), static fn(\JooosiMail\Database\Migration\MigrationDefinition $definition): bool => !in_array($definition->version, $executedVersions, \true)));
     }
     /**
      * @param array<string> $executedVersions
@@ -71,12 +71,12 @@ final readonly class MigrationRegistry
      */
     public function executed(array $executedVersions): array
     {
-        return array_values(array_filter($this->all(), static fn(\OmniMail\Database\Migration\MigrationDefinition $definition): bool => in_array($definition->version, $executedVersions, \true)));
+        return array_values(array_filter($this->all(), static fn(\JooosiMail\Database\Migration\MigrationDefinition $definition): bool => in_array($definition->version, $executedVersions, \true)));
     }
     /**
      * @since 0.1.0
      */
-    public function find(string $identifier): ?\OmniMail\Database\Migration\MigrationDefinition
+    public function find(string $identifier): ?\JooosiMail\Database\Migration\MigrationDefinition
     {
         foreach ($this->all() as $definition) {
             if ($definition->version === $identifier || $definition->className === $identifier) {
@@ -88,15 +88,15 @@ final readonly class MigrationRegistry
     /**
      * @since 0.1.0
      */
-    public function createInstance(\OmniMail\Database\Migration\MigrationDefinition|string $migration): \OmniMail\Database\Migration\MigrationInterface
+    public function createInstance(\JooosiMail\Database\Migration\MigrationDefinition|string $migration): \JooosiMail\Database\Migration\MigrationInterface
     {
-        if ($migration instanceof \OmniMail\Database\Migration\MigrationDefinition) {
+        if ($migration instanceof \JooosiMail\Database\Migration\MigrationDefinition) {
             return $this->newInstance($migration->className);
         }
         $definition = $this->find($migration);
-        if (!$definition instanceof \OmniMail\Database\Migration\MigrationDefinition) {
+        if (!$definition instanceof \JooosiMail\Database\Migration\MigrationDefinition) {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new RuntimeException(sprintf('The Omni Mail migration "%s" could not be found.', $migration));
+            throw new RuntimeException(sprintf('The Jooosi Mail migration "%s" could not be found.', $migration));
         }
         return $this->newInstance($definition->className);
     }
@@ -126,16 +126,16 @@ final readonly class MigrationRegistry
      *
      * @since 0.1.0
      */
-    private function newInstance(string $className): \OmniMail\Database\Migration\MigrationInterface
+    private function newInstance(string $className): \JooosiMail\Database\Migration\MigrationInterface
     {
         if (!class_exists($className)) {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new RuntimeException(sprintf('The Omni Mail migration class "%s" could not be autoloaded.', $className));
+            throw new RuntimeException(sprintf('The Jooosi Mail migration class "%s" could not be autoloaded.', $className));
         }
         $migration = new $className();
-        if (!$migration instanceof \OmniMail\Database\Migration\MigrationInterface) {
+        if (!$migration instanceof \JooosiMail\Database\Migration\MigrationInterface) {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new RuntimeException(sprintf('The Omni Mail migration class "%s" must implement %s.', $className, \OmniMail\Database\Migration\MigrationInterface::class));
+            throw new RuntimeException(sprintf('The Jooosi Mail migration class "%s" must implement %s.', $className, \JooosiMail\Database\Migration\MigrationInterface::class));
         }
         return $migration;
     }

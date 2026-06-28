@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Exception;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Exception;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Collections\Exception\ObjectAlreadyExists;
-use OmniMailDeps\Doctrine\DBAL\Schema\Collections\Exception\ObjectDoesNotExist;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
-use OmniMailDeps\Doctrine\DBAL\Schema\SchemaException;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Collections\Exception\ObjectAlreadyExists;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Collections\Exception\ObjectDoesNotExist;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\SchemaException;
 use LogicException;
 use function sprintf;
 /** @internal */

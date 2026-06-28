@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Metadata;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Metadata;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Column;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Column;
 /**
  * A row of metadata describing a table column.
  *

@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\OCI8;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\OCI8;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Exception;
-use OmniMailDeps\Doctrine\DBAL\Driver\FetchUtils;
-use OmniMailDeps\Doctrine\DBAL\Driver\OCI8\Exception\Error;
-use OmniMailDeps\Doctrine\DBAL\Driver\Result as ResultInterface;
-use OmniMailDeps\Doctrine\DBAL\Exception\InvalidColumnIndex;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Driver\FetchUtils;
+use JooosiMailDeps\Doctrine\DBAL\Driver\OCI8\Exception\Error;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Result as ResultInterface;
+use JooosiMailDeps\Doctrine\DBAL\Exception\InvalidColumnIndex;
 use function oci_cancel;
 use function oci_error;
 use function oci_fetch_all;

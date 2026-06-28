@@ -8,17 +8,17 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\EventDispatcher\Debug;
+namespace JooosiMailDeps\Symfony\Component\EventDispatcher\Debug;
 
-use OmniMailDeps\Psr\EventDispatcher\StoppableEventInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\EventDispatcher\EventDispatcher;
-use OmniMailDeps\Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use OmniMailDeps\Symfony\Component\HttpFoundation\Request;
-use OmniMailDeps\Symfony\Component\HttpFoundation\RequestStack;
-use OmniMailDeps\Symfony\Component\Stopwatch\Stopwatch;
-use OmniMailDeps\Symfony\Contracts\Service\ResetInterface;
+use JooosiMailDeps\Psr\EventDispatcher\StoppableEventInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\EventDispatcher\EventDispatcher;
+use JooosiMailDeps\Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use JooosiMailDeps\Symfony\Component\HttpFoundation\Request;
+use JooosiMailDeps\Symfony\Component\HttpFoundation\RequestStack;
+use JooosiMailDeps\Symfony\Component\Stopwatch\Stopwatch;
+use JooosiMailDeps\Symfony\Contracts\Service\ResetInterface;
 /**
  * Collects some data about event listeners.
  *

@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\SQLSrv;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\SQLSrv;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Exception;
-use OmniMailDeps\Doctrine\DBAL\Driver\SQLSrv\Exception\Error;
-use OmniMailDeps\Doctrine\DBAL\Driver\Statement as StatementInterface;
-use OmniMailDeps\Doctrine\DBAL\ParameterType;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Driver\SQLSrv\Exception\Error;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Statement as StatementInterface;
+use JooosiMailDeps\Doctrine\DBAL\ParameterType;
 use function assert;
 use function is_int;
 use function sqlsrv_execute;

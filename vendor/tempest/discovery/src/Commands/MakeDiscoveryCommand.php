@@ -1,15 +1,15 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Discovery\Commands;
+namespace JooosiMailDeps\Tempest\Discovery\Commands;
 
-use OmniMailDeps\Tempest\Console\ConsoleArgument;
-use OmniMailDeps\Tempest\Console\ConsoleCommand;
-use OmniMailDeps\Tempest\Core\PublishesFiles;
-use OmniMailDeps\Tempest\Discovery\SkipDiscovery;
-use OmniMailDeps\Tempest\Discovery\Stubs\DiscoveryStub;
-use OmniMailDeps\Tempest\Generation\Php\ClassManipulator;
-use OmniMailDeps\Tempest\Generation\Php\DataObjects\StubFile;
+use JooosiMailDeps\Tempest\Console\ConsoleArgument;
+use JooosiMailDeps\Tempest\Console\ConsoleCommand;
+use JooosiMailDeps\Tempest\Core\PublishesFiles;
+use JooosiMailDeps\Tempest\Discovery\SkipDiscovery;
+use JooosiMailDeps\Tempest\Discovery\Stubs\DiscoveryStub;
+use JooosiMailDeps\Tempest\Generation\Php\ClassManipulator;
+use JooosiMailDeps\Tempest\Generation\Php\DataObjects\StubFile;
 if (class_exists(ConsoleCommand::class)) {
     final class MakeDiscoveryCommand
     {

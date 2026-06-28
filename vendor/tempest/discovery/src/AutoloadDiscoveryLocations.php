@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Discovery;
+namespace JooosiMailDeps\Tempest\Discovery;
 
-use OmniMailDeps\Tempest\Support\Filesystem;
-use OmniMailDeps\Tempest\Support\Path;
+use JooosiMailDeps\Tempest\Support\Filesystem;
+use JooosiMailDeps\Tempest\Support\Path;
 final readonly class AutoloadDiscoveryLocations
 {
     private Composer $composer;

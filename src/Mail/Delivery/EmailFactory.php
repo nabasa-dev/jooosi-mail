@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Delivery;
+namespace JooosiMail\Mail\Delivery;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\ValueObject\MailAddress;
-use OmniMail\Mail\ValueObject\MailAttachment;
-use OmniMail\Mail\ValueObject\MailRequest;
-use OmniMailDeps\Symfony\Component\Mailer\Envelope;
-use OmniMailDeps\Symfony\Component\Mime\Email;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\ValueObject\MailAddress;
+use JooosiMail\Mail\ValueObject\MailAttachment;
+use JooosiMail\Mail\ValueObject\MailRequest;
+use JooosiMailDeps\Symfony\Component\Mailer\Envelope;
+use JooosiMailDeps\Symfony\Component\Mime\Email;
 /**
  * Builds Symfony email objects from normalized payloads.
  *

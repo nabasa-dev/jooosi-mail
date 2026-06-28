@@ -8,21 +8,21 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Transport\Smtp;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Transport\Smtp;
 
-use OmniMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Envelope;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\TransportException;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\TransportExceptionInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\UnexpectedResponseException;
-use OmniMailDeps\Symfony\Component\Mailer\SentMessage;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\AbstractTransport;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Smtp\Stream\SocketStream;
-use OmniMailDeps\Symfony\Component\Mime\RawMessage;
+use JooosiMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Envelope;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\TransportException;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\TransportExceptionInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\UnexpectedResponseException;
+use JooosiMailDeps\Symfony\Component\Mailer\SentMessage;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\AbstractTransport;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Smtp\Stream\SocketStream;
+use JooosiMailDeps\Symfony\Component\Mime\RawMessage;
 /**
  * Sends emails over SMTP.
  *

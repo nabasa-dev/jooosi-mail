@@ -8,21 +8,21 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Transport;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Transport;
 
-use OmniMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Psr\Log\NullLogger;
-use OmniMailDeps\Symfony\Bridge\Twig\Mime\TemplatedEmail;
-use OmniMailDeps\Symfony\Component\Mailer\Envelope;
-use OmniMailDeps\Symfony\Component\Mailer\Event\FailedMessageEvent;
-use OmniMailDeps\Symfony\Component\Mailer\Event\MessageEvent;
-use OmniMailDeps\Symfony\Component\Mailer\Event\SentMessageEvent;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\Mailer\SentMessage;
-use OmniMailDeps\Symfony\Component\Mime\Address;
-use OmniMailDeps\Symfony\Component\Mime\BodyRendererInterface;
-use OmniMailDeps\Symfony\Component\Mime\RawMessage;
+use JooosiMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Psr\Log\NullLogger;
+use JooosiMailDeps\Symfony\Bridge\Twig\Mime\TemplatedEmail;
+use JooosiMailDeps\Symfony\Component\Mailer\Envelope;
+use JooosiMailDeps\Symfony\Component\Mailer\Event\FailedMessageEvent;
+use JooosiMailDeps\Symfony\Component\Mailer\Event\MessageEvent;
+use JooosiMailDeps\Symfony\Component\Mailer\Event\SentMessageEvent;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\Mailer\SentMessage;
+use JooosiMailDeps\Symfony\Component\Mime\Address;
+use JooosiMailDeps\Symfony\Component\Mime\BodyRendererInterface;
+use JooosiMailDeps\Symfony\Component\Mime\RawMessage;
 /**
  * @author Fabien Potencier <fabien@symfony.com>
  */

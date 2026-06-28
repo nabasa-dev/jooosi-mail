@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\IBMDB2;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\IBMDB2;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\AbstractDB2Driver;
-use OmniMailDeps\Doctrine\DBAL\Driver\IBMDB2\Exception\ConnectionFailed;
+use JooosiMailDeps\Doctrine\DBAL\Driver\AbstractDB2Driver;
+use JooosiMailDeps\Doctrine\DBAL\Driver\IBMDB2\Exception\ConnectionFailed;
 use SensitiveParameter;
 use function db2_connect;
 use function db2_pconnect;

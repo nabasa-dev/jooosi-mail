@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\Traits;
+namespace JooosiMailDeps\Symfony\Component\Cache\Traits;
 
-use OmniMailDeps\Psr\Cache\CacheItemInterface;
-use OmniMailDeps\Psr\Log\LoggerAwareTrait;
-use OmniMailDeps\Symfony\Component\Cache\CacheItem;
-use OmniMailDeps\Symfony\Component\Cache\Exception\InvalidArgumentException;
+use JooosiMailDeps\Psr\Cache\CacheItemInterface;
+use JooosiMailDeps\Psr\Log\LoggerAwareTrait;
+use JooosiMailDeps\Symfony\Component\Cache\CacheItem;
+use JooosiMailDeps\Symfony\Component\Cache\Exception\InvalidArgumentException;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  *

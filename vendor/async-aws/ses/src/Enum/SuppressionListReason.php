@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Ses\Enum;
+namespace JooosiMailDeps\AsyncAws\Ses\Enum;
 
 /**
  * The reason that the address was added to the suppression list for your account or for a specific tenant. The value

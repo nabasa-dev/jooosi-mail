@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Validation\Exception;
+namespace JooosiMailDeps\Egulias\EmailValidator\Validation\Exception;
 
 use Exception;
 class EmptyValidationList extends \InvalidArgumentException

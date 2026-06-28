@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mime\Part\Multipart;
+namespace JooosiMailDeps\Symfony\Component\Mime\Part\Multipart;
 
-use OmniMailDeps\Symfony\Component\Mime\Part\AbstractMultipartPart;
-use OmniMailDeps\Symfony\Component\Mime\Part\MessagePart;
+use JooosiMailDeps\Symfony\Component\Mime\Part\AbstractMultipartPart;
+use JooosiMailDeps\Symfony\Component\Mime\Part\MessagePart;
 /**
  * @author Fabien Potencier <fabien@symfony.com>
  */

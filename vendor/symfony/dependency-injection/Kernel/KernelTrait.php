@@ -8,31 +8,31 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Kernel;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Kernel;
 
-use OmniMailDeps\Symfony\Component\Config\ConfigCache;
-use OmniMailDeps\Symfony\Component\Config\Loader\DelegatingLoader;
-use OmniMailDeps\Symfony\Component\Config\Loader\LoaderInterface;
-use OmniMailDeps\Symfony\Component\Config\Loader\LoaderResolver;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Compiler\MergeExtensionConfigurationPass;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Compiler\PassConfig;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Compiler\RemoveBuildParametersPass;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Dumper\PhpDumper;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\ClosureLoader;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\AbstractConfigurator;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\DirectoryLoader;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\GlobFileLoader;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\IniFileLoader;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Reference;
-use OmniMailDeps\Symfony\Component\ErrorHandler\DebugClassLoader;
-use OmniMailDeps\Symfony\Component\Filesystem\Filesystem;
+use JooosiMailDeps\Symfony\Component\Config\ConfigCache;
+use JooosiMailDeps\Symfony\Component\Config\Loader\DelegatingLoader;
+use JooosiMailDeps\Symfony\Component\Config\Loader\LoaderInterface;
+use JooosiMailDeps\Symfony\Component\Config\Loader\LoaderResolver;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler\MergeExtensionConfigurationPass;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler\PassConfig;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler\RemoveBuildParametersPass;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Dumper\PhpDumper;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\ClosureLoader;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\AbstractConfigurator;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\DirectoryLoader;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\GlobFileLoader;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\IniFileLoader;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Reference;
+use JooosiMailDeps\Symfony\Component\ErrorHandler\DebugClassLoader;
+use JooosiMailDeps\Symfony\Component\Filesystem\Filesystem;
 // Help opcache.preload discover always-needed symbols
 class_exists(ConfigCache::class);
 /**
@@ -138,7 +138,7 @@ trait KernelTrait
         } finally {
             error_reporting($errorLevel);
         }
-        if ($collectDeprecations = $this->debug && !\defined('OmniMailDeps\PHPUNIT_COMPOSER_INSTALL')) {
+        if ($collectDeprecations = $this->debug && !\defined('JooosiMailDeps\PHPUNIT_COMPOSER_INSTALL')) {
             $collectedLogs = [];
             $previousHandler = set_error_handler(static function ($type, $message, $file, $line) use (&$collectedLogs, &$previousHandler) {
                 if (\E_USER_DEPRECATED !== $type && \E_DEPRECATED !== $type) {

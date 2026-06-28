@@ -8,15 +8,15 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\DependencyInjection;
+namespace JooosiMailDeps\Symfony\Component\Cache\DependencyInjection;
 
-use OmniMailDeps\Symfony\Component\Cache\Adapter\TagAwareAdapterInterface;
-use OmniMailDeps\Symfony\Component\Cache\Adapter\TraceableAdapter;
-use OmniMailDeps\Symfony\Component\Cache\Adapter\TraceableTagAwareAdapter;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Definition;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Reference;
+use JooosiMailDeps\Symfony\Component\Cache\Adapter\TagAwareAdapterInterface;
+use JooosiMailDeps\Symfony\Component\Cache\Adapter\TraceableAdapter;
+use JooosiMailDeps\Symfony\Component\Cache\Adapter\TraceableTagAwareAdapter;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Definition;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Reference;
 /**
  * Inject a data collector to all the cache services to be able to get detailed statistics.
  *

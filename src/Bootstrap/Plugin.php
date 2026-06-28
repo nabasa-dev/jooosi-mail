@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Bootstrap;
+namespace JooosiMail\Bootstrap;
 
 /**
  * Main plugin entrypoint.
@@ -11,8 +11,8 @@ namespace OmniMail\Bootstrap;
 final class Plugin
 {
     private static ?self $instance = null;
-    private ?\OmniMail\Bootstrap\Kernel $kernel = null;
-    private function __construct(private readonly \OmniMail\Bootstrap\Paths $paths, private readonly \OmniMail\Bootstrap\Environment $environment)
+    private ?\JooosiMail\Bootstrap\Kernel $kernel = null;
+    private function __construct(private readonly \JooosiMail\Bootstrap\Paths $paths, private readonly \JooosiMail\Bootstrap\Environment $environment)
     {
     }
     /**
@@ -26,8 +26,8 @@ final class Plugin
             self::$instance->bootKernel();
             return self::$instance;
         }
-        $paths = \OmniMail\Bootstrap\Paths::fromPluginFile($pluginFile);
-        $environment = \OmniMail\Bootstrap\Environment::fromWordPress();
+        $paths = \JooosiMail\Bootstrap\Paths::fromPluginFile($pluginFile);
+        $environment = \JooosiMail\Bootstrap\Environment::fromWordPress();
         self::$instance = new self($paths, $environment);
         self::$instance->registerLifecycleHooks();
         self::$instance->bootKernel();
@@ -65,10 +65,10 @@ final class Plugin
     {
         $this->getKernel()->boot();
     }
-    private function getKernel(): \OmniMail\Bootstrap\Kernel
+    private function getKernel(): \JooosiMail\Bootstrap\Kernel
     {
-        if (!$this->kernel instanceof \OmniMail\Bootstrap\Kernel) {
-            $this->kernel = new \OmniMail\Bootstrap\Kernel($this->paths, $this->environment);
+        if (!$this->kernel instanceof \JooosiMail\Bootstrap\Kernel) {
+            $this->kernel = new \JooosiMail\Bootstrap\Kernel($this->paths, $this->environment);
         }
         return $this->kernel;
     }

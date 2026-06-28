@@ -8,7 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\Traits\Relay;
+namespace JooosiMailDeps\Symfony\Component\Cache\Traits\Relay;
 
 if (version_compare(phpversion('relay'), '0.22.0', '>=')) {
     /**

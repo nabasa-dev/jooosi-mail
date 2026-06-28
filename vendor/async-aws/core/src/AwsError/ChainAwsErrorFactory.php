@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\AwsError;
+namespace JooosiMailDeps\AsyncAws\Core\AwsError;
 
-use OmniMailDeps\AsyncAws\Core\Exception\UnparsableResponse;
+use JooosiMailDeps\AsyncAws\Core\Exception\UnparsableResponse;
 /**
  * @internal
  */

@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\SQL;
+namespace JooosiMailDeps\Doctrine\DBAL\SQL;
 
-use OmniMailDeps\Doctrine\DBAL\SQL\Parser\Exception;
-use OmniMailDeps\Doctrine\DBAL\SQL\Parser\Exception\RegularExpressionError;
-use OmniMailDeps\Doctrine\DBAL\SQL\Parser\Visitor;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Parser\Exception;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Parser\Exception\RegularExpressionError;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Parser\Visitor;
 use function array_merge;
 use function implode;
 use function preg_last_error;

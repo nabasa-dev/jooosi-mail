@@ -8,7 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Middleware;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Middleware;
 
 /**
  * @author Nicolas Grekas <p@tchwork.com>

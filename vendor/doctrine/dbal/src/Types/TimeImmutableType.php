@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Types;
+namespace JooosiMailDeps\Doctrine\DBAL\Types;
 
 use DateTimeImmutable;
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
-use OmniMailDeps\Doctrine\DBAL\Types\Exception\InvalidFormat;
-use OmniMailDeps\Doctrine\DBAL\Types\Exception\InvalidType;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Types\Exception\InvalidFormat;
+use JooosiMailDeps\Doctrine\DBAL\Types\Exception\InvalidType;
 /**
  * Immutable type of {@see TimeType}.
  */

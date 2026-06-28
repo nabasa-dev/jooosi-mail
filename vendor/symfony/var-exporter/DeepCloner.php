@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\VarExporter;
+namespace JooosiMailDeps\Symfony\Component\VarExporter;
 
-use OmniMailDeps\Symfony\Component\VarExporter\Exception\ClassNotFoundException;
-use OmniMailDeps\Symfony\Component\VarExporter\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\VarExporter\Exception\NotInstantiableTypeException;
+use JooosiMailDeps\Symfony\Component\VarExporter\Exception\ClassNotFoundException;
+use JooosiMailDeps\Symfony\Component\VarExporter\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\VarExporter\Exception\NotInstantiableTypeException;
 /**
  * Deep-clones PHP values while preserving copy-on-write benefits for strings and arrays.
  *
@@ -64,7 +64,7 @@ final class DeepCloner
     {
         try {
             $this->payload = deepclone_to_array($value, $allowedClasses);
-        } catch (\OmniMailDeps\DeepClone\NotInstantiableException $e) {
+        } catch (\JooosiMailDeps\DeepClone\NotInstantiableException $e) {
             throw new NotInstantiableTypeException($e);
         }
     }
@@ -122,9 +122,9 @@ final class DeepCloner
         }
         try {
             return deepclone_from_array($this->payload, $allowedClasses);
-        } catch (\OmniMailDeps\DeepClone\ClassNotFoundException $e) {
+        } catch (\JooosiMailDeps\DeepClone\ClassNotFoundException $e) {
             throw new ClassNotFoundException($e);
-        } catch (\OmniMailDeps\DeepClone\NotInstantiableException $e) {
+        } catch (\JooosiMailDeps\DeepClone\NotInstantiableException $e) {
             throw new NotInstantiableTypeException($e);
         }
     }
@@ -181,9 +181,9 @@ final class DeepCloner
         $payload['objectMeta'] = $meta;
         try {
             return deepclone_from_array($payload, $allowedClasses);
-        } catch (\OmniMailDeps\DeepClone\ClassNotFoundException $e) {
+        } catch (\JooosiMailDeps\DeepClone\ClassNotFoundException $e) {
             throw new ClassNotFoundException($e);
-        } catch (\OmniMailDeps\DeepClone\NotInstantiableException $e) {
+        } catch (\JooosiMailDeps\DeepClone\NotInstantiableException $e) {
             throw new NotInstantiableTypeException($e);
         }
     }

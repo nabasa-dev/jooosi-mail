@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Routing;
+namespace JooosiMail\Mail\Routing;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Mail\Connection\ConnectionRepository;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Mail\Connection\ConnectionRepository;
 /**
  * Resolves candidate connections for a delivery plan.
  *
@@ -14,7 +14,7 @@ use OmniMail\Mail\Connection\ConnectionRepository;
 #[Service]
 final readonly class ConnectionResolver
 {
-    public function __construct(private ConnectionRepository $connectionRepository, private \OmniMail\Mail\Routing\ConnectionAvailabilityDecider $connectionAvailabilityDecider, private \OmniMail\Mail\Routing\ConnectionHealthScorer $connectionHealthScorer, private \OmniMail\Mail\Routing\WeightedRoundRobinSelector $weightedRoundRobinSelector, private \OmniMail\Mail\Routing\WeightedRandomSelector $weightedRandomSelector)
+    public function __construct(private ConnectionRepository $connectionRepository, private \JooosiMail\Mail\Routing\ConnectionAvailabilityDecider $connectionAvailabilityDecider, private \JooosiMail\Mail\Routing\ConnectionHealthScorer $connectionHealthScorer, private \JooosiMail\Mail\Routing\WeightedRoundRobinSelector $weightedRoundRobinSelector, private \JooosiMail\Mail\Routing\WeightedRandomSelector $weightedRandomSelector)
     {
     }
     /**
@@ -22,7 +22,7 @@ final readonly class ConnectionResolver
      *
      * @since 0.1.0
      */
-    public function resolve(\OmniMail\Mail\Routing\DeliveryPlan $deliveryPlan): array
+    public function resolve(\JooosiMail\Mail\Routing\DeliveryPlan $deliveryPlan): array
     {
         $connections = $this->connectionAvailabilityDecider->filterAvailable($this->connectionRepository->findActive());
         if ($connections === []) {
@@ -30,10 +30,10 @@ final readonly class ConnectionResolver
         }
         $healthScores = $this->connectionHealthScorer->score($connections);
         return match ($deliveryPlan->strategy) {
-            \OmniMail\Mail\Routing\RoutingStrategy::Single => $this->resolveSingleConnection(connections: $connections, healthScores: $healthScores, preferredConnectionId: $deliveryPlan->preferredConnectionId),
-            \OmniMail\Mail\Routing\RoutingStrategy::WeightedRandom => $this->orderConnections(connections: $connections, healthScores: $healthScores, preferredConnectionId: $deliveryPlan->preferredConnectionId, forcedPrimaryConnectionId: $deliveryPlan->preferredConnectionId ?? $this->weightedRandomSelector->select($connections, $healthScores)?->id),
-            \OmniMail\Mail\Routing\RoutingStrategy::RoundRobin => $this->orderConnections(connections: $connections, healthScores: $healthScores, preferredConnectionId: $deliveryPlan->preferredConnectionId, forcedPrimaryConnectionId: $deliveryPlan->preferredConnectionId ?? $this->weightedRoundRobinSelector->select($connections, $healthScores)?->id),
-            \OmniMail\Mail\Routing\RoutingStrategy::Failover => $this->orderConnections(connections: $connections, healthScores: $healthScores, preferredConnectionId: $deliveryPlan->preferredConnectionId),
+            \JooosiMail\Mail\Routing\RoutingStrategy::Single => $this->resolveSingleConnection(connections: $connections, healthScores: $healthScores, preferredConnectionId: $deliveryPlan->preferredConnectionId),
+            \JooosiMail\Mail\Routing\RoutingStrategy::WeightedRandom => $this->orderConnections(connections: $connections, healthScores: $healthScores, preferredConnectionId: $deliveryPlan->preferredConnectionId, forcedPrimaryConnectionId: $deliveryPlan->preferredConnectionId ?? $this->weightedRandomSelector->select($connections, $healthScores)?->id),
+            \JooosiMail\Mail\Routing\RoutingStrategy::RoundRobin => $this->orderConnections(connections: $connections, healthScores: $healthScores, preferredConnectionId: $deliveryPlan->preferredConnectionId, forcedPrimaryConnectionId: $deliveryPlan->preferredConnectionId ?? $this->weightedRoundRobinSelector->select($connections, $healthScores)?->id),
+            \JooosiMail\Mail\Routing\RoutingStrategy::Failover => $this->orderConnections(connections: $connections, healthScores: $healthScores, preferredConnectionId: $deliveryPlan->preferredConnectionId),
         };
     }
     /**

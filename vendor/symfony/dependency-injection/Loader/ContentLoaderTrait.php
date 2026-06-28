@@ -8,27 +8,27 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Loader;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Loader;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Alias;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\AbstractArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\BoundArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\EnvClosureArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\IteratorArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\ServiceClosureArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\ServiceLocatorArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\TaggedIteratorArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ChildDefinition;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Definition;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Reference;
-use OmniMailDeps\Symfony\Component\ExpressionLanguage\Expression;
-use OmniMailDeps\Symfony\Component\VarExporter\DeepCloner;
-use OmniMailDeps\Symfony\Component\Yaml\Tag\TaggedValue;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Alias;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\AbstractArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\BoundArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\EnvClosureArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\IteratorArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\ServiceClosureArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\ServiceLocatorArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\TaggedIteratorArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ChildDefinition;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Definition;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Reference;
+use JooosiMailDeps\Symfony\Component\ExpressionLanguage\Expression;
+use JooosiMailDeps\Symfony\Component\VarExporter\DeepCloner;
+use JooosiMailDeps\Symfony\Component\Yaml\Tag\TaggedValue;
 /**
  * @internal
  */

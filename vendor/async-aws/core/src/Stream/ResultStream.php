@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\AsyncAws\Core\Stream;
+namespace JooosiMailDeps\AsyncAws\Core\Stream;
 
 /**
  * Stream for a Result.

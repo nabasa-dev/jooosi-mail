@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\AbstractSQLiteDriver\Middleware;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\AbstractSQLiteDriver\Middleware;
 
-use OmniMailDeps\Doctrine\DBAL\Driver;
-use OmniMailDeps\Doctrine\DBAL\Driver\Connection;
-use OmniMailDeps\Doctrine\DBAL\Driver\Middleware;
-use OmniMailDeps\Doctrine\DBAL\Driver\Middleware\AbstractDriverMiddleware;
+use JooosiMailDeps\Doctrine\DBAL\Driver;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Connection;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Middleware;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Middleware\AbstractDriverMiddleware;
 use SensitiveParameter;
 final class EnableForeignKeys implements Middleware
 {

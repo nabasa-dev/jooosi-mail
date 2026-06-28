@@ -8,27 +8,27 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Dumper;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Dumper;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Alias;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\AbstractArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\ArgumentInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\EnvClosureArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\IteratorArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\ServiceClosureArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\ServiceLocatorArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\TaggedIteratorArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Definition;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\RuntimeException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Parameter;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Reference;
-use OmniMailDeps\Symfony\Component\ExpressionLanguage\Expression;
-use OmniMailDeps\Symfony\Component\Yaml\Dumper as YmlDumper;
-use OmniMailDeps\Symfony\Component\Yaml\Parser;
-use OmniMailDeps\Symfony\Component\Yaml\Tag\TaggedValue;
-use OmniMailDeps\Symfony\Component\Yaml\Yaml;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Alias;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\AbstractArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\ArgumentInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\EnvClosureArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\IteratorArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\ServiceClosureArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\ServiceLocatorArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\TaggedIteratorArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Definition;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Parameter;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Reference;
+use JooosiMailDeps\Symfony\Component\ExpressionLanguage\Expression;
+use JooosiMailDeps\Symfony\Component\Yaml\Dumper as YmlDumper;
+use JooosiMailDeps\Symfony\Component\Yaml\Parser;
+use JooosiMailDeps\Symfony\Component\Yaml\Tag\TaggedValue;
+use JooosiMailDeps\Symfony\Component\Yaml\Yaml;
 /**
  * YamlDumper dumps a service container as a YAML string.
  *

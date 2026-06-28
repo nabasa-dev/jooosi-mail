@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\ArrayParameters\Exception;
+namespace JooosiMailDeps\Doctrine\DBAL\ArrayParameters\Exception;
 
-use OmniMailDeps\Doctrine\DBAL\ArrayParameters\Exception;
+use JooosiMailDeps\Doctrine\DBAL\ArrayParameters\Exception;
 use LogicException;
 use function sprintf;
 class MissingNamedParameter extends LogicException implements Exception

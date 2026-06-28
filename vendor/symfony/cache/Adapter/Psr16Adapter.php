@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\Adapter;
+namespace JooosiMailDeps\Symfony\Component\Cache\Adapter;
 
-use OmniMailDeps\Psr\SimpleCache\CacheInterface;
-use OmniMailDeps\Symfony\Component\Cache\PruneableInterface;
-use OmniMailDeps\Symfony\Component\Cache\ResettableInterface;
-use OmniMailDeps\Symfony\Component\Cache\Traits\ProxyTrait;
+use JooosiMailDeps\Psr\SimpleCache\CacheInterface;
+use JooosiMailDeps\Symfony\Component\Cache\PruneableInterface;
+use JooosiMailDeps\Symfony\Component\Cache\ResettableInterface;
+use JooosiMailDeps\Symfony\Component\Cache\Traits\ProxyTrait;
 /**
  * Turns a PSR-16 cache into a PSR-6 one.
  *

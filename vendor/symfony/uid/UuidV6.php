@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Uid;
+namespace JooosiMailDeps\Symfony\Component\Uid;
 
-use OmniMailDeps\Symfony\Component\Uid\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Uid\Exception\InvalidArgumentException;
 /**
  * A v6 UUID is lexicographically sortable and contains a 60-bit timestamp and 62 extra unique bits.
  *

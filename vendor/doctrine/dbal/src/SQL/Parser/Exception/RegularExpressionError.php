@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\SQL\Parser\Exception;
+namespace JooosiMailDeps\Doctrine\DBAL\SQL\Parser\Exception;
 
-use OmniMailDeps\Doctrine\DBAL\SQL\Parser\Exception;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Parser\Exception;
 use RuntimeException;
 use function preg_last_error;
 use function preg_last_error_msg;

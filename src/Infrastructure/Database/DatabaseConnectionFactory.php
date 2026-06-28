@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Infrastructure\Database;
+namespace JooosiMail\Infrastructure\Database;
 
-use OmniMailDeps\Doctrine\DBAL\Connection;
-use OmniMailDeps\Doctrine\DBAL\DriverManager;
+use JooosiMailDeps\Doctrine\DBAL\Connection;
+use JooosiMailDeps\Doctrine\DBAL\DriverManager;
 /**
  * Creates a Doctrine DBAL connection from WordPress config.
  *

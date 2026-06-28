@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Sts\ValueObject;
+namespace JooosiMailDeps\AsyncAws\Core\Sts\ValueObject;
 
-use OmniMailDeps\AsyncAws\Core\Exception\InvalidArgument;
+use JooosiMailDeps\AsyncAws\Core\Exception\InvalidArgument;
 /**
  * The identifiers for the temporary security credentials that the operation returns.
  */

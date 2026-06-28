@@ -1,18 +1,18 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Tools\Console\Command;
+namespace JooosiMailDeps\Doctrine\DBAL\Tools\Console\Command;
 
-use OmniMailDeps\Doctrine\DBAL\Connection;
-use OmniMailDeps\Doctrine\DBAL\Exception;
-use OmniMailDeps\Doctrine\DBAL\Tools\Console\ConnectionProvider;
+use JooosiMailDeps\Doctrine\DBAL\Connection;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Tools\Console\ConnectionProvider;
 use RuntimeException;
-use OmniMailDeps\Symfony\Component\Console\Command\Command;
-use OmniMailDeps\Symfony\Component\Console\Input\InputArgument;
-use OmniMailDeps\Symfony\Component\Console\Input\InputInterface;
-use OmniMailDeps\Symfony\Component\Console\Input\InputOption;
-use OmniMailDeps\Symfony\Component\Console\Output\OutputInterface;
-use OmniMailDeps\Symfony\Component\Console\Style\SymfonyStyle;
+use JooosiMailDeps\Symfony\Component\Console\Command\Command;
+use JooosiMailDeps\Symfony\Component\Console\Input\InputArgument;
+use JooosiMailDeps\Symfony\Component\Console\Input\InputInterface;
+use JooosiMailDeps\Symfony\Component\Console\Input\InputOption;
+use JooosiMailDeps\Symfony\Component\Console\Output\OutputInterface;
+use JooosiMailDeps\Symfony\Component\Console\Style\SymfonyStyle;
 use function array_keys;
 use function assert;
 use function is_bool;

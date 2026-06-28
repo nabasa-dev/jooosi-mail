@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\PgSQL;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\PgSQL;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\AbstractPostgreSQLDriver;
+use JooosiMailDeps\Doctrine\DBAL\Driver\AbstractPostgreSQLDriver;
 use ErrorException;
 use SensitiveParameter;
 use function addslashes;

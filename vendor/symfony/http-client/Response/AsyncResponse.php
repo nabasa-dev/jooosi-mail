@@ -8,17 +8,17 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient\Response;
+namespace JooosiMailDeps\Symfony\Component\HttpClient\Response;
 
-use OmniMailDeps\Symfony\Component\HttpClient\Chunk\ErrorChunk;
-use OmniMailDeps\Symfony\Component\HttpClient\Chunk\LastChunk;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ChunkInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\ExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\HttpExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
+use JooosiMailDeps\Symfony\Component\HttpClient\Chunk\ErrorChunk;
+use JooosiMailDeps\Symfony\Component\HttpClient\Chunk\LastChunk;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ChunkInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\ExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\HttpExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
 /**
  * Provides a single extension point to process a response's content stream.
  *

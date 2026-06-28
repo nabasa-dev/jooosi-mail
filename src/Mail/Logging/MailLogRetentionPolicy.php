@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Logging;
+namespace JooosiMail\Mail\Logging;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\WordPress\OptionStore;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\WordPress\OptionStore;
 /**
  * Resolves email log retention settings.
  *

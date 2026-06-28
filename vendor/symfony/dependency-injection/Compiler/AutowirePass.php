@@ -8,24 +8,24 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Compiler;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler;
 
-use OmniMailDeps\Symfony\Component\Config\Resource\ClassExistenceResource;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\EnvClosureArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Attribute\Autowire;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Attribute\AutowireDecorated;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Attribute\AutowireInline;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Attribute\Lazy;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Attribute\Target;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Definition;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\AutowiringFailedException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\RuntimeException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Reference;
-use OmniMailDeps\Symfony\Component\DependencyInjection\TypedReference;
-use OmniMailDeps\Symfony\Component\VarExporter\ProxyHelper;
+use JooosiMailDeps\Symfony\Component\Config\Resource\ClassExistenceResource;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\EnvClosureArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute\Autowire;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute\AutowireDecorated;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute\AutowireInline;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute\Lazy;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute\Target;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Definition;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\AutowiringFailedException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Reference;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\TypedReference;
+use JooosiMailDeps\Symfony\Component\VarExporter\ProxyHelper;
 /**
  * Inspects existing service definitions and wires the autowired ones using the type hints of their classes.
  *

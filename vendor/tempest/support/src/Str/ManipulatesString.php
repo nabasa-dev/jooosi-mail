@@ -1,22 +1,22 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Str;
+namespace JooosiMailDeps\Tempest\Support\Str;
 
 use ArrayAccess;
 use Closure;
 use Countable;
 use RuntimeException;
 use Stringable;
-use OmniMailDeps\Tempest\Debug\Debug;
-use OmniMailDeps\Tempest\Intl;
-use OmniMailDeps\Tempest\Intl\Pluralizer\Pluralizer;
-use OmniMailDeps\Tempest\Support\Arr\ImmutableArray;
-use OmniMailDeps\Tempest\Support\Random;
-use OmniMailDeps\Tempest\Support\Regex;
-use function OmniMailDeps\Tempest\Support\arr;
-use function OmniMailDeps\Tempest\Support\Json\decode;
-use function OmniMailDeps\Tempest\Support\tap;
+use JooosiMailDeps\Tempest\Debug\Debug;
+use JooosiMailDeps\Tempest\Intl;
+use JooosiMailDeps\Tempest\Intl\Pluralizer\Pluralizer;
+use JooosiMailDeps\Tempest\Support\Arr\ImmutableArray;
+use JooosiMailDeps\Tempest\Support\Random;
+use JooosiMailDeps\Tempest\Support\Regex;
+use function JooosiMailDeps\Tempest\Support\arr;
+use function JooosiMailDeps\Tempest\Support\Json\decode;
+use function JooosiMailDeps\Tempest\Support\tap;
 /**
  * @internal
  */

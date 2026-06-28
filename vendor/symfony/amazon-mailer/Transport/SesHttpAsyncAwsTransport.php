@@ -8,19 +8,19 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Bridge\Amazon\Transport;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Bridge\Amazon\Transport;
 
-use OmniMailDeps\AsyncAws\Core\Exception\Http\HttpException;
-use OmniMailDeps\AsyncAws\Ses\Input\SendEmailRequest;
-use OmniMailDeps\AsyncAws\Ses\SesClient;
-use OmniMailDeps\AsyncAws\Ses\ValueObject\Destination;
-use OmniMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\HttpTransportException;
-use OmniMailDeps\Symfony\Component\Mailer\Header\MetadataHeader;
-use OmniMailDeps\Symfony\Component\Mailer\SentMessage;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\AbstractTransport;
-use OmniMailDeps\Symfony\Component\Mime\Message;
+use JooosiMailDeps\AsyncAws\Core\Exception\Http\HttpException;
+use JooosiMailDeps\AsyncAws\Ses\Input\SendEmailRequest;
+use JooosiMailDeps\AsyncAws\Ses\SesClient;
+use JooosiMailDeps\AsyncAws\Ses\ValueObject\Destination;
+use JooosiMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\HttpTransportException;
+use JooosiMailDeps\Symfony\Component\Mailer\Header\MetadataHeader;
+use JooosiMailDeps\Symfony\Component\Mailer\SentMessage;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\AbstractTransport;
+use JooosiMailDeps\Symfony\Component\Mime\Message;
 /**
  * @author Jérémy Derussé <jeremy@derusse.com>
  */

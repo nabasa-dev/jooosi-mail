@@ -8,22 +8,22 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Bridge\Infobip\Transport;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Bridge\Infobip\Transport;
 
-use OmniMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Envelope;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\HttpTransportException;
-use OmniMailDeps\Symfony\Component\Mailer\SentMessage;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\AbstractApiTransport;
-use OmniMailDeps\Symfony\Component\Mime\Address;
-use OmniMailDeps\Symfony\Component\Mime\Email;
-use OmniMailDeps\Symfony\Component\Mime\Part\DataPart;
-use OmniMailDeps\Symfony\Component\Mime\Part\Multipart\FormDataPart;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
+use JooosiMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Envelope;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\HttpTransportException;
+use JooosiMailDeps\Symfony\Component\Mailer\SentMessage;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\AbstractApiTransport;
+use JooosiMailDeps\Symfony\Component\Mime\Address;
+use JooosiMailDeps\Symfony\Component\Mime\Email;
+use JooosiMailDeps\Symfony\Component\Mime\Part\DataPart;
+use JooosiMailDeps\Symfony\Component\Mime\Part\Multipart\FormDataPart;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
 /**
  * @see https://www.infobip.com/docs/api#channels/email/send-email
  */

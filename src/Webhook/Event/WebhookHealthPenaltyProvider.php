@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Webhook\Event;
+namespace JooosiMail\Webhook\Event;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Routing\ConnectionHealthPenaltyProviderInterface;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Routing\ConnectionHealthPenaltyProviderInterface;
 /**
  * Converts webhook delivery feedback into routing health penalties.
  *
@@ -16,7 +16,7 @@ final readonly class WebhookHealthPenaltyProvider implements ConnectionHealthPen
     private const int HOURS = 24;
     private const int SAMPLE_SIZE = 20;
     private const int MAX_PENALTY = 45;
-    public function __construct(private \OmniMail\Webhook\Event\WebhookEventRepository $webhookEventRepository)
+    public function __construct(private \JooosiMail\Webhook\Event\WebhookEventRepository $webhookEventRepository)
     {
     }
     /**

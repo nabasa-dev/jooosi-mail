@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\PropertyAccess;
+namespace JooosiMailDeps\Symfony\Component\PropertyAccess;
 
-use OmniMailDeps\Symfony\Component\PropertyAccess\Exception\OutOfBoundsException;
+use JooosiMailDeps\Symfony\Component\PropertyAccess\Exception\OutOfBoundsException;
 /**
  * @author Bernhard Schussek <bschussek@gmail.com>
  */

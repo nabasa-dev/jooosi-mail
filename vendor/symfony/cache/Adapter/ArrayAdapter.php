@@ -8,17 +8,17 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\Adapter;
+namespace JooosiMailDeps\Symfony\Component\Cache\Adapter;
 
-use OmniMailDeps\Psr\Cache\CacheItemInterface;
-use OmniMailDeps\Psr\Clock\ClockInterface;
-use OmniMailDeps\Psr\Log\LoggerAwareInterface;
-use OmniMailDeps\Psr\Log\LoggerAwareTrait;
-use OmniMailDeps\Symfony\Component\Cache\CacheItem;
-use OmniMailDeps\Symfony\Component\Cache\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Cache\ResettableInterface;
-use OmniMailDeps\Symfony\Contracts\Cache\CacheInterface;
-use OmniMailDeps\Symfony\Contracts\Cache\NamespacedPoolInterface;
+use JooosiMailDeps\Psr\Cache\CacheItemInterface;
+use JooosiMailDeps\Psr\Clock\ClockInterface;
+use JooosiMailDeps\Psr\Log\LoggerAwareInterface;
+use JooosiMailDeps\Psr\Log\LoggerAwareTrait;
+use JooosiMailDeps\Symfony\Component\Cache\CacheItem;
+use JooosiMailDeps\Symfony\Component\Cache\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Cache\ResettableInterface;
+use JooosiMailDeps\Symfony\Contracts\Cache\CacheInterface;
+use JooosiMailDeps\Symfony\Contracts\Cache\NamespacedPoolInterface;
 /**
  * An in-memory cache storage.
  *

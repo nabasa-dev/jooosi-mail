@@ -1,13 +1,13 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\HttpClient;
+namespace JooosiMailDeps\AsyncAws\Core\HttpClient;
 
-use OmniMailDeps\AsyncAws\Core\AwsError\AwsErrorFactoryInterface;
-use OmniMailDeps\AsyncAws\Core\AwsError\ChainAwsErrorFactory;
-use OmniMailDeps\AsyncAws\Core\Exception\UnparsableResponse;
-use OmniMailDeps\Symfony\Component\HttpClient\Response\AsyncContext;
-use OmniMailDeps\Symfony\Component\HttpClient\Retry\GenericRetryStrategy;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
+use JooosiMailDeps\AsyncAws\Core\AwsError\AwsErrorFactoryInterface;
+use JooosiMailDeps\AsyncAws\Core\AwsError\ChainAwsErrorFactory;
+use JooosiMailDeps\AsyncAws\Core\Exception\UnparsableResponse;
+use JooosiMailDeps\Symfony\Component\HttpClient\Response\AsyncContext;
+use JooosiMailDeps\Symfony\Component\HttpClient\Retry\GenericRetryStrategy;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 /**
  * @author Jérémy Derussé <jeremy@derusse.com>
  */

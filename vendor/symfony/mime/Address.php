@@ -8,15 +8,15 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mime;
+namespace JooosiMailDeps\Symfony\Component\Mime;
 
-use OmniMailDeps\Egulias\EmailValidator\EmailValidator;
-use OmniMailDeps\Egulias\EmailValidator\Validation\MessageIDValidation;
-use OmniMailDeps\Egulias\EmailValidator\Validation\RFCValidation;
-use OmniMailDeps\Symfony\Component\Mime\Encoder\IdnAddressEncoder;
-use OmniMailDeps\Symfony\Component\Mime\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Mime\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\Mime\Exception\RfcComplianceException;
+use JooosiMailDeps\Egulias\EmailValidator\EmailValidator;
+use JooosiMailDeps\Egulias\EmailValidator\Validation\MessageIDValidation;
+use JooosiMailDeps\Egulias\EmailValidator\Validation\RFCValidation;
+use JooosiMailDeps\Symfony\Component\Mime\Encoder\IdnAddressEncoder;
+use JooosiMailDeps\Symfony\Component\Mime\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Mime\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\Mime\Exception\RfcComplianceException;
 /**
  * @author Fabien Potencier <fabien@symfony.com>
  */

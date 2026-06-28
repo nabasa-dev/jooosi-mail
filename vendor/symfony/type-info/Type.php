@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\TypeInfo;
+namespace JooosiMailDeps\Symfony\Component\TypeInfo;
 
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\CompositeTypeInterface;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\WrappingTypeInterface;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\CompositeTypeInterface;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\WrappingTypeInterface;
 /**
  * @author Mathias Arlaud <mathias.arlaud@gmail.com>
  * @author Baptiste Leduc <baptiste.leduc@gmail.com>

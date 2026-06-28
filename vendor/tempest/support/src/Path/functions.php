@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Path;
+namespace JooosiMailDeps\Tempest\Support\Path;
 
 use Stringable;
-use function OmniMailDeps\Tempest\Support\Regex\matches;
-use function OmniMailDeps\Tempest\Support\Str\ends_with;
-use function OmniMailDeps\Tempest\Support\Str\starts_with;
+use function JooosiMailDeps\Tempest\Support\Regex\matches;
+use function JooosiMailDeps\Tempest\Support\Str\ends_with;
+use function JooosiMailDeps\Tempest\Support\Str\starts_with;
 /**
  * Determines whether the given path is a relative path. The path is not checked against the filesystem.
  */

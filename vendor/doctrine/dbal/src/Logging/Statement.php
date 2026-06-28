@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Logging;
+namespace JooosiMailDeps\Doctrine\DBAL\Logging;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Middleware\AbstractStatementMiddleware;
-use OmniMailDeps\Doctrine\DBAL\Driver\Result as ResultInterface;
-use OmniMailDeps\Doctrine\DBAL\Driver\Statement as StatementInterface;
-use OmniMailDeps\Doctrine\DBAL\ParameterType;
-use OmniMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Middleware\AbstractStatementMiddleware;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Result as ResultInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Statement as StatementInterface;
+use JooosiMailDeps\Doctrine\DBAL\ParameterType;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
 final class Statement extends AbstractStatementMiddleware
 {
     /** @var array<int,mixed>|array<string,mixed> */

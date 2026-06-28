@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Webhook\Adapter;
+namespace JooosiMail\Webhook\Adapter;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Connection\Connection;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Connection\Connection;
 use Override;
 use WP_REST_Request;
 /**
@@ -15,7 +15,7 @@ use WP_REST_Request;
  * @since 0.1.0
  */
 #[Service]
-final class Smtp2goWebhookAdapter extends \OmniMail\Webhook\Adapter\AbstractWebhookAdapter
+final class Smtp2goWebhookAdapter extends \JooosiMail\Webhook\Adapter\AbstractWebhookAdapter
 {
     #[Override]
     public function getPriority(): int
@@ -44,7 +44,7 @@ final class Smtp2goWebhookAdapter extends \OmniMail\Webhook\Adapter\AbstractWebh
         if ($payload === []) {
             return parent::parse($request, $connection);
         }
-        $mailLogId = $this->extractMailLogId($payload) ?? $this->extractFirstInt($payload, ['x_omni_mail_mail_log_id', 'x_mail_log_id']);
+        $mailLogId = $this->extractMailLogId($payload) ?? $this->extractFirstInt($payload, ['x_jooosi_mail_mail_log_id', 'x_mail_log_id']);
         return [['mail_log_id' => $mailLogId, 'event_type' => $this->normalizeSmtp2goEvent((string) ($payload['event'] ?? 'received')), 'transport_message_id' => $this->extractFirstString($payload, ['email_id', 'message-id', 'message_id']), 'payload' => $payload, 'occurred_at' => $this->formatOccurredAt($payload['time'] ?? $payload['sendtime'] ?? null)]];
     }
     /**

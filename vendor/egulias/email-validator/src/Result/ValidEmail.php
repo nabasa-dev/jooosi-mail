@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Result;
+namespace JooosiMailDeps\Egulias\EmailValidator\Result;
 
 class ValidEmail implements Result
 {

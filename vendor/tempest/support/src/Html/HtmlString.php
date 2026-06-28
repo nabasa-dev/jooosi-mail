@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Html;
+namespace JooosiMailDeps\Tempest\Support\Html;
 
 use Stringable;
-use OmniMailDeps\Tempest\Support\Str\ImmutableString;
-use OmniMailDeps\Tempest\Support\Str\ManipulatesString;
-use OmniMailDeps\Tempest\Support\Str\MutableString;
-use OmniMailDeps\Tempest\Support\Str\StringInterface;
+use JooosiMailDeps\Tempest\Support\Str\ImmutableString;
+use JooosiMailDeps\Tempest\Support\Str\ManipulatesString;
+use JooosiMailDeps\Tempest\Support\Str\MutableString;
+use JooosiMailDeps\Tempest\Support\Str\StringInterface;
 /**
  * Represents an immutable, manipulable string that will not be escaped if injected into a view.
  */

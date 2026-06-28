@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mime\DependencyInjection;
+namespace JooosiMailDeps\Symfony\Component\Mime\DependencyInjection;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Reference;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Reference;
 /**
  * Registers custom mime types guessers.
  *

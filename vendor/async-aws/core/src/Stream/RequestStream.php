@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Stream;
+namespace JooosiMailDeps\AsyncAws\Core\Stream;
 
 /**
  * Provides method to convert a input into string or chunks.

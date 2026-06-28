@@ -21,12 +21,12 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\AsyncAws\\Ses\\": "src"
+            "JooosiMailDeps\\AsyncAws\\Ses\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "OmniMailDeps\\AsyncAws\\Ses\\Tests\\": "tests\/"
+            "JooosiMailDeps\\AsyncAws\\Ses\\Tests\\": "tests\/"
         }
     },
     "extra": {

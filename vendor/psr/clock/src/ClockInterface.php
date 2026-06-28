@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Psr\Clock;
+namespace JooosiMailDeps\Psr\Clock;
 
 use DateTimeImmutable;
 interface ClockInterface

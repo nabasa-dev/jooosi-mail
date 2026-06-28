@@ -1,27 +1,27 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Sts;
+namespace JooosiMailDeps\AsyncAws\Core\Sts;
 
-use OmniMailDeps\AsyncAws\Core\AbstractApi;
-use OmniMailDeps\AsyncAws\Core\AwsError\AwsErrorFactoryInterface;
-use OmniMailDeps\AsyncAws\Core\AwsError\XmlAwsErrorFactory;
-use OmniMailDeps\AsyncAws\Core\RequestContext;
-use OmniMailDeps\AsyncAws\Core\Sts\Exception\ExpiredTokenException;
-use OmniMailDeps\AsyncAws\Core\Sts\Exception\IDPCommunicationErrorException;
-use OmniMailDeps\AsyncAws\Core\Sts\Exception\IDPRejectedClaimException;
-use OmniMailDeps\AsyncAws\Core\Sts\Exception\InvalidIdentityTokenException;
-use OmniMailDeps\AsyncAws\Core\Sts\Exception\MalformedPolicyDocumentException;
-use OmniMailDeps\AsyncAws\Core\Sts\Exception\PackedPolicyTooLargeException;
-use OmniMailDeps\AsyncAws\Core\Sts\Exception\RegionDisabledException;
-use OmniMailDeps\AsyncAws\Core\Sts\Input\AssumeRoleRequest;
-use OmniMailDeps\AsyncAws\Core\Sts\Input\AssumeRoleWithWebIdentityRequest;
-use OmniMailDeps\AsyncAws\Core\Sts\Input\GetCallerIdentityRequest;
-use OmniMailDeps\AsyncAws\Core\Sts\Result\AssumeRoleResponse;
-use OmniMailDeps\AsyncAws\Core\Sts\Result\AssumeRoleWithWebIdentityResponse;
-use OmniMailDeps\AsyncAws\Core\Sts\Result\GetCallerIdentityResponse;
-use OmniMailDeps\AsyncAws\Core\Sts\ValueObject\PolicyDescriptorType;
-use OmniMailDeps\AsyncAws\Core\Sts\ValueObject\ProvidedContext;
-use OmniMailDeps\AsyncAws\Core\Sts\ValueObject\Tag;
+use JooosiMailDeps\AsyncAws\Core\AbstractApi;
+use JooosiMailDeps\AsyncAws\Core\AwsError\AwsErrorFactoryInterface;
+use JooosiMailDeps\AsyncAws\Core\AwsError\XmlAwsErrorFactory;
+use JooosiMailDeps\AsyncAws\Core\RequestContext;
+use JooosiMailDeps\AsyncAws\Core\Sts\Exception\ExpiredTokenException;
+use JooosiMailDeps\AsyncAws\Core\Sts\Exception\IDPCommunicationErrorException;
+use JooosiMailDeps\AsyncAws\Core\Sts\Exception\IDPRejectedClaimException;
+use JooosiMailDeps\AsyncAws\Core\Sts\Exception\InvalidIdentityTokenException;
+use JooosiMailDeps\AsyncAws\Core\Sts\Exception\MalformedPolicyDocumentException;
+use JooosiMailDeps\AsyncAws\Core\Sts\Exception\PackedPolicyTooLargeException;
+use JooosiMailDeps\AsyncAws\Core\Sts\Exception\RegionDisabledException;
+use JooosiMailDeps\AsyncAws\Core\Sts\Input\AssumeRoleRequest;
+use JooosiMailDeps\AsyncAws\Core\Sts\Input\AssumeRoleWithWebIdentityRequest;
+use JooosiMailDeps\AsyncAws\Core\Sts\Input\GetCallerIdentityRequest;
+use JooosiMailDeps\AsyncAws\Core\Sts\Result\AssumeRoleResponse;
+use JooosiMailDeps\AsyncAws\Core\Sts\Result\AssumeRoleWithWebIdentityResponse;
+use JooosiMailDeps\AsyncAws\Core\Sts\Result\GetCallerIdentityResponse;
+use JooosiMailDeps\AsyncAws\Core\Sts\ValueObject\PolicyDescriptorType;
+use JooosiMailDeps\AsyncAws\Core\Sts\ValueObject\ProvidedContext;
+use JooosiMailDeps\AsyncAws\Core\Sts\ValueObject\Tag;
 class StsClient extends AbstractApi
 {
     /**

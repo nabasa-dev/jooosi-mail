@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\Deprecations;
+namespace JooosiMailDeps\Doctrine\Deprecations;
 
-use OmniMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
 use function array_key_exists;
 use function array_reduce;
 use function assert;

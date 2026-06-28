@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\AsyncAws\Core\Credentials;
+namespace JooosiMailDeps\AsyncAws\Core\Credentials;
 
-use OmniMailDeps\AsyncAws\Core\Exception\RuntimeException;
+use JooosiMailDeps\AsyncAws\Core\Exception\RuntimeException;
 trait TokenFileLoader
 {
     /**

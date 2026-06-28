@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Name;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Name;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Name;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parser\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parser\Exception;
 /**
  * Parses a database object name.
  *

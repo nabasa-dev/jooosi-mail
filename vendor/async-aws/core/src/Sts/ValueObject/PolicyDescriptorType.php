@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Sts\ValueObject;
+namespace JooosiMailDeps\AsyncAws\Core\Sts\ValueObject;
 
 /**
  * A reference to the IAM managed policy that is passed as a session policy for a role session or a federated user

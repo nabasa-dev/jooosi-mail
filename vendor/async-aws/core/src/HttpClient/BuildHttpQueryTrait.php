@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\HttpClient;
+namespace JooosiMailDeps\AsyncAws\Core\HttpClient;
 
 /**
  * @author Jérémy Derussé <jeremy@derusse.com>

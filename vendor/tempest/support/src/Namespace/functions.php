@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Namespace;
+namespace JooosiMailDeps\Tempest\Support\Namespace;
 
 use Stringable;
-use OmniMailDeps\Tempest\Support\Arr;
-use OmniMailDeps\Tempest\Support\Path;
-use OmniMailDeps\Tempest\Support\Str;
-use OmniMailDeps\Tempest\Support\Str\ImmutableString;
+use JooosiMailDeps\Tempest\Support\Arr;
+use JooosiMailDeps\Tempest\Support\Path;
+use JooosiMailDeps\Tempest\Support\Str;
+use JooosiMailDeps\Tempest\Support\Str\ImmutableString;
 /**
  * Converts the given file system path to the equivalent PSR-4 fully-qualified class name. The `$root` is stripped from the namespace.
  *

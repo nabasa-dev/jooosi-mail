@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Discovery;
+namespace JooosiMailDeps\Tempest\Discovery;
 
-use OmniMailDeps\Psr\Cache\CacheItemPoolInterface;
+use JooosiMailDeps\Psr\Cache\CacheItemPoolInterface;
 use RuntimeException;
-use OmniMailDeps\Symfony\Component\Cache\Adapter\PhpFilesAdapter;
-use OmniMailDeps\Tempest\Support\Filesystem;
+use JooosiMailDeps\Symfony\Component\Cache\Adapter\PhpFilesAdapter;
+use JooosiMailDeps\Tempest\Support\Filesystem;
 use Throwable;
-use function OmniMailDeps\Tempest\internal_storage_path;
+use function JooosiMailDeps\Tempest\internal_storage_path;
 final class DiscoveryCache
 {
     public bool $enabled {

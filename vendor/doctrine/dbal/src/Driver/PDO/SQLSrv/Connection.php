@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\PDO\SQLSrv;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\PDO\SQLSrv;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Middleware\AbstractConnectionMiddleware;
-use OmniMailDeps\Doctrine\DBAL\Driver\PDO\Connection as PDOConnection;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Middleware\AbstractConnectionMiddleware;
+use JooosiMailDeps\Doctrine\DBAL\Driver\PDO\Connection as PDOConnection;
 use PDO;
 final class Connection extends AbstractConnectionMiddleware
 {

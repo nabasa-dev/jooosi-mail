@@ -1,20 +1,20 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Transport\Bridge\SendPulse\Transport;
+namespace JooosiMail\Mail\Transport\Bridge\SendPulse\Transport;
 
-use OmniMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Envelope;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\HttpTransportException;
-use OmniMailDeps\Symfony\Component\Mailer\Header\MetadataHeader;
-use OmniMailDeps\Symfony\Component\Mailer\Header\TagHeader;
-use OmniMailDeps\Symfony\Component\Mailer\SentMessage;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\AbstractApiTransport;
-use OmniMailDeps\Symfony\Component\Mime\Address;
-use OmniMailDeps\Symfony\Component\Mime\Email;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
+use JooosiMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Envelope;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\HttpTransportException;
+use JooosiMailDeps\Symfony\Component\Mailer\Header\MetadataHeader;
+use JooosiMailDeps\Symfony\Component\Mailer\Header\TagHeader;
+use JooosiMailDeps\Symfony\Component\Mailer\SentMessage;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\AbstractApiTransport;
+use JooosiMailDeps\Symfony\Component\Mime\Address;
+use JooosiMailDeps\Symfony\Component\Mime\Email;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
 use Throwable;
 /**
  * SendPulse API transport.

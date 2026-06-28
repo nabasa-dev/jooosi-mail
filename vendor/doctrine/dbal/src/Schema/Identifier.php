@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\GenericName;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parser\GenericNameParser;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parsers;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\GenericName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parser\GenericNameParser;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parsers;
 /**
  * An abstraction class for an asset identifier.
  *

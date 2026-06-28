@@ -8,7 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator;
 
 // For the phpdoc to remain compatible with the generation of per-app App class,
 // this file should have no "use" statements: all symbols referenced by

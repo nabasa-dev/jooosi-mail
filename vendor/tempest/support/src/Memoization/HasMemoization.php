@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Tempest\Support\Memoization;
+namespace JooosiMailDeps\Tempest\Support\Memoization;
 
 use Closure;
 trait HasMemoization

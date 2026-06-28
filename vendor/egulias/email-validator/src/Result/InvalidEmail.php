@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Result;
+namespace JooosiMailDeps\Egulias\EmailValidator\Result;
 
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\Reason;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\Reason;
 class InvalidEmail implements Result
 {
     /**

@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Psr\\Container\\": "src\/"
+            "JooosiMailDeps\\Psr\\Container\\": "src\/"
         }
     },
     "extra": {

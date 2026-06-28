@@ -1,16 +1,16 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\AsyncAws\Core\Credentials;
+namespace JooosiMailDeps\AsyncAws\Core\Credentials;
 
-use OmniMailDeps\AsyncAws\Core\Configuration;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Psr\Log\NullLogger;
-use OmniMailDeps\Symfony\Component\HttpClient\HttpClient;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\HttpExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\AsyncAws\Core\Configuration;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Psr\Log\NullLogger;
+use JooosiMailDeps\Symfony\Component\HttpClient\HttpClient;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\HttpExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
 /**
  * Provides Credentials for containers running in EKS with Pod Identity or ECS.
  *

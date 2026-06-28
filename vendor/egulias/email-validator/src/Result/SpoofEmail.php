@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Result;
+namespace JooosiMailDeps\Egulias\EmailValidator\Result;
 
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\SpoofEmail as ReasonSpoofEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\SpoofEmail as ReasonSpoofEmail;
 class SpoofEmail extends InvalidEmail
 {
     public function __construct()

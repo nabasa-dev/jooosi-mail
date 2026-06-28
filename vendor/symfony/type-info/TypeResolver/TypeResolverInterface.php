@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\TypeInfo\TypeResolver;
+namespace JooosiMailDeps\Symfony\Component\TypeInfo\TypeResolver;
 
-use OmniMailDeps\Symfony\Component\TypeInfo\Exception\UnsupportedException;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type;
-use OmniMailDeps\Symfony\Component\TypeInfo\TypeContext\TypeContext;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Exception\UnsupportedException;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type;
+use JooosiMailDeps\Symfony\Component\TypeInfo\TypeContext\TypeContext;
 /**
  * Resolves type for a given subject.
  *

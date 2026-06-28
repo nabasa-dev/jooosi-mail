@@ -1,19 +1,19 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Admin\Controller\Log;
+namespace JooosiMail\Admin\Controller\Log;
 
-use OmniMailDeps\Doctrine\DBAL\Connection as DbalConnection;
-use OmniMail\Admin\Controller\AdminRouteAuthorization;
-use OmniMail\Discovery\Attribute\Controller;
-use OmniMail\Discovery\Attribute\Route;
-use OmniMail\Infrastructure\Database\TableNameResolver;
-use OmniMail\Mail\Logging\MailAttemptRepository;
-use OmniMail\Queue\Failure\FailedMessageRepository;
-use OmniMail\Queue\Message\SendEmailMessage;
-use OmniMail\Queue\Query\QueueMessageQuery;
-use OmniMail\Webhook\Event\WebhookEventRepository;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Serialization\SerializerInterface;
+use JooosiMailDeps\Doctrine\DBAL\Connection as DbalConnection;
+use JooosiMail\Admin\Controller\AdminRouteAuthorization;
+use JooosiMail\Discovery\Attribute\Controller;
+use JooosiMail\Discovery\Attribute\Route;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Mail\Logging\MailAttemptRepository;
+use JooosiMail\Queue\Failure\FailedMessageRepository;
+use JooosiMail\Queue\Message\SendEmailMessage;
+use JooosiMail\Queue\Query\QueueMessageQuery;
+use JooosiMail\Webhook\Event\WebhookEventRepository;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Serialization\SerializerInterface;
 use Throwable;
 use WP_REST_Request;
 use WP_REST_Response;
@@ -22,7 +22,7 @@ use WP_REST_Response;
  *
  * @since 0.1.0
  */
-#[Controller(namespace: 'omni-mail/v1', prefix: 'admin/logs')]
+#[Controller(namespace: 'jooosi-mail/v1', prefix: 'admin/logs')]
 final readonly class OverviewController
 {
     /**

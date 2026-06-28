@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\AsyncAws\Core;
+namespace JooosiMailDeps\AsyncAws\Core;
 
-use OmniMailDeps\AsyncAws\Core\Exception\Http\HttpException;
-use OmniMailDeps\AsyncAws\Core\Exception\Http\NetworkException;
+use JooosiMailDeps\AsyncAws\Core\Exception\Http\HttpException;
+use JooosiMailDeps\AsyncAws\Core\Exception\Http\NetworkException;
 /**
  * Base class for all return values from a Api Client methods.
  * Example: `FooClient::bar(): Result`.

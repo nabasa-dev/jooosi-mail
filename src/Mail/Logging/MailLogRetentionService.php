@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Logging;
+namespace JooosiMail\Mail\Logging;
 
-use OmniMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\Service;
 /**
  * Applies email log deletion after terminal delivery and retention windows.
  *
@@ -12,7 +12,7 @@ use OmniMail\Discovery\Attribute\Service;
 #[Service]
 final readonly class MailLogRetentionService
 {
-    public function __construct(private \OmniMail\Mail\Logging\MailLogRetentionPolicy $retentionPolicy, private \OmniMail\Mail\Logging\MailLogRepository $mailLogRepository)
+    public function __construct(private \JooosiMail\Mail\Logging\MailLogRetentionPolicy $retentionPolicy, private \JooosiMail\Mail\Logging\MailLogRepository $mailLogRepository)
     {
     }
     /**

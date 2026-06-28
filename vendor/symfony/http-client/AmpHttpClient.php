@@ -8,24 +8,24 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient;
+namespace JooosiMailDeps\Symfony\Component\HttpClient;
 
-use OmniMailDeps\Amp\CancelledException;
-use OmniMailDeps\Amp\Http\Client\DelegateHttpClient;
-use OmniMailDeps\Amp\Http\Client\InterceptedHttpClient;
-use OmniMailDeps\Amp\Http\Client\PooledHttpClient;
-use OmniMailDeps\Amp\Http\Client\Request;
-use OmniMailDeps\Amp\Http\Tunnel\Http1TunnelConnector;
-use OmniMailDeps\Psr\Log\LoggerAwareInterface;
-use OmniMailDeps\Psr\Log\LoggerAwareTrait;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
-use OmniMailDeps\Symfony\Component\HttpClient\Internal\AmpClientState;
-use OmniMailDeps\Symfony\Component\HttpClient\Response\AmpResponse;
-use OmniMailDeps\Symfony\Component\HttpClient\Response\ResponseStream;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseStreamInterface;
-use OmniMailDeps\Symfony\Contracts\Service\ResetInterface;
+use JooosiMailDeps\Amp\CancelledException;
+use JooosiMailDeps\Amp\Http\Client\DelegateHttpClient;
+use JooosiMailDeps\Amp\Http\Client\InterceptedHttpClient;
+use JooosiMailDeps\Amp\Http\Client\PooledHttpClient;
+use JooosiMailDeps\Amp\Http\Client\Request;
+use JooosiMailDeps\Amp\Http\Tunnel\Http1TunnelConnector;
+use JooosiMailDeps\Psr\Log\LoggerAwareInterface;
+use JooosiMailDeps\Psr\Log\LoggerAwareTrait;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
+use JooosiMailDeps\Symfony\Component\HttpClient\Internal\AmpClientState;
+use JooosiMailDeps\Symfony\Component\HttpClient\Response\AmpResponse;
+use JooosiMailDeps\Symfony\Component\HttpClient\Response\ResponseStream;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseStreamInterface;
+use JooosiMailDeps\Symfony\Contracts\Service\ResetInterface;
 if (!interface_exists(DelegateHttpClient::class)) {
     throw new \LogicException('You cannot use "Symfony\Component\HttpClient\AmpHttpClient" as the "amphp/http-client" package is not installed. Try running "composer require amphp/http-client:^5".');
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\AwsError;
+namespace JooosiMailDeps\AsyncAws\Core\AwsError;
 
 final class AwsError
 {

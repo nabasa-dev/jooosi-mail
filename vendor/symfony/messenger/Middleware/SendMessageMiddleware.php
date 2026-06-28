@@ -8,18 +8,18 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Middleware;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Middleware;
 
-use OmniMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Psr\Log\LoggerAwareTrait;
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
-use OmniMailDeps\Symfony\Component\Messenger\Event\MessageSentToTransportsEvent;
-use OmniMailDeps\Symfony\Component\Messenger\Event\SendMessageToTransportsEvent;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\NoSenderForMessageException;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\FlushBatchHandlersStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\ReceivedStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\SentStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Sender\SendersLocatorInterface;
+use JooosiMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Psr\Log\LoggerAwareTrait;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Messenger\Event\MessageSentToTransportsEvent;
+use JooosiMailDeps\Symfony\Component\Messenger\Event\SendMessageToTransportsEvent;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\NoSenderForMessageException;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\FlushBatchHandlersStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\ReceivedStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\SentStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Sender\SendersLocatorInterface;
 /**
  * @author Samuel Roze <samuel.roze@gmail.com>
  * @author Tobias Schultze <http://tobion.de>

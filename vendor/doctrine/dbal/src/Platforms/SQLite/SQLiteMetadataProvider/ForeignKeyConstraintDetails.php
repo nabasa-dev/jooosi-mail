@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Platforms\SQLite\SQLiteMetadataProvider;
+namespace JooosiMailDeps\Doctrine\DBAL\Platforms\SQLite\SQLiteMetadataProvider;
 
 /**
  * Represents intermediate results of SQLite foreign key constraint introspection obtained by parsing the DDL of the

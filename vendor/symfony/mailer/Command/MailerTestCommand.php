@@ -8,16 +8,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Command;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Command;
 
-use OmniMailDeps\Symfony\Component\Console\Attribute\AsCommand;
-use OmniMailDeps\Symfony\Component\Console\Command\Command;
-use OmniMailDeps\Symfony\Component\Console\Input\InputArgument;
-use OmniMailDeps\Symfony\Component\Console\Input\InputInterface;
-use OmniMailDeps\Symfony\Component\Console\Input\InputOption;
-use OmniMailDeps\Symfony\Component\Console\Output\OutputInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
-use OmniMailDeps\Symfony\Component\Mime\Email;
+use JooosiMailDeps\Symfony\Component\Console\Attribute\AsCommand;
+use JooosiMailDeps\Symfony\Component\Console\Command\Command;
+use JooosiMailDeps\Symfony\Component\Console\Input\InputArgument;
+use JooosiMailDeps\Symfony\Component\Console\Input\InputInterface;
+use JooosiMailDeps\Symfony\Component\Console\Input\InputOption;
+use JooosiMailDeps\Symfony\Component\Console\Output\OutputInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
+use JooosiMailDeps\Symfony\Component\Mime\Email;
 /**
  * A console command to test Mailer transports.
  */

@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Exception;
+namespace JooosiMailDeps\Doctrine\DBAL\Exception;
 
-use OmniMailDeps\Doctrine\DBAL\Driver;
+use JooosiMailDeps\Doctrine\DBAL\Driver;
 use function sprintf;
 final class InvalidDriverClass extends InvalidArgumentException
 {

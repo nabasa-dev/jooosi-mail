@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Contracts\Cache;
+namespace JooosiMailDeps\Symfony\Contracts\Cache;
 
-use OmniMailDeps\Psr\Cache\CacheException;
-use OmniMailDeps\Psr\Cache\CacheItemInterface;
-use OmniMailDeps\Psr\Cache\InvalidArgumentException;
+use JooosiMailDeps\Psr\Cache\CacheException;
+use JooosiMailDeps\Psr\Cache\CacheItemInterface;
+use JooosiMailDeps\Psr\Cache\InvalidArgumentException;
 /**
  * Augments PSR-6's CacheItemInterface with support for tags and metadata.
  *

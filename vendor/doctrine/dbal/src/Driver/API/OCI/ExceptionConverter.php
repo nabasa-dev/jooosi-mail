@@ -1,26 +1,26 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\API\OCI;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\API\OCI;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\API\ExceptionConverter as ExceptionConverterInterface;
-use OmniMailDeps\Doctrine\DBAL\Driver\Exception;
-use OmniMailDeps\Doctrine\DBAL\Driver\OCI8\Exception\Error;
-use OmniMailDeps\Doctrine\DBAL\Driver\PDO\Exception as DriverPDOException;
-use OmniMailDeps\Doctrine\DBAL\Exception\ConnectionException;
-use OmniMailDeps\Doctrine\DBAL\Exception\DatabaseDoesNotExist;
-use OmniMailDeps\Doctrine\DBAL\Exception\DatabaseObjectNotFoundException;
-use OmniMailDeps\Doctrine\DBAL\Exception\DriverException;
-use OmniMailDeps\Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
-use OmniMailDeps\Doctrine\DBAL\Exception\InvalidFieldNameException;
-use OmniMailDeps\Doctrine\DBAL\Exception\NonUniqueFieldNameException;
-use OmniMailDeps\Doctrine\DBAL\Exception\NotNullConstraintViolationException;
-use OmniMailDeps\Doctrine\DBAL\Exception\SyntaxErrorException;
-use OmniMailDeps\Doctrine\DBAL\Exception\TableExistsException;
-use OmniMailDeps\Doctrine\DBAL\Exception\TableNotFoundException;
-use OmniMailDeps\Doctrine\DBAL\Exception\TransactionRolledBack;
-use OmniMailDeps\Doctrine\DBAL\Exception\UniqueConstraintViolationException;
-use OmniMailDeps\Doctrine\DBAL\Query;
+use JooosiMailDeps\Doctrine\DBAL\Driver\API\ExceptionConverter as ExceptionConverterInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Driver\OCI8\Exception\Error;
+use JooosiMailDeps\Doctrine\DBAL\Driver\PDO\Exception as DriverPDOException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\ConnectionException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\DatabaseDoesNotExist;
+use JooosiMailDeps\Doctrine\DBAL\Exception\DatabaseObjectNotFoundException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\DriverException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\InvalidFieldNameException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\NonUniqueFieldNameException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\NotNullConstraintViolationException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\SyntaxErrorException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\TableExistsException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\TableNotFoundException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\TransactionRolledBack;
+use JooosiMailDeps\Doctrine\DBAL\Exception\UniqueConstraintViolationException;
+use JooosiMailDeps\Doctrine\DBAL\Query;
 use function assert;
 use function count;
 use function explode;

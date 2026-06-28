@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Tempest\Discovery;
+namespace JooosiMailDeps\Tempest\Discovery;
 
 use Exception;
 final class DiscoveryCacheStrategyCouldNotBeDeterminedWithEnvironment extends Exception

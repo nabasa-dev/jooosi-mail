@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\SQL\Builder;
+namespace JooosiMailDeps\Doctrine\DBAL\SQL\Builder;
 
-use OmniMailDeps\Doctrine\DBAL\Exception;
-use OmniMailDeps\Doctrine\DBAL\Query\SelectQuery;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Query\SelectQuery;
 interface SelectSQLBuilder
 {
     /** @throws Exception */

@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\SQL\Builder;
+namespace JooosiMailDeps\Doctrine\DBAL\SQL\Builder;
 
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
-use OmniMailDeps\Doctrine\DBAL\Schema\Schema;
-use OmniMailDeps\Doctrine\DBAL\Schema\Sequence;
-use OmniMailDeps\Doctrine\DBAL\Schema\Table;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Schema;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Sequence;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Table;
 use function array_merge;
 final class CreateSchemaObjectsSQLBuilder
 {

@@ -8,13 +8,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Test\Middleware;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Test\Middleware;
 
-use OmniMailDeps\PHPUnit\Framework\TestCase;
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
-use OmniMailDeps\Symfony\Component\Messenger\Middleware\MiddlewareInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Middleware\StackInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Middleware\StackMiddleware;
+use JooosiMailDeps\PHPUnit\Framework\TestCase;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Messenger\Middleware\MiddlewareInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Middleware\StackInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Middleware\StackMiddleware;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  */

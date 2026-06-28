@@ -1,19 +1,19 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Transport\Bridge\SmtpCom\Transport;
+namespace JooosiMail\Mail\Transport\Bridge\SmtpCom\Transport;
 
 use JsonException;
-use OmniMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Envelope;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\HttpTransportException;
-use OmniMailDeps\Symfony\Component\Mailer\SentMessage;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\AbstractApiTransport;
-use OmniMailDeps\Symfony\Component\Mime\Email;
-use OmniMailDeps\Symfony\Component\Mime\Part\DataPart;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
+use JooosiMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Envelope;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\HttpTransportException;
+use JooosiMailDeps\Symfony\Component\Mailer\SentMessage;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\AbstractApiTransport;
+use JooosiMailDeps\Symfony\Component\Mime\Email;
+use JooosiMailDeps\Symfony\Component\Mime\Part\DataPart;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
 /**
  * SMTP.com API transport.
  *

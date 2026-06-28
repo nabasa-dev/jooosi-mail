@@ -1,18 +1,18 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Discovery;
+namespace JooosiMailDeps\Tempest\Discovery;
 
 use ArgumentCountError;
 use AssertionError;
 use Closure;
-use OmniMailDeps\Pest\Exceptions\InvalidPestCommand;
-use OmniMailDeps\Pest\Exceptions\TestAlreadyExist;
-use OmniMailDeps\Psr\Container\ContainerInterface;
-use OmniMailDeps\Psr\Container\NotFoundExceptionInterface;
-use OmniMailDeps\Tempest\Discovery\Exceptions\DiscoveryClassCouldNotBeResolved;
-use OmniMailDeps\Tempest\Reflection\ClassReflector;
-use OmniMailDeps\Tempest\Support\Filesystem;
+use JooosiMailDeps\Pest\Exceptions\InvalidPestCommand;
+use JooosiMailDeps\Pest\Exceptions\TestAlreadyExist;
+use JooosiMailDeps\Psr\Container\ContainerInterface;
+use JooosiMailDeps\Psr\Container\NotFoundExceptionInterface;
+use JooosiMailDeps\Tempest\Discovery\Exceptions\DiscoveryClassCouldNotBeResolved;
+use JooosiMailDeps\Tempest\Reflection\ClassReflector;
+use JooosiMailDeps\Tempest\Support\Filesystem;
 use Throwable;
 final class BootDiscovery
 {

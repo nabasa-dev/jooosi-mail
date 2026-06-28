@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Bridge\Mailomat\Transport;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Bridge\Mailomat\Transport;
 
-use OmniMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Smtp\EsmtpTransport;
+use JooosiMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Smtp\EsmtpTransport;
 final class MailomatSmtpTransport extends EsmtpTransport
 {
     public function __construct(

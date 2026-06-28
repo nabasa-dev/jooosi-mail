@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Test\Constraint;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Test\Constraint;
 
-use OmniMailDeps\PHPUnit\Framework\Constraint\Constraint;
-use OmniMailDeps\Symfony\Component\Mailer\Event\MessageEvent;
+use JooosiMailDeps\PHPUnit\Framework\Constraint\Constraint;
+use JooosiMailDeps\Symfony\Component\Mailer\Event\MessageEvent;
 final class EmailIsQueued extends Constraint
 {
     public function toString(): string

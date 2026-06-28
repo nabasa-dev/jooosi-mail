@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Name;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Name;
 
 use function strtolower;
 use function strtoupper;

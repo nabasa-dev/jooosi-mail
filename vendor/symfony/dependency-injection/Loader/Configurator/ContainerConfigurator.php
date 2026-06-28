@@ -8,20 +8,20 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator;
 
-use OmniMailDeps\Symfony\Component\Config\Loader\ParamConfigurator;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\AbstractArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\IteratorArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\ServiceLocatorArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\TaggedIteratorArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Definition;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\UndefinedExtensionHandler;
-use OmniMailDeps\Symfony\Component\ExpressionLanguage\Expression;
+use JooosiMailDeps\Symfony\Component\Config\Loader\ParamConfigurator;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\AbstractArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\IteratorArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\ServiceLocatorArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\TaggedIteratorArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Definition;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\UndefinedExtensionHandler;
+use JooosiMailDeps\Symfony\Component\ExpressionLanguage\Expression;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  */

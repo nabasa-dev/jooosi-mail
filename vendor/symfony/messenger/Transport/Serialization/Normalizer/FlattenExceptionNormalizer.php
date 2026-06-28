@@ -8,13 +8,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Transport\Serialization\Normalizer;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Transport\Serialization\Normalizer;
 
-use OmniMailDeps\Symfony\Component\ErrorHandler\Exception\FlattenException;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Serialization\Serializer;
-use OmniMailDeps\Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
-use OmniMailDeps\Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
-use OmniMailDeps\Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use JooosiMailDeps\Symfony\Component\ErrorHandler\Exception\FlattenException;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Serialization\Serializer;
+use JooosiMailDeps\Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
+use JooosiMailDeps\Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
+use JooosiMailDeps\Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 /**
  * This normalizer is only used in Debug/Dev/Messenger contexts.
  *

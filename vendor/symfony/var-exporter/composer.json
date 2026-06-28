@@ -37,7 +37,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Symfony\\Component\\VarExporter\\": ""
+            "JooosiMailDeps\\Symfony\\Component\\VarExporter\\": ""
         },
         "exclude-from-classmap": [
             "\/Tests\/"

@@ -55,7 +55,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Symfony\\Component\\Cache\\": ""
+            "JooosiMailDeps\\Symfony\\Component\\Cache\\": ""
         },
         "classmap": [
             "Traits\/ValueWrapper.php"

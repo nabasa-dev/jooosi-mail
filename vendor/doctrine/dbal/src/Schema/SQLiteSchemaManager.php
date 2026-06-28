@@ -1,15 +1,15 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema;
 
-use OmniMailDeps\Doctrine\DBAL\Exception;
-use OmniMailDeps\Doctrine\DBAL\Platforms\SQLite;
-use OmniMailDeps\Doctrine\DBAL\Platforms\SQLitePlatform;
-use OmniMailDeps\Doctrine\DBAL\Result;
-use OmniMailDeps\Doctrine\DBAL\Types\Type;
-use OmniMailDeps\Doctrine\DBAL\Types\Types;
-use OmniMailDeps\Doctrine\Deprecations\Deprecation;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\SQLite;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\SQLitePlatform;
+use JooosiMailDeps\Doctrine\DBAL\Result;
+use JooosiMailDeps\Doctrine\DBAL\Types\Type;
+use JooosiMailDeps\Doctrine\DBAL\Types\Types;
+use JooosiMailDeps\Doctrine\Deprecations\Deprecation;
 use function array_change_key_case;
 use function array_column;
 use function array_map;

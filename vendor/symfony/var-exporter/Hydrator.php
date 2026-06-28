@@ -8,7 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\VarExporter;
+namespace JooosiMailDeps\Symfony\Component\VarExporter;
 
 trigger_deprecation('symfony/var-exporter', '8.1', 'The "%s" class is deprecated, use "deepclone_hydrate()" from the deepclone extension instead.', Hydrator::class);
 /**
@@ -77,7 +77,7 @@ final class Hydrator
             }
         }
         if ($mangledVars) {
-            deepclone_hydrate($instance, $mangledVars, \OmniMailDeps\DEEPCLONE_HYDRATE_PRESERVE_REFS);
+            deepclone_hydrate($instance, $mangledVars, \JooosiMailDeps\DEEPCLONE_HYDRATE_PRESERVE_REFS);
         }
         return $instance;
     }

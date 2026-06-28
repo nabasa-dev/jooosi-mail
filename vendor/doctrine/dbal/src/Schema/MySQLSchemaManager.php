@@ -1,22 +1,22 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema;
 
-use OmniMailDeps\Doctrine\DBAL\Exception;
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractMySQLPlatform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\MariaDBPlatform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\MySQL;
-use OmniMailDeps\Doctrine\DBAL\Platforms\MySQL\CharsetMetadataProvider\CachingCharsetMetadataProvider;
-use OmniMailDeps\Doctrine\DBAL\Platforms\MySQL\CharsetMetadataProvider\ConnectionCharsetMetadataProvider;
-use OmniMailDeps\Doctrine\DBAL\Platforms\MySQL\CollationMetadataProvider\CachingCollationMetadataProvider;
-use OmniMailDeps\Doctrine\DBAL\Platforms\MySQL\CollationMetadataProvider\ConnectionCollationMetadataProvider;
-use OmniMailDeps\Doctrine\DBAL\Platforms\MySQL\DefaultTableOptions;
-use OmniMailDeps\Doctrine\DBAL\Result;
-use OmniMailDeps\Doctrine\DBAL\Schema\DefaultExpression\CurrentDate;
-use OmniMailDeps\Doctrine\DBAL\Schema\DefaultExpression\CurrentTime;
-use OmniMailDeps\Doctrine\DBAL\Schema\DefaultExpression\CurrentTimestamp;
-use OmniMailDeps\Doctrine\DBAL\Types\Type;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractMySQLPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\MariaDBPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\MySQL;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\MySQL\CharsetMetadataProvider\CachingCharsetMetadataProvider;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\MySQL\CharsetMetadataProvider\ConnectionCharsetMetadataProvider;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\MySQL\CollationMetadataProvider\CachingCollationMetadataProvider;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\MySQL\CollationMetadataProvider\ConnectionCollationMetadataProvider;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\MySQL\DefaultTableOptions;
+use JooosiMailDeps\Doctrine\DBAL\Result;
+use JooosiMailDeps\Doctrine\DBAL\Schema\DefaultExpression\CurrentDate;
+use JooosiMailDeps\Doctrine\DBAL\Schema\DefaultExpression\CurrentTime;
+use JooosiMailDeps\Doctrine\DBAL\Schema\DefaultExpression\CurrentTimestamp;
+use JooosiMailDeps\Doctrine\DBAL\Types\Type;
 use function array_change_key_case;
 use function array_map;
 use function assert;

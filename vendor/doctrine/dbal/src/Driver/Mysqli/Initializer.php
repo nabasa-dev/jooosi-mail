@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\Mysqli;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\Mysqli;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Exception;
 use mysqli;
 interface Initializer
 {

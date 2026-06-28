@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Bridge\Postmark\Event;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Bridge\Postmark\Event;
 
-use OmniMailDeps\Symfony\Component\Mime\Header\Headers;
+use JooosiMailDeps\Symfony\Component\Mime\Header\Headers;
 class PostmarkDeliveryEvent
 {
     public function __construct(private readonly string $message, private readonly int $errorCode, private readonly Headers $headers)

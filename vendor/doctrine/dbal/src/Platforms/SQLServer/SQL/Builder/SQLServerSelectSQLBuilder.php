@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Platforms\SQLServer\SQL\Builder;
+namespace JooosiMailDeps\Doctrine\DBAL\Platforms\SQLServer\SQL\Builder;
 
-use OmniMailDeps\Doctrine\DBAL\Platforms\SQLServerPlatform;
-use OmniMailDeps\Doctrine\DBAL\Query\ForUpdate\ConflictResolutionMode;
-use OmniMailDeps\Doctrine\DBAL\Query\SelectQuery;
-use OmniMailDeps\Doctrine\DBAL\SQL\Builder\SelectSQLBuilder;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\SQLServerPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Query\ForUpdate\ConflictResolutionMode;
+use JooosiMailDeps\Doctrine\DBAL\Query\SelectQuery;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Builder\SelectSQLBuilder;
 use function count;
 use function implode;
 final class SQLServerSelectSQLBuilder implements SelectSQLBuilder

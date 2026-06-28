@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Ses\ValueObject;
+namespace JooosiMailDeps\AsyncAws\Ses\ValueObject;
 
 /**
  * An object that defines the entire content of the email, including the message headers, body content, and attachments.

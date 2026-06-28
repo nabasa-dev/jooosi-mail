@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\Traits;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\Traits;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\BoundArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\DefaultsConfigurator;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\InstanceofConfigurator;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\BoundArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\DefaultsConfigurator;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\InstanceofConfigurator;
 trait BindTrait
 {
     /**

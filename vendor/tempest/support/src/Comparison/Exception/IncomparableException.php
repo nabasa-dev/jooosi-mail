@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Comparison\Exception;
+namespace JooosiMailDeps\Tempest\Support\Comparison\Exception;
 
 use InvalidArgumentException as PhpInvalidArgumentException;
 use function get_debug_type;

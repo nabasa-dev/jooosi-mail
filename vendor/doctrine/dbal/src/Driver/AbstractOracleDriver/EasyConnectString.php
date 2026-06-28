@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\AbstractOracleDriver;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\AbstractOracleDriver;
 
-use OmniMailDeps\Doctrine\Deprecations\Deprecation;
+use JooosiMailDeps\Doctrine\Deprecations\Deprecation;
 use function implode;
 use function is_array;
 use function sprintf;

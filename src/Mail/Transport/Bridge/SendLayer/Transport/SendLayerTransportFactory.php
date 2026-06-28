@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Transport\Bridge\SendLayer\Transport;
+namespace JooosiMail\Mail\Transport\Bridge\SendLayer\Transport;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Discovery\Attribute\TransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\AbstractTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Dsn;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\TransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\AbstractTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Dsn;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
 #[Service]
 #[TransportFactory]
 final class SendLayerTransportFactory extends AbstractTransportFactory
@@ -20,8 +20,8 @@ final class SendLayerTransportFactory extends AbstractTransportFactory
         $host = $dsn->getHost() === 'default' ? null : $dsn->getHost();
         $port = $dsn->getPort();
         return match ($scheme) {
-            'sendlayer+api' => (new \OmniMail\Mail\Transport\Bridge\SendLayer\Transport\SendLayerApiTransport($user, $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
-            'sendlayer+smtp', 'sendlayer+smtps' => new \OmniMail\Mail\Transport\Bridge\SendLayer\Transport\SendLayerSmtpTransport($this->getUser($dsn), $this->getPassword($dsn), $this->dispatcher, $this->logger),
+            'sendlayer+api' => (new \JooosiMail\Mail\Transport\Bridge\SendLayer\Transport\SendLayerApiTransport($user, $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
+            'sendlayer+smtp', 'sendlayer+smtps' => new \JooosiMail\Mail\Transport\Bridge\SendLayer\Transport\SendLayerSmtpTransport($this->getUser($dsn), $this->getPassword($dsn), $this->dispatcher, $this->logger),
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => throw new UnsupportedSchemeException($dsn, 'sendlayer', $this->getSupportedSchemes()),
         };

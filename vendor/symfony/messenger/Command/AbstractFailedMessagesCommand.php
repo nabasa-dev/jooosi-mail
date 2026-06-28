@@ -8,33 +8,33 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Command;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Command;
 
-use OmniMailDeps\Symfony\Component\Console\Command\Command;
-use OmniMailDeps\Symfony\Component\Console\Completion\CompletionInput;
-use OmniMailDeps\Symfony\Component\Console\Completion\CompletionSuggestions;
-use OmniMailDeps\Symfony\Component\Console\Helper\Dumper;
-use OmniMailDeps\Symfony\Component\Console\Question\ChoiceQuestion;
-use OmniMailDeps\Symfony\Component\Console\Style\SymfonyStyle;
-use OmniMailDeps\Symfony\Component\ErrorHandler\Exception\FlattenException;
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\MessageDecodingFailedException;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\ErrorDetailsStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\MessageDecodingFailedStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\RedeliveryStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\SentToFailureTransportStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\TransportMessageIdStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Receiver\ListableReceiverInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Receiver\MessageCountAwareInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Receiver\ReceiverInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Serialization\PhpSerializer;
-use OmniMailDeps\Symfony\Component\VarDumper\Caster\Caster;
-use OmniMailDeps\Symfony\Component\VarDumper\Caster\TraceStub;
-use OmniMailDeps\Symfony\Component\VarDumper\Cloner\ClonerInterface;
-use OmniMailDeps\Symfony\Component\VarDumper\Cloner\Stub;
-use OmniMailDeps\Symfony\Component\VarDumper\Cloner\VarCloner;
-use OmniMailDeps\Symfony\Contracts\Service\ServiceProviderInterface;
+use JooosiMailDeps\Symfony\Component\Console\Command\Command;
+use JooosiMailDeps\Symfony\Component\Console\Completion\CompletionInput;
+use JooosiMailDeps\Symfony\Component\Console\Completion\CompletionSuggestions;
+use JooosiMailDeps\Symfony\Component\Console\Helper\Dumper;
+use JooosiMailDeps\Symfony\Component\Console\Question\ChoiceQuestion;
+use JooosiMailDeps\Symfony\Component\Console\Style\SymfonyStyle;
+use JooosiMailDeps\Symfony\Component\ErrorHandler\Exception\FlattenException;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\MessageDecodingFailedException;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\ErrorDetailsStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\MessageDecodingFailedStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\RedeliveryStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\SentToFailureTransportStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\TransportMessageIdStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Receiver\ListableReceiverInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Receiver\MessageCountAwareInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Receiver\ReceiverInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Serialization\PhpSerializer;
+use JooosiMailDeps\Symfony\Component\VarDumper\Caster\Caster;
+use JooosiMailDeps\Symfony\Component\VarDumper\Caster\TraceStub;
+use JooosiMailDeps\Symfony\Component\VarDumper\Cloner\ClonerInterface;
+use JooosiMailDeps\Symfony\Component\VarDumper\Cloner\Stub;
+use JooosiMailDeps\Symfony\Component\VarDumper\Cloner\VarCloner;
+use JooosiMailDeps\Symfony\Contracts\Service\ServiceProviderInterface;
 /**
  * @author Ryan Weaver <ryan@symfonycasts.com>
  *

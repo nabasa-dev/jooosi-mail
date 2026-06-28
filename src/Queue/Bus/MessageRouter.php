@@ -1,18 +1,18 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Queue\Bus;
+namespace JooosiMail\Queue\Bus;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Queue\Message\SendEmailMessage;
-use OmniMail\Queue\Transport\DatabaseTransport;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Queue\Message\SendEmailMessage;
+use JooosiMail\Queue\Transport\DatabaseTransport;
 use Override;
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\TransportNamesStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Sender\SenderInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Sender\SendersLocatorInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\TransportNamesStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Sender\SenderInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Sender\SendersLocatorInterface;
 /**
- * Routes async messages to the Omni Mail database transport.
+ * Routes async messages to the Jooosi Mail database transport.
  *
  * @since 0.1.0
  */

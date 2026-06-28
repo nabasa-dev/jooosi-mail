@@ -73,12 +73,12 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Doctrine\\DBAL\\": "src"
+            "JooosiMailDeps\\Doctrine\\DBAL\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "OmniMailDeps\\Doctrine\\DBAL\\Tests\\": "tests"
+            "JooosiMailDeps\\Doctrine\\DBAL\\Tests\\": "tests"
         }
     },
     "scripts": {

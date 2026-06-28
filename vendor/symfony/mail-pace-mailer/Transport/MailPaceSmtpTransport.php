@@ -8,16 +8,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Bridge\MailPace\Transport;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Bridge\MailPace\Transport;
 
-use OmniMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Envelope;
-use OmniMailDeps\Symfony\Component\Mailer\Header\TagHeader;
-use OmniMailDeps\Symfony\Component\Mailer\SentMessage;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Smtp\EsmtpTransport;
-use OmniMailDeps\Symfony\Component\Mime\Message;
-use OmniMailDeps\Symfony\Component\Mime\RawMessage;
+use JooosiMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Envelope;
+use JooosiMailDeps\Symfony\Component\Mailer\Header\TagHeader;
+use JooosiMailDeps\Symfony\Component\Mailer\SentMessage;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Smtp\EsmtpTransport;
+use JooosiMailDeps\Symfony\Component\Mime\Message;
+use JooosiMailDeps\Symfony\Component\Mime\RawMessage;
 /**
  * @author Paul Oms <support@mailpace.com>
  */

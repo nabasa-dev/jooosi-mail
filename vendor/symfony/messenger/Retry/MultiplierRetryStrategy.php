@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Retry;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Retry;
 
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\RedeliveryStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\RedeliveryStamp;
 /**
  * A retry strategy with a constant or exponential retry delay.
  *

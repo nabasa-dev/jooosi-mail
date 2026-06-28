@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\Middleware;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\Middleware;
 
-use OmniMailDeps\Doctrine\DBAL\Driver;
-use OmniMailDeps\Doctrine\DBAL\Driver\API\ExceptionConverter;
-use OmniMailDeps\Doctrine\DBAL\Driver\Connection as DriverConnection;
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
-use OmniMailDeps\Doctrine\DBAL\ServerVersionProvider;
+use JooosiMailDeps\Doctrine\DBAL\Driver;
+use JooosiMailDeps\Doctrine\DBAL\Driver\API\ExceptionConverter;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Connection as DriverConnection;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
+use JooosiMailDeps\Doctrine\DBAL\ServerVersionProvider;
 use SensitiveParameter;
 abstract class AbstractDriverMiddleware implements Driver
 {

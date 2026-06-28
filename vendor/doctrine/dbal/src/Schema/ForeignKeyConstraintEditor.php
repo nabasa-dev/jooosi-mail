@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\InvalidForeignKeyConstraintDefinition;
-use OmniMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint\Deferrability;
-use OmniMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint\MatchType;
-use OmniMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint\ReferentialAction;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\InvalidForeignKeyConstraintDefinition;
+use JooosiMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint\Deferrability;
+use JooosiMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint\MatchType;
+use JooosiMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint\ReferentialAction;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
 use function array_map;
 use function array_merge;
 use function array_values;

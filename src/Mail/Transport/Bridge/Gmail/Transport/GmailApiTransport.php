@@ -1,20 +1,20 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Transport\Bridge\Gmail\Transport;
+namespace JooosiMail\Mail\Transport\Bridge\Gmail\Transport;
 
-use OmniMail\Mail\Transport\Bridge\Gmail\GmailTokenManager;
-use OmniMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Envelope;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\HttpTransportException;
-use OmniMailDeps\Symfony\Component\Mailer\SentMessage;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\AbstractApiTransport;
-use OmniMailDeps\Symfony\Component\Mime\Email;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
+use JooosiMail\Mail\Transport\Bridge\Gmail\GmailTokenManager;
+use JooosiMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Envelope;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\HttpTransportException;
+use JooosiMailDeps\Symfony\Component\Mailer\SentMessage;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\AbstractApiTransport;
+use JooosiMailDeps\Symfony\Component\Mime\Email;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
 /**
  * Gmail API transport backed by service-account OAuth.
  *

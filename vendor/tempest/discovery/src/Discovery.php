@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Discovery;
+namespace JooosiMailDeps\Tempest\Discovery;
 
-use OmniMailDeps\Tempest\Reflection\ClassReflector;
+use JooosiMailDeps\Tempest\Reflection\ClassReflector;
 interface Discovery
 {
     public function discover(DiscoveryLocation $location, ClassReflector $class): void;

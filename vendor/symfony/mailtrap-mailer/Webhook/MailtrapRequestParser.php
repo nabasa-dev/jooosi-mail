@@ -8,18 +8,18 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Bridge\Mailtrap\Webhook;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Bridge\Mailtrap\Webhook;
 
-use OmniMailDeps\Symfony\Component\HttpFoundation\ChainRequestMatcher;
-use OmniMailDeps\Symfony\Component\HttpFoundation\Request;
-use OmniMailDeps\Symfony\Component\HttpFoundation\RequestMatcher\IsJsonRequestMatcher;
-use OmniMailDeps\Symfony\Component\HttpFoundation\RequestMatcher\MethodRequestMatcher;
-use OmniMailDeps\Symfony\Component\HttpFoundation\RequestMatcherInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\Mailtrap\RemoteEvent\MailtrapPayloadConverter;
-use OmniMailDeps\Symfony\Component\RemoteEvent\Exception\ParseException;
-use OmniMailDeps\Symfony\Component\RemoteEvent\RemoteEvent;
-use OmniMailDeps\Symfony\Component\Webhook\Client\AbstractRequestParser;
-use OmniMailDeps\Symfony\Component\Webhook\Exception\RejectWebhookException;
+use JooosiMailDeps\Symfony\Component\HttpFoundation\ChainRequestMatcher;
+use JooosiMailDeps\Symfony\Component\HttpFoundation\Request;
+use JooosiMailDeps\Symfony\Component\HttpFoundation\RequestMatcher\IsJsonRequestMatcher;
+use JooosiMailDeps\Symfony\Component\HttpFoundation\RequestMatcher\MethodRequestMatcher;
+use JooosiMailDeps\Symfony\Component\HttpFoundation\RequestMatcherInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\Mailtrap\RemoteEvent\MailtrapPayloadConverter;
+use JooosiMailDeps\Symfony\Component\RemoteEvent\Exception\ParseException;
+use JooosiMailDeps\Symfony\Component\RemoteEvent\RemoteEvent;
+use JooosiMailDeps\Symfony\Component\Webhook\Client\AbstractRequestParser;
+use JooosiMailDeps\Symfony\Component\Webhook\Exception\RejectWebhookException;
 /**
  * @author Kevin Bond <kevinbond@gmail.com>
  */

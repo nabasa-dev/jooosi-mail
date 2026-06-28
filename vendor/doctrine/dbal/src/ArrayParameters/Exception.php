@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\ArrayParameters;
+namespace JooosiMailDeps\Doctrine\DBAL\ArrayParameters;
 
 use Throwable;
 /** @internal */

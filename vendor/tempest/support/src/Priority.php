@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Tempest\Support;
+namespace JooosiMailDeps\Tempest\Support;
 
 use Attribute;
 #[Attribute(Attribute::TARGET_CLASS)]

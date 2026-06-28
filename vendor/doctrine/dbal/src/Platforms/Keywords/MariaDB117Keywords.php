@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Platforms\Keywords;
+namespace JooosiMailDeps\Doctrine\DBAL\Platforms\Keywords;
 
 use function array_merge;
 /** @deprecated */

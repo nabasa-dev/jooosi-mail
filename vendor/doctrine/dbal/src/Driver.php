@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL;
+namespace JooosiMailDeps\Doctrine\DBAL;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\API\ExceptionConverter;
-use OmniMailDeps\Doctrine\DBAL\Driver\Connection as DriverConnection;
-use OmniMailDeps\Doctrine\DBAL\Driver\Exception;
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Exception\PlatformException;
+use JooosiMailDeps\Doctrine\DBAL\Driver\API\ExceptionConverter;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Connection as DriverConnection;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Exception\PlatformException;
 use SensitiveParameter;
 /**
  * Driver interface.

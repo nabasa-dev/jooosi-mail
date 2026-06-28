@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Bootstrap;
+namespace JooosiMail\Bootstrap;
 
 /**
- * Runtime filesystem paths for Omni Mail.
+ * Runtime filesystem paths for Jooosi Mail.
  *
  * @since 0.1.0
  */

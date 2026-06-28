@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Definition;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
-use OmniMailDeps\Symfony\Component\VarExporter\DeepCloner;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Definition;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
+use JooosiMailDeps\Symfony\Component\VarExporter\DeepCloner;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  */

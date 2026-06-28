@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Scaleway\\": ""
+            "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Scaleway\\": ""
         },
         "exclude-from-classmap": [
             "\/Tests\/"

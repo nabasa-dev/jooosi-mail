@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\PgSQL;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\PgSQL;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\PgSQL\Exception\UnknownParameter;
-use OmniMailDeps\Doctrine\DBAL\Driver\Statement as StatementInterface;
-use OmniMailDeps\Doctrine\DBAL\ParameterType;
+use JooosiMailDeps\Doctrine\DBAL\Driver\PgSQL\Exception\UnknownParameter;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Statement as StatementInterface;
+use JooosiMailDeps\Doctrine\DBAL\ParameterType;
 use PgSql\Connection as PgSqlConnection;
 use function assert;
 use function is_resource;

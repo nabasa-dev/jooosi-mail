@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Bridge\Postmark\Transport;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Bridge\Postmark\Transport;
 
-use OmniMailDeps\Symfony\Component\Mime\Header\UnstructuredHeader;
+use JooosiMailDeps\Symfony\Component\Mime\Header\UnstructuredHeader;
 final class MessageStreamHeader extends UnstructuredHeader
 {
     public function __construct(string $value)

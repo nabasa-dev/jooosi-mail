@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Webhook\Event;
+namespace JooosiMail\Webhook\Event;
 
-use OmniMail\Discovery\Attribute\Hook;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Event\EventPublisherInterface;
-use OmniMail\Mail\Connection\ConnectionRepository;
-use OmniMail\Mail\Routing\ConnectionCircuitBreaker;
+use JooosiMail\Discovery\Attribute\Hook;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Event\EventPublisherInterface;
+use JooosiMail\Mail\Connection\ConnectionRepository;
+use JooosiMail\Mail\Routing\ConnectionCircuitBreaker;
 use RuntimeException;
 /**
  * Feeds webhook delivery feedback back into routing health decisions.
@@ -23,8 +23,8 @@ final readonly class WebhookRoutingHealthListener
     /**
      * @since 0.1.0
      */
-    #[Hook(name: 'a!omni-mail/webhook:event', kind: 'action', acceptedArgs: 1)]
-    public function handle(\OmniMail\Webhook\Event\WebhookEvent $event): void
+    #[Hook(name: 'a!jooosi-mail/webhook:event', kind: 'action', acceptedArgs: 1)]
+    public function handle(\JooosiMail\Webhook\Event\WebhookEvent $event): void
     {
         if ($event->connectionId === null) {
             return;
@@ -39,7 +39,7 @@ final readonly class WebhookRoutingHealthListener
         }
         $message = sprintf('Webhook routing feedback: %s', $eventType);
         $this->connectionCircuitBreaker->recordFailure($connection, new RuntimeException($message));
-        $this->eventPublisher->doAction('a!omni-mail/routing:webhook-feedback.recorded', $connection, $event);
+        $this->eventPublisher->doAction('a!jooosi-mail/routing:webhook-feedback.recorded', $connection, $event);
     }
     /**
      * @since 0.1.0

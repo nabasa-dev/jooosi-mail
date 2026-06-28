@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Psr\\Clock\\": "src\/"
+            "JooosiMailDeps\\Psr\\Clock\\": "src\/"
         }
     }
 }

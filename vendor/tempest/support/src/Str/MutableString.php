@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Str;
+namespace JooosiMailDeps\Tempest\Support\Str;
 
 use Stringable;
-use OmniMailDeps\Tempest\Support\Conditions\HasConditions;
-use OmniMailDeps\Tempest\Support\Html\HtmlString;
+use JooosiMailDeps\Tempest\Support\Conditions\HasConditions;
+use JooosiMailDeps\Tempest\Support\Html\HtmlString;
 /**
  * Represents a mutable, manipulable string.
  */

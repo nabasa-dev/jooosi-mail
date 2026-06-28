@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Cache\Exception;
+namespace JooosiMailDeps\Doctrine\DBAL\Cache\Exception;
 
-use OmniMailDeps\Doctrine\DBAL\Cache\CacheException;
+use JooosiMailDeps\Doctrine\DBAL\Cache\CacheException;
 final class NoCacheKey extends CacheException
 {
     public static function new(): self

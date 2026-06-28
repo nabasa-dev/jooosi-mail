@@ -8,13 +8,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\DependencyInjection;
+namespace JooosiMailDeps\Symfony\Component\Cache\DependencyInjection;
 
-use OmniMailDeps\Symfony\Component\Cache\PruneableInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\IteratorArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Reference;
+use JooosiMailDeps\Symfony\Component\Cache\PruneableInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\IteratorArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Reference;
 /**
  * @author Rob Frawley 2nd <rmf@src.run>
  */

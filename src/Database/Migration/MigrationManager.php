@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Database\Migration;
+namespace JooosiMail\Database\Migration;
 
-use OmniMailDeps\Doctrine\DBAL\Connection;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Database\TableNameResolver;
+use JooosiMailDeps\Doctrine\DBAL\Connection;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
 use RuntimeException;
 use Throwable;
 /**
@@ -16,7 +16,7 @@ use Throwable;
 #[Service]
 final readonly class MigrationManager
 {
-    public function __construct(private Connection $connection, private \OmniMail\Database\Migration\MigrationRegistry $migrationRegistry, private \OmniMail\Database\Migration\MigrationRepository $migrationRepository, private TableNameResolver $tableNameResolver)
+    public function __construct(private Connection $connection, private \JooosiMail\Database\Migration\MigrationRegistry $migrationRegistry, private \JooosiMail\Database\Migration\MigrationRepository $migrationRepository, private TableNameResolver $tableNameResolver)
     {
     }
     /**
@@ -46,10 +46,10 @@ final readonly class MigrationManager
         foreach ($definitions as $definition) {
             $knownVersions[$this->executionKey($definition->version)] = \true;
             $execution = $executionMap[$this->executionKey($definition->version)] ?? null;
-            if ($execution instanceof \OmniMail\Database\Migration\MigrationExecution) {
+            if ($execution instanceof \JooosiMail\Database\Migration\MigrationExecution) {
                 ++$executedAvailable;
             }
-            $migrations[] = ['version' => $definition->version, 'class_name' => $definition->className, 'description' => $definition->description, 'status' => $execution instanceof \OmniMail\Database\Migration\MigrationExecution ? 'executed' : 'pending', 'executed_at' => $execution?->executedAt, 'execution_time_ms' => $execution?->executionTimeMs];
+            $migrations[] = ['version' => $definition->version, 'class_name' => $definition->className, 'description' => $definition->description, 'status' => $execution instanceof \JooosiMail\Database\Migration\MigrationExecution ? 'executed' : 'pending', 'executed_at' => $execution?->executedAt, 'execution_time_ms' => $execution?->executionTimeMs];
         }
         $executedUnavailable = 0;
         foreach ($executionMap as $version => $execution) {
@@ -61,7 +61,7 @@ final readonly class MigrationManager
         }
         usort($migrations, static fn(array $left, array $right): int => strcmp((string) $left['version'], (string) $right['version']));
         $executedVersions = array_values(array_filter(array_map(static fn(array $migration): string => (string) $migration['version'], $migrations), fn(string $version): bool => $version !== '' && isset($executionMap[$this->executionKey($version)])));
-        $pendingVersions = array_values(array_map(static fn(\OmniMail\Database\Migration\MigrationDefinition $definition): string => $definition->version, $this->migrationRegistry->pending($this->executedVersionsFromMap($executionMap))));
+        $pendingVersions = array_values(array_map(static fn(\JooosiMail\Database\Migration\MigrationDefinition $definition): string => $definition->version, $this->migrationRegistry->pending($this->executedVersionsFromMap($executionMap))));
         $currentVersion = $executedVersions === [] ? '0' : (string) end($executedVersions);
         $previousVersion = count($executedVersions) < 2 ? '0' : (string) $executedVersions[count($executedVersions) - 2];
         $latestVersion = $definitions === [] ? '0' : $definitions[count($definitions) - 1]->version;
@@ -169,13 +169,13 @@ final readonly class MigrationManager
         $executedVersions = $this->executedVersions();
         foreach ($versions as $version) {
             $definition = $this->migrationRegistry->find($version);
-            if (!$definition instanceof \OmniMail\Database\Migration\MigrationDefinition) {
+            if (!$definition instanceof \JooosiMail\Database\Migration\MigrationDefinition) {
                 // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-                throw new RuntimeException(sprintf('The Omni Mail migration "%s" could not be found.', $version));
+                throw new RuntimeException(sprintf('The Jooosi Mail migration "%s" could not be found.', $version));
             }
             if (in_array($definition->version, $executedVersions, \true)) {
                 // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-                throw new RuntimeException(sprintf('The Omni Mail migration "%s" has already been executed.', $definition->version));
+                throw new RuntimeException(sprintf('The Jooosi Mail migration "%s" has already been executed.', $definition->version));
             }
             if (isset($knownVersions[$definition->version])) {
                 continue;
@@ -183,7 +183,7 @@ final readonly class MigrationManager
             $knownVersions[$definition->version] = \true;
             $definitions[] = $definition;
         }
-        usort($definitions, static fn(\OmniMail\Database\Migration\MigrationDefinition $left, \OmniMail\Database\Migration\MigrationDefinition $right): int => strcmp($left->version, $right->version));
+        usort($definitions, static fn(\JooosiMail\Database\Migration\MigrationDefinition $left, \JooosiMail\Database\Migration\MigrationDefinition $right): int => strcmp($left->version, $right->version));
         return $definitions;
     }
     /**
@@ -191,7 +191,7 @@ final readonly class MigrationManager
      *
      * @since 0.1.0
      */
-    private function runSingle(\OmniMail\Database\Migration\MigrationDefinition $definition, bool $dryRun): array
+    private function runSingle(\JooosiMail\Database\Migration\MigrationDefinition $definition, bool $dryRun): array
     {
         if ($dryRun) {
             return ['version' => $definition->version, 'class_name' => $definition->className, 'description' => $definition->description, 'status' => 'planned', 'execution_time_ms' => null];
@@ -208,7 +208,7 @@ final readonly class MigrationManager
      *
      * @since 0.1.0
      */
-    private function rollbackSingle(\OmniMail\Database\Migration\MigrationDefinition $definition, bool $dryRun): array
+    private function rollbackSingle(\JooosiMail\Database\Migration\MigrationDefinition $definition, bool $dryRun): array
     {
         if ($dryRun) {
             return ['version' => $definition->version, 'class_name' => $definition->className, 'description' => $definition->description, 'status' => 'planned', 'execution_time_ms' => null];
@@ -232,9 +232,9 @@ final readonly class MigrationManager
         if ($executedVersions === []) {
             return [];
         }
-        if ($toVersion !== null && $toVersion !== '' && $toVersion !== '0' && !isset($executionMap[$this->executionKey($toVersion)]) && !$this->migrationRegistry->find($toVersion) instanceof \OmniMail\Database\Migration\MigrationDefinition) {
+        if ($toVersion !== null && $toVersion !== '' && $toVersion !== '0' && !isset($executionMap[$this->executionKey($toVersion)]) && !$this->migrationRegistry->find($toVersion) instanceof \JooosiMail\Database\Migration\MigrationDefinition) {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new RuntimeException(sprintf('The Omni Mail migration "%s" could not be found.', $toVersion));
+            throw new RuntimeException(sprintf('The Jooosi Mail migration "%s" could not be found.', $toVersion));
         }
         rsort($executedVersions, \SORT_STRING);
         $definitions = [];
@@ -243,7 +243,7 @@ final readonly class MigrationManager
                 continue;
             }
             $definition = $this->migrationRegistry->find($version);
-            if (!$definition instanceof \OmniMail\Database\Migration\MigrationDefinition) {
+            if (!$definition instanceof \JooosiMail\Database\Migration\MigrationDefinition) {
                 // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
                 throw new RuntimeException(sprintf('The executed migration "%s" is not available for rollback.', $version));
             }
@@ -285,7 +285,7 @@ final readonly class MigrationManager
      */
     private function executedVersionsFromMap(array $executionMap): array
     {
-        return array_values(array_map(static fn(\OmniMail\Database\Migration\MigrationExecution $execution): string => $execution->version, $executionMap));
+        return array_values(array_map(static fn(\JooosiMail\Database\Migration\MigrationExecution $execution): string => $execution->version, $executionMap));
     }
     /**
      * @since 0.1.0

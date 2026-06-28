@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Test;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Test;
 
-use OmniMailDeps\PHPUnit\Framework\Attributes\DataProvider;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\IncompleteDsnException;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Dsn;
+use JooosiMailDeps\PHPUnit\Framework\Attributes\DataProvider;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\IncompleteDsnException;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Dsn;
 trait IncompleteDsnTestTrait
 {
     /**

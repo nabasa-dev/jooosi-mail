@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Stamp;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Stamp;
 
-use OmniMailDeps\Symfony\Component\Messenger\Middleware\DispatchAfterCurrentBusMiddleware;
+use JooosiMailDeps\Symfony\Component\Messenger\Middleware\DispatchAfterCurrentBusMiddleware;
 /**
  * Marker item to tell this message should be handled in after the current bus has finished.
  *

@@ -8,19 +8,19 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Extension;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Extension;
 
-use OmniMailDeps\Symfony\Component\Config\FileLocator;
-use OmniMailDeps\Symfony\Component\Config\Loader\DelegatingLoader;
-use OmniMailDeps\Symfony\Component\Config\Loader\LoaderResolver;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\ClosureLoader;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\DirectoryLoader;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\GlobFileLoader;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\IniFileLoader;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use JooosiMailDeps\Symfony\Component\Config\FileLocator;
+use JooosiMailDeps\Symfony\Component\Config\Loader\DelegatingLoader;
+use JooosiMailDeps\Symfony\Component\Config\Loader\LoaderResolver;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\ClosureLoader;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\DirectoryLoader;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\GlobFileLoader;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\IniFileLoader;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 /**
  * @author Yonel Ceruto <yonelceruto@gmail.com>
  */

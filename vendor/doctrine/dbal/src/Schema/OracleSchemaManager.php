@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema;
 
-use OmniMailDeps\Doctrine\DBAL\Exception;
-use OmniMailDeps\Doctrine\DBAL\Exception\DatabaseObjectNotFoundException;
-use OmniMailDeps\Doctrine\DBAL\Platforms\OraclePlatform;
-use OmniMailDeps\Doctrine\DBAL\Result;
-use OmniMailDeps\Doctrine\DBAL\Types\Type;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Exception\DatabaseObjectNotFoundException;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\OraclePlatform;
+use JooosiMailDeps\Doctrine\DBAL\Result;
+use JooosiMailDeps\Doctrine\DBAL\Types\Type;
 use function array_change_key_case;
 use function array_key_exists;
 use function assert;

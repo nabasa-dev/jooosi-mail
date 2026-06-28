@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema;
 
-use OmniMailDeps\Doctrine\DBAL\Platforms\SQLServerPlatform;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\InvalidColumnDefinition;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
-use OmniMailDeps\Doctrine\DBAL\Types\Exception\TypesException;
-use OmniMailDeps\Doctrine\DBAL\Types\Type;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\SQLServerPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\InvalidColumnDefinition;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Types\Exception\TypesException;
+use JooosiMailDeps\Doctrine\DBAL\Types\Type;
 final class ColumnEditor
 {
     private ?UnqualifiedName $name = null;

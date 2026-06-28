@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Psr\Log;
+namespace JooosiMailDeps\Psr\Log;
 
 /**
  * Basic Implementation of LoggerAwareInterface.

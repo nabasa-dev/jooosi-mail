@@ -8,13 +8,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient\Response;
+namespace JooosiMailDeps\Symfony\Component\HttpClient\Response;
 
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\ClientException;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\JsonException;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\RedirectionException;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\ServerException;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\ClientException;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\JsonException;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\RedirectionException;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\ServerException;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
 /**
  * Implements common logic for response classes.
  *

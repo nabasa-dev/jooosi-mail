@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Portability;
+namespace JooosiMailDeps\Doctrine\DBAL\Portability;
 
-use OmniMailDeps\Doctrine\DBAL\ColumnCase;
-use OmniMailDeps\Doctrine\DBAL\Driver as DriverInterface;
-use OmniMailDeps\Doctrine\DBAL\Driver\Middleware as MiddlewareInterface;
+use JooosiMailDeps\Doctrine\DBAL\ColumnCase;
+use JooosiMailDeps\Doctrine\DBAL\Driver as DriverInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Middleware as MiddlewareInterface;
 final class Middleware implements MiddlewareInterface
 {
     public function __construct(private readonly int $mode, private readonly ?ColumnCase $case)

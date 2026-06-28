@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Tempest\Support\Paginator;
+namespace JooosiMailDeps\Tempest\Support\Paginator;
 
 use JsonSerializable;
 /**

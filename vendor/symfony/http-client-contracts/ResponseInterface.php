@@ -8,13 +8,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Contracts\HttpClient;
+namespace JooosiMailDeps\Symfony\Contracts\HttpClient;
 
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 /**
  * A (lazily retrieved) HTTP response.
  *

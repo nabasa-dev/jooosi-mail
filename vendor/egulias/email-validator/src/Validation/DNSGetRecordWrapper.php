@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Validation;
+namespace JooosiMailDeps\Egulias\EmailValidator\Validation;
 
 class DNSGetRecordWrapper
 {

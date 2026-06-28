@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\InvalidUniqueConstraintDefinition;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\InvalidUniqueConstraintDefinition;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
 use function array_map;
 use function array_merge;
 use function array_values;

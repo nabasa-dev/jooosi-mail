@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator;
+namespace JooosiMailDeps\Egulias\EmailValidator;
 
-use OmniMailDeps\Doctrine\Common\Lexer\AbstractLexer;
-use OmniMailDeps\Doctrine\Common\Lexer\Token;
+use JooosiMailDeps\Doctrine\Common\Lexer\AbstractLexer;
+use JooosiMailDeps\Doctrine\Common\Lexer\Token;
 /** @extends AbstractLexer<int, string> */
 class EmailLexer extends AbstractLexer
 {
@@ -70,7 +70,7 @@ class EmailLexer extends AbstractLexer
         '[^\x00-\x7F]',
         //UTF-8
         '[0-9]+',
-        'OmniMailDeps\r\n',
+        'JooosiMailDeps\r\n',
         '::',
         '\s+?',
         '.',

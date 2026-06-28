@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\IBMDB2\Exception;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\IBMDB2\Exception;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\AbstractException;
+use JooosiMailDeps\Doctrine\DBAL\Driver\AbstractException;
 /** @internal */
 final class PrepareFailed extends AbstractException
 {

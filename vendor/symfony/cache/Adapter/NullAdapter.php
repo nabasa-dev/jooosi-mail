@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\Adapter;
+namespace JooosiMailDeps\Symfony\Component\Cache\Adapter;
 
-use OmniMailDeps\Psr\Cache\CacheItemInterface;
-use OmniMailDeps\Symfony\Component\Cache\CacheItem;
-use OmniMailDeps\Symfony\Contracts\Cache\CacheInterface;
-use OmniMailDeps\Symfony\Contracts\Cache\NamespacedPoolInterface;
+use JooosiMailDeps\Psr\Cache\CacheItemInterface;
+use JooosiMailDeps\Symfony\Component\Cache\CacheItem;
+use JooosiMailDeps\Symfony\Contracts\Cache\CacheInterface;
+use JooosiMailDeps\Symfony\Contracts\Cache\NamespacedPoolInterface;
 /**
  * @author Titouan Galopin <galopintitouan@gmail.com>
  */

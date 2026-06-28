@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator;
+namespace JooosiMailDeps\Egulias\EmailValidator;
 
-use OmniMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Validation\EmailValidation;
+use JooosiMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Validation\EmailValidation;
 class EmailValidator
 {
     /**

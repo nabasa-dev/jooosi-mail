@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Namespace;
+namespace JooosiMailDeps\Tempest\Support\Namespace;
 
 use Exception;
 final class PathCouldNotBeMappedToNamespace extends Exception

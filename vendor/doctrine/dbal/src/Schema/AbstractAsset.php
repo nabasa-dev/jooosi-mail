@@ -1,16 +1,16 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema;
 
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\NotImplemented;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\GenericName;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Identifier;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parser;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
-use OmniMailDeps\Doctrine\Deprecations\Deprecation;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\NotImplemented;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\GenericName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Identifier;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parser;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
+use JooosiMailDeps\Doctrine\Deprecations\Deprecation;
 use Throwable;
 use function array_map;
 use function count;

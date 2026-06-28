@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Webhook\Event;
+namespace JooosiMail\Webhook\Event;
 
 /**
  * Normalized webhook event payload.

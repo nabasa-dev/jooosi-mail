@@ -8,13 +8,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\Adapter;
+namespace JooosiMailDeps\Symfony\Component\Cache\Adapter;
 
-use OmniMailDeps\Symfony\Component\Cache\Exception\CacheException;
-use OmniMailDeps\Symfony\Component\Cache\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Cache\Marshaller\DefaultMarshaller;
-use OmniMailDeps\Symfony\Component\Cache\Marshaller\MarshallerInterface;
-use OmniMailDeps\Symfony\Contracts\Cache\ItemInterface;
+use JooosiMailDeps\Symfony\Component\Cache\Exception\CacheException;
+use JooosiMailDeps\Symfony\Component\Cache\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Cache\Marshaller\DefaultMarshaller;
+use JooosiMailDeps\Symfony\Component\Cache\Marshaller\MarshallerInterface;
+use JooosiMailDeps\Symfony\Contracts\Cache\ItemInterface;
 /**
  * @author Rob Frawley 2nd <rmf@src.run>
  * @author Nicolas Grekas <p@tchwork.com>

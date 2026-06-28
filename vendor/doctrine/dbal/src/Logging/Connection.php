@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Logging;
+namespace JooosiMailDeps\Doctrine\DBAL\Logging;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Connection as ConnectionInterface;
-use OmniMailDeps\Doctrine\DBAL\Driver\Middleware\AbstractConnectionMiddleware;
-use OmniMailDeps\Doctrine\DBAL\Driver\Result;
-use OmniMailDeps\Doctrine\DBAL\Driver\Statement as DriverStatement;
-use OmniMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Connection as ConnectionInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Middleware\AbstractConnectionMiddleware;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Result;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Statement as DriverStatement;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
 final class Connection extends AbstractConnectionMiddleware
 {
     /** @internal This connection can be only instantiated by its driver. */

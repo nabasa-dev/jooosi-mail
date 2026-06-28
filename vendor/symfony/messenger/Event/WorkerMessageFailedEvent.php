@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Event;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Event;
 
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
 /**
  * Dispatched when a message was received from a transport and handling failed.
  *

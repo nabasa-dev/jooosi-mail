@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Ses\ValueObject;
+namespace JooosiMailDeps\AsyncAws\Ses\ValueObject;
 
 /**
  * An object that defines the email template to use for an email message, and the values to use for any message

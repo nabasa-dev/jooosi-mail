@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection;
 
-use OmniMailDeps\Psr\Container\ContainerInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
+use JooosiMailDeps\Psr\Container\ContainerInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 /**
  * Turns public and "container.reversible" services back to their ids.
  *

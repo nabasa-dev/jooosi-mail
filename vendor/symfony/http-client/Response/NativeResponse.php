@@ -8,15 +8,15 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient\Response;
+namespace JooosiMailDeps\Symfony\Component\HttpClient\Response;
 
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\HttpClient\Chunk\FirstChunk;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
-use OmniMailDeps\Symfony\Component\HttpClient\Internal\Canary;
-use OmniMailDeps\Symfony\Component\HttpClient\Internal\ClientState;
-use OmniMailDeps\Symfony\Component\HttpClient\Internal\NativeClientState;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\HttpClient\Chunk\FirstChunk;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
+use JooosiMailDeps\Symfony\Component\HttpClient\Internal\Canary;
+use JooosiMailDeps\Symfony\Component\HttpClient\Internal\ClientState;
+use JooosiMailDeps\Symfony\Component\HttpClient\Internal\NativeClientState;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  *

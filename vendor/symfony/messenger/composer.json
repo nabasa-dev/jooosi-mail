@@ -47,7 +47,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Symfony\\Component\\Messenger\\": ""
+            "JooosiMailDeps\\Symfony\\Component\\Messenger\\": ""
         },
         "exclude-from-classmap": [
             "\/Tests\/"

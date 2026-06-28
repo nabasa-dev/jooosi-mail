@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Psr\\Log\\": "src"
+            "JooosiMailDeps\\Psr\\Log\\": "src"
         }
     },
     "extra": {

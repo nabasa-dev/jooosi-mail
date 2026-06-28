@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Query\Exception;
+namespace JooosiMailDeps\Doctrine\DBAL\Query\Exception;
 
-use OmniMailDeps\Doctrine\DBAL\Query\QueryException;
+use JooosiMailDeps\Doctrine\DBAL\Query\QueryException;
 use function implode;
 use function sprintf;
 final class NonUniqueAlias extends QueryException

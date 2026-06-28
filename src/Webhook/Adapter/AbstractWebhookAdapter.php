@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Webhook\Adapter;
+namespace JooosiMail\Webhook\Adapter;
 
-use OmniMail\Mail\Connection\Connection;
+use JooosiMail\Mail\Connection\Connection;
 use Override;
 use WP_REST_Request;
 /**
@@ -11,7 +11,7 @@ use WP_REST_Request;
  *
  * @since 0.1.0
  */
-abstract class AbstractWebhookAdapter implements \OmniMail\Webhook\Adapter\WebhookAdapterInterface
+abstract class AbstractWebhookAdapter implements \JooosiMail\Webhook\Adapter\WebhookAdapterInterface
 {
     #[Override]
     public function getPriority(): int
@@ -129,11 +129,11 @@ abstract class AbstractWebhookAdapter implements \OmniMail\Webhook\Adapter\Webho
      */
     protected function extractMailLogId(array $payload): ?int
     {
-        $direct = $this->extractFirstInt($payload, ['mail_log_id', 'omni_mail_mail_log_id']);
+        $direct = $this->extractFirstInt($payload, ['mail_log_id', 'jooosi_mail_mail_log_id']);
         if ($direct !== null) {
             return $direct;
         }
-        $nested = [['custom_args', 'mail_log_id'], ['custom_args', 'omni_mail_mail_log_id'], ['custom_variables', 'mail_log_id'], ['custom_variables', 'omni_mail_mail_log_id'], ['unique_args', 'mail_log_id'], ['unique_args', 'omni_mail_mail_log_id'], ['metadata', 'mail_log_id'], ['metadata', 'omni_mail_mail_log_id'], ['data', 'mail_log_id'], ['data', 'omni_mail_mail_log_id'], ['msg', 'metadata', 'mail_log_id'], ['msg', 'metadata', 'omni_mail_mail_log_id']];
+        $nested = [['custom_args', 'mail_log_id'], ['custom_args', 'jooosi_mail_mail_log_id'], ['custom_variables', 'mail_log_id'], ['custom_variables', 'jooosi_mail_mail_log_id'], ['unique_args', 'mail_log_id'], ['unique_args', 'jooosi_mail_mail_log_id'], ['metadata', 'mail_log_id'], ['metadata', 'jooosi_mail_mail_log_id'], ['data', 'mail_log_id'], ['data', 'jooosi_mail_mail_log_id'], ['msg', 'metadata', 'mail_log_id'], ['msg', 'metadata', 'jooosi_mail_mail_log_id']];
         foreach ($nested as $path) {
             $value = $this->extractNestedValue($payload, $path);
             if (is_scalar($value) && (int) $value > 0) {

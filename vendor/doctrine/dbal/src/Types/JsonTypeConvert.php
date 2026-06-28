@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Types;
+namespace JooosiMailDeps\Doctrine\DBAL\Types;
 
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
-use OmniMailDeps\Doctrine\DBAL\Types\Exception\SerializationFailed;
-use OmniMailDeps\Doctrine\DBAL\Types\Exception\ValueNotConvertible;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Types\Exception\SerializationFailed;
+use JooosiMailDeps\Doctrine\DBAL\Types\Exception\ValueNotConvertible;
 use JsonException;
 use function is_resource;
 use function json_decode;

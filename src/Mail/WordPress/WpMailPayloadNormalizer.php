@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\WordPress;
+namespace JooosiMail\Mail\WordPress;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\ValueObject\MailAddress;
-use OmniMail\Mail\ValueObject\MailAttachment;
-use OmniMail\Mail\ValueObject\MailRequest;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\ValueObject\MailAddress;
+use JooosiMail\Mail\ValueObject\MailAttachment;
+use JooosiMail\Mail\ValueObject\MailRequest;
 /**
- * Converts WordPress mail arguments into Omni Mail requests.
+ * Converts WordPress mail arguments into Jooosi Mail requests.
  *
  * @since 0.1.0
  */
@@ -33,9 +33,9 @@ final class WpMailPayloadNormalizer
             $from[] = new MailAddress((string) get_option('admin_email'), (string) get_option('blogname'));
             $defaultFromApplied = \true;
         }
-        $mailRequest = new MailRequest(from: $from, to: $this->parseAddresses($args['to'] ?? []), cc: $this->extractHeaderAddresses($this->getHeader($headers, 'Cc')), bcc: $this->extractHeaderAddresses($this->getHeader($headers, 'Bcc')), replyTo: $this->extractHeaderAddresses($this->getHeader($headers, 'Reply-To')), subject: (string) ($args['subject'] ?? ''), textBody: $bodies['textBody'], htmlBody: $bodies['htmlBody'], attachments: $this->normalizeAttachments($args['attachments'] ?? []), headers: $headers, source: 'wp_mail', metadata: ['raw' => $args, 'omni_mail_default_from_applied' => $defaultFromApplied]);
-        // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Intentional by design; hook name is well-prefixed with `f!omni-mail/`.
-        $filteredMailRequest = apply_filters('f!omni-mail/mail:normalize.request', $mailRequest, $args, $headers);
+        $mailRequest = new MailRequest(from: $from, to: $this->parseAddresses($args['to'] ?? []), cc: $this->extractHeaderAddresses($this->getHeader($headers, 'Cc')), bcc: $this->extractHeaderAddresses($this->getHeader($headers, 'Bcc')), replyTo: $this->extractHeaderAddresses($this->getHeader($headers, 'Reply-To')), subject: (string) ($args['subject'] ?? ''), textBody: $bodies['textBody'], htmlBody: $bodies['htmlBody'], attachments: $this->normalizeAttachments($args['attachments'] ?? []), headers: $headers, source: 'wp_mail', metadata: ['raw' => $args, 'jooosi_mail_default_from_applied' => $defaultFromApplied]);
+        // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Intentional by design; hook name is well-prefixed with `f!jooosi-mail/`.
+        $filteredMailRequest = apply_filters('f!jooosi-mail/mail:normalize.request', $mailRequest, $args, $headers);
         return $filteredMailRequest instanceof MailRequest ? $filteredMailRequest : $mailRequest;
     }
     /**

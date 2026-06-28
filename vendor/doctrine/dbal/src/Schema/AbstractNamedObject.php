@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\InvalidName;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\InvalidState;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\InvalidName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\InvalidState;
 /**
  * An abstract {@see NamedObject}.
  *

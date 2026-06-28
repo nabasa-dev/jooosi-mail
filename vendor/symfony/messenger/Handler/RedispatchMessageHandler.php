@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Handler;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Handler;
 
-use OmniMailDeps\Symfony\Component\Messenger\Message\RedispatchMessage;
-use OmniMailDeps\Symfony\Component\Messenger\MessageBusInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\HandledStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\TransportNamesStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Message\RedispatchMessage;
+use JooosiMailDeps\Symfony\Component\Messenger\MessageBusInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\HandledStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\TransportNamesStamp;
 final class RedispatchMessageHandler
 {
     public function __construct(private MessageBusInterface $bus)

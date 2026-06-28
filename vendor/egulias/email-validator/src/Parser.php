@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator;
+namespace JooosiMailDeps\Egulias\EmailValidator;
 
-use OmniMailDeps\Egulias\EmailValidator\Result\Result;
-use OmniMailDeps\Egulias\EmailValidator\Result\ValidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\ExpectingATEXT;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Result;
+use JooosiMailDeps\Egulias\EmailValidator\Result\ValidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\ExpectingATEXT;
 abstract class Parser
 {
     /**

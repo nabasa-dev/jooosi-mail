@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\SQLSrv;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\SQLSrv;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\AbstractSQLServerDriver;
-use OmniMailDeps\Doctrine\DBAL\Driver\AbstractSQLServerDriver\Exception\PortWithoutHost;
-use OmniMailDeps\Doctrine\DBAL\Driver\SQLSrv\Exception\Error;
+use JooosiMailDeps\Doctrine\DBAL\Driver\AbstractSQLServerDriver;
+use JooosiMailDeps\Doctrine\DBAL\Driver\AbstractSQLServerDriver\Exception\PortWithoutHost;
+use JooosiMailDeps\Doctrine\DBAL\Driver\SQLSrv\Exception\Error;
 use SensitiveParameter;
 use function sqlsrv_configure;
 use function sqlsrv_connect;

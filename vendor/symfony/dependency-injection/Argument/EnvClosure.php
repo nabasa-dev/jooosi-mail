@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Argument;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Argument;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\EnvNotFoundException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\EnvNotFoundException;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  *

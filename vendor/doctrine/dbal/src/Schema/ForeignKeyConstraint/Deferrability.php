@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint;
 
 /**
  * Represents the information about whether the constraint is or can be deferred.

@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\SQL\Parser;
+namespace JooosiMailDeps\Doctrine\DBAL\SQL\Parser;
 
 /**
  * SQL parser visitor

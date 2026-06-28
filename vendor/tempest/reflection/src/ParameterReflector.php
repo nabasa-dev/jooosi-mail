@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Reflection;
+namespace JooosiMailDeps\Tempest\Reflection;
 
 use ReflectionParameter as PHPReflectionParameter;
 final readonly class ParameterReflector implements Reflector

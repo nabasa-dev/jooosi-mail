@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\AsyncAws\Core\Exception;
+namespace JooosiMailDeps\AsyncAws\Core\Exception;
 
 class UnsupportedRegion extends InvalidArgument
 {

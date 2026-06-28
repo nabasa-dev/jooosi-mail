@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Types;
+namespace JooosiMailDeps\Doctrine\DBAL\Types;
 
 use BcMath\Number;
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
-use OmniMailDeps\Doctrine\DBAL\Types\Exception\InvalidType;
-use OmniMailDeps\Doctrine\DBAL\Types\Exception\ValueNotConvertible;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Types\Exception\InvalidType;
+use JooosiMailDeps\Doctrine\DBAL\Types\Exception\ValueNotConvertible;
 use TypeError;
 use ValueError;
 use function is_float;

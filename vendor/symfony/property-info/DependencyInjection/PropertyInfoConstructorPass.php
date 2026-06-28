@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\PropertyInfo\DependencyInjection;
+namespace JooosiMailDeps\Symfony\Component\PropertyInfo\DependencyInjection;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\IteratorArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Compiler\PriorityTaggedServiceTrait;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\IteratorArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler\PriorityTaggedServiceTrait;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
 /**
  * Adds extractors to the property_info.constructor_extractor service.
  *

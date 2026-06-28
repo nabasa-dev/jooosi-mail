@@ -1,27 +1,27 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Platforms;
+namespace JooosiMailDeps\Doctrine\DBAL\Platforms;
 
-use OmniMailDeps\Doctrine\DBAL\Connection;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Exception\NotSupported;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Keywords\KeywordList;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Keywords\SQLiteKeywords;
-use OmniMailDeps\Doctrine\DBAL\Platforms\SQLite\SQLiteMetadataProvider;
-use OmniMailDeps\Doctrine\DBAL\Schema\Column;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\ColumnDoesNotExist;
-use OmniMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint;
-use OmniMailDeps\Doctrine\DBAL\Schema\Identifier;
-use OmniMailDeps\Doctrine\DBAL\Schema\Index;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnquotedIdentifierFolding;
-use OmniMailDeps\Doctrine\DBAL\Schema\SQLiteSchemaManager;
-use OmniMailDeps\Doctrine\DBAL\Schema\Table;
-use OmniMailDeps\Doctrine\DBAL\Schema\TableDiff;
-use OmniMailDeps\Doctrine\DBAL\SQL\Builder\DefaultSelectSQLBuilder;
-use OmniMailDeps\Doctrine\DBAL\SQL\Builder\SelectSQLBuilder;
-use OmniMailDeps\Doctrine\DBAL\TransactionIsolationLevel;
-use OmniMailDeps\Doctrine\DBAL\Types;
-use OmniMailDeps\Doctrine\Deprecations\Deprecation;
+use JooosiMailDeps\Doctrine\DBAL\Connection;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Exception\NotSupported;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Keywords\KeywordList;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Keywords\SQLiteKeywords;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\SQLite\SQLiteMetadataProvider;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Column;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\ColumnDoesNotExist;
+use JooosiMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Identifier;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Index;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnquotedIdentifierFolding;
+use JooosiMailDeps\Doctrine\DBAL\Schema\SQLiteSchemaManager;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Table;
+use JooosiMailDeps\Doctrine\DBAL\Schema\TableDiff;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Builder\DefaultSelectSQLBuilder;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Builder\SelectSQLBuilder;
+use JooosiMailDeps\Doctrine\DBAL\TransactionIsolationLevel;
+use JooosiMailDeps\Doctrine\DBAL\Types;
+use JooosiMailDeps\Doctrine\Deprecations\Deprecation;
 use InvalidArgumentException;
 use function array_combine;
 use function array_fill_keys;

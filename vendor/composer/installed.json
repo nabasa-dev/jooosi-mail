@@ -45,7 +45,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\AsyncAws\\Core\\": "src"
+                    "JooosiMailDeps\\AsyncAws\\Core\\": "src"
                 }
             },
             "notification-url": "https:\/\/packagist.org\/downloads\/",
@@ -109,7 +109,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\AsyncAws\\Ses\\": "src"
+                    "JooosiMailDeps\\AsyncAws\\Ses\\": "src"
                 }
             },
             "notification-url": "https:\/\/packagist.org\/downloads\/",
@@ -181,7 +181,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Doctrine\\DBAL\\": "src"
+                    "JooosiMailDeps\\Doctrine\\DBAL\\": "src"
                 }
             },
             "notification-url": "https:\/\/packagist.org\/downloads\/",
@@ -284,7 +284,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Doctrine\\Deprecations\\": "src"
+                    "JooosiMailDeps\\Doctrine\\Deprecations\\": "src"
                 }
             },
             "notification-url": "https:\/\/packagist.org\/downloads\/",
@@ -329,7 +329,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Doctrine\\Common\\Lexer\\": "src"
+                    "JooosiMailDeps\\Doctrine\\Common\\Lexer\\": "src"
                 }
             },
             "notification-url": "https:\/\/packagist.org\/downloads\/",
@@ -416,7 +416,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Egulias\\EmailValidator\\": "src"
+                    "JooosiMailDeps\\Egulias\\EmailValidator\\": "src"
                 }
             },
             "notification-url": "https:\/\/packagist.org\/downloads\/",
@@ -562,7 +562,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Psr\\Cache\\": "src\/"
+                    "JooosiMailDeps\\Psr\\Cache\\": "src\/"
                 }
             },
             "notification-url": "https:\/\/packagist.org\/downloads\/",
@@ -609,7 +609,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Psr\\Clock\\": "src\/"
+                    "JooosiMailDeps\\Psr\\Clock\\": "src\/"
                 }
             },
             "notification-url": "https:\/\/packagist.org\/downloads\/",
@@ -665,7 +665,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Psr\\Container\\": "src\/"
+                    "JooosiMailDeps\\Psr\\Container\\": "src\/"
                 }
             },
             "notification-url": "https:\/\/packagist.org\/downloads\/",
@@ -721,7 +721,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Psr\\EventDispatcher\\": "src\/"
+                    "JooosiMailDeps\\Psr\\EventDispatcher\\": "src\/"
                 }
             },
             "notification-url": "https:\/\/packagist.org\/downloads\/",
@@ -774,7 +774,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Psr\\Log\\": "src"
+                    "JooosiMailDeps\\Psr\\Log\\": "src"
                 }
             },
             "notification-url": "https:\/\/packagist.org\/downloads\/",
@@ -828,7 +828,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\AhaSend\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\AhaSend\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -901,7 +901,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Amazon\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Amazon\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -973,7 +973,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Azure\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Azure\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -1046,7 +1046,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Brevo\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Brevo\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -1146,7 +1146,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Cache\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Cache\\": ""
                 },
                 "classmap": [
                     "Traits\/ValueWrapper.php"
@@ -1231,7 +1231,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Contracts\\Cache\\": ""
+                    "JooosiMailDeps\\Symfony\\Contracts\\Cache\\": ""
                 }
             },
             "notification-url": "https:\/\/packagist.org\/downloads\/",
@@ -1311,7 +1311,7 @@
                     "Resources\/now.php"
                 ],
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Clock\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Clock\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -1400,7 +1400,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\DependencyInjection\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\DependencyInjection\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -1563,7 +1563,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\EventDispatcher\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\EventDispatcher\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -1641,7 +1641,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Contracts\\EventDispatcher\\": ""
+                    "JooosiMailDeps\\Symfony\\Contracts\\EventDispatcher\\": ""
                 }
             },
             "notification-url": "https:\/\/packagist.org\/downloads\/",
@@ -1743,7 +1743,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\HttpClient\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\HttpClient\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -1823,7 +1823,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Contracts\\HttpClient\\": ""
+                    "JooosiMailDeps\\Symfony\\Contracts\\HttpClient\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Test\/"
@@ -1904,7 +1904,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Infobip\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Infobip\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -1981,7 +1981,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\MailPace\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\MailPace\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -2061,7 +2061,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Mailchimp\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Mailchimp\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -2144,7 +2144,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mailer\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mailer\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -2217,7 +2217,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\MailerSend\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\MailerSend\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -2294,7 +2294,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Mailgun\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Mailgun\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -2370,7 +2370,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Mailjet\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Mailjet\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -2447,7 +2447,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Mailomat\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Mailomat\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -2524,7 +2524,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Mailtrap\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Mailtrap\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -2619,7 +2619,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Messenger\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Messenger\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -2690,7 +2690,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\MicrosoftGraph\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\MicrosoftGraph\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -2783,7 +2783,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mime\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mime\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -3472,7 +3472,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Postal\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Postal\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -3546,7 +3546,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Postmark\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Postmark\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -3619,7 +3619,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\PropertyAccess\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\PropertyAccess\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -3711,7 +3711,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\PropertyInfo\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\PropertyInfo\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -3796,7 +3796,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Resend\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Resend\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -3868,7 +3868,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Scaleway\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Scaleway\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -3944,7 +3944,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Sendgrid\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Sendgrid\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -4026,7 +4026,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Contracts\\Service\\": ""
+                    "JooosiMailDeps\\Symfony\\Contracts\\Service\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Test\/"
@@ -4119,7 +4119,7 @@
                     "Resources\/functions.php"
                 ],
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\String\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\String\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -4204,7 +4204,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Sweego\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Sweego\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -4279,7 +4279,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\TypeInfo\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\TypeInfo\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -4361,7 +4361,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\Uid\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\Uid\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -4445,7 +4445,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Symfony\\Component\\VarExporter\\": ""
+                    "JooosiMailDeps\\Symfony\\Component\\VarExporter\\": ""
                 },
                 "exclude-from-classmap": [
                     "\/Tests\/"
@@ -4532,7 +4532,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\Tempest\\Discovery\\": "src"
+                    "JooosiMailDeps\\Tempest\\Discovery\\": "src"
                 }
             },
             "notification-url": "https:\/\/packagist.org\/downloads\/",
@@ -4571,7 +4571,7 @@
                     "src\/functions.php"
                 ],
                 "psr-4": {
-                    "OmniMailDeps\\Tempest\\Reflection\\": "src"
+                    "JooosiMailDeps\\Tempest\\Reflection\\": "src"
                 }
             },
             "notification-url": "https:\/\/packagist.org\/downloads\/",
@@ -4626,7 +4626,7 @@
                     "src\/Uri\/functions.php"
                 ],
                 "psr-4": {
-                    "OmniMailDeps\\Tempest\\Support\\": "src"
+                    "JooosiMailDeps\\Tempest\\Support\\": "src"
                 }
             },
             "notification-url": "https:\/\/packagist.org\/downloads\/",
@@ -4668,7 +4668,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "OmniMailDeps\\voku\\": "src\/voku\/"
+                    "JooosiMailDeps\\voku\\": "src\/voku\/"
                 }
             },
             "notification-url": "https:\/\/packagist.org\/downloads\/",

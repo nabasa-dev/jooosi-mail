@@ -41,7 +41,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Symfony\\Component\\String\\": ""
+            "JooosiMailDeps\\Symfony\\Component\\String\\": ""
         },
         "files": [
             "Resources\/functions.php"

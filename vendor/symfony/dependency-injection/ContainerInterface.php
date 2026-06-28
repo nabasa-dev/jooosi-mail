@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection;
 
-use OmniMailDeps\Psr\Container\ContainerInterface as PsrContainerInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
+use JooosiMailDeps\Psr\Container\ContainerInterface as PsrContainerInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 /**
  * ContainerInterface is the interface implemented by service container classes.
  *

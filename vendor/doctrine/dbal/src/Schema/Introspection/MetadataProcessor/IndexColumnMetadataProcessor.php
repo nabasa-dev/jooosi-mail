@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Introspection\MetadataProcessor;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Introspection\MetadataProcessor;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Index;
-use OmniMailDeps\Doctrine\DBAL\Schema\Index\IndexedColumn;
-use OmniMailDeps\Doctrine\DBAL\Schema\IndexEditor;
-use OmniMailDeps\Doctrine\DBAL\Schema\Metadata\IndexColumnMetadataRow;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Index;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Index\IndexedColumn;
+use JooosiMailDeps\Doctrine\DBAL\Schema\IndexEditor;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Metadata\IndexColumnMetadataRow;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
 /**
  * Combines multiple {@see IndexColumnMetadataRow}s into an {@see Index}.
  *

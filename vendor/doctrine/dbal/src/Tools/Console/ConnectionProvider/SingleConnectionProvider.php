@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Tools\Console\ConnectionProvider;
+namespace JooosiMailDeps\Doctrine\DBAL\Tools\Console\ConnectionProvider;
 
-use OmniMailDeps\Doctrine\DBAL\Connection;
-use OmniMailDeps\Doctrine\DBAL\Tools\Console\ConnectionNotFound;
-use OmniMailDeps\Doctrine\DBAL\Tools\Console\ConnectionProvider;
+use JooosiMailDeps\Doctrine\DBAL\Connection;
+use JooosiMailDeps\Doctrine\DBAL\Tools\Console\ConnectionNotFound;
+use JooosiMailDeps\Doctrine\DBAL\Tools\Console\ConnectionProvider;
 use function sprintf;
 class SingleConnectionProvider implements ConnectionProvider
 {

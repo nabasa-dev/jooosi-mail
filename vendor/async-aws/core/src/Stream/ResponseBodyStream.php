@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\AsyncAws\Core\Stream;
+namespace JooosiMailDeps\AsyncAws\Core\Stream;
 
-use OmniMailDeps\AsyncAws\Core\Exception\LogicException;
-use OmniMailDeps\AsyncAws\Core\Exception\RuntimeException;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseStreamInterface;
+use JooosiMailDeps\AsyncAws\Core\Exception\LogicException;
+use JooosiMailDeps\AsyncAws\Core\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseStreamInterface;
 /**
  * Stream a HTTP response body.
  * This class is a BC layer for Http Response that does not support `toStream()`.

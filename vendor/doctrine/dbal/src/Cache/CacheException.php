@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Cache;
+namespace JooosiMailDeps\Doctrine\DBAL\Cache;
 
-use OmniMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
 class CacheException extends \Exception implements Exception
 {
 }

@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\AbstractSQLServerDriver\Exception;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\AbstractSQLServerDriver\Exception;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\AbstractException;
+use JooosiMailDeps\Doctrine\DBAL\Driver\AbstractException;
 /** @internal */
 final class PortWithoutHost extends AbstractException
 {

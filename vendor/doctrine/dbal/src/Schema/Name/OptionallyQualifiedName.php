@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Name;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Name;
 
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\IncomparableNames;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\IncomparableNames;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name;
 /**
  * An optionally qualified {@see Name} consisting of an unqualified name and an optional unqualified qualifier.
  */

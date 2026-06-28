@@ -1,27 +1,27 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Parser;
+namespace JooosiMailDeps\Egulias\EmailValidator\Parser;
 
-use OmniMailDeps\Doctrine\Common\Lexer\Token;
-use OmniMailDeps\Egulias\EmailValidator\EmailLexer;
-use OmniMailDeps\Egulias\EmailValidator\Warning\TLD;
-use OmniMailDeps\Egulias\EmailValidator\Result\Result;
-use OmniMailDeps\Egulias\EmailValidator\Result\ValidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\DotAtEnd;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\DotAtStart;
-use OmniMailDeps\Egulias\EmailValidator\Warning\DeprecatedComment;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\CRLFAtTheEnd;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\LabelTooLong;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\NoDomainPart;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\ConsecutiveAt;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\DomainTooLong;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\CharNotAllowed;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\DomainHyphened;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\ExpectingATEXT;
-use OmniMailDeps\Egulias\EmailValidator\Parser\CommentStrategy\DomainComment;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\ExpectingDomainLiteralClose;
-use OmniMailDeps\Egulias\EmailValidator\Parser\DomainLiteral as DomainLiteralParser;
+use JooosiMailDeps\Doctrine\Common\Lexer\Token;
+use JooosiMailDeps\Egulias\EmailValidator\EmailLexer;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\TLD;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Result;
+use JooosiMailDeps\Egulias\EmailValidator\Result\ValidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\DotAtEnd;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\DotAtStart;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\DeprecatedComment;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\CRLFAtTheEnd;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\LabelTooLong;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\NoDomainPart;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\ConsecutiveAt;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\DomainTooLong;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\CharNotAllowed;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\DomainHyphened;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\ExpectingATEXT;
+use JooosiMailDeps\Egulias\EmailValidator\Parser\CommentStrategy\DomainComment;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\ExpectingDomainLiteralClose;
+use JooosiMailDeps\Egulias\EmailValidator\Parser\DomainLiteral as DomainLiteralParser;
 class DomainPart extends PartParser
 {
     public const DOMAIN_MAX_LENGTH = 253;

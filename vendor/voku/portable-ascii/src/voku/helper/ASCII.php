@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\voku\helper;
+namespace JooosiMailDeps\voku\helper;
 
 /**
  * ## 🇷🇺 Русским гражданам

@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Routing;
+namespace JooosiMail\Mail\Routing;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Mail\Connection\ConnectionRepository;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Mail\Connection\ConnectionRepository;
 /**
  * Builds operational status views for configured connections.
  *
@@ -14,7 +14,7 @@ use OmniMail\Mail\Connection\ConnectionRepository;
 #[Service]
 final readonly class ConnectionStatusReporter
 {
-    public function __construct(private ConnectionRepository $connectionRepository, private \OmniMail\Mail\Routing\ConnectionAvailabilityDecider $connectionAvailabilityDecider, private \OmniMail\Mail\Routing\ConnectionHealthScorer $connectionHealthScorer)
+    public function __construct(private ConnectionRepository $connectionRepository, private \JooosiMail\Mail\Routing\ConnectionAvailabilityDecider $connectionAvailabilityDecider, private \JooosiMail\Mail\Routing\ConnectionHealthScorer $connectionHealthScorer)
     {
     }
     /**

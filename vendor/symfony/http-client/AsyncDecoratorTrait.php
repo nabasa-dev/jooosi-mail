@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient;
+namespace JooosiMailDeps\Symfony\Component\HttpClient;
 
-use OmniMailDeps\Symfony\Component\HttpClient\Response\AsyncResponse;
-use OmniMailDeps\Symfony\Component\HttpClient\Response\ResponseStream;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseStreamInterface;
+use JooosiMailDeps\Symfony\Component\HttpClient\Response\AsyncResponse;
+use JooosiMailDeps\Symfony\Component\HttpClient\Response\ResponseStream;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseStreamInterface;
 /**
  * Eases with processing responses while streaming them.
  *

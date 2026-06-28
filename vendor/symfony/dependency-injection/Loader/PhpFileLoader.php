@@ -8,16 +8,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Loader;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Loader;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Attribute\When;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Attribute\WhenNot;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\App;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\AppReference;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute\When;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute\WhenNot;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\App;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\AppReference;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 /**
  * PhpFileLoader loads service definitions from a PHP file.
  *

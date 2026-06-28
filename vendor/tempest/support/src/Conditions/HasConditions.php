@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Conditions;
+namespace JooosiMailDeps\Tempest\Support\Conditions;
 
 use Closure;
 trait HasConditions

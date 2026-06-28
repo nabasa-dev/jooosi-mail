@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Symfony\\Contracts\\EventDispatcher\\": ""
+            "JooosiMailDeps\\Symfony\\Contracts\\EventDispatcher\\": ""
         }
     },
     "minimum-stability": "dev",

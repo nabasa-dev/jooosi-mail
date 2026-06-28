@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Discovery;
+namespace JooosiMailDeps\Tempest\Discovery;
 
-use OmniMailDeps\Tempest\Core\Environment;
-use function OmniMailDeps\Tempest\env;
+use JooosiMailDeps\Tempest\Core\Environment;
+use function JooosiMailDeps\Tempest\env;
 enum DiscoveryCacheStrategy : string
 {
     /**

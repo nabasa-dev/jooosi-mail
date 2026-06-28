@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Portability;
+namespace JooosiMailDeps\Doctrine\DBAL\Portability;
 
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\DB2Platform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\OraclePlatform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\PostgreSQLPlatform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\SQLitePlatform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\SQLServerPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\DB2Platform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\OraclePlatform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\PostgreSQLPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\SQLitePlatform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\SQLServerPlatform;
 final class OptimizeFlags
 {
     /**

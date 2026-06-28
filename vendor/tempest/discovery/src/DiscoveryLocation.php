@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Discovery;
+namespace JooosiMailDeps\Tempest\Discovery;
 
-use OmniMailDeps\Tempest\Support\Filesystem;
-use OmniMailDeps\Tempest\Support\Namespace\Psr4Namespace;
+use JooosiMailDeps\Tempest\Support\Filesystem;
+use JooosiMailDeps\Tempest\Support\Namespace\Psr4Namespace;
 final class DiscoveryLocation
 {
     public readonly string $path;

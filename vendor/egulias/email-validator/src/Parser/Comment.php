@@ -1,15 +1,15 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Parser;
+namespace JooosiMailDeps\Egulias\EmailValidator\Parser;
 
-use OmniMailDeps\Egulias\EmailValidator\EmailLexer;
-use OmniMailDeps\Egulias\EmailValidator\Result\Result;
-use OmniMailDeps\Egulias\EmailValidator\Warning\QuotedPart;
-use OmniMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\UnclosedComment;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\UnOpenedComment;
-use OmniMailDeps\Egulias\EmailValidator\Warning\Comment as WarningComment;
+use JooosiMailDeps\Egulias\EmailValidator\EmailLexer;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Result;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\QuotedPart;
+use JooosiMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\UnclosedComment;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\UnOpenedComment;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\Comment as WarningComment;
 class Comment extends PartParser
 {
     /**

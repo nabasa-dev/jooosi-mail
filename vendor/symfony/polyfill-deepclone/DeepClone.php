@@ -43,7 +43,7 @@ final class DeepClone
     public static function deepclone_to_array(mixed $value, ?array $allowed_classes = null, bool $allow_named_closures = \false): array
     {
         if (\is_resource($value)) {
-            throw new \OmniMailDeps\DeepClone\NotInstantiableException('Type "' . get_resource_type($value) . ' resource" is not instantiable.');
+            throw new \JooosiMailDeps\DeepClone\NotInstantiableException('Type "' . get_resource_type($value) . ' resource" is not instantiable.');
         }
         if (!\is_object($value) && !(\is_array($value) && $value) || $value instanceof \UnitEnum) {
             return ['value' => $value];
@@ -351,10 +351,10 @@ final class DeepClone
     }
     public static function deepclone_hydrate(object|string $object_or_class, array $vars = [], int $flags = 0): object
     {
-        if ($flags & ~(\OmniMailDeps\DEEPCLONE_HYDRATE_CALL_HOOKS | \OmniMailDeps\DEEPCLONE_HYDRATE_NO_LAZY_INIT | \OmniMailDeps\DEEPCLONE_HYDRATE_PRESERVE_REFS)) {
+        if ($flags & ~(\JooosiMailDeps\DEEPCLONE_HYDRATE_CALL_HOOKS | \JooosiMailDeps\DEEPCLONE_HYDRATE_NO_LAZY_INIT | \JooosiMailDeps\DEEPCLONE_HYDRATE_PRESERVE_REFS)) {
             throw new \ValueError('deepclone_hydrate(): Argument #3 ($flags) contains unknown bits');
         }
-        if ($flags & \OmniMailDeps\DEEPCLONE_HYDRATE_CALL_HOOKS && $flags & \OmniMailDeps\DEEPCLONE_HYDRATE_NO_LAZY_INIT) {
+        if ($flags & \JooosiMailDeps\DEEPCLONE_HYDRATE_CALL_HOOKS && $flags & \JooosiMailDeps\DEEPCLONE_HYDRATE_NO_LAZY_INIT) {
             throw new \ValueError('deepclone_hydrate(): Argument #3 ($flags) DEEPCLONE_HYDRATE_CALL_HOOKS and DEEPCLONE_HYDRATE_NO_LAZY_INIT are mutually exclusive');
         }
         if (\is_string($class = $object_or_class)) {
@@ -364,7 +364,7 @@ final class DeepClone
                 // whose __unserialize() rejects an empty payload, like
                 // BcMath\Number). Such a class can only be reconstructed via a
                 // full serialization round-trip, never by property injection.
-                throw new \OmniMailDeps\DeepClone\NotInstantiableException('Class "' . $class . '" is not instantiable.');
+                throw new \JooosiMailDeps\DeepClone\NotInstantiableException('Class "' . $class . '" is not instantiable.');
             } elseif (self::$cloneable[$class]) {
                 $object = clone self::$prototypes[$class];
             } elseif (self::$instantiableWithoutConstructor[$class]) {
@@ -400,15 +400,15 @@ final class DeepClone
                 break;
             }
         }
-        $effectiveFlags = $flags & \OmniMailDeps\DEEPCLONE_HYDRATE_CALL_HOOKS;
-        if (\PHP_VERSION_ID >= 80400 && $flags & \OmniMailDeps\DEEPCLONE_HYDRATE_NO_LAZY_INIT) {
+        $effectiveFlags = $flags & \JooosiMailDeps\DEEPCLONE_HYDRATE_CALL_HOOKS;
+        if (\PHP_VERSION_ID >= 80400 && $flags & \JooosiMailDeps\DEEPCLONE_HYDRATE_NO_LAZY_INIT) {
             $r ??= self::$reflectors[$class] ?? new \ReflectionClass($class);
             if ($r->isUninitializedLazyObject($object)) {
-                $effectiveFlags |= \OmniMailDeps\DEEPCLONE_HYDRATE_NO_LAZY_INIT;
+                $effectiveFlags |= \JooosiMailDeps\DEEPCLONE_HYDRATE_NO_LAZY_INIT;
             }
         }
         $hasRefs = \false;
-        if ($flags & \OmniMailDeps\DEEPCLONE_HYDRATE_PRESERVE_REFS) {
+        if ($flags & \JooosiMailDeps\DEEPCLONE_HYDRATE_PRESERVE_REFS) {
             foreach ($vars as $k => $_) {
                 if (\ReflectionReference::fromArrayElement($vars, $k)) {
                     $hasRefs = \true;
@@ -539,7 +539,7 @@ final class DeepClone
         $refs = $values;
         foreach ($values as $k => $value) {
             if (\is_resource($value)) {
-                throw new \OmniMailDeps\DeepClone\NotInstantiableException('Type "' . get_resource_type($value) . ' resource" is not instantiable.');
+                throw new \JooosiMailDeps\DeepClone\NotInstantiableException('Type "' . get_resource_type($value) . ' resource" is not instantiable.');
             }
             $refs[$k] = $sentinel;
             if ($isRef = !$valueIsStatic = $values[$k] !== $sentinel) {
@@ -764,8 +764,8 @@ final class DeepClone
             }
             try {
                 self::$reflectors[$class] ??= self::getClassReflector($class);
-            } catch (\OmniMailDeps\DeepClone\ClassNotFoundException) {
-                throw new \OmniMailDeps\DeepClone\ClassNotFoundException('Class "' . $class . '" not found.');
+            } catch (\JooosiMailDeps\DeepClone\ClassNotFoundException) {
+                throw new \JooosiMailDeps\DeepClone\ClassNotFoundException('Class "' . $class . '" not found.');
             }
             // A class with __unserialize() is only ever emitted (by
             // deepclone_to_array()) as a negative-wakeup state replay; a payload
@@ -783,7 +783,7 @@ final class DeepClone
             } elseif (self::$instantiableWithoutConstructor[$class]) {
                 $objects[$id] = self::$reflectors[$class]->newInstanceWithoutConstructor();
             } elseif (null === self::$prototypes[$class]) {
-                throw new \OmniMailDeps\DeepClone\NotInstantiableException('Type "' . $class . '" is not instantiable.');
+                throw new \JooosiMailDeps\DeepClone\NotInstantiableException('Type "' . $class . '" is not instantiable.');
             } elseif (self::$reflectors[$class]->implementsInterface('Serializable') && !method_exists($class, '__unserialize')) {
                 $objects[$id] = unserialize('C:' . \strlen($class) . ':"' . $class . '":0:{}');
             } else {
@@ -1600,16 +1600,16 @@ final class DeepClone
     private static function getClassReflector($class, $instantiableWithoutConstructor = \false, $cloneable = null)
     {
         if (!($isClass = class_exists($class)) && !interface_exists($class, \false) && !trait_exists($class, \false)) {
-            throw new \OmniMailDeps\DeepClone\ClassNotFoundException('Class "' . $class . '" not found.');
+            throw new \JooosiMailDeps\DeepClone\ClassNotFoundException('Class "' . $class . '" not found.');
         }
         if (isset(self::NOT_ROUND_TRIPPABLE[$class])) {
-            throw new \OmniMailDeps\DeepClone\NotInstantiableException('Type "' . $class . '" is not instantiable.');
+            throw new \JooosiMailDeps\DeepClone\NotInstantiableException('Type "' . $class . '" is not instantiable.');
         }
         $reflector = new \ReflectionClass($class);
         if ($instantiableWithoutConstructor) {
             $proto = $reflector->newInstanceWithoutConstructor();
         } elseif (!$isClass || $reflector->isAbstract() || $reflector->isEnum()) {
-            throw new \OmniMailDeps\DeepClone\NotInstantiableException('Type "' . $class . '" is not instantiable.');
+            throw new \JooosiMailDeps\DeepClone\NotInstantiableException('Type "' . $class . '" is not instantiable.');
         } elseif ($reflector->name !== $class) {
             $reflector = self::$reflectors[$name = $reflector->name] ??= self::getClassReflector($name, \false, $cloneable);
             self::$cloneable[$class] = self::$cloneable[$name];
@@ -1632,14 +1632,14 @@ final class DeepClone
                             throw $e;
                         }
                         if (!method_exists($class, '__unserialize')) {
-                            throw new \OmniMailDeps\DeepClone\NotInstantiableException('Type "' . $class . '" is not instantiable.', 0, $e);
+                            throw new \JooosiMailDeps\DeepClone\NotInstantiableException('Type "' . $class . '" is not instantiable.', 0, $e);
                         }
                         self::$needsFullUnserialize[$class] = \true;
                         $proto = null;
                     }
                     if (\false === $proto) {
                         if (!method_exists($class, '__unserialize')) {
-                            throw new \OmniMailDeps\DeepClone\NotInstantiableException('Type "' . $class . '" is not instantiable.');
+                            throw new \JooosiMailDeps\DeepClone\NotInstantiableException('Type "' . $class . '" is not instantiable.');
                         }
                         self::$needsFullUnserialize[$class] = \true;
                         $proto = null;
@@ -1650,13 +1650,13 @@ final class DeepClone
                 try {
                     serialize($proto);
                 } catch (\Exception $e) {
-                    throw new \OmniMailDeps\DeepClone\NotInstantiableException('Type "' . $class . '" is not instantiable.', 0, $e);
+                    throw new \JooosiMailDeps\DeepClone\NotInstantiableException('Type "' . $class . '" is not instantiable.', 0, $e);
                 }
             }
         }
         if (null === $cloneable) {
             if (($proto instanceof \Reflector || $proto instanceof \ReflectionGenerator || $proto instanceof \ReflectionType || $proto instanceof \IteratorIterator || $proto instanceof \RecursiveIteratorIterator) && (!$proto instanceof \Serializable && !method_exists($class, '__wakeup') && !method_exists($class, '__unserialize'))) {
-                throw new \OmniMailDeps\DeepClone\NotInstantiableException('Type "' . $class . '" is not instantiable.');
+                throw new \JooosiMailDeps\DeepClone\NotInstantiableException('Type "' . $class . '" is not instantiable.');
             }
             $cloneable = $reflector->isCloneable() && !$reflector->hasMethod('__clone');
         }
@@ -1724,8 +1724,8 @@ final class DeepClone
     }
     private static function getSimpleHydrator(string $class, int $flags = 0): \Closure
     {
-        $callHooks = (bool) ($flags & \OmniMailDeps\DEEPCLONE_HYDRATE_CALL_HOOKS);
-        $noLazyInit = \PHP_VERSION_ID >= 80400 && $flags & \OmniMailDeps\DEEPCLONE_HYDRATE_NO_LAZY_INIT;
+        $callHooks = (bool) ($flags & \JooosiMailDeps\DEEPCLONE_HYDRATE_CALL_HOOKS);
+        $noLazyInit = \PHP_VERSION_ID >= 80400 && $flags & \JooosiMailDeps\DEEPCLONE_HYDRATE_NO_LAZY_INIT;
         $baseHydrator = self::$simpleHydrators['stdClass'] ??= static function ($properties, $object, $hasRefs) {
             if ($hasRefs) {
                 foreach ($properties as $name => &$value) {
@@ -1746,7 +1746,7 @@ final class DeepClone
         } elseif ('ErrorException' === $class) {
             $class = 'Exception';
         } elseif (!class_exists($class, \false)) {
-            throw new \OmniMailDeps\DeepClone\ClassNotFoundException('Class "' . $class . '" not found.');
+            throw new \JooosiMailDeps\DeepClone\ClassNotFoundException('Class "' . $class . '" not found.');
         }
         $classReflector = self::$reflectors[$class] ?? new \ReflectionClass($class);
         if ($classReflector->isInternal()) {

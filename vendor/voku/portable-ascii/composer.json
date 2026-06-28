@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\voku\\": "src\/voku\/"
+            "JooosiMailDeps\\voku\\": "src\/voku\/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "OmniMailDeps\\voku\\tests\\": "tests\/"
+            "JooosiMailDeps\\voku\\tests\\": "tests\/"
         }
     }
 }

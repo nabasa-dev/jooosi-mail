@@ -1,15 +1,15 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Validation;
+namespace JooosiMailDeps\Egulias\EmailValidator\Validation;
 
-use OmniMailDeps\Egulias\EmailValidator\EmailLexer;
-use OmniMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\DomainAcceptsNoMail;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\LocalOrReservedDomain;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\NoDNSRecord as ReasonNoDNSRecord;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\UnableToGetDNSRecord;
-use OmniMailDeps\Egulias\EmailValidator\Warning\NoDNSMXRecord;
-use OmniMailDeps\Egulias\EmailValidator\Warning\Warning;
+use JooosiMailDeps\Egulias\EmailValidator\EmailLexer;
+use JooosiMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\DomainAcceptsNoMail;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\LocalOrReservedDomain;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\NoDNSRecord as ReasonNoDNSRecord;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\UnableToGetDNSRecord;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\NoDNSMXRecord;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\Warning;
 class DNSCheckValidation implements EmailValidation
 {
     /**

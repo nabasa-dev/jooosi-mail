@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniMailDeps\Tempest\Discovery;
+namespace JooosiMailDeps\Tempest\Discovery;
 
-use OmniMailDeps\Psr\Container\ContainerInterface;
+use JooosiMailDeps\Psr\Container\ContainerInterface;
 final class GenerateDiscoveryCache
 {
     /**

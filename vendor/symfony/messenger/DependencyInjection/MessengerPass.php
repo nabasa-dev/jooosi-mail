@@ -8,20 +8,20 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\DependencyInjection;
+namespace JooosiMailDeps\Symfony\Component\Messenger\DependencyInjection;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\IteratorArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ChildDefinition;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Compiler\ServiceLocatorTagPass;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Definition;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\RuntimeException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Reference;
-use OmniMailDeps\Symfony\Component\Messenger\Handler\HandlerDescriptor;
-use OmniMailDeps\Symfony\Component\Messenger\Handler\HandlersLocator;
-use OmniMailDeps\Symfony\Component\Messenger\TraceableMessageBus;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Receiver\ReceiverInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\IteratorArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ChildDefinition;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler\ServiceLocatorTagPass;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Definition;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Reference;
+use JooosiMailDeps\Symfony\Component\Messenger\Handler\HandlerDescriptor;
+use JooosiMailDeps\Symfony\Component\Messenger\Handler\HandlersLocator;
+use JooosiMailDeps\Symfony\Component\Messenger\TraceableMessageBus;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Receiver\ReceiverInterface;
 /**
  * @author Samuel Roze <samuel.roze@gmail.com>
  */

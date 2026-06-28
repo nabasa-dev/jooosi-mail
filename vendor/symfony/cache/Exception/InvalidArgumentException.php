@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\Exception;
+namespace JooosiMailDeps\Symfony\Component\Cache\Exception;
 
-use OmniMailDeps\Psr\Cache\InvalidArgumentException as Psr6CacheInterface;
-use OmniMailDeps\Psr\SimpleCache\InvalidArgumentException as SimpleCacheInterface;
+use JooosiMailDeps\Psr\Cache\InvalidArgumentException as Psr6CacheInterface;
+use JooosiMailDeps\Psr\SimpleCache\InvalidArgumentException as SimpleCacheInterface;
 if (interface_exists(SimpleCacheInterface::class)) {
     class InvalidArgumentException extends \InvalidArgumentException implements Psr6CacheInterface, SimpleCacheInterface
     {

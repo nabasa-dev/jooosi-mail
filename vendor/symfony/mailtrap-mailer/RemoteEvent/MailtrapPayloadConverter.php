@@ -8,13 +8,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Bridge\Mailtrap\RemoteEvent;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Bridge\Mailtrap\RemoteEvent;
 
-use OmniMailDeps\Symfony\Component\RemoteEvent\Event\Mailer\MailerDeliveryEvent;
-use OmniMailDeps\Symfony\Component\RemoteEvent\Event\Mailer\MailerEngagementEvent;
-use OmniMailDeps\Symfony\Component\RemoteEvent\Exception\ParseException;
-use OmniMailDeps\Symfony\Component\RemoteEvent\PayloadConverterInterface;
-use OmniMailDeps\Symfony\Component\RemoteEvent\RemoteEvent;
+use JooosiMailDeps\Symfony\Component\RemoteEvent\Event\Mailer\MailerDeliveryEvent;
+use JooosiMailDeps\Symfony\Component\RemoteEvent\Event\Mailer\MailerEngagementEvent;
+use JooosiMailDeps\Symfony\Component\RemoteEvent\Exception\ParseException;
+use JooosiMailDeps\Symfony\Component\RemoteEvent\PayloadConverterInterface;
+use JooosiMailDeps\Symfony\Component\RemoteEvent\RemoteEvent;
 /**
  * @author Kevin Bond <kevinbond@gmail.com>
  */

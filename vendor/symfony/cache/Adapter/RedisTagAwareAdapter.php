@@ -8,22 +8,22 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\Adapter;
+namespace JooosiMailDeps\Symfony\Component\Cache\Adapter;
 
-use OmniMailDeps\Predis\Connection\Aggregate\ClusterInterface;
-use OmniMailDeps\Predis\Connection\Aggregate\PredisCluster;
-use OmniMailDeps\Predis\Connection\Aggregate\ReplicationInterface;
-use OmniMailDeps\Predis\Connection\Replication\ReplicationInterface as Predis2ReplicationInterface;
-use OmniMailDeps\Predis\Response\ErrorInterface;
-use OmniMailDeps\Predis\Response\Status;
+use JooosiMailDeps\Predis\Connection\Aggregate\ClusterInterface;
+use JooosiMailDeps\Predis\Connection\Aggregate\PredisCluster;
+use JooosiMailDeps\Predis\Connection\Aggregate\ReplicationInterface;
+use JooosiMailDeps\Predis\Connection\Replication\ReplicationInterface as Predis2ReplicationInterface;
+use JooosiMailDeps\Predis\Response\ErrorInterface;
+use JooosiMailDeps\Predis\Response\Status;
 use Relay\Relay;
-use OmniMailDeps\Symfony\Component\Cache\CacheItem;
-use OmniMailDeps\Symfony\Component\Cache\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Cache\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\Cache\Marshaller\DeflateMarshaller;
-use OmniMailDeps\Symfony\Component\Cache\Marshaller\MarshallerInterface;
-use OmniMailDeps\Symfony\Component\Cache\Marshaller\TagAwareMarshaller;
-use OmniMailDeps\Symfony\Component\Cache\Traits\RedisTrait;
+use JooosiMailDeps\Symfony\Component\Cache\CacheItem;
+use JooosiMailDeps\Symfony\Component\Cache\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Cache\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\Cache\Marshaller\DeflateMarshaller;
+use JooosiMailDeps\Symfony\Component\Cache\Marshaller\MarshallerInterface;
+use JooosiMailDeps\Symfony\Component\Cache\Marshaller\TagAwareMarshaller;
+use JooosiMailDeps\Symfony\Component\Cache\Traits\RedisTrait;
 /**
  * Stores tag id <> cache id relationship as a Redis Set.
  *
@@ -55,13 +55,13 @@ class RedisTagAwareAdapter extends AbstractTagAwareAdapter
      * detected eviction policy used on Redis server.
      */
     private string $redisEvictionPolicy;
-    public function __construct(\Redis|Relay|\Relay\Cluster|\RedisArray|\RedisCluster|\OmniMailDeps\Predis\ClientInterface $redis, private string $namespace = '', int $defaultLifetime = 0, ?MarshallerInterface $marshaller = null)
+    public function __construct(\Redis|Relay|\Relay\Cluster|\RedisArray|\RedisCluster|\JooosiMailDeps\Predis\ClientInterface $redis, private string $namespace = '', int $defaultLifetime = 0, ?MarshallerInterface $marshaller = null)
     {
-        if ($redis instanceof \OmniMailDeps\Predis\ClientInterface && $redis->getConnection() instanceof ClusterInterface && !$redis->getConnection() instanceof PredisCluster) {
+        if ($redis instanceof \JooosiMailDeps\Predis\ClientInterface && $redis->getConnection() instanceof ClusterInterface && !$redis->getConnection() instanceof PredisCluster) {
             throw new InvalidArgumentException(\sprintf('Unsupported Predis cluster connection: only "%s" is, "%s" given.', PredisCluster::class, get_debug_type($redis->getConnection())));
         }
         $isRelay = $redis instanceof Relay || $redis instanceof \Relay\Cluster;
-        if ($isRelay || \defined('OmniMailDeps\Redis::OPT_COMPRESSION') && \in_array($redis::class, [\Redis::class, \RedisArray::class, \RedisCluster::class], \true)) {
+        if ($isRelay || \defined('JooosiMailDeps\Redis::OPT_COMPRESSION') && \in_array($redis::class, [\Redis::class, \RedisArray::class, \RedisCluster::class], \true)) {
             $compression = $redis->getOption($isRelay ? Relay::OPT_COMPRESSION : \Redis::OPT_COMPRESSION);
             foreach (\is_array($compression) ? $compression : [$compression] as $c) {
                 if ($isRelay ? Relay::COMPRESSION_NONE : \Redis::COMPRESSION_NONE !== $c) {
@@ -129,7 +129,7 @@ class RedisTagAwareAdapter extends AbstractTagAwareAdapter
 EOLUA;
         $results = $this->pipeline(function () use ($ids, $lua) {
             foreach ($ids as $id) {
-                yield 'eval' => $this->redis instanceof \OmniMailDeps\Predis\ClientInterface ? [$lua, 1, $id] : [$lua, [$id], 1];
+                yield 'eval' => $this->redis instanceof \JooosiMailDeps\Predis\ClientInterface ? [$lua, 1, $id] : [$lua, [$id], 1];
             }
         });
         foreach ($results as $id => $result) {
@@ -191,13 +191,13 @@ EOLUA;
             return redis.call('SSCAN', '{'..id..'}'..id, '0', 'COUNT', 5000)
 EOLUA;
         $results = $this->pipeline(function () use ($tagIds, $lua) {
-            if ($this->redis instanceof \OmniMailDeps\Predis\ClientInterface) {
+            if ($this->redis instanceof \JooosiMailDeps\Predis\ClientInterface) {
                 $prefix = $this->redis->getOptions()->prefix ? $this->redis->getOptions()->prefix->getPrefix() : '';
             } elseif (\is_array($prefix = $this->redis->getOption($this->redis instanceof Relay || $this->redis instanceof \Relay\Cluster ? Relay::OPT_PREFIX : \Redis::OPT_PREFIX) ?? '')) {
                 $prefix = current($prefix);
             }
             foreach ($tagIds as $id) {
-                yield 'eval' => $this->redis instanceof \OmniMailDeps\Predis\ClientInterface ? [$lua, 1, $id, $prefix] : [$lua, [$id, $prefix], 1];
+                yield 'eval' => $this->redis instanceof \JooosiMailDeps\Predis\ClientInterface ? [$lua, 1, $id, $prefix] : [$lua, [$id, $prefix], 1];
             }
         });
         $lua = <<<'EOLUA'
@@ -221,7 +221,7 @@ EOLUA;
                 $this->doDelete($ids);
                 $evalArgs = [$id, $cursor];
                 array_splice($evalArgs, 1, 0, $ids);
-                if ($this->redis instanceof \OmniMailDeps\Predis\ClientInterface) {
+                if ($this->redis instanceof \JooosiMailDeps\Predis\ClientInterface) {
                     array_unshift($evalArgs, $lua, 1);
                 } else {
                     $evalArgs = [$lua, $evalArgs, 1];
@@ -243,7 +243,7 @@ EOLUA;
         }
         $hosts = $this->getHosts();
         $host = reset($hosts);
-        if ($host instanceof \OmniMailDeps\Predis\Client) {
+        if ($host instanceof \JooosiMailDeps\Predis\Client) {
             $connection = $host->getConnection();
             // Predis supports info command only on the master in replication environments
             if ($connection instanceof ReplicationInterface) {

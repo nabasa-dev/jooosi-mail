@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Discovery\Stubs;
+namespace JooosiMailDeps\Tempest\Discovery\Stubs;
 
-use OmniMailDeps\Tempest\Discovery\Discovery;
-use OmniMailDeps\Tempest\Discovery\DiscoveryLocation;
-use OmniMailDeps\Tempest\Discovery\IsDiscovery;
-use OmniMailDeps\Tempest\Discovery\SkipDiscovery;
-use OmniMailDeps\Tempest\Reflection\ClassReflector;
+use JooosiMailDeps\Tempest\Discovery\Discovery;
+use JooosiMailDeps\Tempest\Discovery\DiscoveryLocation;
+use JooosiMailDeps\Tempest\Discovery\IsDiscovery;
+use JooosiMailDeps\Tempest\Discovery\SkipDiscovery;
+use JooosiMailDeps\Tempest\Reflection\ClassReflector;
 #[SkipDiscovery]
 final class DiscoveryStub implements Discovery
 {

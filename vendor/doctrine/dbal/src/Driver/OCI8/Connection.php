@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\OCI8;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\OCI8;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Connection as ConnectionInterface;
-use OmniMailDeps\Doctrine\DBAL\Driver\Exception;
-use OmniMailDeps\Doctrine\DBAL\Driver\Exception\IdentityColumnsNotSupported;
-use OmniMailDeps\Doctrine\DBAL\Driver\OCI8\Exception\Error;
-use OmniMailDeps\Doctrine\DBAL\SQL\Parser;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Connection as ConnectionInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Exception\IdentityColumnsNotSupported;
+use JooosiMailDeps\Doctrine\DBAL\Driver\OCI8\Exception\Error;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Parser;
 use function addcslashes;
 use function assert;
 use function is_resource;

@@ -1,15 +1,15 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\PDO\SQLSrv;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\PDO\SQLSrv;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\AbstractSQLServerDriver;
-use OmniMailDeps\Doctrine\DBAL\Driver\AbstractSQLServerDriver\Exception\PortWithoutHost;
-use OmniMailDeps\Doctrine\DBAL\Driver\Exception;
-use OmniMailDeps\Doctrine\DBAL\Driver\PDO\Connection as PDOConnection;
-use OmniMailDeps\Doctrine\DBAL\Driver\PDO\Exception as PDOException;
-use OmniMailDeps\Doctrine\DBAL\Driver\PDO\Exception\InvalidConfiguration;
-use OmniMailDeps\Doctrine\DBAL\Driver\PDO\PDOConnect;
+use JooosiMailDeps\Doctrine\DBAL\Driver\AbstractSQLServerDriver;
+use JooosiMailDeps\Doctrine\DBAL\Driver\AbstractSQLServerDriver\Exception\PortWithoutHost;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Driver\PDO\Connection as PDOConnection;
+use JooosiMailDeps\Doctrine\DBAL\Driver\PDO\Exception as PDOException;
+use JooosiMailDeps\Doctrine\DBAL\Driver\PDO\Exception\InvalidConfiguration;
+use JooosiMailDeps\Doctrine\DBAL\Driver\PDO\PDOConnect;
 use PDO;
 use SensitiveParameter;
 use function is_int;

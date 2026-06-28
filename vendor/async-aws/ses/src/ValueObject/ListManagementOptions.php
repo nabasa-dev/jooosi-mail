@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Ses\ValueObject;
+namespace JooosiMailDeps\AsyncAws\Ses\ValueObject;
 
-use OmniMailDeps\AsyncAws\Core\Exception\InvalidArgument;
+use JooosiMailDeps\AsyncAws\Core\Exception\InvalidArgument;
 /**
  * An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to
  * unsubscribe.

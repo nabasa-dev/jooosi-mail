@@ -34,12 +34,12 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Egulias\\EmailValidator\\": "src"
+            "JooosiMailDeps\\Egulias\\EmailValidator\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "OmniMailDeps\\Egulias\\EmailValidator\\Tests\\": "tests"
+            "JooosiMailDeps\\Egulias\\EmailValidator\\Tests\\": "tests"
         }
     }
 }

@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\Mysqli;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\Mysqli;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Connection as ConnectionInterface;
-use OmniMailDeps\Doctrine\DBAL\Driver\Exception;
-use OmniMailDeps\Doctrine\DBAL\Driver\Mysqli\Exception\ConnectionError;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Connection as ConnectionInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Mysqli\Exception\ConnectionError;
 use mysqli;
 use mysqli_sql_exception;
 final class Connection implements ConnectionInterface

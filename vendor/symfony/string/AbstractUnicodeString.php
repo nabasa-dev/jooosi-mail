@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\String;
+namespace JooosiMailDeps\Symfony\Component\String;
 
-use OmniMailDeps\Symfony\Component\String\Exception\ExceptionInterface;
-use OmniMailDeps\Symfony\Component\String\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\String\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Component\String\Exception\ExceptionInterface;
+use JooosiMailDeps\Symfony\Component\String\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\String\Exception\RuntimeException;
 /**
  * Represents a string of abstract Unicode characters.
  *
@@ -162,7 +162,7 @@ abstract class AbstractUnicodeString extends AbstractString
     public function folded(bool $compat = \true): static
     {
         $str = clone $this;
-        if (!$compat || !\defined('OmniMailDeps\Normalizer::NFKC_CF')) {
+        if (!$compat || !\defined('JooosiMailDeps\Normalizer::NFKC_CF')) {
             $str->string = normalizer_normalize($str->string, $compat ? \Normalizer::NFKC : \Normalizer::NFC);
             $str->string = mb_strtolower(str_replace(self::FOLD_FROM, self::FOLD_TO, $str->string), 'UTF-8');
         } else {

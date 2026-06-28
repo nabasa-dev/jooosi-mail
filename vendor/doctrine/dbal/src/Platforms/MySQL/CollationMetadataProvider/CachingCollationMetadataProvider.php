@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Platforms\MySQL\CollationMetadataProvider;
+namespace JooosiMailDeps\Doctrine\DBAL\Platforms\MySQL\CollationMetadataProvider;
 
-use OmniMailDeps\Doctrine\DBAL\Platforms\MySQL\CollationMetadataProvider;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\MySQL\CollationMetadataProvider;
 use function array_key_exists;
 /** @internal */
 final class CachingCollationMetadataProvider implements CollationMetadataProvider

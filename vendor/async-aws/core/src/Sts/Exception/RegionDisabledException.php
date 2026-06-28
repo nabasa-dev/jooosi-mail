@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Sts\Exception;
+namespace JooosiMailDeps\AsyncAws\Core\Sts\Exception;
 
-use OmniMailDeps\AsyncAws\Core\Exception\Http\ClientException;
+use JooosiMailDeps\AsyncAws\Core\Exception\Http\ClientException;
 /**
  * STS is not activated in the requested region for the account that is being asked to generate credentials. The account
  * administrator must use the IAM console to activate STS in that region. For more information, see Activating and

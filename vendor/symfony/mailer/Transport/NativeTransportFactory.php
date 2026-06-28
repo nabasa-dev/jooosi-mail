@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Transport;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Transport;
 
-use OmniMailDeps\Symfony\Component\Mailer\Exception\TransportException;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Smtp\SmtpTransport;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Smtp\Stream\SocketStream;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\TransportException;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Smtp\SmtpTransport;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Smtp\Stream\SocketStream;
 /**
  * Factory that configures a transport (sendmail or SMTP) based on php.ini settings.
  *

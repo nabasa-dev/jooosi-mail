@@ -8,43 +8,43 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\TypeInfo\TypeResolver;
+namespace JooosiMailDeps\Symfony\Component\TypeInfo\TypeResolver;
 
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\ConstExpr\ConstExprArrayNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\ConstExpr\ConstExprFalseNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\ConstExpr\ConstExprFloatNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\ConstExpr\ConstExprIntegerNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\ConstExpr\ConstExprNullNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\ConstExpr\ConstExprStringNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\ConstExpr\ConstExprTrueNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\ConstExpr\ConstFetchNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\Type\ArrayShapeNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\Type\ArrayTypeNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\Type\CallableTypeNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\Type\ConstTypeNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\Type\GenericTypeNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\Type\IdentifierTypeNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\Type\IntersectionTypeNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\Type\NullableTypeNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\Type\ObjectShapeNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\Type\ThisTypeNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\Type\TypeNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\Type\UnionTypeNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Lexer\Lexer;
-use OmniMailDeps\PHPStan\PhpDocParser\Parser\ConstExprParser;
-use OmniMailDeps\PHPStan\PhpDocParser\Parser\TokenIterator;
-use OmniMailDeps\PHPStan\PhpDocParser\Parser\TypeParser;
-use OmniMailDeps\PHPStan\PhpDocParser\ParserConfig;
-use OmniMailDeps\Symfony\Component\TypeInfo\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\TypeInfo\Exception\UnsupportedException;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\BackedEnumType;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\BuiltinType;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\CollectionType;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\GenericType;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\ObjectType;
-use OmniMailDeps\Symfony\Component\TypeInfo\TypeContext\TypeContext;
-use OmniMailDeps\Symfony\Component\TypeInfo\TypeIdentifier;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\ConstExpr\ConstExprArrayNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\ConstExpr\ConstExprFalseNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\ConstExpr\ConstExprFloatNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\ConstExpr\ConstExprIntegerNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\ConstExpr\ConstExprNullNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\ConstExpr\ConstExprStringNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\ConstExpr\ConstExprTrueNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\ConstExpr\ConstFetchNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\Type\ArrayShapeNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\Type\ArrayTypeNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\Type\CallableTypeNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\Type\ConstTypeNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\Type\GenericTypeNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\Type\IdentifierTypeNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\Type\IntersectionTypeNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\Type\NullableTypeNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\Type\ObjectShapeNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\Type\ThisTypeNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\Type\TypeNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\Type\UnionTypeNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Lexer\Lexer;
+use JooosiMailDeps\PHPStan\PhpDocParser\Parser\ConstExprParser;
+use JooosiMailDeps\PHPStan\PhpDocParser\Parser\TokenIterator;
+use JooosiMailDeps\PHPStan\PhpDocParser\Parser\TypeParser;
+use JooosiMailDeps\PHPStan\PhpDocParser\ParserConfig;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Exception\UnsupportedException;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\BackedEnumType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\BuiltinType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\CollectionType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\GenericType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\ObjectType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\TypeContext\TypeContext;
+use JooosiMailDeps\Symfony\Component\TypeInfo\TypeIdentifier;
 /**
  * Resolves type for a given string.
  *

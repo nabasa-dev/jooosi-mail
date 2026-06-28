@@ -8,19 +8,19 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Compiler;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler;
 
-use OmniMailDeps\Symfony\Component\Config\Definition\BaseNode;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\RuntimeException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Extension\ConfigurationExtensionInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Extension\Extension;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ParameterBag\EnvPlaceholderParameterBag;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
+use JooosiMailDeps\Symfony\Component\Config\Definition\BaseNode;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Extension\ConfigurationExtensionInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Extension\Extension;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ParameterBag\EnvPlaceholderParameterBag;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 /**
  * Merges extension configs into the container builder.
  *

@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Bootstrap;
+namespace JooosiMail\Bootstrap;
 
-use OmniMail\Infrastructure\Container\ContainerFactory;
-use OmniMailDeps\Psr\Container\ContainerInterface;
+use JooosiMail\Infrastructure\Container\ContainerFactory;
+use JooosiMailDeps\Psr\Container\ContainerInterface;
 /**
  * Boots the compiled Symfony container and runtime lifecycle.
  *
@@ -13,11 +13,11 @@ use OmniMailDeps\Psr\Container\ContainerInterface;
 final class Kernel
 {
     private ?ContainerInterface $container = null;
-    public function __construct(private readonly \OmniMail\Bootstrap\Paths $paths, private readonly \OmniMail\Bootstrap\Environment $environment)
+    public function __construct(private readonly \JooosiMail\Bootstrap\Paths $paths, private readonly \JooosiMail\Bootstrap\Environment $environment)
     {
     }
     /**
-     * Boot Omni Mail for the current request.
+     * Boot Jooosi Mail for the current request.
      *
      * @since 0.1.0
      */
@@ -27,7 +27,7 @@ final class Kernel
             return;
         }
         $this->container = (new ContainerFactory($this->paths, $this->environment))->build();
-        $this->container->get(\OmniMail\Bootstrap\LifecycleManager::class)->boot();
+        $this->container->get(\JooosiMail\Bootstrap\LifecycleManager::class)->boot();
     }
     /**
      * Run activation lifecycle work.
@@ -37,7 +37,7 @@ final class Kernel
     public function activate(): void
     {
         $this->boot();
-        $this->container?->get(\OmniMail\Bootstrap\LifecycleManager::class)->activate();
+        $this->container?->get(\JooosiMail\Bootstrap\LifecycleManager::class)->activate();
     }
     /**
      * Run deactivation lifecycle work.
@@ -47,6 +47,6 @@ final class Kernel
     public function deactivate(): void
     {
         $this->boot();
-        $this->container?->get(\OmniMail\Bootstrap\LifecycleManager::class)->deactivate();
+        $this->container?->get(\JooosiMail\Bootstrap\LifecycleManager::class)->deactivate();
     }
 }

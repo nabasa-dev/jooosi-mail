@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\PgSQL;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\PgSQL;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\FetchUtils;
-use OmniMailDeps\Doctrine\DBAL\Driver\PgSQL\Exception\UnexpectedValue;
-use OmniMailDeps\Doctrine\DBAL\Driver\Result as ResultInterface;
-use OmniMailDeps\Doctrine\DBAL\Exception\InvalidColumnIndex;
+use JooosiMailDeps\Doctrine\DBAL\Driver\FetchUtils;
+use JooosiMailDeps\Doctrine\DBAL\Driver\PgSQL\Exception\UnexpectedValue;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Result as ResultInterface;
+use JooosiMailDeps\Doctrine\DBAL\Exception\InvalidColumnIndex;
 use PgSql\Result as PgSqlResult;
 use ValueError;
 use function array_keys;

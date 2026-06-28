@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Discovery;
+namespace JooosiMailDeps\Tempest\Discovery;
 
-use OmniMailDeps\Tempest\Reflection\ClassReflector;
+use JooosiMailDeps\Tempest\Reflection\ClassReflector;
 final class DiscoveryDiscovery implements Discovery
 {
     use IsDiscovery;

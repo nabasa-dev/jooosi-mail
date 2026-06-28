@@ -1,23 +1,23 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Queue\Bus;
+namespace JooosiMail\Queue\Bus;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Symfony\Component\Messenger\MessageBus;
-use OmniMailDeps\Symfony\Component\Messenger\MessageBusInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Middleware\HandleMessageMiddleware;
-use OmniMailDeps\Symfony\Component\Messenger\Middleware\SendMessageMiddleware;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\MessageBus;
+use JooosiMailDeps\Symfony\Component\Messenger\MessageBusInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Middleware\HandleMessageMiddleware;
+use JooosiMailDeps\Symfony\Component\Messenger\Middleware\SendMessageMiddleware;
 /**
- * Builds the Omni Mail Messenger bus.
+ * Builds the Jooosi Mail Messenger bus.
  *
  * @since 0.1.0
  */
 #[Service]
 final readonly class MessageBusFactory
 {
-    public function __construct(private \OmniMail\Queue\Bus\MessageRouter $messageRouter, private \OmniMail\Queue\Bus\HandlerLocator $handlerLocator, private EventDispatcherInterface $eventDispatcher)
+    public function __construct(private \JooosiMail\Queue\Bus\MessageRouter $messageRouter, private \JooosiMail\Queue\Bus\HandlerLocator $handlerLocator, private EventDispatcherInterface $eventDispatcher)
     {
     }
     /**

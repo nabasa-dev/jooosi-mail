@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger;
+namespace JooosiMailDeps\Symfony\Component\Messenger;
 
-use OmniMailDeps\Symfony\Component\Messenger\Middleware\MiddlewareInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Middleware\StackMiddleware;
+use JooosiMailDeps\Symfony\Component\Messenger\Middleware\MiddlewareInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Middleware\StackMiddleware;
 /**
  * @author Samuel Roze <samuel.roze@gmail.com>
  * @author Matthias Noback <matthiasnoback@gmail.com>

@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Sts\Exception;
+namespace JooosiMailDeps\AsyncAws\Core\Sts\Exception;
 
-use OmniMailDeps\AsyncAws\Core\Exception\Http\ClientException;
+use JooosiMailDeps\AsyncAws\Core\Exception\Http\ClientException;
 /**
  * The request was rejected because the total packed size of the session policies and session tags combined was too
  * large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session

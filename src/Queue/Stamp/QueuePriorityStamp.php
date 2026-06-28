@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Queue\Stamp;
+namespace JooosiMail\Queue\Stamp;
 
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\StampInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\StampInterface;
 /**
  * Carries queue priority into the database transport.
  *

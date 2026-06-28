@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Contracts\Service\Attribute;
+namespace JooosiMailDeps\Symfony\Contracts\Service\Attribute;
 
-use OmniMailDeps\Symfony\Contracts\Service\ServiceMethodsSubscriberTrait;
-use OmniMailDeps\Symfony\Contracts\Service\ServiceSubscriberInterface;
+use JooosiMailDeps\Symfony\Contracts\Service\ServiceMethodsSubscriberTrait;
+use JooosiMailDeps\Symfony\Contracts\Service\ServiceSubscriberInterface;
 /**
  * For use as the return value for {@see ServiceSubscriberInterface}.
  *

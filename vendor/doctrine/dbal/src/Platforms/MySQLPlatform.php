@@ -1,16 +1,16 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Platforms;
+namespace JooosiMailDeps\Doctrine\DBAL\Platforms;
 
-use OmniMailDeps\Doctrine\DBAL\Platforms\Exception\NotSupported;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Keywords\KeywordList;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Keywords\MySQLKeywords;
-use OmniMailDeps\Doctrine\DBAL\Schema\Index;
-use OmniMailDeps\Doctrine\DBAL\SQL\Builder\WithSQLBuilder;
-use OmniMailDeps\Doctrine\DBAL\Types\BlobType;
-use OmniMailDeps\Doctrine\DBAL\Types\TextType;
-use OmniMailDeps\Doctrine\Deprecations\Deprecation;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Exception\NotSupported;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Keywords\KeywordList;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Keywords\MySQLKeywords;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Index;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Builder\WithSQLBuilder;
+use JooosiMailDeps\Doctrine\DBAL\Types\BlobType;
+use JooosiMailDeps\Doctrine\DBAL\Types\TextType;
+use JooosiMailDeps\Doctrine\Deprecations\Deprecation;
 /**
  * Provides the behavior, features and SQL dialect of the Oracle MySQL database platform
  * of the oldest supported version.

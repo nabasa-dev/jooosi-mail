@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Transport;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Transport;
 
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Receiver\ReceiverInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Sender\SenderInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Receiver\ReceiverInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Sender\SenderInterface;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  */

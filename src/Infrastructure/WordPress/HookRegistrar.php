@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Infrastructure\WordPress;
+namespace JooosiMail\Infrastructure\WordPress;
 
-use OmniMail\Discovery\Attribute\Hook;
-use OmniMail\Discovery\Runtime\DiscoveryManifest;
-use OmniMailDeps\Psr\Container\ContainerInterface;
+use JooosiMail\Discovery\Attribute\Hook;
+use JooosiMail\Discovery\Runtime\DiscoveryManifest;
+use JooosiMailDeps\Psr\Container\ContainerInterface;
 use ReflectionClass;
 use ReflectionMethod;
 /**

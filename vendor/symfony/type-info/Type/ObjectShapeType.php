@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\TypeInfo\Type;
+namespace JooosiMailDeps\Symfony\Component\TypeInfo\Type;
 
-use OmniMailDeps\Symfony\Component\TypeInfo\Type;
-use OmniMailDeps\Symfony\Component\TypeInfo\TypeIdentifier;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type;
+use JooosiMailDeps\Symfony\Component\TypeInfo\TypeIdentifier;
 /**
  * Represents the exact shape of an anonymous object.
  *

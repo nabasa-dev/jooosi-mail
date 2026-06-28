@@ -8,32 +8,32 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Command;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Command;
 
-use OmniMailDeps\Psr\Container\ContainerInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\Console\Attribute\AsCommand;
-use OmniMailDeps\Symfony\Component\Console\Command\Command;
-use OmniMailDeps\Symfony\Component\Console\Command\SignalableCommandInterface;
-use OmniMailDeps\Symfony\Component\Console\Completion\CompletionInput;
-use OmniMailDeps\Symfony\Component\Console\Completion\CompletionSuggestions;
-use OmniMailDeps\Symfony\Component\Console\Exception\InvalidOptionException;
-use OmniMailDeps\Symfony\Component\Console\Exception\RuntimeException;
-use OmniMailDeps\Symfony\Component\Console\Input\InputArgument;
-use OmniMailDeps\Symfony\Component\Console\Input\InputInterface;
-use OmniMailDeps\Symfony\Component\Console\Input\InputOption;
-use OmniMailDeps\Symfony\Component\Console\Output\OutputInterface;
-use OmniMailDeps\Symfony\Component\Console\Question\ChoiceQuestion;
-use OmniMailDeps\Symfony\Component\Console\SignalRegistry\SignalRegistry;
-use OmniMailDeps\Symfony\Component\Console\Style\SymfonyStyle;
-use OmniMailDeps\Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Symfony\Component\Messenger\EventListener\ResetServicesListener;
-use OmniMailDeps\Symfony\Component\Messenger\EventListener\StopWorkerOnFailureLimitListener;
-use OmniMailDeps\Symfony\Component\Messenger\EventListener\StopWorkerOnMemoryLimitListener;
-use OmniMailDeps\Symfony\Component\Messenger\EventListener\StopWorkerOnMessageLimitListener;
-use OmniMailDeps\Symfony\Component\Messenger\RoutableMessageBus;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Sync\SyncTransport;
-use OmniMailDeps\Symfony\Component\Messenger\Worker;
+use JooosiMailDeps\Psr\Container\ContainerInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\Console\Attribute\AsCommand;
+use JooosiMailDeps\Symfony\Component\Console\Command\Command;
+use JooosiMailDeps\Symfony\Component\Console\Command\SignalableCommandInterface;
+use JooosiMailDeps\Symfony\Component\Console\Completion\CompletionInput;
+use JooosiMailDeps\Symfony\Component\Console\Completion\CompletionSuggestions;
+use JooosiMailDeps\Symfony\Component\Console\Exception\InvalidOptionException;
+use JooosiMailDeps\Symfony\Component\Console\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Component\Console\Input\InputArgument;
+use JooosiMailDeps\Symfony\Component\Console\Input\InputInterface;
+use JooosiMailDeps\Symfony\Component\Console\Input\InputOption;
+use JooosiMailDeps\Symfony\Component\Console\Output\OutputInterface;
+use JooosiMailDeps\Symfony\Component\Console\Question\ChoiceQuestion;
+use JooosiMailDeps\Symfony\Component\Console\SignalRegistry\SignalRegistry;
+use JooosiMailDeps\Symfony\Component\Console\Style\SymfonyStyle;
+use JooosiMailDeps\Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\EventListener\ResetServicesListener;
+use JooosiMailDeps\Symfony\Component\Messenger\EventListener\StopWorkerOnFailureLimitListener;
+use JooosiMailDeps\Symfony\Component\Messenger\EventListener\StopWorkerOnMemoryLimitListener;
+use JooosiMailDeps\Symfony\Component\Messenger\EventListener\StopWorkerOnMessageLimitListener;
+use JooosiMailDeps\Symfony\Component\Messenger\RoutableMessageBus;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Sync\SyncTransport;
+use JooosiMailDeps\Symfony\Component\Messenger\Worker;
 /**
  * @author Samuel Roze <samuel.roze@gmail.com>
  */

@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mime;
+namespace JooosiMailDeps\Symfony\Component\Mime;
 
-use OmniMailDeps\Symfony\Component\Mime\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\Mime\Header\Headers;
-use OmniMailDeps\Symfony\Component\Mime\Part\AbstractPart;
-use OmniMailDeps\Symfony\Component\Mime\Part\TextPart;
+use JooosiMailDeps\Symfony\Component\Mime\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\Mime\Header\Headers;
+use JooosiMailDeps\Symfony\Component\Mime\Part\AbstractPart;
+use JooosiMailDeps\Symfony\Component\Mime\Part\TextPart;
 /**
  * @author Fabien Potencier <fabien@symfony.com>
  */

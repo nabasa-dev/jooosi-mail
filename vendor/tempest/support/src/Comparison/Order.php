@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Comparison;
+namespace JooosiMailDeps\Tempest\Support\Comparison;
 
 /**
  * Enumerates the possible outcomes of a comparison operation.

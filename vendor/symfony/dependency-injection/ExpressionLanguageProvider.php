@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\ExpressionLanguage\ExpressionFunction;
-use OmniMailDeps\Symfony\Component\ExpressionLanguage\ExpressionFunctionProviderInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\ExpressionLanguage\ExpressionFunction;
+use JooosiMailDeps\Symfony\Component\ExpressionLanguage\ExpressionFunctionProviderInterface;
 /**
  * Define some ExpressionLanguage functions.
  *

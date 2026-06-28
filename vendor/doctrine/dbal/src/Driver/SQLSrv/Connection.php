@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\SQLSrv;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\SQLSrv;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Connection as ConnectionInterface;
-use OmniMailDeps\Doctrine\DBAL\Driver\Exception\NoIdentityValue;
-use OmniMailDeps\Doctrine\DBAL\Driver\SQLSrv\Exception\Error;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Connection as ConnectionInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Exception\NoIdentityValue;
+use JooosiMailDeps\Doctrine\DBAL\Driver\SQLSrv\Exception\Error;
 use function sqlsrv_begin_transaction;
 use function sqlsrv_commit;
 use function sqlsrv_query;

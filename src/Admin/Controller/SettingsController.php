@@ -1,16 +1,16 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Admin\Controller;
+namespace JooosiMail\Admin\Controller;
 
-use OmniMail\Discovery\Attribute\Controller;
-use OmniMail\Discovery\Attribute\Route;
-use OmniMail\Infrastructure\WordPress\OptionStore;
-use OmniMail\Mail\Logging\MailLogRetentionPolicy;
-use OmniMail\Mail\Logging\MailLogRetentionService;
-use OmniMail\Mail\Routing\DeliveryMode;
-use OmniMail\Mail\Routing\RoutingStrategy;
-use OmniMail\Mail\Sender\SenderPolicyResolver;
+use JooosiMail\Discovery\Attribute\Controller;
+use JooosiMail\Discovery\Attribute\Route;
+use JooosiMail\Infrastructure\WordPress\OptionStore;
+use JooosiMail\Mail\Logging\MailLogRetentionPolicy;
+use JooosiMail\Mail\Logging\MailLogRetentionService;
+use JooosiMail\Mail\Routing\DeliveryMode;
+use JooosiMail\Mail\Routing\RoutingStrategy;
+use JooosiMail\Mail\Sender\SenderPolicyResolver;
 use WP_Error;
 use WP_REST_Request;
 use WP_REST_Response;
@@ -19,7 +19,7 @@ use WP_REST_Response;
  *
  * @since 0.1.0
  */
-#[Controller(namespace: 'omni-mail/v1', prefix: 'admin/settings')]
+#[Controller(namespace: 'jooosi-mail/v1', prefix: 'admin/settings')]
 final readonly class SettingsController
 {
     /**
@@ -31,7 +31,7 @@ final readonly class SettingsController
     /**
      * @since 0.1.0
      */
-    #[Route(path: '', methods: 'GET', permissionCallback: [\OmniMail\Admin\Controller\AdminRouteAuthorization::class, 'authorizeAdmin'])]
+    #[Route(path: '', methods: 'GET', permissionCallback: [\JooosiMail\Admin\Controller\AdminRouteAuthorization::class, 'authorizeAdmin'])]
     public function show(WP_REST_Request $request): WP_REST_Response
     {
         return new WP_REST_Response($this->createPayload());
@@ -39,13 +39,13 @@ final readonly class SettingsController
     /**
      * @since 0.1.0
      */
-    #[Route(path: '', methods: ['PUT', 'PATCH'], permissionCallback: [\OmniMail\Admin\Controller\AdminRouteAuthorization::class, 'authorizeAdmin'])]
+    #[Route(path: '', methods: ['PUT', 'PATCH'], permissionCallback: [\JooosiMail\Admin\Controller\AdminRouteAuthorization::class, 'authorizeAdmin'])]
     public function update(WP_REST_Request $request): WP_REST_Response|WP_Error
     {
         $body = $request->get_json_params();
         $settings = is_array($body['settings'] ?? null) ? $body['settings'] : (is_array($body) ? $body : []);
         if ($settings === []) {
-            return new WP_Error('omni_mail_invalid_settings', 'A settings payload is required.', ['status' => 400]);
+            return new WP_Error('jooosi_mail_invalid_settings', 'A settings payload is required.', ['status' => 400]);
         }
         $delivery = is_array($settings['delivery'] ?? null) ? $settings['delivery'] : [];
         $mail = is_array($settings['mail'] ?? null) ? $settings['mail'] : [];
@@ -69,10 +69,10 @@ final readonly class SettingsController
             return $retentionDays;
         }
         if (!in_array($deliveryMode, array_column($this->getDeliveryModeOptions(), 'value'), \true)) {
-            return new WP_Error('omni_mail_invalid_delivery_mode', 'The selected delivery mode is not supported.', ['status' => 400]);
+            return new WP_Error('jooosi_mail_invalid_delivery_mode', 'The selected delivery mode is not supported.', ['status' => 400]);
         }
         if (!in_array($routingStrategy, array_column($this->getRoutingStrategyOptions(), 'value'), \true)) {
-            return new WP_Error('omni_mail_invalid_routing_strategy', 'The selected routing strategy is not supported.', ['status' => 400]);
+            return new WP_Error('jooosi_mail_invalid_routing_strategy', 'The selected routing strategy is not supported.', ['status' => 400]);
         }
         $this->optionStore->set('settings.mail.intercept.enabled', (bool) ($mailIntercept['enabled'] ?? \true));
         $this->optionStore->set('settings.mail.sender.email', $senderSettings['email']);
@@ -115,20 +115,20 @@ final readonly class SettingsController
      */
     private function normalizeSenderSettings(array $sender): array|WP_Error
     {
-        $email = $this->normalizeOptionalEmail($sender['email'] ?? '', 'omni_mail_invalid_sender_email', 'Enter a valid From Email address.');
+        $email = $this->normalizeOptionalEmail($sender['email'] ?? '', 'jooosi_mail_invalid_sender_email', 'Enter a valid From Email address.');
         if ($email instanceof WP_Error) {
             return $email;
         }
         $returnPathMode = strtolower(trim((string) ($sender['returnPathMode'] ?? SenderPolicyResolver::RETURN_PATH_MODE_PROVIDER_DEFAULT)));
         if (!in_array($returnPathMode, array_column($this->getReturnPathModeOptions(), 'value'), \true)) {
-            return new WP_Error('omni_mail_invalid_return_path_mode', 'The selected return-path mode is not supported.', ['status' => 400]);
+            return new WP_Error('jooosi_mail_invalid_return_path_mode', 'The selected return-path mode is not supported.', ['status' => 400]);
         }
-        $returnPathEmail = $this->normalizeOptionalEmail($sender['returnPathEmail'] ?? '', 'omni_mail_invalid_return_path_email', 'Enter a valid Return-Path email address.');
+        $returnPathEmail = $this->normalizeOptionalEmail($sender['returnPathEmail'] ?? '', 'jooosi_mail_invalid_return_path_email', 'Enter a valid Return-Path email address.');
         if ($returnPathEmail instanceof WP_Error) {
             return $returnPathEmail;
         }
         if ($returnPathMode === SenderPolicyResolver::RETURN_PATH_MODE_CUSTOM && $returnPathEmail === '') {
-            return new WP_Error('omni_mail_missing_return_path_email', 'A custom Return-Path email address is required.', ['status' => 400]);
+            return new WP_Error('jooosi_mail_missing_return_path_email', 'A custom Return-Path email address is required.', ['status' => 400]);
         }
         return ['email' => $email, 'name' => sanitize_text_field((string) ($sender['name'] ?? '')), 'forceEmail' => (bool) ($sender['forceEmail'] ?? \false), 'forceName' => (bool) ($sender['forceName'] ?? \false), 'returnPathMode' => $returnPathMode, 'returnPathEmail' => $returnPathEmail];
     }
@@ -159,7 +159,7 @@ final readonly class SettingsController
             $days = (int) $value;
             return $days > 0 ? $days : null;
         }
-        return new WP_Error('omni_mail_invalid_log_retention', 'Enter a valid email log retention duration.', ['status' => 400]);
+        return new WP_Error('jooosi_mail_invalid_log_retention', 'Enter a valid email log retention duration.', ['status' => 400]);
     }
     /**
      * @since 0.1.0

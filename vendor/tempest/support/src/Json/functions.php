@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Json;
+namespace JooosiMailDeps\Tempest\Support\Json;
 
 use JsonException;
-use OmniMailDeps\Tempest\Support\Json\Exception\JsonCouldNotBeDecoded;
-use OmniMailDeps\Tempest\Support\Json\Exception\JsonCouldNotBeEncoded;
+use JooosiMailDeps\Tempest\Support\Json\Exception\JsonCouldNotBeDecoded;
+use JooosiMailDeps\Tempest\Support\Json\Exception\JsonCouldNotBeEncoded;
 use function json_decode;
 use function json_encode;
 use const JSON_BIGINT_AS_STRING;

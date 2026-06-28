@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\EndpointDiscovery;
+namespace JooosiMailDeps\AsyncAws\Core\EndpointDiscovery;
 
 interface EndpointInterface
 {

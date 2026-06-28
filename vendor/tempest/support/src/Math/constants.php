@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Math;
+namespace JooosiMailDeps\Tempest\Support\Math;
 
 use const INF;
 use const NAN as PHP_NAN;

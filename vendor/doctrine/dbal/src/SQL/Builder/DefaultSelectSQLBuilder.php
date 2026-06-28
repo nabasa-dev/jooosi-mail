@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\SQL\Builder;
+namespace JooosiMailDeps\Doctrine\DBAL\SQL\Builder;
 
-use OmniMailDeps\Doctrine\DBAL\Exception;
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Exception\NotSupported;
-use OmniMailDeps\Doctrine\DBAL\Query\ForUpdate\ConflictResolutionMode;
-use OmniMailDeps\Doctrine\DBAL\Query\SelectQuery;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Exception\NotSupported;
+use JooosiMailDeps\Doctrine\DBAL\Query\ForUpdate\ConflictResolutionMode;
+use JooosiMailDeps\Doctrine\DBAL\Query\SelectQuery;
 use function count;
 use function implode;
 final class DefaultSelectSQLBuilder implements SelectSQLBuilder

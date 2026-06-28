@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps;
+namespace JooosiMailDeps;
 
-use OmniMailDeps\Tempest\Discovery\DiscoveryConfig;
+use JooosiMailDeps\Tempest\Discovery\DiscoveryConfig;
 return new DiscoveryConfig();

@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Psr\\EventDispatcher\\": "src\/"
+            "JooosiMailDeps\\Psr\\EventDispatcher\\": "src\/"
         }
     },
     "extra": {

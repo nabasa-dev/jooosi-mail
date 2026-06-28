@@ -8,14 +8,14 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Transport\Sender;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Transport\Sender;
 
-use OmniMailDeps\Psr\Container\ContainerInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Attribute\AsMessage;
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\RuntimeException;
-use OmniMailDeps\Symfony\Component\Messenger\Handler\HandlersLocator;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\TransportNamesStamp;
+use JooosiMailDeps\Psr\Container\ContainerInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Attribute\AsMessage;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Component\Messenger\Handler\HandlersLocator;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\TransportNamesStamp;
 /**
  * Maps a message to a list of senders.
  *

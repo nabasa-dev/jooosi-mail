@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Introspection\MetadataProcessor;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Introspection\MetadataProcessor;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Metadata\SequenceMetadataRow;
-use OmniMailDeps\Doctrine\DBAL\Schema\Sequence;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Metadata\SequenceMetadataRow;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Sequence;
 /**
  * Converts {@see SequenceMetadataRow} into a {@see Sequence}.
  *

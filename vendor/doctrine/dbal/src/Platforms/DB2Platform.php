@@ -1,25 +1,25 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Platforms;
+namespace JooosiMailDeps\Doctrine\DBAL\Platforms;
 
-use OmniMailDeps\Doctrine\DBAL\Connection;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Db2\Db2MetadataProvider;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Exception\NotSupported;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Keywords\DB2Keywords;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Keywords\KeywordList;
-use OmniMailDeps\Doctrine\DBAL\Schema\ColumnDiff;
-use OmniMailDeps\Doctrine\DBAL\Schema\DB2SchemaManager;
-use OmniMailDeps\Doctrine\DBAL\Schema\Identifier;
-use OmniMailDeps\Doctrine\DBAL\Schema\Index;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnquotedIdentifierFolding;
-use OmniMailDeps\Doctrine\DBAL\Schema\TableDiff;
-use OmniMailDeps\Doctrine\DBAL\SQL\Builder\DefaultSelectSQLBuilder;
-use OmniMailDeps\Doctrine\DBAL\SQL\Builder\SelectSQLBuilder;
-use OmniMailDeps\Doctrine\DBAL\TransactionIsolationLevel;
-use OmniMailDeps\Doctrine\DBAL\Types\DateTimeType;
-use OmniMailDeps\Doctrine\DBAL\Types\Types;
-use OmniMailDeps\Doctrine\Deprecations\Deprecation;
+use JooosiMailDeps\Doctrine\DBAL\Connection;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Db2\Db2MetadataProvider;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Exception\NotSupported;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Keywords\DB2Keywords;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Keywords\KeywordList;
+use JooosiMailDeps\Doctrine\DBAL\Schema\ColumnDiff;
+use JooosiMailDeps\Doctrine\DBAL\Schema\DB2SchemaManager;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Identifier;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Index;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnquotedIdentifierFolding;
+use JooosiMailDeps\Doctrine\DBAL\Schema\TableDiff;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Builder\DefaultSelectSQLBuilder;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Builder\SelectSQLBuilder;
+use JooosiMailDeps\Doctrine\DBAL\TransactionIsolationLevel;
+use JooosiMailDeps\Doctrine\DBAL\Types\DateTimeType;
+use JooosiMailDeps\Doctrine\DBAL\Types\Types;
+use JooosiMailDeps\Doctrine\Deprecations\Deprecation;
 use function array_merge;
 use function count;
 use function current;

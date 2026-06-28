@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Warning;
+namespace JooosiMailDeps\Egulias\EmailValidator\Warning;
 
 use UnitEnum;
 class QuotedPart extends Warning

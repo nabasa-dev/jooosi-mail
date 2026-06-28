@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Parser\CommentStrategy;
+namespace JooosiMailDeps\Egulias\EmailValidator\Parser\CommentStrategy;
 
-use OmniMailDeps\Egulias\EmailValidator\EmailLexer;
-use OmniMailDeps\Egulias\EmailValidator\Result\Result;
-use OmniMailDeps\Egulias\EmailValidator\Warning\Warning;
+use JooosiMailDeps\Egulias\EmailValidator\EmailLexer;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Result;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\Warning;
 interface CommentStrategy
 {
     /**

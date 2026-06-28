@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\Common\Lexer;
+namespace JooosiMailDeps\Doctrine\Common\Lexer;
 
 use ReflectionClass;
 use UnitEnum;

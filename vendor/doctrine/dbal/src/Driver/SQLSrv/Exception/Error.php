@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\SQLSrv\Exception;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\SQLSrv\Exception;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\AbstractException;
+use JooosiMailDeps\Doctrine\DBAL\Driver\AbstractException;
 use function rtrim;
 use function sqlsrv_errors;
 use const SQLSRV_ERR_ERRORS;

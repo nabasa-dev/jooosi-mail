@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\AsyncAws\Core\Exception\Http;
+namespace JooosiMailDeps\AsyncAws\Core\Exception\Http;
 
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
 /**
  * Represents a 4xx response.
  *

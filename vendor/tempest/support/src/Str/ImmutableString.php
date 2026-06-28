@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Str;
+namespace JooosiMailDeps\Tempest\Support\Str;
 
 use Closure;
 use Stringable;
-use OmniMailDeps\Tempest\Support\Html\HtmlString;
+use JooosiMailDeps\Tempest\Support\Html\HtmlString;
 /**
  * Represents an immutable, manipulable string.
  */

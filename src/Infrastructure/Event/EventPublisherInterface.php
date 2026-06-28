@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Infrastructure\Event;
+namespace JooosiMail\Infrastructure\Event;
 
 /**
  * Publishes extension events without binding core services to WordPress globals.

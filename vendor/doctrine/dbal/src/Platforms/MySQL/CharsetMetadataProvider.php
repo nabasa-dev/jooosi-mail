@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Platforms\MySQL;
+namespace JooosiMailDeps\Doctrine\DBAL\Platforms\MySQL;
 
 /** @internal */
 interface CharsetMetadataProvider

@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Sts\Exception;
+namespace JooosiMailDeps\AsyncAws\Core\Sts\Exception;
 
-use OmniMailDeps\AsyncAws\Core\Exception\Http\ClientException;
+use JooosiMailDeps\AsyncAws\Core\Exception\Http\ClientException;
 /**
  * The web identity token that was passed could not be validated by Amazon Web Services. Get a new identity token from
  * the identity provider and then retry the request.

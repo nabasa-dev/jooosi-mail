@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Ses\Result;
+namespace JooosiMailDeps\AsyncAws\Ses\Result;
 
-use OmniMailDeps\AsyncAws\Core\Response;
-use OmniMailDeps\AsyncAws\Core\Result;
+use JooosiMailDeps\AsyncAws\Core\Response;
+use JooosiMailDeps\AsyncAws\Core\Result;
 /**
  * A unique message ID that you receive when an email is accepted for sending.
  */

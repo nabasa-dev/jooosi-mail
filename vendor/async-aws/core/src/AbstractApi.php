@@ -1,28 +1,28 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\AsyncAws\Core;
+namespace JooosiMailDeps\AsyncAws\Core;
 
-use OmniMailDeps\AsyncAws\Core\AwsError\AwsErrorFactoryInterface;
-use OmniMailDeps\AsyncAws\Core\AwsError\ChainAwsErrorFactory;
-use OmniMailDeps\AsyncAws\Core\Credentials\CacheProvider;
-use OmniMailDeps\AsyncAws\Core\Credentials\ChainProvider;
-use OmniMailDeps\AsyncAws\Core\Credentials\CredentialProvider;
-use OmniMailDeps\AsyncAws\Core\EndpointDiscovery\EndpointCache;
-use OmniMailDeps\AsyncAws\Core\EndpointDiscovery\EndpointInterface;
-use OmniMailDeps\AsyncAws\Core\Exception\InvalidArgument;
-use OmniMailDeps\AsyncAws\Core\Exception\LogicException;
-use OmniMailDeps\AsyncAws\Core\Exception\RuntimeException;
-use OmniMailDeps\AsyncAws\Core\HttpClient\AwsRetryStrategy;
-use OmniMailDeps\AsyncAws\Core\HttpClient\BuildHttpQueryTrait;
-use OmniMailDeps\AsyncAws\Core\Signer\Signer;
-use OmniMailDeps\AsyncAws\Core\Signer\SignerV4;
-use OmniMailDeps\AsyncAws\Core\Stream\StringStream;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Psr\Log\NullLogger;
-use OmniMailDeps\Symfony\Component\HttpClient\HttpClient;
-use OmniMailDeps\Symfony\Component\HttpClient\RetryableHttpClient;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\AsyncAws\Core\AwsError\AwsErrorFactoryInterface;
+use JooosiMailDeps\AsyncAws\Core\AwsError\ChainAwsErrorFactory;
+use JooosiMailDeps\AsyncAws\Core\Credentials\CacheProvider;
+use JooosiMailDeps\AsyncAws\Core\Credentials\ChainProvider;
+use JooosiMailDeps\AsyncAws\Core\Credentials\CredentialProvider;
+use JooosiMailDeps\AsyncAws\Core\EndpointDiscovery\EndpointCache;
+use JooosiMailDeps\AsyncAws\Core\EndpointDiscovery\EndpointInterface;
+use JooosiMailDeps\AsyncAws\Core\Exception\InvalidArgument;
+use JooosiMailDeps\AsyncAws\Core\Exception\LogicException;
+use JooosiMailDeps\AsyncAws\Core\Exception\RuntimeException;
+use JooosiMailDeps\AsyncAws\Core\HttpClient\AwsRetryStrategy;
+use JooosiMailDeps\AsyncAws\Core\HttpClient\BuildHttpQueryTrait;
+use JooosiMailDeps\AsyncAws\Core\Signer\Signer;
+use JooosiMailDeps\AsyncAws\Core\Signer\SignerV4;
+use JooosiMailDeps\AsyncAws\Core\Stream\StringStream;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Psr\Log\NullLogger;
+use JooosiMailDeps\Symfony\Component\HttpClient\HttpClient;
+use JooosiMailDeps\Symfony\Component\HttpClient\RetryableHttpClient;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
 /**
  * Base class all API clients are inheriting.
  *

@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Name\Parser;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parser;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\GenericName;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Identifier;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parser;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parser\Exception\ExpectedDot;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parser\Exception\ExpectedNextIdentifier;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parser\Exception\UnableToParseIdentifier;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\GenericName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Identifier;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parser;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parser\Exception\ExpectedDot;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parser\Exception\ExpectedNextIdentifier;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parser\Exception\UnableToParseIdentifier;
 use function assert;
 use function count;
 use function preg_match;

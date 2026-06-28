@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniMailDeps\Tempest\Discovery;
+namespace JooosiMailDeps\Tempest\Discovery;
 
 use Closure;
-use OmniMailDeps\Tempest\Support\Filesystem;
+use JooosiMailDeps\Tempest\Support\Filesystem;
 final class DiscoveryConfig
 {
     private array $skipDiscovery = [];

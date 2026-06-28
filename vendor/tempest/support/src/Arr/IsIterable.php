@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Arr;
+namespace JooosiMailDeps\Tempest\Support\Arr;
 
 /** @internal */
 trait IsIterable

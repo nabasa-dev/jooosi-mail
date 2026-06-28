@@ -8,15 +8,15 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Attribute;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\ServiceLocatorArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\TaggedIteratorArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\TypedReference;
-use OmniMailDeps\Symfony\Contracts\Service\Attribute\SubscribedService;
-use OmniMailDeps\Symfony\Contracts\Service\ServiceSubscriberInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\ServiceLocatorArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\TaggedIteratorArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\TypedReference;
+use JooosiMailDeps\Symfony\Contracts\Service\Attribute\SubscribedService;
+use JooosiMailDeps\Symfony\Contracts\Service\ServiceSubscriberInterface;
 /**
  * Autowires a service locator based on a tag name or an explicit list of key => service-type pairs.
  */

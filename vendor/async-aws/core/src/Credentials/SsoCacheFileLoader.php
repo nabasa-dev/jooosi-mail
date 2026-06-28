@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\AsyncAws\Core\Credentials;
+namespace JooosiMailDeps\AsyncAws\Core\Credentials;
 
-use OmniMailDeps\AsyncAws\Core\EnvVar;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Psr\Log\NullLogger;
+use JooosiMailDeps\AsyncAws\Core\EnvVar;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Psr\Log\NullLogger;
 /**
  * Load and parse AWS SSO cache file.
  *

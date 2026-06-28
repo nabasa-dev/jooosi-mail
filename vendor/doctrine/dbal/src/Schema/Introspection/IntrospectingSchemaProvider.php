@@ -1,27 +1,27 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Introspection;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Introspection;
 
-use OmniMailDeps\Doctrine\DBAL\Exception;
-use OmniMailDeps\Doctrine\DBAL\Schema\Column;
-use OmniMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint;
-use OmniMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraintEditor;
-use OmniMailDeps\Doctrine\DBAL\Schema\Index;
-use OmniMailDeps\Doctrine\DBAL\Schema\IndexEditor;
-use OmniMailDeps\Doctrine\DBAL\Schema\Introspection\MetadataProcessor\ForeignKeyConstraintColumnMetadataProcessor;
-use OmniMailDeps\Doctrine\DBAL\Schema\Introspection\MetadataProcessor\IndexColumnMetadataProcessor;
-use OmniMailDeps\Doctrine\DBAL\Schema\Introspection\MetadataProcessor\PrimaryKeyConstraintColumnMetadataProcessor;
-use OmniMailDeps\Doctrine\DBAL\Schema\Introspection\MetadataProcessor\SequenceMetadataProcessor;
-use OmniMailDeps\Doctrine\DBAL\Schema\Introspection\MetadataProcessor\ViewMetadataProcessor;
-use OmniMailDeps\Doctrine\DBAL\Schema\Metadata\MetadataProvider;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
-use OmniMailDeps\Doctrine\DBAL\Schema\PrimaryKeyConstraint;
-use OmniMailDeps\Doctrine\DBAL\Schema\PrimaryKeyConstraintEditor;
-use OmniMailDeps\Doctrine\DBAL\Schema\SchemaProvider;
-use OmniMailDeps\Doctrine\DBAL\Schema\Table;
-use OmniMailDeps\Doctrine\DBAL\Schema\TableConfiguration;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Column;
+use JooosiMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint;
+use JooosiMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraintEditor;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Index;
+use JooosiMailDeps\Doctrine\DBAL\Schema\IndexEditor;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Introspection\MetadataProcessor\ForeignKeyConstraintColumnMetadataProcessor;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Introspection\MetadataProcessor\IndexColumnMetadataProcessor;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Introspection\MetadataProcessor\PrimaryKeyConstraintColumnMetadataProcessor;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Introspection\MetadataProcessor\SequenceMetadataProcessor;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Introspection\MetadataProcessor\ViewMetadataProcessor;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Metadata\MetadataProvider;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\PrimaryKeyConstraint;
+use JooosiMailDeps\Doctrine\DBAL\Schema\PrimaryKeyConstraintEditor;
+use JooosiMailDeps\Doctrine\DBAL\Schema\SchemaProvider;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Table;
+use JooosiMailDeps\Doctrine\DBAL\Schema\TableConfiguration;
 use function array_map;
 use function array_values;
 /**

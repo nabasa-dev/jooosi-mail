@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\PgSQL;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\PgSQL;
 
-use OmniMailDeps\Doctrine\DBAL\SQL\Parser\Visitor;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Parser\Visitor;
 use function count;
 use function implode;
 final class ConvertParameters implements Visitor

@@ -22,13 +22,13 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Doctrine\\Deprecations\\": "src"
+            "JooosiMailDeps\\Doctrine\\Deprecations\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "OmniMailDeps\\DeprecationTests\\": "test_fixtures\/src",
-            "OmniMailDeps\\Doctrine\\Foo\\": "test_fixtures\/vendor\/doctrine\/foo"
+            "JooosiMailDeps\\DeprecationTests\\": "test_fixtures\/src",
+            "JooosiMailDeps\\Doctrine\\Foo\\": "test_fixtures\/vendor\/doctrine\/foo"
         }
     },
     "config": {

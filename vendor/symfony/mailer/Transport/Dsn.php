@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Transport;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Transport;
 
-use OmniMailDeps\Symfony\Component\Mailer\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\InvalidArgumentException;
 /**
  * @author Konstantin Myakshin <molodchick@gmail.com>
  */

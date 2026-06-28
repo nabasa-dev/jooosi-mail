@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Profile\Builtin;
+namespace JooosiMail\Mail\Profile\Builtin;
 
-use OmniMail\Discovery\Attribute\MailProfile;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Mail\Profile\AbstractMailProfile;
+use JooosiMail\Discovery\Attribute\MailProfile;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Mail\Profile\AbstractMailProfile;
 use Override;
 /**
  * Mandrill transport profile.

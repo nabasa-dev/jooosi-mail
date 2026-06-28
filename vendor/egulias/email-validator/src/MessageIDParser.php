@@ -1,14 +1,14 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator;
+namespace JooosiMailDeps\Egulias\EmailValidator;
 
-use OmniMailDeps\Egulias\EmailValidator\Result\Result;
-use OmniMailDeps\Egulias\EmailValidator\Parser\IDLeftPart;
-use OmniMailDeps\Egulias\EmailValidator\Parser\IDRightPart;
-use OmniMailDeps\Egulias\EmailValidator\Result\ValidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Warning\EmailTooLong;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\NoLocalPart;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Result;
+use JooosiMailDeps\Egulias\EmailValidator\Parser\IDLeftPart;
+use JooosiMailDeps\Egulias\EmailValidator\Parser\IDRightPart;
+use JooosiMailDeps\Egulias\EmailValidator\Result\ValidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\EmailTooLong;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\NoLocalPart;
 class MessageIDParser extends Parser
 {
     public const EMAILID_MAX_LENGTH = 254;

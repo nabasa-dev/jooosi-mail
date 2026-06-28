@@ -1,16 +1,16 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Transport\Bridge\Gmail\Transport;
+namespace JooosiMail\Mail\Transport\Bridge\Gmail\Transport;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Discovery\Attribute\TransportFactory;
-use OmniMail\Mail\Transport\Bridge\Gmail\GmailTokenManager;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\IncompleteDsnException;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\AbstractTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Dsn;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\TransportFactory;
+use JooosiMail\Mail\Transport\Bridge\Gmail\GmailTokenManager;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\IncompleteDsnException;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\AbstractTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Dsn;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
 /**
  * Gmail custom transport factory.
  *
@@ -27,7 +27,7 @@ final class GmailTransportFactory extends AbstractTransportFactory
     {
         return match ($dsn->getScheme()) {
             'gmail+api' => $this->createApiTransport($dsn),
-            'gmail', 'gmail+smtp', 'gmail+smtps' => new \OmniMail\Mail\Transport\Bridge\Gmail\Transport\GmailSmtpTransport($this->getUser($dsn), $this->getPassword($dsn), $this->dispatcher, $this->logger),
+            'gmail', 'gmail+smtp', 'gmail+smtps' => new \JooosiMail\Mail\Transport\Bridge\Gmail\Transport\GmailSmtpTransport($this->getUser($dsn), $this->getPassword($dsn), $this->dispatcher, $this->logger),
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => throw new UnsupportedSchemeException($dsn, 'gmail', $this->getSupportedSchemes()),
         };
@@ -55,6 +55,6 @@ final class GmailTransportFactory extends AbstractTransportFactory
             throw new IncompleteDsnException('Transport "gmail+api" requires a valid base64-encoded private key.');
         }
         $tokenManager = new GmailTokenManager($this->getUser($dsn), $privateKey, $userEmail, $this->client);
-        return new \OmniMail\Mail\Transport\Bridge\Gmail\Transport\GmailApiTransport($tokenManager, $userEmail, $this->client, $this->dispatcher, $this->logger);
+        return new \JooosiMail\Mail\Transport\Bridge\Gmail\Transport\GmailApiTransport($tokenManager, $userEmail, $this->client, $this->dispatcher, $this->logger);
     }
 }

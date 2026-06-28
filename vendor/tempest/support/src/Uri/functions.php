@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Uri;
+namespace JooosiMailDeps\Tempest\Support\Uri;
 
 /**
  * Updates the given URI to include the provided query parameters. Previous parameters are removed.

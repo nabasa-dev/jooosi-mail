@@ -8,13 +8,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\EventListener;
+namespace JooosiMailDeps\Symfony\Component\Messenger\EventListener;
 
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Event\WorkerMessageFailedEvent;
-use OmniMailDeps\Symfony\Component\Messenger\Event\WorkerRunningEvent;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\InvalidArgumentException;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Event\WorkerMessageFailedEvent;
+use JooosiMailDeps\Symfony\Component\Messenger\Event\WorkerRunningEvent;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\InvalidArgumentException;
 /**
  * @author Michel Hunziker <info@michelhunziker.com>
  */

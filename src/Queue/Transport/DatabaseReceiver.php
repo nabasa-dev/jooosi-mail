@@ -1,18 +1,18 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Queue\Transport;
+namespace JooosiMail\Queue\Transport;
 
-use OmniMailDeps\Doctrine\DBAL\Connection as DbalConnection;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Database\TableNameResolver;
-use OmniMail\Queue\Stamp\DatabaseMessageStamp;
+use JooosiMailDeps\Doctrine\DBAL\Connection as DbalConnection;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Queue\Stamp\DatabaseMessageStamp;
 use Override;
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\MessageDecodingFailedException;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\TransportMessageIdStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Receiver\ReceiverInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Serialization\SerializerInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\MessageDecodingFailedException;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\TransportMessageIdStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Receiver\ReceiverInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Serialization\SerializerInterface;
 use Throwable;
 /**
  * Claims and acknowledges queued envelopes for the database transport.
@@ -53,7 +53,7 @@ final readonly class DatabaseReceiver implements ReceiverInterface
             }
             $encodedEnvelope = ['body' => (string) $row['body'], 'headers' => json_decode((string) ($row['headers_json'] ?? '{}'), \true) ?: []];
             try {
-                $envelope = $this->serializer->decode($encodedEnvelope)->with(new TransportMessageIdStamp((string) $row['id']))->with(new DatabaseMessageStamp(messageId: (int) $row['id'], attemptCount: (int) $row['attempt_count'], maxAttempts: (int) ($row['max_attempts'] ?? 3), queueName: (string) ($row['queue_name'] ?? \OmniMail\Queue\Transport\DatabaseTransport::NAME), claimedBy: $claimedBy));
+                $envelope = $this->serializer->decode($encodedEnvelope)->with(new TransportMessageIdStamp((string) $row['id']))->with(new DatabaseMessageStamp(messageId: (int) $row['id'], attemptCount: (int) $row['attempt_count'], maxAttempts: (int) ($row['max_attempts'] ?? 3), queueName: (string) ($row['queue_name'] ?? \JooosiMail\Queue\Transport\DatabaseTransport::NAME), claimedBy: $claimedBy));
                 $message = $envelope->getMessage();
                 if ($message instanceof MessageDecodingFailedException) {
                     $this->connection->update($this->tableNameResolver->resolve('queue_messages'), ['status' => 'failed', 'last_error' => $message->getMessage(), 'processed_at' => gmdate('Y-m-d H:i:s'), 'updated_at' => gmdate('Y-m-d H:i:s')], ['id' => (int) $row['id'], 'status' => 'processing', 'claimed_by' => $claimedBy]);

@@ -112,7 +112,7 @@ class Normalizer
                 $K = \true;
                 break;
             default:
-                if (\defined('OmniMailDeps\Normalizer::NONE') && \Normalizer::NONE == $form) {
+                if (\defined('JooosiMailDeps\Normalizer::NONE') && \Normalizer::NONE == $form) {
                     return $s;
                 }
                 if (80000 > \PHP_VERSION_ID) {

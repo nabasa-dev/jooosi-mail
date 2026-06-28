@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\AsyncAws\Core\Test;
+namespace JooosiMailDeps\AsyncAws\Core\Test;
 
-use OmniMailDeps\AsyncAws\Core\Exception\RuntimeException;
-use OmniMailDeps\AsyncAws\Core\Stream\ResultStream;
+use JooosiMailDeps\AsyncAws\Core\Exception\RuntimeException;
+use JooosiMailDeps\AsyncAws\Core\Stream\ResultStream;
 /**
  * Simple streamable body used for testing.
  *

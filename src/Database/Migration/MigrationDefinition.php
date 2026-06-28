@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Database\Migration;
+namespace JooosiMail\Database\Migration;
 
 /**
  * Immutable metadata for a discovered migration.

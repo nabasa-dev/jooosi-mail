@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\PDO\SQLSrv;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\PDO\SQLSrv;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Middleware\AbstractStatementMiddleware;
-use OmniMailDeps\Doctrine\DBAL\Driver\PDO\Statement as PDOStatement;
-use OmniMailDeps\Doctrine\DBAL\ParameterType;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Middleware\AbstractStatementMiddleware;
+use JooosiMailDeps\Doctrine\DBAL\Driver\PDO\Statement as PDOStatement;
+use JooosiMailDeps\Doctrine\DBAL\ParameterType;
 use PDO;
 final class Statement extends AbstractStatementMiddleware
 {

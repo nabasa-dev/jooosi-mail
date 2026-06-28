@@ -8,16 +8,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mime;
+namespace JooosiMailDeps\Symfony\Component\Mime;
 
-use OmniMailDeps\Symfony\Component\Mime\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\Mime\Part\AbstractPart;
-use OmniMailDeps\Symfony\Component\Mime\Part\DataPart;
-use OmniMailDeps\Symfony\Component\Mime\Part\File;
-use OmniMailDeps\Symfony\Component\Mime\Part\Multipart\AlternativePart;
-use OmniMailDeps\Symfony\Component\Mime\Part\Multipart\MixedPart;
-use OmniMailDeps\Symfony\Component\Mime\Part\Multipart\RelatedPart;
-use OmniMailDeps\Symfony\Component\Mime\Part\TextPart;
+use JooosiMailDeps\Symfony\Component\Mime\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\Mime\Part\AbstractPart;
+use JooosiMailDeps\Symfony\Component\Mime\Part\DataPart;
+use JooosiMailDeps\Symfony\Component\Mime\Part\File;
+use JooosiMailDeps\Symfony\Component\Mime\Part\Multipart\AlternativePart;
+use JooosiMailDeps\Symfony\Component\Mime\Part\Multipart\MixedPart;
+use JooosiMailDeps\Symfony\Component\Mime\Part\Multipart\RelatedPart;
+use JooosiMailDeps\Symfony\Component\Mime\Part\TextPart;
 /**
  * @author Fabien Potencier <fabien@symfony.com>
  */

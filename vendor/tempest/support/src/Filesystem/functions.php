@@ -1,19 +1,19 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Filesystem;
+namespace JooosiMailDeps\Tempest\Support\Filesystem;
 
 use FilesystemIterator;
 use Phar;
-use OmniMailDeps\Tempest\Support\Filesystem\Exceptions\NameWasInvalid;
-use OmniMailDeps\Tempest\Support\Filesystem\Exceptions\PathWasNotADirectory;
-use OmniMailDeps\Tempest\Support\Filesystem\Exceptions\PathWasNotAFile;
-use OmniMailDeps\Tempest\Support\Filesystem\Exceptions\PathWasNotASymbolicLink;
-use OmniMailDeps\Tempest\Support\Filesystem\Exceptions\PathWasNotFound;
-use OmniMailDeps\Tempest\Support\Filesystem\Exceptions\PathWasNotReadable;
-use OmniMailDeps\Tempest\Support\Filesystem\Exceptions\RuntimeException;
-use OmniMailDeps\Tempest\Support\Json;
-use OmniMailDeps\Tempest\Support\Str;
+use JooosiMailDeps\Tempest\Support\Filesystem\Exceptions\NameWasInvalid;
+use JooosiMailDeps\Tempest\Support\Filesystem\Exceptions\PathWasNotADirectory;
+use JooosiMailDeps\Tempest\Support\Filesystem\Exceptions\PathWasNotAFile;
+use JooosiMailDeps\Tempest\Support\Filesystem\Exceptions\PathWasNotASymbolicLink;
+use JooosiMailDeps\Tempest\Support\Filesystem\Exceptions\PathWasNotFound;
+use JooosiMailDeps\Tempest\Support\Filesystem\Exceptions\PathWasNotReadable;
+use JooosiMailDeps\Tempest\Support\Filesystem\Exceptions\RuntimeException;
+use JooosiMailDeps\Tempest\Support\Json;
+use JooosiMailDeps\Tempest\Support\Str;
 use function copy as php_copy;
 use function dirname;
 use function fclose;
@@ -30,9 +30,9 @@ use function is_writable as php_is_writable;
 use function mkdir;
 use function readlink;
 use function rename as php_rename;
-use function OmniMailDeps\Tempest\Support\Arr\partition;
-use function OmniMailDeps\Tempest\Support\Arr\values;
-use function OmniMailDeps\Tempest\Support\box;
+use function JooosiMailDeps\Tempest\Support\Arr\partition;
+use function JooosiMailDeps\Tempest\Support\Arr\values;
+use function JooosiMailDeps\Tempest\Support\box;
 use function touch;
 /**
  * Gets a parent directory path.

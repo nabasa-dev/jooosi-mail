@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\Exception;
+namespace JooosiMailDeps\Symfony\Component\Cache\Exception;
 
-use OmniMailDeps\Psr\Cache\CacheException as Psr6CacheInterface;
-use OmniMailDeps\Psr\SimpleCache\CacheException as SimpleCacheInterface;
+use JooosiMailDeps\Psr\Cache\CacheException as Psr6CacheInterface;
+use JooosiMailDeps\Psr\SimpleCache\CacheException as SimpleCacheInterface;
 if (interface_exists(SimpleCacheInterface::class)) {
     class BadMethodCallException extends \BadMethodCallException implements Psr6CacheInterface, SimpleCacheInterface
     {

@@ -1,12 +1,12 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Ses\Result;
+namespace JooosiMailDeps\AsyncAws\Ses\Result;
 
-use OmniMailDeps\AsyncAws\Core\Response;
-use OmniMailDeps\AsyncAws\Core\Result;
-use OmniMailDeps\AsyncAws\Ses\Enum\SuppressionListReason;
-use OmniMailDeps\AsyncAws\Ses\ValueObject\SuppressedDestination;
-use OmniMailDeps\AsyncAws\Ses\ValueObject\SuppressedDestinationAttributes;
+use JooosiMailDeps\AsyncAws\Core\Response;
+use JooosiMailDeps\AsyncAws\Core\Result;
+use JooosiMailDeps\AsyncAws\Ses\Enum\SuppressionListReason;
+use JooosiMailDeps\AsyncAws\Ses\ValueObject\SuppressedDestination;
+use JooosiMailDeps\AsyncAws\Ses\ValueObject\SuppressedDestinationAttributes;
 /**
  * Information about the suppressed email address.
  */

@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\Middleware;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\Middleware;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Connection;
-use OmniMailDeps\Doctrine\DBAL\Driver\Result;
-use OmniMailDeps\Doctrine\DBAL\Driver\Statement;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Connection;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Result;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Statement;
 abstract class AbstractConnectionMiddleware implements Connection
 {
     public function __construct(private readonly Connection $wrappedConnection)

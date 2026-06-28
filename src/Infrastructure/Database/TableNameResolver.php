@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Infrastructure\Database;
+namespace JooosiMail\Infrastructure\Database;
 
 /**
  * Resolves plugin table names using the active WordPress prefix.
@@ -11,13 +11,13 @@ namespace OmniMail\Infrastructure\Database;
 final readonly class TableNameResolver
 {
     /**
-     * Resolve the full table name for an Omni Mail table suffix.
+     * Resolve the full table name for a Jooosi Mail table suffix.
      *
      * @since 0.1.0
      */
     public function resolve(string $suffix): string
     {
         global $wpdb;
-        return $wpdb->prefix . 'omni_mail_' . $suffix;
+        return $wpdb->prefix . 'jooosi_mail_' . $suffix;
     }
 }

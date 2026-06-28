@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Types;
+namespace JooosiMailDeps\Doctrine\DBAL\Types;
 
-use OmniMailDeps\Doctrine\DBAL\ParameterType;
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
+use JooosiMailDeps\Doctrine\DBAL\ParameterType;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
 /**
  * Type that maps an SQL boolean to a PHP boolean.
  */

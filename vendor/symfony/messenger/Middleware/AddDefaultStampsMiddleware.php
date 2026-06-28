@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Middleware;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Middleware;
 
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
-use OmniMailDeps\Symfony\Component\Messenger\Message\DefaultStampsProviderInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Messenger\Message\DefaultStampsProviderInterface;
 /**
  * Automatically add stamps from the DefaultStampsProviderInterface.
  */

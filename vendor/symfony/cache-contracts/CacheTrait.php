@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Contracts\Cache;
+namespace JooosiMailDeps\Symfony\Contracts\Cache;
 
-use OmniMailDeps\Psr\Cache\CacheItemPoolInterface;
-use OmniMailDeps\Psr\Cache\InvalidArgumentException;
-use OmniMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Psr\Cache\CacheItemPoolInterface;
+use JooosiMailDeps\Psr\Cache\InvalidArgumentException;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
 // Help opcache.preload discover always-needed symbols
 class_exists(InvalidArgumentException::class);
 /**

@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\String\Slugger;
+namespace JooosiMailDeps\Symfony\Component\String\Slugger;
 
-use OmniMailDeps\Symfony\Component\Emoji\EmojiTransliterator;
-use OmniMailDeps\Symfony\Component\String\AbstractUnicodeString;
-use OmniMailDeps\Symfony\Component\String\UnicodeString;
-use OmniMailDeps\Symfony\Contracts\Translation\LocaleAwareInterface;
+use JooosiMailDeps\Symfony\Component\Emoji\EmojiTransliterator;
+use JooosiMailDeps\Symfony\Component\String\AbstractUnicodeString;
+use JooosiMailDeps\Symfony\Component\String\UnicodeString;
+use JooosiMailDeps\Symfony\Contracts\Translation\LocaleAwareInterface;
 if (!interface_exists(LocaleAwareInterface::class)) {
     throw new \LogicException('You cannot use the "Symfony\Component\String\Slugger\AsciiSlugger" as the "symfony/translation-contracts" package is not installed. Try running "composer require symfony/translation-contracts".');
 }

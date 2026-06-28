@@ -1,16 +1,16 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Arr;
+namespace JooosiMailDeps\Tempest\Support\Arr;
 
 use Closure;
 use Stringable;
-use OmniMailDeps\Tempest\Debug\Debug;
-use OmniMailDeps\Tempest\Mapper;
-use OmniMailDeps\Tempest\Support\Str\ImmutableString;
-use function OmniMailDeps\Tempest\Support\Json\encode;
-use function OmniMailDeps\Tempest\Support\str;
-use function OmniMailDeps\Tempest\Support\tap;
+use JooosiMailDeps\Tempest\Debug\Debug;
+use JooosiMailDeps\Tempest\Mapper;
+use JooosiMailDeps\Tempest\Support\Str\ImmutableString;
+use function JooosiMailDeps\Tempest\Support\Json\encode;
+use function JooosiMailDeps\Tempest\Support\str;
+use function JooosiMailDeps\Tempest\Support\tap;
 /**
  * @template TKey of array-key
  * @template TValue

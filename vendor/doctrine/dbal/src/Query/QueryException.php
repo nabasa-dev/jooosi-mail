@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Query;
+namespace JooosiMailDeps\Doctrine\DBAL\Query;
 
-use OmniMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
 class QueryException extends \Exception implements Exception
 {
 }

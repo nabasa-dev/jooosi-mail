@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger;
+namespace JooosiMailDeps\Symfony\Component\Messenger;
 
-use OmniMailDeps\Symfony\Component\Messenger\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\HandledStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\StampInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\HandledStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\StampInterface;
 /**
  * Leverages a message bus to expect a single, synchronous message handling and return its result.
  *

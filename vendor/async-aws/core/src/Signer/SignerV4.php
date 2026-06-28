@@ -1,14 +1,14 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Signer;
+namespace JooosiMailDeps\AsyncAws\Core\Signer;
 
-use OmniMailDeps\AsyncAws\Core\Credentials\Credentials;
-use OmniMailDeps\AsyncAws\Core\Exception\InvalidArgument;
-use OmniMailDeps\AsyncAws\Core\Request;
-use OmniMailDeps\AsyncAws\Core\RequestContext;
-use OmniMailDeps\AsyncAws\Core\Stream\ReadOnceResultStream;
-use OmniMailDeps\AsyncAws\Core\Stream\RewindableStream;
-use OmniMailDeps\AsyncAws\Core\Stream\StringStream;
+use JooosiMailDeps\AsyncAws\Core\Credentials\Credentials;
+use JooosiMailDeps\AsyncAws\Core\Exception\InvalidArgument;
+use JooosiMailDeps\AsyncAws\Core\Request;
+use JooosiMailDeps\AsyncAws\Core\RequestContext;
+use JooosiMailDeps\AsyncAws\Core\Stream\ReadOnceResultStream;
+use JooosiMailDeps\AsyncAws\Core\Stream\RewindableStream;
+use JooosiMailDeps\AsyncAws\Core\Stream\StringStream;
 /**
  * Version4 of signer.
  *
@@ -149,10 +149,10 @@ class SignerV4 implements Signer
             if ($duration < 0) {
                 throw new InvalidArgument('The expiration date of presigned URL must be in the future');
             }
-            $request->setQueryAttribute('X-Amz-Date', $now->format('OmniMailDeps\Ymd\THis\Z'));
+            $request->setQueryAttribute('X-Amz-Date', $now->format('JooosiMailDeps\Ymd\THis\Z'));
             $request->setQueryAttribute('X-Amz-Expires', (string) $duration);
         } else {
-            $request->setHeader('X-Amz-Date', $now->format('OmniMailDeps\Ymd\THis\Z'));
+            $request->setHeader('X-Amz-Date', $now->format('JooosiMailDeps\Ymd\THis\Z'));
         }
     }
     /**
@@ -257,7 +257,7 @@ class SignerV4 implements Signer
     }
     private function buildStringToSign(\DateTimeImmutable $now, string $credentialString, string $canonicalRequest): string
     {
-        return implode("\n", [self::ALGORITHM_REQUEST, $now->format('OmniMailDeps\Ymd\THis\Z'), $credentialString, hash('sha256', $canonicalRequest)]);
+        return implode("\n", [self::ALGORITHM_REQUEST, $now->format('JooosiMailDeps\Ymd\THis\Z'), $credentialString, hash('sha256', $canonicalRequest)]);
     }
     /**
      * @param string[] $credentialScope

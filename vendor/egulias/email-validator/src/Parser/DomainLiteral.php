@@ -1,25 +1,25 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Parser;
+namespace JooosiMailDeps\Egulias\EmailValidator\Parser;
 
-use OmniMailDeps\Egulias\EmailValidator\EmailLexer;
-use OmniMailDeps\Egulias\EmailValidator\Result\Result;
-use OmniMailDeps\Egulias\EmailValidator\Result\ValidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Warning\CFWSWithFWS;
-use OmniMailDeps\Egulias\EmailValidator\Warning\IPV6BadChar;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\CRNoLF;
-use OmniMailDeps\Egulias\EmailValidator\Warning\IPV6ColonEnd;
-use OmniMailDeps\Egulias\EmailValidator\Warning\IPV6MaxGroups;
-use OmniMailDeps\Egulias\EmailValidator\Warning\ObsoleteDTEXT;
-use OmniMailDeps\Egulias\EmailValidator\Warning\AddressLiteral;
-use OmniMailDeps\Egulias\EmailValidator\Warning\IPV6ColonStart;
-use OmniMailDeps\Egulias\EmailValidator\Warning\IPV6Deprecated;
-use OmniMailDeps\Egulias\EmailValidator\Warning\IPV6GroupCount;
-use OmniMailDeps\Egulias\EmailValidator\Warning\IPV6DoubleColon;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\ExpectingDTEXT;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\UnusualElements;
-use OmniMailDeps\Egulias\EmailValidator\Warning\DomainLiteral as WarningDomainLiteral;
+use JooosiMailDeps\Egulias\EmailValidator\EmailLexer;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Result;
+use JooosiMailDeps\Egulias\EmailValidator\Result\ValidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\CFWSWithFWS;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\IPV6BadChar;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\CRNoLF;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\IPV6ColonEnd;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\IPV6MaxGroups;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\ObsoleteDTEXT;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\AddressLiteral;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\IPV6ColonStart;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\IPV6Deprecated;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\IPV6GroupCount;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\IPV6DoubleColon;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\ExpectingDTEXT;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\UnusualElements;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\DomainLiteral as WarningDomainLiteral;
 class DomainLiteral extends PartParser
 {
     public const IPV4_REGEX = '/\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/';

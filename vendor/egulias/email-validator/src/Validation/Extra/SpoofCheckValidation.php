@@ -1,12 +1,12 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Validation\Extra;
+namespace JooosiMailDeps\Egulias\EmailValidator\Validation\Extra;
 
 use Spoofchecker;
-use OmniMailDeps\Egulias\EmailValidator\EmailLexer;
-use OmniMailDeps\Egulias\EmailValidator\Result\SpoofEmail;
-use OmniMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Validation\EmailValidation;
+use JooosiMailDeps\Egulias\EmailValidator\EmailLexer;
+use JooosiMailDeps\Egulias\EmailValidator\Result\SpoofEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Validation\EmailValidation;
 class SpoofCheckValidation implements EmailValidation
 {
     /**

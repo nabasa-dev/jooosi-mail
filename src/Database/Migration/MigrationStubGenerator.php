@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Database\Migration;
+namespace JooosiMail\Database\Migration;
 
 use InvalidArgumentException;
-use OmniMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\Service;
 use RuntimeException;
 /**
  * Generates versioned schema migration stubs.
@@ -14,7 +14,7 @@ use RuntimeException;
 #[Service]
 final readonly class MigrationStubGenerator
 {
-    public function __construct(private \OmniMail\Database\Migration\MigrationRegistry $migrationRegistry)
+    public function __construct(private \JooosiMail\Database\Migration\MigrationRegistry $migrationRegistry)
     {
     }
     /**
@@ -36,12 +36,12 @@ final readonly class MigrationStubGenerator
         $this->ensureDirectoryExists($directory);
         if (file_exists($path)) {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new RuntimeException(sprintf('The Omni Mail migration file "%s" already exists.', $path));
+            throw new RuntimeException(sprintf('The Jooosi Mail migration file "%s" already exists.', $path));
         }
         $stub = $this->buildStub($className, $version, $description);
         if (file_put_contents($path, $stub, \LOCK_EX) === \false) {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new RuntimeException(sprintf('Unable to write the Omni Mail migration file "%s".', $path));
+            throw new RuntimeException(sprintf('Unable to write the Jooosi Mail migration file "%s".', $path));
         }
         return ['path' => $path, 'className' => sprintf('%s\%s', self::migrationsNamespace(), $className), 'version' => $version, 'description' => $description];
     }
@@ -56,7 +56,7 @@ final readonly class MigrationStubGenerator
         $created = wp_mkdir_p($directory);
         if (!$created && !is_dir($directory)) {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new RuntimeException(sprintf('The Omni Mail migrations directory "%s" could not be created.', $directory));
+            throw new RuntimeException(sprintf('The Jooosi Mail migrations directory "%s" could not be created.', $directory));
         }
     }
     /**
@@ -98,12 +98,12 @@ final readonly class MigrationStubGenerator
     {
         $words = preg_split('/(?=[A-Z])/', $suffix, -1, \PREG_SPLIT_NO_EMPTY);
         if (!is_array($words) || $words === []) {
-            return 'Applies an Omni Mail schema migration.';
+            return 'Applies a Jooosi Mail schema migration.';
         }
         $firstWord = strtolower((string) array_shift($words));
         $verbs = ['add' => 'Adds', 'alter' => 'Alters', 'backfill' => 'Backfills', 'create' => 'Creates', 'delete' => 'Deletes', 'drop' => 'Drops', 'populate' => 'Populates', 'remove' => 'Removes', 'rename' => 'Renames', 'update' => 'Updates'];
         if (isset($verbs[$firstWord])) {
-            $subject = $words === [] ? 'an Omni Mail schema change' : strtolower(implode(' ', $words));
+            $subject = $words === [] ? 'a Jooosi Mail schema change' : strtolower(implode(' ', $words));
             return sprintf('%s %s.', $verbs[$firstWord], $subject);
         }
         $description = strtolower(implode(' ', array_merge([$firstWord], $words)));
@@ -122,8 +122,8 @@ declare(strict_types=1);
 namespace %s;
 
 use Doctrine\DBAL\Connection;
-use OmniMail\Database\Migration\MigrationInterface;
-use OmniMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Database\Migration\MigrationInterface;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
 
 /**
  * %s

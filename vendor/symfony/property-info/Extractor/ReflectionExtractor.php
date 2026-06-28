@@ -8,29 +8,29 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\PropertyInfo\Extractor;
+namespace JooosiMailDeps\Symfony\Component\PropertyInfo\Extractor;
 
-use OmniMailDeps\Symfony\Component\PropertyInfo\PropertyAccessExtractorInterface;
-use OmniMailDeps\Symfony\Component\PropertyInfo\PropertyInitializableExtractorInterface;
-use OmniMailDeps\Symfony\Component\PropertyInfo\PropertyListExtractorInterface;
-use OmniMailDeps\Symfony\Component\PropertyInfo\PropertyReadInfo;
-use OmniMailDeps\Symfony\Component\PropertyInfo\PropertyReadInfoExtractorInterface;
-use OmniMailDeps\Symfony\Component\PropertyInfo\PropertyTypeExtractorInterface;
-use OmniMailDeps\Symfony\Component\PropertyInfo\PropertyWriteInfo;
-use OmniMailDeps\Symfony\Component\PropertyInfo\PropertyWriteInfoExtractorInterface;
-use OmniMailDeps\Symfony\Component\String\Inflector\EnglishInflector;
-use OmniMailDeps\Symfony\Component\String\Inflector\InflectorInterface;
-use OmniMailDeps\Symfony\Component\TypeInfo\Exception\UnsupportedException;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\CollectionType;
-use OmniMailDeps\Symfony\Component\TypeInfo\TypeContext\TypeContextFactory;
-use OmniMailDeps\Symfony\Component\TypeInfo\TypeIdentifier;
-use OmniMailDeps\Symfony\Component\TypeInfo\TypeResolver\ReflectionParameterTypeResolver;
-use OmniMailDeps\Symfony\Component\TypeInfo\TypeResolver\ReflectionPropertyTypeResolver;
-use OmniMailDeps\Symfony\Component\TypeInfo\TypeResolver\ReflectionReturnTypeResolver;
-use OmniMailDeps\Symfony\Component\TypeInfo\TypeResolver\ReflectionTypeResolver;
-use OmniMailDeps\Symfony\Component\TypeInfo\TypeResolver\TypeResolver;
-use OmniMailDeps\Symfony\Component\TypeInfo\TypeResolver\TypeResolverInterface;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\PropertyAccessExtractorInterface;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\PropertyInitializableExtractorInterface;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\PropertyListExtractorInterface;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\PropertyReadInfo;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\PropertyReadInfoExtractorInterface;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\PropertyTypeExtractorInterface;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\PropertyWriteInfo;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\PropertyWriteInfoExtractorInterface;
+use JooosiMailDeps\Symfony\Component\String\Inflector\EnglishInflector;
+use JooosiMailDeps\Symfony\Component\String\Inflector\InflectorInterface;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Exception\UnsupportedException;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\CollectionType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\TypeContext\TypeContextFactory;
+use JooosiMailDeps\Symfony\Component\TypeInfo\TypeIdentifier;
+use JooosiMailDeps\Symfony\Component\TypeInfo\TypeResolver\ReflectionParameterTypeResolver;
+use JooosiMailDeps\Symfony\Component\TypeInfo\TypeResolver\ReflectionPropertyTypeResolver;
+use JooosiMailDeps\Symfony\Component\TypeInfo\TypeResolver\ReflectionReturnTypeResolver;
+use JooosiMailDeps\Symfony\Component\TypeInfo\TypeResolver\ReflectionTypeResolver;
+use JooosiMailDeps\Symfony\Component\TypeInfo\TypeResolver\TypeResolver;
+use JooosiMailDeps\Symfony\Component\TypeInfo\TypeResolver\TypeResolverInterface;
 /**
  * Extracts data using the reflection API.
  *

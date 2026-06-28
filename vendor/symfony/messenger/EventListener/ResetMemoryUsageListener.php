@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\EventListener;
+namespace JooosiMailDeps\Symfony\Component\Messenger\EventListener;
 
-use OmniMailDeps\Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Event\WorkerMessageReceivedEvent;
-use OmniMailDeps\Symfony\Component\Messenger\Event\WorkerRunningEvent;
+use JooosiMailDeps\Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Event\WorkerMessageReceivedEvent;
+use JooosiMailDeps\Symfony\Component\Messenger\Event\WorkerRunningEvent;
 /**
  * @author Tim Düsterhus <tim@tideways-gmbh.com>
  */

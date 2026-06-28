@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\SQL\Builder;
+namespace JooosiMailDeps\Doctrine\DBAL\SQL\Builder;
 
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
-use OmniMailDeps\Doctrine\DBAL\Query\UnionQuery;
-use OmniMailDeps\Doctrine\DBAL\Query\UnionType;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Query\UnionQuery;
+use JooosiMailDeps\Doctrine\DBAL\Query\UnionType;
 use function count;
 use function implode;
 final class DefaultUnionSQLBuilder implements UnionSQLBuilder

@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\Adapter;
+namespace JooosiMailDeps\Symfony\Component\Cache\Adapter;
 
-use OmniMailDeps\Symfony\Component\Cache\Marshaller\MarshallerInterface;
-use OmniMailDeps\Symfony\Component\Cache\Marshaller\TagAwareMarshaller;
-use OmniMailDeps\Symfony\Component\Cache\PruneableInterface;
-use OmniMailDeps\Symfony\Component\Cache\Traits\FilesystemTrait;
+use JooosiMailDeps\Symfony\Component\Cache\Marshaller\MarshallerInterface;
+use JooosiMailDeps\Symfony\Component\Cache\Marshaller\TagAwareMarshaller;
+use JooosiMailDeps\Symfony\Component\Cache\PruneableInterface;
+use JooosiMailDeps\Symfony\Component\Cache\Traits\FilesystemTrait;
 /**
  * Stores tag id <> cache id relationship as a symlink, and lookup on invalidation calls.
  *

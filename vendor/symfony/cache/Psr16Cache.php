@@ -8,16 +8,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache;
+namespace JooosiMailDeps\Symfony\Component\Cache;
 
-use OmniMailDeps\Psr\Cache\CacheException as Psr6CacheException;
-use OmniMailDeps\Psr\Cache\CacheItemPoolInterface;
-use OmniMailDeps\Psr\SimpleCache\CacheException as SimpleCacheException;
-use OmniMailDeps\Psr\SimpleCache\CacheInterface;
-use OmniMailDeps\Symfony\Component\Cache\Adapter\AdapterInterface;
-use OmniMailDeps\Symfony\Component\Cache\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Cache\Traits\ProxyTrait;
-use OmniMailDeps\Symfony\Contracts\Cache\ItemInterface;
+use JooosiMailDeps\Psr\Cache\CacheException as Psr6CacheException;
+use JooosiMailDeps\Psr\Cache\CacheItemPoolInterface;
+use JooosiMailDeps\Psr\SimpleCache\CacheException as SimpleCacheException;
+use JooosiMailDeps\Psr\SimpleCache\CacheInterface;
+use JooosiMailDeps\Symfony\Component\Cache\Adapter\AdapterInterface;
+use JooosiMailDeps\Symfony\Component\Cache\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Cache\Traits\ProxyTrait;
+use JooosiMailDeps\Symfony\Contracts\Cache\ItemInterface;
 /**
  * Turns a PSR-6 cache into a PSR-16 one.
  *

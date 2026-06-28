@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Logging;
+namespace JooosiMail\Mail\Logging;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Routing\DeliveryPlan;
-use OmniMail\Mail\ValueObject\MailRequest;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Routing\DeliveryPlan;
+use JooosiMail\Mail\ValueObject\MailRequest;
 /**
  * High-level logging facade for mail lifecycle entries.
  *
@@ -14,7 +14,7 @@ use OmniMail\Mail\ValueObject\MailRequest;
 #[Service]
 final readonly class MailLifecycleLogger
 {
-    public function __construct(private \OmniMail\Mail\Logging\MailLogRepository $mailLogRepository)
+    public function __construct(private \JooosiMail\Mail\Logging\MailLogRepository $mailLogRepository)
     {
     }
     /**

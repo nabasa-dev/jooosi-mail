@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Database\Migration\Versions;
+namespace JooosiMail\Database\Migration\Versions;
 
-use OmniMailDeps\Doctrine\DBAL\Connection;
-use OmniMail\Database\Migration\MigrationInterface;
-use OmniMail\Infrastructure\Database\TableNameResolver;
-use OmniMail\Queue\Transport\DatabaseTransport;
+use JooosiMailDeps\Doctrine\DBAL\Connection;
+use JooosiMail\Database\Migration\MigrationInterface;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
+use JooosiMail\Queue\Transport\DatabaseTransport;
 /**
- * Creates Omni Mail core persistence tables.
+ * Creates Jooosi Mail core persistence tables.
  *
  * @since 0.1.0
  */
@@ -20,7 +20,7 @@ final readonly class Version202603190001CreateCoreTables implements MigrationInt
     }
     public function getDescription(): string
     {
-        return 'Creates Omni Mail core persistence tables.';
+        return 'Creates Jooosi Mail core persistence tables.';
     }
     public function up(Connection $connection, TableNameResolver $tableNameResolver): void
     {

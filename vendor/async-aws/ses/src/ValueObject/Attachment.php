@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Ses\ValueObject;
+namespace JooosiMailDeps\AsyncAws\Ses\ValueObject;
 
-use OmniMailDeps\AsyncAws\Core\Exception\InvalidArgument;
-use OmniMailDeps\AsyncAws\Ses\Enum\AttachmentContentDisposition;
-use OmniMailDeps\AsyncAws\Ses\Enum\AttachmentContentTransferEncoding;
+use JooosiMailDeps\AsyncAws\Core\Exception\InvalidArgument;
+use JooosiMailDeps\AsyncAws\Ses\Enum\AttachmentContentDisposition;
+use JooosiMailDeps\AsyncAws\Ses\Enum\AttachmentContentTransferEncoding;
 /**
  * Contains metadata and attachment raw content.
  */

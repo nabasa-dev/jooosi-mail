@@ -8,16 +8,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient\Response;
+namespace JooosiMailDeps\Symfony\Component\HttpClient\Response;
 
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\HttpClient\Chunk\DataChunk;
-use OmniMailDeps\Symfony\Component\HttpClient\Chunk\ErrorChunk;
-use OmniMailDeps\Symfony\Component\HttpClient\Chunk\FirstChunk;
-use OmniMailDeps\Symfony\Component\HttpClient\Chunk\LastChunk;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
-use OmniMailDeps\Symfony\Component\HttpClient\Internal\Canary;
-use OmniMailDeps\Symfony\Component\HttpClient\Internal\ClientState;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\HttpClient\Chunk\DataChunk;
+use JooosiMailDeps\Symfony\Component\HttpClient\Chunk\ErrorChunk;
+use JooosiMailDeps\Symfony\Component\HttpClient\Chunk\FirstChunk;
+use JooosiMailDeps\Symfony\Component\HttpClient\Chunk\LastChunk;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
+use JooosiMailDeps\Symfony\Component\HttpClient\Internal\Canary;
+use JooosiMailDeps\Symfony\Component\HttpClient\Internal\ClientState;
 /**
  * Implements common logic for transport-level response classes.
  *

@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Query\ForUpdate;
+namespace JooosiMailDeps\Doctrine\DBAL\Query\ForUpdate;
 
 enum ConflictResolutionMode
 {

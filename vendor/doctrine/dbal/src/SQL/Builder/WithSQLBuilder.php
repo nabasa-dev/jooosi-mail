@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\SQL\Builder;
+namespace JooosiMailDeps\Doctrine\DBAL\SQL\Builder;
 
-use OmniMailDeps\Doctrine\DBAL\Query\CommonTableExpression;
+use JooosiMailDeps\Doctrine\DBAL\Query\CommonTableExpression;
 use function array_merge;
 use function count;
 use function implode;

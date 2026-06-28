@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL;
+namespace JooosiMailDeps\Doctrine\DBAL;
 
 /**
  * Contains all supported lock modes.

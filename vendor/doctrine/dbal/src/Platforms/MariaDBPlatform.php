@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Platforms;
+namespace JooosiMailDeps\Doctrine\DBAL\Platforms;
 
-use OmniMailDeps\Doctrine\DBAL\Platforms\Keywords\KeywordList;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Keywords\MariaDBKeywords;
-use OmniMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint;
-use OmniMailDeps\Doctrine\DBAL\Schema\TableDiff;
-use OmniMailDeps\Doctrine\DBAL\Types\JsonType;
-use OmniMailDeps\Doctrine\Deprecations\Deprecation;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Keywords\KeywordList;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Keywords\MariaDBKeywords;
+use JooosiMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint;
+use JooosiMailDeps\Doctrine\DBAL\Schema\TableDiff;
+use JooosiMailDeps\Doctrine\DBAL\Types\JsonType;
+use JooosiMailDeps\Doctrine\Deprecations\Deprecation;
 use function array_diff_key;
 use function array_merge;
 use function count;

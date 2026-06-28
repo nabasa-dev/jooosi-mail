@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver;
 
 /**
  * Driver-level statement execution result.

@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\AwsError;
+namespace JooosiMailDeps\AsyncAws\Core\AwsError;
 
-use OmniMailDeps\AsyncAws\Core\Exception\RuntimeException;
-use OmniMailDeps\AsyncAws\Core\Exception\UnexpectedValue;
-use OmniMailDeps\AsyncAws\Core\Exception\UnparsableResponse;
+use JooosiMailDeps\AsyncAws\Core\Exception\RuntimeException;
+use JooosiMailDeps\AsyncAws\Core\Exception\UnexpectedValue;
+use JooosiMailDeps\AsyncAws\Core\Exception\UnparsableResponse;
 final class XmlAwsErrorFactory implements AwsErrorFactoryInterface
 {
     use AwsErrorFactoryFromResponseTrait;

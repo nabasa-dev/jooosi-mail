@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Transport\Smtp\Stream;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Transport\Smtp\Stream;
 
-use OmniMailDeps\Symfony\Component\Mailer\Exception\TransportException;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\TransportException;
 /**
  * A stream supporting local processes.
  *

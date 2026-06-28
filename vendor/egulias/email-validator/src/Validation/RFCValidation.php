@@ -1,12 +1,12 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Validation;
+namespace JooosiMailDeps\Egulias\EmailValidator\Validation;
 
-use OmniMailDeps\Egulias\EmailValidator\EmailLexer;
-use OmniMailDeps\Egulias\EmailValidator\EmailParser;
-use OmniMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\ExceptionFound;
-use OmniMailDeps\Egulias\EmailValidator\Warning\Warning;
+use JooosiMailDeps\Egulias\EmailValidator\EmailLexer;
+use JooosiMailDeps\Egulias\EmailValidator\EmailParser;
+use JooosiMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\ExceptionFound;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\Warning;
 class RFCValidation implements EmailValidation
 {
     /**

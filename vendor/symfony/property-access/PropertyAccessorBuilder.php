@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\PropertyAccess;
+namespace JooosiMailDeps\Symfony\Component\PropertyAccess;
 
-use OmniMailDeps\Psr\Cache\CacheItemPoolInterface;
-use OmniMailDeps\Symfony\Component\PropertyInfo\PropertyReadInfoExtractorInterface;
-use OmniMailDeps\Symfony\Component\PropertyInfo\PropertyWriteInfoExtractorInterface;
+use JooosiMailDeps\Psr\Cache\CacheItemPoolInterface;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\PropertyReadInfoExtractorInterface;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\PropertyWriteInfoExtractorInterface;
 /**
  * A configurable builder to create a PropertyAccessor.
  *

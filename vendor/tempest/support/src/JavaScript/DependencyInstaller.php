@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\JavaScript;
+namespace JooosiMailDeps\Tempest\Support\JavaScript;
 
-use OmniMailDeps\Symfony\Component\Process\Process;
-use OmniMailDeps\Tempest\Console\Console;
-use OmniMailDeps\Tempest\Validation\Rules\IsEnum;
-use function OmniMailDeps\Tempest\Support\Arr\wrap;
+use JooosiMailDeps\Symfony\Component\Process\Process;
+use JooosiMailDeps\Tempest\Console\Console;
+use JooosiMailDeps\Tempest\Validation\Rules\IsEnum;
+use function JooosiMailDeps\Tempest\Support\Arr\wrap;
 /**
  * Helps with installing JavaScript dependencies in a directory.
  */

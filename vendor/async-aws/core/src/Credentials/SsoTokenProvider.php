@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\AsyncAws\Core\Credentials;
+namespace JooosiMailDeps\AsyncAws\Core\Credentials;
 
-use OmniMailDeps\AsyncAws\Core\EnvVar;
-use OmniMailDeps\AsyncAws\SsoOidc\SsoOidcClient;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Psr\Log\NullLogger;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\AsyncAws\Core\EnvVar;
+use JooosiMailDeps\AsyncAws\SsoOidc\SsoOidcClient;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Psr\Log\NullLogger;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
 /**
  * Load and refresh AWS SSO tokens.
  *

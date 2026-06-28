@@ -8,16 +8,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Compiler;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Attribute\Autowire;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Attribute\AutowireDecorated;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Attribute\Target;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Definition;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\TypedReference;
-use OmniMailDeps\Symfony\Contracts\Service\Attribute\Required;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute\Autowire;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute\AutowireDecorated;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute\Target;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Definition;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\TypedReference;
+use JooosiMailDeps\Symfony\Contracts\Service\Attribute\Required;
 /**
  * Looks for definitions with autowiring enabled and registers their corresponding "#[Required]" properties.
  *

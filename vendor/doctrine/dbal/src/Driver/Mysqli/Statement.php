@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\Mysqli;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\Mysqli;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Exception;
-use OmniMailDeps\Doctrine\DBAL\Driver\Mysqli\Exception\FailedReadingStreamOffset;
-use OmniMailDeps\Doctrine\DBAL\Driver\Mysqli\Exception\NonStreamResourceUsedAsLargeObject;
-use OmniMailDeps\Doctrine\DBAL\Driver\Mysqli\Exception\StatementError;
-use OmniMailDeps\Doctrine\DBAL\Driver\Statement as StatementInterface;
-use OmniMailDeps\Doctrine\DBAL\ParameterType;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Mysqli\Exception\FailedReadingStreamOffset;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Mysqli\Exception\NonStreamResourceUsedAsLargeObject;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Mysqli\Exception\StatementError;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Statement as StatementInterface;
+use JooosiMailDeps\Doctrine\DBAL\ParameterType;
 use mysqli_sql_exception;
 use mysqli_stmt;
 use function array_fill;

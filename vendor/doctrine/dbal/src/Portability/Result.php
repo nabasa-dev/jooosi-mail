@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Portability;
+namespace JooosiMailDeps\Doctrine\DBAL\Portability;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Middleware\AbstractResultMiddleware;
-use OmniMailDeps\Doctrine\DBAL\Driver\Result as ResultInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Middleware\AbstractResultMiddleware;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Result as ResultInterface;
 final class Result extends AbstractResultMiddleware
 {
     /** @internal The result can be only instantiated by the portability connection or statement. */

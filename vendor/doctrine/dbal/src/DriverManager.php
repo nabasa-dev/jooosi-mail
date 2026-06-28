@@ -1,19 +1,19 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL;
+namespace JooosiMailDeps\Doctrine\DBAL;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\IBMDB2;
-use OmniMailDeps\Doctrine\DBAL\Driver\Mysqli;
-use OmniMailDeps\Doctrine\DBAL\Driver\OCI8;
-use OmniMailDeps\Doctrine\DBAL\Driver\PDO;
-use OmniMailDeps\Doctrine\DBAL\Driver\PgSQL;
-use OmniMailDeps\Doctrine\DBAL\Driver\SQLite3;
-use OmniMailDeps\Doctrine\DBAL\Driver\SQLSrv;
-use OmniMailDeps\Doctrine\DBAL\Exception\DriverRequired;
-use OmniMailDeps\Doctrine\DBAL\Exception\InvalidDriverClass;
-use OmniMailDeps\Doctrine\DBAL\Exception\InvalidWrapperClass;
-use OmniMailDeps\Doctrine\DBAL\Exception\UnknownDriver;
+use JooosiMailDeps\Doctrine\DBAL\Driver\IBMDB2;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Mysqli;
+use JooosiMailDeps\Doctrine\DBAL\Driver\OCI8;
+use JooosiMailDeps\Doctrine\DBAL\Driver\PDO;
+use JooosiMailDeps\Doctrine\DBAL\Driver\PgSQL;
+use JooosiMailDeps\Doctrine\DBAL\Driver\SQLite3;
+use JooosiMailDeps\Doctrine\DBAL\Driver\SQLSrv;
+use JooosiMailDeps\Doctrine\DBAL\Exception\DriverRequired;
+use JooosiMailDeps\Doctrine\DBAL\Exception\InvalidDriverClass;
+use JooosiMailDeps\Doctrine\DBAL\Exception\InvalidWrapperClass;
+use JooosiMailDeps\Doctrine\DBAL\Exception\UnknownDriver;
 use SensitiveParameter;
 use function array_keys;
 use function is_a;

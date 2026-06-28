@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient\Internal;
+namespace JooosiMailDeps\Symfony\Component\HttpClient\Internal;
 
-use OmniMailDeps\Symfony\Component\HttpClient\Response\AsyncContext;
-use OmniMailDeps\Symfony\Component\HttpClient\Response\AsyncResponse;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ChunkInterface;
+use JooosiMailDeps\Symfony\Component\HttpClient\Response\AsyncContext;
+use JooosiMailDeps\Symfony\Component\HttpClient\Response\AsyncResponse;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ChunkInterface;
 /**
  * Follows redirections in userland so that decorators can inspect each hop.
  *

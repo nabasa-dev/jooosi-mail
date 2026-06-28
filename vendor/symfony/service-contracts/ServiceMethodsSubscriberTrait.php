@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Contracts\Service;
+namespace JooosiMailDeps\Symfony\Contracts\Service;
 
-use OmniMailDeps\Psr\Container\ContainerInterface;
-use OmniMailDeps\Symfony\Contracts\Service\Attribute\Required;
-use OmniMailDeps\Symfony\Contracts\Service\Attribute\SubscribedService;
+use JooosiMailDeps\Psr\Container\ContainerInterface;
+use JooosiMailDeps\Symfony\Contracts\Service\Attribute\Required;
+use JooosiMailDeps\Symfony\Contracts\Service\Attribute\SubscribedService;
 /**
  * Implementation of ServiceSubscriberInterface that determines subscribed services
  * from methods that have the #[SubscribedService] attribute.

@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Name\Parser\Exception;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parser\Exception;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parser\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parser\Exception;
 use InvalidArgumentException;
 use function sprintf;
 /** @internal */

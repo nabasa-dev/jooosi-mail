@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\EndpointDiscovery;
+namespace JooosiMailDeps\AsyncAws\Core\EndpointDiscovery;
 
-use OmniMailDeps\AsyncAws\Core\Exception\LogicException;
+use JooosiMailDeps\AsyncAws\Core\Exception\LogicException;
 /**
  * @author Jérémy Derussé <jeremy@derusse.com>
  *

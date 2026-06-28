@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Queue\Query;
+namespace JooosiMail\Queue\Query;
 
-use OmniMailDeps\Doctrine\DBAL\Connection as DbalConnection;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Database\TableNameResolver;
+use JooosiMailDeps\Doctrine\DBAL\Connection as DbalConnection;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
 /**
  * Read model for database-backed queue messages.
  *

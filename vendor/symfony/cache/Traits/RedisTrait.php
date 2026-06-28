@@ -8,24 +8,24 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\Traits;
+namespace JooosiMailDeps\Symfony\Component\Cache\Traits;
 
-use OmniMailDeps\Predis\Command\Redis\UNLINK;
-use OmniMailDeps\Predis\Connection\Aggregate\ClusterInterface;
-use OmniMailDeps\Predis\Connection\Aggregate\RedisCluster;
-use OmniMailDeps\Predis\Connection\Aggregate\ReplicationInterface;
-use OmniMailDeps\Predis\Connection\Cluster\ClusterInterface as Predis2ClusterInterface;
-use OmniMailDeps\Predis\Connection\Cluster\RedisCluster as Predis2RedisCluster;
-use OmniMailDeps\Predis\Connection\Replication\ReplicationInterface as Predis2ReplicationInterface;
-use OmniMailDeps\Predis\Response\ErrorInterface;
-use OmniMailDeps\Predis\Response\Status;
+use JooosiMailDeps\Predis\Command\Redis\UNLINK;
+use JooosiMailDeps\Predis\Connection\Aggregate\ClusterInterface;
+use JooosiMailDeps\Predis\Connection\Aggregate\RedisCluster;
+use JooosiMailDeps\Predis\Connection\Aggregate\ReplicationInterface;
+use JooosiMailDeps\Predis\Connection\Cluster\ClusterInterface as Predis2ClusterInterface;
+use JooosiMailDeps\Predis\Connection\Cluster\RedisCluster as Predis2RedisCluster;
+use JooosiMailDeps\Predis\Connection\Replication\ReplicationInterface as Predis2ReplicationInterface;
+use JooosiMailDeps\Predis\Response\ErrorInterface;
+use JooosiMailDeps\Predis\Response\Status;
 use Relay\Cluster as RelayCluster;
 use Relay\Relay;
 use Relay\Sentinel;
-use OmniMailDeps\Symfony\Component\Cache\Exception\CacheException;
-use OmniMailDeps\Symfony\Component\Cache\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Cache\Marshaller\DefaultMarshaller;
-use OmniMailDeps\Symfony\Component\Cache\Marshaller\MarshallerInterface;
+use JooosiMailDeps\Symfony\Component\Cache\Exception\CacheException;
+use JooosiMailDeps\Symfony\Component\Cache\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Cache\Marshaller\DefaultMarshaller;
+use JooosiMailDeps\Symfony\Component\Cache\Marshaller\MarshallerInterface;
 /**
  * @author Aurimas Niekis <aurimas@niekis.lt>
  * @author Nicolas Grekas <p@tchwork.com>
@@ -35,15 +35,15 @@ use OmniMailDeps\Symfony\Component\Cache\Marshaller\MarshallerInterface;
 trait RedisTrait
 {
     private static array $defaultConnectionOptions = ['class' => null, 'auth' => null, 'persistent' => \false, 'persistent_id' => null, 'timeout' => 30, 'read_timeout' => 0, 'retry_interval' => 0, 'tcp_keepalive' => 0, 'lazy' => null, 'cluster' => \false, 'cluster_command_timeout' => 0, 'cluster_relay_context' => [], 'sentinel' => null, 'dbindex' => 0, 'failover' => 'none', 'ssl' => null];
-    private \Redis|Relay|RelayCluster|\RedisArray|\RedisCluster|\OmniMailDeps\Predis\ClientInterface $redis;
+    private \Redis|Relay|RelayCluster|\RedisArray|\RedisCluster|\JooosiMailDeps\Predis\ClientInterface $redis;
     private MarshallerInterface $marshaller;
-    private function init(\Redis|Relay|RelayCluster|\RedisArray|\RedisCluster|\OmniMailDeps\Predis\ClientInterface $redis, string $namespace, int $defaultLifetime, ?MarshallerInterface $marshaller): void
+    private function init(\Redis|Relay|RelayCluster|\RedisArray|\RedisCluster|\JooosiMailDeps\Predis\ClientInterface $redis, string $namespace, int $defaultLifetime, ?MarshallerInterface $marshaller): void
     {
         parent::__construct($namespace, $defaultLifetime);
         if (preg_match('#[^-+_.A-Za-z0-9]#', $namespace, $match)) {
             throw new InvalidArgumentException(\sprintf('RedisAdapter namespace contains "%s" but only characters in [-+_.A-Za-z0-9] are allowed.', $match[0]));
         }
-        if ($redis instanceof \OmniMailDeps\Predis\ClientInterface && $redis->getOptions()->exceptions) {
+        if ($redis instanceof \JooosiMailDeps\Predis\ClientInterface && $redis->getOptions()->exceptions) {
             $options = clone $redis->getOptions();
             \Closure::bind(function () {
                 $this->options['exceptions'] = \false;
@@ -71,7 +71,7 @@ trait RedisTrait
         #[\SensitiveParameter]
         string $dsn,
         array $options = []
-    ): \Redis|\RedisArray|\RedisCluster|\OmniMailDeps\Predis\ClientInterface|Relay|RelayCluster
+    ): \Redis|\RedisArray|\RedisCluster|\JooosiMailDeps\Predis\ClientInterface|Relay|RelayCluster
     {
         $scheme = match (\true) {
             str_starts_with($dsn, 'redis:') => 'redis',
@@ -80,7 +80,7 @@ trait RedisTrait
             str_starts_with($dsn, 'valkeys:') => 'valkeys',
             default => throw new InvalidArgumentException('Invalid Redis DSN: it does not start with "redis[s]:" nor "valkey[s]:".'),
         };
-        if (!\extension_loaded('redis') && !\extension_loaded('relay') && !class_exists(\OmniMailDeps\Predis\Client::class)) {
+        if (!\extension_loaded('redis') && !\extension_loaded('relay') && !class_exists(\JooosiMailDeps\Predis\Client::class)) {
             throw new CacheException('Cannot find the "redis" extension nor the "relay" extension nor the "predis/predis" package.');
         }
         $auth = null;
@@ -165,7 +165,7 @@ trait RedisTrait
         if (!isset($params['sentinel'])) {
             $params['auth'] ??= $auth;
             $sentinelAuth = null;
-        } elseif (!class_exists(\OmniMailDeps\Predis\Client::class) && !class_exists(\RedisSentinel::class) && !class_exists(Sentinel::class)) {
+        } elseif (!class_exists(\JooosiMailDeps\Predis\Client::class) && !class_exists(\RedisSentinel::class) && !class_exists(Sentinel::class)) {
             throw new CacheException('Redis Sentinel support requires one of: "predis/predis", "ext-redis >= 6.1", "ext-relay".');
         } else {
             $sentinelAuth = $params['auth'] ?? null;
@@ -183,19 +183,19 @@ trait RedisTrait
             $params['cluster'] => match (\true) {
                 \extension_loaded('redis') => \RedisCluster::class,
                 \extension_loaded('relay') => RelayCluster::class,
-                default => \OmniMailDeps\Predis\Client::class,
+                default => \JooosiMailDeps\Predis\Client::class,
             },
             isset($params['sentinel']) => match (\true) {
                 \extension_loaded('redis') => \Redis::class,
                 \extension_loaded('relay') => Relay::class,
-                default => \OmniMailDeps\Predis\Client::class,
+                default => \JooosiMailDeps\Predis\Client::class,
             },
             1 < \count($hosts) && \extension_loaded('redis') => \RedisArray::class,
             \extension_loaded('redis') => \Redis::class,
             \extension_loaded('relay') => Relay::class,
-            default => \OmniMailDeps\Predis\Client::class,
+            default => \JooosiMailDeps\Predis\Client::class,
         };
-        if (isset($params['sentinel']) && !is_a($class, \OmniMailDeps\Predis\Client::class, \true) && !class_exists(\RedisSentinel::class) && !class_exists(Sentinel::class)) {
+        if (isset($params['sentinel']) && !is_a($class, \JooosiMailDeps\Predis\Client::class, \true) && !class_exists(\RedisSentinel::class) && !class_exists(Sentinel::class)) {
             throw new CacheException(\sprintf('Cannot use Redis Sentinel: class "%s" does not extend "Predis\Client" and neither ext-redis >= 6.1 nor ext-relay have been found.', $class));
         }
         $isRedisExt = is_a($class, \Redis::class, \true);
@@ -209,7 +209,7 @@ trait RedisTrait
                 do {
                     $host = $hosts[$hostIndex]['host'] ?? $hosts[$hostIndex]['path'];
                     $port = $hosts[$hostIndex]['port'] ?? 0;
-                    $passAuth = null !== $sentinelAuth && (!$isRedisExt || \defined('OmniMailDeps\Redis::OPT_NULL_MULTIBULK_AS_NULL'));
+                    $passAuth = null !== $sentinelAuth && (!$isRedisExt || \defined('JooosiMailDeps\Redis::OPT_NULL_MULTIBULK_AS_NULL'));
                     $address = \false;
                     if (isset($hosts[$hostIndex]['host']) && $tls) {
                         $host = 'tls://' . $host;
@@ -245,7 +245,7 @@ trait RedisTrait
                     if (null !== $params['auth']) {
                         $extra['auth'] = $params['auth'];
                     }
-                    @$redis->{$connect}($host, $port, (float) $params['timeout'], (string) $params['persistent_id'], $params['retry_interval'], $params['read_timeout'], ...\defined('OmniMailDeps\Redis::SCAN_PREFIX') || !$isRedisExt ? [$extra] : []);
+                    @$redis->{$connect}($host, $port, (float) $params['timeout'], (string) $params['persistent_id'], $params['retry_interval'], $params['read_timeout'], ...\defined('JooosiMailDeps\Redis::SCAN_PREFIX') || !$isRedisExt ? [$extra] : []);
                     set_error_handler(static function ($type, $msg) use (&$error) {
                         $error = $msg;
                     });
@@ -258,7 +258,7 @@ trait RedisTrait
                         $error = preg_match('/^Redis::p?connect\(\): (.*)/', $error ?? $redis->getLastError() ?? '', $error) ? \sprintf(' (%s)', $error[1]) : '';
                         throw new InvalidArgumentException('Redis connection failed: ' . $error . '.');
                     }
-                    if (0 < $params['tcp_keepalive'] && (!$isRedisExt || \defined('OmniMailDeps\Redis::OPT_TCP_KEEPALIVE'))) {
+                    if (0 < $params['tcp_keepalive'] && (!$isRedisExt || \defined('JooosiMailDeps\Redis::OPT_TCP_KEEPALIVE'))) {
                         $redis->setOption($isRedisExt ? \Redis::OPT_TCP_KEEPALIVE : Relay::OPT_TCP_KEEPALIVE, $params['tcp_keepalive']);
                     }
                     if (!$redis->select($params['dbindex'])) {
@@ -290,7 +290,7 @@ trait RedisTrait
             } catch (\RedisClusterException $e) {
                 throw new InvalidArgumentException('Redis connection failed: ' . $e->getMessage());
             }
-            if (0 < $params['tcp_keepalive'] && (!$isRedisExt || \defined('OmniMailDeps\Redis::OPT_TCP_KEEPALIVE'))) {
+            if (0 < $params['tcp_keepalive'] && (!$isRedisExt || \defined('JooosiMailDeps\Redis::OPT_TCP_KEEPALIVE'))) {
                 $redis->setOption($isRedisExt ? \Redis::OPT_TCP_KEEPALIVE : Relay::OPT_TCP_KEEPALIVE, $params['tcp_keepalive']);
             }
         } elseif (is_a($class, RelayCluster::class, \true)) {
@@ -335,11 +335,11 @@ trait RedisTrait
                     };
                 }
                 try {
-                    $redis = new $class(null, $hosts, $params['timeout'], $params['read_timeout'], $params['persistent'], $params['auth'] ?? '', ...\defined('OmniMailDeps\Redis::SCAN_PREFIX') ? [$params['ssl'] ?? null] : []);
+                    $redis = new $class(null, $hosts, $params['timeout'], $params['read_timeout'], $params['persistent'], $params['auth'] ?? '', ...\defined('JooosiMailDeps\Redis::SCAN_PREFIX') ? [$params['ssl'] ?? null] : []);
                 } catch (\RedisClusterException $e) {
                     throw new InvalidArgumentException('Redis connection failed: ' . $e->getMessage());
                 }
-                if (0 < $params['tcp_keepalive'] && (!$isRedisExt || \defined('OmniMailDeps\Redis::OPT_TCP_KEEPALIVE'))) {
+                if (0 < $params['tcp_keepalive'] && (!$isRedisExt || \defined('JooosiMailDeps\Redis::OPT_TCP_KEEPALIVE'))) {
                     $redis->setOption($isRedisExt ? \Redis::OPT_TCP_KEEPALIVE : Relay::OPT_TCP_KEEPALIVE, $params['tcp_keepalive']);
                 }
                 $redis->setOption(\RedisCluster::OPT_SLAVE_FAILOVER, match ($params['failover']) {
@@ -351,7 +351,7 @@ trait RedisTrait
                 return $redis;
             };
             $redis = $params['lazy'] ? RedisClusterProxy::createLazyProxy($initializer) : $initializer();
-        } elseif (is_a($class, \OmniMailDeps\Predis\ClientInterface::class, \true)) {
+        } elseif (is_a($class, \JooosiMailDeps\Predis\ClientInterface::class, \true)) {
             if ($params['cluster']) {
                 $params['cluster'] = 'redis';
             } else {
@@ -417,7 +417,7 @@ trait RedisTrait
             return [];
         }
         $result = [];
-        if ($this->redis instanceof \OmniMailDeps\Predis\ClientInterface && ($this->redis->getConnection() instanceof ClusterInterface || $this->redis->getConnection() instanceof Predis2ClusterInterface) || $this->redis instanceof RelayCluster) {
+        if ($this->redis instanceof \JooosiMailDeps\Predis\ClientInterface && ($this->redis->getConnection() instanceof ClusterInterface || $this->redis->getConnection() instanceof Predis2ClusterInterface) || $this->redis instanceof RelayCluster) {
             $values = $this->pipeline(static function () use ($ids) {
                 foreach ($ids as $id) {
                     yield 'get' => [$id];
@@ -443,7 +443,7 @@ trait RedisTrait
     }
     protected function doClear(string $namespace): bool
     {
-        if ($this->redis instanceof \OmniMailDeps\Predis\ClientInterface) {
+        if ($this->redis instanceof \JooosiMailDeps\Predis\ClientInterface) {
             $prefix = $this->redis->getOptions()->prefix ? $this->redis->getOptions()->prefix->getPrefix() : '';
             $prefixLen = \strlen($prefix ?? '');
         }
@@ -475,7 +475,7 @@ trait RedisTrait
         }
         $hosts = $this->getHosts();
         $host = reset($hosts);
-        if ($host instanceof \OmniMailDeps\Predis\Client) {
+        if ($host instanceof \JooosiMailDeps\Predis\Client) {
             $connection = $host->getConnection();
             if ($connection instanceof ReplicationInterface) {
                 $hosts = [$host->getClientFor('master')];
@@ -494,8 +494,8 @@ trait RedisTrait
             if ($host instanceof Relay) {
                 $prefix = Relay::SCAN_PREFIX & $host->getOption(Relay::OPT_SCAN) ? '' : $host->getOption(Relay::OPT_PREFIX);
                 $prefixLen = \strlen($host->getOption(Relay::OPT_PREFIX) ?? '');
-            } elseif (!$host instanceof \OmniMailDeps\Predis\ClientInterface) {
-                $prefix = \defined('OmniMailDeps\Redis::SCAN_PREFIX') && \Redis::SCAN_PREFIX & $host->getOption(\Redis::OPT_SCAN) ? '' : $host->getOption(\Redis::OPT_PREFIX);
+            } elseif (!$host instanceof \JooosiMailDeps\Predis\ClientInterface) {
+                $prefix = \defined('JooosiMailDeps\Redis::SCAN_PREFIX') && \Redis::SCAN_PREFIX & $host->getOption(\Redis::OPT_SCAN) ? '' : $host->getOption(\Redis::OPT_PREFIX);
                 $prefixLen = \strlen($host->getOption(\Redis::OPT_PREFIX) ?? '');
             }
             $pattern = $prefix . $namespace . '*';
@@ -504,13 +504,13 @@ trait RedisTrait
                 // can hang your server when it is executed against large databases (millions of items).
                 // Whenever you hit this scale, you should really consider upgrading to Redis 2.8 or above.
                 $unlink = version_compare($info['redis_version'], '4.0', '>=') ? 'UNLINK' : 'DEL';
-                $args = $this->redis instanceof \OmniMailDeps\Predis\ClientInterface ? [0, $pattern] : [[$pattern], 0];
+                $args = $this->redis instanceof \JooosiMailDeps\Predis\ClientInterface ? [0, $pattern] : [[$pattern], 0];
                 $cleared = $host->eval("local keys=redis.call('KEYS',ARGV[1]) for i=1,#keys,5000 do redis.call('{$unlink}',unpack(keys,i,math.min(i+4999,#keys))) end return 1", $args[0], $args[1]) && $cleared;
                 continue;
             }
             $cursor = null;
             do {
-                $keys = $host instanceof \OmniMailDeps\Predis\ClientInterface ? $host->scan($cursor ?? 0, 'MATCH', $pattern, 'COUNT', 1000) : $host->scan($cursor, $pattern, 1000);
+                $keys = $host instanceof \JooosiMailDeps\Predis\ClientInterface ? $host->scan($cursor ?? 0, 'MATCH', $pattern, 'COUNT', 1000) : $host->scan($cursor, $pattern, 1000);
                 if (isset($keys[1]) && \is_array($keys[1])) {
                     $cursor = $keys[0];
                     $keys = $keys[1];
@@ -532,7 +532,7 @@ trait RedisTrait
         if (!$ids) {
             return \true;
         }
-        if ($this->redis instanceof \OmniMailDeps\Predis\ClientInterface && ($this->redis->getConnection() instanceof ClusterInterface || $this->redis->getConnection() instanceof Predis2ClusterInterface)) {
+        if ($this->redis instanceof \JooosiMailDeps\Predis\ClientInterface && ($this->redis->getConnection() instanceof ClusterInterface || $this->redis->getConnection() instanceof Predis2ClusterInterface)) {
             static $del;
             $del ??= class_exists(UNLINK::class) ? 'unlink' : 'del';
             $this->pipeline(static function () use ($ids, $del) {
@@ -580,7 +580,7 @@ trait RedisTrait
     {
         $ids = [];
         $redis ??= $this->redis;
-        if ($redis instanceof \RedisCluster || $redis instanceof RelayCluster || $redis instanceof \OmniMailDeps\Predis\ClientInterface && ($redis->getConnection() instanceof RedisCluster || $redis->getConnection() instanceof Predis2RedisCluster)) {
+        if ($redis instanceof \RedisCluster || $redis instanceof RelayCluster || $redis instanceof \JooosiMailDeps\Predis\ClientInterface && ($redis->getConnection() instanceof RedisCluster || $redis->getConnection() instanceof Predis2RedisCluster)) {
             // phpredis & predis don't support pipelining with RedisCluster
             // \Relay\Cluster does not support multi with pipeline mode
             // see https://github.com/phpredis/phpredis/blob/develop/cluster.markdown#pipelining
@@ -588,9 +588,9 @@ trait RedisTrait
             $results = [];
             foreach ($generator() as $command => $args) {
                 $results[] = $redis->{$command}(...$args);
-                $ids[] = 'eval' === $command ? $redis instanceof \OmniMailDeps\Predis\ClientInterface ? $args[2] : $args[1][0] : $args[0];
+                $ids[] = 'eval' === $command ? $redis instanceof \JooosiMailDeps\Predis\ClientInterface ? $args[2] : $args[1][0] : $args[0];
             }
-        } elseif ($redis instanceof \OmniMailDeps\Predis\ClientInterface) {
+        } elseif ($redis instanceof \JooosiMailDeps\Predis\ClientInterface) {
             $results = $redis->pipeline(static function ($redis) use ($generator, &$ids) {
                 foreach ($generator() as $command => $args) {
                     $redis->{$command}(...$args);
@@ -623,7 +623,7 @@ trait RedisTrait
             }
             $results = $redis->exec();
         }
-        if (!$redis instanceof \OmniMailDeps\Predis\ClientInterface && 'eval' === $command && $redis->getLastError()) {
+        if (!$redis instanceof \JooosiMailDeps\Predis\ClientInterface && 'eval' === $command && $redis->getLastError()) {
             $e = $redis instanceof Relay ? new \Relay\Exception($redis->getLastError()) : new \RedisException($redis->getLastError());
             $results = array_map(static fn($v) => \false === $v ? $e : $v, (array) $results);
         }
@@ -637,12 +637,12 @@ trait RedisTrait
     private function getHosts(): array
     {
         $hosts = [$this->redis];
-        if ($this->redis instanceof \OmniMailDeps\Predis\ClientInterface) {
+        if ($this->redis instanceof \JooosiMailDeps\Predis\ClientInterface) {
             $connection = $this->redis->getConnection();
             if (($connection instanceof ClusterInterface || $connection instanceof Predis2ClusterInterface) && $connection instanceof \Traversable) {
                 $hosts = [];
                 foreach ($connection as $c) {
-                    $hosts[] = new \OmniMailDeps\Predis\Client($c);
+                    $hosts[] = new \JooosiMailDeps\Predis\Client($c);
                 }
             }
         } elseif ($this->redis instanceof \RedisArray) {

@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\AsyncAws\Core;
+namespace JooosiMailDeps\AsyncAws\Core;
 
-use OmniMailDeps\AsyncAws\Core\Credentials\IniFileLoader;
-use OmniMailDeps\AsyncAws\Core\Exception\InvalidArgument;
+use JooosiMailDeps\AsyncAws\Core\Credentials\IniFileLoader;
+use JooosiMailDeps\AsyncAws\Core\Exception\InvalidArgument;
 /**
  * Helper object that holds all configuration to the API.
  *

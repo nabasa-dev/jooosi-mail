@@ -8,20 +8,20 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Command;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Command;
 
-use OmniMailDeps\Psr\Container\ContainerInterface;
-use OmniMailDeps\Symfony\Component\Console\Attribute\AsCommand;
-use OmniMailDeps\Symfony\Component\Console\Command\Command;
-use OmniMailDeps\Symfony\Component\Console\Completion\CompletionInput;
-use OmniMailDeps\Symfony\Component\Console\Completion\CompletionSuggestions;
-use OmniMailDeps\Symfony\Component\Console\Input\InputArgument;
-use OmniMailDeps\Symfony\Component\Console\Input\InputInterface;
-use OmniMailDeps\Symfony\Component\Console\Input\InputOption;
-use OmniMailDeps\Symfony\Component\Console\Output\OutputInterface;
-use OmniMailDeps\Symfony\Component\Console\Style\SymfonyStyle;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Receiver\MessageCountAwareInterface;
+use JooosiMailDeps\Psr\Container\ContainerInterface;
+use JooosiMailDeps\Symfony\Component\Console\Attribute\AsCommand;
+use JooosiMailDeps\Symfony\Component\Console\Command\Command;
+use JooosiMailDeps\Symfony\Component\Console\Completion\CompletionInput;
+use JooosiMailDeps\Symfony\Component\Console\Completion\CompletionSuggestions;
+use JooosiMailDeps\Symfony\Component\Console\Input\InputArgument;
+use JooosiMailDeps\Symfony\Component\Console\Input\InputInterface;
+use JooosiMailDeps\Symfony\Component\Console\Input\InputOption;
+use JooosiMailDeps\Symfony\Component\Console\Output\OutputInterface;
+use JooosiMailDeps\Symfony\Component\Console\Style\SymfonyStyle;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Receiver\MessageCountAwareInterface;
 /**
  * @author Kévin Thérage <therage.kevin@gmail.com>
  */

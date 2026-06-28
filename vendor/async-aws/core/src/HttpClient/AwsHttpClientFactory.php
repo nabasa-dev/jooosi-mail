@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\HttpClient;
+namespace JooosiMailDeps\AsyncAws\Core\HttpClient;
 
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\HttpClient\HttpClient;
-use OmniMailDeps\Symfony\Component\HttpClient\RetryableHttpClient;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\HttpClient\HttpClient;
+use JooosiMailDeps\Symfony\Component\HttpClient\RetryableHttpClient;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
 /**
  * @author Jérémy Derussé <jeremy@derusse.com>
  */

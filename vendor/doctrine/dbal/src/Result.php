@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL;
+namespace JooosiMailDeps\Doctrine\DBAL;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Exception as DriverException;
-use OmniMailDeps\Doctrine\DBAL\Driver\Result as DriverResult;
-use OmniMailDeps\Doctrine\DBAL\Exception\NoKeyValue;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Exception as DriverException;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Result as DriverResult;
+use JooosiMailDeps\Doctrine\DBAL\Exception\NoKeyValue;
 use LogicException;
 use Traversable;
 use function array_shift;

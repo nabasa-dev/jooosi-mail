@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Psr\Log;
+namespace JooosiMailDeps\Psr\Log;
 
 /**
  * This Logger can be used to avoid conditional log calls.

@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mime\Encoder;
+namespace JooosiMailDeps\Symfony\Component\Mime\Encoder;
 
-use OmniMailDeps\Symfony\Component\Mime\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Component\Mime\Exception\RuntimeException;
 /**
  * @author Fabien Potencier <fabien@symfony.com>
  */

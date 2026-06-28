@@ -1,29 +1,29 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Cli;
+namespace JooosiMail\Cli;
 
-use OmniMail\Discovery\Attribute\Command;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Connection\Connection;
-use OmniMail\Mail\Connection\ConnectionRepository;
-use OmniMail\Webhook\Adapter\WebhookAdapterRegistry;
-use OmniMail\Webhook\Event\WebhookEventRepository;
+use JooosiMail\Discovery\Attribute\Command;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Connection\Connection;
+use JooosiMail\Mail\Connection\ConnectionRepository;
+use JooosiMail\Webhook\Adapter\WebhookAdapterRegistry;
+use JooosiMail\Webhook\Event\WebhookEventRepository;
 use ReflectionClass;
 use WP_CLI;
 use function WP_CLI\Utils\format_items;
 /**
- * Inspect Omni Mail webhook state and events.
+ * Inspect Jooosi Mail webhook state and events.
  *
  * ## EXAMPLES
  *
  *     # Show webhook verification posture for enabled connections.
- *     $ wp omni-mail webhook:status
+ *     $ wp jooosi-mail webhook:status
  *     id  name              profile   enabled  adapter   verification        secret
  *     3   Mailgun Primary   mailgun   yes      Mailgun   hmac-shared-secret  yes
  *
  *     # List recent webhook events.
- *     $ wp omni-mail webhook:events --limit=10
+ *     $ wp jooosi-mail webhook:events --limit=10
  *     id  connection          mail_log_id  event_type  occurred_at           transport_message_id  provider_event_id
  *     11  #3 Mailgun Primary  42           delivered   2026-03-23 09:22:00   01HR...               evt_123
  *
@@ -36,7 +36,7 @@ final readonly class WebhookCommand
     {
     }
     /**
-     * Show Omni Mail webhook status for configured connections.
+     * Show Jooosi Mail webhook status for configured connections.
      *
      * ## OPTIONS
      *
@@ -54,12 +54,12 @@ final readonly class WebhookCommand
      * ## EXAMPLES
      *
      *     # Inspect enabled webhook connections.
-     *     $ wp omni-mail webhook:status
+     *     $ wp jooosi-mail webhook:status
      *     id  name              profile   enabled  adapter   verification        secret
      *     3   Mailgun Primary   mailgun   yes      Mailgun   hmac-shared-secret  yes
      *
      *     # Include connections where webhooks are disabled.
-     *     $ wp omni-mail webhook:status --all=true
+     *     $ wp jooosi-mail webhook:status --all=true
      *     id  name              profile    enabled  adapter    verification  secret
      *     3   Mailgun Primary   mailgun    yes      Mailgun    hmac-shared-secret  yes
      *     4   SendGrid Backup   sendgrid   no       SendGrid   disabled      no
@@ -69,7 +69,7 @@ final readonly class WebhookCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'Show Omni Mail webhook status for configured connections.')]
+    #[Command(description: 'Show Jooosi Mail webhook status for configured connections.')]
     public function status(array $args, array $assocArgs): void
     {
         $includeDisabled = $this->resolveBoolean($assocArgs['all'] ?? \false);
@@ -85,7 +85,7 @@ final readonly class WebhookCommand
         format_items('table', $items, ['id', 'name', 'profile', 'enabled', 'adapter', 'verification', 'secret']);
     }
     /**
-     * List recent Omni Mail webhook events.
+     * List recent Jooosi Mail webhook events.
      *
      * ## OPTIONS
      *
@@ -107,12 +107,12 @@ final readonly class WebhookCommand
      * ## EXAMPLES
      *
      *     # List recent webhook events.
-     *     $ wp omni-mail webhook:events --limit=10
+     *     $ wp jooosi-mail webhook:events --limit=10
      *     id  connection          mail_log_id  event_type  occurred_at           transport_message_id  provider_event_id
      *     11  #3 Mailgun Primary  42           delivered   2026-03-23 09:22:00   01HR...               evt_123
      *
      *     # Filter events for a single mail log.
-     *     $ wp omni-mail webhook:events --mail-log-id=42
+     *     $ wp jooosi-mail webhook:events --mail-log-id=42
      *     id  connection          mail_log_id  event_type  occurred_at           transport_message_id  provider_event_id
      *     11  #3 Mailgun Primary  42           delivered   2026-03-23 09:22:00   01HR...               evt_123
      *
@@ -121,7 +121,7 @@ final readonly class WebhookCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'List recent Omni Mail webhook events.')]
+    #[Command(description: 'List recent Jooosi Mail webhook events.')]
     public function events(array $args, array $assocArgs): void
     {
         $rows = $this->webhookEventRepository->listRecent(limit: max(1, (int) ($assocArgs['limit'] ?? 20)), connectionId: isset($assocArgs['connection-id']) ? max(1, (int) $assocArgs['connection-id']) : null, mailLogId: isset($assocArgs['mail-log-id']) ? max(1, (int) $assocArgs['mail-log-id']) : null, eventType: $this->normalizeFilter($assocArgs['event-type'] ?? null));

@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Warning;
+namespace JooosiMailDeps\Egulias\EmailValidator\Warning;
 
 class LocalTooLong extends Warning
 {

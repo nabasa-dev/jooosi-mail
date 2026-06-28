@@ -1,17 +1,17 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Parser;
+namespace JooosiMailDeps\Egulias\EmailValidator\Parser;
 
-use OmniMailDeps\Egulias\EmailValidator\EmailLexer;
-use OmniMailDeps\Egulias\EmailValidator\Result\Result;
-use OmniMailDeps\Egulias\EmailValidator\Result\ValidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Warning\LocalTooLong;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\DotAtEnd;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\DotAtStart;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\ConsecutiveDot;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\ExpectingATEXT;
-use OmniMailDeps\Egulias\EmailValidator\Parser\CommentStrategy\LocalComment;
+use JooosiMailDeps\Egulias\EmailValidator\EmailLexer;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Result;
+use JooosiMailDeps\Egulias\EmailValidator\Result\ValidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\LocalTooLong;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\DotAtEnd;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\DotAtStart;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\ConsecutiveDot;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\ExpectingATEXT;
+use JooosiMailDeps\Egulias\EmailValidator\Parser\CommentStrategy\LocalComment;
 class LocalPart extends PartParser
 {
     public const INVALID_TOKENS = [EmailLexer::S_COMMA => EmailLexer::S_COMMA, EmailLexer::S_CLOSEBRACKET => EmailLexer::S_CLOSEBRACKET, EmailLexer::S_OPENBRACKET => EmailLexer::S_OPENBRACKET, EmailLexer::S_GREATERTHAN => EmailLexer::S_GREATERTHAN, EmailLexer::S_LOWERTHAN => EmailLexer::S_LOWERTHAN, EmailLexer::S_COLON => EmailLexer::S_COLON, EmailLexer::S_SEMICOLON => EmailLexer::S_SEMICOLON, EmailLexer::INVALID => EmailLexer::INVALID];

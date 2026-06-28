@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Introspection\MetadataProcessor;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Introspection\MetadataProcessor;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Metadata\PrimaryKeyConstraintColumnRow;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
-use OmniMailDeps\Doctrine\DBAL\Schema\PrimaryKeyConstraint;
-use OmniMailDeps\Doctrine\DBAL\Schema\PrimaryKeyConstraintEditor;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Metadata\PrimaryKeyConstraintColumnRow;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\PrimaryKeyConstraint;
+use JooosiMailDeps\Doctrine\DBAL\Schema\PrimaryKeyConstraintEditor;
 /**
  * Combines multiple {@see PrimaryKeyConstraintColumnRow}s into a {@see PrimaryKeyConstraint}.
  *

@@ -8,15 +8,15 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Command;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Command;
 
-use OmniMailDeps\Psr\Cache\CacheItemPoolInterface;
-use OmniMailDeps\Symfony\Component\Console\Attribute\AsCommand;
-use OmniMailDeps\Symfony\Component\Console\Command\Command;
-use OmniMailDeps\Symfony\Component\Console\Input\InputInterface;
-use OmniMailDeps\Symfony\Component\Console\Output\OutputInterface;
-use OmniMailDeps\Symfony\Component\Console\Style\SymfonyStyle;
-use OmniMailDeps\Symfony\Component\Messenger\EventListener\StopWorkerOnRestartSignalListener;
+use JooosiMailDeps\Psr\Cache\CacheItemPoolInterface;
+use JooosiMailDeps\Symfony\Component\Console\Attribute\AsCommand;
+use JooosiMailDeps\Symfony\Component\Console\Command\Command;
+use JooosiMailDeps\Symfony\Component\Console\Input\InputInterface;
+use JooosiMailDeps\Symfony\Component\Console\Output\OutputInterface;
+use JooosiMailDeps\Symfony\Component\Console\Style\SymfonyStyle;
+use JooosiMailDeps\Symfony\Component\Messenger\EventListener\StopWorkerOnRestartSignalListener;
 /**
  * @author Ryan Weaver <ryan@symfonycasts.com>
  */

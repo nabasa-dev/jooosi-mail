@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\OCI8;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\OCI8;
 
-use OmniMailDeps\Doctrine\DBAL\SQL\Parser\Visitor;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Parser\Visitor;
 use function count;
 use function implode;
 /**

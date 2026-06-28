@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\VarExporter;
+namespace JooosiMailDeps\Symfony\Component\VarExporter;
 
-use OmniMailDeps\Symfony\Component\VarExporter\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\VarExporter\Internal\LazyDecoratorTrait;
-use OmniMailDeps\Symfony\Component\VarExporter\Internal\LazyObjectRegistry;
+use JooosiMailDeps\Symfony\Component\VarExporter\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\VarExporter\Internal\LazyDecoratorTrait;
+use JooosiMailDeps\Symfony\Component\VarExporter\Internal\LazyObjectRegistry;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  */

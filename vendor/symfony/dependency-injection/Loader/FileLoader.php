@@ -8,27 +8,27 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Loader;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Loader;
 
-use OmniMailDeps\Symfony\Component\Config\Exception\FileLocatorFileNotFoundException;
-use OmniMailDeps\Symfony\Component\Config\Exception\LoaderLoadException;
-use OmniMailDeps\Symfony\Component\Config\FileLocatorInterface;
-use OmniMailDeps\Symfony\Component\Config\Loader\FileLoader as BaseFileLoader;
-use OmniMailDeps\Symfony\Component\Config\Loader\Loader;
-use OmniMailDeps\Symfony\Component\Config\Resource\GlobResource;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Alias;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Attribute\AsAlias;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Attribute\Exclude;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Attribute\Target;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Attribute\When;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Attribute\WhenNot;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ChildDefinition;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Compiler\RegisterAutoconfigureAttributesPass;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Definition;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\VarExporter\DeepCloner;
+use JooosiMailDeps\Symfony\Component\Config\Exception\FileLocatorFileNotFoundException;
+use JooosiMailDeps\Symfony\Component\Config\Exception\LoaderLoadException;
+use JooosiMailDeps\Symfony\Component\Config\FileLocatorInterface;
+use JooosiMailDeps\Symfony\Component\Config\Loader\FileLoader as BaseFileLoader;
+use JooosiMailDeps\Symfony\Component\Config\Loader\Loader;
+use JooosiMailDeps\Symfony\Component\Config\Resource\GlobResource;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Alias;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute\AsAlias;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute\Exclude;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute\Target;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute\When;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute\WhenNot;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ChildDefinition;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler\RegisterAutoconfigureAttributesPass;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Definition;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\VarExporter\DeepCloner;
 /**
  * FileLoader is the abstract class used by all built-in loaders that are file based.
  *

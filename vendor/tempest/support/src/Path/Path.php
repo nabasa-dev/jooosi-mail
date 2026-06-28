@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Path;
+namespace JooosiMailDeps\Tempest\Support\Path;
 
 use Stringable;
-use OmniMailDeps\Tempest\Support\Arr\ImmutableArray;
-use OmniMailDeps\Tempest\Support\Filesystem;
-use OmniMailDeps\Tempest\Support\Str\ManipulatesString;
-use OmniMailDeps\Tempest\Support\Str\StringInterface;
+use JooosiMailDeps\Tempest\Support\Arr\ImmutableArray;
+use JooosiMailDeps\Tempest\Support\Filesystem;
+use JooosiMailDeps\Tempest\Support\Str\ManipulatesString;
+use JooosiMailDeps\Tempest\Support\Str\StringInterface;
 /**
  * Represents a file system path and provides access to convenience methods.
  */

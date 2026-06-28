@@ -8,25 +8,25 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\PropertyInfo\Util;
+namespace JooosiMailDeps\Symfony\Component\PropertyInfo\Util;
 
-use OmniMailDeps\phpDocumentor\Reflection\PseudoType;
-use OmniMailDeps\phpDocumentor\Reflection\PseudoTypes\ConstExpression;
-use OmniMailDeps\phpDocumentor\Reflection\PseudoTypes\Generic;
-use OmniMailDeps\phpDocumentor\Reflection\PseudoTypes\List_;
-use OmniMailDeps\phpDocumentor\Reflection\PseudoTypes\Scalar;
-use OmniMailDeps\phpDocumentor\Reflection\Type as DocType;
-use OmniMailDeps\phpDocumentor\Reflection\Types\Array_;
-use OmniMailDeps\phpDocumentor\Reflection\Types\Collection;
-use OmniMailDeps\phpDocumentor\Reflection\Types\Compound;
-use OmniMailDeps\phpDocumentor\Reflection\Types\Integer;
-use OmniMailDeps\phpDocumentor\Reflection\Types\Null_;
-use OmniMailDeps\phpDocumentor\Reflection\Types\Nullable;
-use OmniMailDeps\phpDocumentor\Reflection\Types\Scalar as LegacyScalar;
-use OmniMailDeps\phpDocumentor\Reflection\Types\String_;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\BuiltinType;
-use OmniMailDeps\Symfony\Component\TypeInfo\TypeIdentifier;
+use JooosiMailDeps\phpDocumentor\Reflection\PseudoType;
+use JooosiMailDeps\phpDocumentor\Reflection\PseudoTypes\ConstExpression;
+use JooosiMailDeps\phpDocumentor\Reflection\PseudoTypes\Generic;
+use JooosiMailDeps\phpDocumentor\Reflection\PseudoTypes\List_;
+use JooosiMailDeps\phpDocumentor\Reflection\PseudoTypes\Scalar;
+use JooosiMailDeps\phpDocumentor\Reflection\Type as DocType;
+use JooosiMailDeps\phpDocumentor\Reflection\Types\Array_;
+use JooosiMailDeps\phpDocumentor\Reflection\Types\Collection;
+use JooosiMailDeps\phpDocumentor\Reflection\Types\Compound;
+use JooosiMailDeps\phpDocumentor\Reflection\Types\Integer;
+use JooosiMailDeps\phpDocumentor\Reflection\Types\Null_;
+use JooosiMailDeps\phpDocumentor\Reflection\Types\Nullable;
+use JooosiMailDeps\phpDocumentor\Reflection\Types\Scalar as LegacyScalar;
+use JooosiMailDeps\phpDocumentor\Reflection\Types\String_;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\BuiltinType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\TypeIdentifier;
 // Workaround for phpdocumentor/type-resolver < 1.6
 // We trigger the autoloader here, so we don't need to trigger it inside the loop later.
 class_exists(List_::class);

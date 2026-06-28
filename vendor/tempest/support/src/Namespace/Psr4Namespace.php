@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Tempest\Support\Namespace;
+namespace JooosiMailDeps\Tempest\Support\Namespace;
 
 final readonly class Psr4Namespace
 {

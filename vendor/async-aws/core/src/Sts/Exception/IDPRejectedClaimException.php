@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Sts\Exception;
+namespace JooosiMailDeps\AsyncAws\Core\Sts\Exception;
 
-use OmniMailDeps\AsyncAws\Core\Exception\Http\ClientException;
+use JooosiMailDeps\AsyncAws\Core\Exception\Http\ClientException;
 /**
  * The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.
  *

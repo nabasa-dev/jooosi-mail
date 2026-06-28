@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Index;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Index;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\InvalidIndexDefinition;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\InvalidIndexDefinition;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
 final readonly class IndexedColumn
 {
     /**

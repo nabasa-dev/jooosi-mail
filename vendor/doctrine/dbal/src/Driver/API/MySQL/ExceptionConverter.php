@@ -1,25 +1,25 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\API\MySQL;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\API\MySQL;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\API\ExceptionConverter as ExceptionConverterInterface;
-use OmniMailDeps\Doctrine\DBAL\Driver\Exception;
-use OmniMailDeps\Doctrine\DBAL\Exception\ConnectionException;
-use OmniMailDeps\Doctrine\DBAL\Exception\ConnectionLost;
-use OmniMailDeps\Doctrine\DBAL\Exception\DatabaseDoesNotExist;
-use OmniMailDeps\Doctrine\DBAL\Exception\DeadlockException;
-use OmniMailDeps\Doctrine\DBAL\Exception\DriverException;
-use OmniMailDeps\Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
-use OmniMailDeps\Doctrine\DBAL\Exception\InvalidFieldNameException;
-use OmniMailDeps\Doctrine\DBAL\Exception\LockWaitTimeoutException;
-use OmniMailDeps\Doctrine\DBAL\Exception\NonUniqueFieldNameException;
-use OmniMailDeps\Doctrine\DBAL\Exception\NotNullConstraintViolationException;
-use OmniMailDeps\Doctrine\DBAL\Exception\SyntaxErrorException;
-use OmniMailDeps\Doctrine\DBAL\Exception\TableExistsException;
-use OmniMailDeps\Doctrine\DBAL\Exception\TableNotFoundException;
-use OmniMailDeps\Doctrine\DBAL\Exception\UniqueConstraintViolationException;
-use OmniMailDeps\Doctrine\DBAL\Query;
+use JooosiMailDeps\Doctrine\DBAL\Driver\API\ExceptionConverter as ExceptionConverterInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Exception\ConnectionException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\ConnectionLost;
+use JooosiMailDeps\Doctrine\DBAL\Exception\DatabaseDoesNotExist;
+use JooosiMailDeps\Doctrine\DBAL\Exception\DeadlockException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\DriverException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\InvalidFieldNameException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\LockWaitTimeoutException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\NonUniqueFieldNameException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\NotNullConstraintViolationException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\SyntaxErrorException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\TableExistsException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\TableNotFoundException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\UniqueConstraintViolationException;
+use JooosiMailDeps\Doctrine\DBAL\Query;
 use function str_contains;
 /** @internal */
 final class ExceptionConverter implements ExceptionConverterInterface

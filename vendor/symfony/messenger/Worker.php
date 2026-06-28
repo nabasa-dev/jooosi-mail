@@ -8,35 +8,35 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger;
+namespace JooosiMailDeps\Symfony\Component\Messenger;
 
-use OmniMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\Clock\Clock;
-use OmniMailDeps\Symfony\Component\Clock\ClockInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Event\WorkerMessageFailedEvent;
-use OmniMailDeps\Symfony\Component\Messenger\Event\WorkerMessageHandledEvent;
-use OmniMailDeps\Symfony\Component\Messenger\Event\WorkerMessageReceivedEvent;
-use OmniMailDeps\Symfony\Component\Messenger\Event\WorkerRateLimitedEvent;
-use OmniMailDeps\Symfony\Component\Messenger\Event\WorkerRunningEvent;
-use OmniMailDeps\Symfony\Component\Messenger\Event\WorkerStartedEvent;
-use OmniMailDeps\Symfony\Component\Messenger\Event\WorkerStoppedEvent;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\EnvelopeAwareExceptionInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\RejectRedeliveredMessageException;
-use OmniMailDeps\Symfony\Component\Messenger\Exception\RuntimeException;
-use OmniMailDeps\Symfony\Component\Messenger\Execution\DeferredBatchMessageQueue;
-use OmniMailDeps\Symfony\Component\Messenger\Execution\MessageExecutionStrategyInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Execution\SyncMessageExecutionStrategy;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\AckStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\ConsumedByWorkerStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\FlushBatchHandlersStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\NoAutoAckStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\ReceivedStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\TransportMessageIdStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Receiver\KeepaliveReceiverInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Receiver\QueueReceiverInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Receiver\ReceiverInterface;
-use OmniMailDeps\Symfony\Component\RateLimiter\LimiterInterface;
+use JooosiMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\Clock\Clock;
+use JooosiMailDeps\Symfony\Component\Clock\ClockInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Event\WorkerMessageFailedEvent;
+use JooosiMailDeps\Symfony\Component\Messenger\Event\WorkerMessageHandledEvent;
+use JooosiMailDeps\Symfony\Component\Messenger\Event\WorkerMessageReceivedEvent;
+use JooosiMailDeps\Symfony\Component\Messenger\Event\WorkerRateLimitedEvent;
+use JooosiMailDeps\Symfony\Component\Messenger\Event\WorkerRunningEvent;
+use JooosiMailDeps\Symfony\Component\Messenger\Event\WorkerStartedEvent;
+use JooosiMailDeps\Symfony\Component\Messenger\Event\WorkerStoppedEvent;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\EnvelopeAwareExceptionInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\RejectRedeliveredMessageException;
+use JooosiMailDeps\Symfony\Component\Messenger\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Component\Messenger\Execution\DeferredBatchMessageQueue;
+use JooosiMailDeps\Symfony\Component\Messenger\Execution\MessageExecutionStrategyInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Execution\SyncMessageExecutionStrategy;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\AckStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\ConsumedByWorkerStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\FlushBatchHandlersStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\NoAutoAckStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\ReceivedStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\TransportMessageIdStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Receiver\KeepaliveReceiverInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Receiver\QueueReceiverInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Receiver\ReceiverInterface;
+use JooosiMailDeps\Symfony\Component\RateLimiter\LimiterInterface;
 /**
  * @author Samuel Roze <samuel.roze@gmail.com>
  * @author Tobias Schultze <http://tobion.de>

@@ -8,14 +8,14 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient\Response;
+namespace JooosiMailDeps\Symfony\Component\HttpClient\Response;
 
-use OmniMailDeps\Symfony\Component\HttpClient\Chunk\ErrorChunk;
-use OmniMailDeps\Symfony\Component\HttpClient\Chunk\FirstChunk;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
-use OmniMailDeps\Symfony\Component\HttpClient\Internal\ClientState;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
+use JooosiMailDeps\Symfony\Component\HttpClient\Chunk\ErrorChunk;
+use JooosiMailDeps\Symfony\Component\HttpClient\Chunk\FirstChunk;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
+use JooosiMailDeps\Symfony\Component\HttpClient\Internal\ClientState;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
 /**
  * A test-friendly response.
  *

@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Result\Reason;
+namespace JooosiMailDeps\Egulias\EmailValidator\Result\Reason;
 
 class UnclosedQuotedString implements Reason
 {

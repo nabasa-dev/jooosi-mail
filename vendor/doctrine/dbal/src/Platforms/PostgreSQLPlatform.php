@@ -1,23 +1,23 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Platforms;
+namespace JooosiMailDeps\Doctrine\DBAL\Platforms;
 
-use OmniMailDeps\Doctrine\DBAL\Connection;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Keywords\KeywordList;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Keywords\PostgreSQLKeywords;
-use OmniMailDeps\Doctrine\DBAL\Platforms\PostgreSQL\PostgreSQLMetadataProvider;
-use OmniMailDeps\Doctrine\DBAL\Schema\Column;
-use OmniMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint;
-use OmniMailDeps\Doctrine\DBAL\Schema\Identifier;
-use OmniMailDeps\Doctrine\DBAL\Schema\Index;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnquotedIdentifierFolding;
-use OmniMailDeps\Doctrine\DBAL\Schema\PostgreSQLSchemaManager;
-use OmniMailDeps\Doctrine\DBAL\Schema\Sequence;
-use OmniMailDeps\Doctrine\DBAL\Schema\TableDiff;
-use OmniMailDeps\Doctrine\DBAL\TransactionIsolationLevel;
-use OmniMailDeps\Doctrine\DBAL\Types\Types;
-use OmniMailDeps\Doctrine\Deprecations\Deprecation;
+use JooosiMailDeps\Doctrine\DBAL\Connection;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Keywords\KeywordList;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Keywords\PostgreSQLKeywords;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\PostgreSQL\PostgreSQLMetadataProvider;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Column;
+use JooosiMailDeps\Doctrine\DBAL\Schema\ForeignKeyConstraint;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Identifier;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Index;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnquotedIdentifierFolding;
+use JooosiMailDeps\Doctrine\DBAL\Schema\PostgreSQLSchemaManager;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Sequence;
+use JooosiMailDeps\Doctrine\DBAL\Schema\TableDiff;
+use JooosiMailDeps\Doctrine\DBAL\TransactionIsolationLevel;
+use JooosiMailDeps\Doctrine\DBAL\Types\Types;
+use JooosiMailDeps\Doctrine\Deprecations\Deprecation;
 use UnexpectedValueException;
 use function array_merge;
 use function array_unique;

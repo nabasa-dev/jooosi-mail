@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Filesystem;
+namespace JooosiMailDeps\Tempest\Support\Filesystem;
 
 /**
  * Represents the type of advisory lock to acquire on a file.

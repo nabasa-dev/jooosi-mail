@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Platforms;
+namespace JooosiMailDeps\Doctrine\DBAL\Platforms;
 
-use OmniMailDeps\Doctrine\DBAL\SQL\Builder\SelectSQLBuilder;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Builder\SelectSQLBuilder;
 use function implode;
 /**
  * Provides the behavior, features and SQL dialect of the MariaDB 10.10 database platform.

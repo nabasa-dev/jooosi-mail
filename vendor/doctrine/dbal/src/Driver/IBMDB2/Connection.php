@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\IBMDB2;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\IBMDB2;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Connection as ConnectionInterface;
-use OmniMailDeps\Doctrine\DBAL\Driver\Exception\NoIdentityValue;
-use OmniMailDeps\Doctrine\DBAL\Driver\IBMDB2\Exception\ConnectionError;
-use OmniMailDeps\Doctrine\DBAL\Driver\IBMDB2\Exception\PrepareFailed;
-use OmniMailDeps\Doctrine\DBAL\Driver\IBMDB2\Exception\StatementError;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Connection as ConnectionInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Exception\NoIdentityValue;
+use JooosiMailDeps\Doctrine\DBAL\Driver\IBMDB2\Exception\ConnectionError;
+use JooosiMailDeps\Doctrine\DBAL\Driver\IBMDB2\Exception\PrepareFailed;
+use JooosiMailDeps\Doctrine\DBAL\Driver\IBMDB2\Exception\StatementError;
 use stdClass;
 use function assert;
 use function db2_autocommit;

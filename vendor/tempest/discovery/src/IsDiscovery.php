@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Discovery;
+namespace JooosiMailDeps\Tempest\Discovery;
 
 /** @phpstan-require-implements \Tempest\Discovery\Discovery */
 trait IsDiscovery

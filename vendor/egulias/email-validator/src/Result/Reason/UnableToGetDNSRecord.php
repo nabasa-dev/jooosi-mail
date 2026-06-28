@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Result\Reason;
+namespace JooosiMailDeps\Egulias\EmailValidator\Result\Reason;
 
 /**
  * Used on SERVFAIL, TIMEOUT or other runtime and network errors

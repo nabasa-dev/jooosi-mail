@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mime;
+namespace JooosiMailDeps\Symfony\Component\Mime;
 
-use OmniMailDeps\Symfony\Component\Mime\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Mime\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\Mime\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Mime\Exception\LogicException;
 /**
  * Guesses the MIME type with the binary "file" (only available on *nix).
  *
@@ -36,7 +36,7 @@ class FileBinaryMimeTypeGuesser implements MimeTypeGuesserInterface
         if (null !== $supported) {
             return $supported;
         }
-        if ('\\' === \DIRECTORY_SEPARATOR || !\function_exists('shell_exec') || !\function_exists('escapeshellarg') && !\function_exists('OmniMailDeps\escapeshellarg')) {
+        if ('\\' === \DIRECTORY_SEPARATOR || !\function_exists('shell_exec') || !\function_exists('escapeshellarg') && !\function_exists('JooosiMailDeps\escapeshellarg')) {
             return $supported = \false;
         }
         return $supported = '' !== trim(shell_exec('command -v file') ?: '');

@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Metadata;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Metadata;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Index\IndexType;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Index\IndexType;
 /**
  * A row of metadata describing an index column.
  */

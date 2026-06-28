@@ -8,20 +8,20 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\TypeInfo;
+namespace JooosiMailDeps\Symfony\Component\TypeInfo;
 
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\ArrayShapeType;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\BackedEnumType;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\BuiltinType;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\CollectionType;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\EnumType;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\GenericType;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\IntersectionType;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\NullableType;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\ObjectShapeType;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\ObjectType;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\TemplateType;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\UnionType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\ArrayShapeType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\BackedEnumType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\BuiltinType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\CollectionType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\EnumType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\GenericType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\IntersectionType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\NullableType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\ObjectShapeType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\ObjectType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\TemplateType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\UnionType;
 /**
  * Helper trait to create any type easily.
  *

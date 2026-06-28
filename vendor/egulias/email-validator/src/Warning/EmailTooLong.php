@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Warning;
+namespace JooosiMailDeps\Egulias\EmailValidator\Warning;
 
-use OmniMailDeps\Egulias\EmailValidator\EmailParser;
+use JooosiMailDeps\Egulias\EmailValidator\EmailParser;
 class EmailTooLong extends Warning
 {
     public const CODE = 66;

@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Platforms\MySQL\CharsetMetadataProvider;
+namespace JooosiMailDeps\Doctrine\DBAL\Platforms\MySQL\CharsetMetadataProvider;
 
-use OmniMailDeps\Doctrine\DBAL\Platforms\MySQL\CharsetMetadataProvider;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\MySQL\CharsetMetadataProvider;
 use function array_key_exists;
 /** @internal */
 final class CachingCharsetMetadataProvider implements CharsetMetadataProvider

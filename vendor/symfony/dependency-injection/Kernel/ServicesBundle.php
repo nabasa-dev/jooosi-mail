@@ -8,34 +8,34 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Kernel;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Kernel;
 
-use OmniMailDeps\PHPUnit\Framework\TestCase;
-use OmniMailDeps\Psr\Clock\ClockInterface as PsrClockInterface;
-use OmniMailDeps\Psr\Container\ContainerInterface as PsrContainerInterface;
-use OmniMailDeps\Psr\EventDispatcher\EventDispatcherInterface as PsrEventDispatcherInterface;
-use OmniMailDeps\Psr\Log\LoggerAwareInterface;
-use OmniMailDeps\Symfony\Component\Clock\ClockInterface;
-use OmniMailDeps\Symfony\Component\Config\ResourceCheckerInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ChildDefinition;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Compiler\AddBehaviorDescribingTagsPass;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Compiler\PassConfig;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Compiler\ResettableServicePass;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
-use OmniMailDeps\Symfony\Component\DependencyInjection\EnvVarLoaderInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\EnvVarProcessorInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Reference;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ServiceLocator;
-use OmniMailDeps\Symfony\Component\EventDispatcher\Attribute\AsEventListener;
-use OmniMailDeps\Symfony\Component\EventDispatcher\DependencyInjection\RegisterListenersPass;
-use OmniMailDeps\Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use OmniMailDeps\Symfony\Contracts\EventDispatcher\EventDispatcherInterface as ContractsEventDispatcherInterface;
-use OmniMailDeps\Symfony\Contracts\Service\ResetInterface;
-use OmniMailDeps\Symfony\Contracts\Service\ServiceSubscriberInterface;
+use JooosiMailDeps\PHPUnit\Framework\TestCase;
+use JooosiMailDeps\Psr\Clock\ClockInterface as PsrClockInterface;
+use JooosiMailDeps\Psr\Container\ContainerInterface as PsrContainerInterface;
+use JooosiMailDeps\Psr\EventDispatcher\EventDispatcherInterface as PsrEventDispatcherInterface;
+use JooosiMailDeps\Psr\Log\LoggerAwareInterface;
+use JooosiMailDeps\Symfony\Component\Clock\ClockInterface;
+use JooosiMailDeps\Symfony\Component\Config\ResourceCheckerInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ChildDefinition;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler\AddBehaviorDescribingTagsPass;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler\PassConfig;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler\ResettableServicePass;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\EnvVarLoaderInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\EnvVarProcessorInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Reference;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ServiceLocator;
+use JooosiMailDeps\Symfony\Component\EventDispatcher\Attribute\AsEventListener;
+use JooosiMailDeps\Symfony\Component\EventDispatcher\DependencyInjection\RegisterListenersPass;
+use JooosiMailDeps\Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use JooosiMailDeps\Symfony\Contracts\EventDispatcher\EventDispatcherInterface as ContractsEventDispatcherInterface;
+use JooosiMailDeps\Symfony\Contracts\Service\ResetInterface;
+use JooosiMailDeps\Symfony\Contracts\Service\ServiceSubscriberInterface;
 /**
  * Provides core DI infrastructure services (event dispatcher, filesystem, clock, etc.).
  */

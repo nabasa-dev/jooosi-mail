@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Uid;
+namespace JooosiMailDeps\Symfony\Component\Uid;
 
-use OmniMailDeps\Symfony\Component\Uid\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Uid\Exception\InvalidArgumentException;
 /**
  * @author Grégoire Pineau <lyrixx@lyrixx.info>
  *

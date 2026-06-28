@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniMailDeps\Tempest\Support\Paginator;
+namespace JooosiMailDeps\Tempest\Support\Paginator;
 
-use OmniMailDeps\Tempest\Support\Paginator\Exceptions\ArgumentWasInvalid;
+use JooosiMailDeps\Tempest\Support\Paginator\Exceptions\ArgumentWasInvalid;
 final class Paginator
 {
     public function __construct(private(set) int $totalItems, private(set) int $itemsPerPage = 20, private(set) int $currentPage = 1, private(set) int $maxLinks = 10)

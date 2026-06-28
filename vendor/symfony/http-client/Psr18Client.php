@@ -8,28 +8,28 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient;
+namespace JooosiMailDeps\Symfony\Component\HttpClient;
 
-use OmniMailDeps\Http\Discovery\Psr17Factory;
-use OmniMailDeps\Http\Discovery\Psr17FactoryDiscovery;
-use OmniMailDeps\Nyholm\Psr7\Factory\Psr17Factory as NyholmPsr17Factory;
-use OmniMailDeps\Nyholm\Psr7\Request;
-use OmniMailDeps\Nyholm\Psr7\Uri;
-use OmniMailDeps\Psr\Http\Client\ClientInterface;
-use OmniMailDeps\Psr\Http\Client\NetworkExceptionInterface;
-use OmniMailDeps\Psr\Http\Client\RequestExceptionInterface;
-use OmniMailDeps\Psr\Http\Message\RequestFactoryInterface;
-use OmniMailDeps\Psr\Http\Message\RequestInterface;
-use OmniMailDeps\Psr\Http\Message\ResponseFactoryInterface;
-use OmniMailDeps\Psr\Http\Message\ResponseInterface;
-use OmniMailDeps\Psr\Http\Message\StreamFactoryInterface;
-use OmniMailDeps\Psr\Http\Message\StreamInterface;
-use OmniMailDeps\Psr\Http\Message\UriFactoryInterface;
-use OmniMailDeps\Psr\Http\Message\UriInterface;
-use OmniMailDeps\Symfony\Component\HttpClient\Internal\HttplugWaitLoop;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
-use OmniMailDeps\Symfony\Contracts\Service\ResetInterface;
+use JooosiMailDeps\Http\Discovery\Psr17Factory;
+use JooosiMailDeps\Http\Discovery\Psr17FactoryDiscovery;
+use JooosiMailDeps\Nyholm\Psr7\Factory\Psr17Factory as NyholmPsr17Factory;
+use JooosiMailDeps\Nyholm\Psr7\Request;
+use JooosiMailDeps\Nyholm\Psr7\Uri;
+use JooosiMailDeps\Psr\Http\Client\ClientInterface;
+use JooosiMailDeps\Psr\Http\Client\NetworkExceptionInterface;
+use JooosiMailDeps\Psr\Http\Client\RequestExceptionInterface;
+use JooosiMailDeps\Psr\Http\Message\RequestFactoryInterface;
+use JooosiMailDeps\Psr\Http\Message\RequestInterface;
+use JooosiMailDeps\Psr\Http\Message\ResponseFactoryInterface;
+use JooosiMailDeps\Psr\Http\Message\ResponseInterface;
+use JooosiMailDeps\Psr\Http\Message\StreamFactoryInterface;
+use JooosiMailDeps\Psr\Http\Message\StreamInterface;
+use JooosiMailDeps\Psr\Http\Message\UriFactoryInterface;
+use JooosiMailDeps\Psr\Http\Message\UriInterface;
+use JooosiMailDeps\Symfony\Component\HttpClient\Internal\HttplugWaitLoop;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\Symfony\Contracts\Service\ResetInterface;
 if (!interface_exists(ClientInterface::class)) {
     throw new \LogicException('You cannot use the "Symfony\Component\HttpClient\Psr18Client" as the "psr/http-client" package is not installed. Try running "composer require php-http/discovery psr/http-client-implementation:*".');
 }

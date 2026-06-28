@@ -8,20 +8,20 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Compiler;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler;
 
-use OmniMailDeps\Psr\Container\ContainerInterface as PsrContainerInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\BoundArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Attribute\Autowire;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Definition;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Reference;
-use OmniMailDeps\Symfony\Component\DependencyInjection\TypedReference;
-use OmniMailDeps\Symfony\Contracts\Service\Attribute\SubscribedService;
-use OmniMailDeps\Symfony\Contracts\Service\ServiceCollectionInterface;
-use OmniMailDeps\Symfony\Contracts\Service\ServiceProviderInterface;
-use OmniMailDeps\Symfony\Contracts\Service\ServiceSubscriberInterface;
+use JooosiMailDeps\Psr\Container\ContainerInterface as PsrContainerInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\BoundArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute\Autowire;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Definition;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Reference;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\TypedReference;
+use JooosiMailDeps\Symfony\Contracts\Service\Attribute\SubscribedService;
+use JooosiMailDeps\Symfony\Contracts\Service\ServiceCollectionInterface;
+use JooosiMailDeps\Symfony\Contracts\Service\ServiceProviderInterface;
+use JooosiMailDeps\Symfony\Contracts\Service\ServiceSubscriberInterface;
 /**
  * Compiler pass to register tagged services that require a service locator.
  *

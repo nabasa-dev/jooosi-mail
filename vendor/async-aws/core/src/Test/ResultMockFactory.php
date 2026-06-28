@@ -1,15 +1,15 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\AsyncAws\Core\Test;
+namespace JooosiMailDeps\AsyncAws\Core\Test;
 
-use OmniMailDeps\AsyncAws\Core\Exception\LogicException;
-use OmniMailDeps\AsyncAws\Core\Response;
-use OmniMailDeps\AsyncAws\Core\Result;
-use OmniMailDeps\AsyncAws\Core\Test\Http\SimpleMockedResponse;
-use OmniMailDeps\AsyncAws\Core\Waiter;
-use OmniMailDeps\Psr\Log\NullLogger;
-use OmniMailDeps\Symfony\Component\HttpClient\MockHttpClient;
+use JooosiMailDeps\AsyncAws\Core\Exception\LogicException;
+use JooosiMailDeps\AsyncAws\Core\Response;
+use JooosiMailDeps\AsyncAws\Core\Result;
+use JooosiMailDeps\AsyncAws\Core\Test\Http\SimpleMockedResponse;
+use JooosiMailDeps\AsyncAws\Core\Waiter;
+use JooosiMailDeps\Psr\Log\NullLogger;
+use JooosiMailDeps\Symfony\Component\HttpClient\MockHttpClient;
 /**
  * An easy way to create Result objects for your tests.
  *

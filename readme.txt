@@ -1,10 +1,10 @@
-=== Omni Mail ===
+=== Jooosi Mail ===
 Contributors: suabahasa
 Donate link: https://ko-fi.com/Q5Q75XSF7
 Tags: email, smtp, mailer, transactional email, logs
 Requires at least: 7.0
 Tested up to: 7.0
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 Requires PHP: 8.5
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -13,7 +13,7 @@ A modern WordPress mail delivery plugin routing wp_mail() through Symfony Mailer
 
 == Description ==
 
-Omni Mail is a modern email sending solution for WordPress sites. It routes WordPress email through configurable providers, records delivery activity, supports queue-based processing, and provides operational visibility for sent, queued, and failed messages.
+Jooosi Mail is a modern email sending solution for WordPress sites. It routes WordPress email through configurable providers, records delivery activity, supports queue-based processing, and provides operational visibility for sent, queued, and failed messages.
 
 ### Features
 
@@ -22,11 +22,11 @@ Omni Mail is a modern email sending solution for WordPress sites. It routes Word
 * **Provider failover**: Fall back to another connection when a provider is unavailable.
 * **Email logs**: Review sent, queued, failed, and webhook-related activity.
 * **Webhook feedback**: Supported providers can report deliveries, bounces, complaints, opens, and clicks back to WordPress.
-* **Admin and CLI workflows**: Manage Omni Mail from the WordPress dashboard or WP-CLI.
+* **Admin and CLI workflows**: Manage Jooosi Mail from the WordPress dashboard or WP-CLI.
 
 ### Supported Providers
 
-Omni Mail works with SMTP and many popular email providers. Available sending methods include:
+Jooosi Mail works with SMTP and many popular email providers. Available sending methods include:
 
 * [AhaSend](https://ahasend.com) - API, SMTP. Webhooks supported.
 * [Amazon SES](https://aws.amazon.com/ses/) - API, HTTPS, SMTP.
@@ -66,20 +66,20 @@ Omni Mail works with SMTP and many popular email providers. Available sending me
 * [ZeptoMail](https://www.zoho.com/zeptomail/) - API, SMTP, SMTPS. Webhooks supported.
 * [Zoho Mail](https://www.zoho.com/mail/) - SMTP, SMTPS.
 
-Visit [the GitHub repository](https://github.com/nabasa-dev/omni-mail) for documentation, development notes, and issue tracking.
+Visit [the GitHub repository](https://github.com/nabasa-dev/jooosi-mail) for documentation, development notes, and issue tracking.
 
 ### External services
 
-Omni Mail routes WordPress emails through third-party email service providers. No data is sent to any external service unless the site administrator explicitly configures a connection to that provider.
+Jooosi Mail routes WordPress emails through third-party email service providers. No data is sent to any external service unless the site administrator explicitly configures a connection to that provider.
 
-When Omni Mail sends an email, the following data is transmitted to the configured provider:
+When Jooosi Mail sends an email, the following data is transmitted to the configured provider:
 
 - Email content (subject, body, headers)
 - Recipient address(es)
 - Sender address (From, Reply-To)
 - Attachments (if any)
 
-This data is sent only when WordPress processes queued or immediate emails (via `wp_mail()` or Action Scheduler). Omni Mail does not collect or transmit any data independently.
+This data is sent only when WordPress processes queued or immediate emails (via `wp_mail()` or Action Scheduler). Jooosi Mail does not collect or transmit any data independently.
 
 If webhooks are enabled for a supported provider, that provider may send delivery, bounce, complaint, open, and click data back to your WordPress site.
 
@@ -87,25 +87,31 @@ See the [Supported Providers](#description) list for links to each provider's we
 
 == Installation ==
 
-1. Upload the plugin files to `/wp-content/plugins/omni-mail`, or install the plugin through the WordPress plugins screen.
-2. Activate Omni Mail through the Plugins screen in WordPress.
-3. Open Omni Mail in the WordPress admin and configure a sending connection.
+1. Upload the plugin files to `/wp-content/plugins/jooosi-mail`, or install the plugin through the WordPress plugins screen.
+2. Activate Jooosi Mail through the Plugins screen in WordPress.
+3. Open Jooosi Mail in the WordPress admin and configure a sending connection.
 
 == Frequently Asked Questions ==
 
 = Which email providers are supported? =
 
-Omni Mail supports SMTP and many popular transactional email providers through Symfony Mailer transports.
+Jooosi Mail supports SMTP and many popular transactional email providers through Symfony Mailer transports.
 
-= Does Omni Mail replace wp_mail()? =
+= Does Jooosi Mail replace wp_mail()? =
 
-Yes. Omni Mail intercepts WordPress `wp_mail()` calls and routes them through the configured delivery workflow.
+Yes. Jooosi Mail intercepts WordPress `wp_mail()` calls and routes them through the configured delivery workflow.
 
-= Does Omni Mail support WP-CLI? =
+= Does Jooosi Mail support WP-CLI? =
 
-Yes. Omni Mail includes WP-CLI commands for operational tasks such as managing connections, migrations, queue processing, and diagnostics.
+Yes. Jooosi Mail includes WP-CLI commands for operational tasks such as managing connections, migrations, queue processing, and diagnostics.
 
 == Changelog ==
+
+= 1.0.4 - 2026-06-29 =
+
+**Changed**
+
+* Renamed the project from Omni Mail to Jooosi Mail.
 
 = 1.0.3 - 2026-06-24 =
 
@@ -131,4 +137,4 @@ Yes. Omni Mail includes WP-CLI commands for operational tasks such as managing c
 
 * 🐣 Initial release.
 
-[See changelog for all versions.](https://github.com/nabasa-dev/omni-mail/blob/main/CHANGELOG.md)
+[See changelog for all versions.](https://github.com/nabasa-dev/jooosi-mail/blob/main/CHANGELOG.md)

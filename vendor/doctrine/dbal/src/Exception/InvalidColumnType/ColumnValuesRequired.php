@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Exception\InvalidColumnType;
+namespace JooosiMailDeps\Doctrine\DBAL\Exception\InvalidColumnType;
 
-use OmniMailDeps\Doctrine\DBAL\Exception\InvalidColumnType;
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Exception\InvalidColumnType;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
 use function get_debug_type;
 use function sprintf;
 final class ColumnValuesRequired extends InvalidColumnType

@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\Tempest\Discovery\Exceptions;
+namespace JooosiMailDeps\Tempest\Discovery\Exceptions;
 
 interface DiscoveryException
 {

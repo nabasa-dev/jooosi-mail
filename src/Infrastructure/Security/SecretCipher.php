@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Infrastructure\Security;
+namespace JooosiMail\Infrastructure\Security;
 
 use RuntimeException;
 use SensitiveParameter;
@@ -40,13 +40,13 @@ final readonly class SecretCipher
         $this->assertSodiumAvailable();
         $payload = base64_decode($encoded, \true);
         if ($payload === \false || strlen($payload) <= \SODIUM_CRYPTO_SECRETBOX_NONCEBYTES) {
-            throw new RuntimeException('Invalid Omni Mail secret payload.');
+            throw new RuntimeException('Invalid Jooosi Mail secret payload.');
         }
         $nonce = substr($payload, 0, \SODIUM_CRYPTO_SECRETBOX_NONCEBYTES);
         $cipherText = substr($payload, \SODIUM_CRYPTO_SECRETBOX_NONCEBYTES);
         $plainText = sodium_crypto_secretbox_open($cipherText, $nonce, $this->getKey());
         if ($plainText === \false) {
-            throw new RuntimeException('Failed to decrypt Omni Mail secret payload.');
+            throw new RuntimeException('Failed to decrypt Jooosi Mail secret payload.');
         }
         return $plainText;
     }
@@ -63,7 +63,7 @@ final readonly class SecretCipher
     private function assertSodiumAvailable(): void
     {
         if (!function_exists('sodium_crypto_secretbox') || !function_exists('sodium_crypto_secretbox_open')) {
-            throw new RuntimeException('Omni Mail requires the Sodium extension to encrypt connection secrets.');
+            throw new RuntimeException('Jooosi Mail requires the Sodium extension to encrypt connection secrets.');
         }
     }
 }

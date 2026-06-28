@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient\Internal;
+namespace JooosiMailDeps\Symfony\Component\HttpClient\Internal;
 
-use OmniMailDeps\Symfony\Component\HttpClient\Response\CurlResponse;
+use JooosiMailDeps\Symfony\Component\HttpClient\Response\CurlResponse;
 /**
  * A pushed response with its request headers.
  *

@@ -1,17 +1,17 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Queue\Bus;
+namespace JooosiMail\Queue\Bus;
 
-use OmniMail\Discovery\Attribute\MessageHandler;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Discovery\Runtime\DiscoveryManifest;
+use JooosiMail\Discovery\Attribute\MessageHandler;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Runtime\DiscoveryManifest;
 use Override;
-use OmniMailDeps\Psr\Container\ContainerInterface;
+use JooosiMailDeps\Psr\Container\ContainerInterface;
 use ReflectionClass;
-use OmniMailDeps\Symfony\Component\Messenger\Envelope;
-use OmniMailDeps\Symfony\Component\Messenger\Handler\HandlerDescriptor;
-use OmniMailDeps\Symfony\Component\Messenger\Handler\HandlersLocatorInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Envelope;
+use JooosiMailDeps\Symfony\Component\Messenger\Handler\HandlerDescriptor;
+use JooosiMailDeps\Symfony\Component\Messenger\Handler\HandlersLocatorInterface;
 /**
  * Resolves handler services for Messenger messages.
  *

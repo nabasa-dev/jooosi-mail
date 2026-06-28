@@ -8,22 +8,22 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\PropertyInfo\Extractor;
+namespace JooosiMailDeps\Symfony\Component\PropertyInfo\Extractor;
 
-use OmniMailDeps\phpDocumentor\Reflection\DocBlock;
-use OmniMailDeps\phpDocumentor\Reflection\DocBlock\Tags\InvalidTag;
-use OmniMailDeps\phpDocumentor\Reflection\DocBlockFactory;
-use OmniMailDeps\phpDocumentor\Reflection\DocBlockFactoryInterface;
-use OmniMailDeps\phpDocumentor\Reflection\Types\Context;
-use OmniMailDeps\phpDocumentor\Reflection\Types\ContextFactory;
-use OmniMailDeps\Symfony\Component\PropertyInfo\PropertyDescriptionExtractorInterface;
-use OmniMailDeps\Symfony\Component\PropertyInfo\PropertyDocBlockExtractorInterface;
-use OmniMailDeps\Symfony\Component\PropertyInfo\PropertyTypeExtractorInterface;
-use OmniMailDeps\Symfony\Component\PropertyInfo\Util\PhpDocTypeHelper;
-use OmniMailDeps\Symfony\Component\TypeInfo\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\ObjectType;
-use OmniMailDeps\Symfony\Component\TypeInfo\TypeContext\TypeContextFactory;
+use JooosiMailDeps\phpDocumentor\Reflection\DocBlock;
+use JooosiMailDeps\phpDocumentor\Reflection\DocBlock\Tags\InvalidTag;
+use JooosiMailDeps\phpDocumentor\Reflection\DocBlockFactory;
+use JooosiMailDeps\phpDocumentor\Reflection\DocBlockFactoryInterface;
+use JooosiMailDeps\phpDocumentor\Reflection\Types\Context;
+use JooosiMailDeps\phpDocumentor\Reflection\Types\ContextFactory;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\PropertyDescriptionExtractorInterface;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\PropertyDocBlockExtractorInterface;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\PropertyTypeExtractorInterface;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\Util\PhpDocTypeHelper;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\ObjectType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\TypeContext\TypeContextFactory;
 /**
  * Extracts data using a PHPDoc parser.
  *

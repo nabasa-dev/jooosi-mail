@@ -29,7 +29,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Infobip\\": ""
+            "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Infobip\\": ""
         },
         "exclude-from-classmap": [
             "\/Tests\/"

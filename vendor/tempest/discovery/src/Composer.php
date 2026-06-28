@@ -1,15 +1,15 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Discovery;
+namespace JooosiMailDeps\Tempest\Discovery;
 
-use OmniMailDeps\Tempest\Process\ProcessExecutor;
-use OmniMailDeps\Tempest\Support\Arr;
-use OmniMailDeps\Tempest\Support\Arr\ImmutableArray;
-use OmniMailDeps\Tempest\Support\Filesystem;
-use OmniMailDeps\Tempest\Support\Namespace\Psr4Namespace;
-use OmniMailDeps\Tempest\Support\Path;
-use OmniMailDeps\Tempest\Support\Str;
+use JooosiMailDeps\Tempest\Process\ProcessExecutor;
+use JooosiMailDeps\Tempest\Support\Arr;
+use JooosiMailDeps\Tempest\Support\Arr\ImmutableArray;
+use JooosiMailDeps\Tempest\Support\Filesystem;
+use JooosiMailDeps\Tempest\Support\Namespace\Psr4Namespace;
+use JooosiMailDeps\Tempest\Support\Path;
+use JooosiMailDeps\Tempest\Support\Str;
 final class Composer
 {
     /** @var array<Psr4Namespace> */

@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\EventDispatcher\Debug;
+namespace JooosiMailDeps\Symfony\Component\EventDispatcher\Debug;
 
-use OmniMailDeps\Psr\EventDispatcher\StoppableEventInterface;
-use OmniMailDeps\Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Symfony\Component\Stopwatch\Stopwatch;
-use OmniMailDeps\Symfony\Component\VarDumper\Caster\ClassStub;
+use JooosiMailDeps\Psr\EventDispatcher\StoppableEventInterface;
+use JooosiMailDeps\Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Symfony\Component\Stopwatch\Stopwatch;
+use JooosiMailDeps\Symfony\Component\VarDumper\Caster\ClassStub;
 /**
  * @author Fabien Potencier <fabien@symfony.com>
  */

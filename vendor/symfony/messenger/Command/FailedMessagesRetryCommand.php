@@ -8,29 +8,29 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Command;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Command;
 
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\Console\Attribute\AsCommand;
-use OmniMailDeps\Symfony\Component\Console\Command\SignalableCommandInterface;
-use OmniMailDeps\Symfony\Component\Console\Exception\RuntimeException;
-use OmniMailDeps\Symfony\Component\Console\Input\InputArgument;
-use OmniMailDeps\Symfony\Component\Console\Input\InputInterface;
-use OmniMailDeps\Symfony\Component\Console\Input\InputOption;
-use OmniMailDeps\Symfony\Component\Console\Output\OutputInterface;
-use OmniMailDeps\Symfony\Component\Console\Style\SymfonyStyle;
-use OmniMailDeps\Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Event\WorkerMessageReceivedEvent;
-use OmniMailDeps\Symfony\Component\Messenger\Event\WorkerMessageSkipEvent;
-use OmniMailDeps\Symfony\Component\Messenger\EventListener\StopWorkerOnMessageLimitListener;
-use OmniMailDeps\Symfony\Component\Messenger\MessageBusInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\SentToFailureTransportStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Receiver\ListableReceiverInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Receiver\ReceiverInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Receiver\SingleMessageReceiver;
-use OmniMailDeps\Symfony\Component\Messenger\Transport\Serialization\PhpSerializer;
-use OmniMailDeps\Symfony\Component\Messenger\Worker;
-use OmniMailDeps\Symfony\Contracts\Service\ServiceProviderInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\Console\Attribute\AsCommand;
+use JooosiMailDeps\Symfony\Component\Console\Command\SignalableCommandInterface;
+use JooosiMailDeps\Symfony\Component\Console\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Component\Console\Input\InputArgument;
+use JooosiMailDeps\Symfony\Component\Console\Input\InputInterface;
+use JooosiMailDeps\Symfony\Component\Console\Input\InputOption;
+use JooosiMailDeps\Symfony\Component\Console\Output\OutputInterface;
+use JooosiMailDeps\Symfony\Component\Console\Style\SymfonyStyle;
+use JooosiMailDeps\Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Event\WorkerMessageReceivedEvent;
+use JooosiMailDeps\Symfony\Component\Messenger\Event\WorkerMessageSkipEvent;
+use JooosiMailDeps\Symfony\Component\Messenger\EventListener\StopWorkerOnMessageLimitListener;
+use JooosiMailDeps\Symfony\Component\Messenger\MessageBusInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\SentToFailureTransportStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Receiver\ListableReceiverInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Receiver\ReceiverInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Receiver\SingleMessageReceiver;
+use JooosiMailDeps\Symfony\Component\Messenger\Transport\Serialization\PhpSerializer;
+use JooosiMailDeps\Symfony\Component\Messenger\Worker;
+use JooosiMailDeps\Symfony\Contracts\Service\ServiceProviderInterface;
 /**
  * @author Ryan Weaver <ryan@symfonycasts.com>
  */

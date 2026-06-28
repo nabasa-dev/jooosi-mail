@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\Middleware;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\Middleware;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Result;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Result;
 use LogicException;
 use function get_debug_type;
 use function method_exists;

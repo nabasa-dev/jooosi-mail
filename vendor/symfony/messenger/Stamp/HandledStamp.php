@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Stamp;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Stamp;
 
-use OmniMailDeps\Symfony\Component\Messenger\Handler\HandlerDescriptor;
-use OmniMailDeps\Symfony\Component\Messenger\HandleTrait;
-use OmniMailDeps\Symfony\Component\Messenger\Middleware\HandleMessageMiddleware;
+use JooosiMailDeps\Symfony\Component\Messenger\Handler\HandlerDescriptor;
+use JooosiMailDeps\Symfony\Component\Messenger\HandleTrait;
+use JooosiMailDeps\Symfony\Component\Messenger\Middleware\HandleMessageMiddleware;
 /**
  * Stamp identifying a message handled by the `HandleMessageMiddleware` middleware
  * and storing the handler returned value.

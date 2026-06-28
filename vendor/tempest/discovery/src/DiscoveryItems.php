@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Discovery;
+namespace JooosiMailDeps\Tempest\Discovery;
 
 use ArrayIterator;
 use Countable;
 use IteratorAggregate;
 use Traversable;
-use function OmniMailDeps\Tempest\Support\arr;
+use function JooosiMailDeps\Tempest\Support\arr;
 final class DiscoveryItems implements IteratorAggregate, Countable
 {
     public function __construct(private array $items = [])

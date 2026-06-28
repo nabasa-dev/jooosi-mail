@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Connection;
+namespace JooosiMail\Mail\Connection;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Profile\MailProfileInterface;
-use OmniMail\Mail\Profile\ProfileMetadataResolver;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Profile\MailProfileInterface;
+use JooosiMail\Mail\Profile\ProfileMetadataResolver;
 /**
  * Validates resolved connection configuration against profile metadata.
  *
@@ -20,7 +20,7 @@ final readonly class ConnectionConfigurationValidator
     /**
      * @since 0.1.0
      */
-    public function validate(MailProfileInterface $profile, \OmniMail\Mail\Connection\Connection $connection): void
+    public function validate(MailProfileInterface $profile, \JooosiMail\Mail\Connection\Connection $connection): void
     {
         if ($connection->dsn !== null && $connection->dsn !== '') {
             $this->validateDsnScheme($profile, $connection->dsn);
@@ -34,12 +34,12 @@ final readonly class ConnectionConfigurationValidator
             $value = $defaults[$fieldName] ?? null;
             if ($this->isFieldRequired($field, $defaults) && !$this->hasConfigurationValue($value)) {
                 // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-                throw new \OmniMail\Mail\Connection\ConnectionConfigurationException($this->buildRequiredFieldMessage($fieldName, $field, $profile, $defaults));
+                throw new \JooosiMail\Mail\Connection\ConnectionConfigurationException($this->buildRequiredFieldMessage($fieldName, $field, $profile, $defaults));
             }
             $choices = is_array($field['choices'] ?? null) ? $field['choices'] : [];
             if ($choices !== [] && $this->hasConfigurationValue($value) && !in_array((string) $value, array_map('strval', $choices), \true)) {
                 // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-                throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Configuration field "%s" must be one of: %s.', $fieldName, implode(', ', array_map('strval', $choices))));
+                throw new \JooosiMail\Mail\Connection\ConnectionConfigurationException(sprintf('Configuration field "%s" must be one of: %s.', $fieldName, implode(', ', array_map('strval', $choices))));
             }
         }
         $profile->validateConfiguration($connection);
@@ -51,11 +51,11 @@ final readonly class ConnectionConfigurationValidator
     {
         $scheme = $this->extractDsnScheme($dsn);
         if ($scheme === null) {
-            throw new \OmniMail\Mail\Connection\ConnectionConfigurationException('The DSN scheme could not be detected.');
+            throw new \JooosiMail\Mail\Connection\ConnectionConfigurationException('The DSN scheme could not be detected.');
         }
         if (!in_array($scheme, $profile->getSupportedSchemes(), \true)) {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Profile "%s" does not support DSN scheme "%s".', $this->profileMetadataResolver->getKey($profile), $scheme));
+            throw new \JooosiMail\Mail\Connection\ConnectionConfigurationException(sprintf('Profile "%s" does not support DSN scheme "%s".', $this->profileMetadataResolver->getKey($profile), $scheme));
         }
     }
     /**

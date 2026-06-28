@@ -8,16 +8,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Contracts\HttpClient\Test;
+namespace JooosiMailDeps\Symfony\Contracts\HttpClient\Test;
 
-use OmniMailDeps\PHPUnit\Framework\Attributes\RequiresPhpExtension;
-use OmniMailDeps\PHPUnit\Framework\Attributes\TestWith;
-use OmniMailDeps\PHPUnit\Framework\TestCase;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\TimeoutExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\PHPUnit\Framework\Attributes\RequiresPhpExtension;
+use JooosiMailDeps\PHPUnit\Framework\Attributes\TestWith;
+use JooosiMailDeps\PHPUnit\Framework\TestCase;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\TimeoutExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
 /**
  * A reference test suite for HttpClientInterface implementations.
  */
@@ -25,7 +25,7 @@ abstract class HttpClientTestCase extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
-        if (!\function_exists('ob_gzhandler') && !\function_exists('OmniMailDeps\ob_gzhandler')) {
+        if (!\function_exists('ob_gzhandler') && !\function_exists('JooosiMailDeps\ob_gzhandler')) {
             static::markTestSkipped('The "ob_gzhandler" function is not available.');
         }
         TestHttpServer::start();

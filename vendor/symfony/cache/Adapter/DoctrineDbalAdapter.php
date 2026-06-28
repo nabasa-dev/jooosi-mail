@@ -8,29 +8,29 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\Adapter;
+namespace JooosiMailDeps\Symfony\Component\Cache\Adapter;
 
-use OmniMailDeps\Doctrine\DBAL\ArrayParameterType;
-use OmniMailDeps\Doctrine\DBAL\Configuration;
-use OmniMailDeps\Doctrine\DBAL\Connection;
-use OmniMailDeps\Doctrine\DBAL\DriverManager;
-use OmniMailDeps\Doctrine\DBAL\Exception as DBALException;
-use OmniMailDeps\Doctrine\DBAL\Exception\TableNotFoundException;
-use OmniMailDeps\Doctrine\DBAL\ParameterType;
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractMySQLPlatform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\OraclePlatform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\PostgreSQLPlatform;
-use OmniMailDeps\Doctrine\DBAL\Platforms\SQLServerPlatform;
-use OmniMailDeps\Doctrine\DBAL\Schema\DefaultSchemaManagerFactory;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Identifier;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
-use OmniMailDeps\Doctrine\DBAL\Schema\PrimaryKeyConstraint;
-use OmniMailDeps\Doctrine\DBAL\Schema\Schema;
-use OmniMailDeps\Doctrine\DBAL\Tools\DsnParser;
-use OmniMailDeps\Symfony\Component\Cache\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Cache\Marshaller\DefaultMarshaller;
-use OmniMailDeps\Symfony\Component\Cache\Marshaller\MarshallerInterface;
-use OmniMailDeps\Symfony\Component\Cache\PruneableInterface;
+use JooosiMailDeps\Doctrine\DBAL\ArrayParameterType;
+use JooosiMailDeps\Doctrine\DBAL\Configuration;
+use JooosiMailDeps\Doctrine\DBAL\Connection;
+use JooosiMailDeps\Doctrine\DBAL\DriverManager;
+use JooosiMailDeps\Doctrine\DBAL\Exception as DBALException;
+use JooosiMailDeps\Doctrine\DBAL\Exception\TableNotFoundException;
+use JooosiMailDeps\Doctrine\DBAL\ParameterType;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractMySQLPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\OraclePlatform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\PostgreSQLPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\SQLServerPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Schema\DefaultSchemaManagerFactory;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Identifier;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\PrimaryKeyConstraint;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Schema;
+use JooosiMailDeps\Doctrine\DBAL\Tools\DsnParser;
+use JooosiMailDeps\Symfony\Component\Cache\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Cache\Marshaller\DefaultMarshaller;
+use JooosiMailDeps\Symfony\Component\Cache\Marshaller\MarshallerInterface;
+use JooosiMailDeps\Symfony\Component\Cache\PruneableInterface;
 class DoctrineDbalAdapter extends AbstractAdapter implements PruneableInterface
 {
     private const MAX_KEY_LENGTH = 255;
@@ -302,9 +302,9 @@ class DoctrineDbalAdapter extends AbstractAdapter implements PruneableInterface
         $platform = $this->conn->getDatabasePlatform();
         if (interface_exists(DBALException::class)) {
             // DBAL 4+
-            $sqlitePlatformClass = 'OmniMailDeps\Doctrine\DBAL\Platforms\SQLitePlatform';
+            $sqlitePlatformClass = 'JooosiMailDeps\Doctrine\DBAL\Platforms\SQLitePlatform';
         } else {
-            $sqlitePlatformClass = 'OmniMailDeps\Doctrine\DBAL\Platforms\SqlitePlatform';
+            $sqlitePlatformClass = 'JooosiMailDeps\Doctrine\DBAL\Platforms\SqlitePlatform';
         }
         return $this->platformName = match (\true) {
             $platform instanceof AbstractMySQLPlatform => 'mysql',

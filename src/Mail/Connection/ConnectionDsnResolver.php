@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Connection;
+namespace JooosiMail\Mail\Connection;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Profile\MailProfileInterface;
-use OmniMail\Mail\Profile\ProfileMetadataResolver;
-use OmniMail\Mail\Profile\ProfileRegistry;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Profile\MailProfileInterface;
+use JooosiMail\Mail\Profile\ProfileMetadataResolver;
+use JooosiMail\Mail\Profile\ProfileRegistry;
 /**
  * Resolves the effective DSN for a connection at delivery time.
  *
@@ -21,12 +21,12 @@ final readonly class ConnectionDsnResolver
     /**
      * @since 0.1.0
      */
-    public function resolve(\OmniMail\Mail\Connection\Connection $connection): string
+    public function resolve(\JooosiMail\Mail\Connection\Connection $connection): string
     {
         $profile = $this->profileRegistry->get($connection->profileKey);
         if (!$profile instanceof MailProfileInterface) {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Profile "%s" is not registered.', $connection->profileKey));
+            throw new \JooosiMail\Mail\Connection\ConnectionConfigurationException(sprintf('Profile "%s" is not registered.', $connection->profileKey));
         }
         $dsn = $connection->dsn;
         if ($dsn === null || $dsn === '') {
@@ -34,15 +34,15 @@ final readonly class ConnectionDsnResolver
         }
         if ($dsn === null || $dsn === '') {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Connection "%s" could not resolve a DSN.', $connection->name));
+            throw new \JooosiMail\Mail\Connection\ConnectionConfigurationException(sprintf('Connection "%s" could not resolve a DSN.', $connection->name));
         }
         $scheme = $this->extractDsnScheme($dsn);
         if ($scheme === null) {
-            throw new \OmniMail\Mail\Connection\ConnectionConfigurationException('The DSN scheme could not be detected.');
+            throw new \JooosiMail\Mail\Connection\ConnectionConfigurationException('The DSN scheme could not be detected.');
         }
         if (!in_array($scheme, $profile->getSupportedSchemes(), \true)) {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Profile "%s" does not support DSN scheme "%s".', $this->profileMetadataResolver->getKey($profile), $scheme));
+            throw new \JooosiMail\Mail\Connection\ConnectionConfigurationException(sprintf('Profile "%s" does not support DSN scheme "%s".', $this->profileMetadataResolver->getKey($profile), $scheme));
         }
         return $dsn;
     }

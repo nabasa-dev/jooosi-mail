@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Attribute;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Attribute;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Declares a class as a decorator of all services with a specific tag.
  *

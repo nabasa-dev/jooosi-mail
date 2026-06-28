@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Contracts\Service;
+namespace JooosiMailDeps\Symfony\Contracts\Service;
 
-use OmniMailDeps\Psr\Container\ContainerInterface;
+use JooosiMailDeps\Psr\Container\ContainerInterface;
 /**
  * Implemented by objects that expose a service container.
  */

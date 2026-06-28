@@ -1,15 +1,15 @@
 <?php
 
-namespace OmniMailDeps\Tempest\Support\Math;
+namespace JooosiMailDeps\Tempest\Support\Math;
 
 use ArithmeticError;
 use Closure;
 use DivisionByZeroError;
-use OmniMailDeps\Tempest\Support\Math\Exception\ArithmeticException;
-use OmniMailDeps\Tempest\Support\Math\Exception\DivisionByZeroException;
-use OmniMailDeps\Tempest\Support\Math\Exception\InvalidArgumentException;
-use OmniMailDeps\Tempest\Support\Math\Exception\OverflowException;
-use OmniMailDeps\Tempest\Support\Str;
+use JooosiMailDeps\Tempest\Support\Math\Exception\ArithmeticException;
+use JooosiMailDeps\Tempest\Support\Math\Exception\DivisionByZeroException;
+use JooosiMailDeps\Tempest\Support\Math\Exception\InvalidArgumentException;
+use JooosiMailDeps\Tempest\Support\Math\Exception\OverflowException;
+use JooosiMailDeps\Tempest\Support\Str;
 use function acos as php_acos;
 use function asin as php_asin;
 use function atan as php_atan;

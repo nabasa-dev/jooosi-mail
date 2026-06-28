@@ -8,13 +8,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\DataCollector;
+namespace JooosiMailDeps\Symfony\Component\Mailer\DataCollector;
 
-use OmniMailDeps\Symfony\Component\HttpFoundation\Request;
-use OmniMailDeps\Symfony\Component\HttpFoundation\Response;
-use OmniMailDeps\Symfony\Component\HttpKernel\DataCollector\DataCollector;
-use OmniMailDeps\Symfony\Component\Mailer\Event\MessageEvents;
-use OmniMailDeps\Symfony\Component\Mailer\EventListener\MessageLoggerListener;
+use JooosiMailDeps\Symfony\Component\HttpFoundation\Request;
+use JooosiMailDeps\Symfony\Component\HttpFoundation\Response;
+use JooosiMailDeps\Symfony\Component\HttpKernel\DataCollector\DataCollector;
+use JooosiMailDeps\Symfony\Component\Mailer\Event\MessageEvents;
+use JooosiMailDeps\Symfony\Component\Mailer\EventListener\MessageLoggerListener;
 /**
  * @author Fabien Potencier <fabien@symfony.com>
  */

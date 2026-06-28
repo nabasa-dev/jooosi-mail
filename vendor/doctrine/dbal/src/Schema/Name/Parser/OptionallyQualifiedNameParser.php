@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Name\Parser;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parser;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parser;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parser\Exception\InvalidName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\OptionallyQualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parser;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parser\Exception\InvalidName;
 use function count;
 /**
  * @internal

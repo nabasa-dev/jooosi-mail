@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\PDO;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\PDO;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\AbstractException;
+use JooosiMailDeps\Doctrine\DBAL\Driver\AbstractException;
 use PDOException;
 /** @internal */
 final class Exception extends AbstractException

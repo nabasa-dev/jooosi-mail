@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core;
+namespace JooosiMailDeps\AsyncAws\Core;
 
-use OmniMailDeps\AsyncAws\Core\Exception\InvalidArgument;
-use OmniMailDeps\AsyncAws\Core\Exception\LogicException;
-use OmniMailDeps\AsyncAws\Core\HttpClient\BuildHttpQueryTrait;
-use OmniMailDeps\AsyncAws\Core\Stream\RequestStream;
+use JooosiMailDeps\AsyncAws\Core\Exception\InvalidArgument;
+use JooosiMailDeps\AsyncAws\Core\Exception\LogicException;
+use JooosiMailDeps\AsyncAws\Core\HttpClient\BuildHttpQueryTrait;
+use JooosiMailDeps\AsyncAws\Core\Stream\RequestStream;
 /**
  * Representation of an HTTP Request.
  *

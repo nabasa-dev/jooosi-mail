@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Profile;
+namespace JooosiMail\Mail\Profile;
 
-use OmniMail\Discovery\Attribute\MailProfile;
-use OmniMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\MailProfile;
+use JooosiMail\Discovery\Attribute\Service;
 use ReflectionClass;
 use RuntimeException;
 /**
@@ -18,21 +18,21 @@ final readonly class ProfileMetadataResolver
     /**
      * @since 0.1.0
      */
-    public function getKey(\OmniMail\Mail\Profile\MailProfileInterface $profile): string
+    public function getKey(\JooosiMail\Mail\Profile\MailProfileInterface $profile): string
     {
         return $this->definition($profile)->key;
     }
     /**
      * @since 0.1.0
      */
-    public function getLabel(\OmniMail\Mail\Profile\MailProfileInterface $profile): string
+    public function getLabel(\JooosiMail\Mail\Profile\MailProfileInterface $profile): string
     {
         return $this->normalizeString($this->definition($profile)->label) ?? $this->getKey($profile);
     }
     /**
      * @since 0.1.0
      */
-    public function getDescription(\OmniMail\Mail\Profile\MailProfileInterface $profile): string
+    public function getDescription(\JooosiMail\Mail\Profile\MailProfileInterface $profile): string
     {
         return $this->normalizeString($this->definition($profile)->description) ?? '';
     }
@@ -41,7 +41,7 @@ final readonly class ProfileMetadataResolver
      *
      * @since 0.1.0
      */
-    public function resolve(\OmniMail\Mail\Profile\MailProfileInterface $profile): array
+    public function resolve(\JooosiMail\Mail\Profile\MailProfileInterface $profile): array
     {
         $definition = $this->definition($profile);
         $metadata = [];
@@ -124,7 +124,7 @@ final readonly class ProfileMetadataResolver
     /**
      * @since 0.1.0
      */
-    private function definition(\OmniMail\Mail\Profile\MailProfileInterface $profile): MailProfile
+    private function definition(\JooosiMail\Mail\Profile\MailProfileInterface $profile): MailProfile
     {
         $attributes = (new ReflectionClass($profile))->getAttributes(MailProfile::class);
         if ($attributes === []) {

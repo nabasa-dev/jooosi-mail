@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Tools\Console;
+namespace JooosiMailDeps\Doctrine\DBAL\Tools\Console;
 
-use OmniMailDeps\Doctrine\DBAL\Connection;
+use JooosiMailDeps\Doctrine\DBAL\Connection;
 interface ConnectionProvider
 {
     public function getDefaultConnection(): Connection;

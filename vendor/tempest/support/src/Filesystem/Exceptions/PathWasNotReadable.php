@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Filesystem\Exceptions;
+namespace JooosiMailDeps\Tempest\Support\Filesystem\Exceptions;
 
 use Exception;
 final class PathWasNotReadable extends Exception implements FilesystemException

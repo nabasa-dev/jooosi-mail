@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Query;
+namespace JooosiMailDeps\Doctrine\DBAL\Query;
 
-use OmniMailDeps\Doctrine\DBAL\Query\ForUpdate\ConflictResolutionMode;
+use JooosiMailDeps\Doctrine\DBAL\Query\ForUpdate\ConflictResolutionMode;
 /** @internal */
 final readonly class ForUpdate
 {

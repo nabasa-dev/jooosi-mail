@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\SQLite3;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\SQLite3;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\FetchUtils;
-use OmniMailDeps\Doctrine\DBAL\Driver\Result as ResultInterface;
-use OmniMailDeps\Doctrine\DBAL\Exception\InvalidColumnIndex;
+use JooosiMailDeps\Doctrine\DBAL\Driver\FetchUtils;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Result as ResultInterface;
+use JooosiMailDeps\Doctrine\DBAL\Exception\InvalidColumnIndex;
 use SQLite3Result;
 use const SQLITE3_ASSOC;
 use const SQLITE3_NUM;

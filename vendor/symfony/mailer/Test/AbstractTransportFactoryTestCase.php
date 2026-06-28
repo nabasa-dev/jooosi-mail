@@ -8,14 +8,14 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Test;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Test;
 
-use OmniMailDeps\PHPUnit\Framework\Attributes\DataProvider;
-use OmniMailDeps\PHPUnit\Framework\TestCase;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Dsn;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\TransportFactoryInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
+use JooosiMailDeps\PHPUnit\Framework\Attributes\DataProvider;
+use JooosiMailDeps\PHPUnit\Framework\TestCase;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Dsn;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\TransportFactoryInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
 abstract class AbstractTransportFactoryTestCase extends TestCase
 {
     protected const USER = 'u$er';

@@ -29,7 +29,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Resend\\": ""
+            "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Resend\\": ""
         },
         "exclude-from-classmap": [
             "\/Tests\/"

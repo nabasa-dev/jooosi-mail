@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema\Name;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema\Name;
 
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parser\GenericNameParser;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parser\OptionallyQualifiedNameParser;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parser\UnqualifiedNameParser;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parser\GenericNameParser;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parser\OptionallyQualifiedNameParser;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parser\UnqualifiedNameParser;
 /**
  * A static registry for name parsers.
  *

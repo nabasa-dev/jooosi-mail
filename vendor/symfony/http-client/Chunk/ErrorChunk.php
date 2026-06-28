@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient\Chunk;
+namespace JooosiMailDeps\Symfony\Component\HttpClient\Chunk;
 
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\TimeoutException;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ChunkInterface;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\TimeoutException;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\TransportException;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ChunkInterface;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  *

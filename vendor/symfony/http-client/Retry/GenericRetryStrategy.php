@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient\Retry;
+namespace JooosiMailDeps\Symfony\Component\HttpClient\Retry;
 
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\HttpClient\Response\AsyncContext;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\HttpClient\Response\AsyncContext;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 /**
  * Decides to retry the request when HTTP status codes belong to the given list of codes.
  *

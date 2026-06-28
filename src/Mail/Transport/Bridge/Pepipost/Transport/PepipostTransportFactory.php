@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Transport\Bridge\Pepipost\Transport;
+namespace JooosiMail\Mail\Transport\Bridge\Pepipost\Transport;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Discovery\Attribute\TransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\AbstractTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Dsn;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\TransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\AbstractTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Dsn;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
 #[Service]
 #[TransportFactory]
 final class PepipostTransportFactory extends AbstractTransportFactory
@@ -21,8 +21,8 @@ final class PepipostTransportFactory extends AbstractTransportFactory
         $port = $dsn->getPort();
         $region = $dsn->getOption('region');
         return match ($scheme) {
-            'pepipost+api' => (new \OmniMail\Mail\Transport\Bridge\Pepipost\Transport\PepipostApiTransport($user, $region, $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
-            'pepipost+smtp', 'pepipost+smtps' => new \OmniMail\Mail\Transport\Bridge\Pepipost\Transport\PepipostSmtpTransport($user, $this->getPassword($dsn), $port, $this->dispatcher, $this->logger),
+            'pepipost+api' => (new \JooosiMail\Mail\Transport\Bridge\Pepipost\Transport\PepipostApiTransport($user, $region, $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
+            'pepipost+smtp', 'pepipost+smtps' => new \JooosiMail\Mail\Transport\Bridge\Pepipost\Transport\PepipostSmtpTransport($user, $this->getPassword($dsn), $port, $this->dispatcher, $this->logger),
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => throw new UnsupportedSchemeException($dsn, 'pepipost', $this->getSupportedSchemes()),
         };

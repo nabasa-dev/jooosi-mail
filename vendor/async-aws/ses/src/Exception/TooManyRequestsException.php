@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Ses\Exception;
+namespace JooosiMailDeps\AsyncAws\Ses\Exception;
 
-use OmniMailDeps\AsyncAws\Core\Exception\Http\ClientException;
+use JooosiMailDeps\AsyncAws\Core\Exception\Http\ClientException;
 /**
  * Too many requests have been made to the operation.
  */

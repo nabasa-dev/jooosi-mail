@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core;
+namespace JooosiMailDeps\AsyncAws\Core;
 
-use OmniMailDeps\AsyncAws\Core\Exception\Http\HttpException;
-use OmniMailDeps\AsyncAws\Core\Exception\InvalidArgument;
+use JooosiMailDeps\AsyncAws\Core\Exception\Http\HttpException;
+use JooosiMailDeps\AsyncAws\Core\Exception\InvalidArgument;
 /**
  * Contains contextual information alongside a request.
  *

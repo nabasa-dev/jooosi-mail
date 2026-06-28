@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Routing;
+namespace JooosiMail\Mail\Routing;
 
 /**
  * Normalized delivery routing decision.
@@ -13,7 +13,7 @@ namespace OmniMail\Mail\Routing;
  */
 final readonly class DeliveryPlan
 {
-    public function __construct(public \OmniMail\Mail\Routing\DeliveryMode $mode, public \OmniMail\Mail\Routing\RoutingStrategy $strategy, public int $priority, public int $delaySeconds, public ?int $preferredConnectionId = null)
+    public function __construct(public \JooosiMail\Mail\Routing\DeliveryMode $mode, public \JooosiMail\Mail\Routing\RoutingStrategy $strategy, public int $priority, public int $delaySeconds, public ?int $preferredConnectionId = null)
     {
     }
     /**
@@ -21,7 +21,7 @@ final readonly class DeliveryPlan
      */
     public static function fromArray(array $data): self
     {
-        return new self(mode: \OmniMail\Mail\Routing\DeliveryMode::fromMixed($data['mode'] ?? null), strategy: \OmniMail\Mail\Routing\RoutingStrategy::fromMixed($data['strategy'] ?? \OmniMail\Mail\Routing\RoutingStrategy::WeightedRandom->value), priority: (int) ($data['priority'] ?? 10), delaySeconds: (int) ($data['delaySeconds'] ?? 0), preferredConnectionId: isset($data['preferredConnectionId']) ? (int) $data['preferredConnectionId'] : null);
+        return new self(mode: \JooosiMail\Mail\Routing\DeliveryMode::fromMixed($data['mode'] ?? null), strategy: \JooosiMail\Mail\Routing\RoutingStrategy::fromMixed($data['strategy'] ?? \JooosiMail\Mail\Routing\RoutingStrategy::WeightedRandom->value), priority: (int) ($data['priority'] ?? 10), delaySeconds: (int) ($data['delaySeconds'] ?? 0), preferredConnectionId: isset($data['preferredConnectionId']) ? (int) $data['preferredConnectionId'] : null);
     }
     /**
      * @return array<string, scalar|null>

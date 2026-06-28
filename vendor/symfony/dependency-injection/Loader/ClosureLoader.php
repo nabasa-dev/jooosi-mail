@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Loader;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Loader;
 
-use OmniMailDeps\Symfony\Component\Config\Loader\Loader;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\Config\Loader\Loader;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
 /**
  * ClosureLoader loads service definitions from a PHP closure.
  *

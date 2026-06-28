@@ -6,7 +6,7 @@
  * @package ViteForWp
  */
 declare (strict_types=1);
-namespace OmniMailDeps\Kucrut\Vite;
+namespace JooosiMailDeps\Kucrut\Vite;
 
 use Exception;
 use WP_HTML_Tag_Processor;

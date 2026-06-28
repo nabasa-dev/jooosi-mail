@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Platforms;
+namespace JooosiMailDeps\Doctrine\DBAL\Platforms;
 
-use OmniMailDeps\Doctrine\DBAL\Platforms\Keywords\KeywordList;
-use OmniMailDeps\Doctrine\DBAL\Platforms\Keywords\MySQL80Keywords;
-use OmniMailDeps\Doctrine\DBAL\SQL\Builder\SelectSQLBuilder;
-use OmniMailDeps\Doctrine\DBAL\SQL\Builder\WithSQLBuilder;
-use OmniMailDeps\Doctrine\Deprecations\Deprecation;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Keywords\KeywordList;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\Keywords\MySQL80Keywords;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Builder\SelectSQLBuilder;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Builder\WithSQLBuilder;
+use JooosiMailDeps\Doctrine\Deprecations\Deprecation;
 /**
  * Provides the behavior, features and SQL dialect of the MySQL 8.0 database platform.
  *

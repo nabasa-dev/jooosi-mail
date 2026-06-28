@@ -8,13 +8,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Event;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Event;
 
-use OmniMailDeps\Symfony\Component\Mailer\Envelope;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\StampInterface;
-use OmniMailDeps\Symfony\Component\Mime\RawMessage;
-use OmniMailDeps\Symfony\Contracts\EventDispatcher\Event;
+use JooosiMailDeps\Symfony\Component\Mailer\Envelope;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\StampInterface;
+use JooosiMailDeps\Symfony\Component\Mime\RawMessage;
+use JooosiMailDeps\Symfony\Contracts\EventDispatcher\Event;
 /**
  * Allows the transformation of a Message and the Envelope before the email is sent.
  *

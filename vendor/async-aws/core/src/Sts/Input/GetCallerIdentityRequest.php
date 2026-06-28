@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Sts\Input;
+namespace JooosiMailDeps\AsyncAws\Core\Sts\Input;
 
-use OmniMailDeps\AsyncAws\Core\Input;
-use OmniMailDeps\AsyncAws\Core\Request;
-use OmniMailDeps\AsyncAws\Core\Stream\StreamFactory;
+use JooosiMailDeps\AsyncAws\Core\Input;
+use JooosiMailDeps\AsyncAws\Core\Request;
+use JooosiMailDeps\AsyncAws\Core\Stream\StreamFactory;
 final class GetCallerIdentityRequest extends Input
 {
     /**

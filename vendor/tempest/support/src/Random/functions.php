@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\Random;
+namespace JooosiMailDeps\Tempest\Support\Random;
 
 use DateTimeInterface as NativeDateTimeInterface;
 use InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Uid\Ulid;
-use OmniMailDeps\Symfony\Component\Uid\Uuid;
-use OmniMailDeps\Tempest\DateTime\DateTime;
-use OmniMailDeps\Tempest\DateTime\DateTimeInterface;
+use JooosiMailDeps\Symfony\Component\Uid\Ulid;
+use JooosiMailDeps\Symfony\Component\Uid\Uuid;
+use JooosiMailDeps\Tempest\DateTime\DateTime;
+use JooosiMailDeps\Tempest\DateTime\DateTimeInterface;
 use function log;
 /**
  * Returns a securely generated random string of the given length. The string is

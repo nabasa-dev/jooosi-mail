@@ -35,7 +35,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Symfony\\Component\\PropertyAccess\\": ""
+            "JooosiMailDeps\\Symfony\\Component\\PropertyAccess\\": ""
         },
         "exclude-from-classmap": [
             "\/Tests\/"

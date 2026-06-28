@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Sts\Exception;
+namespace JooosiMailDeps\AsyncAws\Core\Sts\Exception;
 
-use OmniMailDeps\AsyncAws\Core\Exception\Http\ClientException;
+use JooosiMailDeps\AsyncAws\Core\Exception\Http\ClientException;
 /**
  * The request could not be fulfilled because the identity provider (IDP) that was asked to verify the incoming identity
  * token could not be reached. This is often a transient error caused by network conditions. Retry the request a limited

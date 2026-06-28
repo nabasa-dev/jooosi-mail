@@ -8,15 +8,15 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Compiler;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler;
 
-use OmniMailDeps\Symfony\Component\Config\Definition\BaseNode;
-use OmniMailDeps\Symfony\Component\Config\Definition\ConfigurationInterface;
-use OmniMailDeps\Symfony\Component\Config\Definition\Processor;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Extension\ConfigurationExtensionInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ParameterBag\EnvPlaceholderParameterBag;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
+use JooosiMailDeps\Symfony\Component\Config\Definition\BaseNode;
+use JooosiMailDeps\Symfony\Component\Config\Definition\ConfigurationInterface;
+use JooosiMailDeps\Symfony\Component\Config\Definition\Processor;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Extension\ConfigurationExtensionInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ParameterBag\EnvPlaceholderParameterBag;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 /**
  * Validates environment variable placeholders used in extension configuration with dummy values.
  *

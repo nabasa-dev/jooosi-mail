@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Database\Migration;
+namespace JooosiMail\Database\Migration;
 
-use OmniMailDeps\Doctrine\DBAL\Connection;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Database\TableNameResolver;
+use JooosiMailDeps\Doctrine\DBAL\Connection;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
 use RuntimeException;
 use Throwable;
 /**
@@ -41,7 +41,7 @@ final readonly class MigrationRepository
         $rows = $this->connection->fetchAllAssociative(sprintf('SELECT version, class_name, description, executed_at, execution_time_ms FROM %s ORDER BY version ASC', $this->tableName()));
         $executions = [];
         foreach ($rows as $row) {
-            $execution = new \OmniMail\Database\Migration\MigrationExecution(version: (string) ($row['version'] ?? ''), className: (string) ($row['class_name'] ?? ''), description: (string) ($row['description'] ?? ''), executedAt: (string) ($row['executed_at'] ?? ''), executionTimeMs: (int) ($row['execution_time_ms'] ?? 0));
+            $execution = new \JooosiMail\Database\Migration\MigrationExecution(version: (string) ($row['version'] ?? ''), className: (string) ($row['class_name'] ?? ''), description: (string) ($row['description'] ?? ''), executedAt: (string) ($row['executed_at'] ?? ''), executionTimeMs: (int) ($row['execution_time_ms'] ?? 0));
             $executions[$execution->version] = $execution;
         }
         return $executions;
@@ -49,7 +49,7 @@ final readonly class MigrationRepository
     /**
      * @since 0.1.0
      */
-    public function recordExecution(\OmniMail\Database\Migration\MigrationDefinition $definition, int $executionTimeMs): void
+    public function recordExecution(\JooosiMail\Database\Migration\MigrationDefinition $definition, int $executionTimeMs): void
     {
         $this->insertExecution($definition, max(0, $executionTimeMs));
     }
@@ -85,13 +85,13 @@ final readonly class MigrationRepository
     /**
      * @since 0.1.0
      */
-    private function insertExecution(\OmniMail\Database\Migration\MigrationDefinition $definition, int $executionTimeMs): void
+    private function insertExecution(\JooosiMail\Database\Migration\MigrationDefinition $definition, int $executionTimeMs): void
     {
         try {
             $this->connection->insert($this->tableName(), ['version' => $definition->version, 'class_name' => $definition->className, 'description' => $definition->description, 'executed_at' => $this->timestamp(), 'execution_time_ms' => $executionTimeMs]);
         } catch (Throwable $throwable) {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new RuntimeException(sprintf('Unable to record Omni Mail migration "%s".', $definition->version), 0, $throwable);
+            throw new RuntimeException(sprintf('Unable to record Jooosi Mail migration "%s".', $definition->version), 0, $throwable);
         }
     }
     /**

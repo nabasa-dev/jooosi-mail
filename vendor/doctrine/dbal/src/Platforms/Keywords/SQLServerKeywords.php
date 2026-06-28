@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Platforms\Keywords;
+namespace JooosiMailDeps\Doctrine\DBAL\Platforms\Keywords;
 
 /**
  * Reserved keywords list corresponding to the Microsoft SQL Server database platform of the oldest supported version.

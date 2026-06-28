@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Logging;
+namespace JooosiMailDeps\Doctrine\DBAL\Logging;
 
-use OmniMailDeps\Doctrine\DBAL\Driver as DriverInterface;
-use OmniMailDeps\Doctrine\DBAL\Driver\Middleware\AbstractDriverMiddleware;
-use OmniMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver as DriverInterface;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Middleware\AbstractDriverMiddleware;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
 use SensitiveParameter;
 final class Driver extends AbstractDriverMiddleware
 {

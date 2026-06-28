@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Postal\\": ""
+            "JooosiMailDeps\\Symfony\\Component\\Mailer\\Bridge\\Postal\\": ""
         },
         "exclude-from-classmap": [
             "\/Tests\/"

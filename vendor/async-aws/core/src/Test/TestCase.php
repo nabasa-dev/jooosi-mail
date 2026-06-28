@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Test;
+namespace JooosiMailDeps\AsyncAws\Core\Test;
 
-use OmniMailDeps\AsyncAws\Core\Request;
-use OmniMailDeps\PHPUnit\Framework\TestCase as PHPUnitTestCase;
+use JooosiMailDeps\AsyncAws\Core\Request;
+use JooosiMailDeps\PHPUnit\Framework\TestCase as PHPUnitTestCase;
 class TestCase extends PHPUnitTestCase
 {
     /**

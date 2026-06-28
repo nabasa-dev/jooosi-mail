@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\LazyProxy\PhpDumper;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\LazyProxy\PhpDumper;
 
-use OmniMailDeps\Symfony\Component\DependencyInjection\Definition;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\VarExporter\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\VarExporter\ProxyHelper;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Definition;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\VarExporter\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\VarExporter\ProxyHelper;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  */

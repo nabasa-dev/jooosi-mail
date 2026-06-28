@@ -8,16 +8,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\EventListener;
+namespace JooosiMailDeps\Symfony\Component\Mailer\EventListener;
 
-use OmniMailDeps\Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Event\MessageEvent;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\RuntimeException;
-use OmniMailDeps\Symfony\Component\Mime\BodyRendererInterface;
-use OmniMailDeps\Symfony\Component\Mime\Header\Headers;
-use OmniMailDeps\Symfony\Component\Mime\Header\MailboxListHeader;
-use OmniMailDeps\Symfony\Component\Mime\Message;
+use JooosiMailDeps\Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Event\MessageEvent;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Component\Mime\BodyRendererInterface;
+use JooosiMailDeps\Symfony\Component\Mime\Header\Headers;
+use JooosiMailDeps\Symfony\Component\Mime\Header\MailboxListHeader;
+use JooosiMailDeps\Symfony\Component\Mime\Message;
 /**
  * Manipulates the headers and the body of a Message.
  *

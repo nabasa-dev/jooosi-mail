@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\VarExporter\Internal;
+namespace JooosiMailDeps\Symfony\Component\VarExporter\Internal;
 
-use OmniMailDeps\Symfony\Component\VarExporter\Exception\ClassNotFoundException;
-use OmniMailDeps\Symfony\Component\VarExporter\Exception\NotInstantiableTypeException;
+use JooosiMailDeps\Symfony\Component\VarExporter\Exception\ClassNotFoundException;
+use JooosiMailDeps\Symfony\Component\VarExporter\Exception\NotInstantiableTypeException;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  *

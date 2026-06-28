@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Exception;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Exception;
 
-use OmniMailDeps\Psr\Container\NotFoundExceptionInterface;
+use JooosiMailDeps\Psr\Container\NotFoundExceptionInterface;
 /**
  * This exception is thrown when a non-existent parameter is used.
  *

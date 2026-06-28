@@ -8,7 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\PropertyInfo;
+namespace JooosiMailDeps\Symfony\Component\PropertyInfo;
 
 /**
  * The property read info tells how a property can be read.

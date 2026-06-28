@@ -8,29 +8,29 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\PropertyInfo\Extractor;
+namespace JooosiMailDeps\Symfony\Component\PropertyInfo\Extractor;
 
-use OmniMailDeps\phpDocumentor\Reflection\Types\ContextFactory;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\ParamTagValueNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\PhpDocChildNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\PhpDocNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\PhpDocTagNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\PhpDocTextNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\ReturnTagValueNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\VarTagValueNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Lexer\Lexer;
-use OmniMailDeps\PHPStan\PhpDocParser\Parser\ConstExprParser;
-use OmniMailDeps\PHPStan\PhpDocParser\Parser\PhpDocParser;
-use OmniMailDeps\PHPStan\PhpDocParser\Parser\TokenIterator;
-use OmniMailDeps\PHPStan\PhpDocParser\Parser\TypeParser;
-use OmniMailDeps\PHPStan\PhpDocParser\ParserConfig;
-use OmniMailDeps\Symfony\Component\PropertyInfo\PropertyDescriptionExtractorInterface;
-use OmniMailDeps\Symfony\Component\PropertyInfo\PropertyTypeExtractorInterface;
-use OmniMailDeps\Symfony\Component\TypeInfo\Exception\UnsupportedException;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type;
-use OmniMailDeps\Symfony\Component\TypeInfo\TypeContext\TypeContext;
-use OmniMailDeps\Symfony\Component\TypeInfo\TypeContext\TypeContextFactory;
-use OmniMailDeps\Symfony\Component\TypeInfo\TypeResolver\StringTypeResolver;
+use JooosiMailDeps\phpDocumentor\Reflection\Types\ContextFactory;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\ParamTagValueNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\PhpDocChildNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\PhpDocNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\PhpDocTagNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\PhpDocTextNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\ReturnTagValueNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\VarTagValueNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Lexer\Lexer;
+use JooosiMailDeps\PHPStan\PhpDocParser\Parser\ConstExprParser;
+use JooosiMailDeps\PHPStan\PhpDocParser\Parser\PhpDocParser;
+use JooosiMailDeps\PHPStan\PhpDocParser\Parser\TokenIterator;
+use JooosiMailDeps\PHPStan\PhpDocParser\Parser\TypeParser;
+use JooosiMailDeps\PHPStan\PhpDocParser\ParserConfig;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\PropertyDescriptionExtractorInterface;
+use JooosiMailDeps\Symfony\Component\PropertyInfo\PropertyTypeExtractorInterface;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Exception\UnsupportedException;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type;
+use JooosiMailDeps\Symfony\Component\TypeInfo\TypeContext\TypeContext;
+use JooosiMailDeps\Symfony\Component\TypeInfo\TypeContext\TypeContextFactory;
+use JooosiMailDeps\Symfony\Component\TypeInfo\TypeResolver\StringTypeResolver;
 /**
  * Extracts data using PHPStan parser.
  *

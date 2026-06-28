@@ -32,12 +32,12 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\AsyncAws\\Core\\": "src"
+            "JooosiMailDeps\\AsyncAws\\Core\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "OmniMailDeps\\AsyncAws\\Core\\Tests\\": "tests\/"
+            "JooosiMailDeps\\AsyncAws\\Core\\Tests\\": "tests\/"
         }
     },
     "extra": {

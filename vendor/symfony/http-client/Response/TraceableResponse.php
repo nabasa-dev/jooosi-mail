@@ -8,20 +8,20 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\HttpClient\Response;
+namespace JooosiMailDeps\Symfony\Component\HttpClient\Response;
 
-use OmniMailDeps\Symfony\Component\HttpClient\Chunk\ErrorChunk;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\ClientException;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\RedirectionException;
-use OmniMailDeps\Symfony\Component\HttpClient\Exception\ServerException;
-use OmniMailDeps\Symfony\Component\HttpClient\TraceableHttpClient;
-use OmniMailDeps\Symfony\Component\Stopwatch\StopwatchEvent;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
-use OmniMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
+use JooosiMailDeps\Symfony\Component\HttpClient\Chunk\ErrorChunk;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\ClientException;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\RedirectionException;
+use JooosiMailDeps\Symfony\Component\HttpClient\Exception\ServerException;
+use JooosiMailDeps\Symfony\Component\HttpClient\TraceableHttpClient;
+use JooosiMailDeps\Symfony\Component\Stopwatch\StopwatchEvent;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\ResponseInterface;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  *

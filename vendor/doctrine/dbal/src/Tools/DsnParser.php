@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Tools;
+namespace JooosiMailDeps\Doctrine\DBAL\Tools;
 
-use OmniMailDeps\Doctrine\DBAL\Driver;
-use OmniMailDeps\Doctrine\DBAL\DriverManager;
-use OmniMailDeps\Doctrine\DBAL\Exception\MalformedDsnException;
+use JooosiMailDeps\Doctrine\DBAL\Driver;
+use JooosiMailDeps\Doctrine\DBAL\DriverManager;
+use JooosiMailDeps\Doctrine\DBAL\Exception\MalformedDsnException;
 use SensitiveParameter;
 use function array_merge;
 use function assert;

@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Reflection;
+namespace JooosiMailDeps\Tempest\Reflection;
 
 use Closure;
 use ReflectionClass as PHPReflectionClass;

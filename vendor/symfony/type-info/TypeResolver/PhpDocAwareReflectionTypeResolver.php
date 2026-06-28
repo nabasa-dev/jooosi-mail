@@ -8,21 +8,21 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\TypeInfo\TypeResolver;
+namespace JooosiMailDeps\Symfony\Component\TypeInfo\TypeResolver;
 
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\ParamTagValueNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\ReturnTagValueNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\VarTagValueNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Lexer\Lexer;
-use OmniMailDeps\PHPStan\PhpDocParser\Parser\ConstExprParser;
-use OmniMailDeps\PHPStan\PhpDocParser\Parser\PhpDocParser;
-use OmniMailDeps\PHPStan\PhpDocParser\Parser\TokenIterator;
-use OmniMailDeps\PHPStan\PhpDocParser\Parser\TypeParser;
-use OmniMailDeps\PHPStan\PhpDocParser\ParserConfig;
-use OmniMailDeps\Symfony\Component\TypeInfo\Exception\UnsupportedException;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type;
-use OmniMailDeps\Symfony\Component\TypeInfo\TypeContext\TypeContext;
-use OmniMailDeps\Symfony\Component\TypeInfo\TypeContext\TypeContextFactory;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\ParamTagValueNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\ReturnTagValueNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\VarTagValueNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Lexer\Lexer;
+use JooosiMailDeps\PHPStan\PhpDocParser\Parser\ConstExprParser;
+use JooosiMailDeps\PHPStan\PhpDocParser\Parser\PhpDocParser;
+use JooosiMailDeps\PHPStan\PhpDocParser\Parser\TokenIterator;
+use JooosiMailDeps\PHPStan\PhpDocParser\Parser\TypeParser;
+use JooosiMailDeps\PHPStan\PhpDocParser\ParserConfig;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Exception\UnsupportedException;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type;
+use JooosiMailDeps\Symfony\Component\TypeInfo\TypeContext\TypeContext;
+use JooosiMailDeps\Symfony\Component\TypeInfo\TypeContext\TypeContextFactory;
 /**
  * Resolves type on reflection prioriziting PHP documentation.
  *

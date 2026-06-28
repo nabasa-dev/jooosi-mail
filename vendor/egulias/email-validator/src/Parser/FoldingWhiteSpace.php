@@ -1,18 +1,18 @@
 <?php
 
-namespace OmniMailDeps\Egulias\EmailValidator\Parser;
+namespace JooosiMailDeps\Egulias\EmailValidator\Parser;
 
-use OmniMailDeps\Egulias\EmailValidator\EmailLexer;
-use OmniMailDeps\Egulias\EmailValidator\Warning\CFWSNearAt;
-use OmniMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
-use OmniMailDeps\Egulias\EmailValidator\Warning\CFWSWithFWS;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\CRNoLF;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\AtextAfterCFWS;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\CRLFAtTheEnd;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\CRLFX2;
-use OmniMailDeps\Egulias\EmailValidator\Result\Reason\ExpectingCTEXT;
-use OmniMailDeps\Egulias\EmailValidator\Result\Result;
-use OmniMailDeps\Egulias\EmailValidator\Result\ValidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\EmailLexer;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\CFWSNearAt;
+use JooosiMailDeps\Egulias\EmailValidator\Result\InvalidEmail;
+use JooosiMailDeps\Egulias\EmailValidator\Warning\CFWSWithFWS;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\CRNoLF;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\AtextAfterCFWS;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\CRLFAtTheEnd;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\CRLFX2;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Reason\ExpectingCTEXT;
+use JooosiMailDeps\Egulias\EmailValidator\Result\Result;
+use JooosiMailDeps\Egulias\EmailValidator\Result\ValidEmail;
 class FoldingWhiteSpace extends PartParser
 {
     public const FWS_TYPES = [EmailLexer::S_SP, EmailLexer::S_HTAB, EmailLexer::S_CR, EmailLexer::S_LF, EmailLexer::CRLF];

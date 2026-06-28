@@ -1,30 +1,30 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Ses;
+namespace JooosiMailDeps\AsyncAws\Ses;
 
-use OmniMailDeps\AsyncAws\Core\AbstractApi;
-use OmniMailDeps\AsyncAws\Core\AwsError\AwsErrorFactoryInterface;
-use OmniMailDeps\AsyncAws\Core\AwsError\JsonRestAwsErrorFactory;
-use OmniMailDeps\AsyncAws\Core\Configuration;
-use OmniMailDeps\AsyncAws\Core\RequestContext;
-use OmniMailDeps\AsyncAws\Ses\Exception\AccountSuspendedException;
-use OmniMailDeps\AsyncAws\Ses\Exception\BadRequestException;
-use OmniMailDeps\AsyncAws\Ses\Exception\LimitExceededException;
-use OmniMailDeps\AsyncAws\Ses\Exception\MailFromDomainNotVerifiedException;
-use OmniMailDeps\AsyncAws\Ses\Exception\MessageRejectedException;
-use OmniMailDeps\AsyncAws\Ses\Exception\NotFoundException;
-use OmniMailDeps\AsyncAws\Ses\Exception\SendingPausedException;
-use OmniMailDeps\AsyncAws\Ses\Exception\TooManyRequestsException;
-use OmniMailDeps\AsyncAws\Ses\Input\DeleteSuppressedDestinationRequest;
-use OmniMailDeps\AsyncAws\Ses\Input\GetSuppressedDestinationRequest;
-use OmniMailDeps\AsyncAws\Ses\Input\SendEmailRequest;
-use OmniMailDeps\AsyncAws\Ses\Result\DeleteSuppressedDestinationResponse;
-use OmniMailDeps\AsyncAws\Ses\Result\GetSuppressedDestinationResponse;
-use OmniMailDeps\AsyncAws\Ses\Result\SendEmailResponse;
-use OmniMailDeps\AsyncAws\Ses\ValueObject\Destination;
-use OmniMailDeps\AsyncAws\Ses\ValueObject\EmailContent;
-use OmniMailDeps\AsyncAws\Ses\ValueObject\ListManagementOptions;
-use OmniMailDeps\AsyncAws\Ses\ValueObject\MessageTag;
+use JooosiMailDeps\AsyncAws\Core\AbstractApi;
+use JooosiMailDeps\AsyncAws\Core\AwsError\AwsErrorFactoryInterface;
+use JooosiMailDeps\AsyncAws\Core\AwsError\JsonRestAwsErrorFactory;
+use JooosiMailDeps\AsyncAws\Core\Configuration;
+use JooosiMailDeps\AsyncAws\Core\RequestContext;
+use JooosiMailDeps\AsyncAws\Ses\Exception\AccountSuspendedException;
+use JooosiMailDeps\AsyncAws\Ses\Exception\BadRequestException;
+use JooosiMailDeps\AsyncAws\Ses\Exception\LimitExceededException;
+use JooosiMailDeps\AsyncAws\Ses\Exception\MailFromDomainNotVerifiedException;
+use JooosiMailDeps\AsyncAws\Ses\Exception\MessageRejectedException;
+use JooosiMailDeps\AsyncAws\Ses\Exception\NotFoundException;
+use JooosiMailDeps\AsyncAws\Ses\Exception\SendingPausedException;
+use JooosiMailDeps\AsyncAws\Ses\Exception\TooManyRequestsException;
+use JooosiMailDeps\AsyncAws\Ses\Input\DeleteSuppressedDestinationRequest;
+use JooosiMailDeps\AsyncAws\Ses\Input\GetSuppressedDestinationRequest;
+use JooosiMailDeps\AsyncAws\Ses\Input\SendEmailRequest;
+use JooosiMailDeps\AsyncAws\Ses\Result\DeleteSuppressedDestinationResponse;
+use JooosiMailDeps\AsyncAws\Ses\Result\GetSuppressedDestinationResponse;
+use JooosiMailDeps\AsyncAws\Ses\Result\SendEmailResponse;
+use JooosiMailDeps\AsyncAws\Ses\ValueObject\Destination;
+use JooosiMailDeps\AsyncAws\Ses\ValueObject\EmailContent;
+use JooosiMailDeps\AsyncAws\Ses\ValueObject\ListManagementOptions;
+use JooosiMailDeps\AsyncAws\Ses\ValueObject\MessageTag;
 class SesClient extends AbstractApi
 {
     /**

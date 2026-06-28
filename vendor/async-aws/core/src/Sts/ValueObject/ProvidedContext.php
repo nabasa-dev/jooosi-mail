@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Sts\ValueObject;
+namespace JooosiMailDeps\AsyncAws\Core\Sts\ValueObject;
 
 /**
  * Contains information about the provided context. This includes the signed and encrypted trusted context assertion and

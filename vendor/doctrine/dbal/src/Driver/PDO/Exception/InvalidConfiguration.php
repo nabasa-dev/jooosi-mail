@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\PDO\Exception;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\PDO\Exception;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\AbstractException;
+use JooosiMailDeps\Doctrine\DBAL\Driver\AbstractException;
 use function get_debug_type;
 use function sprintf;
 final class InvalidConfiguration extends AbstractException

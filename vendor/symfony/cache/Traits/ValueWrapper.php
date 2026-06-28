@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniMailDeps;
+namespace JooosiMailDeps;
 
 /*
  * This file is part of the Symfony package.

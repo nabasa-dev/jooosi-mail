@@ -8,9 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\PropertyInfo;
+namespace JooosiMailDeps\Symfony\Component\PropertyInfo;
 
-use OmniMailDeps\Symfony\Component\TypeInfo\Type;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type;
 /**
  * Default {@see PropertyInfoExtractorInterface} implementation.
  *

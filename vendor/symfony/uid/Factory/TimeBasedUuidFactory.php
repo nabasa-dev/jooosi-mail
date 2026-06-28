@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Uid\Factory;
+namespace JooosiMailDeps\Symfony\Component\Uid\Factory;
 
-use OmniMailDeps\Symfony\Component\Uid\TimeBasedUidInterface;
-use OmniMailDeps\Symfony\Component\Uid\Uuid;
+use JooosiMailDeps\Symfony\Component\Uid\TimeBasedUidInterface;
+use JooosiMailDeps\Symfony\Component\Uid\Uuid;
 class TimeBasedUuidFactory
 {
     /**

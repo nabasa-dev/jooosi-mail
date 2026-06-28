@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Transport\Bridge\Bird\Transport;
+namespace JooosiMail\Mail\Transport\Bridge\Bird\Transport;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Discovery\Attribute\TransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\AbstractTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Dsn;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\TransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\AbstractTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Dsn;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
 /**
  * Bird custom transport factory.
  *
@@ -27,8 +27,8 @@ final class BirdTransportFactory extends AbstractTransportFactory
         $port = $dsn->getPort();
         $region = $dsn->getOption('region');
         return match ($scheme) {
-            'bird+api' => (new \OmniMail\Mail\Transport\Bridge\Bird\Transport\BirdApiTransport($accessKey, $workspaceId, $region, $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
-            'bird+smtp', 'bird+smtps' => new \OmniMail\Mail\Transport\Bridge\Bird\Transport\BirdSmtpTransport($accessKey, $workspaceId, $region, $port, $this->dispatcher, $this->logger),
+            'bird+api' => (new \JooosiMail\Mail\Transport\Bridge\Bird\Transport\BirdApiTransport($accessKey, $workspaceId, $region, $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
+            'bird+smtp', 'bird+smtps' => new \JooosiMail\Mail\Transport\Bridge\Bird\Transport\BirdSmtpTransport($accessKey, $workspaceId, $region, $port, $this->dispatcher, $this->logger),
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => throw new UnsupportedSchemeException($dsn, 'bird', $this->getSupportedSchemes()),
         };

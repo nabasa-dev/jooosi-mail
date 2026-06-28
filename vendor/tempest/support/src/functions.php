@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support;
+namespace JooosiMailDeps\Tempest\Support;
 
 use Closure;
 use Stringable;
-use OmniMailDeps\Tempest\Support\Arr\ImmutableArray;
-use OmniMailDeps\Tempest\Support\Path\Path;
-use OmniMailDeps\Tempest\Support\Str\ImmutableString;
+use JooosiMailDeps\Tempest\Support\Arr\ImmutableArray;
+use JooosiMailDeps\Tempest\Support\Path\Path;
+use JooosiMailDeps\Tempest\Support\Str\ImmutableString;
 /**
  * Creates an instance of {@see \Tempest\Support\Str\ImmutableString} using the given `$string`.
  */

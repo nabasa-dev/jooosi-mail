@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Cli;
+namespace JooosiMail\Cli;
 
-use OmniMail\Admin\Mail\TestEmailSender;
-use OmniMail\Discovery\Attribute\Command;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Logging\MailAttemptRepository;
+use JooosiMail\Admin\Mail\TestEmailSender;
+use JooosiMail\Discovery\Attribute\Command;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Logging\MailAttemptRepository;
 use WP_CLI;
 use function WP_CLI\Utils\format_items;
 /**
@@ -15,15 +15,15 @@ use function WP_CLI\Utils\format_items;
  * ## EXAMPLES
  *
  *     # Send a smoke test email.
- *     $ wp omni-mail mail:test --to=you@example.com
+ *     $ wp jooosi-mail mail:test --to=you@example.com
  *     Success: The test email was queued or sent successfully.
  *
  *     # Override the subject.
- *     $ wp omni-mail mail:test --to=you@example.com --subject="Queue check"
+ *     $ wp jooosi-mail mail:test --to=you@example.com --subject="Queue check"
  *     Success: The test email was queued or sent successfully.
  *
  *     # Send through a preferred connection.
- *     $ wp omni-mail mail:test --to=you@example.com --connection-id=3
+ *     $ wp jooosi-mail mail:test --to=you@example.com --connection-id=3
  *     Success: The test email was queued or sent successfully.
  *
  * @since 0.1.0
@@ -35,7 +35,7 @@ final readonly class MailCommand
     {
     }
     /**
-     * Send a test email through Omni Mail.
+     * Send a test email through Jooosi Mail.
      *
      * ## OPTIONS
      *
@@ -46,20 +46,20 @@ final readonly class MailCommand
      * : Subject line to send.
      *
      * [--connection-id=<connection-id>]
-     * : Preferred Omni Mail connection id to use.
+     * : Preferred Jooosi Mail connection id to use.
      *
      * ## EXAMPLES
      *
      *     # Send a smoke test email.
-     *     $ wp omni-mail mail:test --to=you@example.com
+     *     $ wp jooosi-mail mail:test --to=you@example.com
      *     Success: The test email was queued or sent successfully.
      *
      *     # Send a custom-subject test email.
-     *     $ wp omni-mail mail:test --to=you@example.com --subject="Queue check"
+     *     $ wp jooosi-mail mail:test --to=you@example.com --subject="Queue check"
      *     Success: The test email was queued or sent successfully.
      *
      *     # Send through a preferred connection.
-     *     $ wp omni-mail mail:test --to=you@example.com --connection-id=3
+     *     $ wp jooosi-mail mail:test --to=you@example.com --connection-id=3
      *     Success: The test email was queued or sent successfully.
      *
      * @param array<int, string> $args
@@ -67,7 +67,7 @@ final readonly class MailCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'Send a test email through Omni Mail.')]
+    #[Command(description: 'Send a test email through Jooosi Mail.')]
     public function test(array $args, array $assocArgs): void
     {
         $to = sanitize_email((string) ($assocArgs['to'] ?? ''));
@@ -77,7 +77,7 @@ final readonly class MailCommand
         if (!is_email($to)) {
             WP_CLI::error('Enter a valid recipient email address.');
         }
-        $result = $this->testEmailSender->send($to, (string) ($assocArgs['subject'] ?? 'Omni Mail test'), isset($assocArgs['connection-id']) ? max(0, (int) $assocArgs['connection-id']) : null);
+        $result = $this->testEmailSender->send($to, (string) ($assocArgs['subject'] ?? 'Jooosi Mail test'), isset($assocArgs['connection-id']) ? max(0, (int) $assocArgs['connection-id']) : null);
         if ($result) {
             WP_CLI::success('The test email was queued or sent successfully.');
             return;
@@ -85,7 +85,7 @@ final readonly class MailCommand
         WP_CLI::error('The test email failed.');
     }
     /**
-     * List recent Omni Mail delivery attempts.
+     * List recent Jooosi Mail delivery attempts.
      *
      * ## OPTIONS
      *
@@ -107,12 +107,12 @@ final readonly class MailCommand
      * ## EXAMPLES
      *
      *     # List the most recent delivery attempts.
-     *     $ wp omni-mail mail:attempts --limit=10
+     *     $ wp jooosi-mail mail:attempts --limit=10
      *     id  mail_log_id  connection        status  started_at           finished_at          transport_message_id  error
      *     18  42           #3 Primary SMTP   sent    2026-03-23 09:15:00  2026-03-23 09:15:00  01HR...              
      *
      *     # Filter attempts for a single mail log.
-     *     $ wp omni-mail mail:attempts --mail-log-id=42
+     *     $ wp jooosi-mail mail:attempts --mail-log-id=42
      *     id  mail_log_id  connection        status  started_at           finished_at          transport_message_id  error
      *     18  42           #3 Primary SMTP   sent    2026-03-23 09:15:00  2026-03-23 09:15:00  01HR...              
      *
@@ -121,7 +121,7 @@ final readonly class MailCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'List recent Omni Mail delivery attempts.')]
+    #[Command(description: 'List recent Jooosi Mail delivery attempts.')]
     public function attempts(array $args, array $assocArgs): void
     {
         $rows = $this->mailAttemptRepository->listRecent(limit: max(1, (int) ($assocArgs['limit'] ?? 20)), mailLogId: isset($assocArgs['mail-log-id']) ? max(1, (int) $assocArgs['mail-log-id']) : null, connectionId: isset($assocArgs['connection-id']) ? max(1, (int) $assocArgs['connection-id']) : null, status: $this->normalizeFilter($assocArgs['status'] ?? null));

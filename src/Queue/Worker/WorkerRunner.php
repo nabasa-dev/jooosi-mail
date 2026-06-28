@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Queue\Worker;
+namespace JooosiMail\Queue\Worker;
 
-use OmniMail\Discovery\Attribute\Hook;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Queue\Query\QueueMessageQuery;
-use OmniMail\Queue\Trigger\ActionSchedulerTrigger;
+use JooosiMail\Discovery\Attribute\Hook;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Queue\Query\QueueMessageQuery;
+use JooosiMail\Queue\Trigger\ActionSchedulerTrigger;
 /**
  * Entry points for scheduled and direct worker execution.
  *
@@ -15,8 +15,8 @@ use OmniMail\Queue\Trigger\ActionSchedulerTrigger;
 #[Service]
 final readonly class WorkerRunner
 {
-    public const string RUNNER_LEASE_OPTION = 'omni_mail_queue_runner_lease';
-    public function __construct(private \OmniMail\Queue\Worker\QueueWorker $queueWorker, private QueueMessageQuery $queueMessageQuery, private ActionSchedulerTrigger $actionSchedulerTrigger)
+    public const string RUNNER_LEASE_OPTION = 'jooosi_mail_queue_runner_lease';
+    public function __construct(private \JooosiMail\Queue\Worker\QueueWorker $queueWorker, private QueueMessageQuery $queueMessageQuery, private ActionSchedulerTrigger $actionSchedulerTrigger)
     {
     }
     /**

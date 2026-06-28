@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Connection;
+namespace JooosiMail\Mail\Connection;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Mail\Profile\MailProfileInterface;
-use OmniMail\Mail\Profile\ProfileMetadataResolver;
-use OmniMail\Mail\Profile\ProfileRegistry;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Mail\Profile\MailProfileInterface;
+use JooosiMail\Mail\Profile\ProfileMetadataResolver;
+use JooosiMail\Mail\Profile\ProfileRegistry;
 /**
  * Builds admin-safe connection payloads.
  *
@@ -23,7 +23,7 @@ final readonly class ConnectionViewFactory
      *
      * @since 0.1.0
      */
-    public function createListItem(\OmniMail\Mail\Connection\Connection $connection): array
+    public function createListItem(\JooosiMail\Mail\Connection\Connection $connection): array
     {
         $profile = $this->resolveProfile($connection);
         return ['id' => $connection->id, 'profile' => $this->createProfilePayload($profile), 'name' => $connection->name, 'enabled' => $connection->enabled, 'default' => $connection->default, 'priority' => $connection->priority, 'weight' => $connection->weight, 'webhookEnabled' => $connection->webhookEnabled, 'webhookSecretConfigured' => $connection->hasWebhookSecret(), 'dsnOverrideConfigured' => $connection->hasDsnOverride()];
@@ -33,7 +33,7 @@ final readonly class ConnectionViewFactory
      *
      * @since 0.1.0
      */
-    public function createDetail(\OmniMail\Mail\Connection\Connection $connection): array
+    public function createDetail(\JooosiMail\Mail\Connection\Connection $connection): array
     {
         $profile = $this->resolveProfile($connection);
         return array_replace($this->createListItem($connection), ['profile' => $this->createProfilePayload($profile, \true), 'configurationFields' => $this->createConfigurationFields($profile, $connection)]);
@@ -60,7 +60,7 @@ final readonly class ConnectionViewFactory
      *
      * @since 0.1.0
      */
-    private function createConfigurationFields(MailProfileInterface $profile, \OmniMail\Mail\Connection\Connection $connection): array
+    private function createConfigurationFields(MailProfileInterface $profile, \JooosiMail\Mail\Connection\Connection $connection): array
     {
         $defaults = $profile->getConfigurationDefaults($connection);
         $profileSecrets = $connection->getProfileSecrets();
@@ -93,12 +93,12 @@ final readonly class ConnectionViewFactory
     /**
      * @since 0.1.0
      */
-    private function resolveProfile(\OmniMail\Mail\Connection\Connection $connection): MailProfileInterface
+    private function resolveProfile(\JooosiMail\Mail\Connection\Connection $connection): MailProfileInterface
     {
         $profile = $this->profileRegistry->get($connection->profileKey);
         if (!$profile instanceof MailProfileInterface) {
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-            throw new \OmniMail\Mail\Connection\ConnectionConfigurationException(sprintf('Profile "%s" is not registered.', $connection->profileKey));
+            throw new \JooosiMail\Mail\Connection\ConnectionConfigurationException(sprintf('Profile "%s" is not registered.', $connection->profileKey));
         }
         return $profile;
     }

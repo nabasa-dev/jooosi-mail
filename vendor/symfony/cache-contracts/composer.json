@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OmniMailDeps\\Symfony\\Contracts\\Cache\\": ""
+            "JooosiMailDeps\\Symfony\\Contracts\\Cache\\": ""
         }
     },
     "minimum-stability": "dev",

@@ -1,21 +1,21 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema;
 
-use OmniMailDeps\Doctrine\DBAL\Exception;
-use OmniMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\NamespaceAlreadyExists;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\SequenceAlreadyExists;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\SequenceDoesNotExist;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\TableAlreadyExists;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\TableDoesNotExist;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parser\UnqualifiedNameParser;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parsers;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
-use OmniMailDeps\Doctrine\DBAL\SQL\Builder\CreateSchemaObjectsSQLBuilder;
-use OmniMailDeps\Doctrine\DBAL\SQL\Builder\DropSchemaObjectsSQLBuilder;
-use OmniMailDeps\Doctrine\Deprecations\Deprecation;
+use JooosiMailDeps\Doctrine\DBAL\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\AbstractPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\NamespaceAlreadyExists;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\SequenceAlreadyExists;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\SequenceDoesNotExist;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\TableAlreadyExists;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\TableDoesNotExist;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parser\UnqualifiedNameParser;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parsers;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Builder\CreateSchemaObjectsSQLBuilder;
+use JooosiMailDeps\Doctrine\DBAL\SQL\Builder\DropSchemaObjectsSQLBuilder;
+use JooosiMailDeps\Doctrine\Deprecations\Deprecation;
 use function array_values;
 use function count;
 use function strtolower;

@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Signer;
+namespace JooosiMailDeps\AsyncAws\Core\Signer;
 
-use OmniMailDeps\AsyncAws\Core\Credentials\Credentials;
-use OmniMailDeps\AsyncAws\Core\Request;
-use OmniMailDeps\AsyncAws\Core\RequestContext;
+use JooosiMailDeps\AsyncAws\Core\Credentials\Credentials;
+use JooosiMailDeps\AsyncAws\Core\Request;
+use JooosiMailDeps\AsyncAws\Core\RequestContext;
 /**
  * Interface for signing a request.
  *

@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Tempest\Support\JavaScript;
+namespace JooosiMailDeps\Tempest\Support\JavaScript;
 
-use OmniMailDeps\Tempest\Support\Filesystem;
+use JooosiMailDeps\Tempest\Support\Filesystem;
 /**
  * Represents the major package managers in the JavaScript ecosystem.
  * This enum is backed for serialization purposes.

@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniMailDeps\Tempest\Discovery;
+namespace JooosiMailDeps\Tempest\Discovery;
 
-use OmniMailDeps\Tempest\Container\Container;
-use OmniMailDeps\Tempest\Container\Initializer;
-use OmniMailDeps\Tempest\Container\Singleton;
-use OmniMailDeps\Tempest\Support\Filesystem;
+use JooosiMailDeps\Tempest\Container\Container;
+use JooosiMailDeps\Tempest\Container\Initializer;
+use JooosiMailDeps\Tempest\Container\Singleton;
+use JooosiMailDeps\Tempest\Support\Filesystem;
 final class DiscoveryCacheInitializer implements Initializer
 {
     #[Singleton]

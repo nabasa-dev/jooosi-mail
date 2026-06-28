@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\Messenger;
+namespace JooosiMailDeps\Symfony\Component\Cache\Messenger;
 
-use OmniMailDeps\Symfony\Component\Cache\Adapter\AdapterInterface;
-use OmniMailDeps\Symfony\Component\Cache\CacheItem;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ReverseContainer;
+use JooosiMailDeps\Symfony\Component\Cache\Adapter\AdapterInterface;
+use JooosiMailDeps\Symfony\Component\Cache\CacheItem;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ReverseContainer;
 /**
  * Conveys a cached value that needs to be computed.
  */

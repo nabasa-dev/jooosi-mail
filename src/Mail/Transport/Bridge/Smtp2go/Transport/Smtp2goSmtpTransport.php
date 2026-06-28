@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Transport\Bridge\Smtp2go\Transport;
+namespace JooosiMail\Mail\Transport\Bridge\Smtp2go\Transport;
 
-use OmniMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
 use SensitiveParameter;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Smtp\EsmtpTransport;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Smtp\EsmtpTransport;
 final class Smtp2goSmtpTransport extends EsmtpTransport
 {
     private const array REGIONAL_HOSTS = ['global' => 'mail.smtp2go.com', 'us' => 'mail-us.smtp2go.com', 'eu' => 'mail-eu.smtp2go.com', 'eu2' => 'mail-eu2.smtp2go.com', 'au' => 'mail-au.smtp2go.com'];

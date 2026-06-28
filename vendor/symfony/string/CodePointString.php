@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\String;
+namespace JooosiMailDeps\Symfony\Component\String;
 
-use OmniMailDeps\Symfony\Component\String\Exception\ExceptionInterface;
-use OmniMailDeps\Symfony\Component\String\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\String\Exception\ExceptionInterface;
+use JooosiMailDeps\Symfony\Component\String\Exception\InvalidArgumentException;
 /**
  * Represents a string of Unicode code points encoded as UTF-8.
  *

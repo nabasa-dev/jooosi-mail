@@ -8,7 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\EventListener;
+namespace JooosiMailDeps\Symfony\Component\Mailer\EventListener;
 
 /**
  * Encrypts messages using S/MIME.

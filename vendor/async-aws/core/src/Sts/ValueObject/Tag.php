@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniMailDeps\AsyncAws\Core\Sts\ValueObject;
+namespace JooosiMailDeps\AsyncAws\Core\Sts\ValueObject;
 
-use OmniMailDeps\AsyncAws\Core\Exception\InvalidArgument;
+use JooosiMailDeps\AsyncAws\Core\Exception\InvalidArgument;
 /**
  * You can pass custom key-value pair attributes when you assume a role or federate a user. These are called session
  * tags. You can then use the session tags to control access to resources. For more information, see Tagging Amazon Web

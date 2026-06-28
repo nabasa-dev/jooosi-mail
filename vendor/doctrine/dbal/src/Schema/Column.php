@@ -1,15 +1,15 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Schema;
+namespace JooosiMailDeps\Doctrine\DBAL\Schema;
 
-use OmniMailDeps\Doctrine\DBAL\Platforms\SQLServerPlatform;
-use OmniMailDeps\Doctrine\DBAL\Schema\Exception\UnknownColumnOption;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parser\UnqualifiedNameParser;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\Parsers;
-use OmniMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
-use OmniMailDeps\Doctrine\DBAL\Types\Type;
-use OmniMailDeps\Doctrine\Deprecations\Deprecation;
+use JooosiMailDeps\Doctrine\DBAL\Platforms\SQLServerPlatform;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Exception\UnknownColumnOption;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parser\UnqualifiedNameParser;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\Parsers;
+use JooosiMailDeps\Doctrine\DBAL\Schema\Name\UnqualifiedName;
+use JooosiMailDeps\Doctrine\DBAL\Types\Type;
+use JooosiMailDeps\Doctrine\Deprecations\Deprecation;
 use function array_merge;
 use function method_exists;
 /**

@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Transport\Bridge\SparkPost\Transport;
+namespace JooosiMail\Mail\Transport\Bridge\SparkPost\Transport;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Discovery\Attribute\TransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\AbstractTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Dsn;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\TransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\AbstractTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Dsn;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
 #[Service]
 #[TransportFactory]
 final class SparkPostTransportFactory extends AbstractTransportFactory
@@ -21,8 +21,8 @@ final class SparkPostTransportFactory extends AbstractTransportFactory
         $port = $dsn->getPort();
         $region = $dsn->getOption('region');
         return match ($scheme) {
-            'sparkpost+api' => (new \OmniMail\Mail\Transport\Bridge\SparkPost\Transport\SparkPostApiTransport($apiKey, $region, $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
-            'sparkpost+smtp', 'sparkpost+smtps' => new \OmniMail\Mail\Transport\Bridge\SparkPost\Transport\SparkPostSmtpTransport($apiKey, $region, $port, $this->dispatcher, $this->logger),
+            'sparkpost+api' => (new \JooosiMail\Mail\Transport\Bridge\SparkPost\Transport\SparkPostApiTransport($apiKey, $region, $this->client, $this->dispatcher, $this->logger))->setHost($host)->setPort($port),
+            'sparkpost+smtp', 'sparkpost+smtps' => new \JooosiMail\Mail\Transport\Bridge\SparkPost\Transport\SparkPostSmtpTransport($apiKey, $region, $port, $this->dispatcher, $this->logger),
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => throw new UnsupportedSchemeException($dsn, 'sparkpost', $this->getSupportedSchemes()),
         };

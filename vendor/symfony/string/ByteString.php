@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\String;
+namespace JooosiMailDeps\Symfony\Component\String;
 
 use Random\Randomizer;
-use OmniMailDeps\Symfony\Component\String\Exception\ExceptionInterface;
-use OmniMailDeps\Symfony\Component\String\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\String\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Component\String\Exception\ExceptionInterface;
+use JooosiMailDeps\Symfony\Component\String\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\String\Exception\RuntimeException;
 /**
  * Represents a binary-safe string of bytes.
  *
@@ -309,7 +309,7 @@ class ByteString extends AbstractString
             try {
                 $validEncoding = \false !== mb_detect_encoding($this->string, $fromEncoding ?? 'Windows-1252', \true);
             } catch (InvalidArgumentException $e) {
-                if (!\function_exists('iconv') && !\function_exists('OmniMailDeps\iconv')) {
+                if (!\function_exists('iconv') && !\function_exists('JooosiMailDeps\iconv')) {
                     throw $e;
                 }
                 $u->string = iconv($fromEncoding ?? 'Windows-1252', 'UTF-8', $this->string);

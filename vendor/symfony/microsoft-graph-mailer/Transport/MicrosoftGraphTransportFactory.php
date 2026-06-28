@@ -8,15 +8,15 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer\Bridge\MicrosoftGraph\Transport;
+namespace JooosiMailDeps\Symfony\Component\Mailer\Bridge\MicrosoftGraph\Transport;
 
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\MicrosoftGraph\TokenManager;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\IncompleteDsnException;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\AbstractTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Dsn;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\MicrosoftGraph\TokenManager;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\IncompleteDsnException;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\AbstractTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Dsn;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
 class MicrosoftGraphTransportFactory extends AbstractTransportFactory
 {
     public function create(Dsn $dsn): TransportInterface

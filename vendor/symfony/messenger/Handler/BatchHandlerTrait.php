@@ -8,10 +8,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\Handler;
+namespace JooosiMailDeps\Symfony\Component\Messenger\Handler;
 
-use OmniMailDeps\Symfony\Component\Clock\Clock;
-use OmniMailDeps\Symfony\Component\Clock\ClockInterface;
+use JooosiMailDeps\Symfony\Component\Clock\Clock;
+use JooosiMailDeps\Symfony\Component\Clock\ClockInterface;
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  */

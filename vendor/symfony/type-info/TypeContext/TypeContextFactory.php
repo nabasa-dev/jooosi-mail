@@ -8,24 +8,24 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\TypeInfo\TypeContext;
+namespace JooosiMailDeps\Symfony\Component\TypeInfo\TypeContext;
 
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\PhpDocNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\TemplateTagValueNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\TypeAliasImportTagValueNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\TypeAliasTagValueNode;
-use OmniMailDeps\PHPStan\PhpDocParser\Lexer\Lexer;
-use OmniMailDeps\PHPStan\PhpDocParser\Parser\ConstExprParser;
-use OmniMailDeps\PHPStan\PhpDocParser\Parser\PhpDocParser;
-use OmniMailDeps\PHPStan\PhpDocParser\Parser\TokenIterator;
-use OmniMailDeps\PHPStan\PhpDocParser\Parser\TypeParser;
-use OmniMailDeps\PHPStan\PhpDocParser\ParserConfig;
-use OmniMailDeps\Symfony\Component\TypeInfo\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\TypeInfo\Exception\RuntimeException;
-use OmniMailDeps\Symfony\Component\TypeInfo\Exception\UnsupportedException;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type;
-use OmniMailDeps\Symfony\Component\TypeInfo\Type\ObjectType;
-use OmniMailDeps\Symfony\Component\TypeInfo\TypeResolver\StringTypeResolver;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\PhpDocNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\TemplateTagValueNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\TypeAliasImportTagValueNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Ast\PhpDoc\TypeAliasTagValueNode;
+use JooosiMailDeps\PHPStan\PhpDocParser\Lexer\Lexer;
+use JooosiMailDeps\PHPStan\PhpDocParser\Parser\ConstExprParser;
+use JooosiMailDeps\PHPStan\PhpDocParser\Parser\PhpDocParser;
+use JooosiMailDeps\PHPStan\PhpDocParser\Parser\TokenIterator;
+use JooosiMailDeps\PHPStan\PhpDocParser\Parser\TypeParser;
+use JooosiMailDeps\PHPStan\PhpDocParser\ParserConfig;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Exception\UnsupportedException;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type;
+use JooosiMailDeps\Symfony\Component\TypeInfo\Type\ObjectType;
+use JooosiMailDeps\Symfony\Component\TypeInfo\TypeResolver\StringTypeResolver;
 /**
  * Creates a type resolving context.
  *

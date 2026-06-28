@@ -8,42 +8,42 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mailer;
+namespace JooosiMailDeps\Symfony\Component\Mailer;
 
-use OmniMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\AhaSend\Transport\AhaSendTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\Amazon\Transport\SesTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\Azure\Transport\AzureTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\Brevo\Transport\BrevoTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\Google\Transport\GmailTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\Infobip\Transport\InfobipTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\Mailchimp\Transport\MandrillTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\MailerSend\Transport\MailerSendTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\Mailgun\Transport\MailgunTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\Mailjet\Transport\MailjetTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\Mailomat\Transport\MailomatTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\MailPace\Transport\MailPaceTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\Mailtrap\Transport\MailtrapTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\Postal\Transport\PostalTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\Postmark\Transport\PostmarkTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\Resend\Transport\ResendTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\Scaleway\Transport\ScalewayTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\Sendgrid\Transport\SendgridTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Bridge\Sweego\Transport\SweegoTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Dsn;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\FailoverTransport;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\NativeTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\NullTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\RoundRobinTransport;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\SendmailTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Smtp\EsmtpTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\TransportFactoryInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Transports;
-use OmniMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
+use JooosiMailDeps\Psr\EventDispatcher\EventDispatcherInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\AhaSend\Transport\AhaSendTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\Amazon\Transport\SesTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\Azure\Transport\AzureTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\Brevo\Transport\BrevoTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\Google\Transport\GmailTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\Infobip\Transport\InfobipTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\Mailchimp\Transport\MandrillTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\MailerSend\Transport\MailerSendTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\Mailgun\Transport\MailgunTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\Mailjet\Transport\MailjetTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\Mailomat\Transport\MailomatTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\MailPace\Transport\MailPaceTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\Mailtrap\Transport\MailtrapTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\Postal\Transport\PostalTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\Postmark\Transport\PostmarkTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\Resend\Transport\ResendTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\Scaleway\Transport\ScalewayTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\Sendgrid\Transport\SendgridTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Bridge\Sweego\Transport\SweegoTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Dsn;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\FailoverTransport;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\NativeTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\NullTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\RoundRobinTransport;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\SendmailTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Smtp\EsmtpTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\TransportFactoryInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Transports;
+use JooosiMailDeps\Symfony\Contracts\HttpClient\HttpClientInterface;
 /**
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Konstantin Myakshin <molodchick@gmail.com>

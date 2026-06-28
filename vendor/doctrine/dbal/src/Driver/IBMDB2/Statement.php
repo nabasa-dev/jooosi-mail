@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\IBMDB2;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\IBMDB2;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\Exception;
-use OmniMailDeps\Doctrine\DBAL\Driver\IBMDB2\Exception\CannotCopyStreamToStream;
-use OmniMailDeps\Doctrine\DBAL\Driver\IBMDB2\Exception\CannotCreateTemporaryFile;
-use OmniMailDeps\Doctrine\DBAL\Driver\IBMDB2\Exception\StatementError;
-use OmniMailDeps\Doctrine\DBAL\Driver\Statement as StatementInterface;
-use OmniMailDeps\Doctrine\DBAL\ParameterType;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Exception;
+use JooosiMailDeps\Doctrine\DBAL\Driver\IBMDB2\Exception\CannotCopyStreamToStream;
+use JooosiMailDeps\Doctrine\DBAL\Driver\IBMDB2\Exception\CannotCreateTemporaryFile;
+use JooosiMailDeps\Doctrine\DBAL\Driver\IBMDB2\Exception\StatementError;
+use JooosiMailDeps\Doctrine\DBAL\Driver\Statement as StatementInterface;
+use JooosiMailDeps\Doctrine\DBAL\ParameterType;
 use function assert;
 use function db2_bind_param;
 use function db2_execute;

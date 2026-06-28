@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Logging;
+namespace JooosiMail\Mail\Logging;
 
-use OmniMail\Discovery\Attribute\Hook;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Queue\Trigger\ActionSchedulerTrigger;
+use JooosiMail\Discovery\Attribute\Hook;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Queue\Trigger\ActionSchedulerTrigger;
 /**
  * Schedules recurring email log retention cleanup.
  *
@@ -16,8 +16,8 @@ final readonly class MailLogRetentionScheduler
 {
     private const int HOUR_IN_SECONDS = 3600;
     private const int DAY_IN_SECONDS = 86400;
-    public const string RUN_HOOK = 'omni_mail_mail_logs_prune';
-    public function __construct(private \OmniMail\Mail\Logging\MailLogRetentionService $retentionService)
+    public const string RUN_HOOK = 'jooosi_mail_mail_logs_prune';
+    public function __construct(private \JooosiMail\Mail\Logging\MailLogRetentionService $retentionService)
     {
     }
     /**

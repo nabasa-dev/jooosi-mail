@@ -8,42 +8,42 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\DependencyInjection\Dumper;
+namespace JooosiMailDeps\Symfony\Component\DependencyInjection\Dumper;
 
-use OmniMailDeps\Composer\Autoload\ClassLoader;
-use OmniMailDeps\Symfony\Component\Config\Resource\FileResource;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\AbstractArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\ArgumentInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\EnvClosure;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\EnvClosureArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\IteratorArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\LazyClosure;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\ServiceClosureArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\ServiceLocator;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Argument\ServiceLocatorArgument;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Compiler\AnalyzeServiceReferencesPass;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Compiler\CheckCircularReferencesPass;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Compiler\ServiceReferenceGraphNode;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Container;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Definition;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\EnvParameterException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\LogicException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Exception\RuntimeException;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ExpressionLanguage;
-use OmniMailDeps\Symfony\Component\DependencyInjection\LazyProxy\PhpDumper\DumperInterface;
-use OmniMailDeps\Symfony\Component\DependencyInjection\LazyProxy\PhpDumper\LazyServiceDumper;
-use OmniMailDeps\Symfony\Component\DependencyInjection\LazyProxy\PhpDumper\NullDumper;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Parameter;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Reference;
-use OmniMailDeps\Symfony\Component\DependencyInjection\ServiceLocator as BaseServiceLocator;
-use OmniMailDeps\Symfony\Component\DependencyInjection\TypedReference;
-use OmniMailDeps\Symfony\Component\DependencyInjection\Variable;
-use OmniMailDeps\Symfony\Component\ErrorHandler\DebugClassLoader;
-use OmniMailDeps\Symfony\Component\ExpressionLanguage\Expression;
+use JooosiMailDeps\Composer\Autoload\ClassLoader;
+use JooosiMailDeps\Symfony\Component\Config\Resource\FileResource;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\AbstractArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\ArgumentInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\EnvClosure;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\EnvClosureArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\IteratorArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\LazyClosure;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\ServiceClosureArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\ServiceLocator;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Argument\ServiceLocatorArgument;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler\AnalyzeServiceReferencesPass;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler\CheckCircularReferencesPass;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Compiler\ServiceReferenceGraphNode;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Container;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerBuilder;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ContainerInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Definition;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\EnvParameterException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\LogicException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ExpressionLanguage;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\LazyProxy\PhpDumper\DumperInterface;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\LazyProxy\PhpDumper\LazyServiceDumper;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\LazyProxy\PhpDumper\NullDumper;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Parameter;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Reference;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\ServiceLocator as BaseServiceLocator;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\TypedReference;
+use JooosiMailDeps\Symfony\Component\DependencyInjection\Variable;
+use JooosiMailDeps\Symfony\Component\ErrorHandler\DebugClassLoader;
+use JooosiMailDeps\Symfony\Component\ExpressionLanguage\Expression;
 /**
  * PhpDumper dumps a service container as a PHP class.
  *
@@ -192,9 +192,9 @@ class PhpDumper extends Dumper
             $fileTemplate = <<<EOF
 <?php
 
-use OmniMailDeps\\Symfony\\Component\\DependencyInjection\\Argument\\RewindableGenerator;
-use OmniMailDeps\\Symfony\\Component\\DependencyInjection\\ContainerInterface;
-use OmniMailDeps\\Symfony\\Component\\DependencyInjection\\Exception\\RuntimeException;
+use JooosiMailDeps\\Symfony\\Component\\DependencyInjection\\Argument\\RewindableGenerator;
+use JooosiMailDeps\\Symfony\\Component\\DependencyInjection\\ContainerInterface;
+use JooosiMailDeps\\Symfony\\Component\\DependencyInjection\\Exception\\RuntimeException;
 
 /*{$this->docStar}
  * @internal This class has been auto-generated by the Symfony Dependency Injection Component.
@@ -263,7 +263,7 @@ EOF;
 // This file has been auto-generated by the Symfony Dependency Injection Component
 // You can reference it in the "opcache.preload" php.ini setting on PHP >= 7.4 when preloading is desired
 
-use OmniMailDeps\\Symfony\\Component\\DependencyInjection\\Dumper\\Preloader;
+use JooosiMailDeps\\Symfony\\Component\\DependencyInjection\\Dumper\\Preloader;
 
 if (in_array(PHP_SAPI, ['cli', 'phpdbg', 'embed'], true)) {
     return;
@@ -1033,14 +1033,14 @@ EOTXT
         $code = <<<EOF
 <?php
 {$namespaceLine}
-use OmniMailDeps\\Symfony\\Component\\DependencyInjection\\Argument\\RewindableGenerator;
-use OmniMailDeps\\Symfony\\Component\\DependencyInjection\\ContainerInterface;
-use OmniMailDeps\\Symfony\\Component\\DependencyInjection\\Container;
-use OmniMailDeps\\Symfony\\Component\\DependencyInjection\\Exception\\LogicException;
-use OmniMailDeps\\Symfony\\Component\\DependencyInjection\\Exception\\ParameterNotFoundException;
-use OmniMailDeps\\Symfony\\Component\\DependencyInjection\\Exception\\RuntimeException;
-use OmniMailDeps\\Symfony\\Component\\DependencyInjection\\ParameterBag\\FrozenParameterBag;
-use OmniMailDeps\\Symfony\\Component\\DependencyInjection\\ParameterBag\\ParameterBagInterface;
+use JooosiMailDeps\\Symfony\\Component\\DependencyInjection\\Argument\\RewindableGenerator;
+use JooosiMailDeps\\Symfony\\Component\\DependencyInjection\\ContainerInterface;
+use JooosiMailDeps\\Symfony\\Component\\DependencyInjection\\Container;
+use JooosiMailDeps\\Symfony\\Component\\DependencyInjection\\Exception\\LogicException;
+use JooosiMailDeps\\Symfony\\Component\\DependencyInjection\\Exception\\ParameterNotFoundException;
+use JooosiMailDeps\\Symfony\\Component\\DependencyInjection\\Exception\\RuntimeException;
+use JooosiMailDeps\\Symfony\\Component\\DependencyInjection\\ParameterBag\\FrozenParameterBag;
+use JooosiMailDeps\\Symfony\\Component\\DependencyInjection\\ParameterBag\\ParameterBagInterface;
 
 /*{$this->docStar}
  * @internal This class has been auto-generated by the Symfony Dependency Injection Component.
@@ -1837,7 +1837,7 @@ EOF;
     private function getExpressionLanguage(): ExpressionLanguage
     {
         if (!isset($this->expressionLanguage)) {
-            if (!class_exists(\OmniMailDeps\Symfony\Component\ExpressionLanguage\ExpressionLanguage::class)) {
+            if (!class_exists(\JooosiMailDeps\Symfony\Component\ExpressionLanguage\ExpressionLanguage::class)) {
                 throw new LogicException('Unable to use expressions as the Symfony ExpressionLanguage component is not installed. Try running "composer require symfony/expression-language".');
             }
             $providers = $this->container->getExpressionLanguageProviders();
@@ -2011,7 +2011,7 @@ EOF;
      */
     private static function stripComments(string $source): string
     {
-        if (!\function_exists('token_get_all') && !\function_exists('OmniMailDeps\token_get_all')) {
+        if (!\function_exists('token_get_all') && !\function_exists('JooosiMailDeps\token_get_all')) {
             return $source;
         }
         $rawChunk = '';

@@ -1,24 +1,24 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Admin\Controller\Log;
+namespace JooosiMail\Admin\Controller\Log;
 
-use OmniMailDeps\Doctrine\DBAL\ArrayParameterType;
-use OmniMailDeps\Doctrine\DBAL\Connection as DbalConnection;
-use OmniMailDeps\Doctrine\DBAL\Query\QueryBuilder;
-use OmniMail\Admin\Controller\AdminRouteAuthorization;
-use OmniMail\Discovery\Attribute\Controller;
-use OmniMail\Discovery\Attribute\Route;
-use OmniMail\Infrastructure\Database\TableNameResolver;
+use JooosiMailDeps\Doctrine\DBAL\ArrayParameterType;
+use JooosiMailDeps\Doctrine\DBAL\Connection as DbalConnection;
+use JooosiMailDeps\Doctrine\DBAL\Query\QueryBuilder;
+use JooosiMail\Admin\Controller\AdminRouteAuthorization;
+use JooosiMail\Discovery\Attribute\Controller;
+use JooosiMail\Discovery\Attribute\Route;
+use JooosiMail\Infrastructure\Database\TableNameResolver;
 use WP_REST_Request;
 use WP_REST_Response;
-use function OmniMailDeps\Symfony\Component\String\u;
+use function JooosiMailDeps\Symfony\Component\String\u;
 /**
  * Serves webhook log data for the admin UI.
  *
  * @since 0.1.0
  */
-#[Controller(namespace: 'omni-mail/v1', prefix: 'admin/logs/webhooks')]
+#[Controller(namespace: 'jooosi-mail/v1', prefix: 'admin/logs/webhooks')]
 final readonly class WebhookController
 {
     /**

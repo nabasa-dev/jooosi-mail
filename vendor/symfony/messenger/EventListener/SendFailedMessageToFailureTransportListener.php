@@ -8,16 +8,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Messenger\EventListener;
+namespace JooosiMailDeps\Symfony\Component\Messenger\EventListener;
 
-use OmniMailDeps\Psr\Container\ContainerInterface;
-use OmniMailDeps\Psr\Log\LoggerInterface;
-use OmniMailDeps\Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use OmniMailDeps\Symfony\Component\Messenger\Event\WorkerMessageFailedEvent;
-use OmniMailDeps\Symfony\Component\Messenger\Event\WorkerMessageSkipEvent;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\DelayStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\RedeliveryStamp;
-use OmniMailDeps\Symfony\Component\Messenger\Stamp\SentToFailureTransportStamp;
+use JooosiMailDeps\Psr\Container\ContainerInterface;
+use JooosiMailDeps\Psr\Log\LoggerInterface;
+use JooosiMailDeps\Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use JooosiMailDeps\Symfony\Component\Messenger\Event\WorkerMessageFailedEvent;
+use JooosiMailDeps\Symfony\Component\Messenger\Event\WorkerMessageSkipEvent;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\DelayStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\RedeliveryStamp;
+use JooosiMailDeps\Symfony\Component\Messenger\Stamp\SentToFailureTransportStamp;
 /**
  * Sends a rejected message to a "failure transport".
  *

@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Query;
+namespace JooosiMailDeps\Doctrine\DBAL\Query;
 
 /** @internal */
 final readonly class Union

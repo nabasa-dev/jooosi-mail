@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMailDeps\Doctrine\DBAL\Driver\OCI8\Exception;
+namespace JooosiMailDeps\Doctrine\DBAL\Driver\OCI8\Exception;
 
-use OmniMailDeps\Doctrine\DBAL\Driver\AbstractException;
+use JooosiMailDeps\Doctrine\DBAL\Driver\AbstractException;
 use function sprintf;
 /** @internal */
 final class UnknownParameterIndex extends AbstractException

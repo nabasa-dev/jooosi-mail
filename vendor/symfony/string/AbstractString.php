@@ -8,11 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\String;
+namespace JooosiMailDeps\Symfony\Component\String;
 
-use OmniMailDeps\Symfony\Component\String\Exception\ExceptionInterface;
-use OmniMailDeps\Symfony\Component\String\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\String\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Component\String\Exception\ExceptionInterface;
+use JooosiMailDeps\Symfony\Component\String\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\String\Exception\RuntimeException;
 /**
  * Represents a string of abstract characters.
  *
@@ -411,7 +411,7 @@ abstract class AbstractString implements \Stringable, \JsonSerializable
         try {
             $b->string = mb_convert_encoding($this->string, $toEncoding, 'UTF-8');
         } catch (\ValueError $e) {
-            if (!\function_exists('iconv') && !\function_exists('OmniMailDeps\iconv')) {
+            if (!\function_exists('iconv') && !\function_exists('JooosiMailDeps\iconv')) {
                 throw new InvalidArgumentException($e->getMessage(), $e->getCode(), $e);
             }
             $b->string = iconv('UTF-8', $toEncoding, $this->string);

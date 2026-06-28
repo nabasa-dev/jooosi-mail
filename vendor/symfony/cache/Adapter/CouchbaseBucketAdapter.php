@@ -8,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Cache\Adapter;
+namespace JooosiMailDeps\Symfony\Component\Cache\Adapter;
 
-use OmniMailDeps\Symfony\Component\Cache\Exception\CacheException;
-use OmniMailDeps\Symfony\Component\Cache\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Cache\Marshaller\DefaultMarshaller;
-use OmniMailDeps\Symfony\Component\Cache\Marshaller\MarshallerInterface;
+use JooosiMailDeps\Symfony\Component\Cache\Exception\CacheException;
+use JooosiMailDeps\Symfony\Component\Cache\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Cache\Marshaller\DefaultMarshaller;
+use JooosiMailDeps\Symfony\Component\Cache\Marshaller\MarshallerInterface;
 trigger_deprecation('symfony/cache', '7.1', 'The "%s" class is deprecated, use "%s" instead.', CouchbaseBucketAdapter::class, CouchbaseCollectionAdapter::class);
 /**
  * @author Antonio Jose Cerezo Aranda <aj.cerezo@gmail.com>
@@ -27,7 +27,7 @@ class CouchbaseBucketAdapter extends AbstractAdapter
     private const KEY_NOT_FOUND = 13;
     private const VALID_DSN_OPTIONS = ['operationTimeout', 'configTimeout', 'configNodeTimeout', 'n1qlTimeout', 'httpTimeout', 'configDelay', 'htconfigIdleTimeout', 'durabilityInterval', 'durabilityTimeout'];
     private MarshallerInterface $marshaller;
-    public function __construct(private \OmniMailDeps\CouchbaseBucket $bucket, string $namespace = '', int $defaultLifetime = 0, ?MarshallerInterface $marshaller = null)
+    public function __construct(private \JooosiMailDeps\CouchbaseBucket $bucket, string $namespace = '', int $defaultLifetime = 0, ?MarshallerInterface $marshaller = null)
     {
         if (!static::isSupported()) {
             throw new CacheException('Couchbase >= 2.6.0 < 3.0.0 is required.');
@@ -41,7 +41,7 @@ class CouchbaseBucketAdapter extends AbstractAdapter
         #[\SensitiveParameter]
         array|string $servers,
         array $options = []
-    ): \OmniMailDeps\CouchbaseBucket
+    ): \JooosiMailDeps\CouchbaseBucket
     {
         if (\is_string($servers)) {
             $servers = [$servers];
@@ -74,7 +74,7 @@ class CouchbaseBucketAdapter extends AbstractAdapter
                 $newServers[] = $matches['host'];
             }
             $connectionString = $protocol . '://' . implode(',', $newServers);
-            $client = new \OmniMailDeps\CouchbaseCluster($connectionString);
+            $client = new \JooosiMailDeps\CouchbaseCluster($connectionString);
             $client->authenticateAs($username, $password);
             $bucket = $client->openBucket($matches['bucketName']);
             unset($options['username'], $options['password']);

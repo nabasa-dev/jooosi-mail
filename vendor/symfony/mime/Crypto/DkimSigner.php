@@ -8,13 +8,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace OmniMailDeps\Symfony\Component\Mime\Crypto;
+namespace JooosiMailDeps\Symfony\Component\Mime\Crypto;
 
-use OmniMailDeps\Symfony\Component\Mime\Exception\InvalidArgumentException;
-use OmniMailDeps\Symfony\Component\Mime\Exception\RuntimeException;
-use OmniMailDeps\Symfony\Component\Mime\Header\UnstructuredHeader;
-use OmniMailDeps\Symfony\Component\Mime\Message;
-use OmniMailDeps\Symfony\Component\Mime\Part\AbstractPart;
+use JooosiMailDeps\Symfony\Component\Mime\Exception\InvalidArgumentException;
+use JooosiMailDeps\Symfony\Component\Mime\Exception\RuntimeException;
+use JooosiMailDeps\Symfony\Component\Mime\Header\UnstructuredHeader;
+use JooosiMailDeps\Symfony\Component\Mime\Message;
+use JooosiMailDeps\Symfony\Component\Mime\Part\AbstractPart;
 /**
  * @author Fabien Potencier <fabien@symfony.com>
  *

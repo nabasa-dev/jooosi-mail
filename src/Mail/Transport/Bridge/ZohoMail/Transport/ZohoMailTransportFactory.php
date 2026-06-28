@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Mail\Transport\Bridge\ZohoMail\Transport;
+namespace JooosiMail\Mail\Transport\Bridge\ZohoMail\Transport;
 
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Discovery\Attribute\TransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\AbstractTransportFactory;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\Dsn;
-use OmniMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Discovery\Attribute\TransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Exception\UnsupportedSchemeException;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\AbstractTransportFactory;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\Dsn;
+use JooosiMailDeps\Symfony\Component\Mailer\Transport\TransportInterface;
 /**
  * Zoho Mail custom transport factory.
  *
@@ -31,8 +31,8 @@ final class ZohoMailTransportFactory extends AbstractTransportFactory
         $port = $dsn->getPort();
         $accountType = $dsn->getOption('account_type');
         return match ($scheme) {
-            'zohomail', 'zohomail+smtp' => new \OmniMail\Mail\Transport\Bridge\ZohoMail\Transport\ZohoMailSmtpTransport($username, $password, $accountType, $port, $this->dispatcher, $this->logger),
-            'zohomail+smtps' => new \OmniMail\Mail\Transport\Bridge\ZohoMail\Transport\ZohoMailSmtpTransport($username, $password, $accountType, $port ?? 465, $this->dispatcher, $this->logger),
+            'zohomail', 'zohomail+smtp' => new \JooosiMail\Mail\Transport\Bridge\ZohoMail\Transport\ZohoMailSmtpTransport($username, $password, $accountType, $port, $this->dispatcher, $this->logger),
+            'zohomail+smtps' => new \JooosiMail\Mail\Transport\Bridge\ZohoMail\Transport\ZohoMailSmtpTransport($username, $password, $accountType, $port ?? 465, $this->dispatcher, $this->logger),
             // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
             default => throw new UnsupportedSchemeException($dsn, 'zohomail', $this->getSupportedSchemes()),
         };

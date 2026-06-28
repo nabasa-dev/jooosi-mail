@@ -1,25 +1,25 @@
 <?php
 
 declare (strict_types=1);
-namespace OmniMail\Cli;
+namespace JooosiMail\Cli;
 
-use OmniMail\Discovery\Attribute\Command;
-use OmniMail\Discovery\Attribute\Service;
-use OmniMail\Infrastructure\Container\ContainerCache;
+use JooosiMail\Discovery\Attribute\Command;
+use JooosiMail\Discovery\Attribute\Service;
+use JooosiMail\Infrastructure\Container\ContainerCache;
 use WP_CLI;
 /**
- * Inspect the Omni Mail compiled container cache.
+ * Inspect the Jooosi Mail compiled container cache.
  *
  * ## EXAMPLES
  *
  *     # Show whether the cached container is reusable.
- *     $ wp omni-mail container:status
+ *     $ wp jooosi-mail container:status
  *     Usable: yes
  *     Reasons: none
  *
  *     # Clear the compiled container cache.
- *     $ wp omni-mail container:clear
- *     Success: Cleared the Omni Mail container cache. It will rebuild on the next boot.
+ *     $ wp jooosi-mail container:clear
+ *     Success: Cleared the Jooosi Mail container cache. It will rebuild on the next boot.
  *
  * @since 0.1.0
  */
@@ -30,12 +30,12 @@ final readonly class ContainerCommand
     {
     }
     /**
-     * Show Omni Mail container cache status.
+     * Show Jooosi Mail container cache status.
      *
      * ## EXAMPLES
      *
      *     # Show the current cache signature state.
-     *     $ wp omni-mail container:status
+     *     $ wp jooosi-mail container:status
      *     Usable: yes
      *     Reasons: none
      *     Environment: production
@@ -45,7 +45,7 @@ final readonly class ContainerCommand
      *
      * @since 0.1.0
      */
-    #[Command(description: 'Show Omni Mail container cache status.')]
+    #[Command(description: 'Show Jooosi Mail container cache status.')]
     public function status(array $args, array $assocArgs): void
     {
         $status = $this->containerCache->inspect();
@@ -63,24 +63,24 @@ final readonly class ContainerCommand
         WP_CLI::line(sprintf('Cached Source Hash: %s', $this->shortenHash($status['cached_source_hash'])));
     }
     /**
-     * Clear the Omni Mail container cache.
+     * Clear the Jooosi Mail container cache.
      *
      * ## EXAMPLES
      *
      *     # Force a rebuild on the next boot.
-     *     $ wp omni-mail container:clear
-     *     Success: Cleared the Omni Mail container cache. It will rebuild on the next boot.
+     *     $ wp jooosi-mail container:clear
+     *     Success: Cleared the Jooosi Mail container cache. It will rebuild on the next boot.
      *
      * @param array<int, string> $args
      * @param array<string, mixed> $assocArgs
      *
      * @since 0.1.0
      */
-    #[Command(description: 'Clear the Omni Mail container cache.')]
+    #[Command(description: 'Clear the Jooosi Mail container cache.')]
     public function clear(array $args, array $assocArgs): void
     {
         $this->containerCache->clear();
-        WP_CLI::success('Cleared the Omni Mail container cache. It will rebuild on the next boot.');
+        WP_CLI::success('Cleared the Jooosi Mail container cache. It will rebuild on the next boot.');
     }
     /**
      * @since 0.1.0
