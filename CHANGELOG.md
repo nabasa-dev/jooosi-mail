@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.5] - 2026-07-03
+
+### Changed
+- Added direct terms and privacy policy links for supported email providers.
+
 ## [1.0.4] - 2026-06-29
 
 ### Changed
@@ -32,7 +37,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - 🐣 Initial release.
 
-[unreleased]: https://github.com/nabasa-dev/jooosi-mail/compare/1.0.4...HEAD
+[unreleased]: https://github.com/nabasa-dev/jooosi-mail/compare/1.0.5...HEAD
+[1.0.5]: https://github.com/nabasa-dev/jooosi-mail/compare/1.0.4...1.0.5
 [1.0.4]: https://github.com/nabasa-dev/jooosi-mail/compare/1.0.3...1.0.4
 [1.0.3]: https://github.com/nabasa-dev/jooosi-mail/compare/1.0.2...1.0.3
 [1.0.2]: https://github.com/nabasa-dev/jooosi-mail/compare/1.0.1...1.0.2

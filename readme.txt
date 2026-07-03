@@ -4,7 +4,7 @@ Donate link: https://ko-fi.com/Q5Q75XSF7
 Tags: email, smtp, mailer, transactional email, logs
 Requires at least: 7.0
 Tested up to: 7.0
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 Requires PHP: 8.5
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -83,7 +83,42 @@ This data is sent only when WordPress processes queued or immediate emails (via 
 
 If webhooks are enabled for a supported provider, that provider may send delivery, bounce, complaint, open, and click data back to your WordPress site.
 
-See the [Supported Providers](#description) list for links to each provider's website. Each provider has its own terms of service and privacy policy — please review the terms of your chosen provider.
+Named third-party provider terms and privacy policies are available here:
+
+* AhaSend: [Terms](https://ahasend.com/terms), [Privacy Policy](https://ahasend.com/privacy)
+* Amazon SES: [AWS Service Terms](https://aws.amazon.com/service-terms/), [AWS Privacy Notice](https://aws.amazon.com/privacy/)
+* Azure Communication Services: [Microsoft Product Terms for Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all), [Microsoft Privacy Statement](https://privacy.microsoft.com/en-us/privacystatement)
+* Bird: [Terms](https://bird.com/en-us/legal/terms), [Privacy Statement](https://bird.com/en-us/legal/privacy)
+* Brevo: [Terms of Use](https://www.brevo.com/legal/termsofuse/), [Privacy Policy](https://www.brevo.com/legal/privacypolicy/)
+* Cloudflare Email Service: [Terms](https://www.cloudflare.com/terms/), [Privacy Policy](https://www.cloudflare.com/privacypolicy/)
+* Elastic Email: [Terms of Use](https://elasticemail.com/resources/usage-policies/terms-of-use), [Privacy Policy](https://elasticemail.com/resources/usage-policies/privacy-policy)
+* Emailit: [Terms of Service](https://emailit.com/terms-of-service/), [Privacy Policy](https://emailit.com/privacy-policy/)
+* Gmail: [Google API Terms](https://developers.google.com/terms), [Google Privacy Policy](https://policies.google.com/privacy)
+* Infobip: [Service Terms and Conditions](https://www.infobip.com/policies/service-terms-conditions), [Privacy Notice](https://www.infobip.com/policies/privacy-notice)
+* MailerSend: [Terms of Service](https://www.mailersend.com/legal), [Privacy Policy](https://www.mailersend.com/legal/privacy-policy)
+* Mailgun: [Terms of Service](https://www.mailgun.com/legal/terms/), [Privacy Policy](https://www.mailgun.com/legal/privacy-policy/)
+* Mailjet: [Terms of Service](https://www.mailjet.com/legal/terms/), [Privacy Policy](https://www.mailjet.com/legal/privacy-policy/)
+* Mailomat: [Terms](https://mailomat.swiss/nutzungsbedingungen), [Privacy Policy](https://mailomat.swiss/datenschutz)
+* MailPace: [Terms](https://mailpace.com/terms/), [Privacy Policy](https://mailpace.com/privacy/)
+* Mailtrap: [Terms of Service](https://mailtrap.io/terms/), [Privacy Policy](https://mailtrap.io/privacy/)
+* Mandrill: [Mailchimp Terms of Use](https://mailchimp.com/legal/terms/), [Mailchimp Privacy Policy](https://mailchimp.com/legal/privacy/)
+* Microsoft Graph: [Microsoft APIs Terms of Use](https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use), [Microsoft Privacy Statement](https://privacy.microsoft.com/en-us/privacystatement)
+* Pepipost: [Netcore Cloud Terms and Conditions](https://netcorecloud.com/email/email-api/terms-and-conditions/), [Netcore Cloud Privacy Policy](https://netcorecloud.com/email/email-api/privacy-policy/)
+* Postmark: [Terms of Service](https://postmarkapp.com/terms-of-service), [Privacy Policy](https://www.activecampaign.com/legal/privacy-policy)
+* Resend: [Terms of Service](https://resend.com/legal/terms-of-service), [Privacy Policy](https://resend.com/legal/privacy-policy)
+* Scaleway: [Terms and Contracts](https://www.scaleway.com/en/contracts/), [Privacy Policy](https://www.scaleway.com/en/privacy-policy/)
+* SendGrid: [Twilio Terms of Service](https://www.twilio.com/en-us/legal/tos), [Twilio Privacy Notice](https://www.twilio.com/en-us/legal/privacy)
+* SendLayer: [Terms of Service](https://sendlayer.com/terms-of-service/), [Privacy Policy](https://sendlayer.com/privacy-policy/)
+* SendPulse: [Terms of Use](https://sendpulse.com/legal/terms), [Privacy Policy](https://sendpulse.com/legal/pp)
+* SMTP2GO: [Terms](https://www.smtp2go.com/terms), [Privacy Policy](https://www.smtp2go.com/privacy)
+* SMTP.com: [Terms and Conditions](https://www.smtp.com/policies/terms-and-conditions/), [Privacy Policy](https://www.smtp.com/policies/privacy-policy/)
+* SparkPost: [Bird Terms](https://bird.com/en-us/legal/terms), [Bird Privacy Statement](https://bird.com/en-us/legal/privacy)
+* Sweego: [General Terms and Conditions of Sale](https://www.sweego.io/general-terms-and-conditions-of-sale), [Privacy Policy](https://www.sweego.io/privacy-policy)
+* toSend: [Terms of Service](https://tosend.com/legal/terms-of-service/), [Privacy Policy](https://tosend.com/legal/privacy-policy/)
+* ZeptoMail: [Zoho Terms of Service](https://www.zoho.com/terms.html), [Zoho Privacy Policy](https://www.zoho.com/privacy.html)
+* Zoho Mail: [Zoho Terms of Service](https://www.zoho.com/terms.html), [Zoho Privacy Policy](https://www.zoho.com/privacy.html)
+
+When a site administrator configures one of those transports to send through an external server, email data is sent to the server they configure and is governed by that server operator's terms and privacy policy.
 
 == Installation ==
 
