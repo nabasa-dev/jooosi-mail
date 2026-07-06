@@ -2,7 +2,7 @@
     "name": "jooosi/mail",
     "description": "A modern, robust email sending solution for WordPress sites with advanced features including multiple provider support, queue-based processing, and comprehensive monitoring.",
     "type": "wordpress-plugin",
-    "license": "GPL-2.0-or-later",
+    "license": "GPL-3.0-or-later",
     "require": {
         "php": ">=8.5",
         "doctrine/dbal": "^4.3",
@@ -44,7 +44,12 @@
         }
     },
     "autoload-dev": {
+        "exclude-from-classmap": [
+            "/tests/Rector/**/Fixture/"
+        ],
         "psr-4": {
+            "JooosiMail\\Rector\\": "rector/",
+            "Symplify\\RuleDocGenerator\\": "vendor/rector/rector/vendor/symplify/rule-doc-generator-contracts/src/",
             "JooosiMail\\Tests\\": "tests/"
         }
     },
@@ -55,7 +60,7 @@
     "extra": {
         "wordpress-plugin": {
             "name": "Jooosi Mail",
-            "version": "1.0.5",
+            "version": "1.0.6",
             "requires-wp": "7.0",
             "tested-wp": "7.0",
             "requires-php": "8.5"
@@ -63,15 +68,17 @@
     },
     "minimum-stability": "stable",
     "require-dev": {
-        "phpunit/phpunit": "^9.6",
-        "php-stubs/wordpress-tests-stubs": "^7.0",
         "php-stubs/wordpress-stubs": "^7.0",
+        "php-stubs/wordpress-tests-stubs": "^7.0",
         "php-stubs/wp-cli-stubs": "dev-master",
+        "phpunit/phpunit": "^9.6",
+        "rector/rector": "^2.5",
         "wp-cli/wp-cli-bundle": "^2.12",
         "wp-phpunit/wp-phpunit": "^7.0",
         "yoast/phpunit-polyfills": "^4.0"
     },
     "scripts": {
+        "test:rector": "vendor/bin/phpunit -c phpunit.rector.xml.dist",
         "test:php": "vendor/bin/phpunit -c phpunit.xml.dist"
     }
 }

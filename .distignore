@@ -25,7 +25,12 @@
 /phpcs.xml
 /phpunit.xml
 /phpunit.xml.dist
+/phpunit.rector.xml.dist
+/rector
+/rector-downgrade.php
+/rector.php
 /.phpunit.result.cache
+/.phpunit.rector.result.cache
 /.phpunit.cache
 /README.md
 /ROADMAP.md

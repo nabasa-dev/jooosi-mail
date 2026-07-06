@@ -9,24 +9,40 @@
 </p>
 
 <p align="center">
+  <a href="https://downloads.wordpress.org/plugin/jooosi-mail.zip">
+    <picture>
+      <img src="https://img.shields.io/wordpress/plugin/v/jooosi-mail.svg?logo=wordpress&label=version" alt="WordPress plugin version" />
+    </picture>
+  </a>
+  <a href="https://wordpress.org/plugins/jooosi-mail/advanced/">
+    <picture>
+      <img src="https://img.shields.io/wordpress/plugin/dt/jooosi-mail.svg?logo=wordpress" alt="WordPress plugin downloads" />
+    </picture>
+  </a>
+  <a href="https://wordpress.org/plugins/jooosi-mail/">
+    <picture>
+      <img src="https://img.shields.io/wordpress/plugin/installs/jooosi-mail.svg?logo=wordpress" alt="WordPress plugin active installs" />
+    </picture>
+  </a>
+  <a href="https://wordpress.org/support/plugin/jooosi-mail/reviews/?filter=5/#new-post">
+    <picture>
+      <img src="https://img.shields.io/wordpress/plugin/stars/jooosi-mail.svg?logo=wordpress" alt="WordPress plugin rating" />
+    </picture>
+  </a>
+  <br />
   <a href="https://github.com/nabasa-dev/jooosi-mail/releases">
     <picture>
-      <img src="https://img.shields.io/github/v/release/nabasa-dev/jooosi-mail.svg?logo=github" alt="GitHub release" />
-    </picture>
-  </a>
-  <a href="https://www.php.net/releases/8.5/">
-    <picture>
-      <img src="https://img.shields.io/badge/PHP-8.5%2B-777BB4?logo=php&logoColor=white" alt="PHP 8.5+" />
-    </picture>
-  </a>
-  <a href="https://wordpress.org/">
-    <picture>
-      <img src="https://img.shields.io/badge/WordPress-7.0%2B-21759B?logo=wordpress&logoColor=white" alt="WordPress 7.0+" />
+      <img src="https://img.shields.io/github/v/release/nabasa-dev/jooosi-mail.svg?logo=github" alt="GitHub Release" />
     </picture>
   </a>
   <a href="https://github.com/nabasa-dev/jooosi-mail">
     <picture>
-      <img src="https://img.shields.io/badge/license-GPL--3.0--or--later-blue.svg" alt="GPL-3.0-or-later license" />
+      <img src="https://img.shields.io/github/license/nabasa-dev/jooosi-mail.svg" alt="GPL-3.0-or-later License" />
+    </picture>
+  </a>
+  <a href="https://github.com/nabasa-dev/jooosi-mail/actions">
+    <picture>
+      <img src="https://img.shields.io/github/actions/workflow/status/nabasa-dev/jooosi-mail/deploy.yaml" alt="Build Status" />
     </picture>
   </a>
   <br />

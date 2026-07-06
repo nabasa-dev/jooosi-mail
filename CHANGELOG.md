@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.6] - 2026-07-06
+
+### Added
+- Jooosi Mail plugin is now available on the [WordPress.org plugin repository](https://wordpress.org/plugins/jooosi-mail/).
+- Blueprint for WordPress.org plugin repository.
+
 ## [1.0.5] - 2026-07-03
 
 ### Changed
@@ -37,7 +43,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - 🐣 Initial release.
 
-[unreleased]: https://github.com/nabasa-dev/jooosi-mail/compare/1.0.5...HEAD
+[unreleased]: https://github.com/nabasa-dev/jooosi-mail/compare/1.0.6...HEAD
+[1.0.6]: https://github.com/nabasa-dev/jooosi-mail/compare/1.0.5...1.0.6
 [1.0.5]: https://github.com/nabasa-dev/jooosi-mail/compare/1.0.4...1.0.5
 [1.0.4]: https://github.com/nabasa-dev/jooosi-mail/compare/1.0.3...1.0.4
 [1.0.3]: https://github.com/nabasa-dev/jooosi-mail/compare/1.0.2...1.0.3
