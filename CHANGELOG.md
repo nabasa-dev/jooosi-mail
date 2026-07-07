@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.7] - 2026-07-07
+
+### Changed
+- The minimum required PHP version has been updated to 8.3.0.
+
 ## [1.0.6] - 2026-07-06
 
 ### Added
@@ -43,7 +48,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - 🐣 Initial release.
 
-[unreleased]: https://github.com/nabasa-dev/jooosi-mail/compare/1.0.6...HEAD
+[unreleased]: https://github.com/nabasa-dev/jooosi-mail/compare/1.0.7...HEAD
+[1.0.7]: https://github.com/nabasa-dev/jooosi-mail/compare/1.0.6...1.0.7
 [1.0.6]: https://github.com/nabasa-dev/jooosi-mail/compare/1.0.5...1.0.6
 [1.0.5]: https://github.com/nabasa-dev/jooosi-mail/compare/1.0.4...1.0.5
 [1.0.4]: https://github.com/nabasa-dev/jooosi-mail/compare/1.0.3...1.0.4
