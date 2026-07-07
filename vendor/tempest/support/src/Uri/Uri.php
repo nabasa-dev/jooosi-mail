@@ -10,28 +10,20 @@ use JooosiMailDeps\Tempest\Support\Str\MutableString;
 use function parse_url;
 final class Uri implements Stringable
 {
-    /**
-     * The path segments as an array.
-     */
-    public array $segments {
-        get {
-            if (in_array($this->path, [null, '', '/'], \true)) {
-                return [];
-            }
-            return array_values(array_filter(explode('/', $this->path), fn(string $segment) => $segment !== ''));
+    public function getSegments(): array
+    {
+        if (in_array($this->path, [null, '', '/'], \true)) {
+            return [];
         }
+        return array_values(array_filter(explode('/', $this->path), fn(string $segment) => $segment !== ''));
     }
-    /**
-     * The parsed query parameters as an associative array.
-     */
-    public array $query {
-        get {
-            if ($this->queryString === null || $this->queryString === '') {
-                return [];
-            }
-            parse_str($this->queryString, $query);
-            return $query;
+    public function getQuery(): array
+    {
+        if ($this->queryString === null || $this->queryString === '') {
+            return [];
         }
+        parse_str($this->queryString, $query);
+        return $query;
     }
     /**
      * @param null|string $scheme The scheme component of the URI.
@@ -111,7 +103,7 @@ final class Uri implements Stringable
      */
     public function addQuery(mixed ...$query): self
     {
-        return $this->with(queryString: $this->buildQueryString(query: array_merge($this->query, $query)));
+        return $this->with(queryString: $this->buildQueryString(query: array_merge($this->getQuery(), $query)));
     }
     /**
      * Returns a new Uri with all query parameters removed.
@@ -125,7 +117,7 @@ final class Uri implements Stringable
      */
     public function withoutQuery(mixed ...$query): self
     {
-        $currentQuery = $this->query;
+        $currentQuery = $this->getQuery();
         foreach ($query as $key => $value) {
             if (is_int($key)) {
                 unset($currentQuery[$value]);
@@ -227,5 +219,25 @@ final class Uri implements Stringable
     public function toMutableString(): MutableString
     {
         return new MutableString($this->toString());
+    }
+    public function __get(string $name): mixed
+    {
+        if ($name === 'segments') {
+            return $this->getSegments();
+        }
+        if ($name === 'query') {
+            return $this->getQuery();
+        }
+        throw new \RuntimeException(sprintf('Undefined property: %s::$%s', self::class, $name));
+    }
+    public function __isset(string $name): bool
+    {
+        if ($name === 'segments') {
+            return $this->getSegments() !== null;
+        }
+        if ($name === 'query') {
+            return $this->getQuery() !== null;
+        }
+        return \false;
     }
 }

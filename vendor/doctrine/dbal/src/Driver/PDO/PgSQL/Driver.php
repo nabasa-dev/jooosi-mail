@@ -41,7 +41,7 @@ final class Driver extends AbstractPostgreSQLDriver
         } catch (PDOException $exception) {
             throw Exception::new($exception);
         }
-        $disablePreparesAttr = PHP_VERSION_ID >= 80400 ? Pgsql::ATTR_DISABLE_PREPARES : PDO::PGSQL_ATTR_DISABLE_PREPARES;
+        $disablePreparesAttr = PHP_VERSION_ID >= 80400 ? \PDO::PGSQL_ATTR_DISABLE_PREPARES : PDO::PGSQL_ATTR_DISABLE_PREPARES;
         if (!isset($driverOptions[$disablePreparesAttr]) || $driverOptions[$disablePreparesAttr] === \true) {
             $pdo->setAttribute($disablePreparesAttr, \true);
         }

@@ -30,7 +30,13 @@ final readonly class MethodReflector implements Reflector
     }
     public function getParameter(int|string $key): ?ParameterReflector
     {
-        $parameter = array_find(array: $this->reflectionMethod->getParameters(), callback: fn(ReflectionParameter $parameter) => $parameter->getName() === $key || $parameter->getPosition() === $key);
+        $parameter = null;
+        foreach ($this->reflectionMethod->getParameters() as $parameter) {
+            if ($parameter->getName() === $key || $parameter->getPosition() === $key) {
+                $parameter = $parameter;
+                break;
+            }
+        }
         if ($parameter === null) {
             return null;
         }

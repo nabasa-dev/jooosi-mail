@@ -40,7 +40,7 @@ final readonly class RestRouteRegistrar
     {
         foreach ($this->manifest->controllers as $className) {
             $reflectionClass = new ReflectionClass($className);
-            $controller = array_first($reflectionClass->getAttributes(Controller::class))?->newInstance();
+            $controller = $reflectionClass->getAttributes(Controller::class)[array_key_first($reflectionClass->getAttributes(Controller::class))]?->newInstance();
             if (!$controller instanceof Controller) {
                 continue;
             }

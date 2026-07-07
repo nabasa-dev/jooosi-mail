@@ -34,7 +34,14 @@ function find_key(iterable $array, mixed $value, bool $strict = \false): int|str
         return $search === \false ? null : $search;
         // Keep empty values but convert false to null
     }
-    return array_find_key($array, static fn($item, $key) => $value($item, $key) === \true);
+    $found = null;
+    foreach ($array as $key => $item) {
+        if ($value($item, $key) === \true) {
+            $found = $key;
+            break;
+        }
+    }
+    return $found;
 }
 /**
  * Chunks the array into chunks of the given size.
@@ -547,7 +554,7 @@ function first(iterable $array, ?Closure $filter = null, mixed $default = null):
         return $default;
     }
     if (!$filter instanceof Closure) {
-        return array_first($array) ?? $default;
+        return $array[array_key_first($array)] ?? $default;
     }
     return array_find($array, static fn($value, $key) => $filter($value, $key)) ?? $default;
 }
@@ -591,7 +598,7 @@ function last(iterable $array, ?Closure $filter = null, mixed $default = null): 
         return $default;
     }
     if (!$filter instanceof Closure) {
-        return array_last($array) ?? $default;
+        return $array[array_key_last($array)] ?? $default;
     }
     return array_find(namespace\reverse($array), static fn($value, $key) => $filter($value, $key)) ?? $default;
 }
@@ -838,7 +845,14 @@ function contains(iterable $array, mixed $search): bool
 {
     $array = to_array($array);
     $search = $search instanceof Closure ? $search : static fn(mixed $value) => $value === $search;
-    return array_any($array, static fn($value, $key) => $search($value, $key));
+    $found = \false;
+    foreach ($array as $key => $value) {
+        if ($search($value, $key)) {
+            $found = \true;
+            break;
+        }
+    }
+    return $found;
 }
 /**
  * Asserts whether all items in the given array pass the given `$callback`.
@@ -855,7 +869,14 @@ function every(iterable $array, ?Closure $callback = null): bool
 {
     $array = to_array($array);
     $callback ??= static fn(mixed $value) => !is_null($value);
-    return array_all($array, static fn(mixed $value, int|string $key) => $callback($value, $key));
+    $found = \true;
+    foreach ($array as $key => $value) {
+        if (!$callback($value, $key)) {
+            $found = \false;
+            break;
+        }
+    }
+    return $found;
 }
 /**
  * Returns a copy of the array with the given `$value` associated to the given `$key`.

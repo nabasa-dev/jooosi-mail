@@ -22,7 +22,7 @@ use function JooosiMailDeps\Tempest\Support\tap;
  */
 trait ManipulatesString
 {
-    private(set) string $value;
+    public string $value;
     public function __construct(Stringable|int|string|null $string = '')
     {
         $this->value = (string) ($string ?? '');

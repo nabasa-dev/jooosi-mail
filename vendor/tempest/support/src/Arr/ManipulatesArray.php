@@ -21,7 +21,7 @@ use function JooosiMailDeps\Tempest\Support\tap;
 trait ManipulatesArray
 {
     /** @var array<TKey, TValue> */
-    private(set) array $value;
+    public array $value;
     /**
      * @param array<TKey, TValue>|self<TKey, TValue>|TValue $input
      */

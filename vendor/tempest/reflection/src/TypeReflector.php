@@ -94,10 +94,24 @@ final readonly class TypeReflector implements Reflector
             return is_iterable($input);
         }
         if (str_contains($this->definition, '|')) {
-            return array_any($this->split(), static fn($type) => $type->accepts($input));
+            $found = \false;
+            foreach ($this->split() as $type) {
+                if ($type->accepts($input)) {
+                    $found = \true;
+                    break;
+                }
+            }
+            return $found;
         }
         if (str_contains($this->definition, '&')) {
-            return array_all($this->split(), static fn($type) => $type->accepts($input));
+            $found = \true;
+            foreach ($this->split() as $type) {
+                if (!$type->accepts($input)) {
+                    $found = \false;
+                    break;
+                }
+            }
+            return $found;
         }
         return \false;
     }
@@ -112,7 +126,7 @@ final readonly class TypeReflector implements Reflector
     public function getShortName(): string
     {
         $parts = explode('\\', $this->definition);
-        return array_last($parts);
+        return $parts[array_key_last($parts)];
     }
     public function isBuiltIn(): bool
     {
@@ -224,7 +238,14 @@ final readonly class TypeReflector implements Reflector
             if (str_contains($this->definition, '?')) {
                 return \true;
             }
-            return array_any(array: preg_split('/[&|]/', $this->definition), callback: static fn(string $type) => $type === 'null');
+            $found = \false;
+            foreach (preg_split('/[&|]/', $this->definition) as $type) {
+                if ($type === 'null') {
+                    $found = \true;
+                    break;
+                }
+            }
+            return $found;
         }
         if ($reflector instanceof PHPReflectionParameter || $reflector instanceof PHPReflectionProperty) {
             $type = $reflector->getType();

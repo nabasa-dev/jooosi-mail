@@ -5,7 +5,7 @@ namespace JooosiMailDeps\Tempest\Support\Paginator;
 use JooosiMailDeps\Tempest\Support\Paginator\Exceptions\ArgumentWasInvalid;
 final class Paginator
 {
-    public function __construct(private(set) int $totalItems, private(set) int $itemsPerPage = 20, private(set) int $currentPage = 1, private(set) int $maxLinks = 10)
+    public function __construct(public int $totalItems, public int $itemsPerPage = 20, public int $currentPage = 1, public int $maxLinks = 10)
     {
         if ($this->totalItems < 0) {
             throw new ArgumentWasInvalid('Total items cannot be negative');
@@ -19,38 +19,47 @@ final class Paginator
         if ($this->maxLinks <= 0) {
             throw new ArgumentWasInvalid('Max links must be positive');
         }
-        $this->currentPage = min(max(1, $this->currentPage), $this->totalPages);
+        $this->currentPage = min(max(1, $this->currentPage), $this->getTotalPages());
     }
-    public int $totalPages {
-        get => max(1, (int) ceil($this->totalItems / $this->itemsPerPage));
+    public function getTotalPages(): int
+    {
+        return max(1, (int) ceil($this->totalItems / $this->itemsPerPage));
     }
-    public int $offset {
-        get => ($this->currentPage - 1) * $this->itemsPerPage;
+    public function getOffset(): int
+    {
+        return ($this->currentPage - 1) * $this->itemsPerPage;
     }
-    public int $limit {
-        get => $this->itemsPerPage;
+    public function getLimit(): int
+    {
+        return $this->itemsPerPage;
     }
-    public bool $hasNext {
-        get => $this->currentPage < $this->totalPages;
+    public function getHasNext(): bool
+    {
+        return $this->currentPage < $this->getTotalPages();
     }
-    public bool $hasPrevious {
-        get => $this->currentPage > 1;
+    public function getHasPrevious(): bool
+    {
+        return $this->currentPage > 1;
     }
-    public ?int $nextPage {
-        get => $this->hasNext ? $this->currentPage + 1 : null;
+    public function getNextPage(): ?int
+    {
+        return $this->getHasNext() ? $this->currentPage + 1 : null;
     }
-    public ?int $previousPage {
-        get => $this->hasPrevious ? $this->currentPage - 1 : null;
+    public function getPreviousPage(): ?int
+    {
+        return $this->getHasPrevious() ? $this->currentPage - 1 : null;
     }
-    public ?int $firstPage {
-        get => $this->totalPages > 0 ? 1 : null;
+    public function getFirstPage(): ?int
+    {
+        return $this->getTotalPages() > 0 ? 1 : null;
     }
-    public ?int $lastPage {
-        get => $this->totalPages > 0 ? $this->totalPages : null;
+    public function getLastPage(): ?int
+    {
+        return $this->getTotalPages() > 0 ? $this->getTotalPages() : null;
     }
-    /** @var list<int> */
-    public array $pageRange {
-        get => $this->calculatePageRange();
+    public function getPageRange(): array
+    {
+        return $this->calculatePageRange();
     }
     public function withPage(int $page): self
     {
@@ -69,7 +78,7 @@ final class Paginator
      */
     public function paginate(array $data): PaginatedData
     {
-        return new PaginatedData(data: $data, currentPage: $this->currentPage, totalPages: $this->totalPages, totalItems: $this->totalItems, itemsPerPage: $this->itemsPerPage, offset: $this->offset, limit: $this->limit, hasNext: $this->hasNext, hasPrevious: $this->hasPrevious, nextPage: $this->nextPage, previousPage: $this->previousPage, pageRange: $this->pageRange);
+        return new PaginatedData(data: $data, currentPage: $this->currentPage, totalPages: $this->getTotalPages(), totalItems: $this->totalItems, itemsPerPage: $this->itemsPerPage, offset: $this->getOffset(), limit: $this->getLimit(), hasNext: $this->getHasNext(), hasPrevious: $this->getHasPrevious(), nextPage: $this->getNextPage(), previousPage: $this->getPreviousPage(), pageRange: $this->getPageRange());
     }
     /**
      * Creates paginated data from a callable that fetches data.
@@ -80,20 +89,88 @@ final class Paginator
      */
     public function paginateWith(callable $callback): PaginatedData
     {
-        return $this->paginate($callback($this->limit, $this->offset));
+        return $this->paginate($callback($this->getLimit(), $this->getOffset()));
     }
     /** @return list<int> */
     private function calculatePageRange(): array
     {
-        if ($this->totalPages <= $this->maxLinks) {
-            return range(1, $this->totalPages);
+        if ($this->getTotalPages() <= $this->maxLinks) {
+            return range(1, $this->getTotalPages());
         }
         $half = (int) floor($this->maxLinks / 2);
         $start = max(1, $this->currentPage - $half);
-        $end = min($this->totalPages, $start + $this->maxLinks - 1);
+        $end = min($this->getTotalPages(), $start + $this->maxLinks - 1);
         if ($end - $start + 1 < $this->maxLinks) {
             $start = max(1, $end - $this->maxLinks + 1);
         }
         return range($start, $end);
+    }
+    public function __get(string $name): mixed
+    {
+        if ($name === 'totalPages') {
+            return $this->getTotalPages();
+        }
+        if ($name === 'offset') {
+            return $this->getOffset();
+        }
+        if ($name === 'limit') {
+            return $this->getLimit();
+        }
+        if ($name === 'hasNext') {
+            return $this->getHasNext();
+        }
+        if ($name === 'hasPrevious') {
+            return $this->getHasPrevious();
+        }
+        if ($name === 'nextPage') {
+            return $this->getNextPage();
+        }
+        if ($name === 'previousPage') {
+            return $this->getPreviousPage();
+        }
+        if ($name === 'firstPage') {
+            return $this->getFirstPage();
+        }
+        if ($name === 'lastPage') {
+            return $this->getLastPage();
+        }
+        if ($name === 'pageRange') {
+            return $this->getPageRange();
+        }
+        throw new \RuntimeException(sprintf('Undefined property: %s::$%s', self::class, $name));
+    }
+    public function __isset(string $name): bool
+    {
+        if ($name === 'totalPages') {
+            return $this->getTotalPages() !== null;
+        }
+        if ($name === 'offset') {
+            return $this->getOffset() !== null;
+        }
+        if ($name === 'limit') {
+            return $this->getLimit() !== null;
+        }
+        if ($name === 'hasNext') {
+            return $this->getHasNext() !== null;
+        }
+        if ($name === 'hasPrevious') {
+            return $this->getHasPrevious() !== null;
+        }
+        if ($name === 'nextPage') {
+            return $this->getNextPage() !== null;
+        }
+        if ($name === 'previousPage') {
+            return $this->getPreviousPage() !== null;
+        }
+        if ($name === 'firstPage') {
+            return $this->getFirstPage() !== null;
+        }
+        if ($name === 'lastPage') {
+            return $this->getLastPage() !== null;
+        }
+        if ($name === 'pageRange') {
+            return $this->getPageRange() !== null;
+        }
+        return \false;
     }
 }

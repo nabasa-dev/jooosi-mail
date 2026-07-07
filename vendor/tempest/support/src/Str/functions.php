@@ -283,7 +283,14 @@ function starts_with(Stringable|string $string, Stringable|string|array $needles
     if (!is_array($needles)) {
         $needles = [$needles];
     }
-    return array_any($needles, fn($needle) => str_starts_with($string, (string) $needle));
+    $found = \false;
+    foreach ($needles as $needle) {
+        if (str_starts_with($string, (string) $needle)) {
+            $found = \true;
+            break;
+        }
+    }
+    return $found;
 }
 /**
  * Asserts whether the string ends with one of the given `$needles`.
@@ -294,7 +301,14 @@ function ends_with(Stringable|string $string, Stringable|string|array $needles):
     if (!is_array($needles)) {
         $needles = [$needles];
     }
-    return array_any($needles, static fn($needle) => str_ends_with($string, (string) $needle));
+    $found = \false;
+    foreach ($needles as $needle) {
+        if (str_ends_with($string, (string) $needle)) {
+            $found = \true;
+            break;
+        }
+    }
+    return $found;
 }
 /**
  * Replaces the first occurrence of `$search` with `$replace`.
@@ -532,7 +546,14 @@ function slice(Stringable|string $string, int $start, ?int $length = null): stri
  */
 function contains(Stringable|string $string, Stringable|string|array $needle): bool
 {
-    return array_any(Arr\wrap($needle), fn($item) => str_contains((string) $string, (string) $item));
+    $found = \false;
+    foreach (Arr\wrap($needle) as $item) {
+        if (str_contains((string) $string, (string) $item)) {
+            $found = \true;
+            break;
+        }
+    }
+    return $found;
 }
 /**
  * Takes the specified amount of characters. If `$length` is negative, starts from the end.

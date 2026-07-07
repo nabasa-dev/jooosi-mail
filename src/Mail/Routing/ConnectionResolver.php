@@ -46,7 +46,7 @@ final readonly class ConnectionResolver
     private function resolveSingleConnection(array $connections, array $healthScores, ?int $preferredConnectionId): array
     {
         $orderedConnections = $this->orderConnections(connections: $connections, healthScores: $healthScores, preferredConnectionId: $preferredConnectionId);
-        $primaryConnection = array_first($orderedConnections);
+        $primaryConnection = $orderedConnections[array_key_first($orderedConnections)];
         return $primaryConnection instanceof Connection ? [$primaryConnection] : [];
     }
     /**

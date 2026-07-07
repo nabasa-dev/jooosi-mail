@@ -53,6 +53,13 @@ enum PackageManager : string
     }
     public static function detect(string $cwd): ?self
     {
-        return array_find(array: PackageManager::cases(), callback: fn(PackageManager $packageManager): bool => array_any($packageManager->getLockFiles(), fn(string $lockFile): bool => Filesystem\is_file($cwd . '/' . $lockFile)));
+        $found = null;
+        foreach (PackageManager::cases() as $packageManager) {
+            if (array_any($packageManager->getLockFiles(), fn(string $lockFile): bool => Filesystem\is_file($cwd . '/' . $lockFile))) {
+                $found = $packageManager;
+                break;
+            }
+        }
+        return $found;
     }
 }

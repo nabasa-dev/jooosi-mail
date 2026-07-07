@@ -8,10 +8,11 @@ use JooosiMailDeps\Tempest\Support\Namespace\Psr4Namespace;
 final class DiscoveryLocation
 {
     public readonly string $path;
-    public string $key {
-        get => hash('xxh64', $this->path);
+    public function getKey(): string
+    {
+        return hash('xxh64', $this->path);
     }
-    public function __construct(public readonly string $namespace, string $path, private(set) array $ignore = [])
+    public function __construct(public readonly string $namespace, string $path, public array $ignore = [])
     {
         $this->path = Filesystem\normalize_path(rtrim($path, '\/'));
     }
@@ -29,11 +30,32 @@ final class DiscoveryLocation
     }
     public function isIgnored(string $path): bool
     {
-        return array_any($this->ignore, fn(string $ignore) => str_starts_with($path, $ignore));
+        $found = \false;
+        foreach ($this->ignore as $ignore) {
+            if (str_starts_with($path, $ignore)) {
+                $found = \true;
+                break;
+            }
+        }
+        return $found;
     }
     public function toClassName(string $path): string
     {
         // Try to create a PSR-compliant class name from the path
         return str_replace([$this->path, '/', '\\\\', '.php'], [$this->namespace, '\\', '\\', ''], $path);
+    }
+    public function __get(string $name): mixed
+    {
+        if ($name === 'key') {
+            return $this->getKey();
+        }
+        throw new \RuntimeException(sprintf('Undefined property: %s::$%s', self::class, $name));
+    }
+    public function __isset(string $name): bool
+    {
+        if ($name === 'key') {
+            return $this->getKey() !== null;
+        }
+        return \false;
     }
 }

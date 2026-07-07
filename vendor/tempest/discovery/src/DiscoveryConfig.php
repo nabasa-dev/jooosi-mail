@@ -26,7 +26,14 @@ final class DiscoveryConfig
         if (array_key_exists($input, $this->skipDiscovery)) {
             return \true;
         }
-        return array_any($this->skipUsing, fn($closure) => $closure($input) === \true);
+        $found = \false;
+        foreach ($this->skipUsing as $closure) {
+            if ($closure($input) === \true) {
+                $found = \true;
+                break;
+            }
+        }
+        return $found;
     }
     /** @param (Closure(string): bool) $closure */
     public function skipUsing(Closure $closure): self

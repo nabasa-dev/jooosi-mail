@@ -44,7 +44,7 @@ final readonly class CommandRegistrar
     {
         $reflectionClass = new ReflectionClass($className);
         $instance = $this->container->get($className);
-        $classCommand = $this->newCommandInstance(array_first($reflectionClass->getAttributes(Command::class)));
+        $classCommand = $this->newCommandInstance($reflectionClass->getAttributes(Command::class)[array_key_first($reflectionClass->getAttributes(Command::class))]);
         if ($classCommand instanceof Command && $reflectionClass->hasMethod('__invoke')) {
             $this->registerCommand($classCommand, [$instance, '__invoke'], $reflectionClass);
         }
@@ -52,7 +52,7 @@ final readonly class CommandRegistrar
             if ($reflectionMethod->getDeclaringClass()->getName() !== $className) {
                 continue;
             }
-            $methodCommand = $this->newCommandInstance(array_first($reflectionMethod->getAttributes(Command::class)));
+            $methodCommand = $this->newCommandInstance($reflectionMethod->getAttributes(Command::class)[array_key_first($reflectionMethod->getAttributes(Command::class))]);
             if (!$methodCommand instanceof Command) {
                 continue;
             }

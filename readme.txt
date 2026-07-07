@@ -4,8 +4,8 @@ Donate link: https://ko-fi.com/Q5Q75XSF7
 Tags: email, smtp, mailer, transactional email, logs
 Requires at least: 7.0
 Tested up to: 7.0
-Stable tag: 1.0.5
-Requires PHP: 8.5
+Stable tag: 1.0.6
+Requires PHP: 8.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -141,6 +141,13 @@ Yes. Jooosi Mail intercepts WordPress `wp_mail()` calls and routes them through 
 Yes. Jooosi Mail includes WP-CLI commands for operational tasks such as managing connections, migrations, queue processing, and diagnostics.
 
 == Changelog ==
+
+= 1.0.6 - 2026-07-06 =
+
+**Added**
+
+* Jooosi Mail plugin is now available on the [WordPress.org plugin repository](https://wordpress.org/plugins/jooosi-mail/).
+* Blueprint for WordPress.org plugin repository.
 
 = 1.0.5 - 2026-07-03 =
 

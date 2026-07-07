@@ -128,7 +128,7 @@ final readonly class ConnectionManager
             return;
         }
         $activeConnections = $this->connectionRepository->findActive();
-        $nextDefault = array_first($activeConnections);
+        $nextDefault = $activeConnections[array_key_first($activeConnections)];
         if (!$nextDefault instanceof \JooosiMail\Mail\Connection\Connection || $nextDefault->id === null) {
             return;
         }

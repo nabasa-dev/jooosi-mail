@@ -34,7 +34,7 @@ final readonly class HandlerLocator implements HandlersLocatorInterface
         $message = $envelope->getMessage();
         foreach ($this->manifest->messageHandlers as $className) {
             $reflectionClass = new ReflectionClass($className);
-            $attribute = array_first($reflectionClass->getAttributes(MessageHandler::class));
+            $attribute = $reflectionClass->getAttributes(MessageHandler::class)[array_key_first($reflectionClass->getAttributes(MessageHandler::class))];
             if ($attribute === null) {
                 continue;
             }

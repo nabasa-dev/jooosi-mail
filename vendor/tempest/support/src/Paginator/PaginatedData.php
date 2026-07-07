@@ -15,14 +15,17 @@ final class PaginatedData implements JsonSerializable
     public function __construct(public array $data, public int $currentPage, public int $totalPages, public int $totalItems, public int $itemsPerPage, public int $offset, public int $limit, public bool $hasNext, public bool $hasPrevious, public ?int $nextPage, public ?int $previousPage, public array $pageRange)
     {
     }
-    public int $count {
-        get => count($this->data);
+    public function getCount(): int
+    {
+        return count($this->data);
     }
-    public bool $isEmpty {
-        get => $this->count === 0;
+    public function getIsEmpty(): bool
+    {
+        return $this->getCount() === 0;
     }
-    public bool $isNotEmpty {
-        get => !$this->isEmpty;
+    public function getIsNotEmpty(): bool
+    {
+        return !$this->getIsEmpty();
     }
     /**
      * @template U
@@ -54,7 +57,7 @@ final class PaginatedData implements JsonSerializable
      */
     public function toArray(): array
     {
-        return ['data' => $this->data, 'pagination' => ['current_page' => $this->currentPage, 'total_pages' => $this->totalPages, 'total_items' => $this->totalItems, 'items_per_page' => $this->itemsPerPage, 'offset' => $this->offset, 'limit' => $this->limit, 'has_next' => $this->hasNext, 'has_previous' => $this->hasPrevious, 'next_page' => $this->nextPage, 'previous_page' => $this->previousPage, 'page_range' => $this->pageRange, 'count' => $this->count]];
+        return ['data' => $this->data, 'pagination' => ['current_page' => $this->currentPage, 'total_pages' => $this->totalPages, 'total_items' => $this->totalItems, 'items_per_page' => $this->itemsPerPage, 'offset' => $this->offset, 'limit' => $this->limit, 'has_next' => $this->hasNext, 'has_previous' => $this->hasPrevious, 'next_page' => $this->nextPage, 'previous_page' => $this->previousPage, 'page_range' => $this->pageRange, 'count' => $this->getCount()]];
     }
     /**
      * @return array{
@@ -78,5 +81,31 @@ final class PaginatedData implements JsonSerializable
     public function jsonSerialize(): array
     {
         return $this->toArray();
+    }
+    public function __get(string $name): mixed
+    {
+        if ($name === 'count') {
+            return $this->getCount();
+        }
+        if ($name === 'isEmpty') {
+            return $this->getIsEmpty();
+        }
+        if ($name === 'isNotEmpty') {
+            return $this->getIsNotEmpty();
+        }
+        throw new \RuntimeException(sprintf('Undefined property: %s::$%s', self::class, $name));
+    }
+    public function __isset(string $name): bool
+    {
+        if ($name === 'count') {
+            return $this->getCount() !== null;
+        }
+        if ($name === 'isEmpty') {
+            return $this->getIsEmpty() !== null;
+        }
+        if ($name === 'isNotEmpty') {
+            return $this->getIsNotEmpty() !== null;
+        }
+        return \false;
     }
 }

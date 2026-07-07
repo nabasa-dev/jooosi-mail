@@ -38,6 +38,13 @@ final readonly class ProfileRegistry
      */
     public function get(string $key): ?\JooosiMail\Mail\Profile\MailProfileInterface
     {
-        return array_find($this->all(), fn(\JooosiMail\Mail\Profile\MailProfileInterface $profile): bool => $this->profileMetadataResolver->getKey($profile) === $key);
+        $found = null;
+        foreach ($this->all() as $profile) {
+            if ($this->profileMetadataResolver->getKey($profile) === $key) {
+                $found = $profile;
+                break;
+            }
+        }
+        return $found;
     }
 }

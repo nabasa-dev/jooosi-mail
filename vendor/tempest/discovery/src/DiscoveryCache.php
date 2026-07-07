@@ -11,26 +11,28 @@ use Throwable;
 use function JooosiMailDeps\Tempest\internal_storage_path;
 final class DiscoveryCache
 {
-    public bool $enabled {
-        get => $this->valid && $this->strategy->isEnabled();
+    public function getEnabled(): bool
+    {
+        return $this->getValid() && $this->strategy->isEnabled();
     }
-    public bool $valid {
-        get => $this->strategy->isValid();
+    public function getValid(): bool
+    {
+        return $this->strategy->isValid();
     }
-    public function __construct(private(set) readonly DiscoveryCacheStrategy $strategy, private ?CacheItemPoolInterface $pool = null)
+    public function __construct(public readonly DiscoveryCacheStrategy $strategy, private ?CacheItemPoolInterface $pool = null)
     {
         $this->pool = $pool ?? new PhpFilesAdapter(directory: $this->getCachePath());
     }
     public function withStrategy(DiscoveryCacheStrategy $strategy): self
     {
-        return clone($this, ['strategy' => $strategy]);
+        return new self(strategy: $strategy, pool: $this->pool);
     }
     /**
      * @return array<class-string<\Tempest\Discovery\Discovery>, DiscoveryItems>
      */
     public function restore(DiscoveryLocation $location): ?array
     {
-        if (!$this->enabled) {
+        if (!$this->getEnabled()) {
             return null;
         }
         return $this->pool->getItem($location->key)->get();
@@ -82,5 +84,25 @@ final class DiscoveryCache
         } catch (Throwable) {
             return __DIR__ . '/../.tempest/cache';
         }
+    }
+    public function __get(string $name): mixed
+    {
+        if ($name === 'enabled') {
+            return $this->getEnabled();
+        }
+        if ($name === 'valid') {
+            return $this->getValid();
+        }
+        throw new \RuntimeException(sprintf('Undefined property: %s::$%s', self::class, $name));
+    }
+    public function __isset(string $name): bool
+    {
+        if ($name === 'enabled') {
+            return $this->getEnabled() !== null;
+        }
+        if ($name === 'valid') {
+            return $this->getValid() !== null;
+        }
+        return \false;
     }
 }
