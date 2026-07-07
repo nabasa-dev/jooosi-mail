@@ -64,7 +64,7 @@
     "extra": {
         "wordpress-plugin": {
             "name": "Jooosi Mail",
-            "version": "1.0.6",
+            "version": "1.0.7",
             "requires-wp": "7.0",
             "tested-wp": "7.0",
             "requires-php": "8.3"

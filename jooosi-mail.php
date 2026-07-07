@@ -6,7 +6,7 @@
  * Plugin URI:          https://github.com/nabasa-dev/jooosi-mail
  * Description:         A modern, robust email sending solution for WordPress sites with advanced features including multiple provider support, queue-based processing, and comprehensive monitoring.
  * Text Domain:         jooosi-mail
- * Version:             1.0.6
+ * Version:             1.0.7
  * Requires at least:   7.0
  * Requires PHP:        8.3
  * Author:              Jooosi Mail
